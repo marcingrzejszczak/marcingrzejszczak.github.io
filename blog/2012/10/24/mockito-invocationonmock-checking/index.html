@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Mockito InvocationOnMock - Checking an Argument - TOO MUCH CODING BLOG</title>
+  <meta name="author" content="Marcin Grzejszczak">
+
+  
+  <meta name="description" content="Mockito InvocationOnMock - Checking an Argument written in integration tests, invocationonmock, java, mocks, unit tests Hi!In one of my projects we &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://marcingrzejszczak.github.io/blog/2012/10/24/mockito-invocationonmock-checking">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="TOO MUCH CODING BLOG" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  
+
+</head>
+
+  <body>
+    <a href="/" class="home-icon">
+      <img src="/images/home.png"/>
+    </a>
+
+    <article role="article" class="full-single-article">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <h1>Mockito InvocationOnMock - Checking an Argument</h1>
+        <div class="meta">
+          written 
+
+
+
+
+
+
+
+
+  
+
+
+
+<time datetime="2012-10-24T23:22:00+02:00" pubdate data-updated="true"></time>
+          
+
+in
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/integration-tests/'>integration tests</a>, <a class='category' href='/blog/categories/invocationonmock/'>invocationonmock</a>, <a class='category' href='/blog/categories/java/'>java</a>, <a class='category' href='/blog/categories/mocks/'>mocks</a>, <a class='category' href='/blog/categories/unit-tests/'>unit tests</a>
+  
+</span>
+
+
+        </div>
+        <div class='post'>
+<br /><br />Hi!<br /><br />In one of my projects we had a very interesting situation in terms of testing. We couldn't mock an invocation of a static method due to the fact that PowerMock was not allowed to be used so there were plenty of objects and dependencies being initialized. What is more we were using a custom made dependency injection system that had a possibility of injecting a mock.<br />
+<!--more-->
+<br />The problem was such that during a test we wanted to assert whether one of the objects was in a very precise state. This object was created using the new operator so we couldn't mock it (again no PowerMock allowed). Fortunately this object got passed to a method of an object that we could mock...<br /><br />As presented below <span style="font-family: 'Courier New', Courier, monospace;">timeConsumingExternalService</span> is an object that we could mock via the custom dependency injection system whereas the <span style="font-family: 'Courier New', Courier, monospace;">SomePojo</span> class is an object whose state we would like to verify. <br /><br /><pre class="brush:java">timeConsumingExternalService.processSomeObject(new SomePojo("name", "surname", 1, 1.0));<br /></pre><br />So what we did was that in our mock to which the object got passed we created a new <span style="font-family: 'Courier New', Courier, monospace;">Answer&nbsp;</span>(the same <span style="font-family: 'Courier New', Courier, monospace;">Answer</span> that I spoke of <a href="http://toomuchcoding.blogspot.com/2012/10/simulation-of-time-consuming-actions-in.html">here</a>). Due to which we could access the <span style="font-family: 'Courier New', Courier, monospace;">InvocationOnMock</span> and the arguments passed to the method as such. <br /><br /><pre class="brush:java">Mockito.doAnswer(new Answer&lt;Object&gt;() {<br />   public Object answer(InvocationOnMock invocation) throws Throwable {<br />    Object[] object = invocation.getArguments();<br /><br />      if (object.length &gt; 0) {<br />          SomePojo somePojo = (SomePojo) object[0];<br /><br />          Assert.assertEquals("name", somePojo.getName());<br />          LOGGER.debug("Names are equal");<br />          Assert.assertEquals("surname", somePojo.getSurname());<br />          LOGGER.debug("Surnames are equal");<br />          Assert.assertTrue(1 == somePojo.getIntValue());<br />          LOGGER.debug("Ints are equal");<br />          Assert.assertTrue(1.0 == somePojo.getDoubleValue());<br />          LOGGER.debug("Doubles are equal");<br /><br />          LOGGER.debug("Object being an argument of the function [" + String.valueOf(somePojo) + "]");<br />  }<br />    return null;<br />   }<br />  }).when(timeConsumingExternalServiceMock).processSomeObject(Mockito.any(SomePojo.class));<br /></pre><br />Of course the logs regarding the equalities are unnecessary since if they wouldn't be equal we would have an assertion exception - I left them for the purpose of this post.<br /><br />And in the logs we can find: <br /><br /><pre class="brush:xml">pl.grzejszczak.marcin.ServiceIntegrationTest:48 Names are equal<br />pl.grzejszczak.marcin.ServiceIntegrationTest:50 Surnames are equal<br />pl.grzejszczak.marcin.ServiceIntegrationTest:52 Ints are equal<br />pl.grzejszczak.marcin.ServiceIntegrationTest:54 Doubles are equal<br />pl.grzejszczak.marcin.ServiceIntegrationTest:56 Object being an argument of the function [SomePojo [name=name, surname=surname, intValue=1, doubleValue=1.0]]<br /></pre><br />So in this way something that seems impossible to be verified can get verified :)<br /><br /><b><u>Update! </u></b><br /><br />Thanks to Holger's suggestion I took a look at the <span style="font-family: 'Courier New', Courier, monospace;">ArgumentCaptor</span> object and that is true that it is an elegant solution to retrieve information about the arguments executed on a method. Where <span style="font-family: 'Courier New', Courier, monospace;">InvocationOnMock</span> can give you much more information and possibilities (for instance regarding the method being executed or just execute the real method) for this particular case a much more elegant, easier and faster way of dealing with the issue would be:<br /><br /><br /><pre class="brush:java">  //service that executes the external service<br />  executorService.execute(someTask);<br /><br />  final ArgumentCaptor&lt;SomePojo&gt; argumentCaptor = ArgumentCaptor.forClass(SomePojo.class);<br />  Mockito.verify(timeConsumingExternalServiceMock).processSomeObject(argumentCaptor.capture());<br />  SomePojo somePojo = argumentCaptor.getValue();<br />  Assert.assertEquals("name", somePojo.getName());<br />  LOGGER.debug("Names are equal");<br />  Assert.assertEquals("surname", somePojo.getSurname());<br />  LOGGER.debug("Surnames are equal");<br />  Assert.assertTrue(1 == somePojo.getIntValue());<br />  LOGGER.debug("Ints are equal");<br />  Assert.assertTrue(1.0 == somePojo.getDoubleValue());<br />  LOGGER.debug("Doubles are equal");<br /></pre><br />The logs: <br /><pre class="brush:xml">pl.grzejszczak.marcin.junit.SomeTask:26 Before processing an object<br />pl.grzejszczak.marcin.junit.SomeTask:28 After processing an object<br />pl.grzejszczak.marcin.ServiceIntegrationTest:75 Names are equal<br />pl.grzejszczak.marcin.ServiceIntegrationTest:77 Surnames are equal<br />pl.grzejszczak.marcin.ServiceIntegrationTest:79 Ints are equal<br />pl.grzejszczak.marcin.ServiceIntegrationTest:81 Doubles are equal<br /></pre><br />Thanks again Holger!</div>
+
+
+        <hr class="divider-short"/>
+
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+<hr class="divider-short"/>
+
+<div class="archive-link">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        
+          <a class="pull-left" href="/blog/2012/10/24/more-interesting-articles/" title="Previous Post: More interesting articles">&laquo; Previous: More interesting articles</a>
+        
+
+        
+          <a class="pull-right" href="/blog/2012/10/28/spring-aop-in-security-controlling/" title="Next Post: Spring AOP in security - controlling creation of UI components via aspects">Next: Spring AOP in security - controlling creation of UI components via aspects &raquo;</a>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="her-row">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-1">
+  <a href="/"><h4>Home</h4></a>
+</div>
+
+<div class="col-md-2">
+  <div class="social-icon-list">
+    
+    <a href="https://twitter.com/mgrzejszczak"><img src="/images/glyphicons_social_31_twitter.png"/></a>
+    
+
+    
+    <a href="https://github.com/marcingrzejszczak"><img src="/images/glyphicons_social_21_github.png"/></a>
+    
+
+    
+
+    
+  </div>
+</div>
+
+<div class="pull-right">
+  <h4>Powered by <a href="http://octopress.org/">Octopress</a>. Designed by <a href="http://AdrianArtiles.com">Adrian Artiles</a>.</h4>
+</div>
+
+
+    </div>
+  </div>
+</footer>
+
+    
+  </body>
+</html>

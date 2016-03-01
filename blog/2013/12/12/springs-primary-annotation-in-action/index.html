@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Spring's @Primary Annotation in Action - TOO MUCH CODING BLOG</title>
+  <meta name="author" content="Marcin Grzejszczak">
+
+  
+  <meta name="description" content="Spring's @Primary Annotation in Action written in composite, dependency injection, primary, spring Spring is a framework that never stops to amaze &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://marcingrzejszczak.github.io/blog/2013/12/12/springs-primary-annotation-in-action">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="TOO MUCH CODING BLOG" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  
+
+</head>
+
+  <body>
+    <a href="/" class="home-icon">
+      <img src="/images/home.png"/>
+    </a>
+
+    <article role="article" class="full-single-article">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <h1>Spring's @Primary Annotation in Action</h1>
+        <div class="meta">
+          written 
+
+
+
+
+
+
+
+
+  
+
+
+
+<time datetime="2013-12-12T09:00:00+01:00" pubdate data-updated="true"></time>
+          
+
+in
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/composite/'>composite</a>, <a class='category' href='/blog/categories/dependency-injection/'>dependency injection</a>, <a class='category' href='/blog/categories/primary/'>primary</a>, <a class='category' href='/blog/categories/spring/'>spring</a>
+  
+</span>
+
+
+        </div>
+        <div class='post'>
+<br />Spring is a framework that never stops to amaze me. It's because of the fact that it offers plenty of different solutions that allow us, developers, to complete our tasks without writing millions of lines of code. Instead we are able to do the same in a much more readable, standardized manner. In this post I will try to describe one of its features that most likely is well known to all of you but in my opinion its importance is undervalued. The feature that I'll be talking about is the <span style="font-family: Courier New, Courier, monospace;"><a href="http://docs.spring.io/spring/docs/3.2.5.RELEASE/javadoc-api/org/springframework/context/annotation/Primary.html">@Primary</a></span> annotation.<br />
+<!--more-->
+<br /><a name='more'></a><br /><br /><h2>The problem</h2>On a couple of projects that I was working on we have come accross a common business problem - we had a point of entry to a more complex logic - some container, that would gather the results of several other processors into a single output (something like map-filter-reduce functions from the functional programming). To some extent it resembled the <a href="http://en.wikipedia.org/wiki/Composite_pattern">Composite</a> pattern. Putting it all together our approach was as follows:<br /><ol><li>We had a container that had an autowired list of processors implementing a common interface</li><li>Our container implemented the same interface as the elements of the autowired list</li><li>We wanted the client class that would use the container to have this whole processing work transparent - he is interesed only in the result</li><li>The processors have some logic (predicate) basing on which a processor is applicable to the current set of input data</li><li>The results of the processing were then combined into a list and then reduced to a single output</li></ol><div>There are numerous ways of dealing with this issue - I'll present one that uses Spring with the <span style="font-family: Courier New, Courier, monospace;">@Primary</span> annotation.</div><h2>The solution</h2>Let's start with defining how our use case will fit to the aforementioned preconditions. Our set of data is a Person class that looks as follows:<br /><br /><b>Person.java</b><br /><br /><pre class="brush:java">package com.blogspot.toomuchcoding.person.domain;<br /><br />public final class Person {<br /> private final String name;<br /> private final int age;<br /> private final boolean stupid;<br /><br /> public Person(String name, int age, boolean stupid) {<br />  this.name = name;<br />  this.age = age;<br />  this.stupid = stupid;<br /> }<br /><br /> public String getName() {<br />  return name;<br /> }<br /><br /> public int getAge() {<br />  return age;<br /> }<br /><br /> public boolean isStupid() {<br />  return stupid;<br /> }<br />}<br /><br /></pre>Nothing out of the ordinary. Now let us define the contract:<br /><br /><b>PersonProcessingService.java</b><br /><br /><pre class="brush:java">package com.blogspot.toomuchcoding.person.service;<br /><br />import com.blogspot.toomuchcoding.person.domain.Person;<br /><br />public interface PersonProcessingService {<br /> boolean isApplicableFor(Person person);<br /> String process(Person person);<br />}<br /></pre><br />As stated in the preconditions each implementaiton of the PersonProcessingService has to define two points of the contract :<br /><br /><ol><li>whether it is applicable for the current Person&nbsp;</li><li>how it processess a Person.</li></ol><br />Now let's take a look at some of the Processors that we have - I'll not post the code here cause it's pointless - you can check out the code later on <a href="https://github.com/marcingrzejszczak/too-much-coding/tree/master/Spring/Primary">Github</a> or on <a href="https://bitbucket.org/gregorin1987/too-much-coding/src/6c9b91a33f7d40032ff7c650d17bf60bd8c34625/Spring/Primary/?at=default">Bitbucket</a>. We have the following @Component annotated implementations of PersonProcessingService:<br /><ul><li>AgePersonProcessingService</li><ul><li>is applicable if Person's age is greater or equal 18</li><li>returns a String containing "AGE" as processing takes place - that's kind of silly but it's just a demo right? :)</li></ul><li>IntelligencePersonProcessingService</li><ul><li>is applicable if a Person is stupid</li><li>returns a String containing "STUPID" as processing takes place</li></ul><li>NamePersonProcessingService</li><ul><li>is applicable if a Person has a name</li><li>returns a String containing "NAME" as processing takes place</li></ul></ul><div>The logic is fairly simple. Now our container of PersonProcessingServices would want to iterate for a given Person over the processors, check if the current processor is applicable (filter) and if that is the case add the String that is a result of processing of a Person to the list of responses (map - a function converting a Person to a String) and finaly join those responses by a comma (reduce). Let's check it out how it's done:<br /><br /><b>PersonProcessingServiceContainer.java</b></div><div><br /><pre class="brush:java">package com.blogspot.toomuchcoding.person.service;<br /><br />import java.util.ArrayList;<br />import java.util.List;<br /><br />import org.apache.commons.lang.StringUtils;<br />import org.slf4j.Logger;<br />import org.slf4j.LoggerFactory;<br />import org.springframework.beans.factory.annotation.Autowired;<br />import org.springframework.context.annotation.Primary;<br />import org.springframework.stereotype.Component;<br /><br />import com.blogspot.toomuchcoding.person.domain.Person;<br /><br />@Component<br />@Primary<br />class PersonProcessingServiceContainer implements PersonProcessingService {<br /><br /> private static final Logger LOGGER = LoggerFactory.getLogger(PersonProcessingServiceContainer.class);<br /> <br /> @Autowired<br /> private List&lt;PersonProcessingService&gt; personProcessingServices = new ArrayList&lt;PersonProcessingService&gt;();<br /> <br /> @Override<br /> public boolean isApplicableFor(Person person) {<br />  return person != null;<br /> }<br /><br /> @Override<br /> public String process(Person person) {<br />  List&lt;String&gt; output = new ArrayList&lt;String&gt;();<br />  for(PersonProcessingService personProcessingService : personProcessingServices){<br />   if(personProcessingService.isApplicableFor(person)){<br />    output.add(personProcessingService.process(person));<br />   }<br />  }<br />  String result = StringUtils.join(output, ",");<br />  LOGGER.info(result);<br />  return result;<br /> }<br /><br /> public List&lt;PersonProcessingService&gt; getPersonProcessingServices() {<br />  return personProcessingServices;<br /> }<br />}<br /><br /><br /></pre>As you can see we have a container that is annotated with @Primary which means that if an implementation of the PersonProcessingService will have to be injected then Spring will pick the PersonProcessingServiceContainer to be injected. The cool thing is that we have an autowired list of PersonProcessingServices which means that all other implementations of that interface will get autowired there (the container will not autowire itself to the list!).<br /><br />Now let's check out the <a href="https://code.google.com/p/spock/">Spock tests</a> that prove that I'm not telling any lies. If you aren't using Spock already in your project then you should move it straight away :)<br /><br /><b>PersonProcessingServiceContainerIntegrationSpec.groovy</b><br /><br /><pre class="brush:java">package com.blogspot.toomuchcoding.person.service<br />import com.blogspot.toomuchcoding.configuration.SpringConfiguration<br />import com.blogspot.toomuchcoding.person.domain.Person<br />import org.springframework.beans.factory.annotation.Autowired<br />import org.springframework.test.context.ContextConfiguration<br />import spock.lang.Specification<br />import spock.lang.Unroll<br /><br />import static org.hamcrest.CoreMatchers.notNullValue<br /><br />@ContextConfiguration(classes = [SpringConfiguration])<br />class PersonProcessingServiceContainerIntegrationSpec extends Specification {<br /><br />    @Autowired<br />    PersonProcessingService personProcessingService<br />    <br />    def "should autowire container even though there are many implementations of service"(){       <br />        expect: <br />            personProcessingService instanceof PersonProcessingServiceContainer<br />    }<br />    <br />    def "the autowired container should not have itself in the list of autowired services"(){       <br />        expect: <br />            personProcessingService instanceof PersonProcessingServiceContainer<br />        and:<br />            !(personProcessingService as PersonProcessingServiceContainer).personProcessingServices.findResult {<br />                it instanceof PersonProcessingServiceContainer<br />            }<br />    }<br />    <br />    def "should not be applicable for processing if a person doesn't exist"(){<br />        given:<br />            Person person = null<br />        expect:<br />            !personProcessingService.isApplicableFor(person)<br />    }<br />    <br />    def "should return an empty result for a person not applicable for anything"(){<br />        given:<br />            Person person = new Person("", 17, false)<br />        when:<br />            def result = personProcessingService.process(person)<br />        then:<br />            result notNullValue()<br />            result.isEmpty()<br />    }<br /><br />    @Unroll("For name [#name], age [#age] and being stupid [#stupid] the result should contain keywords #keywords")<br />    def "should perform different processing depending on input"(){<br />        given:<br />            Person person = new Person(name, age, stupid)<br />        when:<br />            def result = personProcessingService.process(person)        <br />        then:<br />            keywords.every {<br />                result.contains(it)    <br />            }<br />        where:<br />            name  | age | stupid || keywords<br />            "jan" | 20  | true   || ['NAME', 'AGE', 'STUPID']<br />            ""    | 20  | true   || ['AGE', 'STUPID']<br />            ""    | 20  | false  || ['AGE']<br />            null  | 17  | true   || ['STUPID']<br />            "jan" | 17  | true   || ['NAME']<br />    }<br />}<br /><br /></pre></div><div>The tests are pretty straight forward:<br /><ol><li>We prove that the autowired field is in fact our container - the PersonProcessingServiceContainer.</li><li>Then we show that we can't find an object in the collection of autowired implementations of the PersonProcessingService, that is of PersonProcessingServiceContainer type</li><li>In the next two tests we prove that the logic behind our processors is working</li><li>Last but not least is the Spock's finest - the where clause that allows us create beautiful paramterized tests.</li></ol><h2>Per module feature</h2><div>Imagine the situation in which you have an implementation of the interface that is defined in your core module.</div><div><br /><pre class="brush:java">@Component<br />class CoreModuleClass implements SomeInterface {<br />...<br />}<br /><br /></pre></div><div>What if you decide in your other module that has the dependence to the core module that you don't want to use this CoreModuleClass and want to have some custom logic wherever the SomeInterface is autowired? Well - use @Primary!<br /><pre class="brush:java">@Component<br />@Primary<br />class CountryModuleClass implements SomeInterface {<br />...<br />}<br /></pre><br />In that way you are sure that wherever the SomeInterface has to be autowired it will be your CountryModuleClass that will be injected in the field.<br /><h2>Conclusion</h2></div></div>In this post you could see how to<br /><br /><ul><li>use the @Primary annotation to create a composite like container of interface implementations</li><li>use the @Primary annotation to provide a per module implementation of the interface that will take precedence over other @Components in terms of autowiring</li><li>write cool Spock tests :)</li></ul><h2>The code</h2>You can find the code presented here on&nbsp;<a href="https://github.com/marcingrzejszczak/too-much-coding/tree/master/Spring/Primary">Too Much Coding's Github repository</a>&nbsp;or on&nbsp;<a href="https://bitbucket.org/gregorin1987/too-much-coding/src/6c9b91a33f7d40032ff7c650d17bf60bd8c34625/Spring/Primary/?at=default">Too Much Coding's Bitbucket repository</a>.</div>
+
+
+        <hr class="divider-short"/>
+
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+<hr class="divider-short"/>
+
+<div class="archive-link">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        
+          <a class="pull-left" href="/blog/2013/09/30/review-of-getting-started-with-guava/" title="Previous Post: Review of the Getting Started with Guava book">&laquo; Previous: Review of the Getting Started with Guava book</a>
+        
+
+        
+          <a class="pull-right" href="/blog/2013/12/16/review-of-instant-mock-testing-with/" title="Next Post: Review of the Instant Mock Testing with PowerMock">Next: Review of the Instant Mock Testing with PowerMock &raquo;</a>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="her-row">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-1">
+  <a href="/"><h4>Home</h4></a>
+</div>
+
+<div class="col-md-2">
+  <div class="social-icon-list">
+    
+    <a href="https://twitter.com/mgrzejszczak"><img src="/images/glyphicons_social_31_twitter.png"/></a>
+    
+
+    
+    <a href="https://github.com/marcingrzejszczak"><img src="/images/glyphicons_social_21_github.png"/></a>
+    
+
+    
+
+    
+  </div>
+</div>
+
+<div class="pull-right">
+  <h4>Powered by <a href="http://octopress.org/">Octopress</a>. Designed by <a href="http://AdrianArtiles.com">Adrian Artiles</a>.</h4>
+</div>
+
+
+    </div>
+  </div>
+</footer>
+
+    
+  </body>
+</html>

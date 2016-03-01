@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Introduction to Groovy Runtime Metaprogramming and AST Transforms - TOO MUCH CODING BLOG</title>
+  <meta name="author" content="Marcin Grzejszczak">
+
+  
+  <meta name="description" content="Introduction to Groovy Runtime Metaprogramming and AST Transforms written in ast, ast transforms, category, groovy, mixin Hi!I'm very happy to share &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://marcingrzejszczak.github.io/blog/2014/02/04/introduction-to-groovy-runtime">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="TOO MUCH CODING BLOG" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  
+
+</head>
+
+  <body>
+    <a href="/" class="home-icon">
+      <img src="/images/home.png"/>
+    </a>
+
+    <article role="article" class="full-single-article">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <h1>Introduction to Groovy Runtime Metaprogramming and AST Transforms</h1>
+        <div class="meta">
+          written 
+
+
+
+
+
+
+
+
+  
+
+
+
+<time datetime="2014-02-04T23:50:00+01:00" pubdate data-updated="true"></time>
+          
+
+in
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/ast/'>ast</a>, <a class='category' href='/blog/categories/ast-transforms/'>ast transforms</a>, <a class='category' href='/blog/categories/category/'>category</a>, <a class='category' href='/blog/categories/groovy/'>groovy</a>, <a class='category' href='/blog/categories/mixin/'>mixin</a>
+  
+</span>
+
+
+        </div>
+        <div class='post'>
+Hi!<br /><br />I'm very happy to share my presentation regarding <b><i>Groovy metaprogramming and AST transforms</i></b>. The slides are available at <a href="http://www.slideshare.net/MarcinGrzejszczak/introduction-to-groovy-runtime-metaprogramming-and-ast-transforms">SlideShare</a>&nbsp;and the code is available at <a href="https://bitbucket.org/gregorin1987/too-much-coding/src/e5ab7c69ab7b2796075fd6f087fbf31346aa2d2b/Groovy/ast/?at=default">TooMuchCoding Bitbucket</a>&nbsp;and <a href="https://github.com/marcingrzejszczak/too-much-coding/tree/master/Groovy/ast">TooMuchCoding Github</a> repositories. If you have any problems with reading any part of the slides or sth just post a comment here and I'll tr to help you :)<br /><br />Enjoy!<br /><br /><br /><a name='more'></a>
+<!--more-->
+<br /><iframe allowfullscreen="" frameborder="0" height="356" marginheight="0" marginwidth="0" scrolling="no" src="http://www.slideshare.net/slideshow/embed_code/30820561" style="border-width: 1px 1px 0; border: 1px solid #CCC; margin-bottom: 5px; max-width: 100%;" width="427"> </iframe> <br /><div style="margin-bottom: 5px;"><strong> <a href="https://www.slideshare.net/MarcinGrzejszczak/introduction-to-groovy-runtime-metaprogramming-and-ast-transforms" target="_blank" title="Introduction to Groovy runtime metaprogramming and AST transforms">Introduction to Groovy runtime metaprogramming and AST transforms</a> </strong> from <strong><a href="http://www.slideshare.net/MarcinGrzejszczak" target="_blank">Marcin Grzejszczak</a></strong> <br /><br />I had a discussion with one of the readers regarding issues related to creating an AST transformation that would be used on classes (and not on scripts). Often you can see that such a transformation does not work for you even though it should. The problem might be that you have the AST transformation compiled in the same time toghether with the class that you annotated with AST transformation related annotation.<br /><br />What you have to remember about is that your AST transformation related classes have to be compiled prior to using (that's why you can often find that your AST transformation is working when you right click on your annotated class in your IDE (or Groovy console) and manually compile that particular class. That's because you compile that particular class when other classes have already been compiled. That's the very same scenario as with compiling a script that is using an AST transformation - first your tranformations are compiled and afterwards at runtime the script gets compiled.<br /><br />Please check the additional repository <a href="https://github.com/marcingrzejszczak/ast_examples">ast_examples</a> that consists of the same examples as in the <a href="https://github.com/marcingrzejszczak/too-much-coding">TooMuchCoding </a>repository together with an additional AST transformation that is set on a class.</div></div>
+
+
+        <hr class="divider-short"/>
+
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+<hr class="divider-short"/>
+
+<div class="archive-link">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        
+          <a class="pull-left" href="/blog/2013/12/16/review-of-instant-mock-testing-with/" title="Previous Post: Review of the Instant Mock Testing with PowerMock">&laquo; Previous: Review of the Instant Mock Testing with PowerMock</a>
+        
+
+        
+          <a class="pull-right" href="/blog/2014/02/19/warsaw-groovy-user-group-talk/" title="Next Post: Warsaw Groovy User Group talk">Next: Warsaw Groovy User Group talk &raquo;</a>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="her-row">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-1">
+  <a href="/"><h4>Home</h4></a>
+</div>
+
+<div class="col-md-2">
+  <div class="social-icon-list">
+    
+    <a href="https://twitter.com/mgrzejszczak"><img src="/images/glyphicons_social_31_twitter.png"/></a>
+    
+
+    
+    <a href="https://github.com/marcingrzejszczak"><img src="/images/glyphicons_social_21_github.png"/></a>
+    
+
+    
+
+    
+  </div>
+</div>
+
+<div class="pull-right">
+  <h4>Powered by <a href="http://octopress.org/">Octopress</a>. Designed by <a href="http://AdrianArtiles.com">Adrian Artiles</a>.</h4>
+</div>
+
+
+    </div>
+  </div>
+</footer>
+
+    
+  </body>
+</html>

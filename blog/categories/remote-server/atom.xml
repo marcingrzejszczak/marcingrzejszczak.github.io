@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Remote Server | TOO MUCH CODING BLOG]]></title>
+  <link href="http://marcingrzejszczak.github.io/blog/categories/remote-server/atom.xml" rel="self"/>
+  <link href="http://marcingrzejszczak.github.io/"/>
+  <updated>2016-03-01T21:22:35+01:00</updated>
+  <id>http://marcingrzejszczak.github.io/</id>
+  <author>
+    <name><![CDATA[Marcin Grzejszczak]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Calculating Coherence Cluster Size on a Remote Server Using JMX]]></title>
+    <link href="http://marcingrzejszczak.github.io/blog/2012/10/16/calculating-coherence-cluster-size-on/"/>
+    <updated>2012-10-16T19:14:00+02:00</updated>
+    <id>http://marcingrzejszczak.github.io/blog/2012/10/16/calculating-coherence-cluster-size-on</id>
+    <content type="html"><![CDATA[<div class='post'>
+<br /><br />In one of the projects I had a problem regarding calculating the size of a Oracle Coherence cluster. It doesn't seem to difficult since there is already a nice piece of code that can do it for us:<br />
+<!--more-->
+<br /><a href="http://code.google.com/p/coherence-tools/source/browse/trunk/main/src/com/seovic/coherence/util/CalculateCacheSize.java?r=147">Calculating Coherence cluster size</a><br /><br />The problem is that this code is working properly only if the Coherence cluster is not remote. So how can we access it?<br /><br />We have to modify the following function<br /><br /><pre class="brush: java"><br />public static MBeanServer getMBeanServer() {<br />        MBeanServer server = null;<br />        for (Object o : MBeanServerFactory.findMBeanServer(null)) {<br />            server = (MBeanServer) o;<br />            if (DOMAIN_DEFAULT.length() == 0 ||<br />                server.getDefaultDomain().equals(DOMAIN_DEFAULT)) {<br />                break;<br />            }<br />            server = null;<br />        }<br />        if (server == null) {<br />            server = MBeanServerFactory.createMBeanServer(DOMAIN_DEFAULT);<br />        }<br /><br />        return server;<br />    }<br /></pre><br /><br />To this one <br /><pre class="brush: java"><br />public static MBeanServerConnection getMBeanServer() throws IOException {<br /> JMXServiceURL url = new JMXServiceURL("service://...");<br /> JMXConnector jmxc = JMXConnectorFactory.connect(url, null);<br /> return jmxc.getMBeanServerConnection();<br />}<br /></pre><br />And modify the line  <br /><br /><pre class="brush: java"><br />MBeanServer server = getMBeanServer();<br /></pre><br /><br />To use the new interface <br /><pre class="brush: java"><br />MBeanServerConnection server = getMBeanServer();<br /></pre><br />More information on how to define the Coherence JMX service URL and JMX for Coherence as such can be found here  <br /><br /><a href="http://coherence.oracle.com/display/COH32UG/Managing+Coherence+using+JMX">Managing Coherence using JMX</a>  </div>
+
+]]></content>
+  </entry>
+  
+</feed>
