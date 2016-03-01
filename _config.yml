@@ -92,10 +92,16 @@ delicious_count: 3
 
 # Disqus Comments
 disqus_short_name: toomuchcoding
-disqus_show_comment_count: false
+disqus_show_comment_count: true
 
 # Google Analytics
 google_analytics_tracking_id:
 
 # Facebook Like
 facebook_like: false
+
+# Email
+email: blog@toomuchcoding.com
+
+# Linked IN
+linkedin_user: marcin-grzejszczak-15565119

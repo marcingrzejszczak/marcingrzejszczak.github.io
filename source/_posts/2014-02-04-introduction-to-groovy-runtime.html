@@ -1,0 +1,16 @@
+---
+layout: post
+title: "Introduction to Groovy runtime metaprogramming and AST transforms"
+date: 2014-02-04T14:50:00-08:00
+categories:
+ - Mixin
+ - AST transforms
+ - AST
+ - Category
+ - Groovy
+---
+
+<div class='post'>
+Hi!<br /><br />I'm very happy to share my presentation regarding <b><i>Groovy metaprogramming and AST transforms</i></b>. The slides are available at <a href="http://www.slideshare.net/MarcinGrzejszczak/introduction-to-groovy-runtime-metaprogramming-and-ast-transforms">SlideShare</a>&nbsp;and the code is available at <a href="https://bitbucket.org/gregorin1987/too-much-coding/src/e5ab7c69ab7b2796075fd6f087fbf31346aa2d2b/Groovy/ast/?at=default">TooMuchCoding Bitbucket</a>&nbsp;and <a href="https://github.com/marcingrzejszczak/too-much-coding/tree/master/Groovy/ast">TooMuchCoding Github</a> repositories. If you have any problems with reading any part of the slides or sth just post a comment here and I'll tr to help you :)<br /><br />Enjoy!<br /><br /><br /><a name='more'></a>
+<!--more-->
+<br /><iframe allowfullscreen="" frameborder="0" height="356" marginheight="0" marginwidth="0" scrolling="no" src="http://www.slideshare.net/slideshow/embed_code/30820561" style="border-width: 1px 1px 0; border: 1px solid #CCC; margin-bottom: 5px; max-width: 100%;" width="427"> </iframe> <br /><div style="margin-bottom: 5px;"><strong> <a href="https://www.slideshare.net/MarcinGrzejszczak/introduction-to-groovy-runtime-metaprogramming-and-ast-transforms" target="_blank" title="Introduction to Groovy runtime metaprogramming and AST transforms">Introduction to Groovy runtime metaprogramming and AST transforms</a> </strong> from <strong><a href="http://www.slideshare.net/MarcinGrzejszczak" target="_blank">Marcin Grzejszczak</a></strong> <br /><br />I had a discussion with one of the readers regarding issues related to creating an AST transformation that would be used on classes (and not on scripts). Often you can see that such a transformation does not work for you even though it should. The problem might be that you have the AST transformation compiled in the same time toghether with the class that you annotated with AST transformation related annotation.<br /><br />What you have to remember about is that your AST transformation related classes have to be compiled prior to using (that's why you can often find that your AST transformation is working when you right click on your annotated class in your IDE (or Groovy console) and manually compile that particular class. That's because you compile that particular class when other classes have already been compiled. That's the very same scenario as with compiling a script that is using an AST transformation - first your tranformations are compiled and afterwards at runtime the script gets compiled.<br /><br />Please check the additional repository <a href="https://github.com/marcingrzejszczak/ast_examples">ast_examples</a> that consists of the same examples as in the <a href="https://github.com/marcingrzejszczak/too-much-coding">TooMuchCoding </a>repository together with an additional AST transformation that is set on a class.</div></div>
