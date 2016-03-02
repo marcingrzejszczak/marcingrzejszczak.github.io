@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Java | TOO MUCH CODING BLOG]]></title>
-  <link href="http://marcingrzejszczak.github.io/blog/categories/java/atom.xml" rel="self"/>
-  <link href="http://marcingrzejszczak.github.io/"/>
-  <updated>2016-03-02T08:13:48+01:00</updated>
-  <id>http://marcingrzejszczak.github.io/</id>
+  <link href="http://toomuchcoding.com/blog/categories/java/atom.xml" rel="self"/>
+  <link href="http://toomuchcoding.com/"/>
+  <updated>2016-03-02T13:52:41+01:00</updated>
+  <id>http://toomuchcoding.com/</id>
   <author>
     <name><![CDATA[Marcin Grzejszczak]]></name>
     <email><![CDATA[blog@toomuchcoding.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Concurrency in Web Applications]]></title>
-    <link href="http://marcingrzejszczak.github.io/blog/2013/01/28/concurrency-in-web-applications/"/>
+    <link href="http://toomuchcoding.com/blog/2013/01/28/concurrency-in-web-applications/"/>
     <updated>2013-01-28T10:20:00+01:00</updated>
-    <id>http://marcingrzejszczak.github.io/blog/2013/01/28/concurrency-in-web-applications</id>
+    <id>http://toomuchcoding.com/blog/2013/01/28/concurrency-in-web-applications</id>
     <content type="html"><![CDATA[<div class='post'>
 Nice article about <a href="http://blog.atena.pl/zrownoleglenie-operacji-w-aplikacji-webowej-2">concurrency in web applications (in Polish)</a></div>
 
@@ -26,9 +26,9 @@ Nice article about <a href="http://blog.atena.pl/zrownoleglenie-operacji-w-aplik
   
   <entry>
     <title type="html"><![CDATA[Drools Integration With Spring vs Manual Rules Creation]]></title>
-    <link href="http://marcingrzejszczak.github.io/blog/2013/01/15/drools-integration-with-spring-vs/"/>
+    <link href="http://toomuchcoding.com/blog/2013/01/15/drools-integration-with-spring-vs/"/>
     <updated>2013-01-15T17:04:00+01:00</updated>
-    <id>http://marcingrzejszczak.github.io/blog/2013/01/15/drools-integration-with-spring-vs</id>
+    <id>http://toomuchcoding.com/blog/2013/01/15/drools-integration-with-spring-vs</id>
     <content type="html"><![CDATA[<div class='post'>
 <br /><br />Hi!<br /><br />&nbsp;Often in your work you can come across with issues related to business logic. Let us assume that you have dozens of rules (for the time being in our project we have more than 50 and I used to work on a project where we had hundreds of those rules) that you have to implement, divide into some classes, subclasses, abstractions and of course unit test. This can be difficult and timeconsuming to both write and support. There are many ways of dealing with this problem and I will show you one of them - JBoss Drools.<br />
 <!--more-->
@@ -39,9 +39,9 @@ Nice article about <a href="http://blog.atena.pl/zrownoleglenie-operacji-w-aplik
   
   <entry>
     <title type="html"><![CDATA[Hamcrest Matchers, Guava Predicate and Builder Design Pattern]]></title>
-    <link href="http://marcingrzejszczak.github.io/blog/2013/01/04/hamcrest-matchers-guava-predicate-and/"/>
+    <link href="http://toomuchcoding.com/blog/2013/01/04/hamcrest-matchers-guava-predicate-and/"/>
     <updated>2013-01-04T01:35:00+01:00</updated>
-    <id>http://marcingrzejszczak.github.io/blog/2013/01/04/hamcrest-matchers-guava-predicate-and</id>
+    <id>http://toomuchcoding.com/blog/2013/01/04/hamcrest-matchers-guava-predicate-and</id>
     <content type="html"><![CDATA[<div class='post'>
 <br /><br />Hi coding addicts :)<br /><br />Often, while coding we have to deal with some POJO objects that have dozens of fields in them. Many times we initialize those classes through a constructor having dozens of arguments which is terrible in any possibly imaginable way :) Apart from that the functions that use those constructors are hardly testable. Let's take a closer look at using a Builder to change that situation, together with Hamcrest matchers and Guava Predicates to unit test it.<br />
 <!--more-->
@@ -52,9 +52,9 @@ Nice article about <a href="http://blog.atena.pl/zrownoleglenie-operacji-w-aplik
   
   <entry>
     <title type="html"><![CDATA[Google Guava Cache With Regular Expression Patterns]]></title>
-    <link href="http://marcingrzejszczak.github.io/blog/2012/12/24/google-guava-cache-with-regular/"/>
+    <link href="http://toomuchcoding.com/blog/2012/12/24/google-guava-cache-with-regular/"/>
     <updated>2012-12-24T14:54:00+01:00</updated>
-    <id>http://marcingrzejszczak.github.io/blog/2012/12/24/google-guava-cache-with-regular</id>
+    <id>http://toomuchcoding.com/blog/2012/12/24/google-guava-cache-with-regular</id>
     <content type="html"><![CDATA[<div class='post'>
 <br /><br />Hi!  Merry Christmas everyone :)  Quite recently I've seen <a href="http://toomuchcoding.blogspot.com/2012/12/google-guava.html">a nice presentation about Google Guava</a> and we came to the conclusion in our project that it could be really interesting to use the <a href="http://code.google.com/p/guava-libraries/wiki/CachesExplained">its Cache functionallity</a>.  Let us take a look at the regexp Pattern class and its <a href="http://docs.oracle.com/javase/6/docs/api/java/util/regex/Pattern.html#compile(java.lang.String)">compile function</a>. Quite often in the code we can see that each time a regular expression is being used a programmer is repeatidly calling the aforementioned Pattern.compile() function with the same argument thus compiling the same regular expression over and over again. What could be done however is to cache the result of such compilations - let us take a look at the RegexpUtils utility class:<br /><br />
 <!--more-->
@@ -65,9 +65,9 @@ Nice article about <a href="http://blog.atena.pl/zrownoleglenie-operacji-w-aplik
   
   <entry>
     <title type="html"><![CDATA[Google Guava]]></title>
-    <link href="http://marcingrzejszczak.github.io/blog/2012/12/07/google-guava/"/>
+    <link href="http://toomuchcoding.com/blog/2012/12/07/google-guava/"/>
     <updated>2012-12-07T13:18:00+01:00</updated>
-    <id>http://marcingrzejszczak.github.io/blog/2012/12/07/google-guava</id>
+    <id>http://toomuchcoding.com/blog/2012/12/07/google-guava</id>
     <content type="html"><![CDATA[<div class='post'>
 Some interesting link:<br /><br /><a href="http://tomaszdziurko.pl/2012/02/google-guava/">Very nice presentation about Google Guava</a>, <a href="https://github.com/tdziurko/Guava-Lessons">sources</a></div>
 

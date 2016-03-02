@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Jenkins-dsl | TOO MUCH CODING BLOG]]></title>
-  <link href="http://marcingrzejszczak.github.io/blog/categories/jenkins-dsl/atom.xml" rel="self"/>
-  <link href="http://marcingrzejszczak.github.io/"/>
-  <updated>2016-03-02T08:13:48+01:00</updated>
-  <id>http://marcingrzejszczak.github.io/</id>
+  <link href="http://toomuchcoding.com/blog/categories/jenkins-dsl/atom.xml" rel="self"/>
+  <link href="http://toomuchcoding.com/"/>
+  <updated>2016-03-02T13:52:41+01:00</updated>
+  <id>http://toomuchcoding.com/</id>
   <author>
     <name><![CDATA[Marcin Grzejszczak]]></name>
     <email><![CDATA[blog@toomuchcoding.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Microservice Deployment]]></title>
-    <link href="http://marcingrzejszczak.github.io/blog/2015/09/27/microservice-deployment/"/>
+    <link href="http://toomuchcoding.com/blog/2015/09/27/microservice-deployment/"/>
     <updated>2015-09-27T00:13:00+02:00</updated>
-    <id>http://marcingrzejszczak.github.io/blog/2015/09/27/microservice-deployment</id>
+    <id>http://toomuchcoding.com/blog/2015/09/27/microservice-deployment</id>
     <content type="html"><![CDATA[<div class='post'>
 It's been a while since my last post. In the meantime of course nothing has changed in terms of the microservice hype. I've been &nbsp;attending many microservice's talks and what I'm always missing are concrete details on many different subjects. One of which is deployment. In this post I'll try to depict how in a big, multinational company one would want to do microservice deployment. I'll walk you through the most basic deployment pipeline that could be created in such an enterprise.<br /><br /><a name='more'></a>
 <!--more-->

@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Mocks | TOO MUCH CODING BLOG]]></title>
-  <link href="http://marcingrzejszczak.github.io/blog/categories/mocks/atom.xml" rel="self"/>
-  <link href="http://marcingrzejszczak.github.io/"/>
-  <updated>2016-03-02T08:13:48+01:00</updated>
-  <id>http://marcingrzejszczak.github.io/</id>
+  <link href="http://toomuchcoding.com/blog/categories/mocks/atom.xml" rel="self"/>
+  <link href="http://toomuchcoding.com/"/>
+  <updated>2016-03-02T13:52:41+01:00</updated>
+  <id>http://toomuchcoding.com/</id>
   <author>
     <name><![CDATA[Marcin Grzejszczak]]></name>
     <email><![CDATA[blog@toomuchcoding.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Injecting Test Doubles in Spring Using Mockito and BeanPostProcessors]]></title>
-    <link href="http://marcingrzejszczak.github.io/blog/2013/08/09/injecting-test-doubles-in-spring-using/"/>
+    <link href="http://toomuchcoding.com/blog/2013/08/09/injecting-test-doubles-in-spring-using/"/>
     <updated>2013-08-09T14:39:00+02:00</updated>
-    <id>http://marcingrzejszczak.github.io/blog/2013/08/09/injecting-test-doubles-in-spring-using</id>
+    <id>http://toomuchcoding.com/blog/2013/08/09/injecting-test-doubles-in-spring-using</id>
     <content type="html"><![CDATA[<div class='post'>
 <br />I'm pretty sure that if you have ever used Spring and are familliar with unit testing, you have encountered a problem related to injecting mocks / spies (Test Doubles) in the Spring's application context which you wouldn't want to modify. This article presents an approach how to solve this issue using Spring's components.<br />
 <!--more-->
@@ -28,9 +28,9 @@
   
   <entry>
     <title type="html"><![CDATA[Spock - Return Nested Spies / Mocks]]></title>
-    <link href="http://marcingrzejszczak.github.io/blog/2013/08/06/spock-return-nested-spies-mocks/"/>
+    <link href="http://toomuchcoding.com/blog/2013/08/06/spock-return-nested-spies-mocks/"/>
     <updated>2013-08-06T13:24:00+02:00</updated>
-    <id>http://marcingrzejszczak.github.io/blog/2013/08/06/spock-return-nested-spies-mocks</id>
+    <id>http://toomuchcoding.com/blog/2013/08/06/spock-return-nested-spies-mocks</id>
     <content type="html"><![CDATA[<div class='post'>
 <br />Hi! Some time ago I have written an article about Mockito and using <a href="http://toomuchcoding.blogspot.com/2013/06/mockito-returndeepstubs-for-jaxb.html">RETURNS_DEEP_STUBS when working with JAXB</a>. Quite recently we have faced a similliar issue with deeply nesetd JAXB and the awesome testing framework written in Groovy called&nbsp;<a href="https://code.google.com/p/spock/">Spock</a>. Natively Spock does not support creating deep stubs or spies so we needed to create a workaround for it and this article will show you how to do it.<br />
 <!--more-->
@@ -41,9 +41,9 @@
   
   <entry>
     <title type="html"><![CDATA[Mockito InvocationOnMock - Checking an Argument]]></title>
-    <link href="http://marcingrzejszczak.github.io/blog/2012/10/24/mockito-invocationonmock-checking/"/>
+    <link href="http://toomuchcoding.com/blog/2012/10/24/mockito-invocationonmock-checking/"/>
     <updated>2012-10-24T23:22:00+02:00</updated>
-    <id>http://marcingrzejszczak.github.io/blog/2012/10/24/mockito-invocationonmock-checking</id>
+    <id>http://toomuchcoding.com/blog/2012/10/24/mockito-invocationonmock-checking</id>
     <content type="html"><![CDATA[<div class='post'>
 <br /><br />Hi!<br /><br />In one of my projects we had a very interesting situation in terms of testing. We couldn't mock an invocation of a static method due to the fact that PowerMock was not allowed to be used so there were plenty of objects and dependencies being initialized. What is more we were using a custom made dependency injection system that had a possibility of injecting a mock.<br />
 <!--more-->

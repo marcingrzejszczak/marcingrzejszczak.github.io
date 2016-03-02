@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Jsonassert | TOO MUCH CODING BLOG]]></title>
-  <link href="http://marcingrzejszczak.github.io/blog/categories/jsonassert/atom.xml" rel="self"/>
-  <link href="http://marcingrzejszczak.github.io/"/>
-  <updated>2016-03-02T08:13:48+01:00</updated>
-  <id>http://marcingrzejszczak.github.io/</id>
+  <link href="http://toomuchcoding.com/blog/categories/jsonassert/atom.xml" rel="self"/>
+  <link href="http://toomuchcoding.com/"/>
+  <updated>2016-03-02T13:52:41+01:00</updated>
+  <id>http://toomuchcoding.com/</id>
   <author>
     <name><![CDATA[Marcin Grzejszczak]]></name>
     <email><![CDATA[blog@toomuchcoding.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[JSON Assert Lib Released]]></title>
-    <link href="http://marcingrzejszczak.github.io/blog/2016/02/27/json-assert-lib-released/"/>
+    <link href="http://toomuchcoding.com/blog/2016/02/27/json-assert-lib-released/"/>
     <updated>2016-02-27T23:20:00+01:00</updated>
-    <id>http://marcingrzejszczak.github.io/blog/2016/02/27/json-assert-lib-released</id>
+    <id>http://toomuchcoding.com/blog/2016/02/27/json-assert-lib-released</id>
     <content type="html"><![CDATA[<div class='post'>
 I'm really happy to present the <a href="https://github.com/marcingrzejszczak/jsonassert">JSON Assert library</a>&nbsp;-&nbsp;over-the-weekend project that came out from the <a href="https://github.com/Codearte/accurest">AccuREST library</a>. This post will describe the rationale behind creating this tool and how to use it.<br /><br /><br /><a name='more'></a>
 <!--more-->

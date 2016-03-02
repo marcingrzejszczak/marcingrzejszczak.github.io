@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Mockitojunitrunner | TOO MUCH CODING BLOG]]></title>
-  <link href="http://marcingrzejszczak.github.io/blog/categories/mockitojunitrunner/atom.xml" rel="self"/>
-  <link href="http://marcingrzejszczak.github.io/"/>
-  <updated>2016-03-02T08:13:48+01:00</updated>
-  <id>http://marcingrzejszczak.github.io/</id>
+  <link href="http://toomuchcoding.com/blog/categories/mockitojunitrunner/atom.xml" rel="self"/>
+  <link href="http://toomuchcoding.com/"/>
+  <updated>2016-03-02T13:52:41+01:00</updated>
+  <id>http://toomuchcoding.com/</id>
   <author>
     <name><![CDATA[Marcin Grzejszczak]]></name>
     <email><![CDATA[blog@toomuchcoding.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Mockito - Extra Interfaces With Annotations and Static Methods]]></title>
-    <link href="http://marcingrzejszczak.github.io/blog/2013/06/12/mockito-extra-interfaces-with/"/>
+    <link href="http://toomuchcoding.com/blog/2013/06/12/mockito-extra-interfaces-with/"/>
     <updated>2013-06-12T13:12:00+02:00</updated>
-    <id>http://marcingrzejszczak.github.io/blog/2013/06/12/mockito-extra-interfaces-with</id>
+    <id>http://toomuchcoding.com/blog/2013/06/12/mockito-extra-interfaces-with</id>
     <content type="html"><![CDATA[<div class='post'>
 <br />In the code I have quite recently came across a really bad piece of code that based on class casting in terms of performing some actions on objects. Of course the code needed to be refactored but sometimes you can't do it / or don't want to do it (and it should be understandable) if first you don't have unit tests of that functionality. In the following post I will show how to test such code, how to refactor it and in fact what I think about such code ;) <div><br /></div><div><a name='more'></a><br />
 <!--more-->

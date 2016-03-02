@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Jaxb | TOO MUCH CODING BLOG]]></title>
-  <link href="http://marcingrzejszczak.github.io/blog/categories/jaxb/atom.xml" rel="self"/>
-  <link href="http://marcingrzejszczak.github.io/"/>
-  <updated>2016-03-02T08:13:48+01:00</updated>
-  <id>http://marcingrzejszczak.github.io/</id>
+  <link href="http://toomuchcoding.com/blog/categories/jaxb/atom.xml" rel="self"/>
+  <link href="http://toomuchcoding.com/"/>
+  <updated>2016-03-02T13:52:41+01:00</updated>
+  <id>http://toomuchcoding.com/</id>
   <author>
     <name><![CDATA[Marcin Grzejszczak]]></name>
     <email><![CDATA[blog@toomuchcoding.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Mockito - RETURNS_DEEP_STUBS for JAXB]]></title>
-    <link href="http://marcingrzejszczak.github.io/blog/2013/06/08/mockito-returndeepstubs-for-jaxb/"/>
+    <link href="http://toomuchcoding.com/blog/2013/06/08/mockito-returndeepstubs-for-jaxb/"/>
     <updated>2013-06-08T21:10:00+02:00</updated>
-    <id>http://marcingrzejszczak.github.io/blog/2013/06/08/mockito-returndeepstubs-for-jaxb</id>
+    <id>http://toomuchcoding.com/blog/2013/06/08/mockito-returndeepstubs-for-jaxb</id>
     <content type="html"><![CDATA[<div class='post'>
 <br />Sorry for not having written for some time but I was busy with writing the JBoss Drools Refcard for DZone and I am in the middle of writing a book about Mockito so I don't have too much time left for blogging...<br />
 <!--more-->
@@ -28,9 +28,9 @@
   
   <entry>
     <title type="html"><![CDATA[Apache Camel With Spring, Routing With Enrichment Service]]></title>
-    <link href="http://marcingrzejszczak.github.io/blog/2012/11/22/apache-camel-with-spring-routing-with/"/>
+    <link href="http://toomuchcoding.com/blog/2012/11/22/apache-camel-with-spring-routing-with/"/>
     <updated>2012-11-22T23:13:00+01:00</updated>
-    <id>http://marcingrzejszczak.github.io/blog/2012/11/22/apache-camel-with-spring-routing-with</id>
+    <id>http://toomuchcoding.com/blog/2012/11/22/apache-camel-with-spring-routing-with</id>
     <content type="html"><![CDATA[<div class='post'>
 <br /><br />Sorry for not having posted anything in some time but I had plenty of work. Anyway today I will continue the example with JMS that I've shown you some time ago.<br />
 <!--more-->
@@ -41,9 +41,9 @@
   
   <entry>
     <title type="html"><![CDATA[Spring JMS, Message Automatic Conversion, JMS Template]]></title>
-    <link href="http://marcingrzejszczak.github.io/blog/2012/11/05/spring-jms-message-automatic-conversion/"/>
+    <link href="http://toomuchcoding.com/blog/2012/11/05/spring-jms-message-automatic-conversion/"/>
     <updated>2012-11-05T02:29:00+01:00</updated>
-    <id>http://marcingrzejszczak.github.io/blog/2012/11/05/spring-jms-message-automatic-conversion</id>
+    <id>http://toomuchcoding.com/blog/2012/11/05/spring-jms-message-automatic-conversion</id>
     <content type="html"><![CDATA[<div class='post'>
 <br /><br />Hi!<br /><br />In one of my projects I was supposed to create a message router that like all routers was supposed to take the JMS messages from one topic and put it into another one. The message itself was a JMS text message that in fact contained an XML message. What is more after having received it I was supposed to enrich the message with some additional data.<br />
 <!--more-->
