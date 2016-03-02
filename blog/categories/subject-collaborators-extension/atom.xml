@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Subject-collaborators-extension | TOO MUCH CODING BLOG]]></title>
+  <title><![CDATA[Category: subject-collaborators-extension | TOO MUCH CODING]]></title>
   <link href="http://toomuchcoding.com/blog/categories/subject-collaborators-extension/atom.xml" rel="self"/>
   <link href="http://toomuchcoding.com/"/>
-  <updated>2016-03-02T13:52:41+01:00</updated>
+  <updated>2016-03-02T21:26:10+01:00</updated>
   <id>http://toomuchcoding.com/</id>
   <author>
     <name><![CDATA[Marcin Grzejszczak]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Spock Subject Collaborators Extension 1.0.1 Released!]]></title>
+    <title type="html"><![CDATA[Spock Subject Collaborators Extension 1.0.1 released!]]></title>
     <link href="http://toomuchcoding.com/blog/2014/12/17/spock-subject-collaborators-extension/"/>
     <updated>2014-12-17T23:28:00+01:00</updated>
     <id>http://toomuchcoding.com/blog/2014/12/17/spock-subject-collaborators-extension</id>

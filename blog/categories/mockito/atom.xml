@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Mockito | TOO MUCH CODING BLOG]]></title>
+  <title><![CDATA[Category: mockito | TOO MUCH CODING]]></title>
   <link href="http://toomuchcoding.com/blog/categories/mockito/atom.xml" rel="self"/>
   <link href="http://toomuchcoding.com/"/>
-  <updated>2016-03-02T13:52:41+01:00</updated>
+  <updated>2016-03-02T21:26:10+01:00</updated>
   <id>http://toomuchcoding.com/</id>
   <author>
     <name><![CDATA[Marcin Grzejszczak]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Mockito Cookbook Is Out!!]]></title>
+    <title type="html"><![CDATA[Mockito Cookbook is out!!]]></title>
     <link href="http://toomuchcoding.com/blog/2014/06/25/mockito-cookbook-is-out/"/>
     <updated>2014-06-25T19:34:00+02:00</updated>
     <id>http://toomuchcoding.com/blog/2014/06/25/mockito-cookbook-is-out</id>
@@ -47,7 +47,7 @@ Hi!<br /><br />Since I was asked for the code to the<a href="http://www.packtpub
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Mockito Instant - My Book Has Finally Been Published!]]></title>
+    <title type="html"><![CDATA[Mockito Instant - my book has finally been published!]]></title>
     <link href="http://toomuchcoding.com/blog/2013/08/28/mockito-instant-my-book-has-finally/"/>
     <updated>2013-08-28T10:20:00+02:00</updated>
     <id>http://toomuchcoding.com/blog/2013/08/28/mockito-instant-my-book-has-finally</id>
@@ -58,7 +58,7 @@ I am very pleased to announce that my book about Mockito entitled "Mockito Insta
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Injecting Test Doubles in Spring Using Mockito and BeanPostProcessors]]></title>
+    <title type="html"><![CDATA[Injecting Test Doubles in Spring using Mockito and BeanPostProcessors]]></title>
     <link href="http://toomuchcoding.com/blog/2013/08/09/injecting-test-doubles-in-spring-using/"/>
     <updated>2013-08-09T14:39:00+02:00</updated>
     <id>http://toomuchcoding.com/blog/2013/08/09/injecting-test-doubles-in-spring-using</id>

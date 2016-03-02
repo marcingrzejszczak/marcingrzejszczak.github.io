@@ -3,17 +3,13 @@
 <!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
 <!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
-<!DOCTYPE html>
-<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
-<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
-<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Spring AOP in Security - Controlling Creation of UI Components via Aspects - TOO MUCH CODING BLOG</title>
+  <title>Spring AOP in security - controlling creation of UI components via aspects - TOO MUCH CODING</title>
   <meta name="author" content="Marcin Grzejszczak">
 
   
-  <meta name="description" content="Spring AOP in Security - Controlling Creation of UI Components via Aspects written in aop, applicationcontext, java, spring, springjunit4classrunner &hellip;">
+  <meta name="description" content="The following post will show how in one of the projects that I took part in we used Spring's AOP to introduce some security related functionalities &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -22,30 +18,61 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://toomuchcoding.com/blog/2012/10/28/spring-aop-in-security-controlling">
+  <link rel="canonical" href="http://toomuchcoding.com/blog/2012/10/28/spring-aop-in-security-controlling/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <link href="/atom.xml" rel="alternate" title="TOO MUCH CODING BLOG" type="application/atom+xml">
   <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/ender.js"></script>
   <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="TOO MUCH CODING" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
   
 
 </head>
 
-  <body>
-    <a href="/" class="home-icon">
-      <img src="/images/home.png"/>
-    </a>
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">TOO MUCH CODING</a></h1>
+  
+    <h2>A blog for coding addicts</h2>
+  
+</hgroup>
 
-    <article role="article" class="full-single-article">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-8 col-md-offset-2">
-        <h1>Spring AOP in Security - Controlling Creation of UI Components via Aspects</h1>
-        <div class="meta">
-          written 
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:toomuchcoding.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Spring AOP in Security - Controlling Creation of UI Components via Aspects</h1>
+    
+    
+      <p class="meta">
+        
 
 
 
@@ -57,11 +84,44 @@
   
 
 
+<time datetime="2012-10-28T02:06:00+01:00" pubdate data-updated="true"></time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><div class='post'>
+<br /><br />The following post will show how in one of the projects that I took part in we used Spring's AOP to introduce some security related functionalities. The concept was such that in order for the user to see some UI components he needed to have a certain level of security privillages. If that requirement was not met then the UIComponent was not presented. Let's take a look at the project structure:<br />
+<!--more-->
+<br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-SpxeeCEcyaE/UIx6drCJ6sI/AAAAAAAAAHw/ASHo5_3RQQ0/s1600/Aspects+project.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="320" src="http://3.bp.blogspot.com/-SpxeeCEcyaE/UIx6drCJ6sI/AAAAAAAAAHw/ASHo5_3RQQ0/s320/Aspects+project.png" width="254" /></a></div><br />Then there were also the <b><span style="font-family: inherit;">aopApplicationContext.xml :</span></b><br /><br /><pre class="brush:xml">&lt;?xml version="1.0" encoding="UTF-8"?&gt;<br />&lt;beans xmlns="http://www.springframework.org/schema/beans"<br /> xmlns:context="http://www.springframework.org/schema/context"<br /> xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"<br /> xmlns:aop="http://www.springframework.org/schema/aop"<br /> xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd<br />        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd<br />        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd<br />        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.1.xsd<br />        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd"&gt;<br /><br /> &lt;aop:aspectj-autoproxy /&gt;<br /> &lt;context:annotation-config /&gt;<br /> &lt;context:component-scan base-package="pl.grzejszczak.marcin.aop"&gt;<br />  &lt;context:exclude-filter type="annotation" expression="org.aspectj.lang.annotation.Aspect"/&gt;<br /> &lt;/context:component-scan&gt;<br /> &lt;bean class="pl.grzejszczak.marcin.aop.interceptor.SecurityInterceptor" factory-method="aspectOf"/&gt; <br /><br />&lt;/beans&gt;<br /><br /></pre>Now let's take a look at the most interesting lines of the Spring's application context.<br /><br />First we have all the required schemas - I don't think that this needs to be explained in more depth.<br/> Then we have:<br /><pre class="brush:xml">&lt;aop:aspectj-autoproxy/&gt;</pre><br /><br />which enables the <b>@AspectJ</b> support.<br /><br />Next there is the<br /><br /><pre class="brush:xml">&lt;context:annotation-config /&gt;<br />&lt;context:component-scan base-package="pl.grzejszczak.marcin.aop"&gt;<br />    &lt;context:exclude-filter type="annotation" expression="org.aspectj.lang.annotation.Aspect"/&gt;<br />&lt;/context:component-scan&gt;</pre><br />first we are turning on Spring configuration via annotations. Then deliberatly we exclude aspects from being initialized as beans by Spring itself. Why? Because...<br /><br /><pre class="brush:xml">&lt;bean class="pl.grzejszczak.marcin.aop.interceptor.SecurityInterceptor" factory-method="aspectOf"/&gt;</pre><br />we want to create the aspect by ourselves and provide the <span style="font-family: 'Courier New', Courier, monospace;">factory-method="aspectOf"</span> . By doing so our aspect will be included in the autowiring process of our beans - thus all the fields annotated with the <span style="font-family: 'Courier New', Courier, monospace;">@Autowired</span> annotation will get the beans injected.<br /><br />Now let's move on to the code:<br /><br /><b>UserServiceImpl.java</b><br /><br /><pre class="brush:java">package pl.grzejszczak.marcin.aop.service;<br /><br />import org.springframework.stereotype.Service;<br /><br />import pl.grzejszczak.marcin.aop.type.Role;<br />import pl.grzejszczak.marcin.aop.user.UserHolder;<br /><br />@Service<br />public class UserServiceImpl implements UserService {<br /> private UserHolder userHolder;<br /><br /> @Override<br /> public UserHolder getCurrentUser() {<br />  return userHolder;<br /> }<br /><br /> @Override<br /> public void setCurrentUser(UserHolder userHolder) {<br />  this.userHolder = userHolder;<br /> }<br /><br /> @Override<br /> public Role getUserRole() {<br />  if (userHolder == null) {<br />   return null;<br />  }<br />  return userHolder.getUserRole();<br /> }<br />}<br /></pre><br />The class UserServiceImpl is immitating a service that would get the current user information from the db or from the current application context.<br /><br /><b>UserHolder.java</b><br /><br /><pre class="brush:java">package pl.grzejszczak.marcin.aop.user;<br /><br />import pl.grzejszczak.marcin.aop.type.Role;<br /><br />public class UserHolder {<br /> private Role userRole;<br /><br /> public UserHolder(Role userRole) {<br />  this.userRole = userRole;<br /> }<br /><br /> public Role getUserRole() {<br />  return userRole;<br /> }<br /><br /> public void setUserRole(Role userRole) {<br />  this.userRole = userRole;<br /> }<br />}<br /></pre><br /><br />This is a simple holder class that holds information about current user Role.<br /><br /><b>Role.java</b><br /><br /><pre class="brush:java">package pl.grzejszczak.marcin.aop.type;<br /><br /><br />public enum Role {<br /> ADMIN("ADM"), WRITER("WRT"), GUEST("GST");<br /><br /> private String name;<br /><br /> private Role(String name) {<br />  this.name = name;<br /> }<br /><br /> public static Role getRoleByName(String name) {<br /><br />  for (Role role : Role.values()) {<br /><br />   if (role.name.equals(name)) {<br />    return role;<br />   }<br />  }<br /><br />  throw new IllegalArgumentException("No such role exists [" + name + "]");<br /> }<br /><br /> public String getName() {<br />  return this.name;<br /> }<br /><br /> @Override<br /> public String toString() {<br />  return name;<br /> }<br />}<br /></pre><br />Role is an enum that defines a role for a person being an <i>Admin</i>, <i>Writer</i> or a <i>Guest</i>.<br /><br /><b>UIComponent.java</b><br /><br /><pre class="brush:java">package pl.grzejszczak.marcin.aop.ui;<br /><br />public abstract class UIComponent {<br /> protected String componentName;<br /><br /> protected String getComponentName() {<br />  return componentName;<br /> }<br /><br />}<br /></pre><br />An abstraction over concrete implementations of some UI components.<br /><br /><b>SomeComponentForAdminAndGuest.java</b><br /><br /><pre class="brush:java">package pl.grzejszczak.marcin.aop.ui;<br /><br />import pl.grzejszczak.marcin.aop.annotation.SecurityAnnotation;<br />import pl.grzejszczak.marcin.aop.type.Role;<br /><br />@SecurityAnnotation(allowedRole = { Role.ADMIN, Role.GUEST })<br />public class SomeComponentForAdminAndGuest extends UIComponent {<br /><br /> public SomeComponentForAdminAndGuest() {<br />  this.componentName = "SomeComponentForAdmin";<br /> }<br /><br /> public static UIComponent getComponent() {<br />  return new SomeComponentForAdminAndGuest();<br /> }<br />}<br /></pre><br />This component is an example of a UI component extention that can be seen only by users who have roles of <i>Admin</i> or <i>Guest</i>.<br /><br /><b>SecurityAnnotation.java</b><br /><br /><pre class="brush:java">package pl.grzejszczak.marcin.aop.annotation;<br /><br />import java.lang.annotation.Retention;<br />import java.lang.annotation.RetentionPolicy;<br /><br />import pl.grzejszczak.marcin.aop.type.Role;<br /><br />@Retention(RetentionPolicy.RUNTIME)<br />public @interface SecurityAnnotation {<br /> Role[] allowedRole();<br />}<br /></pre><br /><br />Annotation that defines a roles that can have this component created.<br /><br /><b>UIFactoryImpl.java</b><br /><br /><pre class="brush:java">package pl.grzejszczak.marcin.aop.ui;<br /><br />import org.apache.commons.lang.NullArgumentException;<br />import org.springframework.stereotype.Component;<br /><br />@Component<br />public class UIFactoryImpl implements UIFactory {<br /><br /> @Override<br /> public UIComponent createComponent(Class&lt;? extends UIComponent&gt; componentClass) throws Exception {<br />  if (componentClass == null) {<br />   throw new NullArgumentException("Provide class for the component");<br />  }<br />  return (UIComponent) Class.forName(componentClass.getName()).newInstance();<br /> }<br />}<br /></pre><br /><br />A factory class that given the class of an object that extends UIComponent returns a new instance of the given UIComponent.<br /><br /><b>SecurityInterceptor.java</b><br /><br /><pre class="brush:java"><br /><br />package pl.grzejszczak.marcin.aop.interceptor;<br /><br />import java.lang.annotation.Annotation;<br />import java.lang.reflect.AnnotatedElement;<br />import java.util.Arrays;<br />import java.util.List;<br /><br />import org.aspectj.lang.ProceedingJoinPoint;<br />import org.aspectj.lang.annotation.Around;<br />import org.aspectj.lang.annotation.Aspect;<br />import org.aspectj.lang.annotation.Pointcut;<br />import org.slf4j.Logger;<br />import org.slf4j.LoggerFactory;<br />import org.springframework.beans.factory.annotation.Autowired;<br /><br />import pl.grzejszczak.marcin.aop.annotation.SecurityAnnotation;<br />import pl.grzejszczak.marcin.aop.service.UserService;<br />import pl.grzejszczak.marcin.aop.type.Role;<br />import pl.grzejszczak.marcin.aop.ui.UIComponent;<br /><br />@Aspect<br />public class SecurityInterceptor {<br /> private static final Logger LOGGER = LoggerFactory.getLogger(SecurityInterceptor.class);<br /><br /> public SecurityInterceptor() {<br />  LOGGER.debug(&quot;Security Interceptor created&quot;);<br /> }<br /><br /> @Autowired<br /> private UserService userService;<br /><br /> @Pointcut(&quot;execution(pl.grzejszczak.marcin.aop.ui.UIComponent pl.grzejszczak.marcin.aop.ui.UIFactory.createComponent(..))&quot;)<br /> private void getComponent(ProceedingJoinPoint thisJoinPoint) {<br /> }<br /><br /> @Around(&quot;getComponent(thisJoinPoint)&quot;)<br /> public UIComponent checkSecurity(ProceedingJoinPoint thisJoinPoint) throws Throwable {<br />  LOGGER.info(&quot;Intercepting creation of a component&quot;);<br /><br />  Object[] arguments = thisJoinPoint.getArgs();<br />  if (arguments.length == 0) {<br />   return null;<br />  }<br /><br />  Annotation annotation = checkTheAnnotation(arguments);<br />  boolean securityAnnotationPresent = (annotation != null);<br /><br />  if (securityAnnotationPresent) {<br />   boolean userHasRole = verifyRole(annotation);<br />   if (!userHasRole) {<br />    LOGGER.info(&quot;Current user doesn't have permission to have this component created&quot;);<br />    return null;<br />   }<br />  }<br />  LOGGER.info(&quot;Current user has required permissions for creating a component&quot;);<br />  return (UIComponent) thisJoinPoint.proceed();<br /> }<br /><br /> /**<br />  * Basing on the method's argument check if the class is annotataed with<br />  * {@link SecurityAnnotation}<br />  * <br />  * @param arguments<br />  * @return<br />  */<br /> private Annotation checkTheAnnotation(Object[] arguments) {<br />  Object concreteClass = arguments[0];<br />  LOGGER.info(&quot;Argument's class - [{}]&quot;, new Object[] { arguments });<br />  AnnotatedElement annotatedElement = (AnnotatedElement) concreteClass;<br />  Annotation annotation = annotatedElement.getAnnotation(SecurityAnnotation.class);<br />  LOGGER.info(&quot;Annotation present - [{}]&quot;, new Object[] { annotation });<br />  return annotation;<br /> }<br /><br /> /**<br />  * The function verifies if the current user has sufficient privilages to<br />  * have the component built<br />  * <br />  * @param annotation<br />  * @return<br />  */<br /> private boolean verifyRole(Annotation annotation) {<br />  LOGGER.info(&quot;Security annotation is present so checking if the user can use it&quot;);<br />  SecurityAnnotation annotationRule = (SecurityAnnotation) annotation;<br />  List&lt;Role&gt; requiredRolesList = Arrays.asList(annotationRule.allowedRole());<br />  Role userRole = userService.getUserRole();<br />  return requiredRolesList.contains(userRole);<br /> }<br />}<br /></pre><br /><br />This is the <b>aspect</b> defined at the <b>pointcut</b> of <b>executing</b> a function <span style="font-family: 'Courier New', Courier, monospace;">createComponent</span> of the <span style="font-family: 'Courier New', Courier, monospace;">UIFactory</span> interface. Inside the <b>Around</b> <b>advice</b> there is the logic that first checks what kind of an argument has been passed to the method <span style="font-family: 'Courier New', Courier, monospace;">createComponent</span> (for example&nbsp;<span style="font-family: 'Courier New', Courier, monospace;">SomeComponentForAdminAndGuest.class</span>). Next it is checking if this class is annotated with <span style="font-family: 'Courier New', Courier, monospace;">SecurityAnnotation</span> and if that is the case it checks what kind of <span style="font-family: 'Courier New', Courier, monospace;">Roles</span> are required to have the component created. Afterwards it checks if the current user (from <span style="font-family: 'Courier New', Courier, monospace;">UserService</span> to <span style="font-family: 'Courier New', Courier, monospace;">UserHolder's</span> <span style="font-family: 'Courier New', Courier, monospace;">Roles</span>) has the required role to present the component. If that is the case <span style="font-family: 'Courier New', Courier, monospace;">thisJoinPoint.proceed()</span> is called which in effect returns the object of the class that extends <span style="font-family: 'Courier New', Courier, monospace;">UIComponent</span>.<br /><br />Now let's test it - here comes the&nbsp;<span style="font-family: 'Courier New', Courier, monospace;">SpringJUnit4ClassRunner</span><br /><br /><b>AopTest.java</b><br /><br /><pre class="brush:java">package pl.grzejszczak.marcin.aop;<br /><br />import org.junit.Assert;<br />import org.junit.Test;<br />import org.junit.runner.RunWith;<br />import org.springframework.beans.factory.annotation.Autowired;<br />import org.springframework.test.context.ContextConfiguration;<br />import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;<br /><br />import pl.grzejszczak.marcin.aop.service.UserService;<br />import pl.grzejszczak.marcin.aop.type.Role;<br />import pl.grzejszczak.marcin.aop.ui.SomeComponentForAdmin;<br />import pl.grzejszczak.marcin.aop.ui.SomeComponentForAdminAndGuest;<br />import pl.grzejszczak.marcin.aop.ui.SomeComponentForGuest;<br />import pl.grzejszczak.marcin.aop.ui.SomeComponentForWriter;<br />import pl.grzejszczak.marcin.aop.ui.UIFactory;<br />import pl.grzejszczak.marcin.aop.user.UserHolder;<br /><br />@RunWith(SpringJUnit4ClassRunner.class)<br />@ContextConfiguration(locations = { "classpath:aopApplicationContext.xml" })<br />public class AopTest {<br /><br /> @Autowired<br /> private UIFactory uiFactory;<br /><br /> @Autowired<br /> private UserService userService;<br /><br /> @Test<br /> public void adminTest() throws Exception {<br />  userService.setCurrentUser(new UserHolder(Role.ADMIN));<br />  Assert.assertNotNull(uiFactory.createComponent(SomeComponentForAdmin.class));<br />  Assert.assertNotNull(uiFactory.createComponent(SomeComponentForAdminAndGuest.class));<br />  Assert.assertNull(uiFactory.createComponent(SomeComponentForGuest.class));<br />  Assert.assertNull(uiFactory.createComponent(SomeComponentForWriter.class));<br /> }<br />}<br /></pre><br /><br />And the logs:<br /><br /><pre class="brush:xml"><br />pl.grzejszczak.marcin.aop.interceptor.SecurityInterceptor:26 Security Interceptor created<br />pl.grzejszczak.marcin.aop.interceptor.SecurityInterceptor:38 Intercepting creation of a component<br />pl.grzejszczak.marcin.aop.interceptor.SecurityInterceptor:48 Argument's class - [[class pl.grzejszczak.marcin.aop.ui.SomeComponentForAdmin]]<br />pl.grzejszczak.marcin.aop.interceptor.SecurityInterceptor:54 Annotation present - [@pl.grzejszczak.marcin.aop.annotation.SecurityAnnotation(allowedRole=[ADM])]<br />pl.grzejszczak.marcin.aop.interceptor.SecurityInterceptor:57 Security annotation is present so checking if the user can use it<br />pl.grzejszczak.marcin.aop.interceptor.SecurityInterceptor:70 Current user has required permissions for creating a component<br />pl.grzejszczak.marcin.aop.interceptor.SecurityInterceptor:38 Intercepting creation of a component<br />pl.grzejszczak.marcin.aop.interceptor.SecurityInterceptor:48 Argument's class - [[class pl.grzejszczak.marcin.aop.ui.SomeComponentForAdminAndGuest]]<br />pl.grzejszczak.marcin.aop.interceptor.SecurityInterceptor:54 Annotation present - [@pl.grzejszczak.marcin.aop.annotation.SecurityAnnotation(allowedRole=[ADM, GST])]<br />pl.grzejszczak.marcin.aop.interceptor.SecurityInterceptor:57 Security annotation is present so checking if the user can use it<br />pl.grzejszczak.marcin.aop.interceptor.SecurityInterceptor:70 Current user has required permissions for creating a component<br />pl.grzejszczak.marcin.aop.interceptor.SecurityInterceptor:38 Intercepting creation of a component<br />pl.grzejszczak.marcin.aop.interceptor.SecurityInterceptor:48 Argument's class - [[class pl.grzejszczak.marcin.aop.ui.SomeComponentForGuest]]<br />pl.grzejszczak.marcin.aop.interceptor.SecurityInterceptor:54 Annotation present - [@pl.grzejszczak.marcin.aop.annotation.SecurityAnnotation(allowedRole=[GST])]<br />pl.grzejszczak.marcin.aop.interceptor.SecurityInterceptor:57 Security annotation is present so checking if the user can use it<br />pl.grzejszczak.marcin.aop.interceptor.SecurityInterceptor:66 Current user doesn't have permission to have this component created<br />pl.grzejszczak.marcin.aop.interceptor.SecurityInterceptor:38 Intercepting creation of a component<br />pl.grzejszczak.marcin.aop.interceptor.SecurityInterceptor:48 Argument's class - [[class pl.grzejszczak.marcin.aop.ui.SomeComponentForWriter]]<br />pl.grzejszczak.marcin.aop.interceptor.SecurityInterceptor:54 Annotation present - [@pl.grzejszczak.marcin.aop.annotation.SecurityAnnotation(allowedRole=[WRT])]<br />pl.grzejszczak.marcin.aop.interceptor.SecurityInterceptor:57 Security annotation is present so checking if the user can use it<br />pl.grzejszczak.marcin.aop.interceptor.SecurityInterceptor:66 Current user doesn't have permission to have this component created<br /></pre><br />The unit test shows that for given Admin role only first two components get created whereas for the two others nulls are returned (due to the fact that user doesn't have proper rights).<br /><br />That is how in our project we used Spring's AOP to create a simple framework that would check if the user can have the given component created or not. Thanks to this after having programmed the aspects one doesn't have to remember about writing any security related code since it will be done for him.<br /><br />If you have any suggestions related to this post please feel free to comment it :)</div>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Marcin Grzejszczak</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
 
 <time datetime="2012-10-28T02:06:00+01:00" pubdate data-updated="true"></time>
-          
+      
 
-in
 <span class="categories">
   
     <a class='category' href='/blog/categories/aop/'>aop</a>, <a class='category' href='/blog/categories/applicationcontext/'>applicationcontext</a>, <a class='category' href='/blog/categories/java/'>java</a>, <a class='category' href='/blog/categories/spring/'>spring</a>, <a class='category' href='/blog/categories/springjunit4classrunner/'>springjunit4classrunner</a>, <a class='category' href='/blog/categories/unit-tests/'>unit tests</a>
@@ -69,75 +129,147 @@ in
 </span>
 
 
-        </div>
-        <div class='post'>
-<br /><br />The following post will show how in one of the projects that I took part in we used Spring's AOP to introduce some security related functionalities. The concept was such that in order for the user to see some UI components he needed to have a certain level of security privillages. If that requirement was not met then the UIComponent was not presented. Let's take a look at the project structure:<br />
-<!--more-->
-<br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-SpxeeCEcyaE/UIx6drCJ6sI/AAAAAAAAAHw/ASHo5_3RQQ0/s1600/Aspects+project.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="320" src="http://3.bp.blogspot.com/-SpxeeCEcyaE/UIx6drCJ6sI/AAAAAAAAAHw/ASHo5_3RQQ0/s320/Aspects+project.png" width="254" /></a></div><br />Then there were also the <b><span style="font-family: inherit;">aopApplicationContext.xml :</span></b><br /><br /><pre class="brush:xml">&lt;?xml version="1.0" encoding="UTF-8"?&gt;<br />&lt;beans xmlns="http://www.springframework.org/schema/beans"<br /> xmlns:context="http://www.springframework.org/schema/context"<br /> xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"<br /> xmlns:aop="http://www.springframework.org/schema/aop"<br /> xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd<br />        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd<br />        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd<br />        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.1.xsd<br />        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd"&gt;<br /><br /> &lt;aop:aspectj-autoproxy /&gt;<br /> &lt;context:annotation-config /&gt;<br /> &lt;context:component-scan base-package="pl.grzejszczak.marcin.aop"&gt;<br />  &lt;context:exclude-filter type="annotation" expression="org.aspectj.lang.annotation.Aspect"/&gt;<br /> &lt;/context:component-scan&gt;<br /> &lt;bean class="pl.grzejszczak.marcin.aop.interceptor.SecurityInterceptor" factory-method="aspectOf"/&gt; <br /><br />&lt;/beans&gt;<br /><br /></pre>Now let's take a look at the most interesting lines of the Spring's application context.<br /><br />First we have all the required schemas - I don't think that this needs to be explained in more depth.<br/> Then we have:<br /><pre class="brush:xml">&lt;aop:aspectj-autoproxy/&gt;</pre><br /><br />which enables the <b>@AspectJ</b> support.<br /><br />Next there is the<br /><br /><pre class="brush:xml">&lt;context:annotation-config /&gt;<br />&lt;context:component-scan base-package="pl.grzejszczak.marcin.aop"&gt;<br />    &lt;context:exclude-filter type="annotation" expression="org.aspectj.lang.annotation.Aspect"/&gt;<br />&lt;/context:component-scan&gt;</pre><br />first we are turning on Spring configuration via annotations. Then deliberatly we exclude aspects from being initialized as beans by Spring itself. Why? Because...<br /><br /><pre class="brush:xml">&lt;bean class="pl.grzejszczak.marcin.aop.interceptor.SecurityInterceptor" factory-method="aspectOf"/&gt;</pre><br />we want to create the aspect by ourselves and provide the <span style="font-family: 'Courier New', Courier, monospace;">factory-method="aspectOf"</span> . By doing so our aspect will be included in the autowiring process of our beans - thus all the fields annotated with the <span style="font-family: 'Courier New', Courier, monospace;">@Autowired</span> annotation will get the beans injected.<br /><br />Now let's move on to the code:<br /><br /><b>UserServiceImpl.java</b><br /><br /><pre class="brush:java">package pl.grzejszczak.marcin.aop.service;<br /><br />import org.springframework.stereotype.Service;<br /><br />import pl.grzejszczak.marcin.aop.type.Role;<br />import pl.grzejszczak.marcin.aop.user.UserHolder;<br /><br />@Service<br />public class UserServiceImpl implements UserService {<br /> private UserHolder userHolder;<br /><br /> @Override<br /> public UserHolder getCurrentUser() {<br />  return userHolder;<br /> }<br /><br /> @Override<br /> public void setCurrentUser(UserHolder userHolder) {<br />  this.userHolder = userHolder;<br /> }<br /><br /> @Override<br /> public Role getUserRole() {<br />  if (userHolder == null) {<br />   return null;<br />  }<br />  return userHolder.getUserRole();<br /> }<br />}<br /></pre><br />The class UserServiceImpl is immitating a service that would get the current user information from the db or from the current application context.<br /><br /><b>UserHolder.java</b><br /><br /><pre class="brush:java">package pl.grzejszczak.marcin.aop.user;<br /><br />import pl.grzejszczak.marcin.aop.type.Role;<br /><br />public class UserHolder {<br /> private Role userRole;<br /><br /> public UserHolder(Role userRole) {<br />  this.userRole = userRole;<br /> }<br /><br /> public Role getUserRole() {<br />  return userRole;<br /> }<br /><br /> public void setUserRole(Role userRole) {<br />  this.userRole = userRole;<br /> }<br />}<br /></pre><br /><br />This is a simple holder class that holds information about current user Role.<br /><br /><b>Role.java</b><br /><br /><pre class="brush:java">package pl.grzejszczak.marcin.aop.type;<br /><br /><br />public enum Role {<br /> ADMIN("ADM"), WRITER("WRT"), GUEST("GST");<br /><br /> private String name;<br /><br /> private Role(String name) {<br />  this.name = name;<br /> }<br /><br /> public static Role getRoleByName(String name) {<br /><br />  for (Role role : Role.values()) {<br /><br />   if (role.name.equals(name)) {<br />    return role;<br />   }<br />  }<br /><br />  throw new IllegalArgumentException("No such role exists [" + name + "]");<br /> }<br /><br /> public String getName() {<br />  return this.name;<br /> }<br /><br /> @Override<br /> public String toString() {<br />  return name;<br /> }<br />}<br /></pre><br />Role is an enum that defines a role for a person being an <i>Admin</i>, <i>Writer</i> or a <i>Guest</i>.<br /><br /><b>UIComponent.java</b><br /><br /><pre class="brush:java">package pl.grzejszczak.marcin.aop.ui;<br /><br />public abstract class UIComponent {<br /> protected String componentName;<br /><br /> protected String getComponentName() {<br />  return componentName;<br /> }<br /><br />}<br /></pre><br />An abstraction over concrete implementations of some UI components.<br /><br /><b>SomeComponentForAdminAndGuest.java</b><br /><br /><pre class="brush:java">package pl.grzejszczak.marcin.aop.ui;<br /><br />import pl.grzejszczak.marcin.aop.annotation.SecurityAnnotation;<br />import pl.grzejszczak.marcin.aop.type.Role;<br /><br />@SecurityAnnotation(allowedRole = { Role.ADMIN, Role.GUEST })<br />public class SomeComponentForAdminAndGuest extends UIComponent {<br /><br /> public SomeComponentForAdminAndGuest() {<br />  this.componentName = "SomeComponentForAdmin";<br /> }<br /><br /> public static UIComponent getComponent() {<br />  return new SomeComponentForAdminAndGuest();<br /> }<br />}<br /></pre><br />This component is an example of a UI component extention that can be seen only by users who have roles of <i>Admin</i> or <i>Guest</i>.<br /><br /><b>SecurityAnnotation.java</b><br /><br /><pre class="brush:java">package pl.grzejszczak.marcin.aop.annotation;<br /><br />import java.lang.annotation.Retention;<br />import java.lang.annotation.RetentionPolicy;<br /><br />import pl.grzejszczak.marcin.aop.type.Role;<br /><br />@Retention(RetentionPolicy.RUNTIME)<br />public @interface SecurityAnnotation {<br /> Role[] allowedRole();<br />}<br /></pre><br /><br />Annotation that defines a roles that can have this component created.<br /><br /><b>UIFactoryImpl.java</b><br /><br /><pre class="brush:java">package pl.grzejszczak.marcin.aop.ui;<br /><br />import org.apache.commons.lang.NullArgumentException;<br />import org.springframework.stereotype.Component;<br /><br />@Component<br />public class UIFactoryImpl implements UIFactory {<br /><br /> @Override<br /> public UIComponent createComponent(Class&lt;? extends UIComponent&gt; componentClass) throws Exception {<br />  if (componentClass == null) {<br />   throw new NullArgumentException("Provide class for the component");<br />  }<br />  return (UIComponent) Class.forName(componentClass.getName()).newInstance();<br /> }<br />}<br /></pre><br /><br />A factory class that given the class of an object that extends UIComponent returns a new instance of the given UIComponent.<br /><br /><b>SecurityInterceptor.java</b><br /><br /><pre class="brush:java"><br /><br />package pl.grzejszczak.marcin.aop.interceptor;<br /><br />import java.lang.annotation.Annotation;<br />import java.lang.reflect.AnnotatedElement;<br />import java.util.Arrays;<br />import java.util.List;<br /><br />import org.aspectj.lang.ProceedingJoinPoint;<br />import org.aspectj.lang.annotation.Around;<br />import org.aspectj.lang.annotation.Aspect;<br />import org.aspectj.lang.annotation.Pointcut;<br />import org.slf4j.Logger;<br />import org.slf4j.LoggerFactory;<br />import org.springframework.beans.factory.annotation.Autowired;<br /><br />import pl.grzejszczak.marcin.aop.annotation.SecurityAnnotation;<br />import pl.grzejszczak.marcin.aop.service.UserService;<br />import pl.grzejszczak.marcin.aop.type.Role;<br />import pl.grzejszczak.marcin.aop.ui.UIComponent;<br /><br />@Aspect<br />public class SecurityInterceptor {<br /> private static final Logger LOGGER = LoggerFactory.getLogger(SecurityInterceptor.class);<br /><br /> public SecurityInterceptor() {<br />  LOGGER.debug(&quot;Security Interceptor created&quot;);<br /> }<br /><br /> @Autowired<br /> private UserService userService;<br /><br /> @Pointcut(&quot;execution(pl.grzejszczak.marcin.aop.ui.UIComponent pl.grzejszczak.marcin.aop.ui.UIFactory.createComponent(..))&quot;)<br /> private void getComponent(ProceedingJoinPoint thisJoinPoint) {<br /> }<br /><br /> @Around(&quot;getComponent(thisJoinPoint)&quot;)<br /> public UIComponent checkSecurity(ProceedingJoinPoint thisJoinPoint) throws Throwable {<br />  LOGGER.info(&quot;Intercepting creation of a component&quot;);<br /><br />  Object[] arguments = thisJoinPoint.getArgs();<br />  if (arguments.length == 0) {<br />   return null;<br />  }<br /><br />  Annotation annotation = checkTheAnnotation(arguments);<br />  boolean securityAnnotationPresent = (annotation != null);<br /><br />  if (securityAnnotationPresent) {<br />   boolean userHasRole = verifyRole(annotation);<br />   if (!userHasRole) {<br />    LOGGER.info(&quot;Current user doesn't have permission to have this component created&quot;);<br />    return null;<br />   }<br />  }<br />  LOGGER.info(&quot;Current user has required permissions for creating a component&quot;);<br />  return (UIComponent) thisJoinPoint.proceed();<br /> }<br /><br /> /**<br />  * Basing on the method's argument check if the class is annotataed with<br />  * {@link SecurityAnnotation}<br />  * <br />  * @param arguments<br />  * @return<br />  */<br /> private Annotation checkTheAnnotation(Object[] arguments) {<br />  Object concreteClass = arguments[0];<br />  LOGGER.info(&quot;Argument's class - [{}]&quot;, new Object[] { arguments });<br />  AnnotatedElement annotatedElement = (AnnotatedElement) concreteClass;<br />  Annotation annotation = annotatedElement.getAnnotation(SecurityAnnotation.class);<br />  LOGGER.info(&quot;Annotation present - [{}]&quot;, new Object[] { annotation });<br />  return annotation;<br /> }<br /><br /> /**<br />  * The function verifies if the current user has sufficient privilages to<br />  * have the component built<br />  * <br />  * @param annotation<br />  * @return<br />  */<br /> private boolean verifyRole(Annotation annotation) {<br />  LOGGER.info(&quot;Security annotation is present so checking if the user can use it&quot;);<br />  SecurityAnnotation annotationRule = (SecurityAnnotation) annotation;<br />  List&lt;Role&gt; requiredRolesList = Arrays.asList(annotationRule.allowedRole());<br />  Role userRole = userService.getUserRole();<br />  return requiredRolesList.contains(userRole);<br /> }<br />}<br /></pre><br /><br />This is the <b>aspect</b> defined at the <b>pointcut</b> of <b>executing</b> a function <span style="font-family: 'Courier New', Courier, monospace;">createComponent</span> of the <span style="font-family: 'Courier New', Courier, monospace;">UIFactory</span> interface. Inside the <b>Around</b> <b>advice</b> there is the logic that first checks what kind of an argument has been passed to the method <span style="font-family: 'Courier New', Courier, monospace;">createComponent</span> (for example&nbsp;<span style="font-family: 'Courier New', Courier, monospace;">SomeComponentForAdminAndGuest.class</span>). Next it is checking if this class is annotated with <span style="font-family: 'Courier New', Courier, monospace;">SecurityAnnotation</span> and if that is the case it checks what kind of <span style="font-family: 'Courier New', Courier, monospace;">Roles</span> are required to have the component created. Afterwards it checks if the current user (from <span style="font-family: 'Courier New', Courier, monospace;">UserService</span> to <span style="font-family: 'Courier New', Courier, monospace;">UserHolder's</span> <span style="font-family: 'Courier New', Courier, monospace;">Roles</span>) has the required role to present the component. If that is the case <span style="font-family: 'Courier New', Courier, monospace;">thisJoinPoint.proceed()</span> is called which in effect returns the object of the class that extends <span style="font-family: 'Courier New', Courier, monospace;">UIComponent</span>.<br /><br />Now let's test it - here comes the&nbsp;<span style="font-family: 'Courier New', Courier, monospace;">SpringJUnit4ClassRunner</span><br /><br /><b>AopTest.java</b><br /><br /><pre class="brush:java">package pl.grzejszczak.marcin.aop;<br /><br />import org.junit.Assert;<br />import org.junit.Test;<br />import org.junit.runner.RunWith;<br />import org.springframework.beans.factory.annotation.Autowired;<br />import org.springframework.test.context.ContextConfiguration;<br />import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;<br /><br />import pl.grzejszczak.marcin.aop.service.UserService;<br />import pl.grzejszczak.marcin.aop.type.Role;<br />import pl.grzejszczak.marcin.aop.ui.SomeComponentForAdmin;<br />import pl.grzejszczak.marcin.aop.ui.SomeComponentForAdminAndGuest;<br />import pl.grzejszczak.marcin.aop.ui.SomeComponentForGuest;<br />import pl.grzejszczak.marcin.aop.ui.SomeComponentForWriter;<br />import pl.grzejszczak.marcin.aop.ui.UIFactory;<br />import pl.grzejszczak.marcin.aop.user.UserHolder;<br /><br />@RunWith(SpringJUnit4ClassRunner.class)<br />@ContextConfiguration(locations = { "classpath:aopApplicationContext.xml" })<br />public class AopTest {<br /><br /> @Autowired<br /> private UIFactory uiFactory;<br /><br /> @Autowired<br /> private UserService userService;<br /><br /> @Test<br /> public void adminTest() throws Exception {<br />  userService.setCurrentUser(new UserHolder(Role.ADMIN));<br />  Assert.assertNotNull(uiFactory.createComponent(SomeComponentForAdmin.class));<br />  Assert.assertNotNull(uiFactory.createComponent(SomeComponentForAdminAndGuest.class));<br />  Assert.assertNull(uiFactory.createComponent(SomeComponentForGuest.class));<br />  Assert.assertNull(uiFactory.createComponent(SomeComponentForWriter.class));<br /> }<br />}<br /></pre><br /><br />And the logs:<br /><br /><pre class="brush:xml"><br />pl.grzejszczak.marcin.aop.interceptor.SecurityInterceptor:26 Security Interceptor created<br />pl.grzejszczak.marcin.aop.interceptor.SecurityInterceptor:38 Intercepting creation of a component<br />pl.grzejszczak.marcin.aop.interceptor.SecurityInterceptor:48 Argument's class - [[class pl.grzejszczak.marcin.aop.ui.SomeComponentForAdmin]]<br />pl.grzejszczak.marcin.aop.interceptor.SecurityInterceptor:54 Annotation present - [@pl.grzejszczak.marcin.aop.annotation.SecurityAnnotation(allowedRole=[ADM])]<br />pl.grzejszczak.marcin.aop.interceptor.SecurityInterceptor:57 Security annotation is present so checking if the user can use it<br />pl.grzejszczak.marcin.aop.interceptor.SecurityInterceptor:70 Current user has required permissions for creating a component<br />pl.grzejszczak.marcin.aop.interceptor.SecurityInterceptor:38 Intercepting creation of a component<br />pl.grzejszczak.marcin.aop.interceptor.SecurityInterceptor:48 Argument's class - [[class pl.grzejszczak.marcin.aop.ui.SomeComponentForAdminAndGuest]]<br />pl.grzejszczak.marcin.aop.interceptor.SecurityInterceptor:54 Annotation present - [@pl.grzejszczak.marcin.aop.annotation.SecurityAnnotation(allowedRole=[ADM, GST])]<br />pl.grzejszczak.marcin.aop.interceptor.SecurityInterceptor:57 Security annotation is present so checking if the user can use it<br />pl.grzejszczak.marcin.aop.interceptor.SecurityInterceptor:70 Current user has required permissions for creating a component<br />pl.grzejszczak.marcin.aop.interceptor.SecurityInterceptor:38 Intercepting creation of a component<br />pl.grzejszczak.marcin.aop.interceptor.SecurityInterceptor:48 Argument's class - [[class pl.grzejszczak.marcin.aop.ui.SomeComponentForGuest]]<br />pl.grzejszczak.marcin.aop.interceptor.SecurityInterceptor:54 Annotation present - [@pl.grzejszczak.marcin.aop.annotation.SecurityAnnotation(allowedRole=[GST])]<br />pl.grzejszczak.marcin.aop.interceptor.SecurityInterceptor:57 Security annotation is present so checking if the user can use it<br />pl.grzejszczak.marcin.aop.interceptor.SecurityInterceptor:66 Current user doesn't have permission to have this component created<br />pl.grzejszczak.marcin.aop.interceptor.SecurityInterceptor:38 Intercepting creation of a component<br />pl.grzejszczak.marcin.aop.interceptor.SecurityInterceptor:48 Argument's class - [[class pl.grzejszczak.marcin.aop.ui.SomeComponentForWriter]]<br />pl.grzejszczak.marcin.aop.interceptor.SecurityInterceptor:54 Annotation present - [@pl.grzejszczak.marcin.aop.annotation.SecurityAnnotation(allowedRole=[WRT])]<br />pl.grzejszczak.marcin.aop.interceptor.SecurityInterceptor:57 Security annotation is present so checking if the user can use it<br />pl.grzejszczak.marcin.aop.interceptor.SecurityInterceptor:66 Current user doesn't have permission to have this component created<br /></pre><br />The unit test shows that for given Admin role only first two components get created whereas for the two others nulls are returned (due to the fact that user doesn't have proper rights).<br /><br />That is how in our project we used Spring's AOP to create a simple framework that would check if the user can have the given component created or not. Thanks to this after having programmed the aspects one doesn't have to remember about writing any security related code since it will be done for him.<br /><br />If you have any suggestions related to this post please feel free to comment it :)</div>
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://toomuchcoding.com/blog/2012/10/28/spring-aop-in-security-controlling/" data-via="mgrzejszczak" data-counturl="http://toomuchcoding.com/blog/2012/10/28/spring-aop-in-security-controlling/" >Tweet</a>
+  
+  
+  
+</div>
 
-
-        <hr class="divider-short"/>
-
-        
-      </div>
-    </div>
-  </div>
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/10/24/mockito-invocationonmock-checking/" title="Previous Post: Mockito InvocationOnMock - checking an argument">&laquo; Mockito InvocationOnMock - checking an argument</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2012/11/05/spring-jms-message-automatic-conversion/" title="Next Post: Spring JMS, message automatic conversion, JMS template">Spring JMS, message automatic conversion, JMS template &raquo;</a>
+      
+    </p>
+  </footer>
 </article>
 
-<hr class="divider-short"/>
+</div>
 
-<div class="archive-link">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-8 col-md-offset-2">
-        
-          <a class="pull-left" href="/blog/2012/10/24/mockito-invocationonmock-checking/" title="Previous Post: Mockito InvocationOnMock - checking an argument">&laquo; Previous: Mockito InvocationOnMock - checking an argument</a>
-        
+<aside class="sidebar">
+  
+    <section>
+  <h1>About Me</h1>
+  <p>Enthusiast of clean coding and good design. Author of "Mockito Instant" and "Mockito Cookbook" books. Contributor to several open source projects (including Rest-assured, Drools, Moco, Mockito). Co-author of the Groovy @Builder, "micro-infra-spring", "spring-cloud-zookeeper", "spring-cloud-sleuth" microservices related open source solutions. Author of Uptodate Gradle plugin, Spock subjects-collaborators extension and gradle-test-profiler open source projects. Co-founder of the Warsaw Groovy User Group. A member of the Most Valuable Blogger program at DZone and Java Code Geeks. Interested in working with JVM languages, XP-driven projects with continuous deployment and most preferably microservice architecture.</p>
 
-        
-          <a class="pull-right" href="/blog/2012/11/05/spring-jms-message-automatic-conversion/" title="Next Post: Spring JMS, message automatic conversion, JMS template">Next: Spring JMS, message automatic conversion, JMS template &raquo;</a>
-        
-      </div>
+  <p>Homepage:</p>
+  <p><a href="http://marcin.grzejszczak.pl">http://marcin.grzejszczak.pl</a></p>
+
+  <p>Github profile</p>
+  <p><a href="https://github.com/marcingrzejszczak">https://github.com/marcingrzejszczak</a></p>
+
+  <p>Lanyrd profile</p>
+  <p><a href="http://lanyrd.com/profile/marcin-grzejszczak">http://lanyrd.com/profile/marcin-grzejszczak</a></p>
+</section>
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2016/02/27/json-assert-lib-released/">JSON Assert lib released</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2016/01/04/post-on-spring-blog/">Post on Spring blog</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/10/16/business-value-gone-wild/">Business value gone wild</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/09/27/microservice-deployment/">Microservice Deployment</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/02/08/how-to-speed-up-your-gradle-build-from/">How to speed up your Gradle build from 90 to 8 minutes</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("mgrzejszczak", , );
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <p>Follow <a href="http://twitter.com/mgrzejszczak">@mgrzejszczak</a></p>
+  
+</section>
+
+
+
+<section class="googleplus">
+  <h1>
+    <a href="https://plus.google.com/108408840893580782990?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+  
+</aside>
+
+
     </div>
   </div>
-</div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2016 - Marcin Grzejszczak -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a>. Design by <a href="http://octopressthemes.com">Octopress Themes</a>. Background image by <a href="http://www.flickr.com/photos/89433098@N04/">Florian Kraft Fotografie</a></span>
+</p>
 
-    <footer id="footer" class="her-row">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-1">
-  <a href="/"><h4>Home</h4></a>
-</div>
-
-<div class="col-md-2">
-  <div class="social-icon-list">
-    
-    <a href="https://twitter.com/mgrzejszczak"><img src="/images/glyphicons_social_31_twitter.png"/></a>
-    
-
-    
-    <a href="https://github.com/marcingrzejszczak"><img src="/images/glyphicons_social_21_github.png"/></a>
-    
-
-    
-    <a href="https://linkedin.com/in/marcin-grzejszczak-15565119"><img src="/images/glyphicons_social_17_linked_in.png"/></a>
-    
-
-    
-    <a href="mailto:blog@toomuchcoding.com"><img src="/images/glyphicons_social_39_e-mail.png"/></a>
-    
-  </div>
-</div>
-
-<div class="pull-right">
-  <h4>Powered by <a href="http://octopress.org/">Octopress</a>. Designed by <a href="http://AdrianArtiles.com">Adrian Artiles</a>.</h4>
-</div>
-
-
-    </div>
-  </div>
 </footer>
+  
 
-    
-  </body>
+<script type="text/javascript">
+      var disqus_shortname = 'toomuchcoding';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
 </html>

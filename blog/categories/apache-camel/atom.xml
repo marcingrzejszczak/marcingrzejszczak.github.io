@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Apache Camel | TOO MUCH CODING BLOG]]></title>
+  <title><![CDATA[Category: apache camel | TOO MUCH CODING]]></title>
   <link href="http://toomuchcoding.com/blog/categories/apache-camel/atom.xml" rel="self"/>
   <link href="http://toomuchcoding.com/"/>
-  <updated>2016-03-02T13:52:41+01:00</updated>
+  <updated>2016-03-02T21:26:10+01:00</updated>
   <id>http://toomuchcoding.com/</id>
   <author>
     <name><![CDATA[Marcin Grzejszczak]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Drools Decision Tables With Camel and Spring]]></title>
+    <title type="html"><![CDATA[Drools decision tables with Camel and Spring]]></title>
     <link href="http://toomuchcoding.com/blog/2013/02/03/drools-decision-tables-with-camel-and/"/>
     <updated>2013-02-03T22:28:00+01:00</updated>
     <id>http://toomuchcoding.com/blog/2013/02/03/drools-decision-tables-with-camel-and</id>
@@ -27,7 +27,7 @@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Apache Camel With Spring, Routing With Enrichment Service]]></title>
+    <title type="html"><![CDATA[Apache Camel with Spring, routing with enrichment service]]></title>
     <link href="http://toomuchcoding.com/blog/2012/11/22/apache-camel-with-spring-routing-with/"/>
     <updated>2012-11-22T23:13:00+01:00</updated>
     <id>http://toomuchcoding.com/blog/2012/11/22/apache-camel-with-spring-routing-with</id>

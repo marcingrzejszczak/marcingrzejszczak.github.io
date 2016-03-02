@@ -3,17 +3,13 @@
 <!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
 <!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
-<!DOCTYPE html>
-<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
-<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
-<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Injecting Test Doubles in Spring Using Mockito and BeanPostProcessors - TOO MUCH CODING BLOG</title>
+  <title>Injecting Test Doubles in Spring using Mockito and BeanPostProcessors - TOO MUCH CODING</title>
   <meta name="author" content="Marcin Grzejszczak">
 
   
-  <meta name="description" content="Injecting Test Doubles in Spring Using Mockito and BeanPostProcessors written in beanpostprocessor, mockito, mocks, spies, spring, &hellip;">
+  <meta name="description" content="I'm pretty sure that if you have ever used Spring and are familliar with unit testing, you have encountered a problem related to injecting mocks / &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -22,30 +18,61 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://toomuchcoding.com/blog/2013/08/09/injecting-test-doubles-in-spring-using">
+  <link rel="canonical" href="http://toomuchcoding.com/blog/2013/08/09/injecting-test-doubles-in-spring-using/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <link href="/atom.xml" rel="alternate" title="TOO MUCH CODING BLOG" type="application/atom+xml">
   <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/ender.js"></script>
   <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="TOO MUCH CODING" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
   
 
 </head>
 
-  <body>
-    <a href="/" class="home-icon">
-      <img src="/images/home.png"/>
-    </a>
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">TOO MUCH CODING</a></h1>
+  
+    <h2>A blog for coding addicts</h2>
+  
+</hgroup>
 
-    <article role="article" class="full-single-article">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-8 col-md-offset-2">
-        <h1>Injecting Test Doubles in Spring Using Mockito and BeanPostProcessors</h1>
-        <div class="meta">
-          written 
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:toomuchcoding.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Injecting Test Doubles in Spring Using Mockito and BeanPostProcessors</h1>
+    
+    
+      <p class="meta">
+        
 
 
 
@@ -57,11 +84,44 @@
   
 
 
+<time datetime="2013-08-09T14:39:00+02:00" pubdate data-updated="true"></time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><div class='post'>
+<br />I'm pretty sure that if you have ever used Spring and are familliar with unit testing, you have encountered a problem related to injecting mocks / spies (Test Doubles) in the Spring's application context which you wouldn't want to modify. This article presents an approach how to solve this issue using Spring's components.<br />
+<!--more-->
+<br /><a name='more'></a><h2>Project structure</h2>Let's start with the project structure:<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-24owAXPWDec/UgS1olJ038I/AAAAAAAABlA/O90115z1yIk/s1600/Project+structure.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="320" src="http://1.bp.blogspot.com/-24owAXPWDec/UgS1olJ038I/AAAAAAAABlA/O90115z1yIk/s320/Project+structure.jpg" width="207" /></a></div><br />As usual to present a problem I'm trying to show a very simple project structure. The approach that I'm about to show could show more benefits if I made the problem more extensive as we had in our project:<br /><br /><ul><li>we had dozens of interfaces and implementations autowired to lists</li><li>we wanted to perform some functional tests basing on the existing Spring application context&nbsp;</li><li>we wanted to verify that for certain input conditions some specific implementation would have their methods executed&nbsp;</li><li>we wanted to stub database access.</li></ul><br />In this example we have a <span style="font-family: Courier New, Courier, monospace;">PlayerService</span> that gets a <span style="font-family: Courier New, Courier, monospace;">Player </span>using a <span style="font-family: Courier New, Courier, monospace;">PlayerWebService</span>. We have an applicationContext that simply defines packages for autowiring:<br /><br /><b>applicationContext.xml</b><br /><br /><pre class="brush:xml">&lt;?xml version="1.0" encoding="UTF-8"?&gt;<br />&lt;beans xmlns="http://www.springframework.org/schema/beans"<br />       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"<br />       xmlns:context="http://www.springframework.org/schema/context"<br />       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd<br />                           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd"&gt;<br /><br />    &lt;context:component-scan base-package="com.blogspot.toomuchcoding"/&gt;<br /><br />&lt;/beans&gt;<br /><br /></pre>Then we have our very simple model:<br /><br /><b>Player.java</b><br /><br /><pre class="brush:java">package com.blogspot.toomuchcoding.model;<br /><br />import java.math.BigDecimal;<br /><br />/**<br /> * User: mgrzejszczak<br /> * Date: 08.08.13<br /> * Time: 14:38<br /> */<br />public final class Player {<br />    private final String playerName;<br />    private final BigDecimal playerValue;<br /><br />    public Player(final String playerName, final BigDecimal playerValue) {<br />        this.playerName = playerName;<br />        this.playerValue = playerValue;<br />    }<br /><br />    public String getPlayerName() {<br />        return playerName;<br />    }<br /><br />    public BigDecimal getPlayerValue() {<br />        return playerValue;<br />    }<br />}<br /><br /></pre><br />the implementation of the <span style="font-family: Courier New, Courier, monospace;">PlayerService </span>that uses <span style="font-family: Courier New, Courier, monospace;">PlayerWebService </span>to retrieve data regarding the <span style="font-family: Courier New, Courier, monospace;">Player</span>:<br /><br /><b>PlayerServiceImpl.java</b><br /><br /><pre class="brush:java">package com.blogspot.toomuchcoding.service;<br /><br />import com.blogspot.toomuchcoding.model.Player;<br />import org.slf4j.Logger;<br />import org.slf4j.LoggerFactory;<br />import org.springframework.beans.factory.annotation.Autowired;<br />import org.springframework.stereotype.Service;<br /><br />/**<br /> * User: mgrzejszczak<br /> * Date: 08.06.13<br /> * Time: 19:02<br /> */<br />@Service<br />public class PlayerServiceImpl implements PlayerService {<br />    private static final Logger LOGGER = LoggerFactory.getLogger(PlayerServiceImpl.class);<br /><br />    @Autowired<br />    private PlayerWebService playerWebService;<br /><br />    @Override<br />    public Player getPlayerByName(String playerName) {<br />        LOGGER.debug(String.format("Logging the player web service name [%s]", playerWebService.getWebServiceName()));<br />        return playerWebService.getPlayerByName(playerName);<br />    }<br /><br />    public PlayerWebService getPlayerWebService() {<br />        return playerWebService;<br />    }<br /><br />    public void setPlayerWebService(PlayerWebService playerWebService) {<br />        this.playerWebService = playerWebService;<br />    }<br />}<br /><br /></pre><br />the implementation of the PlayerWebService that is a provider of data (in this scenario we are simulating awaiting for response):<br /><br /><b>PlayerWebServiceImpl.java</b><br /><br /><pre class="brush:java">package com.blogspot.toomuchcoding.service;<br /><br />import com.blogspot.toomuchcoding.model.Player;<br />import org.slf4j.Logger;<br />import org.slf4j.LoggerFactory;<br />import org.springframework.stereotype.Service;<br /><br />import java.math.BigDecimal;<br /><br />/**<br /> * User: mgrzejszczak<br /> * Date: 08.08.13<br /> * Time: 14:48<br /> */<br />@Service<br />public class PlayerWebServiceImpl implements PlayerWebService {<br />    private static final Logger LOGGER = LoggerFactory.getLogger(PlayerWebServiceImpl.class);<br />    public static final String WEB_SERVICE_NAME = "SuperPlayerWebService";<br />    public static final String SAMPLE_PLAYER_VALUE = "1000";<br /><br />    @Override<br />    public String getWebServiceName() {<br />        return WEB_SERVICE_NAME;<br />    }<br /><br />    @Override<br />    public Player getPlayerByName(String name) {<br />        try {<br />            LOGGER.debug("Simulating awaiting time for a response from a web service");<br />            Thread.sleep(5000);<br />        } catch (InterruptedException e) {<br />            LOGGER.error(String.format("[%s] occurred while trying to make the thread sleep", e));<br />        }<br />        return new Player(name, new BigDecimal(SAMPLE_PLAYER_VALUE));<br />    }<br />}<br /><br /></pre>Perhaps the project structure and the methods are not one of the most brilliant you have ever seen but I wanted to keep it simple to present the problem ;)<br /><br /><h2>The problem</h2>So what actually is the problem? Let us assume that we want our autowired <span style="font-family: Courier New, Courier, monospace;">PlayerWebServiceImpl</span> to be a Spy that we can verify. What is more you don't want to actually change anything in the <span style="font-family: Courier New, Courier, monospace;">applicationContext.xml</span> - you want to use the current version of the Spring context.<br /><br />With mocks it's easier since you can define in your XML file (using Mockito factory method) your bean as a mock to override the original implementation just like this:<br /><br /><pre class="brush:xml">    &lt;bean id="playerWebServiceImpl" class="org.mockito.Mockito" factory-method="mock"&gt;<br />        &lt;constructor-arg value="com.blogspot.toomuchcoding.service.PlayerWebServiceImpl"/&gt;<br />    &lt;/bean&gt;<br /></pre><br />What about the Spy? It's more problematic since in order to create a Spy you need an already existing object of the given type. In our example we have some autowiring going on so we would have to first create a spring bean of the <span style="font-family: Courier New, Courier, monospace;">PlayerWebService </span>type (Spring would have to wire all its dependencies) and then wrap it around with<span style="font-family: Courier New, Courier, monospace;"> Mockito.spy(...)</span> and only then would it have to be wired somewhere else... It's getting very complicatied doesn't it?<br /><h2>The solution</h2>You can see that the problem is not that trivial to be solved. An easy way to fix it however is to use native Spring mechanisms - BeanPostProcessors. You can check my article about how to create a <a href="http://toomuchcoding.blogspot.com/2012/10/spring-beanpostprocessor-for-specified.html">Spring BeanPostProcessor for a specified type</a>&nbsp;- we'll be using it in this example.<br /><br />Let's start with checking the test class:<br /><br /><b>PlayerServiceImplTest.java</b><br /><br /><pre class="brush:java">package com.blogspot.toomuchcoding.service;<br /><br />import com.blogspot.toomuchcoding.model.Player;<br />import org.junit.Test;<br />import org.junit.runner.RunWith;<br />import org.springframework.beans.factory.annotation.Autowired;<br />import org.springframework.test.context.ContextConfiguration;<br />import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;<br /><br />import java.math.BigDecimal;<br /><br />import static org.hamcrest.CoreMatchers.is;<br />import static org.junit.Assert.assertThat;<br />import static org.mockito.BDDMockito.doReturn;<br />import static org.mockito.Mockito.verify;<br /><br />/**<br /> * User: mgrzejszczak<br /> * Date: 08.06.13<br /> * Time: 19:26<br /> */<br />@RunWith(SpringJUnit4ClassRunner.class)<br />@ContextConfiguration("classpath:testApplicationContext.xml")<br />public class PlayerServiceImplTest {<br /><br />    public static final String PLAYER_NAME = "Lewandowski";<br />    public static final BigDecimal PLAYER_VALUE = new BigDecimal("35000000");<br /><br />    @Autowired<br />    PlayerWebService playerWebServiceSpy;<br /><br />    @Autowired<br />    PlayerService objectUnderTest;<br /><br />    @Test<br />    public void shouldReturnAPlayerFromPlayerWebService(){<br />        //given<br />        Player referencePlayer = new Player(PLAYER_NAME, PLAYER_VALUE);<br />        doReturn(referencePlayer).when(playerWebServiceSpy).getPlayerByName(PLAYER_NAME);<br /><br />        //when<br />        Player player = objectUnderTest.getPlayerByName(PLAYER_NAME);<br /><br />        //then<br />        assertThat(player, is(referencePlayer));<br />        verify(playerWebServiceSpy).getWebServiceName();<br />        assertThat(playerWebServiceSpy.getWebServiceName(), is(PlayerWebServiceImpl.WEB_SERVICE_NAME));<br />    }<br /><br /><br />}<br /><br /></pre>In this test we want to mock retrieval of <span style="font-family: Courier New, Courier, monospace;">Player </span>from the <span style="font-family: Courier New, Courier, monospace;">PlayerWebService </span>(let's assume that normally it would try to send a request to the outside world - and we wouldn't want that to happen in our scenario) and test that our <span style="font-family: Courier New, Courier, monospace;">PlayerService </span>returns the <span style="font-family: Courier New, Courier, monospace;">Player </span>that we provided in the method stub and what is more we want to perform verification on the Spy that the method <span style="font-family: Courier New, Courier, monospace;">getWebServiceName()</span> has been executed and that it has a very precisely defined return value. In other words we wanted to stub the method <span style="font-family: Courier New, Courier, monospace;">getPlayerByName(...)</span> and wanted to perform verification of the spy by checking the&nbsp;<span style="font-family: Courier New, Courier, monospace;">getWebServiceName()</span><span style="font-family: inherit;">method.</span><br /><br />Let's check the test context:<br /><br /><b>testApplicationContext.xml</b><br /><br /><pre class="brush:xml">&lt;?xml version="1.0" encoding="UTF-8"?&gt;<br />&lt;beans xmlns="http://www.springframework.org/schema/beans"<br />       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"<br />       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"&gt;<br /><br />    &lt;import resource="applicationContext.xml"/&gt;<br />    &lt;bean class="com.blogspot.postprocessor.PlayerWebServicePostProcessor" /&gt;<br />&lt;/beans&gt;<br /></pre><br />The test context is very small since it's importing the current <span style="font-family: Courier New, Courier, monospace;">applicationContext.xml</span> and creating a Bean that is the key feature in this example - the <span style="font-family: Courier New, Courier, monospace;">BeanPostProcessor</span>:<br /><br /><b>PlayerWebServicePostProcessor.java</b><br /><br /><pre class="brush:java">package com.blogspot.postprocessor;<br /><br /><br />import com.blogspot.toomuchcoding.processor.AbstractBeanPostProcessor;<br />import com.blogspot.toomuchcoding.service.PlayerWebService;<br /><br />import static org.mockito.Mockito.spy;<br /><br />/**<br /> * User: mgrzejszczak<br /> * Date: 07.05.13<br /> * Time: 11:30<br /> */<br />public class PlayerWebServicePostProcessor extends AbstractBeanPostProcessor&lt;PlayerWebService&gt; {<br />    public PlayerWebServicePostProcessor() {<br />        super(PlayerWebService.class);<br />    }<br /><br />    @Override<br />    public PlayerWebService doBefore(PlayerWebService bean) {<br />        return spy(bean);<br />    }<br /><br />    @Override<br />    public PlayerWebService doAfter(PlayerWebService bean) {<br />        return bean;<br />    }<br />}<br /><br /></pre>The class is extending the <span style="font-family: Courier New, Courier, monospace;">AbstractBeanPostProcessor </span>that implements the <a href="http://static.springsource.org/spring/docs/3.2.x/javadoc-api/org/springframework/beans/factory/config/BeanPostProcessor.html">BeanPostProcessor </a>interface. The logic behind this class is to register the Class for which one wants to perform some actions either before initialization (<a href="http://static.springsource.org/spring/docs/3.2.x/javadoc-api/org/springframework/beans/factory/config/BeanPostProcessor.html#postProcessBeforeInitialization(java.lang.Object, java.lang.String)">postProcessBeforeInitialization</a>) or after initialization of the bean (<a href="http://static.springsource.org/spring/docs/3.2.x/javadoc-api/org/springframework/beans/factory/config/BeanPostProcessor.html#postProcessAfterInitialization(java.lang.Object, java.lang.String)">postProcessAfterInitialization</a>). The AbstractBeanPostProcessor is well explained in my post&nbsp;<a href="http://toomuchcoding.blogspot.com/2012/10/spring-beanpostprocessor-for-specified.html">Spring BeanPostProcessor for a specified type</a>&nbsp;but there is one slight change - in my old post we were allowed by the abstraction to perform some actions on the bean without the possibility of returning a wrapper or a proxy on the bean.<br /><br />As you can see in the case of <span style="font-family: Courier New, Courier, monospace;">PlayerWebServicePostProcessor</span>&nbsp;before initialization we are creating a Spy using <span style="font-family: Courier New, Courier, monospace;">Mockito.spy(...)</span> method. In this way we create a factory hook on the intialization of beans of given type - it's as simple as that. This method will be executed for all the classes that implement the <span style="font-family: Courier New, Courier, monospace;">PlayerWebService&nbsp;</span>interface.<br /><h2>Other possibilities</h2><div>While checking out current solutions to this problem I have encountered the <a href="https://bitbucket.org/kubek2k/springockito/wiki/Home">Springockito library</a>&nbsp;by Jakub Janczak.</div><div><br /></div><div>I haven't been using this so I don't know what are (if there are any ;) ) production issues related to this library but it seems really nice and intuitive - great job Jakub! Still, you become dependent on the external library whereas in this example I've shown how to deal with the issue using Spring.</div><h2>Summary</h2><div>In this post I've shown how to</div><div><ul><li>create mocks for existing beans using XML Spring configuration</li><li>create a BeanPostProcessor implementation that performs logic for a given class of beans</li><li>return Spy (you could also return a Mock) for the given class of bean</li></ul></div><div>Now let's move through the Prons and Cons of my approach:</div><div><b><br /></b></div><div><b>Advantages</b></div><div><ul><li>you use Spring native mechanism to create Test Doubles for your beans</li><li>you are not required to add any additional external dependencies</li><li>if you use the <span style="font-family: Courier New, Courier, monospace;">AbstractBeanPostProcessor</span> you have very little changes to implement</li></ul></div><div><b>Disadvantages</b></div><div><ul><li>you have to be familliar with internal Spring architecture (that it uses BeanPostProcessors) - but is it a disadvantage? ;) - in fact if you use the&nbsp;<span style="font-family: Courier New, Courier, monospace;">AbstractBeanPostProcessor</span>&nbsp;&nbsp;you don't have to be familliar with it - you just have to provide the class type and actions to happen before and after initialization.</li><li>it's less intuitive than annotations like in&nbsp;the&nbsp;<a href="https://bitbucket.org/kubek2k/springockito/wiki/Home">Springockito library</a></li></ul></div><h2>Sources</h2>The sources are available at <a href="https://bitbucket.org/gregorin1987/too-much-coding/src/0e7f9ad4eb4c1d2500562c3634253e26fc1e3a0e/Unit%20Testing/Mockito%20-%20Injecting%20Test%20Doubles%20in%20Spring?at=default">TooMuchCoding BitBucket repository</a> and <a href="https://github.com/marcingrzejszczak/too-much-coding/tree/master/Unit%20Testing/Mockito%20-%20Injecting%20Test%20Doubles%20in%20Spring">TooMuchCoding Github repository</a>.<br /><br /></div>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Marcin Grzejszczak</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
 
 <time datetime="2013-08-09T14:39:00+02:00" pubdate data-updated="true"></time>
-          
+      
 
-in
 <span class="categories">
   
     <a class='category' href='/blog/categories/beanpostprocessor/'>beanpostprocessor</a>, <a class='category' href='/blog/categories/mockito/'>mockito</a>, <a class='category' href='/blog/categories/mocks/'>mocks</a>, <a class='category' href='/blog/categories/spies/'>spies</a>, <a class='category' href='/blog/categories/spring/'>spring</a>, <a class='category' href='/blog/categories/springjunit4classrunner/'>springjunit4classrunner</a>
@@ -69,75 +129,147 @@ in
 </span>
 
 
-        </div>
-        <div class='post'>
-<br />I'm pretty sure that if you have ever used Spring and are familliar with unit testing, you have encountered a problem related to injecting mocks / spies (Test Doubles) in the Spring's application context which you wouldn't want to modify. This article presents an approach how to solve this issue using Spring's components.<br />
-<!--more-->
-<br /><a name='more'></a><h2>Project structure</h2>Let's start with the project structure:<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-24owAXPWDec/UgS1olJ038I/AAAAAAAABlA/O90115z1yIk/s1600/Project+structure.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="320" src="http://1.bp.blogspot.com/-24owAXPWDec/UgS1olJ038I/AAAAAAAABlA/O90115z1yIk/s320/Project+structure.jpg" width="207" /></a></div><br />As usual to present a problem I'm trying to show a very simple project structure. The approach that I'm about to show could show more benefits if I made the problem more extensive as we had in our project:<br /><br /><ul><li>we had dozens of interfaces and implementations autowired to lists</li><li>we wanted to perform some functional tests basing on the existing Spring application context&nbsp;</li><li>we wanted to verify that for certain input conditions some specific implementation would have their methods executed&nbsp;</li><li>we wanted to stub database access.</li></ul><br />In this example we have a <span style="font-family: Courier New, Courier, monospace;">PlayerService</span> that gets a <span style="font-family: Courier New, Courier, monospace;">Player </span>using a <span style="font-family: Courier New, Courier, monospace;">PlayerWebService</span>. We have an applicationContext that simply defines packages for autowiring:<br /><br /><b>applicationContext.xml</b><br /><br /><pre class="brush:xml">&lt;?xml version="1.0" encoding="UTF-8"?&gt;<br />&lt;beans xmlns="http://www.springframework.org/schema/beans"<br />       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"<br />       xmlns:context="http://www.springframework.org/schema/context"<br />       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd<br />                           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd"&gt;<br /><br />    &lt;context:component-scan base-package="com.blogspot.toomuchcoding"/&gt;<br /><br />&lt;/beans&gt;<br /><br /></pre>Then we have our very simple model:<br /><br /><b>Player.java</b><br /><br /><pre class="brush:java">package com.blogspot.toomuchcoding.model;<br /><br />import java.math.BigDecimal;<br /><br />/**<br /> * User: mgrzejszczak<br /> * Date: 08.08.13<br /> * Time: 14:38<br /> */<br />public final class Player {<br />    private final String playerName;<br />    private final BigDecimal playerValue;<br /><br />    public Player(final String playerName, final BigDecimal playerValue) {<br />        this.playerName = playerName;<br />        this.playerValue = playerValue;<br />    }<br /><br />    public String getPlayerName() {<br />        return playerName;<br />    }<br /><br />    public BigDecimal getPlayerValue() {<br />        return playerValue;<br />    }<br />}<br /><br /></pre><br />the implementation of the <span style="font-family: Courier New, Courier, monospace;">PlayerService </span>that uses <span style="font-family: Courier New, Courier, monospace;">PlayerWebService </span>to retrieve data regarding the <span style="font-family: Courier New, Courier, monospace;">Player</span>:<br /><br /><b>PlayerServiceImpl.java</b><br /><br /><pre class="brush:java">package com.blogspot.toomuchcoding.service;<br /><br />import com.blogspot.toomuchcoding.model.Player;<br />import org.slf4j.Logger;<br />import org.slf4j.LoggerFactory;<br />import org.springframework.beans.factory.annotation.Autowired;<br />import org.springframework.stereotype.Service;<br /><br />/**<br /> * User: mgrzejszczak<br /> * Date: 08.06.13<br /> * Time: 19:02<br /> */<br />@Service<br />public class PlayerServiceImpl implements PlayerService {<br />    private static final Logger LOGGER = LoggerFactory.getLogger(PlayerServiceImpl.class);<br /><br />    @Autowired<br />    private PlayerWebService playerWebService;<br /><br />    @Override<br />    public Player getPlayerByName(String playerName) {<br />        LOGGER.debug(String.format("Logging the player web service name [%s]", playerWebService.getWebServiceName()));<br />        return playerWebService.getPlayerByName(playerName);<br />    }<br /><br />    public PlayerWebService getPlayerWebService() {<br />        return playerWebService;<br />    }<br /><br />    public void setPlayerWebService(PlayerWebService playerWebService) {<br />        this.playerWebService = playerWebService;<br />    }<br />}<br /><br /></pre><br />the implementation of the PlayerWebService that is a provider of data (in this scenario we are simulating awaiting for response):<br /><br /><b>PlayerWebServiceImpl.java</b><br /><br /><pre class="brush:java">package com.blogspot.toomuchcoding.service;<br /><br />import com.blogspot.toomuchcoding.model.Player;<br />import org.slf4j.Logger;<br />import org.slf4j.LoggerFactory;<br />import org.springframework.stereotype.Service;<br /><br />import java.math.BigDecimal;<br /><br />/**<br /> * User: mgrzejszczak<br /> * Date: 08.08.13<br /> * Time: 14:48<br /> */<br />@Service<br />public class PlayerWebServiceImpl implements PlayerWebService {<br />    private static final Logger LOGGER = LoggerFactory.getLogger(PlayerWebServiceImpl.class);<br />    public static final String WEB_SERVICE_NAME = "SuperPlayerWebService";<br />    public static final String SAMPLE_PLAYER_VALUE = "1000";<br /><br />    @Override<br />    public String getWebServiceName() {<br />        return WEB_SERVICE_NAME;<br />    }<br /><br />    @Override<br />    public Player getPlayerByName(String name) {<br />        try {<br />            LOGGER.debug("Simulating awaiting time for a response from a web service");<br />            Thread.sleep(5000);<br />        } catch (InterruptedException e) {<br />            LOGGER.error(String.format("[%s] occurred while trying to make the thread sleep", e));<br />        }<br />        return new Player(name, new BigDecimal(SAMPLE_PLAYER_VALUE));<br />    }<br />}<br /><br /></pre>Perhaps the project structure and the methods are not one of the most brilliant you have ever seen but I wanted to keep it simple to present the problem ;)<br /><br /><h2>The problem</h2>So what actually is the problem? Let us assume that we want our autowired <span style="font-family: Courier New, Courier, monospace;">PlayerWebServiceImpl</span> to be a Spy that we can verify. What is more you don't want to actually change anything in the <span style="font-family: Courier New, Courier, monospace;">applicationContext.xml</span> - you want to use the current version of the Spring context.<br /><br />With mocks it's easier since you can define in your XML file (using Mockito factory method) your bean as a mock to override the original implementation just like this:<br /><br /><pre class="brush:xml">    &lt;bean id="playerWebServiceImpl" class="org.mockito.Mockito" factory-method="mock"&gt;<br />        &lt;constructor-arg value="com.blogspot.toomuchcoding.service.PlayerWebServiceImpl"/&gt;<br />    &lt;/bean&gt;<br /></pre><br />What about the Spy? It's more problematic since in order to create a Spy you need an already existing object of the given type. In our example we have some autowiring going on so we would have to first create a spring bean of the <span style="font-family: Courier New, Courier, monospace;">PlayerWebService </span>type (Spring would have to wire all its dependencies) and then wrap it around with<span style="font-family: Courier New, Courier, monospace;"> Mockito.spy(...)</span> and only then would it have to be wired somewhere else... It's getting very complicatied doesn't it?<br /><h2>The solution</h2>You can see that the problem is not that trivial to be solved. An easy way to fix it however is to use native Spring mechanisms - BeanPostProcessors. You can check my article about how to create a <a href="http://toomuchcoding.blogspot.com/2012/10/spring-beanpostprocessor-for-specified.html">Spring BeanPostProcessor for a specified type</a>&nbsp;- we'll be using it in this example.<br /><br />Let's start with checking the test class:<br /><br /><b>PlayerServiceImplTest.java</b><br /><br /><pre class="brush:java">package com.blogspot.toomuchcoding.service;<br /><br />import com.blogspot.toomuchcoding.model.Player;<br />import org.junit.Test;<br />import org.junit.runner.RunWith;<br />import org.springframework.beans.factory.annotation.Autowired;<br />import org.springframework.test.context.ContextConfiguration;<br />import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;<br /><br />import java.math.BigDecimal;<br /><br />import static org.hamcrest.CoreMatchers.is;<br />import static org.junit.Assert.assertThat;<br />import static org.mockito.BDDMockito.doReturn;<br />import static org.mockito.Mockito.verify;<br /><br />/**<br /> * User: mgrzejszczak<br /> * Date: 08.06.13<br /> * Time: 19:26<br /> */<br />@RunWith(SpringJUnit4ClassRunner.class)<br />@ContextConfiguration("classpath:testApplicationContext.xml")<br />public class PlayerServiceImplTest {<br /><br />    public static final String PLAYER_NAME = "Lewandowski";<br />    public static final BigDecimal PLAYER_VALUE = new BigDecimal("35000000");<br /><br />    @Autowired<br />    PlayerWebService playerWebServiceSpy;<br /><br />    @Autowired<br />    PlayerService objectUnderTest;<br /><br />    @Test<br />    public void shouldReturnAPlayerFromPlayerWebService(){<br />        //given<br />        Player referencePlayer = new Player(PLAYER_NAME, PLAYER_VALUE);<br />        doReturn(referencePlayer).when(playerWebServiceSpy).getPlayerByName(PLAYER_NAME);<br /><br />        //when<br />        Player player = objectUnderTest.getPlayerByName(PLAYER_NAME);<br /><br />        //then<br />        assertThat(player, is(referencePlayer));<br />        verify(playerWebServiceSpy).getWebServiceName();<br />        assertThat(playerWebServiceSpy.getWebServiceName(), is(PlayerWebServiceImpl.WEB_SERVICE_NAME));<br />    }<br /><br /><br />}<br /><br /></pre>In this test we want to mock retrieval of <span style="font-family: Courier New, Courier, monospace;">Player </span>from the <span style="font-family: Courier New, Courier, monospace;">PlayerWebService </span>(let's assume that normally it would try to send a request to the outside world - and we wouldn't want that to happen in our scenario) and test that our <span style="font-family: Courier New, Courier, monospace;">PlayerService </span>returns the <span style="font-family: Courier New, Courier, monospace;">Player </span>that we provided in the method stub and what is more we want to perform verification on the Spy that the method <span style="font-family: Courier New, Courier, monospace;">getWebServiceName()</span> has been executed and that it has a very precisely defined return value. In other words we wanted to stub the method <span style="font-family: Courier New, Courier, monospace;">getPlayerByName(...)</span> and wanted to perform verification of the spy by checking the&nbsp;<span style="font-family: Courier New, Courier, monospace;">getWebServiceName()</span><span style="font-family: inherit;">method.</span><br /><br />Let's check the test context:<br /><br /><b>testApplicationContext.xml</b><br /><br /><pre class="brush:xml">&lt;?xml version="1.0" encoding="UTF-8"?&gt;<br />&lt;beans xmlns="http://www.springframework.org/schema/beans"<br />       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"<br />       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"&gt;<br /><br />    &lt;import resource="applicationContext.xml"/&gt;<br />    &lt;bean class="com.blogspot.postprocessor.PlayerWebServicePostProcessor" /&gt;<br />&lt;/beans&gt;<br /></pre><br />The test context is very small since it's importing the current <span style="font-family: Courier New, Courier, monospace;">applicationContext.xml</span> and creating a Bean that is the key feature in this example - the <span style="font-family: Courier New, Courier, monospace;">BeanPostProcessor</span>:<br /><br /><b>PlayerWebServicePostProcessor.java</b><br /><br /><pre class="brush:java">package com.blogspot.postprocessor;<br /><br /><br />import com.blogspot.toomuchcoding.processor.AbstractBeanPostProcessor;<br />import com.blogspot.toomuchcoding.service.PlayerWebService;<br /><br />import static org.mockito.Mockito.spy;<br /><br />/**<br /> * User: mgrzejszczak<br /> * Date: 07.05.13<br /> * Time: 11:30<br /> */<br />public class PlayerWebServicePostProcessor extends AbstractBeanPostProcessor&lt;PlayerWebService&gt; {<br />    public PlayerWebServicePostProcessor() {<br />        super(PlayerWebService.class);<br />    }<br /><br />    @Override<br />    public PlayerWebService doBefore(PlayerWebService bean) {<br />        return spy(bean);<br />    }<br /><br />    @Override<br />    public PlayerWebService doAfter(PlayerWebService bean) {<br />        return bean;<br />    }<br />}<br /><br /></pre>The class is extending the <span style="font-family: Courier New, Courier, monospace;">AbstractBeanPostProcessor </span>that implements the <a href="http://static.springsource.org/spring/docs/3.2.x/javadoc-api/org/springframework/beans/factory/config/BeanPostProcessor.html">BeanPostProcessor </a>interface. The logic behind this class is to register the Class for which one wants to perform some actions either before initialization (<a href="http://static.springsource.org/spring/docs/3.2.x/javadoc-api/org/springframework/beans/factory/config/BeanPostProcessor.html#postProcessBeforeInitialization(java.lang.Object, java.lang.String)">postProcessBeforeInitialization</a>) or after initialization of the bean (<a href="http://static.springsource.org/spring/docs/3.2.x/javadoc-api/org/springframework/beans/factory/config/BeanPostProcessor.html#postProcessAfterInitialization(java.lang.Object, java.lang.String)">postProcessAfterInitialization</a>). The AbstractBeanPostProcessor is well explained in my post&nbsp;<a href="http://toomuchcoding.blogspot.com/2012/10/spring-beanpostprocessor-for-specified.html">Spring BeanPostProcessor for a specified type</a>&nbsp;but there is one slight change - in my old post we were allowed by the abstraction to perform some actions on the bean without the possibility of returning a wrapper or a proxy on the bean.<br /><br />As you can see in the case of <span style="font-family: Courier New, Courier, monospace;">PlayerWebServicePostProcessor</span>&nbsp;before initialization we are creating a Spy using <span style="font-family: Courier New, Courier, monospace;">Mockito.spy(...)</span> method. In this way we create a factory hook on the intialization of beans of given type - it's as simple as that. This method will be executed for all the classes that implement the <span style="font-family: Courier New, Courier, monospace;">PlayerWebService&nbsp;</span>interface.<br /><h2>Other possibilities</h2><div>While checking out current solutions to this problem I have encountered the <a href="https://bitbucket.org/kubek2k/springockito/wiki/Home">Springockito library</a>&nbsp;by Jakub Janczak.</div><div><br /></div><div>I haven't been using this so I don't know what are (if there are any ;) ) production issues related to this library but it seems really nice and intuitive - great job Jakub! Still, you become dependent on the external library whereas in this example I've shown how to deal with the issue using Spring.</div><h2>Summary</h2><div>In this post I've shown how to</div><div><ul><li>create mocks for existing beans using XML Spring configuration</li><li>create a BeanPostProcessor implementation that performs logic for a given class of beans</li><li>return Spy (you could also return a Mock) for the given class of bean</li></ul></div><div>Now let's move through the Prons and Cons of my approach:</div><div><b><br /></b></div><div><b>Advantages</b></div><div><ul><li>you use Spring native mechanism to create Test Doubles for your beans</li><li>you are not required to add any additional external dependencies</li><li>if you use the <span style="font-family: Courier New, Courier, monospace;">AbstractBeanPostProcessor</span> you have very little changes to implement</li></ul></div><div><b>Disadvantages</b></div><div><ul><li>you have to be familliar with internal Spring architecture (that it uses BeanPostProcessors) - but is it a disadvantage? ;) - in fact if you use the&nbsp;<span style="font-family: Courier New, Courier, monospace;">AbstractBeanPostProcessor</span>&nbsp;&nbsp;you don't have to be familliar with it - you just have to provide the class type and actions to happen before and after initialization.</li><li>it's less intuitive than annotations like in&nbsp;the&nbsp;<a href="https://bitbucket.org/kubek2k/springockito/wiki/Home">Springockito library</a></li></ul></div><h2>Sources</h2>The sources are available at <a href="https://bitbucket.org/gregorin1987/too-much-coding/src/0e7f9ad4eb4c1d2500562c3634253e26fc1e3a0e/Unit%20Testing/Mockito%20-%20Injecting%20Test%20Doubles%20in%20Spring?at=default">TooMuchCoding BitBucket repository</a> and <a href="https://github.com/marcingrzejszczak/too-much-coding/tree/master/Unit%20Testing/Mockito%20-%20Injecting%20Test%20Doubles%20in%20Spring">TooMuchCoding Github repository</a>.<br /><br /></div>
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://toomuchcoding.com/blog/2013/08/09/injecting-test-doubles-in-spring-using/" data-via="mgrzejszczak" data-counturl="http://toomuchcoding.com/blog/2013/08/09/injecting-test-doubles-in-spring-using/" >Tweet</a>
+  
+  
+  
+</div>
 
-
-        <hr class="divider-short"/>
-
-        
-      </div>
-    </div>
-  </div>
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/08/06/spock-return-nested-spies-mocks/" title="Previous Post: Spock - return nested spies / mocks">&laquo; Spock - return nested spies / mocks</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2013/08/28/mockito-instant-my-book-has-finally/" title="Next Post: Mockito Instant - my book has finally been published!">Mockito Instant - my book has finally been published! &raquo;</a>
+      
+    </p>
+  </footer>
 </article>
 
-<hr class="divider-short"/>
+</div>
 
-<div class="archive-link">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-8 col-md-offset-2">
-        
-          <a class="pull-left" href="/blog/2013/08/06/spock-return-nested-spies-mocks/" title="Previous Post: Spock - return nested spies / mocks">&laquo; Previous: Spock - return nested spies / mocks</a>
-        
+<aside class="sidebar">
+  
+    <section>
+  <h1>About Me</h1>
+  <p>Enthusiast of clean coding and good design. Author of "Mockito Instant" and "Mockito Cookbook" books. Contributor to several open source projects (including Rest-assured, Drools, Moco, Mockito). Co-author of the Groovy @Builder, "micro-infra-spring", "spring-cloud-zookeeper", "spring-cloud-sleuth" microservices related open source solutions. Author of Uptodate Gradle plugin, Spock subjects-collaborators extension and gradle-test-profiler open source projects. Co-founder of the Warsaw Groovy User Group. A member of the Most Valuable Blogger program at DZone and Java Code Geeks. Interested in working with JVM languages, XP-driven projects with continuous deployment and most preferably microservice architecture.</p>
 
-        
-          <a class="pull-right" href="/blog/2013/08/28/mockito-instant-my-book-has-finally/" title="Next Post: Mockito Instant - my book has finally been published!">Next: Mockito Instant - my book has finally been published! &raquo;</a>
-        
-      </div>
+  <p>Homepage:</p>
+  <p><a href="http://marcin.grzejszczak.pl">http://marcin.grzejszczak.pl</a></p>
+
+  <p>Github profile</p>
+  <p><a href="https://github.com/marcingrzejszczak">https://github.com/marcingrzejszczak</a></p>
+
+  <p>Lanyrd profile</p>
+  <p><a href="http://lanyrd.com/profile/marcin-grzejszczak">http://lanyrd.com/profile/marcin-grzejszczak</a></p>
+</section>
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2016/02/27/json-assert-lib-released/">JSON Assert lib released</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2016/01/04/post-on-spring-blog/">Post on Spring blog</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/10/16/business-value-gone-wild/">Business value gone wild</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/09/27/microservice-deployment/">Microservice Deployment</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/02/08/how-to-speed-up-your-gradle-build-from/">How to speed up your Gradle build from 90 to 8 minutes</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("mgrzejszczak", , );
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <p>Follow <a href="http://twitter.com/mgrzejszczak">@mgrzejszczak</a></p>
+  
+</section>
+
+
+
+<section class="googleplus">
+  <h1>
+    <a href="https://plus.google.com/108408840893580782990?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+  
+</aside>
+
+
     </div>
   </div>
-</div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2016 - Marcin Grzejszczak -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a>. Design by <a href="http://octopressthemes.com">Octopress Themes</a>. Background image by <a href="http://www.flickr.com/photos/89433098@N04/">Florian Kraft Fotografie</a></span>
+</p>
 
-    <footer id="footer" class="her-row">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-1">
-  <a href="/"><h4>Home</h4></a>
-</div>
-
-<div class="col-md-2">
-  <div class="social-icon-list">
-    
-    <a href="https://twitter.com/mgrzejszczak"><img src="/images/glyphicons_social_31_twitter.png"/></a>
-    
-
-    
-    <a href="https://github.com/marcingrzejszczak"><img src="/images/glyphicons_social_21_github.png"/></a>
-    
-
-    
-    <a href="https://linkedin.com/in/marcin-grzejszczak-15565119"><img src="/images/glyphicons_social_17_linked_in.png"/></a>
-    
-
-    
-    <a href="mailto:blog@toomuchcoding.com"><img src="/images/glyphicons_social_39_e-mail.png"/></a>
-    
-  </div>
-</div>
-
-<div class="pull-right">
-  <h4>Powered by <a href="http://octopress.org/">Octopress</a>. Designed by <a href="http://AdrianArtiles.com">Adrian Artiles</a>.</h4>
-</div>
-
-
-    </div>
-  </div>
 </footer>
+  
 
-    
-  </body>
+<script type="text/javascript">
+      var disqus_shortname = 'toomuchcoding';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
 </html>

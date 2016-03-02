@@ -3,17 +3,13 @@
 <!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
 <!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
-<!DOCTYPE html>
-<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
-<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
-<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Spring BeanPostProcessor for a Specified Type - TOO MUCH CODING BLOG</title>
+  <title>Spring BeanPostProcessor for a specified type - TOO MUCH CODING</title>
   <meta name="author" content="Marcin Grzejszczak">
 
   
-  <meta name="description" content="Spring BeanPostProcessor for a Specified Type written in applicationcontext, beanpostprocessor, generics, spring I was recently having a discussion &hellip;">
+  <meta name="description" content="I was recently having a discussion how can one use a BeanPostProcessor to execute some logic for a specified class. Looking at the Javadoc for the &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -22,30 +18,61 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://toomuchcoding.com/blog/2012/10/23/spring-beanpostprocessor-for-specified">
+  <link rel="canonical" href="http://toomuchcoding.com/blog/2012/10/23/spring-beanpostprocessor-for-specified/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <link href="/atom.xml" rel="alternate" title="TOO MUCH CODING BLOG" type="application/atom+xml">
   <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/ender.js"></script>
   <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="TOO MUCH CODING" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
   
 
 </head>
 
-  <body>
-    <a href="/" class="home-icon">
-      <img src="/images/home.png"/>
-    </a>
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">TOO MUCH CODING</a></h1>
+  
+    <h2>A blog for coding addicts</h2>
+  
+</hgroup>
 
-    <article role="article" class="full-single-article">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-8 col-md-offset-2">
-        <h1>Spring BeanPostProcessor for a Specified Type</h1>
-        <div class="meta">
-          written 
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:toomuchcoding.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Spring BeanPostProcessor for a Specified Type</h1>
+    
+    
+      <p class="meta">
+        
 
 
 
@@ -57,11 +84,44 @@
   
 
 
+<time datetime="2012-10-23T00:36:00+02:00" pubdate data-updated="true"></time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><div class='post'>
+<br /><br />I was recently having a discussion how can one use a BeanPostProcessor to execute some logic for a specified class.<br />
+<!--more-->
+<br />Looking at the Javadoc for the BeanPostProcessor one can read that:<br /><blockquote class="tr_bq"><span style="background-color: white; font-family: Arial; font-size: 13px;">Factory hook that allows for custom modification of new bean instances, e.g. checking for marker interfaces or wrapping them with proxies.</span></blockquote>So how can one create in an easy way a BeanPostProcessor for a precise type without creating a cascade of ifs or instance ofs? This is my concept of solving this problem - perhaps you know an easier one? :)<br /><br /><b>SomeService.java</b><br /><br /><pre class="brush:java">package pl.grzejszczak.marcin.postprocessor;<br /><br />public interface SomeService {<br /> void methodA();<br /><br /> void methodB();<br />}<br /></pre><br /><b>SomeServiceImpl.java</b><br /><br /><pre class="brush:java">package pl.grzejszczak.marcin.postprocessor;<br /><br />import org.slf4j.Logger;<br />import org.slf4j.LoggerFactory;<br /><br />public class SomeServiceImpl implements SomeService {<br /> private static final Logger LOGGER = LoggerFactory.getLogger(SomeServiceImpl.class);<br /><br /> public SomeServiceImpl() {<br />  LOGGER.debug("SomeServiceImpl - I'm created!");<br /> }<br /><br /> private void afterInit() {<br />  LOGGER.debug("SomeServiceImpl - After init!");<br /> }<br /><br /> private void destroyMethod() {<br />  LOGGER.debug("SomeServiceImpl - Destroy Method!");<br /> }<br /><br /> @Override<br /> public void methodA() {<br />  LOGGER.debug("SomeServiceImpl - Method A executed");<br /> }<br /><br /> @Override<br /> public void methodB() {<br />  LOGGER.debug("SomeServiceImpl - Method B executed");<br /> }<br /><br />}<br /></pre><br /><b>SomeOtherService.java</b><br /><br /><pre class="brush:java">package pl.grzejszczak.marcin.postprocessor;<br /><br />public interface SomeOtherService {<br /> void methodC();<br /><br /> void methodD();<br />}<br /></pre><br /><b>SomeOtherServiceImpl.java</b><br /><br /><pre class="brush:java">package pl.grzejszczak.marcin.postprocessor;<br /><br />import org.slf4j.Logger;<br />import org.slf4j.LoggerFactory;<br /><br />public class SomeOtherServiceImpl implements SomeOtherService {<br /> private static final Logger LOGGER = LoggerFactory.getLogger(SomeOtherServiceImpl.class);<br /><br /> public SomeOtherServiceImpl() {<br />  LOGGER.debug("SomeOtherServiceImpl - I'm created!");<br /> }<br /><br /> private void afterInit() {<br />  LOGGER.debug("SomeOtherServiceImpl - After init!");<br /> }<br /><br /> private void destroyMethod() {<br />  LOGGER.debug("SomeOtherServiceImpl - Destroy Method!");<br /> }<br /><br /> @Override<br /> public void methodC() {<br />  LOGGER.debug("SomeOtherServiceImpl - Method C executed");<br /> }<br /><br /> @Override<br /> public void methodD() {<br />  LOGGER.debug("SomeOtherServiceImpl - Method D executed");<br /> }<br /><br />}<br /></pre><br /><b>AbstractBeanPostProcessor.java</b><br /><br /><pre class="brush:java">package pl.grzejszczak.marcin.postprocessor;<br /><br />import org.springframework.beans.BeansException;<br />import org.springframework.beans.factory.config.BeanPostProcessor;<br /><br />public abstract class AbstractBeanPostProcessor&lt;T&gt; implements BeanPostProcessor {<br /><br /> private Class&lt;T&gt; clazz;<br /><br /> public AbstractBeanPostProcessor(Class&lt;T&gt; clazz) {<br />  this.clazz = clazz;<br /> }<br /><br /> @Override<br /> public Object postProcessAfterInitialization(Object bean, String name) throws BeansException {<br />  checkConditions();<br /><br />  if (clazz.isAssignableFrom(bean.getClass())) {<br />   doAfter();<br />  }<br />  return bean;<br /> }<br /><br /> @Override<br /> public Object postProcessBeforeInitialization(Object bean, String name) throws BeansException {<br />  checkConditions();<br /><br />  if (clazz.isAssignableFrom(bean.getClass())) {<br />   doBefore();<br />  }<br />  return bean;<br /> }<br /><br /> private void checkConditions() {<br />  if (clazz == null) {<br />   throw new NullArgumentException("Provide the interface for the post processor");<br />  }<br /> }<br /><br /> public abstract void doBefore();<br /><br /> public abstract void doAfter();<br /><br />}<br /></pre><br /><b>SomeServicePostProcessor.java</b><br /><br /><pre class="brush:java">package pl.grzejszczak.marcin.postprocessor;<br /><br />import org.slf4j.Logger;<br />import org.slf4j.LoggerFactory;<br />import org.springframework.stereotype.Component;<br /><br />@Component<br />public class SomeServicePostProcessor extends AbstractBeanPostProcessor&lt;SomeService&gt; {<br /><br /> private static final Logger LOGGER = LoggerFactory.getLogger(SomeServicePostProcessor.class);<br /><br /> public SomeServicePostProcessor() {<br />  super(SomeService.class);<br /> }<br /><br /> @Override<br /> public void doBefore() {<br />  LOGGER.info("BEFORE it's init method has been executed but AFTER SomeServiceImpl has been instantiated I would like to do sth...");<br /> }<br /><br /> @Override<br /> public void doAfter() {<br />  LOGGER.info("AFTER SomeServiceImpl has executed its init method I would like to do sth more...");<br /> }<br />}<br /></pre><br /><b>SpringMain.java</b><br /><b><br /></b><br /><pre class="brush:java">package pl.grzejszczak.marcin.postprocessor;<br /><br />import org.springframework.context.ConfigurableApplicationContext;<br />import org.springframework.context.support.ClassPathXmlApplicationContext;<br /><br />public class SpringMain {<br /><br /> public static void main(String[] args) {<br />  ConfigurableApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");<br />  SomeService someService = context.getBean(SomeService.class);<br />  someService.methodA();<br />  someService.methodB();<br />  SomeOtherService someOtherService = context.getBean(SomeOtherService.class);<br />  someOtherService.methodC();<br />  someOtherService.methodD();<br />  context.close();<br /> }<br />}<br /></pre><br /><br /><b>ApplicationContext.xml</b><br /><br /><pre class="brush:xml"><beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.springframework.org/schema/beans" xsi:schemalocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd"><br /><br /> &lt;bean class="pl.grzejszczak.marcin.postprocessor.SomeServiceImpl" destroy-method="destroyMethod" init-method="afterInit"/&gt;<br /> &lt;bean class="pl.grzejszczak.marcin.postprocessor.SomeOtherServiceImpl" destroy-method="destroyMethod" init-method="afterInit"/&gt;<br /> &lt;bean class="pl.grzejszczak.marcin.postprocessor.SomeServicePostProcessor"/&gt;<br /></beans><br /></pre><br /><b>Logs</b><br /><br /><pre class="brush:xml">2012-10-23 00:20:38,863 INFO  [main] org.springframework.context.support.ClassPathXmlApplicationContext:495 Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@28d11816: startup date [Tue Oct 23 00:20:38 CEST 2012]; root of context hierarchy<br />2012-10-23 00:20:38,956 INFO  [main] org.springframework.beans.factory.xml.XmlBeanDefinitionReader:315 Loading XML bean definitions from class path resource [applicationContext.xml]<br />2012-10-23 00:20:39,213 INFO  [main] org.springframework.beans.factory.support.DefaultListableBeanFactory:557 Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@6bb4469: defining beans [pl.grzejszczak.marcin.postprocessor.SomeServiceImpl#0,pl.grzejszczak.marcin.postprocessor.SomeOtherServiceImpl#0,pl.grzejszczak.marcin.postprocessor.SomeServicePostProcessor#0]; root of factory hierarchy<br />2012-10-23 00:20:39,214 DEBUG [main] pl.grzejszczak.marcin.postprocessor.SomeServiceImpl:10 SomeServiceImpl - I'm created!<br />2012-10-23 00:20:39,215 INFO  [main] pl.grzejszczak.marcin.postprocessor.SomeServicePostProcessor:18 BEFORE its init method has been executed but AFTER SomeServiceImpl has been instantiated I would like to do sth...<br />2012-10-23 00:20:39,216 DEBUG [main] pl.grzejszczak.marcin.postprocessor.SomeServiceImpl:14 SomeServiceImpl - After init!<br />2012-10-23 00:20:39,216 INFO  [main] pl.grzejszczak.marcin.postprocessor.SomeServicePostProcessor:23 AFTER SomeServiceImpl has executed its init method I would like to do sth more...<br />2012-10-23 00:20:39,220 DEBUG [main] pl.grzejszczak.marcin.postprocessor.SomeOtherServiceImpl:10 SomeOtherServiceImpl - I'm created!<br />2012-10-23 00:20:39,221 DEBUG [main] pl.grzejszczak.marcin.postprocessor.SomeOtherServiceImpl:14 SomeOtherServiceImpl - After init!<br />2012-10-23 00:20:39,225 DEBUG [main] pl.grzejszczak.marcin.postprocessor.SomeServiceImpl:23 SomeServiceImpl - Method A executed<br />2012-10-23 00:20:39,241 DEBUG [main] pl.grzejszczak.marcin.postprocessor.SomeServiceImpl:28 SomeServiceImpl - Method B executed<br />2012-10-23 00:20:39,242 DEBUG [main] pl.grzejszczak.marcin.postprocessor.SomeOtherServiceImpl:23 SomeOtherServiceImpl - Method C executed<br />2012-10-23 00:20:39,242 DEBUG [main] pl.grzejszczak.marcin.postprocessor.SomeOtherServiceImpl:28 SomeOtherServiceImpl - Method D executed<br />2012-10-23 00:20:39,242 INFO  [main] org.springframework.context.support.ClassPathXmlApplicationContext:1020 Closing org.springframework.context.support.ClassPathXmlApplicationContext@28d11816: startup date [Tue Oct 23 00:20:38 CEST 2012]; root of context hierarchy<br />2012-10-23 00:20:39,243 INFO  [main] org.springframework.beans.factory.support.DefaultListableBeanFactory:433 Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@6bb4469: defining beans [pl.grzejszczak.marcin.postprocessor.SomeServiceImpl#0,pl.grzejszczak.marcin.postprocessor.SomeOtherServiceImpl#0,pl.grzejszczak.marcin.postprocessor.SomeServicePostProcessor#0]; root of factory hierarchy<br />2012-10-23 00:20:39,244 DEBUG [main] pl.grzejszczak.marcin.postprocessor.SomeOtherServiceImpl:18 SomeOtherServiceImpl - Destroy Method!<br />2012-10-23 00:20:39,245 DEBUG [main] pl.grzejszczak.marcin.postprocessor.SomeServiceImpl:18 SomeServiceImpl - Destroy Method!<br /></pre>As you can see it is quite easy, using generics and the BeanPostProcessor, to specify certain behavors for a given type (generics and constructor of SomeServiceImpl) or a group of types of classes (generics and constructor of SomeService).</div>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Marcin Grzejszczak</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
 
 <time datetime="2012-10-23T00:36:00+02:00" pubdate data-updated="true"></time>
-          
+      
 
-in
 <span class="categories">
   
     <a class='category' href='/blog/categories/applicationcontext/'>applicationcontext</a>, <a class='category' href='/blog/categories/beanpostprocessor/'>beanpostprocessor</a>, <a class='category' href='/blog/categories/generics/'>generics</a>, <a class='category' href='/blog/categories/spring/'>spring</a>
@@ -69,75 +129,147 @@ in
 </span>
 
 
-        </div>
-        <div class='post'>
-<br /><br />I was recently having a discussion how can one use a BeanPostProcessor to execute some logic for a specified class.<br />
-<!--more-->
-<br />Looking at the Javadoc for the BeanPostProcessor one can read that:<br /><blockquote class="tr_bq"><span style="background-color: white; font-family: Arial; font-size: 13px;">Factory hook that allows for custom modification of new bean instances, e.g. checking for marker interfaces or wrapping them with proxies.</span></blockquote>So how can one create in an easy way a BeanPostProcessor for a precise type without creating a cascade of ifs or instance ofs? This is my concept of solving this problem - perhaps you know an easier one? :)<br /><br /><b>SomeService.java</b><br /><br /><pre class="brush:java">package pl.grzejszczak.marcin.postprocessor;<br /><br />public interface SomeService {<br /> void methodA();<br /><br /> void methodB();<br />}<br /></pre><br /><b>SomeServiceImpl.java</b><br /><br /><pre class="brush:java">package pl.grzejszczak.marcin.postprocessor;<br /><br />import org.slf4j.Logger;<br />import org.slf4j.LoggerFactory;<br /><br />public class SomeServiceImpl implements SomeService {<br /> private static final Logger LOGGER = LoggerFactory.getLogger(SomeServiceImpl.class);<br /><br /> public SomeServiceImpl() {<br />  LOGGER.debug("SomeServiceImpl - I'm created!");<br /> }<br /><br /> private void afterInit() {<br />  LOGGER.debug("SomeServiceImpl - After init!");<br /> }<br /><br /> private void destroyMethod() {<br />  LOGGER.debug("SomeServiceImpl - Destroy Method!");<br /> }<br /><br /> @Override<br /> public void methodA() {<br />  LOGGER.debug("SomeServiceImpl - Method A executed");<br /> }<br /><br /> @Override<br /> public void methodB() {<br />  LOGGER.debug("SomeServiceImpl - Method B executed");<br /> }<br /><br />}<br /></pre><br /><b>SomeOtherService.java</b><br /><br /><pre class="brush:java">package pl.grzejszczak.marcin.postprocessor;<br /><br />public interface SomeOtherService {<br /> void methodC();<br /><br /> void methodD();<br />}<br /></pre><br /><b>SomeOtherServiceImpl.java</b><br /><br /><pre class="brush:java">package pl.grzejszczak.marcin.postprocessor;<br /><br />import org.slf4j.Logger;<br />import org.slf4j.LoggerFactory;<br /><br />public class SomeOtherServiceImpl implements SomeOtherService {<br /> private static final Logger LOGGER = LoggerFactory.getLogger(SomeOtherServiceImpl.class);<br /><br /> public SomeOtherServiceImpl() {<br />  LOGGER.debug("SomeOtherServiceImpl - I'm created!");<br /> }<br /><br /> private void afterInit() {<br />  LOGGER.debug("SomeOtherServiceImpl - After init!");<br /> }<br /><br /> private void destroyMethod() {<br />  LOGGER.debug("SomeOtherServiceImpl - Destroy Method!");<br /> }<br /><br /> @Override<br /> public void methodC() {<br />  LOGGER.debug("SomeOtherServiceImpl - Method C executed");<br /> }<br /><br /> @Override<br /> public void methodD() {<br />  LOGGER.debug("SomeOtherServiceImpl - Method D executed");<br /> }<br /><br />}<br /></pre><br /><b>AbstractBeanPostProcessor.java</b><br /><br /><pre class="brush:java">package pl.grzejszczak.marcin.postprocessor;<br /><br />import org.springframework.beans.BeansException;<br />import org.springframework.beans.factory.config.BeanPostProcessor;<br /><br />public abstract class AbstractBeanPostProcessor&lt;T&gt; implements BeanPostProcessor {<br /><br /> private Class&lt;T&gt; clazz;<br /><br /> public AbstractBeanPostProcessor(Class&lt;T&gt; clazz) {<br />  this.clazz = clazz;<br /> }<br /><br /> @Override<br /> public Object postProcessAfterInitialization(Object bean, String name) throws BeansException {<br />  checkConditions();<br /><br />  if (clazz.isAssignableFrom(bean.getClass())) {<br />   doAfter();<br />  }<br />  return bean;<br /> }<br /><br /> @Override<br /> public Object postProcessBeforeInitialization(Object bean, String name) throws BeansException {<br />  checkConditions();<br /><br />  if (clazz.isAssignableFrom(bean.getClass())) {<br />   doBefore();<br />  }<br />  return bean;<br /> }<br /><br /> private void checkConditions() {<br />  if (clazz == null) {<br />   throw new NullArgumentException("Provide the interface for the post processor");<br />  }<br /> }<br /><br /> public abstract void doBefore();<br /><br /> public abstract void doAfter();<br /><br />}<br /></pre><br /><b>SomeServicePostProcessor.java</b><br /><br /><pre class="brush:java">package pl.grzejszczak.marcin.postprocessor;<br /><br />import org.slf4j.Logger;<br />import org.slf4j.LoggerFactory;<br />import org.springframework.stereotype.Component;<br /><br />@Component<br />public class SomeServicePostProcessor extends AbstractBeanPostProcessor&lt;SomeService&gt; {<br /><br /> private static final Logger LOGGER = LoggerFactory.getLogger(SomeServicePostProcessor.class);<br /><br /> public SomeServicePostProcessor() {<br />  super(SomeService.class);<br /> }<br /><br /> @Override<br /> public void doBefore() {<br />  LOGGER.info("BEFORE it's init method has been executed but AFTER SomeServiceImpl has been instantiated I would like to do sth...");<br /> }<br /><br /> @Override<br /> public void doAfter() {<br />  LOGGER.info("AFTER SomeServiceImpl has executed its init method I would like to do sth more...");<br /> }<br />}<br /></pre><br /><b>SpringMain.java</b><br /><b><br /></b><br /><pre class="brush:java">package pl.grzejszczak.marcin.postprocessor;<br /><br />import org.springframework.context.ConfigurableApplicationContext;<br />import org.springframework.context.support.ClassPathXmlApplicationContext;<br /><br />public class SpringMain {<br /><br /> public static void main(String[] args) {<br />  ConfigurableApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");<br />  SomeService someService = context.getBean(SomeService.class);<br />  someService.methodA();<br />  someService.methodB();<br />  SomeOtherService someOtherService = context.getBean(SomeOtherService.class);<br />  someOtherService.methodC();<br />  someOtherService.methodD();<br />  context.close();<br /> }<br />}<br /></pre><br /><br /><b>ApplicationContext.xml</b><br /><br /><pre class="brush:xml"><beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.springframework.org/schema/beans" xsi:schemalocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd"><br /><br /> &lt;bean class="pl.grzejszczak.marcin.postprocessor.SomeServiceImpl" destroy-method="destroyMethod" init-method="afterInit"/&gt;<br /> &lt;bean class="pl.grzejszczak.marcin.postprocessor.SomeOtherServiceImpl" destroy-method="destroyMethod" init-method="afterInit"/&gt;<br /> &lt;bean class="pl.grzejszczak.marcin.postprocessor.SomeServicePostProcessor"/&gt;<br /></beans><br /></pre><br /><b>Logs</b><br /><br /><pre class="brush:xml">2012-10-23 00:20:38,863 INFO  [main] org.springframework.context.support.ClassPathXmlApplicationContext:495 Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@28d11816: startup date [Tue Oct 23 00:20:38 CEST 2012]; root of context hierarchy<br />2012-10-23 00:20:38,956 INFO  [main] org.springframework.beans.factory.xml.XmlBeanDefinitionReader:315 Loading XML bean definitions from class path resource [applicationContext.xml]<br />2012-10-23 00:20:39,213 INFO  [main] org.springframework.beans.factory.support.DefaultListableBeanFactory:557 Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@6bb4469: defining beans [pl.grzejszczak.marcin.postprocessor.SomeServiceImpl#0,pl.grzejszczak.marcin.postprocessor.SomeOtherServiceImpl#0,pl.grzejszczak.marcin.postprocessor.SomeServicePostProcessor#0]; root of factory hierarchy<br />2012-10-23 00:20:39,214 DEBUG [main] pl.grzejszczak.marcin.postprocessor.SomeServiceImpl:10 SomeServiceImpl - I'm created!<br />2012-10-23 00:20:39,215 INFO  [main] pl.grzejszczak.marcin.postprocessor.SomeServicePostProcessor:18 BEFORE its init method has been executed but AFTER SomeServiceImpl has been instantiated I would like to do sth...<br />2012-10-23 00:20:39,216 DEBUG [main] pl.grzejszczak.marcin.postprocessor.SomeServiceImpl:14 SomeServiceImpl - After init!<br />2012-10-23 00:20:39,216 INFO  [main] pl.grzejszczak.marcin.postprocessor.SomeServicePostProcessor:23 AFTER SomeServiceImpl has executed its init method I would like to do sth more...<br />2012-10-23 00:20:39,220 DEBUG [main] pl.grzejszczak.marcin.postprocessor.SomeOtherServiceImpl:10 SomeOtherServiceImpl - I'm created!<br />2012-10-23 00:20:39,221 DEBUG [main] pl.grzejszczak.marcin.postprocessor.SomeOtherServiceImpl:14 SomeOtherServiceImpl - After init!<br />2012-10-23 00:20:39,225 DEBUG [main] pl.grzejszczak.marcin.postprocessor.SomeServiceImpl:23 SomeServiceImpl - Method A executed<br />2012-10-23 00:20:39,241 DEBUG [main] pl.grzejszczak.marcin.postprocessor.SomeServiceImpl:28 SomeServiceImpl - Method B executed<br />2012-10-23 00:20:39,242 DEBUG [main] pl.grzejszczak.marcin.postprocessor.SomeOtherServiceImpl:23 SomeOtherServiceImpl - Method C executed<br />2012-10-23 00:20:39,242 DEBUG [main] pl.grzejszczak.marcin.postprocessor.SomeOtherServiceImpl:28 SomeOtherServiceImpl - Method D executed<br />2012-10-23 00:20:39,242 INFO  [main] org.springframework.context.support.ClassPathXmlApplicationContext:1020 Closing org.springframework.context.support.ClassPathXmlApplicationContext@28d11816: startup date [Tue Oct 23 00:20:38 CEST 2012]; root of context hierarchy<br />2012-10-23 00:20:39,243 INFO  [main] org.springframework.beans.factory.support.DefaultListableBeanFactory:433 Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@6bb4469: defining beans [pl.grzejszczak.marcin.postprocessor.SomeServiceImpl#0,pl.grzejszczak.marcin.postprocessor.SomeOtherServiceImpl#0,pl.grzejszczak.marcin.postprocessor.SomeServicePostProcessor#0]; root of factory hierarchy<br />2012-10-23 00:20:39,244 DEBUG [main] pl.grzejszczak.marcin.postprocessor.SomeOtherServiceImpl:18 SomeOtherServiceImpl - Destroy Method!<br />2012-10-23 00:20:39,245 DEBUG [main] pl.grzejszczak.marcin.postprocessor.SomeServiceImpl:18 SomeServiceImpl - Destroy Method!<br /></pre>As you can see it is quite easy, using generics and the BeanPostProcessor, to specify certain behavors for a given type (generics and constructor of SomeServiceImpl) or a group of types of classes (generics and constructor of SomeService).</div>
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://toomuchcoding.com/blog/2012/10/23/spring-beanpostprocessor-for-specified/" data-via="mgrzejszczak" data-counturl="http://toomuchcoding.com/blog/2012/10/23/spring-beanpostprocessor-for-specified/" >Tweet</a>
+  
+  
+  
+</div>
 
-
-        <hr class="divider-short"/>
-
-        
-      </div>
-    </div>
-  </div>
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/10/17/interesting-articles/" title="Previous Post: Interesting articles">&laquo; Interesting articles</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2012/10/23/hibernate-inheritance-table-per/" title="Next Post: Hibernate inheritance  table per subclass with different foreign key names">Hibernate inheritance  table per subclass with different foreign key names &raquo;</a>
+      
+    </p>
+  </footer>
 </article>
 
-<hr class="divider-short"/>
+</div>
 
-<div class="archive-link">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-8 col-md-offset-2">
-        
-          <a class="pull-left" href="/blog/2012/10/17/interesting-articles/" title="Previous Post: Interesting articles">&laquo; Previous: Interesting articles</a>
-        
+<aside class="sidebar">
+  
+    <section>
+  <h1>About Me</h1>
+  <p>Enthusiast of clean coding and good design. Author of "Mockito Instant" and "Mockito Cookbook" books. Contributor to several open source projects (including Rest-assured, Drools, Moco, Mockito). Co-author of the Groovy @Builder, "micro-infra-spring", "spring-cloud-zookeeper", "spring-cloud-sleuth" microservices related open source solutions. Author of Uptodate Gradle plugin, Spock subjects-collaborators extension and gradle-test-profiler open source projects. Co-founder of the Warsaw Groovy User Group. A member of the Most Valuable Blogger program at DZone and Java Code Geeks. Interested in working with JVM languages, XP-driven projects with continuous deployment and most preferably microservice architecture.</p>
 
-        
-          <a class="pull-right" href="/blog/2012/10/23/hibernate-inheritance-table-per/" title="Next Post: Hibernate inheritance  table per subclass with different foreign key names">Next: Hibernate inheritance  table per subclass with different foreign key names &raquo;</a>
-        
-      </div>
+  <p>Homepage:</p>
+  <p><a href="http://marcin.grzejszczak.pl">http://marcin.grzejszczak.pl</a></p>
+
+  <p>Github profile</p>
+  <p><a href="https://github.com/marcingrzejszczak">https://github.com/marcingrzejszczak</a></p>
+
+  <p>Lanyrd profile</p>
+  <p><a href="http://lanyrd.com/profile/marcin-grzejszczak">http://lanyrd.com/profile/marcin-grzejszczak</a></p>
+</section>
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2016/02/27/json-assert-lib-released/">JSON Assert lib released</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2016/01/04/post-on-spring-blog/">Post on Spring blog</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/10/16/business-value-gone-wild/">Business value gone wild</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/09/27/microservice-deployment/">Microservice Deployment</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/02/08/how-to-speed-up-your-gradle-build-from/">How to speed up your Gradle build from 90 to 8 minutes</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("mgrzejszczak", , );
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <p>Follow <a href="http://twitter.com/mgrzejszczak">@mgrzejszczak</a></p>
+  
+</section>
+
+
+
+<section class="googleplus">
+  <h1>
+    <a href="https://plus.google.com/108408840893580782990?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+  
+</aside>
+
+
     </div>
   </div>
-</div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2016 - Marcin Grzejszczak -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a>. Design by <a href="http://octopressthemes.com">Octopress Themes</a>. Background image by <a href="http://www.flickr.com/photos/89433098@N04/">Florian Kraft Fotografie</a></span>
+</p>
 
-    <footer id="footer" class="her-row">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-1">
-  <a href="/"><h4>Home</h4></a>
-</div>
-
-<div class="col-md-2">
-  <div class="social-icon-list">
-    
-    <a href="https://twitter.com/mgrzejszczak"><img src="/images/glyphicons_social_31_twitter.png"/></a>
-    
-
-    
-    <a href="https://github.com/marcingrzejszczak"><img src="/images/glyphicons_social_21_github.png"/></a>
-    
-
-    
-    <a href="https://linkedin.com/in/marcin-grzejszczak-15565119"><img src="/images/glyphicons_social_17_linked_in.png"/></a>
-    
-
-    
-    <a href="mailto:blog@toomuchcoding.com"><img src="/images/glyphicons_social_39_e-mail.png"/></a>
-    
-  </div>
-</div>
-
-<div class="pull-right">
-  <h4>Powered by <a href="http://octopress.org/">Octopress</a>. Designed by <a href="http://AdrianArtiles.com">Adrian Artiles</a>.</h4>
-</div>
-
-
-    </div>
-  </div>
 </footer>
+  
 
-    
-  </body>
+<script type="text/javascript">
+      var disqus_shortname = 'toomuchcoding';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
 </html>

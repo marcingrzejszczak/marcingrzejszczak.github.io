@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Jms | TOO MUCH CODING BLOG]]></title>
+  <title><![CDATA[Category: jms | TOO MUCH CODING]]></title>
   <link href="http://toomuchcoding.com/blog/categories/jms/atom.xml" rel="self"/>
   <link href="http://toomuchcoding.com/"/>
-  <updated>2016-03-02T13:52:41+01:00</updated>
+  <updated>2016-03-02T21:26:10+01:00</updated>
   <id>http://toomuchcoding.com/</id>
   <author>
     <name><![CDATA[Marcin Grzejszczak]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Apache Camel With Spring, Routing With Enrichment Service]]></title>
+    <title type="html"><![CDATA[Apache Camel with Spring, routing with enrichment service]]></title>
     <link href="http://toomuchcoding.com/blog/2012/11/22/apache-camel-with-spring-routing-with/"/>
     <updated>2012-11-22T23:13:00+01:00</updated>
     <id>http://toomuchcoding.com/blog/2012/11/22/apache-camel-with-spring-routing-with</id>
@@ -27,7 +27,7 @@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Spring JMS, Message Automatic Conversion, JMS Template]]></title>
+    <title type="html"><![CDATA[Spring JMS, message automatic conversion, JMS template]]></title>
     <link href="http://toomuchcoding.com/blog/2012/11/05/spring-jms-message-automatic-conversion/"/>
     <updated>2012-11-05T02:29:00+01:00</updated>
     <id>http://toomuchcoding.com/blog/2012/11/05/spring-jms-message-automatic-conversion</id>

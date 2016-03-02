@@ -3,17 +3,13 @@
 <!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
 <!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
-<!DOCTYPE html>
-<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
-<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
-<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Mockito - Extra Interfaces With Annotations and Static Methods - TOO MUCH CODING BLOG</title>
+  <title>Mockito - Extra Interfaces with annotations and static methods - TOO MUCH CODING</title>
   <meta name="author" content="Marcin Grzejszczak">
 
   
-  <meta name="description" content="Mockito - Extra Interfaces With Annotations and Static Methods written in extrainterfaces, mockito, mockitojunitrunner, refactoring, unit tests, &hellip;">
+  <meta name="description" content="In the code I have quite recently came across a really bad piece of code that based on class casting in terms of performing some actions on objects &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -22,30 +18,61 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://toomuchcoding.com/blog/2013/06/12/mockito-extra-interfaces-with">
+  <link rel="canonical" href="http://toomuchcoding.com/blog/2013/06/12/mockito-extra-interfaces-with/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <link href="/atom.xml" rel="alternate" title="TOO MUCH CODING BLOG" type="application/atom+xml">
   <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/ender.js"></script>
   <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="TOO MUCH CODING" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
   
 
 </head>
 
-  <body>
-    <a href="/" class="home-icon">
-      <img src="/images/home.png"/>
-    </a>
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">TOO MUCH CODING</a></h1>
+  
+    <h2>A blog for coding addicts</h2>
+  
+</hgroup>
 
-    <article role="article" class="full-single-article">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-8 col-md-offset-2">
-        <h1>Mockito - Extra Interfaces With Annotations and Static Methods</h1>
-        <div class="meta">
-          written 
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:toomuchcoding.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Mockito - Extra Interfaces With Annotations and Static Methods</h1>
+    
+    
+      <p class="meta">
+        
 
 
 
@@ -57,11 +84,44 @@
   
 
 
+<time datetime="2013-06-12T13:12:00+02:00" pubdate data-updated="true"></time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><div class='post'>
+<br />In the code I have quite recently came across a really bad piece of code that based on class casting in terms of performing some actions on objects. Of course the code needed to be refactored but sometimes you can't do it / or don't want to do it (and it should be understandable) if first you don't have unit tests of that functionality. In the following post I will show how to test such code, how to refactor it and in fact what I think about such code ;) <div><br /></div><div><a name='more'></a><br />
+<!--more-->
+</div><div>Let's take a look at the project structure:</div><div><br /></div><div><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-RpIw1Ccnof8/UbhBR8EHqbI/AAAAAAAABZU/cPRqLAPNCHU/s1600/Mockito+Extra+Interfaces.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="320" src="http://3.bp.blogspot.com/-RpIw1Ccnof8/UbhBR8EHqbI/AAAAAAAABZU/cPRqLAPNCHU/s320/Mockito+Extra+Interfaces.jpg" width="152" /></a></div><span id="goog_1682433447"></span><span id="goog_1682433448"></span><br /></div><div>As presented in the post regarding <a href="http://toomuchcoding.blogspot.com/2013/06/mockito-returndeepstubs-for-jaxb.html">Mocktio RETURNS_DEEP_STUBS Answer for JAXB</a>&nbsp;yet again we have the JAXB generated classes by the JAXB compiler in the <b>com.blogspot.toomuchcoding.model</b> package. Let's ommit the discussion over the <b>pom.xml</b> file since it's exactly the same as in the previous post.<br /><br />In the&nbsp;<b>com.blogspot.toomuchcoding.adapter</b>&nbsp;package we have adapters over the JAXB PlayerDetails class that provides access to the Player interface. There is the<br /><br /><b>CommonPlayerAdapter.java</b><br /><br /><pre class="brush:java">package com.blogspot.toomuchcoding.adapter;<br /><br />import com.blogspot.toomuchcoding.model.Player;<br />import com.blogspot.toomuchcoding.model.PlayerDetails;<br /><br />/**<br /> * User: mgrzejszczak<br /> * Date: 09.06.13<br /> * Time: 15:42<br /> */<br />public class CommonPlayerAdapter implements Player {<br />    private final PlayerDetails playerDetails;<br /><br />    public CommonPlayerAdapter(PlayerDetails playerDetails){<br />        this.playerDetails = playerDetails;<br />    }<br /><br />    @Override<br />    public void run() {<br />        System.out.printf("Run %s. Run!%n", playerDetails.getName());<br />    }<br /><br />    public PlayerDetails getPlayerDetails() {<br />        return playerDetails;<br />    }<br />}<br /><br /></pre><br /><b>DefencePlayerAdapter.java</b><br /><br /><pre class="brush:java">package com.blogspot.toomuchcoding.adapter;<br /><br />import com.blogspot.toomuchcoding.model.DJ;<br />import com.blogspot.toomuchcoding.model.DefensivePlayer;<br />import com.blogspot.toomuchcoding.model.JavaDeveloper;<br />import com.blogspot.toomuchcoding.model.PlayerDetails;<br /><br />/**<br /> * User: mgrzejszczak<br /> * Date: 09.06.13<br /> * Time: 15:42<br /> */<br />public class DefencePlayerAdapter extends CommonPlayerAdapter implements DefensivePlayer, DJ, JavaDeveloper {<br /><br />    public DefencePlayerAdapter(PlayerDetails playerDetails){<br />        super(playerDetails);<br />    }<br /><br />    @Override<br />    public void defend(){<br />        System.out.printf("Defence! %s. Defence!%n", getPlayerDetails().getName());<br />    }<br /><br />    @Override<br />    public void playSomeMusic() {<br />        System.out.println("Oops I did it again...!");<br />    }<br /><br />    @Override<br />    public void doSomeSeriousCoding() {<br />        System.out.println("System.out.println(\"Hello world\");");<br />    }<br />}<br /><br /></pre><b>OffensivePlayerAdapter.java</b><br /><br /><pre class="brush:java">package com.blogspot.toomuchcoding.adapter;<br /><br />import com.blogspot.toomuchcoding.model.OffensivePlayer;<br />import com.blogspot.toomuchcoding.model.PlayerDetails;<br /><br />/**<br /> * User: mgrzejszczak<br /> * Date: 09.06.13<br /> * Time: 15:42<br /> */<br />public class OffensivePlayerAdapter extends CommonPlayerAdapter implements OffensivePlayer {<br /><br />    public OffensivePlayerAdapter(PlayerDetails playerDetails){<br />        super(playerDetails);<br />    }<br /><br />    @Override<br />    public void shoot(){<br />        System.out.printf("%s Shooooot!.%n", getPlayerDetails().getName());<br />    }<br />}<br /><br /></pre>Ok, now let's go to the more interesting part. Let us assume that we have a very simple factory of players:<br /><br /><b>PlayerFactoryImpl.java</b><br /><br /><pre class="brush:java">package com.blogspot.toomuchcoding.factory;<br /><br />import com.blogspot.toomuchcoding.adapter.CommonPlayerAdapter;<br />import com.blogspot.toomuchcoding.adapter.DefencePlayerAdapter;<br />import com.blogspot.toomuchcoding.adapter.OffensivePlayerAdapter;<br />import com.blogspot.toomuchcoding.model.Player;<br />import com.blogspot.toomuchcoding.model.PlayerDetails;<br />import com.blogspot.toomuchcoding.model.PositionType;<br /><br />/**<br /> * User: mgrzejszczak<br /> * Date: 09.06.13<br /> * Time: 15:53<br /> */<br /><br />public class PlayerFactoryImpl implements PlayerFactory {<br /><br />    @Override<br />    public Player createPlayer(PositionType positionType) {<br />        PlayerDetails player = createCommonPlayer(positionType);<br />        switch (positionType){<br />            case ATT:<br />                return new OffensivePlayerAdapter(player);<br />            case MID:<br />                return new OffensivePlayerAdapter(player);<br />            case DEF:<br />                return new DefencePlayerAdapter(player);<br />            case GK:<br />                return new DefencePlayerAdapter(player);<br />            default:<br />                return new CommonPlayerAdapter(player);<br />        }<br />    }<br /><br />    private PlayerDetails createCommonPlayer(PositionType positionType){<br />        PlayerDetails playerDetails = new PlayerDetails();<br />        playerDetails.setPosition(positionType);<br />        return playerDetails;<br />    }<br />}<br /><br /></pre>Ok so we have the factory that builds Players. Let's take a look at the Service that uses the factory:<br /><br /><b>PlayerServiceImpl.java</b><br /><br /><pre class="brush:java">package com.blogspot.toomuchcoding.service;<br /><br />import com.blogspot.toomuchcoding.factory.PlayerFactory;<br />import com.blogspot.toomuchcoding.model.*;<br /><br />/**<br /> * User: mgrzejszczak<br /> * Date: 08.06.13<br /> * Time: 19:02<br /> */<br />public class PlayerServiceImpl implements PlayerService {<br /><br />    private PlayerFactory playerFactory;<br /><br />    @Override<br />    public Player playAGameWithAPlayerOfPosition(PositionType positionType) {<br />        Player player = playerFactory.createPlayer(positionType);<br />        player.run();<br />        performAdditionalActions(player);<br />        return player;<br />    }<br /><br />    private void performAdditionalActions(Player player) {<br />        if(player instanceof OffensivePlayer){<br />            OffensivePlayer offensivePlayer = (OffensivePlayer) player;<br />            performAdditionalActionsForTheOffensivePlayer(offensivePlayer);<br />        }else if(player instanceof DefensivePlayer){<br />            DefensivePlayer defensivePlayer = (DefensivePlayer) player;<br />            performAdditionalActionsForTheDefensivePlayer(defensivePlayer);<br />        }<br />    }<br /><br />    private void performAdditionalActionsForTheOffensivePlayer(OffensivePlayer offensivePlayer){<br />        offensivePlayer.shoot();<br />    }<br /><br />    private void performAdditionalActionsForTheDefensivePlayer(DefensivePlayer defensivePlayer){<br />        defensivePlayer.defend();<br />        try{<br />            DJ dj = (DJ)defensivePlayer;<br />            dj.playSomeMusic();<br />            JavaDeveloper javaDeveloper = (JavaDeveloper)defensivePlayer;<br />            javaDeveloper.doSomeSeriousCoding();<br />        }catch(ClassCastException exception){<br />            System.err.println("Sorry, I can't do more than just play football...");<br />        }<br />    }<br /><br />    public PlayerFactory getPlayerFactory() {<br />        return playerFactory;<br />    }<br /><br />    public void setPlayerFactory(PlayerFactory playerFactory) {<br />        this.playerFactory = playerFactory;<br />    }<br />}<br /><br /></pre>Let's admit it... this code is bad. Internally when you look at it (regardless of the fact whether it used <b>instance of</b> operator or not) you feel that it is evil :) As you can see in the code we have some class casts going on... How on earth can we test it? In the majority of testing frameworks you can't do such class casts on mocks since they are built with the CGLIB library and there can be some ClassCastExceptions thrown. You could still not return mocks and real implementations (assuming that those will not perform any ugly stuff in the construction process) and it could actually work but still - this is bad code :P<br /><br />Mockito comes to the rescue (although you shouldn't overuse this feature - in fact if you need to use it please consider refactoring it) with its <b><a href="http://mockito.googlecode.com/svn/branches/1.8.5/javadoc/org/mockito/MockSettings.html#extraInterfaces(java.lang.Class...)">extraInterfaces</a></b> feature:<br /><br /><h3>extraInterfaces</h3><blockquote><a href="http://mockito.googlecode.com/svn/branches/1.8.5/javadoc/org/mockito/MockSettings.html" title="interface in org.mockito">MockSettings</a> <b>extraInterfaces</b>(java.lang.Class&lt;?&gt;...&nbsp;interfaces)<br />Specifies extra interfaces the mock should implement. Might be useful for legacy code or some corner cases. For background, see issue 51&nbsp;<a href="http://code.google.com/p/mockito/issues/detail?id=51">here</a>This mysterious feature should be used very occasionally. The object under test should know exactly its collaborators &amp; dependencies. If you happen to use it often than please make sure you are really producing simple, clean &amp; readable code.<br />Examples:<br />Foo foo = mock(Foo.class, withSettings().extraInterfaces(Bar.class, Baz.class));<br />//now, the mock implements extra interfaces, so following casting is possible:<br />Bar bar = (Bar) foo;<br />Baz baz = (Baz) foo;<br /><b>Parameters:</b><code>interfaces</code>&nbsp;- extra interfaces the should implement.<br /><b>Returns:</b>settings instance so that you can fluently specify other settings</blockquote><dl><dd></dd><dd><dl></dl></dd><dd><dl><div><br /></div></dl></dd></dl>Now let's take a look at the test:<br /><br /><b>PlayerServiceImplTest.java</b><br /><br /><pre class="brush:java">package com.blogspot.toomuchcoding.service;<br /><br />import com.blogspot.toomuchcoding.factory.PlayerFactory;<br />import com.blogspot.toomuchcoding.model.*;<br />import org.junit.Test;<br />import org.junit.runner.RunWith;<br />import org.mockito.InjectMocks;<br />import org.mockito.Mock;<br />import org.mockito.invocation.InvocationOnMock;<br />import org.mockito.runners.MockitoJUnitRunner;<br />import org.mockito.stubbing.Answer;<br /><br />import static org.hamcrest.CoreMatchers.is;<br />import static org.junit.Assert.assertThat;<br />import static org.mockito.BDDMockito.*;<br /><br />/**<br /> * User: mgrzejszczak<br /> * Date: 08.06.13<br /> * Time: 19:26<br /> */<br />@RunWith(MockitoJUnitRunner.class)<br />public class PlayerServiceImplTest {<br /><br />    @Mock<br />    PlayerFactory playerFactory;<br /><br />    @InjectMocks<br />    PlayerServiceImpl objectUnderTest;<br /><br />    @Mock(extraInterfaces = {DJ.class, JavaDeveloper.class})<br />    DefensivePlayer defensivePlayerWithDjAndJavaDevSkills;<br /><br />    @Mock<br />    DefensivePlayer defensivePlayer;<br /><br />    @Mock<br />    OffensivePlayer offensivePlayer;<br /><br />    @Mock<br />    Player commonPlayer;<br /><br />    @Test<br />    public void shouldReturnOffensivePlayerThatRan() throws Exception {<br />        //given<br />        given(playerFactory.createPlayer(PositionType.ATT)).willReturn(offensivePlayer);<br /><br />        //when<br />        Player createdPlayer = objectUnderTest.playAGameWithAPlayerOfPosition(PositionType.ATT);<br /><br />        //then<br />        assertThat(createdPlayer == offensivePlayer, is(true));<br />        verify(offensivePlayer).run();<br />    }<br /><br />    @Test<br />    public void shouldReturnDefensivePlayerButHeWontBeADjNorAJavaDev() throws Exception {<br />        //given<br />        given(playerFactory.createPlayer(PositionType.GK)).willReturn(defensivePlayer);<br /><br />        //when<br />        Player createdPlayer = objectUnderTest.playAGameWithAPlayerOfPosition(PositionType.GK);<br /><br />        //then<br />        assertThat(createdPlayer == defensivePlayer, is(true));<br />        verify(defensivePlayer).run();<br />        verify(defensivePlayer).defend();<br />        verifyNoMoreInteractions(defensivePlayer);<br />    }<br /><br />    @Test<br />    public void shouldReturnDefensivePlayerBeingADjAndAJavaDev() throws Exception {<br />        //given<br />        given(playerFactory.createPlayer(PositionType.GK)).willReturn(defensivePlayerWithDjAndJavaDevSkills);<br />        doAnswer(new Answer&lt;Object&gt;() {<br />            @Override<br />            public Object answer(InvocationOnMock invocationOnMock) throws Throwable {<br />                System.out.println("Hit me baby one more time!");<br />                return null;<br />            }<br />        }).when(((DJ) defensivePlayerWithDjAndJavaDevSkills)).playSomeMusic();<br />        doAnswer(new Answer&lt;Object&gt;() {<br />            @Override<br />            public Object answer(InvocationOnMock invocationOnMock) throws Throwable {<br />                System.out.println("public static void main(String... args){\n}");<br />                return null;<br />            }<br />        }).when(((JavaDeveloper) defensivePlayerWithDjAndJavaDevSkills)).doSomeSeriousCoding();<br /><br />        //when<br />        Player createdPlayer = objectUnderTest.playAGameWithAPlayerOfPosition(PositionType.GK);<br /><br />        //then<br />        assertThat(createdPlayer == defensivePlayerWithDjAndJavaDevSkills, is(true));<br />        verify(defensivePlayerWithDjAndJavaDevSkills).run();<br />        verify(defensivePlayerWithDjAndJavaDevSkills).defend();<br />        verify((DJ) defensivePlayerWithDjAndJavaDevSkills).playSomeMusic();<br />        verify((JavaDeveloper) defensivePlayerWithDjAndJavaDevSkills).doSomeSeriousCoding();<br />    }<br /><br />    @Test<br />    public void shouldReturnDefensivePlayerBeingADjAndAJavaDevByUsingWithSettings() throws Exception {<br />        //given<br />        DefensivePlayer defensivePlayerWithDjAndJavaDevSkills = mock(DefensivePlayer.class, withSettings().extraInterfaces(DJ.class, JavaDeveloper.class));<br />        given(playerFactory.createPlayer(PositionType.GK)).willReturn(defensivePlayerWithDjAndJavaDevSkills);<br />        doAnswer(new Answer&lt;Object&gt;() {<br />            @Override<br />            public Object answer(InvocationOnMock invocationOnMock) throws Throwable {<br />                System.out.println("Hit me baby one more time!");<br />                return null;<br />            }<br />        }).when(((DJ) defensivePlayerWithDjAndJavaDevSkills)).playSomeMusic();<br />        doAnswer(new Answer&lt;Object&gt;() {<br />            @Override<br />            public Object answer(InvocationOnMock invocationOnMock) throws Throwable {<br />                System.out.println("public static void main(String... args){\n}");<br />                return null;<br />            }<br />        }).when(((JavaDeveloper) defensivePlayerWithDjAndJavaDevSkills)).doSomeSeriousCoding();<br /><br />        //when<br />        Player createdPlayer = objectUnderTest.playAGameWithAPlayerOfPosition(PositionType.GK);<br /><br />        //then<br />        assertThat(createdPlayer == defensivePlayerWithDjAndJavaDevSkills, is(true));<br />        verify(defensivePlayerWithDjAndJavaDevSkills).run();<br />        verify(defensivePlayerWithDjAndJavaDevSkills).defend();<br />        verify((DJ) defensivePlayerWithDjAndJavaDevSkills).playSomeMusic();<br />        verify((JavaDeveloper) defensivePlayerWithDjAndJavaDevSkills).doSomeSeriousCoding();<br />    }<br /><br />    @Test<br />    public void shouldReturnCommonPlayer() throws Exception {<br />        //given<br />        given(playerFactory.createPlayer(null)).willReturn(commonPlayer);<br /><br />        //when<br />        Player createdPlayer = objectUnderTest.playAGameWithAPlayerOfPosition(null);<br /><br />        //then<br />        assertThat(createdPlayer, is(commonPlayer));<br />    }<br />}<br /><br /></pre>There are quite a few tests here so let's take a look at the most interesting ones. &nbsp;But before we do it let's<br /><br />We start with providing the <b>@RunWith(MockitoJUnitRunner.class)</b>&nbsp;annotation which alows us to use the Mockito annotations such as&nbsp;<b>@Mock</b> and <b>@InjectMocks</b>.<br /><br />Speaking of which&nbsp;<b>@Mock</b> annotation creates a Mock whereas&nbsp;<b>@InjectMocks</b> inject all the mocks either by constructor or by setters (that's awesome isn't it? :) ).<br /><br />For the defensive player we are using the extra element of the annotation <b>extraInterfaces </b>that provides additional interfaces for the given Mock. You can also write (what you can find in the <b>shouldReturnDefensivePlayerBeingADjAndAJavaDevByUsingWithSettings</b> test) :<br /><br /><pre class="brush:java">DefensivePlayer defensivePlayerWithDjAndJavaDevSkills = mock(DefensivePlayer.class, withSettings().extraInterfaces(DJ.class, JavaDeveloper.class));<br /><br /></pre>Let's take a closer look at the test that we wrote for the functionality related to the DefensivePlayer and the casting part of the tested function:<br /><br /><pre class="brush:java">@Test<br />    public void shouldReturnDefensivePlayerBeingADjAndAJavaDev() throws Exception {<br />        //given<br />        given(playerFactory.createPlayer(PositionType.GK)).willReturn(defensivePlayerWithDjAndJavaDevSkills);<br />        doAnswer(new Answer&lt;Object&gt;() {<br />            @Override<br />            public Object answer(InvocationOnMock invocationOnMock) throws Throwable {<br />                System.out.println("Hit me baby one more time!");<br />                return null;<br />            }<br />        }).when(((DJ) defensivePlayerWithDjAndJavaDevSkills)).playSomeMusic();<br />        doAnswer(new Answer&lt;Object&gt;() {<br />            @Override<br />            public Object answer(InvocationOnMock invocationOnMock) throws Throwable {<br />                System.out.println("public static void main(String... args){\n}");<br />                return null;<br />            }<br />        }).when(((JavaDeveloper) defensivePlayerWithDjAndJavaDevSkills)).doSomeSeriousCoding();<br /><br />        //when<br />        Player createdPlayer = objectUnderTest.playAGameWithAPlayerOfPosition(PositionType.GK);<br /><br />        //then<br />        assertThat(createdPlayer == defensivePlayerWithDjAndJavaDevSkills, is(true));<br />        verify(defensivePlayerWithDjAndJavaDevSkills).run();<br />        verify(defensivePlayerWithDjAndJavaDevSkills).defend();<br />        verify((DJ) defensivePlayerWithDjAndJavaDevSkills).playSomeMusic();<br />        verify((JavaDeveloper) defensivePlayerWithDjAndJavaDevSkills).doSomeSeriousCoding();<br />    }<br /></pre><br />We are using the <b>BDDMockito</b> static methods like <b>given(...).willReturn(...).willAnswer(...)</b> etc. Then we are stubbing void methods with our custom Anwsers. In the next line you can see that in order to stub methods of another interface you have to cast the mock to the given interface. The same is related to the verification phase where i norder to check if a method was executed you have to cast the mock to the given interface.<br /><br />You could improve the test by returning a real implementation from the factory or if it's a "heavy" operation to create one you could return a mock of such an implementation. What I wanted to show here is how to use the extra interfaces in Mockito (perhaps my usecase is not the best one ;) ). Anyway the implementation presented in the test is bad so we should think of the way to refactor it...<br /><br />One of the ideas could be, assuming that the additional logic done in the Service is a part of the creation of the object, to move the code to the factory as such:<br /><br /><b>PlayFactoryImplWithFieldSettingLogic.java</b><br /><br /><pre class="brush:java">package com.blogspot.toomuchcoding.factory;<br /><br />import com.blogspot.toomuchcoding.adapter.CommonPlayerAdapter;<br />import com.blogspot.toomuchcoding.adapter.DefencePlayerAdapter;<br />import com.blogspot.toomuchcoding.adapter.OffensivePlayerAdapter;<br />import com.blogspot.toomuchcoding.model.*;<br /><br />/**<br /> * User: mgrzejszczak<br /> * Date: 09.06.13<br /> * Time: 15:53<br /> */<br /><br />public class PlayerFactoryImplWithFieldSettingLogic implements PlayerFactory {<br /><br />    @Override<br />    public Player createPlayer(PositionType positionType) {<br />        PlayerDetails player = createCommonPlayer(positionType);<br />        switch (positionType){<br />            case ATT:<br />                return createOffensivePlayer(player);<br />            case MID:<br />                return createOffensivePlayer(player);<br />            case DEF:<br />                return createDefensivePlayer(player);<br />            case GK:<br />                return createDefensivePlayer(player);<br />            default:<br />                return new CommonPlayerAdapter(player);<br />        }<br />    }<br /><br />    private Player createDefensivePlayer(PlayerDetails player) {<br />        DefencePlayerAdapter defencePlayerAdapter = new DefencePlayerAdapter(player);<br />        defencePlayerAdapter.defend();<br />        defencePlayerAdapter.playSomeMusic();<br />        defencePlayerAdapter.doSomeSeriousCoding();<br />        return defencePlayerAdapter;<br />    }<br /><br />    private OffensivePlayer createOffensivePlayer(PlayerDetails player) {<br />        OffensivePlayer offensivePlayer = new OffensivePlayerAdapter(player);<br />        offensivePlayer.shoot();<br />        return offensivePlayer;<br />    }<br /><br />    private PlayerDetails createCommonPlayer(PositionType positionType){<br />        PlayerDetails playerDetails = new PlayerDetails();<br />        playerDetails.setPosition(positionType);<br />        return playerDetails;<br />    }<br />}<br /><br /></pre>In this way there is no casting the code is really clean. And now the PlayerService looks like this:<br /><br /><b>PlayerServiceImplWIthoutUnnecessaryLogic.java</b><br /><br /><pre class="brush:java">package com.blogspot.toomuchcoding.service;<br /><br />import com.blogspot.toomuchcoding.factory.PlayerFactory;<br />import com.blogspot.toomuchcoding.model.*;<br /><br />/**<br /> * User: mgrzejszczak<br /> * Date: 08.06.13<br /> * Time: 19:02<br /> */<br />public class PlayerServiceImplWithoutUnnecessaryLogic implements PlayerService {<br /><br />    private PlayerFactory playerFactory;<br /><br />    /**<br />     * What's the point in having this method then?<br />     * @param positionType<br />     * @return<br />     */<br />    @Override<br />    public Player playAGameWithAPlayerOfPosition(PositionType positionType) {<br />        return playerFactory.createPlayer(positionType);<br />    }<br /><br />    public PlayerFactory getPlayerFactory() {<br />        return playerFactory;<br />    }<br /><br />    public void setPlayerFactory(PlayerFactory playerFactory) {<br />        this.playerFactory = playerFactory;<br />    }<br />}<br /><br /></pre>And the question arises whether there is even any need to have such a method in your code base...<br /><br />Summing it all up I hope that I managed to show how to:<br /><br /><ul><li>Use MockitoJUnitRunner to inject mocks in a clean way</li><li>Use annotations or static methods to add extra interfaces that can be used by your mock</li><li>Use BDDMockito to perform method stubbing</li><li>Stub void methods with custom answer</li><li>Stub and verify methods of the extra interfaces</li><li>Refactor code that is using class casts</li></ul><br />The sources are available at the <a href="https://bitbucket.org/gregorin1987/too-much-coding/src/cab9f99626730e606c7ed354e81d141819351221/Unit%20Testing/Mockito%20-%20With%20Interfaces?at=default">TooMuchCoding Bitbucket</a> repository and <a href="https://github.com/marcingrzejszczak/too-much-coding/tree/master/Unit%20Testing/Mockito%20-%20With%20Interfaces">TooMuchCoding Github</a> repository.<br /><br /><br /><br /><br /></div></div>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Marcin Grzejszczak</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
 
 <time datetime="2013-06-12T13:12:00+02:00" pubdate data-updated="true"></time>
-          
+      
 
-in
 <span class="categories">
   
     <a class='category' href='/blog/categories/extrainterfaces/'>extrainterfaces</a>, <a class='category' href='/blog/categories/mockito/'>mockito</a>, <a class='category' href='/blog/categories/mockitojunitrunner/'>mockitojunitrunner</a>, <a class='category' href='/blog/categories/refactoring/'>refactoring</a>, <a class='category' href='/blog/categories/unit-tests/'>unit tests</a>, <a class='category' href='/blog/categories/withsettings/'>withsettings</a>
@@ -69,75 +129,147 @@ in
 </span>
 
 
-        </div>
-        <div class='post'>
-<br />In the code I have quite recently came across a really bad piece of code that based on class casting in terms of performing some actions on objects. Of course the code needed to be refactored but sometimes you can't do it / or don't want to do it (and it should be understandable) if first you don't have unit tests of that functionality. In the following post I will show how to test such code, how to refactor it and in fact what I think about such code ;) <div><br /></div><div><a name='more'></a><br />
-<!--more-->
-</div><div>Let's take a look at the project structure:</div><div><br /></div><div><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-RpIw1Ccnof8/UbhBR8EHqbI/AAAAAAAABZU/cPRqLAPNCHU/s1600/Mockito+Extra+Interfaces.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="320" src="http://3.bp.blogspot.com/-RpIw1Ccnof8/UbhBR8EHqbI/AAAAAAAABZU/cPRqLAPNCHU/s320/Mockito+Extra+Interfaces.jpg" width="152" /></a></div><span id="goog_1682433447"></span><span id="goog_1682433448"></span><br /></div><div>As presented in the post regarding <a href="http://toomuchcoding.blogspot.com/2013/06/mockito-returndeepstubs-for-jaxb.html">Mocktio RETURNS_DEEP_STUBS Answer for JAXB</a>&nbsp;yet again we have the JAXB generated classes by the JAXB compiler in the <b>com.blogspot.toomuchcoding.model</b> package. Let's ommit the discussion over the <b>pom.xml</b> file since it's exactly the same as in the previous post.<br /><br />In the&nbsp;<b>com.blogspot.toomuchcoding.adapter</b>&nbsp;package we have adapters over the JAXB PlayerDetails class that provides access to the Player interface. There is the<br /><br /><b>CommonPlayerAdapter.java</b><br /><br /><pre class="brush:java">package com.blogspot.toomuchcoding.adapter;<br /><br />import com.blogspot.toomuchcoding.model.Player;<br />import com.blogspot.toomuchcoding.model.PlayerDetails;<br /><br />/**<br /> * User: mgrzejszczak<br /> * Date: 09.06.13<br /> * Time: 15:42<br /> */<br />public class CommonPlayerAdapter implements Player {<br />    private final PlayerDetails playerDetails;<br /><br />    public CommonPlayerAdapter(PlayerDetails playerDetails){<br />        this.playerDetails = playerDetails;<br />    }<br /><br />    @Override<br />    public void run() {<br />        System.out.printf("Run %s. Run!%n", playerDetails.getName());<br />    }<br /><br />    public PlayerDetails getPlayerDetails() {<br />        return playerDetails;<br />    }<br />}<br /><br /></pre><br /><b>DefencePlayerAdapter.java</b><br /><br /><pre class="brush:java">package com.blogspot.toomuchcoding.adapter;<br /><br />import com.blogspot.toomuchcoding.model.DJ;<br />import com.blogspot.toomuchcoding.model.DefensivePlayer;<br />import com.blogspot.toomuchcoding.model.JavaDeveloper;<br />import com.blogspot.toomuchcoding.model.PlayerDetails;<br /><br />/**<br /> * User: mgrzejszczak<br /> * Date: 09.06.13<br /> * Time: 15:42<br /> */<br />public class DefencePlayerAdapter extends CommonPlayerAdapter implements DefensivePlayer, DJ, JavaDeveloper {<br /><br />    public DefencePlayerAdapter(PlayerDetails playerDetails){<br />        super(playerDetails);<br />    }<br /><br />    @Override<br />    public void defend(){<br />        System.out.printf("Defence! %s. Defence!%n", getPlayerDetails().getName());<br />    }<br /><br />    @Override<br />    public void playSomeMusic() {<br />        System.out.println("Oops I did it again...!");<br />    }<br /><br />    @Override<br />    public void doSomeSeriousCoding() {<br />        System.out.println("System.out.println(\"Hello world\");");<br />    }<br />}<br /><br /></pre><b>OffensivePlayerAdapter.java</b><br /><br /><pre class="brush:java">package com.blogspot.toomuchcoding.adapter;<br /><br />import com.blogspot.toomuchcoding.model.OffensivePlayer;<br />import com.blogspot.toomuchcoding.model.PlayerDetails;<br /><br />/**<br /> * User: mgrzejszczak<br /> * Date: 09.06.13<br /> * Time: 15:42<br /> */<br />public class OffensivePlayerAdapter extends CommonPlayerAdapter implements OffensivePlayer {<br /><br />    public OffensivePlayerAdapter(PlayerDetails playerDetails){<br />        super(playerDetails);<br />    }<br /><br />    @Override<br />    public void shoot(){<br />        System.out.printf("%s Shooooot!.%n", getPlayerDetails().getName());<br />    }<br />}<br /><br /></pre>Ok, now let's go to the more interesting part. Let us assume that we have a very simple factory of players:<br /><br /><b>PlayerFactoryImpl.java</b><br /><br /><pre class="brush:java">package com.blogspot.toomuchcoding.factory;<br /><br />import com.blogspot.toomuchcoding.adapter.CommonPlayerAdapter;<br />import com.blogspot.toomuchcoding.adapter.DefencePlayerAdapter;<br />import com.blogspot.toomuchcoding.adapter.OffensivePlayerAdapter;<br />import com.blogspot.toomuchcoding.model.Player;<br />import com.blogspot.toomuchcoding.model.PlayerDetails;<br />import com.blogspot.toomuchcoding.model.PositionType;<br /><br />/**<br /> * User: mgrzejszczak<br /> * Date: 09.06.13<br /> * Time: 15:53<br /> */<br /><br />public class PlayerFactoryImpl implements PlayerFactory {<br /><br />    @Override<br />    public Player createPlayer(PositionType positionType) {<br />        PlayerDetails player = createCommonPlayer(positionType);<br />        switch (positionType){<br />            case ATT:<br />                return new OffensivePlayerAdapter(player);<br />            case MID:<br />                return new OffensivePlayerAdapter(player);<br />            case DEF:<br />                return new DefencePlayerAdapter(player);<br />            case GK:<br />                return new DefencePlayerAdapter(player);<br />            default:<br />                return new CommonPlayerAdapter(player);<br />        }<br />    }<br /><br />    private PlayerDetails createCommonPlayer(PositionType positionType){<br />        PlayerDetails playerDetails = new PlayerDetails();<br />        playerDetails.setPosition(positionType);<br />        return playerDetails;<br />    }<br />}<br /><br /></pre>Ok so we have the factory that builds Players. Let's take a look at the Service that uses the factory:<br /><br /><b>PlayerServiceImpl.java</b><br /><br /><pre class="brush:java">package com.blogspot.toomuchcoding.service;<br /><br />import com.blogspot.toomuchcoding.factory.PlayerFactory;<br />import com.blogspot.toomuchcoding.model.*;<br /><br />/**<br /> * User: mgrzejszczak<br /> * Date: 08.06.13<br /> * Time: 19:02<br /> */<br />public class PlayerServiceImpl implements PlayerService {<br /><br />    private PlayerFactory playerFactory;<br /><br />    @Override<br />    public Player playAGameWithAPlayerOfPosition(PositionType positionType) {<br />        Player player = playerFactory.createPlayer(positionType);<br />        player.run();<br />        performAdditionalActions(player);<br />        return player;<br />    }<br /><br />    private void performAdditionalActions(Player player) {<br />        if(player instanceof OffensivePlayer){<br />            OffensivePlayer offensivePlayer = (OffensivePlayer) player;<br />            performAdditionalActionsForTheOffensivePlayer(offensivePlayer);<br />        }else if(player instanceof DefensivePlayer){<br />            DefensivePlayer defensivePlayer = (DefensivePlayer) player;<br />            performAdditionalActionsForTheDefensivePlayer(defensivePlayer);<br />        }<br />    }<br /><br />    private void performAdditionalActionsForTheOffensivePlayer(OffensivePlayer offensivePlayer){<br />        offensivePlayer.shoot();<br />    }<br /><br />    private void performAdditionalActionsForTheDefensivePlayer(DefensivePlayer defensivePlayer){<br />        defensivePlayer.defend();<br />        try{<br />            DJ dj = (DJ)defensivePlayer;<br />            dj.playSomeMusic();<br />            JavaDeveloper javaDeveloper = (JavaDeveloper)defensivePlayer;<br />            javaDeveloper.doSomeSeriousCoding();<br />        }catch(ClassCastException exception){<br />            System.err.println("Sorry, I can't do more than just play football...");<br />        }<br />    }<br /><br />    public PlayerFactory getPlayerFactory() {<br />        return playerFactory;<br />    }<br /><br />    public void setPlayerFactory(PlayerFactory playerFactory) {<br />        this.playerFactory = playerFactory;<br />    }<br />}<br /><br /></pre>Let's admit it... this code is bad. Internally when you look at it (regardless of the fact whether it used <b>instance of</b> operator or not) you feel that it is evil :) As you can see in the code we have some class casts going on... How on earth can we test it? In the majority of testing frameworks you can't do such class casts on mocks since they are built with the CGLIB library and there can be some ClassCastExceptions thrown. You could still not return mocks and real implementations (assuming that those will not perform any ugly stuff in the construction process) and it could actually work but still - this is bad code :P<br /><br />Mockito comes to the rescue (although you shouldn't overuse this feature - in fact if you need to use it please consider refactoring it) with its <b><a href="http://mockito.googlecode.com/svn/branches/1.8.5/javadoc/org/mockito/MockSettings.html#extraInterfaces(java.lang.Class...)">extraInterfaces</a></b> feature:<br /><br /><h3>extraInterfaces</h3><blockquote><a href="http://mockito.googlecode.com/svn/branches/1.8.5/javadoc/org/mockito/MockSettings.html" title="interface in org.mockito">MockSettings</a> <b>extraInterfaces</b>(java.lang.Class&lt;?&gt;...&nbsp;interfaces)<br />Specifies extra interfaces the mock should implement. Might be useful for legacy code or some corner cases. For background, see issue 51&nbsp;<a href="http://code.google.com/p/mockito/issues/detail?id=51">here</a>This mysterious feature should be used very occasionally. The object under test should know exactly its collaborators &amp; dependencies. If you happen to use it often than please make sure you are really producing simple, clean &amp; readable code.<br />Examples:<br />Foo foo = mock(Foo.class, withSettings().extraInterfaces(Bar.class, Baz.class));<br />//now, the mock implements extra interfaces, so following casting is possible:<br />Bar bar = (Bar) foo;<br />Baz baz = (Baz) foo;<br /><b>Parameters:</b><code>interfaces</code>&nbsp;- extra interfaces the should implement.<br /><b>Returns:</b>settings instance so that you can fluently specify other settings</blockquote><dl><dd></dd><dd><dl></dl></dd><dd><dl><div><br /></div></dl></dd></dl>Now let's take a look at the test:<br /><br /><b>PlayerServiceImplTest.java</b><br /><br /><pre class="brush:java">package com.blogspot.toomuchcoding.service;<br /><br />import com.blogspot.toomuchcoding.factory.PlayerFactory;<br />import com.blogspot.toomuchcoding.model.*;<br />import org.junit.Test;<br />import org.junit.runner.RunWith;<br />import org.mockito.InjectMocks;<br />import org.mockito.Mock;<br />import org.mockito.invocation.InvocationOnMock;<br />import org.mockito.runners.MockitoJUnitRunner;<br />import org.mockito.stubbing.Answer;<br /><br />import static org.hamcrest.CoreMatchers.is;<br />import static org.junit.Assert.assertThat;<br />import static org.mockito.BDDMockito.*;<br /><br />/**<br /> * User: mgrzejszczak<br /> * Date: 08.06.13<br /> * Time: 19:26<br /> */<br />@RunWith(MockitoJUnitRunner.class)<br />public class PlayerServiceImplTest {<br /><br />    @Mock<br />    PlayerFactory playerFactory;<br /><br />    @InjectMocks<br />    PlayerServiceImpl objectUnderTest;<br /><br />    @Mock(extraInterfaces = {DJ.class, JavaDeveloper.class})<br />    DefensivePlayer defensivePlayerWithDjAndJavaDevSkills;<br /><br />    @Mock<br />    DefensivePlayer defensivePlayer;<br /><br />    @Mock<br />    OffensivePlayer offensivePlayer;<br /><br />    @Mock<br />    Player commonPlayer;<br /><br />    @Test<br />    public void shouldReturnOffensivePlayerThatRan() throws Exception {<br />        //given<br />        given(playerFactory.createPlayer(PositionType.ATT)).willReturn(offensivePlayer);<br /><br />        //when<br />        Player createdPlayer = objectUnderTest.playAGameWithAPlayerOfPosition(PositionType.ATT);<br /><br />        //then<br />        assertThat(createdPlayer == offensivePlayer, is(true));<br />        verify(offensivePlayer).run();<br />    }<br /><br />    @Test<br />    public void shouldReturnDefensivePlayerButHeWontBeADjNorAJavaDev() throws Exception {<br />        //given<br />        given(playerFactory.createPlayer(PositionType.GK)).willReturn(defensivePlayer);<br /><br />        //when<br />        Player createdPlayer = objectUnderTest.playAGameWithAPlayerOfPosition(PositionType.GK);<br /><br />        //then<br />        assertThat(createdPlayer == defensivePlayer, is(true));<br />        verify(defensivePlayer).run();<br />        verify(defensivePlayer).defend();<br />        verifyNoMoreInteractions(defensivePlayer);<br />    }<br /><br />    @Test<br />    public void shouldReturnDefensivePlayerBeingADjAndAJavaDev() throws Exception {<br />        //given<br />        given(playerFactory.createPlayer(PositionType.GK)).willReturn(defensivePlayerWithDjAndJavaDevSkills);<br />        doAnswer(new Answer&lt;Object&gt;() {<br />            @Override<br />            public Object answer(InvocationOnMock invocationOnMock) throws Throwable {<br />                System.out.println("Hit me baby one more time!");<br />                return null;<br />            }<br />        }).when(((DJ) defensivePlayerWithDjAndJavaDevSkills)).playSomeMusic();<br />        doAnswer(new Answer&lt;Object&gt;() {<br />            @Override<br />            public Object answer(InvocationOnMock invocationOnMock) throws Throwable {<br />                System.out.println("public static void main(String... args){\n}");<br />                return null;<br />            }<br />        }).when(((JavaDeveloper) defensivePlayerWithDjAndJavaDevSkills)).doSomeSeriousCoding();<br /><br />        //when<br />        Player createdPlayer = objectUnderTest.playAGameWithAPlayerOfPosition(PositionType.GK);<br /><br />        //then<br />        assertThat(createdPlayer == defensivePlayerWithDjAndJavaDevSkills, is(true));<br />        verify(defensivePlayerWithDjAndJavaDevSkills).run();<br />        verify(defensivePlayerWithDjAndJavaDevSkills).defend();<br />        verify((DJ) defensivePlayerWithDjAndJavaDevSkills).playSomeMusic();<br />        verify((JavaDeveloper) defensivePlayerWithDjAndJavaDevSkills).doSomeSeriousCoding();<br />    }<br /><br />    @Test<br />    public void shouldReturnDefensivePlayerBeingADjAndAJavaDevByUsingWithSettings() throws Exception {<br />        //given<br />        DefensivePlayer defensivePlayerWithDjAndJavaDevSkills = mock(DefensivePlayer.class, withSettings().extraInterfaces(DJ.class, JavaDeveloper.class));<br />        given(playerFactory.createPlayer(PositionType.GK)).willReturn(defensivePlayerWithDjAndJavaDevSkills);<br />        doAnswer(new Answer&lt;Object&gt;() {<br />            @Override<br />            public Object answer(InvocationOnMock invocationOnMock) throws Throwable {<br />                System.out.println("Hit me baby one more time!");<br />                return null;<br />            }<br />        }).when(((DJ) defensivePlayerWithDjAndJavaDevSkills)).playSomeMusic();<br />        doAnswer(new Answer&lt;Object&gt;() {<br />            @Override<br />            public Object answer(InvocationOnMock invocationOnMock) throws Throwable {<br />                System.out.println("public static void main(String... args){\n}");<br />                return null;<br />            }<br />        }).when(((JavaDeveloper) defensivePlayerWithDjAndJavaDevSkills)).doSomeSeriousCoding();<br /><br />        //when<br />        Player createdPlayer = objectUnderTest.playAGameWithAPlayerOfPosition(PositionType.GK);<br /><br />        //then<br />        assertThat(createdPlayer == defensivePlayerWithDjAndJavaDevSkills, is(true));<br />        verify(defensivePlayerWithDjAndJavaDevSkills).run();<br />        verify(defensivePlayerWithDjAndJavaDevSkills).defend();<br />        verify((DJ) defensivePlayerWithDjAndJavaDevSkills).playSomeMusic();<br />        verify((JavaDeveloper) defensivePlayerWithDjAndJavaDevSkills).doSomeSeriousCoding();<br />    }<br /><br />    @Test<br />    public void shouldReturnCommonPlayer() throws Exception {<br />        //given<br />        given(playerFactory.createPlayer(null)).willReturn(commonPlayer);<br /><br />        //when<br />        Player createdPlayer = objectUnderTest.playAGameWithAPlayerOfPosition(null);<br /><br />        //then<br />        assertThat(createdPlayer, is(commonPlayer));<br />    }<br />}<br /><br /></pre>There are quite a few tests here so let's take a look at the most interesting ones. &nbsp;But before we do it let's<br /><br />We start with providing the <b>@RunWith(MockitoJUnitRunner.class)</b>&nbsp;annotation which alows us to use the Mockito annotations such as&nbsp;<b>@Mock</b> and <b>@InjectMocks</b>.<br /><br />Speaking of which&nbsp;<b>@Mock</b> annotation creates a Mock whereas&nbsp;<b>@InjectMocks</b> inject all the mocks either by constructor or by setters (that's awesome isn't it? :) ).<br /><br />For the defensive player we are using the extra element of the annotation <b>extraInterfaces </b>that provides additional interfaces for the given Mock. You can also write (what you can find in the <b>shouldReturnDefensivePlayerBeingADjAndAJavaDevByUsingWithSettings</b> test) :<br /><br /><pre class="brush:java">DefensivePlayer defensivePlayerWithDjAndJavaDevSkills = mock(DefensivePlayer.class, withSettings().extraInterfaces(DJ.class, JavaDeveloper.class));<br /><br /></pre>Let's take a closer look at the test that we wrote for the functionality related to the DefensivePlayer and the casting part of the tested function:<br /><br /><pre class="brush:java">@Test<br />    public void shouldReturnDefensivePlayerBeingADjAndAJavaDev() throws Exception {<br />        //given<br />        given(playerFactory.createPlayer(PositionType.GK)).willReturn(defensivePlayerWithDjAndJavaDevSkills);<br />        doAnswer(new Answer&lt;Object&gt;() {<br />            @Override<br />            public Object answer(InvocationOnMock invocationOnMock) throws Throwable {<br />                System.out.println("Hit me baby one more time!");<br />                return null;<br />            }<br />        }).when(((DJ) defensivePlayerWithDjAndJavaDevSkills)).playSomeMusic();<br />        doAnswer(new Answer&lt;Object&gt;() {<br />            @Override<br />            public Object answer(InvocationOnMock invocationOnMock) throws Throwable {<br />                System.out.println("public static void main(String... args){\n}");<br />                return null;<br />            }<br />        }).when(((JavaDeveloper) defensivePlayerWithDjAndJavaDevSkills)).doSomeSeriousCoding();<br /><br />        //when<br />        Player createdPlayer = objectUnderTest.playAGameWithAPlayerOfPosition(PositionType.GK);<br /><br />        //then<br />        assertThat(createdPlayer == defensivePlayerWithDjAndJavaDevSkills, is(true));<br />        verify(defensivePlayerWithDjAndJavaDevSkills).run();<br />        verify(defensivePlayerWithDjAndJavaDevSkills).defend();<br />        verify((DJ) defensivePlayerWithDjAndJavaDevSkills).playSomeMusic();<br />        verify((JavaDeveloper) defensivePlayerWithDjAndJavaDevSkills).doSomeSeriousCoding();<br />    }<br /></pre><br />We are using the <b>BDDMockito</b> static methods like <b>given(...).willReturn(...).willAnswer(...)</b> etc. Then we are stubbing void methods with our custom Anwsers. In the next line you can see that in order to stub methods of another interface you have to cast the mock to the given interface. The same is related to the verification phase where i norder to check if a method was executed you have to cast the mock to the given interface.<br /><br />You could improve the test by returning a real implementation from the factory or if it's a "heavy" operation to create one you could return a mock of such an implementation. What I wanted to show here is how to use the extra interfaces in Mockito (perhaps my usecase is not the best one ;) ). Anyway the implementation presented in the test is bad so we should think of the way to refactor it...<br /><br />One of the ideas could be, assuming that the additional logic done in the Service is a part of the creation of the object, to move the code to the factory as such:<br /><br /><b>PlayFactoryImplWithFieldSettingLogic.java</b><br /><br /><pre class="brush:java">package com.blogspot.toomuchcoding.factory;<br /><br />import com.blogspot.toomuchcoding.adapter.CommonPlayerAdapter;<br />import com.blogspot.toomuchcoding.adapter.DefencePlayerAdapter;<br />import com.blogspot.toomuchcoding.adapter.OffensivePlayerAdapter;<br />import com.blogspot.toomuchcoding.model.*;<br /><br />/**<br /> * User: mgrzejszczak<br /> * Date: 09.06.13<br /> * Time: 15:53<br /> */<br /><br />public class PlayerFactoryImplWithFieldSettingLogic implements PlayerFactory {<br /><br />    @Override<br />    public Player createPlayer(PositionType positionType) {<br />        PlayerDetails player = createCommonPlayer(positionType);<br />        switch (positionType){<br />            case ATT:<br />                return createOffensivePlayer(player);<br />            case MID:<br />                return createOffensivePlayer(player);<br />            case DEF:<br />                return createDefensivePlayer(player);<br />            case GK:<br />                return createDefensivePlayer(player);<br />            default:<br />                return new CommonPlayerAdapter(player);<br />        }<br />    }<br /><br />    private Player createDefensivePlayer(PlayerDetails player) {<br />        DefencePlayerAdapter defencePlayerAdapter = new DefencePlayerAdapter(player);<br />        defencePlayerAdapter.defend();<br />        defencePlayerAdapter.playSomeMusic();<br />        defencePlayerAdapter.doSomeSeriousCoding();<br />        return defencePlayerAdapter;<br />    }<br /><br />    private OffensivePlayer createOffensivePlayer(PlayerDetails player) {<br />        OffensivePlayer offensivePlayer = new OffensivePlayerAdapter(player);<br />        offensivePlayer.shoot();<br />        return offensivePlayer;<br />    }<br /><br />    private PlayerDetails createCommonPlayer(PositionType positionType){<br />        PlayerDetails playerDetails = new PlayerDetails();<br />        playerDetails.setPosition(positionType);<br />        return playerDetails;<br />    }<br />}<br /><br /></pre>In this way there is no casting the code is really clean. And now the PlayerService looks like this:<br /><br /><b>PlayerServiceImplWIthoutUnnecessaryLogic.java</b><br /><br /><pre class="brush:java">package com.blogspot.toomuchcoding.service;<br /><br />import com.blogspot.toomuchcoding.factory.PlayerFactory;<br />import com.blogspot.toomuchcoding.model.*;<br /><br />/**<br /> * User: mgrzejszczak<br /> * Date: 08.06.13<br /> * Time: 19:02<br /> */<br />public class PlayerServiceImplWithoutUnnecessaryLogic implements PlayerService {<br /><br />    private PlayerFactory playerFactory;<br /><br />    /**<br />     * What's the point in having this method then?<br />     * @param positionType<br />     * @return<br />     */<br />    @Override<br />    public Player playAGameWithAPlayerOfPosition(PositionType positionType) {<br />        return playerFactory.createPlayer(positionType);<br />    }<br /><br />    public PlayerFactory getPlayerFactory() {<br />        return playerFactory;<br />    }<br /><br />    public void setPlayerFactory(PlayerFactory playerFactory) {<br />        this.playerFactory = playerFactory;<br />    }<br />}<br /><br /></pre>And the question arises whether there is even any need to have such a method in your code base...<br /><br />Summing it all up I hope that I managed to show how to:<br /><br /><ul><li>Use MockitoJUnitRunner to inject mocks in a clean way</li><li>Use annotations or static methods to add extra interfaces that can be used by your mock</li><li>Use BDDMockito to perform method stubbing</li><li>Stub void methods with custom answer</li><li>Stub and verify methods of the extra interfaces</li><li>Refactor code that is using class casts</li></ul><br />The sources are available at the <a href="https://bitbucket.org/gregorin1987/too-much-coding/src/cab9f99626730e606c7ed354e81d141819351221/Unit%20Testing/Mockito%20-%20With%20Interfaces?at=default">TooMuchCoding Bitbucket</a> repository and <a href="https://github.com/marcingrzejszczak/too-much-coding/tree/master/Unit%20Testing/Mockito%20-%20With%20Interfaces">TooMuchCoding Github</a> repository.<br /><br /><br /><br /><br /></div></div>
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://toomuchcoding.com/blog/2013/06/12/mockito-extra-interfaces-with/" data-via="mgrzejszczak" data-counturl="http://toomuchcoding.com/blog/2013/06/12/mockito-extra-interfaces-with/" >Tweet</a>
+  
+  
+  
+</div>
 
-
-        <hr class="divider-short"/>
-
-        
-      </div>
-    </div>
-  </div>
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/06/08/mockito-returndeepstubs-for-jaxb/" title="Previous Post: Mockito - RETURNS_DEEP_STUBS for JAXB">&laquo; Mockito - RETURNS_DEEP_STUBS for JAXB</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2013/07/25/the-essential-drools-cheat-sheet-at/" title="Next Post: The Essential Drools Cheat Sheet at DZone is out!">The Essential Drools Cheat Sheet at DZone is out! &raquo;</a>
+      
+    </p>
+  </footer>
 </article>
 
-<hr class="divider-short"/>
+</div>
 
-<div class="archive-link">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-8 col-md-offset-2">
-        
-          <a class="pull-left" href="/blog/2013/06/08/mockito-returndeepstubs-for-jaxb/" title="Previous Post: Mockito - RETURNS_DEEP_STUBS for JAXB">&laquo; Previous: Mockito - RETURNS_DEEP_STUBS for JAXB</a>
-        
+<aside class="sidebar">
+  
+    <section>
+  <h1>About Me</h1>
+  <p>Enthusiast of clean coding and good design. Author of "Mockito Instant" and "Mockito Cookbook" books. Contributor to several open source projects (including Rest-assured, Drools, Moco, Mockito). Co-author of the Groovy @Builder, "micro-infra-spring", "spring-cloud-zookeeper", "spring-cloud-sleuth" microservices related open source solutions. Author of Uptodate Gradle plugin, Spock subjects-collaborators extension and gradle-test-profiler open source projects. Co-founder of the Warsaw Groovy User Group. A member of the Most Valuable Blogger program at DZone and Java Code Geeks. Interested in working with JVM languages, XP-driven projects with continuous deployment and most preferably microservice architecture.</p>
 
-        
-          <a class="pull-right" href="/blog/2013/07/25/the-essential-drools-cheat-sheet-at/" title="Next Post: The Essential Drools Cheat Sheet at DZone is out!">Next: The Essential Drools Cheat Sheet at DZone is out! &raquo;</a>
-        
-      </div>
+  <p>Homepage:</p>
+  <p><a href="http://marcin.grzejszczak.pl">http://marcin.grzejszczak.pl</a></p>
+
+  <p>Github profile</p>
+  <p><a href="https://github.com/marcingrzejszczak">https://github.com/marcingrzejszczak</a></p>
+
+  <p>Lanyrd profile</p>
+  <p><a href="http://lanyrd.com/profile/marcin-grzejszczak">http://lanyrd.com/profile/marcin-grzejszczak</a></p>
+</section>
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2016/02/27/json-assert-lib-released/">JSON Assert lib released</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2016/01/04/post-on-spring-blog/">Post on Spring blog</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/10/16/business-value-gone-wild/">Business value gone wild</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/09/27/microservice-deployment/">Microservice Deployment</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/02/08/how-to-speed-up-your-gradle-build-from/">How to speed up your Gradle build from 90 to 8 minutes</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("mgrzejszczak", , );
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <p>Follow <a href="http://twitter.com/mgrzejszczak">@mgrzejszczak</a></p>
+  
+</section>
+
+
+
+<section class="googleplus">
+  <h1>
+    <a href="https://plus.google.com/108408840893580782990?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+  
+</aside>
+
+
     </div>
   </div>
-</div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2016 - Marcin Grzejszczak -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a>. Design by <a href="http://octopressthemes.com">Octopress Themes</a>. Background image by <a href="http://www.flickr.com/photos/89433098@N04/">Florian Kraft Fotografie</a></span>
+</p>
 
-    <footer id="footer" class="her-row">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-1">
-  <a href="/"><h4>Home</h4></a>
-</div>
-
-<div class="col-md-2">
-  <div class="social-icon-list">
-    
-    <a href="https://twitter.com/mgrzejszczak"><img src="/images/glyphicons_social_31_twitter.png"/></a>
-    
-
-    
-    <a href="https://github.com/marcingrzejszczak"><img src="/images/glyphicons_social_21_github.png"/></a>
-    
-
-    
-    <a href="https://linkedin.com/in/marcin-grzejszczak-15565119"><img src="/images/glyphicons_social_17_linked_in.png"/></a>
-    
-
-    
-    <a href="mailto:blog@toomuchcoding.com"><img src="/images/glyphicons_social_39_e-mail.png"/></a>
-    
-  </div>
-</div>
-
-<div class="pull-right">
-  <h4>Powered by <a href="http://octopress.org/">Octopress</a>. Designed by <a href="http://AdrianArtiles.com">Adrian Artiles</a>.</h4>
-</div>
-
-
-    </div>
-  </div>
 </footer>
+  
 
-    
-  </body>
+<script type="text/javascript">
+      var disqus_shortname = 'toomuchcoding';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
 </html>

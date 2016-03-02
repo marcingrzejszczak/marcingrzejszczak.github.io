@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Dependency Injection | TOO MUCH CODING BLOG]]></title>
+  <title><![CDATA[Category: dependency injection | TOO MUCH CODING]]></title>
   <link href="http://toomuchcoding.com/blog/categories/dependency-injection/atom.xml" rel="self"/>
   <link href="http://toomuchcoding.com/"/>
-  <updated>2016-03-02T13:52:41+01:00</updated>
+  <updated>2016-03-02T21:26:10+01:00</updated>
   <id>http://toomuchcoding.com/</id>
   <author>
     <name><![CDATA[Marcin Grzejszczak]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Spring's @Primary Annotation in Action]]></title>
+    <title type="html"><![CDATA[Spring's @Primary annotation in action]]></title>
     <link href="http://toomuchcoding.com/blog/2013/12/12/springs-primary-annotation-in-action/"/>
     <updated>2013-12-12T09:00:00+01:00</updated>
     <id>http://toomuchcoding.com/blog/2013/12/12/springs-primary-annotation-in-action</id>

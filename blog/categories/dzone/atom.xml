@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Dzone | TOO MUCH CODING BLOG]]></title>
+  <title><![CDATA[Category: dzone | TOO MUCH CODING]]></title>
   <link href="http://toomuchcoding.com/blog/categories/dzone/atom.xml" rel="self"/>
   <link href="http://toomuchcoding.com/"/>
-  <updated>2016-03-02T13:52:41+01:00</updated>
+  <updated>2016-03-02T21:26:10+01:00</updated>
   <id>http://toomuchcoding.com/</id>
   <author>
     <name><![CDATA[Marcin Grzejszczak]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[The Essential Drools Cheat Sheet at DZone Is Out!]]></title>
+    <title type="html"><![CDATA[The Essential Drools Cheat Sheet at DZone is out!]]></title>
     <link href="http://toomuchcoding.com/blog/2013/07/25/the-essential-drools-cheat-sheet-at/"/>
     <updated>2013-07-25T10:25:00+02:00</updated>
     <id>http://toomuchcoding.com/blog/2013/07/25/the-essential-drools-cheat-sheet-at</id>
@@ -25,7 +25,7 @@ Hi! I'm pleased to announce that <a href="http://www.twitter.com/mariofusco">Mar
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[More Interesting Articles]]></title>
+    <title type="html"><![CDATA[More interesting articles]]></title>
     <link href="http://toomuchcoding.com/blog/2012/10/24/more-interesting-articles/"/>
     <updated>2012-10-24T15:25:00+02:00</updated>
     <id>http://toomuchcoding.com/blog/2012/10/24/more-interesting-articles</id>

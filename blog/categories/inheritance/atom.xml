@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Inheritance | TOO MUCH CODING BLOG]]></title>
+  <title><![CDATA[Category: inheritance | TOO MUCH CODING]]></title>
   <link href="http://toomuchcoding.com/blog/categories/inheritance/atom.xml" rel="self"/>
   <link href="http://toomuchcoding.com/"/>
-  <updated>2016-03-02T13:52:41+01:00</updated>
+  <updated>2016-03-02T21:26:10+01:00</updated>
   <id>http://toomuchcoding.com/</id>
   <author>
     <name><![CDATA[Marcin Grzejszczak]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Hibernate Inheritance Table Per Subclass With Different Foreign Key Names]]></title>
+    <title type="html"><![CDATA[Hibernate inheritance  table per subclass with different foreign key names]]></title>
     <link href="http://toomuchcoding.com/blog/2012/10/23/hibernate-inheritance-table-per/"/>
     <updated>2012-10-23T23:34:00+02:00</updated>
     <id>http://toomuchcoding.com/blog/2012/10/23/hibernate-inheritance-table-per</id>

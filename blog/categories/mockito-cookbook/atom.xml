@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Mockito Cookbook | TOO MUCH CODING BLOG]]></title>
+  <title><![CDATA[Category: mockito cookbook | TOO MUCH CODING]]></title>
   <link href="http://toomuchcoding.com/blog/categories/mockito-cookbook/atom.xml" rel="self"/>
   <link href="http://toomuchcoding.com/"/>
-  <updated>2016-03-02T13:52:41+01:00</updated>
+  <updated>2016-03-02T21:26:10+01:00</updated>
   <id>http://toomuchcoding.com/</id>
   <author>
     <name><![CDATA[Marcin Grzejszczak]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Mockito Cookbook Is Out!!]]></title>
+    <title type="html"><![CDATA[Mockito Cookbook is out!!]]></title>
     <link href="http://toomuchcoding.com/blog/2014/06/25/mockito-cookbook-is-out/"/>
     <updated>2014-06-25T19:34:00+02:00</updated>
     <id>http://toomuchcoding.com/blog/2014/06/25/mockito-cookbook-is-out</id>

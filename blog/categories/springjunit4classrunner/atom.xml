@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Springjunit4classrunner | TOO MUCH CODING BLOG]]></title>
+  <title><![CDATA[Category: springjunit4classrunner | TOO MUCH CODING]]></title>
   <link href="http://toomuchcoding.com/blog/categories/springjunit4classrunner/atom.xml" rel="self"/>
   <link href="http://toomuchcoding.com/"/>
-  <updated>2016-03-02T13:52:41+01:00</updated>
+  <updated>2016-03-02T21:26:10+01:00</updated>
   <id>http://toomuchcoding.com/</id>
   <author>
     <name><![CDATA[Marcin Grzejszczak]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Injecting Test Doubles in Spring Using Mockito and BeanPostProcessors]]></title>
+    <title type="html"><![CDATA[Injecting Test Doubles in Spring using Mockito and BeanPostProcessors]]></title>
     <link href="http://toomuchcoding.com/blog/2013/08/09/injecting-test-doubles-in-spring-using/"/>
     <updated>2013-08-09T14:39:00+02:00</updated>
     <id>http://toomuchcoding.com/blog/2013/08/09/injecting-test-doubles-in-spring-using</id>
@@ -27,7 +27,7 @@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Drools Integration With Spring vs Manual Rules Creation]]></title>
+    <title type="html"><![CDATA[Drools integration with Spring vs manual rules creation]]></title>
     <link href="http://toomuchcoding.com/blog/2013/01/15/drools-integration-with-spring-vs/"/>
     <updated>2013-01-15T17:04:00+01:00</updated>
     <id>http://toomuchcoding.com/blog/2013/01/15/drools-integration-with-spring-vs</id>
@@ -40,7 +40,7 @@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Spring AOP in Security - Controlling Creation of UI Components via Aspects]]></title>
+    <title type="html"><![CDATA[Spring AOP in security - controlling creation of UI components via aspects]]></title>
     <link href="http://toomuchcoding.com/blog/2012/10/28/spring-aop-in-security-controlling/"/>
     <updated>2012-10-28T02:06:00+01:00</updated>
     <id>http://toomuchcoding.com/blog/2012/10/28/spring-aop-in-security-controlling</id>

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Groovy | TOO MUCH CODING BLOG]]></title>
+  <title><![CDATA[Category: groovy | TOO MUCH CODING]]></title>
   <link href="http://toomuchcoding.com/blog/categories/groovy/atom.xml" rel="self"/>
   <link href="http://toomuchcoding.com/"/>
-  <updated>2016-03-02T13:52:41+01:00</updated>
+  <updated>2016-03-02T21:26:10+01:00</updated>
   <id>http://toomuchcoding.com/</id>
   <author>
     <name><![CDATA[Marcin Grzejszczak]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Spock Subject Collaborators Extension 1.0.1 Released!]]></title>
+    <title type="html"><![CDATA[Spock Subject Collaborators Extension 1.0.1 released!]]></title>
     <link href="http://toomuchcoding.com/blog/2014/12/17/spock-subject-collaborators-extension/"/>
     <updated>2014-12-17T23:28:00+01:00</updated>
     <id>http://toomuchcoding.com/blog/2014/12/17/spock-subject-collaborators-extension</id>
@@ -27,7 +27,7 @@ Hi!<br /><br />I'm really happy to say that I've just released a new version 1.0
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Groovy Builder AST Merged to Groovy Core!]]></title>
+    <title type="html"><![CDATA[Groovy Builder AST merged to Groovy Core!]]></title>
     <link href="http://toomuchcoding.com/blog/2014/04/24/groovy-builder-ast-merged-to-groovy-core/"/>
     <updated>2014-04-24T17:34:00+02:00</updated>
     <id>http://toomuchcoding.com/blog/2014/04/24/groovy-builder-ast-merged-to-groovy-core</id>
@@ -38,7 +38,7 @@ Hi!<br /><br />I'm really happy to say that I've just released a new version 1.0
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Warsaw Groovy User Group Talk]]></title>
+    <title type="html"><![CDATA[Warsaw Groovy User Group talk]]></title>
     <link href="http://toomuchcoding.com/blog/2014/02/19/warsaw-groovy-user-group-talk/"/>
     <updated>2014-02-19T23:39:00+01:00</updated>
     <id>http://toomuchcoding.com/blog/2014/02/19/warsaw-groovy-user-group-talk</id>
@@ -49,7 +49,7 @@ Hi!<br /><br />Since tomorrow I'm giving a talk on XML transformations in Groovy
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Introduction to Groovy Runtime Metaprogramming and AST Transforms]]></title>
+    <title type="html"><![CDATA[Introduction to Groovy runtime metaprogramming and AST transforms]]></title>
     <link href="http://toomuchcoding.com/blog/2014/02/04/introduction-to-groovy-runtime/"/>
     <updated>2014-02-04T23:50:00+01:00</updated>
     <id>http://toomuchcoding.com/blog/2014/02/04/introduction-to-groovy-runtime</id>
@@ -62,7 +62,7 @@ Hi!<br /><br />I'm very happy to share my presentation regarding <b><i>Groovy me
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Execution of Groovy Scripts From Java - XmlSlurper and MarkupBuilder in Mapping Issues]]></title>
+    <title type="html"><![CDATA[Execution of Groovy scripts from Java - XmlSlurper and MarkupBuilder in mapping issues]]></title>
     <link href="http://toomuchcoding.com/blog/2013/03/30/execution-of-groovy-scripts-from-java/"/>
     <updated>2013-03-30T23:09:00+01:00</updated>
     <id>http://toomuchcoding.com/blog/2013/03/30/execution-of-groovy-scripts-from-java</id>

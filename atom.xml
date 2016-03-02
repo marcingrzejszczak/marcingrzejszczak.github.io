@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[TOO MUCH CODING BLOG]]></title>
+  <title><![CDATA[TOO MUCH CODING]]></title>
   <link href="http://toomuchcoding.com/atom.xml" rel="self"/>
   <link href="http://toomuchcoding.com/"/>
-  <updated>2016-03-02T13:52:41+01:00</updated>
+  <updated>2016-03-02T21:26:10+01:00</updated>
   <id>http://toomuchcoding.com/</id>
   <author>
     <name><![CDATA[Marcin Grzejszczak]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[JSON Assert Lib Released]]></title>
+    <title type="html"><![CDATA[JSON Assert lib released]]></title>
     <link href="http://toomuchcoding.com/blog/2016/02/27/json-assert-lib-released/"/>
     <updated>2016-02-27T23:20:00+01:00</updated>
     <id>http://toomuchcoding.com/blog/2016/02/27/json-assert-lib-released</id>
@@ -26,7 +26,7 @@ I'm really happy to present the <a href="https://github.com/marcingrzejszczak/js
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Post on Spring Blog]]></title>
+    <title type="html"><![CDATA[Post on Spring blog]]></title>
     <link href="http://toomuchcoding.com/blog/2016/01/04/post-on-spring-blog/"/>
     <updated>2016-01-04T18:28:00+01:00</updated>
     <id>http://toomuchcoding.com/blog/2016/01/04/post-on-spring-blog</id>
@@ -36,7 +36,7 @@ Hi!<br /><br />Since December I'm working for Pivotal and the Spring Cloud team.
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Business Value Gone Wild]]></title>
+    <title type="html"><![CDATA[Business value gone wild]]></title>
     <link href="http://toomuchcoding.com/blog/2015/10/16/business-value-gone-wild/"/>
     <updated>2015-10-16T17:58:00+02:00</updated>
     <id>http://toomuchcoding.com/blog/2015/10/16/business-value-gone-wild</id>
@@ -60,7 +60,7 @@ It's been a while since my last post. In the meantime of course nothing has chan
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[How to Speed Up Your Gradle Build From 90 to 8 Minutes]]></title>
+    <title type="html"><![CDATA[How to speed up your Gradle build from 90 to 8 minutes]]></title>
     <link href="http://toomuchcoding.com/blog/2015/02/08/how-to-speed-up-your-gradle-build-from/"/>
     <updated>2015-02-08T19:24:00+01:00</updated>
     <id>http://toomuchcoding.com/blog/2015/02/08/how-to-speed-up-your-gradle-build-from</id>
@@ -72,7 +72,7 @@ It's been a while since my last post. In the meantime of course nothing has chan
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Spock Subject Collaborators Extension 1.0.1 Released!]]></title>
+    <title type="html"><![CDATA[Spock Subject Collaborators Extension 1.0.1 released!]]></title>
     <link href="http://toomuchcoding.com/blog/2014/12/17/spock-subject-collaborators-extension/"/>
     <updated>2014-12-17T23:28:00+01:00</updated>
     <id>http://toomuchcoding.com/blog/2014/12/17/spock-subject-collaborators-extension</id>
@@ -84,7 +84,7 @@ Hi!<br /><br />I'm really happy to say that I've just released a new version 1.0
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[New Personal Website]]></title>
+    <title type="html"><![CDATA[New personal website]]></title>
     <link href="http://toomuchcoding.com/blog/2014/10/27/new-personal-website/"/>
     <updated>2014-10-27T22:39:00+01:00</updated>
     <id>http://toomuchcoding.com/blog/2014/10/27/new-personal-website</id>
@@ -94,7 +94,7 @@ Hi!<br /><br />I've just changed my website so feel free to check it out :) <a h
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Mockito Cookbook Is Out!!]]></title>
+    <title type="html"><![CDATA[Mockito Cookbook is out!!]]></title>
     <link href="http://toomuchcoding.com/blog/2014/06/25/mockito-cookbook-is-out/"/>
     <updated>2014-06-25T19:34:00+02:00</updated>
     <id>http://toomuchcoding.com/blog/2014/06/25/mockito-cookbook-is-out</id>
@@ -124,7 +124,7 @@ Hi!<br /><br />Since I was asked for the code to the<a href="http://www.packtpub
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Groovy Builder AST Merged to Groovy Core!]]></title>
+    <title type="html"><![CDATA[Groovy Builder AST merged to Groovy Core!]]></title>
     <link href="http://toomuchcoding.com/blog/2014/04/24/groovy-builder-ast-merged-to-groovy-core/"/>
     <updated>2014-04-24T17:34:00+02:00</updated>
     <id>http://toomuchcoding.com/blog/2014/04/24/groovy-builder-ast-merged-to-groovy-core</id>
@@ -144,7 +144,7 @@ Hi!<br /><br /><a href="http://www.youtube.com/watch?v=JdSCDEkX0Tw">Click here t
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Warsaw Groovy User Group Talk]]></title>
+    <title type="html"><![CDATA[Warsaw Groovy User Group talk]]></title>
     <link href="http://toomuchcoding.com/blog/2014/02/19/warsaw-groovy-user-group-talk/"/>
     <updated>2014-02-19T23:39:00+01:00</updated>
     <id>http://toomuchcoding.com/blog/2014/02/19/warsaw-groovy-user-group-talk</id>
@@ -154,7 +154,7 @@ Hi!<br /><br />Since tomorrow I'm giving a talk on XML transformations in Groovy
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Introduction to Groovy Runtime Metaprogramming and AST Transforms]]></title>
+    <title type="html"><![CDATA[Introduction to Groovy runtime metaprogramming and AST transforms]]></title>
     <link href="http://toomuchcoding.com/blog/2014/02/04/introduction-to-groovy-runtime/"/>
     <updated>2014-02-04T23:50:00+01:00</updated>
     <id>http://toomuchcoding.com/blog/2014/02/04/introduction-to-groovy-runtime</id>
@@ -166,7 +166,7 @@ Hi!<br /><br />I'm very happy to share my presentation regarding <b><i>Groovy me
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Review of the Instant Mock Testing With PowerMock]]></title>
+    <title type="html"><![CDATA[Review of the Instant Mock Testing with PowerMock]]></title>
     <link href="http://toomuchcoding.com/blog/2013/12/16/review-of-instant-mock-testing-with/"/>
     <updated>2013-12-16T23:47:00+01:00</updated>
     <id>http://toomuchcoding.com/blog/2013/12/16/review-of-instant-mock-testing-with</id>
@@ -178,7 +178,7 @@ Hi!<br /><br />Quite recently I was asked by Packt publishing to write a review 
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Spring's @Primary Annotation in Action]]></title>
+    <title type="html"><![CDATA[Spring's @Primary annotation in action]]></title>
     <link href="http://toomuchcoding.com/blog/2013/12/12/springs-primary-annotation-in-action/"/>
     <updated>2013-12-12T09:00:00+01:00</updated>
     <id>http://toomuchcoding.com/blog/2013/12/12/springs-primary-annotation-in-action</id>
@@ -190,7 +190,7 @@ Hi!<br /><br />Quite recently I was asked by Packt publishing to write a review 
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Review of the Getting Started With Guava Book]]></title>
+    <title type="html"><![CDATA[Review of the Getting Started with Guava book]]></title>
     <link href="http://toomuchcoding.com/blog/2013/09/30/review-of-getting-started-with-guava/"/>
     <updated>2013-09-30T22:10:00+02:00</updated>
     <id>http://toomuchcoding.com/blog/2013/09/30/review-of-getting-started-with-guava</id>
@@ -202,7 +202,7 @@ Hi!<br /><br />Quite recently I was asked by Packt publishing to write a review 
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Mockito Instant - My Book Has Finally Been Published!]]></title>
+    <title type="html"><![CDATA[Mockito Instant - my book has finally been published!]]></title>
     <link href="http://toomuchcoding.com/blog/2013/08/28/mockito-instant-my-book-has-finally/"/>
     <updated>2013-08-28T10:20:00+02:00</updated>
     <id>http://toomuchcoding.com/blog/2013/08/28/mockito-instant-my-book-has-finally</id>
@@ -212,7 +212,7 @@ I am very pleased to announce that my book about Mockito entitled "Mockito Insta
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Injecting Test Doubles in Spring Using Mockito and BeanPostProcessors]]></title>
+    <title type="html"><![CDATA[Injecting Test Doubles in Spring using Mockito and BeanPostProcessors]]></title>
     <link href="http://toomuchcoding.com/blog/2013/08/09/injecting-test-doubles-in-spring-using/"/>
     <updated>2013-08-09T14:39:00+02:00</updated>
     <id>http://toomuchcoding.com/blog/2013/08/09/injecting-test-doubles-in-spring-using</id>
@@ -224,7 +224,7 @@ I am very pleased to announce that my book about Mockito entitled "Mockito Insta
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Spock - Return Nested Spies / Mocks]]></title>
+    <title type="html"><![CDATA[Spock - return nested spies / mocks]]></title>
     <link href="http://toomuchcoding.com/blog/2013/08/06/spock-return-nested-spies-mocks/"/>
     <updated>2013-08-06T13:24:00+02:00</updated>
     <id>http://toomuchcoding.com/blog/2013/08/06/spock-return-nested-spies-mocks</id>
