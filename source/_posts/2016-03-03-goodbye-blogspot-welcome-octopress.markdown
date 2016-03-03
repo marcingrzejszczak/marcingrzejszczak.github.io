@@ -19,5 +19,5 @@ Even though initially I had some doubts about choosing Octopress I have to admit
 it seems like an awesome technology and you should definitely give it a try!
 
 P.S.
-We're looking for sponsors for the upcoming [Warsaw GR8 Day Conference](warsaw.gr8days.pl) (19.03.2016).
+We're looking for sponsors for the upcoming [Warsaw GR8 Day Conference](http://warsaw.gr8days.pl) (19.03.2016).
 Over 60 people have already registered! Contact us to be a part of this gr8 event!
