@@ -95,7 +95,7 @@ disqus_short_name: toomuchcoding
 disqus_show_comment_count: true
 
 # Google Analytics
-google_analytics_tracking_id: UA-74671877-1
+google_analytics_tracking_id:
 
 # Facebook Like
 facebook_like: true
