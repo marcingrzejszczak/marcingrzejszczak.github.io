@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>http://toomuchcoding.com/blog/2016/03/11/json-assert-0-dot-2-1-released/</loc>
+<lastmod>2016-03-11T23:33:30+01:00</lastmod>
+</url>
+<url>
 <loc>http://toomuchcoding.com/blog/2016/03/03/goodbye-blogspot-welcome-octopress/</loc>
 <lastmod>2016-03-03T22:53:26+01:00</lastmod>
 </url>
@@ -510,5 +514,8 @@
 </url>
 <url>
 <loc>http://toomuchcoding.com/blog/categories/octopress/</loc>
+</url>
+<url>
+<loc>http://toomuchcoding.com/blog/categories/testing/</loc>
 </url>
 </urlset>
