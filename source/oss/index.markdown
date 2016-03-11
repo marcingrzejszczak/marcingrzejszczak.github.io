@@ -33,7 +33,7 @@ I'm present at these Gitter channels if you want to talk
 - [Spock Subject Collaborators Extension](https://gitter.im/marcingrzejszczak/spock-subjects-collaborators-extension)
 - [Spring Boot](https://gitter.im/spring-projects/spring-boot)
 
-Below you have links to categories of posts related to the projects
+Below you have some of the links to categories of posts related to the projects
 
 - [Accurest](/blog/categories/accurest/)
 - [Spring Cloud](/blog/categories/spring-cloud/)
