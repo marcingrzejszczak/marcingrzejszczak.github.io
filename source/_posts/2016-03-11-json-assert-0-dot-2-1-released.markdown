@@ -51,5 +51,5 @@ com.toomuchcoding.jsonassert
 
 # BTW
 
-I've created a new page on the website [OSS](oss/). You can check out which OSS projects I've created or have contributed sth there.
+I've created a new page on the website [OSS](/oss/). You can check out which OSS projects I've created or have contributed sth there.
 If you don't care - just ignore it ;)
