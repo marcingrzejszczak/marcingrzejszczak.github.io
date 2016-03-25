@@ -8,7 +8,7 @@ categories:
 - spring-cloud-sleuth
 ---
 
-On the 24.03.2016 we've managed to move our release train called Brixton to the next station: RC1.
+On the 24.03.2016 we've managed to move our [release train called Brixton to the next station: RC1](https://spring.io/blog/2016/03/24/spring-cloud-brixton-rc1-is-now-available).
 I'm really happy about this cause it cost us a lot of energy but it was worth it!
 
 I'm recently mostly focusing on the [Spring Cloud Sleuth project](cloud.spring.io/spring-cloud-sleuth/spring-cloud-sleuth.html) and actually quite gigantic changes happened there since the M5 release. In this short post I'll show you the rationale and describe briefly the features related to span naming and customizations related to span propagation.
