@@ -4,7 +4,7 @@
   <title><![CDATA[TOO MUCH CODING]]></title>
   <link href="http://toomuchcoding.com/atom.xml" rel="self"/>
   <link href="http://toomuchcoding.com/"/>
-  <updated>2016-03-25T15:31:12+01:00</updated>
+  <updated>2016-03-25T16:48:05+01:00</updated>
   <id>http://toomuchcoding.com/</id>
   <author>
     <name><![CDATA[Marcin Grzejszczak]]></name>
@@ -209,7 +209,7 @@ inject it to the <code>carrier</code>. Let&rsquo;s assume that in your system yo
 </pre></td><td class='code'><pre><code class=''><span class='line'>Span joinTrace(T carrier);</span></code></pre></td></tr></table></div></figure>
 
 
-<p>Its purpose it to create a Span from the provided carrier. Let&rsquo;s have the same assumption as with the <code>SpanInjector</code> and let&rsquo;s consider a case where traceId header is named <code>correlationId</code> and spanId header is <code>mySpanId</code>. Then we customize the Spring context by providing our own implementation of the <code>SpanExtractor</code>:</p>
+<p>Its purpose is to create a Span from the provided carrier. Let&rsquo;s have the same assumption as with the <code>SpanInjector</code> and let&rsquo;s consider a case where traceId header is named <code>correlationId</code> and spanId header is <code>mySpanId</code>. Then we customize the Spring context by providing our own implementation of the <code>SpanExtractor</code>:</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>

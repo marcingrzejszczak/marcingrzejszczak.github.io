@@ -202,6 +202,9 @@
 <loc>http://toomuchcoding.com/oss/</loc>
 </url>
 <url>
+<loc>http://toomuchcoding.com/projects/</loc>
+</url>
+<url>
 <loc>http://toomuchcoding.com/blog/categories/java/</loc>
 </url>
 <url>
@@ -524,17 +527,5 @@
 </url>
 <url>
 <loc>http://toomuchcoding.com/blog/categories/spring-cloud-sleuth/</loc>
-</url>
-<url>
-<loc>http://toomuchcoding.com/_posts/2/</loc>
-</url>
-<url>
-<loc>http://toomuchcoding.com/_posts/3/</loc>
-</url>
-<url>
-<loc>http://toomuchcoding.com/_posts/4/</loc>
-</url>
-<url>
-<loc>http://toomuchcoding.com/_posts/5/</loc>
 </url>
 </urlset>
