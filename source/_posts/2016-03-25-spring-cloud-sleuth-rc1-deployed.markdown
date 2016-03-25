@@ -162,7 +162,7 @@ In Spring Cloud Sleuth an `Extractor` is actually a functional interface called 
 Span joinTrace(T carrier);
 ```
 
-Its purpose it to create a Span from the provided carrier. Let's have the same assumption as with the `SpanInjector` and let's consider a case where traceId header is named `correlationId` and spanId header is `mySpanId`. Then we customize the Spring context by providing our own implementation of the `SpanExtractor`:
+Its purpose is to create a Span from the provided carrier. Let's have the same assumption as with the `SpanInjector` and let's consider a case where traceId header is named `correlationId` and spanId header is `mySpanId`. Then we customize the Spring context by providing our own implementation of the `SpanExtractor`:
 
 ```
 class CustomHttpServletRequestSpanExtractor implements SpanExtractor<HttpServletRequest> {
