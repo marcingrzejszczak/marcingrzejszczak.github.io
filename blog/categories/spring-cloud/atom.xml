@@ -4,7 +4,7 @@
   <title><![CDATA[Category: spring-cloud | TOO MUCH CODING]]></title>
   <link href="http://toomuchcoding.com/blog/categories/spring-cloud/atom.xml" rel="self"/>
   <link href="http://toomuchcoding.com/"/>
-  <updated>2016-03-12T14:12:30+01:00</updated>
+  <updated>2016-03-25T15:28:45+01:00</updated>
   <id>http://toomuchcoding.com/</id>
   <author>
     <name><![CDATA[Marcin Grzejszczak]]></name>
@@ -12,6 +12,188 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Spring Cloud Sleuth RC1 deployed]]></title>
+    <link href="http://toomuchcoding.com/blog/2016/03/25/spring-cloud-sleuth-rc1-deployed/"/>
+    <updated>2016-03-25T14:18:22+01:00</updated>
+    <id>http://toomuchcoding.com/blog/2016/03/25/spring-cloud-sleuth-rc1-deployed</id>
+    <content type="html"><![CDATA[<p>On the 24.03.2016 we&rsquo;ve managed to move our release train called Brixton to the next station: RC1.
+I&rsquo;m really happy about this cause it cost us a lot of energy but it was worth it!</p>
+
+<p>I&rsquo;m recently mostly focusing on the <a href="cloud.spring.io/spring-cloud-sleuth/spring-cloud-sleuth.html">Spring Cloud Sleuth project</a> and actually quite gigantic changes happened there since the M5 release. In this short post I&rsquo;ll show you the rationale and describe briefly the features related to span naming and customizations related to span propagation.</p>
+
+<!-- more -->
+
+
+<h2>What is Spring Cloud Sleuth?</h2>
+
+<p>For those who don&rsquo;t know what Spring Cloud Sleuth is - it&rsquo;s a library that implements a distributed tracing solution for Spring Cloud. You can check its code at <a href="https://github.com/spring-cloud/spring-cloud-sleuth">Github</a>.</p>
+
+<p>We&rsquo;re also trying to be aligned with the concepts, terminology and approaches present in the <a href="http://opentracing.io/">OpenTracing Project</a>.</p>
+
+<h2>Distributed tracing terminology</h2>
+
+<p>I&rsquo;ll quote the <a href="cloud.spring.io/spring-cloud-sleuth/spring-cloud-sleuth.html">documentation</a> to present some of the basic concepts of distributed tracing.</p>
+
+<blockquote><p><em>Span</em>: The basic unit of work. For example, sending an RPC is a new span, as is sending a response to an RPC. Span’s are identified by a unique 64-bit ID for the span and another 64-bit ID for the trace the span is a part of. Spans also have other data, such as descriptions, timestamped events, key-value annotations (tags), the ID of the span that caused them, and process ID’s (normally IP address).</p>
+
+<p>Spans are started and stopped, and they keep track of their timing information. Once you create a span, you must stop it at some point in the future.</p>
+
+<p><em>Trace</em>: A set of spans forming a tree-like structure. For example, if you are running a distributed big-data store, a trace might be formed by a put request.</p>
+
+<p><em>Annotation</em>: is used to record existence of an event in time. Some of the core annotations used to define the start and stop of a request are:</p>
+
+<ul>
+<li><p><em>cs</em> - Client Sent - The client has made a request. This annotation depicts the start of the span.</p></li>
+<li><p><em>sr</em> - Server Received - The server side got the request and will start processing it. If one subtracts the cs timestamp from this timestamp one will receive the network latency.</p></li>
+<li><p><em>ss</em> - Server Sent - Annotated upon completion of request processing (when the response got sent back to the client). If one subtracts the sr timestamp from this timestamp one will receive the time needed by the server side to process the request.</p></li>
+<li><p><em>cr</em> - Client Received - Signifies the end of the span. The client has successfully received the response from the server side. If one subtracts the cs timestamp from this timestamp one will receive the whole time needed by the client to receive the response from the server.</p></li>
+</ul>
+</blockquote>
+
+<p>Ok since now we&rsquo;re on the same page with the terminology let&rsquo;s see what&rsquo;s new in Sleuth.</p>
+
+<h2>Span creation and naming</h2>
+
+<h3>Rationale</h3>
+
+<p>A really big problem that is there in the distributed tracing world is the issue related to naming spans. Actually that topic can be looked at from two angles.</p>
+
+<p>First one is related to what the name of the span should look like. Should be a long and descriptive name or quite the contrary? As we write in the documentation:</p>
+
+<blockquote><p>The name should be low cardinality (e.g. not include identifiers).</p></blockquote>
+
+<p>Finding the name for the span is not that big of a problem from library&rsquo;s perspective. You just pass on to a span whatever the user provides. But what about the situations in which some operation is deferred in time? Or scheduled at certain intervals?</p>
+
+<p>Second one is related to a bigger issue: for the sake of consistency of passing tracing data, should we enforce creating spans? Should we be <em>eager</em> with that or allow the user to control span creation? Cause in that way we can have a problem how to name this artificial instance.</p>
+
+<p>For RC1 we&rsquo;ve decided that we will be eager in creating span names - but <a href="https://github.com/spring-cloud/spring-cloud-sleuth/issues/180">we will come back to the topic in the future releases</a>.</p>
+
+<h3>Naming spans</h3>
+
+<p>Ok so we know the why, now let&rsquo;s move to the how&hellip; There is quite a lot of instrumentation going on in Sleuth so sometimes the names of spans could sound artificial (e.g. <em>async</em> for asynchronous operations). When talking about runnables and callables often you&rsquo;re dealing with code similar to this one:</p>
+
+<pre><code>Runnable runnable = new Runnable() {
+    @Override public void run() {
+        // perform logic
+    }
+});
+Future&lt;?&gt; future = executorService.submit(runnable);
+// ... some additional logic ...
+future.get();
+</code></pre>
+
+<p>What the <code>Runnable</code> is an operation that you would like to wrap in a span. What should be the name of that span? How can you pass it to the <code>Tracer</code> so that the span name is set?</p>
+
+<p>To answer those issues we&rsquo;ve introduced two approaches</p>
+
+<ul>
+<li>a <code>@SpanName</code> annotation for an explicit class that implements <code>Runnable</code> or <code>Callable</code></li>
+<li><code>toString()</code> method resolution of an anonymous instance of either of those interfaces</li>
+</ul>
+
+
+<p>Most likely in the future releases <code>@SpanName</code> or its modification will be used more heavily to provide explicit names of spans.</p>
+
+<p>Anyways examples could look like those in the documentation. Example for <code>@SpanName</code> annotated class:</p>
+
+<pre><code>@SpanName("calculateTax")
+class TaxCountingRunnable implements Runnable {
+
+    @Override public void run() {
+        // perform logic
+    }
+}
+</code></pre>
+
+<p>and an anonymous instance:</p>
+
+<pre><code>new TraceRunnable(tracer, spanNamer, new Runnable() {
+    @Override public void run() {
+        // perform logic
+    }
+
+    @Override public String toString() {
+        return "calculateTax";
+    }
+});
+</code></pre>
+
+<p>Both will have the same span name. Remember that both <code>Runnables</code> should be wrapped in a <code>TraceRunnable</code> instance.</p>
+
+<h3>Customization of span propagation</h3>
+
+<p>It&rsquo;s pretty obvious that there&rsquo;s a lot of companies that have already created some form of distributed tracing instrumentation. In Spring Cloud Sleuth we&rsquo;re expecting the tracing headers to be containing certain names like <code>X-B3-TraceId</code> for the trace id containing headers or <code>X-B3-SpanId</code> for the span related one.</p>
+
+<p>One of the first issues that we&rsquo;ve created was related to <a href="https://github.com/spring-cloud/spring-cloud-sleuth/issues/19">support configurable header names</a> but actually we&rsquo;ve developed it quite late. Anyways with RC1 it&rsquo;s possible to customize Sleuth in such a way that it&rsquo;s compatible with your system&rsquo;s nomenclature. Let&rsquo;s define two terms before we go any further - <code>Injector</code> and <code>Extractor</code>.</p>
+
+<h4>Injectors</h4>
+
+<p>In Spring Cloud Sleuth an <code>Injector</code> is actually a functional interface called <code>SpanInjector</code>. It has the following method:</p>
+
+<pre><code>void inject(Span span, T carrier);
+</code></pre>
+
+<p>Its purpose is to take whatever is necessary from a <code>span</code> and
+inject it to the <code>carrier</code>. Let&rsquo;s assume that in your system you don&rsquo;t set the headers for trace id with the name <code>X-B3-TraceId</code> but you call it <code>correlationId</code> and <code>mySpanId</code> for <code>X-B3-SpanId</code>. Then you would have to override the behavior of Sleuth by registering a custom implementation of the <code>SpanInjector</code>. Let&rsquo;s look at the following snippets from the documentation:</p>
+
+<pre><code>class CustomHttpServletResponseSpanInjector implements SpanInjector&lt;HttpServletResponse&gt; {
+
+    @Override
+    public void inject(Span span, HttpServletResponse carrier) {
+        carrier.addHeader("correlationId", Span.idToHex(span.getTraceId()));
+        carrier.addHeader("mySpanId", Span.idToHex(span.getSpanId()));
+        // inject the rest of Span values to the header
+    }
+}
+</code></pre>
+
+<p>Note that this approach will work with Zipkin only if your values that you&rsquo;re passing are Zipkin-compatible. That means that the IDs are 64bit numbers.</p>
+
+<p>Also you may wonder why do we convert values using <code>Span.idToHex</code>. We&rsquo;ve decided that we want the values of ids in the logs and in the message headers to be the very same values as the one that you can later see in Zipkin. That way you can just copy the value and put it into Zipkin to debug your system.</p>
+
+<p>Once you have the <code>SpanInjector</code> you have to register it as a bean with <code>@Primary</code> annotation as presented below:</p>
+
+<pre><code>@Bean
+@Primary
+SpanInjector&lt;HttpServletResponse&gt; customHttpServletResponseSpanInjector() {
+    return new CustomHttpServletResponseSpanInjector();
+}
+</code></pre>
+
+<h4>Extractors</h4>
+
+<p>In Spring Cloud Sleuth an <code>Extractor</code> is actually a functional interface called <code>SpanExtractor</code>. It has the following method:</p>
+
+<pre><code>Span joinTrace(T carrier);
+</code></pre>
+
+<p>Its purpose it to create a Span from the provided carrier. Let&rsquo;s have the same assumption as with the <code>SpanInjector</code> and let&rsquo;s consider a case where traceId header is named <code>correlationId</code> and spanId header is <code>mySpanId</code>. Then we customize the Spring context by providing our own implementation of the <code>SpanExtractor</code>:</p>
+
+<pre><code>class CustomHttpServletRequestSpanExtractor implements SpanExtractor&lt;HttpServletRequest&gt; {
+
+    @Override
+    public Span joinTrace(HttpServletRequest carrier) {
+        long traceId = Span.hexToId(carrier.getHeader("correlationId"));
+        long spanId = Span.hexToId(carrier.getHeader("mySpanId"));
+        // extract all necessary headers
+        Span.SpanBuilder builder = Span.builder().traceId(traceId).spanId(spanId);
+        // build rest of the Span
+        return builder.build();
+    }
+}
+</code></pre>
+
+<p>Again note that we&rsquo;re considering that the values are Zipkin compatible (64bit values for ids). Also note that we&rsquo;ve assumed that the ids are sent in a hexadecimal form like they are presented in the Zipkin UI. That&rsquo;s why we used the <code>Span.hexToId</code> method to convert it back to long again.</p>
+
+<h2>Summary</h2>
+
+<p>In this very short post you could see two quite big features available in the RC1 release. You can check <a href="http://cloud.spring.io/spring-cloud-sleuth/spring-cloud-sleuth.html">Spring Cloud Sleuth documentation</a> for more information about the integrations and configurations of Sleuth. Actually you can check all the things that have changed in the RC1 release by checking the <a href="https://github.com/spring-cloud/spring-cloud-sleuth/issues?q=is%3Aissue+is%3Aclosed+milestone%3A1.0.0.RC1">closed issues</a> and <a href="https://github.com/spring-cloud/spring-cloud-sleuth/pulls?q=is%3Apr+milestone%3A1.0.0.RC1+is%3Aclosed">merged PRs</a>.</p>
+
+<p>In case of any questions do not hesitate to ping us on the <a href="https://gitter.im/spring-cloud/spring-cloud-sleuth">Gitter channel</a> or <a href="https://github.com/spring-cloud/spring-cloud-sleuth/issues">file an issue on Github</a>.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Post on Spring blog]]></title>
