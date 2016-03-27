@@ -17,12 +17,12 @@ Below you can find a list of my open source projects that I'm working on / I've 
 
 I've also contributed some code to
 
-- [Groovy](https://github.com/apache/groovy) - I've contributed basis of the [@Builder transform](https://github.com/apache/groovy/blob/master/src/main/groovy/transform/builder/ExternalStrategy.java)
-- [Mockito](https://github.com/mockito/mockito) - it was long time ago...
-- [Rest-Assured](https://github.com/jayway/rest-assured) - the Async bit of Spring (version 2.5.0)
+- [Groovy](https://github.com/apache/groovy) - I've done the basis of the [@Builder transform](https://github.com/apache/groovy/blob/master/src/main/groovy/transform/builder/ExternalStrategy.java)
+- [Mockito](https://github.com/mockito/mockito) - it was a long time ago...
+- [Rest-Assured](https://github.com/jayway/rest-assured) - the Async bit of Spring MVC (version 2.5.0)
 - [Micro-Infra-Spring](https://github.com/4finance/micro-infra-spring) - a lot from that code is already in Spring. I'm not contributing to this repo anymore though.
 - [Gradle Uptodate Plugin](https://github.com/4finance/uptodate-gradle-plugin) - Gradle plugin to check if your code is up to date. I won't contribute to this either anymore.
-- [Moco](https://github.com/dreamhead/moco) - [added GMoco support ](https://github.com/dreamhead/moco/pull/45)
+- [Moco](https://github.com/dreamhead/moco) - [added GMoco support](https://github.com/dreamhead/moco/pull/45)
 
 I'm present at these Gitter channels if you want to talk
 
