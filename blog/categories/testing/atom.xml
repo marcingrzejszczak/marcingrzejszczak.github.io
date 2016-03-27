@@ -4,7 +4,7 @@
   <title><![CDATA[Category: testing | TOO MUCH CODING]]></title>
   <link href="http://toomuchcoding.com/blog/categories/testing/atom.xml" rel="self"/>
   <link href="http://toomuchcoding.com/"/>
-  <updated>2016-03-25T16:48:05+01:00</updated>
+  <updated>2016-03-27T23:48:12+02:00</updated>
   <id>http://toomuchcoding.com/</id>
   <author>
     <name><![CDATA[Marcin Grzejszczak]]></name>
@@ -12,6 +12,68 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[JSON Assert 0.3.0 released]]></title>
+    <link href="http://toomuchcoding.com/blog/2016/03/27/json-assert-0-dot-3-0-released/"/>
+    <updated>2016-03-27T23:17:21+02:00</updated>
+    <id>http://toomuchcoding.com/blog/2016/03/27/json-assert-0-dot-3-0-released</id>
+    <content type="html"><![CDATA[<p>I&rsquo;m pleased to announce that JSON Assert version 0.3.0 got released! The following features have been added</p>
+
+<ul>
+<li><a href="https://github.com/marcingrzejszczak/jsonassert/issues/6">Building String JSON Path</a></li>
+<li><a href="https://github.com/marcingrzejszczak/jsonassert/issues/7">Pass fields as array of Strings</a></li>
+</ul>
+
+
+<p>and in 0.2.2 the <a href="https://github.com/marcingrzejszczak/jsonassert/issues/5">annoying warning message got removed</a></p>
+
+<!-- more -->
+
+
+<h2>Building String JSON Path</h2>
+
+<p>Writing JSON Paths to assert JSON is no fun at all&hellip; That&rsquo;s why JSON Assert was created in the first place.
+One doesn&rsquo;t always want to use this library to perform assertions though. But what one wants to profit from
+is the fluent interface to create the JSON Path expression.</p>
+
+<p>That&rsquo;s why with 0.3.0 you can use the new class called <code>JsonPath</code>. It has a single static method <code>builder()</code>
+with which you can&hellip; well&hellip; build the JSON Path. Remember to call <code>jsonPath()</code> to get its String value.</p>
+
+<p>So for instance running this code:</p>
+
+<p><code>JsonPath.builder().field("some").field("nested").field("anothervalue").isEqualTo(4).jsonPath()</code></p>
+
+<p>would result in creating the following String JSON Path representation:</p>
+
+<p><code>$.some.nested[?(@.anothervalue == 4)]</code></p>
+
+<p>Other examples:</p>
+
+<pre><code>JsonPath.builder().field("some").field("nested").array("withlist").contains("name").isEqualTo("name1").jsonPath() === '''$.some.nested.withlist[*][?(@.name == 'name1')]'''
+JsonPath.builder().field("some").field("nested").field("json").isEqualTo("with \"val'ue").jsonPath() === '''$.some.nested[?(@.json == 'with "val\\'ue')]'''
+JsonPath.builder().field("some", "nested", "json").isEqualTo("with \"val'ue").jsonPath() === '''$.some.nested[?(@.json == 'with "val\\'ue')]'''
+</code></pre>
+
+<h2>Pass fields as array of Strings</h2>
+
+<p>This is a small, handy feature that allows you to write less code. Often you iterate over a JSON that has plenty of fields. With the 0.3.0 release
+instead of writing:</p>
+
+<p><code>assertThat(json).field("some").field("nested").field("json").isEqualTo("with \"val'ue")</code></p>
+
+<p>you can write</p>
+
+<p><code>assertThat(json1).field("some", "nested", "json").isEqualTo("with \"val'ue")</code></p>
+
+<p>You get a method that allows you to traverse the JSON fields by passing an array of field names.</p>
+
+<h2>Contact</h2>
+
+<p>Remember that JSON Assert has its own <a href="https://gitter.im/marcingrzejszczak/jsonassert">Gitter channel</a> so in case of questions do not hesitate
+to contact me there.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[JSON Assert 0.2.1 released]]></title>
