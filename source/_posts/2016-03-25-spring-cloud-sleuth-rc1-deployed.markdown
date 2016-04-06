@@ -11,7 +11,7 @@ categories:
 On the 24.03.2016 we've managed to move our [release train called Brixton to the next station: RC1](https://spring.io/blog/2016/03/24/spring-cloud-brixton-rc1-is-now-available).
 I'm really happy about this cause it cost us a lot of energy but it was worth it!
 
-I'm recently mostly focusing on the [Spring Cloud Sleuth project](cloud.spring.io/spring-cloud-sleuth/spring-cloud-sleuth.html) and actually quite gigantic changes happened there since the M5 release. In this short post I'll show you the rationale and describe briefly the features related to span naming and customizations related to span propagation.
+I'm recently mostly focusing on the [Spring Cloud Sleuth project](http://cloud.spring.io/spring-cloud-sleuth/spring-cloud-sleuth.html) and actually quite gigantic changes happened there since the M5 release. In this short post I'll show you the rationale and describe briefly the features related to span naming and customizations related to span propagation.
 
 <!-- more -->
 
@@ -23,7 +23,7 @@ We're also trying to be aligned with the concepts, terminology and approaches pr
 
 ## Distributed tracing terminology
 
-I'll quote the [documentation](cloud.spring.io/spring-cloud-sleuth/spring-cloud-sleuth.html) to present some of the basic concepts of distributed tracing.
+I'll quote the [documentation](http://cloud.spring.io/spring-cloud-sleuth/spring-cloud-sleuth.html) to present some of the basic concepts of distributed tracing.
 
 > *Span*: The basic unit of work. For example, sending an RPC is a new span, as is sending a response to an RPC. Span’s are identified by a unique 64-bit ID for the span and another 64-bit ID for the trace the span is a part of. Spans also have other data, such as descriptions, timestamped events, key-value annotations (tags), the ID of the span that caused them, and process ID’s (normally IP address).
 >

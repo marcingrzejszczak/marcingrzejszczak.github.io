@@ -10,7 +10,7 @@ footer: true
 Below you can find a list of my open source projects that I'm working on / I've created
 
 - [Spring Cloud](https://github.com/spring-cloud) - mostly I'm working on [Spring Cloud Sleuth](https://github.com/spring-cloud/spring-cloud-sleuth)
-- [Accurest](https://github.com/Codearte/accurest) - Consumer Driven Contracts verifier for Java
+- [AccuREST](https://github.com/Codearte/accurest) - Consumer Driven Contracts verifier for Java
 - [JSON Assert](https://github.com/marcingrzejszczak/jsonassert) - fluent JSON assertions
 - [Spock Subjects Collaborators Extension](https://github.com/marcingrzejszczak/spock-subjects-collaborators-extension) - @InjectMocks for Spock
 - [Gradle Test Profiler](https://github.com/marcingrzejszczak/gradle-test-profiler) - a Gradle plugin to profile your tests
@@ -29,12 +29,12 @@ I'm present at these Gitter channels if you want to talk
 - [Spring Cloud](https://gitter.im/spring-cloud/spring-cloud)
 - [Spring Cloud Sleuth](https://gitter.im/spring-cloud/spring-cloud-sleuth)
 - [JSON Assert](https://gitter.im/marcingrzejszczak/jsonassert)
-- [Accurest](https://gitter.im/Codearte/accurest)
+- [AccuREST](https://gitter.im/Codearte/accurest)
 - [Spock Subject Collaborators Extension](https://gitter.im/marcingrzejszczak/spock-subjects-collaborators-extension)
 - [Spring Boot](https://gitter.im/spring-projects/spring-boot)
 
 Below you have some of the links to categories of posts related to the projects
 
-- [Accurest](/blog/categories/accurest/)
+- [AccuREST](/blog/categories/accurest/)
 - [Spring Cloud](/blog/categories/spring-cloud/)
 - [JSON Assert](/blog/categories/jsonassert/)
