@@ -4,7 +4,7 @@
   <title><![CDATA[Category: accurest | TOO MUCH CODING]]></title>
   <link href="http://toomuchcoding.com/blog/categories/accurest/atom.xml" rel="self"/>
   <link href="http://toomuchcoding.com/"/>
-  <updated>2016-03-27T23:48:12+02:00</updated>
+  <updated>2016-04-06T22:21:10+02:00</updated>
   <id>http://toomuchcoding.com/</id>
   <author>
     <name><![CDATA[Marcin Grzejszczak]]></name>
@@ -12,6 +12,423 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[AccuREST Stubrunner Released]]></title>
+    <link href="http://toomuchcoding.com/blog/2016/04/06/accurest-stubrunner-released/"/>
+    <updated>2016-04-06T11:05:58+02:00</updated>
+    <id>http://toomuchcoding.com/blog/2016/04/06/accurest-stubrunner-released</id>
+    <content type="html"><![CDATA[<p>It&rsquo;s been a good release time recently! I&rsquo;m blogging here at <a href="http://toomuchcoding.com">Too Much Coding blog</a> more about releases then about any concrete topics ;)</p>
+
+<p>After releasing <a href="/blog/2016/03/25/spring-cloud-sleuth-rc1-deployed/">Spring Cloud Sleuth as a part of Brixton RC1</a> we have just released a version 1.0.4 of <a href="https://github.com/Codearte/accurest">AccuREST</a>. We&rsquo;ve fixed a couple
+of bugs but we&rsquo;ve introduced a couple of big features including:</p>
+
+<ul>
+<li>Maven plugin support</li>
+<li><em>Stub Runner</em> functionality</li>
+</ul>
+
+
+<p>This post will describe the latter feature in more depth.</p>
+
+<!-- more -->
+
+
+<h2>Introduction</h2>
+
+<p>I&rsquo;ve given quite a few talks about the library called <a href="https://github.com/4finance/micro-infra-spring">Micro-Infra-Spring</a> where I presented how you can profit from the <em>Stub Runner</em> functionality. Since my leaving the company owning that repository, the project is almost not maintained at all. For quite a long time any development was done mostly by me and actually I was the author of most of the <em>Stub Runner&rsquo;s</em> code. Due to the aforementioned and the fact that <em>Stub Runner</em> is tightly coupled with AccuREST&rsquo;s stub generation feature I&rsquo;ve decided to migrate it to the AccuREST&rsquo;s repository.</p>
+
+<h2>AccuREST recap</h2>
+
+<p><em>Stub Runner</em> is tightly coupled with the concepts coming from AccuREST. For more information about AccuREST you can check my <a href="/blog/categories/accurest/">blog entries</a> or check <a href="https://github.com/Codearte/accurest">AccuREST project on Github</a>. If you don&rsquo;t have a clue what that is I&rsquo;ll try to do a very fast recap.</p>
+
+<p>AccuREST is a <a href="http://martinfowler.com/articles/consumerDrivenContracts.html">Consumer Driven Contracts</a> verifier in which you define the contract of your API via a Groovy DSL. From that DSL, on the server side, tests are created to check if your contract is telling the truth. From the <em>Stub Runner&rsquo;s</em> perspective more interesting is the client side. For the client side AccuREST generates WireMock stubs from the provided DSL so that the clients of that API can be provided with reliable stubs.</p>
+
+<h2>What is Stub Runner?</h2>
+
+<p>Now that we remember what AccuREST does we can take a look in more depth at <em>Stub Runner</em>. Let&rsquo;s assume that we have a following flow of services (btw. <a href="http://cloud.spring.io/spring-cloud-sleuth/spring-cloud-sleuth.html">this is a screenshot from Zipkin integrated with Spring Cloud Sleuth</a> )</p>
+
+<p><img src="/images/accurest/stubrunner/dependencies_accurest.png" alt="Dependencies" /></p>
+
+<p>Let&rsquo;s imagine ourselves as developers of the <em>service2</em> - the one that calls <em>service3</em> and <em>service4</em>. Since we&rsquo;re doing the CDC (<a href="http://martinfowler.com/articles/consumerDrivenContracts.html">Consumer Driven Contracts</a>) approach let&rsquo;s assume that the stubs of <em>service3</em> and <em>service4</em> got already deployed to some Maven repository.</p>
+
+<p>If I&rsquo;m writing integration tests of <em>service2</em> I&rsquo;ll for sure have some points of interaction with <em>service3</em> and <em>service4</em>. Most likely in the majority of cases I&rsquo;ll just mock those interactions in my code but it would be valuable to have a real HTTP call done to the other application. Of course I don&rsquo;t want to download both services and run them only for integration tests - that would be an overkill. That&rsquo;s why the most preferable solution at this point would be to run the stubs of my collaborators.</p>
+
+<p>Since I&rsquo;m too lazy to do things manually I&rsquo;d prefer the stubs to be automatically downloaded for me, the WireMock servers started and fed with the stub definitions.</p>
+
+<p>And that&rsquo;s exactly what <em>Stub Runner</em> can do for you!</p>
+
+<h2>How does it work?</h2>
+
+<h3>Concept</h3>
+
+<p><a href="https://github.com/Codearte/accurest/wiki/8.-Stub-Runner">Stub Runner</a> at its core is using Groovy&rsquo;s Grape mechanism to download the stubs from a given Maven repository. Next it unpacks them to a temporary folder. Let&rsquo;s assume that you have the following structure of your WireMock stubs inside the stub JAR (example for a <code>service3-stubs.jar</code>)</p>
+
+<pre><code>├── META-INF
+│   └── MANIFEST.MF
+└── mappings
+    └── service3
+        ├── shouldMarkClientAsFraud.json
+        ├── notAWireMockMapping.json
+        └── shouldSayHello.json
+</code></pre>
+
+<p><em>Stub Runner</em> will scan the whole unpacked JAR for any <code>.json</code> files. There is a convention that stub definitions are placed under the <code>mappings</code> folder. So it will pick <code>shouldMarkClientAsFraud.json</code>, <code>notAWireMockMapping.json</code> and <code>shouldSayHello.json</code> files.</p>
+
+<p>Next, a WireMock instance is started for each dependency and every found JSON is attempted to be parsed as a WireMock stub definition. Any exceptions at this point are ignored (so assuming that <code>notAWireMockMapping.json</code> is not a valid WireMock definition, the exception will be suppressed). In our scenario 2 WireMock servers will be started - one for <code>service3</code> and one for <code>service4</code>.</p>
+
+<p>That way you don&rsquo;t have to copy the stubs manually. The stubs are centralized since they are stored in a Maven repository. It&rsquo;s extremely important cause <em>Stub Runner</em> downloads always the newest version of the stubs so you can be sure that your tests will break the moment someone does an incompatible change.</p>
+
+<h3>API</h3>
+
+<p>From the developer&rsquo;s perspective there are only a handful of <em>Stub Runner&rsquo;s</em> classes that should be used. In the majority of cases you will use the following ones:</p>
+
+<h4>StubFinder</h4>
+
+<p>An interface that allows you to find the URL of the started WireMock instance. You can find that URL by
+passing the Ivy notation (<code>groupId:artifactId</code>) or just the <code>artifactId</code> - <em>Stub Runner</em> will try to take care of the rest.</p>
+
+<pre><code class="groovy">interface StubFinder {
+  /**
+   * For the given groupId and artifactId tries to find the matching
+   * URL of the running stub.
+   *
+   * @param groupId - might be null. In that case a search only via artifactId takes place
+   * @return URL of a running stub or null if not found
+   */
+  URL findStubUrl(String groupId, String artifactId)
+
+  /**
+   * For the given Ivy notation {@code groupId:artifactId} tries to find the matching
+   * URL of the running stub. You can also pass only {@code artifactId}.
+   *
+   * @param ivyNotation - Ivy representation of the Maven artifact
+   * @return URL of a running stub or null if not found
+   */
+  URL findStubUrl(String ivyNotation)
+
+  /**
+   * Returns all running stubs
+   */
+  RunningStubs findAllRunningStubs()
+}
+</code></pre>
+
+<h4>RunningStubs</h4>
+
+<p>A structure representing the already running stubs. Give you some helper methods to retrieve Ivy representation of a particular stub, find a port for a stub etc.</p>
+
+<p><img src="/images/accurest/stubrunner/running_stubs.png" alt="RunningStubs" /></p>
+
+<h4>StubRunning</h4>
+
+<p>A contract for classes that can run the stubs:</p>
+
+<pre><code class="groovy">interface StubRunning extends Closeable, StubFinder {
+  /**
+   * Runs the stubs and returns the {@link RunningStubs}
+   */
+  RunningStubs runStubs()
+
+}
+</code></pre>
+
+<h4>StubRunner</h4>
+
+<p>Represents a single instance of ready-to-run stubs. It can run the stubs and will return the running instance of WireMock wrapped in <code>RunningStubs</code> class. Since it&rsquo;s implementing <code>StubFinder</code> can also be queried if the current groupid and artifactid are matching the corresponding running stub.</p>
+
+<h4>BatchStubRunner</h4>
+
+<p>If you have multiple services for which you want to run the WireMocks with stubs it&rsquo;s enough to use <code>BatchStubRunner</code>. It iterates over the given <code>Iterable</code> of <code>StubRunner</code> and executes the logic on each of them.</p>
+
+<h2>Running Stub Runner</h2>
+
+<p>In all the examples below let&rsquo;s assume that the stubs are stored in the Maven repository available under <code>http://toomuchcoding.com</code> URL. As <em>service2</em> I&rsquo;d like to download the stubs of <code>com.toomuchcoding:service3</code> and
+<code>com.toomuchcoding:service4</code> services.</p>
+
+<h3>Stub Runner as a fat JAR</h3>
+
+<h4>How to use it?</h4>
+
+<p><em>Stub Runner</em> comes with a main class (<code>io.codearte.accurest.stubrunner.StubRunnerMain</code>) which you can run with the following options:</p>
+
+<pre><code> -maxp (--maxPort) N            : Maximum port value to be assigned to the
+                                  Wiremock instance. Defaults to 15000
+                                  (default: 15000)
+ -minp (--minPort) N            : Minimal port value to be assigned to the
+                                  Wiremock instance. Defaults to 10000
+                                  (default: 10000)
+ -s (--stubs) VAL               : Comma separated list of Ivy representation of
+                                  jars with stubs. Eg. groupid:artifactid1,group
+                                  id2:artifactid2:classifier
+ -sr (--stubRepositoryRoot) VAL : Location of a Jar containing server where you
+                                  keep your stubs (e.g. http://nexus.net/content
+                                  /repositories/repository)
+ -ss (--stubsSuffix) VAL        : Suffix for the jar containing stubs (e.g.
+                                  'stubs' if the stub jar would have a 'stubs'
+                                  classifier for stubs: foobar-stubs ).
+                                  Defaults to 'stubs' (default: stubs)
+ -wo (--workOffline)            : Switch to work offline. Defaults to 'false'
+                                  (default: false)
+</code></pre>
+
+<p>You can run that main class from IDE or build yourself a fat JAR. To do that just call the following command:</p>
+
+<pre><code>./gradlew stub-runner-root:stub-runner:shadowJar -PfatJar
+</code></pre>
+
+<p>Then inside the <code>build/lib</code> there will be a fat JAR with classifier <code>fatJar</code> waiting for you to execute.</p>
+
+<p>Coming back to our example once the fat JAR is built I would just call the following command the retrieve the stubs of <em>service3</em> and <em>service4</em> from the Maven repository available at <code>http://toomuchcoding.com</code>.</p>
+
+<pre><code>java -jar stub-runner-1.0.4-SNAPSHOT-fatJar.jar -sr http://toomuchcoding.com -s com.toomuchcoding:service3:stubs,com.toomuchcoding.service4
+</code></pre>
+
+<h4>When to use it?</h4>
+
+<p>Running <em>Stub Runner</em> as a main class makes most sense when you&rsquo;re running some fast smoke tests on a deployed application where you don&rsquo;t want to download and run all the collaborators of that application. For more rationale behind such an approach you can check my article about <a href="/blog/2015/09/27/microservice-deployment/">Microservice Deployment</a></p>
+
+<h3>Stub Runner JUnit Rule</h3>
+
+<h4>How to use it?</h4>
+
+<p>You can use the <em>Stub Runner&rsquo;s</em> JUnit rule to automatically download and run the stubs during your tests. The <code>AccurestRule</code> implements the <code>StubFinder</code> interface thus you can easily find the URLs of the services that you&rsquo;re interested in.</p>
+
+<p>This is how you could do it with Spock:</p>
+
+<pre><code class="groovy">class SomeSpec extends Specification {
+
+  @ClassRule @Shared AccurestRule rule = new AccurestRule()
+      .repoRoot('http://toomuchcoding.com')
+      .downloadStub("com.toomuchcoding", "service3")
+      .downloadStub("com.toomuchcoding:service4")
+
+  def 'should do something useful when service3 is called'() {
+        given:
+            URL service3Url = rule.findStubUrl('com.toomuchcoding', 'service3')
+        expect:
+            somethingUseful(service3Url)
+    }
+
+  def 'should do something even more useful when service4 is called'() {
+        given:
+            URL service4Url = rule.findStubUrl('service4')
+        expect:
+            somethingMoreUseful(service4Url)
+    }
+}
+</code></pre>
+
+<p>or with plain Java JUnit:</p>
+
+<pre><code>public class SomeTest {
+
+  @ClassRule public static AccurestRule rule = new AccurestRule()
+      .repoRoot("http://toomuchcoding.com")
+      .downloadStub("com.toomuchcoding", "service3")
+      .downloadStub("com.toomuchcoding:service4");
+
+  @Test
+  public void should_do_something_useful_when_service3_is_called() {
+        URL service3Url = rule.findStubUrl("com.toomuchcoding", "service3");
+
+        somethingUseful(service3Url);
+  }
+
+  @Test
+  public void should_do_something_even_more_useful_when_service4_is_called() {
+        URL service4Url = rule.findStubUrl("service4");
+
+        somethingMoreUseful(service4Url);
+  }
+}
+</code></pre>
+
+<h4>When to use it?</h4>
+
+<p>You can use this rule in any place you want to if we don&rsquo;t provide any integration with an existing framework.</p>
+
+<h3>Stub Runner Spring</h3>
+
+<h4>How to use it?</h4>
+
+<p>You can use the <em>Stub Runner&rsquo;s</em> Spring configuration to download the stubs of your collaborators and run the WireMock server upon Spring context booting. We&rsquo;re providing the <code>StubRunnerConfiguration</code> that you can import in your tests. In that configuration we&rsquo;re registering a <code>StubFinder</code> bean that you can autowire in your tests.</p>
+
+<p>Having the following <code>application.yaml</code> file:</p>
+
+<pre><code class="yml">stubrunner.stubs.repository.root: http://toomuchcoding.com
+stubrunner.stubs.ids: com.toomuchcoding:service3:stubs,com.toomuchcoding.service4
+</code></pre>
+
+<p>This is how you could do it with Spock</p>
+
+<pre><code class="groovy">@ContextConfiguration(classes = Config, loader = SpringApplicationContextLoader)
+class StubRunnerConfigurationSpec extends Specification {
+
+  @Autowired StubFinder stubFinder
+
+  def 'should do something useful when service3 is called'() {
+      given:
+          URL service3Url = stubFinder.findStubUrl('com.toomuchcoding', 'service3')
+      expect:
+          somethingUseful(service3Url)
+  }
+
+  def 'should do something even more useful when service4 is called'() {
+      given:
+          URL service4Url = stubFinder.findStubUrl('service4')
+      expect:
+          somethingMoreUseful(service4Url)
+  }
+
+  @Configuration
+  @Import(StubRunnerConfiguration)
+  @EnableAutoConfiguration
+  static class Config {}
+
+}
+</code></pre>
+
+<h4>When to use it?</h4>
+
+<p>In your tests if you have Spring and don&rsquo;t have Spring Cloud. Also you can add it in compile time (of course you would have to add some Spring profiles so as not to run it on production) to profit from a &ldquo;developer&rdquo; mode of running microservices. That means that if you boot up your application to click around it - all the stubs around you would have already been downloaded and started.</p>
+
+<h3>Stub Runner Spring Cloud</h3>
+
+<h4>How to use it?</h4>
+
+<p>You can use the <em>Stub Runner&rsquo;s</em> Spring Cloud configuration to profit from the stubbed collaborators when using Spring Cloud&rsquo;s abstractions over service discovery and when you&rsquo;re using Netflix Ribbon. <em>Stub Runner Spring Cloud</em> configuration is an <code>AutoConfiguration</code> so it&rsquo;s automatically started for you.</p>
+
+<p>Let&rsquo;s assume that you&rsquo;re referring to <em>service3</em> as <code>service3</code> in your code and to <em>service4</em> as <code>shouldMapThisNameToService4</code>. That means that you&rsquo;re using for example the <code>@LoadBalanced</code> <code>RestTemplate</code> in the following way (don&rsquo;t use field injection as I do in this example!!):</p>
+
+<pre><code class="groovy">@Component
+class SomeClass {
+
+  @Autowired @LoadBalanced RestTemplate restTemplate
+
+  void doSth() {
+    // code...
+    String service3Response = restTemplate.getForObject('http://service3/name', String)
+    String service4Response = restTemplate.getForObject('http://shouldMapThisNameToService4/name', String)
+    // more code...
+  }
+
+}
+</code></pre>
+
+<p>If the service Id that you&rsquo;re using to call other services maps exactly to the name of the artifact Id in a Maven repository then you&rsquo;re lucky and don&rsquo;t have to do anything to find your running stubs. If however that&rsquo;s not the case - don&rsquo;t worry, you&rsquo;ll just have to map it yourself.</p>
+
+<p>The <code>stubrunner.stubs.idsToServiceIds</code> property is the root path to a map in which the <em>key</em> is the <em>artifactID</em> of the downloaded stub and the <em>value</em> is the <em>serviceId</em> used in the code.</p>
+
+<p>Having the following <code>application.yaml</code> file:</p>
+
+<pre><code class="yml">stubrunner.stubs.repository.root: http://toomuchcoding.com
+stubrunner.stubs.ids: com.toomuchcoding:service3:stubs,com.toomuchcoding.service4
+
+stubrunner.stubs.idsToServiceIds:
+  service4: shouldMapThisNameToService4
+</code></pre>
+
+<p>This is how you could do it with Spock</p>
+
+<pre><code class="groovy">@ContextConfiguration(classes = Config, loader = SpringApplicationContextLoader)
+class StubRunnerConfigurationSpec extends Specification {
+
+  @Autowired SomeClass someClass
+
+  def 'should not explode'() {
+      when:
+          someClass.doSth()
+      expect:
+          noExceptionThrown()
+  }
+
+  @Configuration
+  @EnableAutoConfiguration
+  static class Config {}
+
+}
+</code></pre>
+
+<h4>When to use it?</h4>
+
+<p>When you&rsquo;re using Spring Cloud. You can profit from <code>Stub Runner Spring Cloud</code> also in &ldquo;developer&rdquo; mode as presented in the <code>Stub Runner Spring</code> section.</p>
+
+<h3>Additional Configuration Options</h3>
+
+<p>You can set the default value of the Maven repository by means of a system property:</p>
+
+<pre><code>-Dstubrunner.stubs.repository.root=http://your.maven.repo.com
+</code></pre>
+
+<p>The list of configurable properties contains:</p>
+
+<table>
+<thead>
+<tr>
+<th> Name </th>
+<th> Default value </th>
+<th> Description </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> stubrunner.port.range.min </td>
+<td> 10000 </td>
+<td> Minimal value of a port for a WireMock server </td>
+</tr>
+<tr>
+<td> stubrunner.port.range.max </td>
+<td> 15000 </td>
+<td> Maximum value of a port for a WireMock server </td>
+</tr>
+<tr>
+<td> stubrunner.stubs.repository.root </td>
+<td>  </td>
+<td> Address to your M2 repo (will point to local M2 repo if none is provided) </td>
+</tr>
+<tr>
+<td> stubrunner.stubs.classifier </td>
+<td> stubs </td>
+<td> Default classifier for the JARs containing stubs </td>
+</tr>
+<tr>
+<td> stubrunner.work-offline </td>
+<td> false </td>
+<td> Should try to connect to any repo to download stubs (useful if there&rsquo;s no internet) </td>
+</tr>
+<tr>
+<td> stubrunner.stubs </td>
+<td> </td>
+<td> Default comma separated list of stubs to download </td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>Summary</h2>
+
+<p><em>Stub Runner</em>:</p>
+
+<ul>
+<li>Has already proven to be a very useful tool when doing CDC.</li>
+<li>Was battle tested and more companies are declaring their interest in using it.</li>
+<li>Helps you produce an API that should make both sides (server and the client) equally happy (or unhappy but still they&rsquo;re both equal in their emotions ;) ).</li>
+<li>Is language / technology agnostic - you can run it as a fat JAR, use it with Spring, Guice or whatever you want.</li>
+<li>Helps you speed up the feedback cycle both from the API design and the compatibility perspective.</li>
+</ul>
+
+
+<h2>Links</h2>
+
+<ul>
+<li><a href="https://github.com/Codearte/accurest">AccuREST Github Repository</a></li>
+<li><a href="https://github.com/Codearte/accurest/wiki/8.-Stub-Runner">Stub Runner WIKI</a></li>
+<li><a href="https://gitter.im/Codearte/accurest">AccuREST Gitter</a></li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[JSON Assert lib released]]></title>

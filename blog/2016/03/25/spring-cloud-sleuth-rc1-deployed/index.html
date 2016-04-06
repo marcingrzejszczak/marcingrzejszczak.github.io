@@ -108,7 +108,7 @@ I&rsquo;m really happy about this cause it &hellip;">
 <div class="entry-content"><p>On the 24.03.2016 we&rsquo;ve managed to move our <a href="https://spring.io/blog/2016/03/24/spring-cloud-brixton-rc1-is-now-available">release train called Brixton to the next station: RC1</a>.
 I&rsquo;m really happy about this cause it cost us a lot of energy but it was worth it!</p>
 
-<p>I&rsquo;m recently mostly focusing on the <a href="cloud.spring.io/spring-cloud-sleuth/spring-cloud-sleuth.html">Spring Cloud Sleuth project</a> and actually quite gigantic changes happened there since the M5 release. In this short post I&rsquo;ll show you the rationale and describe briefly the features related to span naming and customizations related to span propagation.</p>
+<p>I&rsquo;m recently mostly focusing on the <a href="http://cloud.spring.io/spring-cloud-sleuth/spring-cloud-sleuth.html">Spring Cloud Sleuth project</a> and actually quite gigantic changes happened there since the M5 release. In this short post I&rsquo;ll show you the rationale and describe briefly the features related to span naming and customizations related to span propagation.</p>
 
 <!-- more -->
 
@@ -121,7 +121,7 @@ I&rsquo;m really happy about this cause it cost us a lot of energy but it was wo
 
 <h2>Distributed tracing terminology</h2>
 
-<p>I&rsquo;ll quote the <a href="cloud.spring.io/spring-cloud-sleuth/spring-cloud-sleuth.html">documentation</a> to present some of the basic concepts of distributed tracing.</p>
+<p>I&rsquo;ll quote the <a href="http://cloud.spring.io/spring-cloud-sleuth/spring-cloud-sleuth.html">documentation</a> to present some of the basic concepts of distributed tracing.</p>
 
 <blockquote><p><em>Span</em>: The basic unit of work. For example, sending an RPC is a new span, as is sending a response to an RPC. Span’s are identified by a unique 64-bit ID for the span and another 64-bit ID for the trace the span is a part of. Spans also have other data, such as descriptions, timestamped events, key-value annotations (tags), the ID of the span that caused them, and process ID’s (normally IP address).</p>
 
@@ -421,6 +421,10 @@ inject it to the <code>carrier</code>. Let&rsquo;s assume that in your system yo
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2016/04/06/accurest-stubrunner-released/">AccuREST Stubrunner Released</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2016/03/27/json-assert-0-dot-3-0-released/">JSON Assert 0.3.0 released</a>
       </li>
     
@@ -434,10 +438,6 @@ inject it to the <code>carrier</code>. Let&rsquo;s assume that in your system yo
     
       <li class="post">
         <a href="/blog/2016/03/03/goodbye-blogspot-welcome-octopress/">Goodbye Blogspot welcome Octopress!</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2016/02/27/json-assert-lib-released/">JSON Assert lib released</a>
       </li>
     
   </ul>

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: spring-cloud | TOO MUCH CODING]]></title>
   <link href="http://toomuchcoding.com/blog/categories/spring-cloud/atom.xml" rel="self"/>
   <link href="http://toomuchcoding.com/"/>
-  <updated>2016-03-27T23:48:12+02:00</updated>
+  <updated>2016-04-06T22:21:10+02:00</updated>
   <id>http://toomuchcoding.com/</id>
   <author>
     <name><![CDATA[Marcin Grzejszczak]]></name>
@@ -21,7 +21,7 @@
     <content type="html"><![CDATA[<p>On the 24.03.2016 we&rsquo;ve managed to move our <a href="https://spring.io/blog/2016/03/24/spring-cloud-brixton-rc1-is-now-available">release train called Brixton to the next station: RC1</a>.
 I&rsquo;m really happy about this cause it cost us a lot of energy but it was worth it!</p>
 
-<p>I&rsquo;m recently mostly focusing on the <a href="cloud.spring.io/spring-cloud-sleuth/spring-cloud-sleuth.html">Spring Cloud Sleuth project</a> and actually quite gigantic changes happened there since the M5 release. In this short post I&rsquo;ll show you the rationale and describe briefly the features related to span naming and customizations related to span propagation.</p>
+<p>I&rsquo;m recently mostly focusing on the <a href="http://cloud.spring.io/spring-cloud-sleuth/spring-cloud-sleuth.html">Spring Cloud Sleuth project</a> and actually quite gigantic changes happened there since the M5 release. In this short post I&rsquo;ll show you the rationale and describe briefly the features related to span naming and customizations related to span propagation.</p>
 
 <!-- more -->
 
@@ -34,7 +34,7 @@ I&rsquo;m really happy about this cause it cost us a lot of energy but it was wo
 
 <h2>Distributed tracing terminology</h2>
 
-<p>I&rsquo;ll quote the <a href="cloud.spring.io/spring-cloud-sleuth/spring-cloud-sleuth.html">documentation</a> to present some of the basic concepts of distributed tracing.</p>
+<p>I&rsquo;ll quote the <a href="http://cloud.spring.io/spring-cloud-sleuth/spring-cloud-sleuth.html">documentation</a> to present some of the basic concepts of distributed tracing.</p>
 
 <blockquote><p><em>Span</em>: The basic unit of work. For example, sending an RPC is a new span, as is sending a response to an RPC. Span’s are identified by a unique 64-bit ID for the span and another 64-bit ID for the trace the span is a part of. Spans also have other data, such as descriptions, timestamped events, key-value annotations (tags), the ID of the span that caused them, and process ID’s (normally IP address).</p>
 
