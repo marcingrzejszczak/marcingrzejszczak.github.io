@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "AccuREST Stubrunner Released"
+title: "AccuREST Stub Runner Released"
 date: 2016-04-06 11:05:58 +0200
 comments: true
 categories:
