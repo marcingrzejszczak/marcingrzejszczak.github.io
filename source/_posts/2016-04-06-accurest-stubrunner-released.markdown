@@ -14,7 +14,7 @@ It's been a good release time recently! I'm blogging here at [Too Much Coding bl
 After releasing [Spring Cloud Sleuth as a part of Brixton RC1](/blog/2016/03/25/spring-cloud-sleuth-rc1-deployed/) we have just released a version 1.0.4 of [AccuREST](https://github.com/Codearte/accurest). We've fixed a couple
 of bugs but we've introduced a couple of big features including:
 
-- Maven plugin support
+- [Maven plugin support](https://github.com/Codearte/accurest-maven-plugin)
 - *Stub Runner* functionality
 
 This post will describe the latter feature in more depth.
@@ -388,3 +388,4 @@ The list of configurable properties contains:
 - [AccuREST Github Repository](https://github.com/Codearte/accurest)
 - [Stub Runner WIKI](https://github.com/Codearte/accurest/wiki/8.-Stub-Runner)
 - [AccuREST Gitter](https://gitter.im/Codearte/accurest)
+- [AccuREST Maven Plugin](https://github.com/Codearte/accurest-maven-plugin)
