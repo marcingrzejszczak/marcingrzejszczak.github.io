@@ -4,7 +4,7 @@
   <title><![CDATA[Category: testing | TOO MUCH CODING]]></title>
   <link href="http://toomuchcoding.com/blog/categories/testing/atom.xml" rel="self"/>
   <link href="http://toomuchcoding.com/"/>
-  <updated>2016-04-09T00:10:09+02:00</updated>
+  <updated>2016-04-12T09:03:01-04:00</updated>
   <id>http://toomuchcoding.com/</id>
   <author>
     <name><![CDATA[Marcin Grzejszczak]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[AccuREST Stub Runner Released]]></title>
     <link href="http://toomuchcoding.com/blog/2016/04/06/accurest-stubrunner-released/"/>
-    <updated>2016-04-06T11:05:58+02:00</updated>
+    <updated>2016-04-06T05:05:58-04:00</updated>
     <id>http://toomuchcoding.com/blog/2016/04/06/accurest-stubrunner-released</id>
     <content type="html"><![CDATA[<p>It&rsquo;s been a good release time recently! I&rsquo;m blogging here at <a href="http://toomuchcoding.com">Too Much Coding blog</a> more about releases then about any concrete topics ;)</p>
 
@@ -434,7 +434,7 @@ class StubRunnerConfigurationSpec extends Specification {
   <entry>
     <title type="html"><![CDATA[JSON Assert 0.3.0 released]]></title>
     <link href="http://toomuchcoding.com/blog/2016/03/27/json-assert-0-dot-3-0-released/"/>
-    <updated>2016-03-27T23:17:21+02:00</updated>
+    <updated>2016-03-27T17:17:21-04:00</updated>
     <id>http://toomuchcoding.com/blog/2016/03/27/json-assert-0-dot-3-0-released</id>
     <content type="html"><![CDATA[<p>I&rsquo;m pleased to announce that JSON Assert version 0.3.0 got released! The following features have been added</p>
 
@@ -496,7 +496,7 @@ to contact me there.</p>
   <entry>
     <title type="html"><![CDATA[JSON Assert 0.2.1 released]]></title>
     <link href="http://toomuchcoding.com/blog/2016/03/11/json-assert-0-dot-2-1-released/"/>
-    <updated>2016-03-11T23:33:30+01:00</updated>
+    <updated>2016-03-11T17:33:30-05:00</updated>
     <id>http://toomuchcoding.com/blog/2016/03/11/json-assert-0-dot-2-1-released</id>
     <content type="html"><![CDATA[<p>I&rsquo;m pleased to announce that JSON Assert version 0.2.1 got released! The following features have been added</p>
 

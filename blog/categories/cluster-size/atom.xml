@@ -4,7 +4,7 @@
   <title><![CDATA[Category: cluster size | TOO MUCH CODING]]></title>
   <link href="http://toomuchcoding.com/blog/categories/cluster-size/atom.xml" rel="self"/>
   <link href="http://toomuchcoding.com/"/>
-  <updated>2016-04-09T00:10:09+02:00</updated>
+  <updated>2016-04-12T09:03:01-04:00</updated>
   <id>http://toomuchcoding.com/</id>
   <author>
     <name><![CDATA[Marcin Grzejszczak]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Calculating Coherence cluster size on a remote server using JMX]]></title>
     <link href="http://toomuchcoding.com/blog/2012/10/16/calculating-coherence-cluster-size-on/"/>
-    <updated>2012-10-16T19:14:00+02:00</updated>
+    <updated>2012-10-16T13:14:00-04:00</updated>
     <id>http://toomuchcoding.com/blog/2012/10/16/calculating-coherence-cluster-size-on</id>
     <content type="html"><![CDATA[<div class='post'>
 <br /><br />In one of the projects I had a problem regarding calculating the size of a Oracle Coherence cluster. It doesn't seem to difficult since there is already a nice piece of code that can do it for us:<br />

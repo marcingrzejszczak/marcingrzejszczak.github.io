@@ -4,7 +4,7 @@
   <title><![CDATA[Category: applicationcontext | TOO MUCH CODING]]></title>
   <link href="http://toomuchcoding.com/blog/categories/applicationcontext/atom.xml" rel="self"/>
   <link href="http://toomuchcoding.com/"/>
-  <updated>2016-04-09T00:10:09+02:00</updated>
+  <updated>2016-04-12T09:03:01-04:00</updated>
   <id>http://toomuchcoding.com/</id>
   <author>
     <name><![CDATA[Marcin Grzejszczak]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Drools integration with Spring vs manual rules creation]]></title>
     <link href="http://toomuchcoding.com/blog/2013/01/15/drools-integration-with-spring-vs/"/>
-    <updated>2013-01-15T17:04:00+01:00</updated>
+    <updated>2013-01-15T11:04:00-05:00</updated>
     <id>http://toomuchcoding.com/blog/2013/01/15/drools-integration-with-spring-vs</id>
     <content type="html"><![CDATA[<div class='post'>
 <br /><br />Hi!<br /><br />&nbsp;Often in your work you can come across with issues related to business logic. Let us assume that you have dozens of rules (for the time being in our project we have more than 50 and I used to work on a project where we had hundreds of those rules) that you have to implement, divide into some classes, subclasses, abstractions and of course unit test. This can be difficult and timeconsuming to both write and support. There are many ways of dealing with this problem and I will show you one of them - JBoss Drools.<br />
@@ -28,9 +28,9 @@
   
   <entry>
     <title type="html"><![CDATA[Spring AOP in security - controlling creation of UI components via aspects]]></title>
-    <link href="http://toomuchcoding.com/blog/2012/10/28/spring-aop-in-security-controlling/"/>
-    <updated>2012-10-28T02:06:00+01:00</updated>
-    <id>http://toomuchcoding.com/blog/2012/10/28/spring-aop-in-security-controlling</id>
+    <link href="http://toomuchcoding.com/blog/2012/10/27/spring-aop-in-security-controlling/"/>
+    <updated>2012-10-27T21:06:00-04:00</updated>
+    <id>http://toomuchcoding.com/blog/2012/10/27/spring-aop-in-security-controlling</id>
     <content type="html"><![CDATA[<div class='post'>
 <br /><br />The following post will show how in one of the projects that I took part in we used Spring's AOP to introduce some security related functionalities. The concept was such that in order for the user to see some UI components he needed to have a certain level of security privillages. If that requirement was not met then the UIComponent was not presented. Let's take a look at the project structure:<br />
 <!--more-->
@@ -41,9 +41,9 @@
   
   <entry>
     <title type="html"><![CDATA[Spring BeanPostProcessor for a specified type]]></title>
-    <link href="http://toomuchcoding.com/blog/2012/10/23/spring-beanpostprocessor-for-specified/"/>
-    <updated>2012-10-23T00:36:00+02:00</updated>
-    <id>http://toomuchcoding.com/blog/2012/10/23/spring-beanpostprocessor-for-specified</id>
+    <link href="http://toomuchcoding.com/blog/2012/10/22/spring-beanpostprocessor-for-specified/"/>
+    <updated>2012-10-22T18:36:00-04:00</updated>
+    <id>http://toomuchcoding.com/blog/2012/10/22/spring-beanpostprocessor-for-specified</id>
     <content type="html"><![CDATA[<div class='post'>
 <br /><br />I was recently having a discussion how can one use a BeanPostProcessor to execute some logic for a specified class.<br />
 <!--more-->

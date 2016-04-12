@@ -4,7 +4,7 @@
   <title><![CDATA[Category: spring-cloud | TOO MUCH CODING]]></title>
   <link href="http://toomuchcoding.com/blog/categories/spring-cloud/atom.xml" rel="self"/>
   <link href="http://toomuchcoding.com/"/>
-  <updated>2016-04-09T00:10:09+02:00</updated>
+  <updated>2016-04-12T09:03:01-04:00</updated>
   <id>http://toomuchcoding.com/</id>
   <author>
     <name><![CDATA[Marcin Grzejszczak]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Spring Cloud Sleuth RC1 deployed]]></title>
     <link href="http://toomuchcoding.com/blog/2016/03/25/spring-cloud-sleuth-rc1-deployed/"/>
-    <updated>2016-03-25T14:18:22+01:00</updated>
+    <updated>2016-03-25T09:18:22-04:00</updated>
     <id>http://toomuchcoding.com/blog/2016/03/25/spring-cloud-sleuth-rc1-deployed</id>
     <content type="html"><![CDATA[<p>On the 24.03.2016 we&rsquo;ve managed to move our <a href="https://spring.io/blog/2016/03/24/spring-cloud-brixton-rc1-is-now-available">release train called Brixton to the next station: RC1</a>.
 I&rsquo;m really happy about this cause it cost us a lot of energy but it was worth it!</p>
@@ -198,7 +198,7 @@ SpanInjector&lt;HttpServletResponse&gt; customHttpServletResponseSpanInjector() 
   <entry>
     <title type="html"><![CDATA[Post on Spring blog]]></title>
     <link href="http://toomuchcoding.com/blog/2016/01/04/post-on-spring-blog/"/>
-    <updated>2016-01-04T18:28:00+01:00</updated>
+    <updated>2016-01-04T12:28:00-05:00</updated>
     <id>http://toomuchcoding.com/blog/2016/01/04/post-on-spring-blog</id>
     <content type="html"><![CDATA[<div class='post'>
 Hi!<br /><br />Since December I'm working for Pivotal and the Spring Cloud team. I've just posted my first blog post on the Spring blog. Check it out!<br /><br /><a href="https://spring.io/blog/2016/01/04/testing-spring-cloud-projects">Testing Spring Cloud Projects</a></div>

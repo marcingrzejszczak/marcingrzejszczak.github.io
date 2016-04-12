@@ -4,7 +4,7 @@
   <title><![CDATA[Category: good practices | TOO MUCH CODING]]></title>
   <link href="http://toomuchcoding.com/blog/categories/good-practices/atom.xml" rel="self"/>
   <link href="http://toomuchcoding.com/"/>
-  <updated>2016-04-09T00:10:09+02:00</updated>
+  <updated>2016-04-12T09:03:01-04:00</updated>
   <id>http://toomuchcoding.com/</id>
   <author>
     <name><![CDATA[Marcin Grzejszczak]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Business value gone wild]]></title>
     <link href="http://toomuchcoding.com/blog/2015/10/16/business-value-gone-wild/"/>
-    <updated>2015-10-16T17:58:00+02:00</updated>
+    <updated>2015-10-16T11:58:00-04:00</updated>
     <id>http://toomuchcoding.com/blog/2015/10/16/business-value-gone-wild</id>
     <content type="html"><![CDATA[<div class='post'>
 This blog post will not be about microservices, Spring or any technology that I've already talked about in <a href="http://toomuchcoding.blogspot.com/">Too much coding blog</a>. This time it will be my opinion on two subjects<br /><ul><li>the more and more frequent "it's not my problem" approach in the IT industry running in a corporation.&nbsp;</li><li>the "business value" frenzy of the management</li></ul>This article is definitely not a motivational one. Quite frankly, you might get depressed after reading it. Nonetheless, it's better to know how really corporate life sometimes looks like rather than get hit in the face.<br /><br />TL;DR : the more you care in a corporate enterprise the worse for you. Eventually some developers will hate your ideas of quality and standards because they are paid to tap the keys. Your management will fire you for not bringing "business value". The faster you embrace it, the better for you - you'll start searching for a new job sooner.<br /><div><br /><div><a name='more'></a>
@@ -29,7 +29,7 @@ This blog post will not be about microservices, Spring or any technology that I'
   <entry>
     <title type="html"><![CDATA[Mockito Instant - my book has finally been published!]]></title>
     <link href="http://toomuchcoding.com/blog/2013/08/28/mockito-instant-my-book-has-finally/"/>
-    <updated>2013-08-28T10:20:00+02:00</updated>
+    <updated>2013-08-28T04:20:00-04:00</updated>
     <id>http://toomuchcoding.com/blog/2013/08/28/mockito-instant-my-book-has-finally</id>
     <content type="html"><![CDATA[<div class='post'>
 I am very pleased to announce that my book about Mockito entitled "Mockito Instant" has finally been published! You can buy it at&nbsp;<a href="http://www.packtpub.com/how-to-create-stubs-mocks-spies-using-mockito/book">Packt Publishing online shop</a>.</div>
@@ -39,9 +39,9 @@ I am very pleased to announce that my book about Mockito entitled "Mockito Insta
   
   <entry>
     <title type="html"><![CDATA[Hamcrest Matchers, Guava Predicate and Builder design pattern]]></title>
-    <link href="http://toomuchcoding.com/blog/2013/01/04/hamcrest-matchers-guava-predicate-and/"/>
-    <updated>2013-01-04T01:35:00+01:00</updated>
-    <id>http://toomuchcoding.com/blog/2013/01/04/hamcrest-matchers-guava-predicate-and</id>
+    <link href="http://toomuchcoding.com/blog/2013/01/03/hamcrest-matchers-guava-predicate-and/"/>
+    <updated>2013-01-03T19:35:00-05:00</updated>
+    <id>http://toomuchcoding.com/blog/2013/01/03/hamcrest-matchers-guava-predicate-and</id>
     <content type="html"><![CDATA[<div class='post'>
 <br /><br />Hi coding addicts :)<br /><br />Often, while coding we have to deal with some POJO objects that have dozens of fields in them. Many times we initialize those classes through a constructor having dozens of arguments which is terrible in any possibly imaginable way :) Apart from that the functions that use those constructors are hardly testable. Let's take a closer look at using a Builder to change that situation, together with Hamcrest matchers and Guava Predicates to unit test it.<br />
 <!--more-->
@@ -53,7 +53,7 @@ I am very pleased to announce that my book about Mockito entitled "Mockito Insta
   <entry>
     <title type="html"><![CDATA[More interesting articles]]></title>
     <link href="http://toomuchcoding.com/blog/2012/10/24/more-interesting-articles/"/>
-    <updated>2012-10-24T15:25:00+02:00</updated>
+    <updated>2012-10-24T09:25:00-04:00</updated>
     <id>http://toomuchcoding.com/blog/2012/10/24/more-interesting-articles</id>
     <content type="html"><![CDATA[<div class='post'>
 Next portion of interesting articles from dZone<br /><br /><a href="http://architects.dzone.com/articles/understanding-jvm-internals">Understanding JVM internals</a><br /><a href="http://architects.dzone.com/articles/how-analyze-java-thread-dumps">How to analyze Java thread dumps</a><br /><a href="http://java.dzone.com/articles/practicing-code-java-and">Practicing Code, Java, and Databases</a><br /><a href="http://java.dzone.com/articles/10-things-i-never-want-see">10 Things I Never Want to See a Java Developer Do Again</a><br /><a href="http://architects.dzone.com/articles/jquery-kwicks-sexy-sliding">jQuery Kwicks - Sexy Sliding Panels And Navigational Interaction</a><br /><a href="http://java.dzone.com/articles/why-do-bad-things-happen-good">Why Do Bad Things Happen to Good Code?</a><br /><br />and sth about <a href="http://java.dzone.com/articles/open-source-integration-apache">Apache Camel</a></div>

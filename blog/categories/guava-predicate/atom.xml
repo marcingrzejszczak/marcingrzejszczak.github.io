@@ -4,7 +4,7 @@
   <title><![CDATA[Category: guava predicate | TOO MUCH CODING]]></title>
   <link href="http://toomuchcoding.com/blog/categories/guava-predicate/atom.xml" rel="self"/>
   <link href="http://toomuchcoding.com/"/>
-  <updated>2016-04-09T00:10:09+02:00</updated>
+  <updated>2016-04-12T09:03:01-04:00</updated>
   <id>http://toomuchcoding.com/</id>
   <author>
     <name><![CDATA[Marcin Grzejszczak]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Hamcrest Matchers, Guava Predicate and Builder design pattern]]></title>
-    <link href="http://toomuchcoding.com/blog/2013/01/04/hamcrest-matchers-guava-predicate-and/"/>
-    <updated>2013-01-04T01:35:00+01:00</updated>
-    <id>http://toomuchcoding.com/blog/2013/01/04/hamcrest-matchers-guava-predicate-and</id>
+    <link href="http://toomuchcoding.com/blog/2013/01/03/hamcrest-matchers-guava-predicate-and/"/>
+    <updated>2013-01-03T19:35:00-05:00</updated>
+    <id>http://toomuchcoding.com/blog/2013/01/03/hamcrest-matchers-guava-predicate-and</id>
     <content type="html"><![CDATA[<div class='post'>
 <br /><br />Hi coding addicts :)<br /><br />Often, while coding we have to deal with some POJO objects that have dozens of fields in them. Many times we initialize those classes through a constructor having dozens of arguments which is terrible in any possibly imaginable way :) Apart from that the functions that use those constructors are hardly testable. Let's take a closer look at using a Builder to change that situation, together with Hamcrest matchers and Guava Predicates to unit test it.<br />
 <!--more-->

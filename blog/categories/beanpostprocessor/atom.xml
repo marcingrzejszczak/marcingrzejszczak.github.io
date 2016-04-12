@@ -4,7 +4,7 @@
   <title><![CDATA[Category: beanpostprocessor | TOO MUCH CODING]]></title>
   <link href="http://toomuchcoding.com/blog/categories/beanpostprocessor/atom.xml" rel="self"/>
   <link href="http://toomuchcoding.com/"/>
-  <updated>2016-04-09T00:10:09+02:00</updated>
+  <updated>2016-04-12T09:03:01-04:00</updated>
   <id>http://toomuchcoding.com/</id>
   <author>
     <name><![CDATA[Marcin Grzejszczak]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Injecting Test Doubles in Spring using Mockito and BeanPostProcessors]]></title>
     <link href="http://toomuchcoding.com/blog/2013/08/09/injecting-test-doubles-in-spring-using/"/>
-    <updated>2013-08-09T14:39:00+02:00</updated>
+    <updated>2013-08-09T08:39:00-04:00</updated>
     <id>http://toomuchcoding.com/blog/2013/08/09/injecting-test-doubles-in-spring-using</id>
     <content type="html"><![CDATA[<div class='post'>
 <br />I'm pretty sure that if you have ever used Spring and are familliar with unit testing, you have encountered a problem related to injecting mocks / spies (Test Doubles) in the Spring's application context which you wouldn't want to modify. This article presents an approach how to solve this issue using Spring's components.<br />
@@ -28,9 +28,9 @@
   
   <entry>
     <title type="html"><![CDATA[Spring BeanPostProcessor for a specified type]]></title>
-    <link href="http://toomuchcoding.com/blog/2012/10/23/spring-beanpostprocessor-for-specified/"/>
-    <updated>2012-10-23T00:36:00+02:00</updated>
-    <id>http://toomuchcoding.com/blog/2012/10/23/spring-beanpostprocessor-for-specified</id>
+    <link href="http://toomuchcoding.com/blog/2012/10/22/spring-beanpostprocessor-for-specified/"/>
+    <updated>2012-10-22T18:36:00-04:00</updated>
+    <id>http://toomuchcoding.com/blog/2012/10/22/spring-beanpostprocessor-for-specified</id>
     <content type="html"><![CDATA[<div class='post'>
 <br /><br />I was recently having a discussion how can one use a BeanPostProcessor to execute some logic for a specified class.<br />
 <!--more-->
