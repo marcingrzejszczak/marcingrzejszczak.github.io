@@ -4,7 +4,7 @@
   <title><![CDATA[Category: testing | TOO MUCH CODING]]></title>
   <link href="http://toomuchcoding.com/blog/categories/testing/atom.xml" rel="self"/>
   <link href="http://toomuchcoding.com/"/>
-  <updated>2016-04-12T09:03:01-04:00</updated>
+  <updated>2016-04-13T23:16:58-04:00</updated>
   <id>http://toomuchcoding.com/</id>
   <author>
     <name><![CDATA[Marcin Grzejszczak]]></name>
@@ -12,6 +12,71 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[JSON Assert 0.4.0 released]]></title>
+    <link href="http://toomuchcoding.com/blog/2016/04/13/json-assert-0-dot-4-0-released/"/>
+    <updated>2016-04-13T23:10:51-04:00</updated>
+    <id>http://toomuchcoding.com/blog/2016/04/13/json-assert-0-dot-4-0-released</id>
+    <content type="html"><![CDATA[<p>I&rsquo;m pleased to announce that JSON Assert version 0.4.0 got released! The following feature has been added</p>
+
+<ul>
+<li><a href="https://github.com/marcingrzejszczak/jsonassert/issues/8">Retrieving value basing on the JSON Path</a></li>
+</ul>
+
+
+<!-- more -->
+
+
+<h2>Retrieving value basing on the JSON Path</h2>
+
+<p>Wouldn’t it be great to retrieve the value from the JSON via the JSON Path? There you go!</p>
+
+<pre><code class="groovy">given:
+    String json = ''' [ {
+                            "some" : {
+                                "nested" : {
+                                    "json" : "with value",
+                                    "anothervalue": 4,
+                                    "withlist" : [
+                                        { "name" :"name1"} ,
+                                        {"name": "name2"},
+                                        {"anothernested": { "name": "name3"} }
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "someother" : {
+                                "nested" : {
+                                    "json" : true,
+                                    "anothervalue": 4,
+                                    "withlist" : [
+                                        { "name" :"name1"} , {"name": "name2"}
+                                    ],
+                                    "withlist2" : [
+                                        "a", "b"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+'''
+    expect:
+        JsonPath.builder(json).array().field("some").field("nested").field("json").read(String) == 'with value'
+        JsonPath.builder(json).array().field("some").field("nested").field("anothervalue").read(Integer) == 4
+        assertThat(json).array().field("some").field("nested").array("withlist").field("name").read(List) == ['name1', 'name2']
+        assertThat(json).array().field("someother").field("nested").array("withlist2").read(List) == ['a', 'b']
+        assertThat(json).array().field("someother").field("nested").field("json").read(Boolean) == true
+</code></pre>
+
+<p>The <code>JsonVerifiable</code> extends the <code>JsonReader</code> that allows you to call the <code>read(Class&lt;T&gt; clazz)</code> method to retrieve the value from the JSON basing on the JSON Path.</p>
+
+<h2>Contact</h2>
+
+<p>Remember that JSON Assert has its own <a href="https://gitter.im/marcingrzejszczak/jsonassert">Gitter channel</a> so in case of questions do not hesitate to contact me there.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[AccuREST Stub Runner Released]]></title>
@@ -488,8 +553,7 @@ instead of writing:</p>
 
 <h2>Contact</h2>
 
-<p>Remember that JSON Assert has its own <a href="https://gitter.im/marcingrzejszczak/jsonassert">Gitter channel</a> so in case of questions do not hesitate
-to contact me there.</p>
+<p>Remember that JSON Assert has its own <a href="https://gitter.im/marcingrzejszczak/jsonassert">Gitter channel</a> so in case of questions do not hesitate to contact me there.</p>
 ]]></content>
   </entry>
   

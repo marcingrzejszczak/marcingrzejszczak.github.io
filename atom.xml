@@ -4,7 +4,7 @@
   <title><![CDATA[TOO MUCH CODING]]></title>
   <link href="http://toomuchcoding.com/atom.xml" rel="self"/>
   <link href="http://toomuchcoding.com/"/>
-  <updated>2016-04-12T09:03:01-04:00</updated>
+  <updated>2016-04-13T23:16:58-04:00</updated>
   <id>http://toomuchcoding.com/</id>
   <author>
     <name><![CDATA[Marcin Grzejszczak]]></name>
@@ -12,6 +12,108 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[JSON Assert 0.4.0 released]]></title>
+    <link href="http://toomuchcoding.com/blog/2016/04/13/json-assert-0-dot-4-0-released/"/>
+    <updated>2016-04-13T23:10:51-04:00</updated>
+    <id>http://toomuchcoding.com/blog/2016/04/13/json-assert-0-dot-4-0-released</id>
+    <content type="html"><![CDATA[<p>I&rsquo;m pleased to announce that JSON Assert version 0.4.0 got released! The following feature has been added</p>
+
+<ul>
+<li><a href="https://github.com/marcingrzejszczak/jsonassert/issues/8">Retrieving value basing on the JSON Path</a></li>
+</ul>
+
+
+<!-- more -->
+
+
+<h2>Retrieving value basing on the JSON Path</h2>
+
+<p>Wouldn’t it be great to retrieve the value from the JSON via the JSON Path? There you go!</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+</pre></td><td class='code'><pre><code class='groovy'><span class='line'><span class="nl">given:</span>
+</span><span class='line'>    <span class="n">String</span> <span class="n">json</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39; [ {</span>
+</span><span class='line'><span class="s1">                            &quot;some&quot; : {</span>
+</span><span class='line'><span class="s1">                                &quot;nested&quot; : {</span>
+</span><span class='line'><span class="s1">                                    &quot;json&quot; : &quot;with value&quot;,</span>
+</span><span class='line'><span class="s1">                                    &quot;anothervalue&quot;: 4,</span>
+</span><span class='line'><span class="s1">                                    &quot;withlist&quot; : [</span>
+</span><span class='line'><span class="s1">                                        { &quot;name&quot; :&quot;name1&quot;} ,</span>
+</span><span class='line'><span class="s1">                                        {&quot;name&quot;: &quot;name2&quot;},</span>
+</span><span class='line'><span class="s1">                                        {&quot;anothernested&quot;: { &quot;name&quot;: &quot;name3&quot;} }</span>
+</span><span class='line'><span class="s1">                                    ]</span>
+</span><span class='line'><span class="s1">                                }</span>
+</span><span class='line'><span class="s1">                            }</span>
+</span><span class='line'><span class="s1">                        },</span>
+</span><span class='line'><span class="s1">                        {</span>
+</span><span class='line'><span class="s1">                            &quot;someother&quot; : {</span>
+</span><span class='line'><span class="s1">                                &quot;nested&quot; : {</span>
+</span><span class='line'><span class="s1">                                    &quot;json&quot; : true,</span>
+</span><span class='line'><span class="s1">                                    &quot;anothervalue&quot;: 4,</span>
+</span><span class='line'><span class="s1">                                    &quot;withlist&quot; : [</span>
+</span><span class='line'><span class="s1">                                        { &quot;name&quot; :&quot;name1&quot;} , {&quot;name&quot;: &quot;name2&quot;}</span>
+</span><span class='line'><span class="s1">                                    ],</span>
+</span><span class='line'><span class="s1">                                    &quot;withlist2&quot; : [</span>
+</span><span class='line'><span class="s1">                                        &quot;a&quot;, &quot;b&quot;</span>
+</span><span class='line'><span class="s1">                                    ]</span>
+</span><span class='line'><span class="s1">                                }</span>
+</span><span class='line'><span class="s1">                            }</span>
+</span><span class='line'><span class="s1">                        }</span>
+</span><span class='line'><span class="s1">                    ]</span>
+</span><span class='line'><span class="s1">&#39;&#39;&#39;</span>
+</span><span class='line'>    <span class="nl">expect:</span>
+</span><span class='line'>        <span class="n">JsonPath</span><span class="o">.</span><span class="na">builder</span><span class="o">(</span><span class="n">json</span><span class="o">).</span><span class="na">array</span><span class="o">().</span><span class="na">field</span><span class="o">(</span><span class="s2">&quot;some&quot;</span><span class="o">).</span><span class="na">field</span><span class="o">(</span><span class="s2">&quot;nested&quot;</span><span class="o">).</span><span class="na">field</span><span class="o">(</span><span class="s2">&quot;json&quot;</span><span class="o">).</span><span class="na">read</span><span class="o">(</span><span class="n">String</span><span class="o">)</span> <span class="o">==</span> <span class="s1">&#39;with value&#39;</span>
+</span><span class='line'>        <span class="n">JsonPath</span><span class="o">.</span><span class="na">builder</span><span class="o">(</span><span class="n">json</span><span class="o">).</span><span class="na">array</span><span class="o">().</span><span class="na">field</span><span class="o">(</span><span class="s2">&quot;some&quot;</span><span class="o">).</span><span class="na">field</span><span class="o">(</span><span class="s2">&quot;nested&quot;</span><span class="o">).</span><span class="na">field</span><span class="o">(</span><span class="s2">&quot;anothervalue&quot;</span><span class="o">).</span><span class="na">read</span><span class="o">(</span><span class="n">Integer</span><span class="o">)</span> <span class="o">==</span> <span class="mi">4</span>
+</span><span class='line'>        <span class="n">assertThat</span><span class="o">(</span><span class="n">json</span><span class="o">).</span><span class="na">array</span><span class="o">().</span><span class="na">field</span><span class="o">(</span><span class="s2">&quot;some&quot;</span><span class="o">).</span><span class="na">field</span><span class="o">(</span><span class="s2">&quot;nested&quot;</span><span class="o">).</span><span class="na">array</span><span class="o">(</span><span class="s2">&quot;withlist&quot;</span><span class="o">).</span><span class="na">field</span><span class="o">(</span><span class="s2">&quot;name&quot;</span><span class="o">).</span><span class="na">read</span><span class="o">(</span><span class="n">List</span><span class="o">)</span> <span class="o">==</span> <span class="o">[</span><span class="s1">&#39;name1&#39;</span><span class="o">,</span> <span class="s1">&#39;name2&#39;</span><span class="o">]</span>
+</span><span class='line'>        <span class="n">assertThat</span><span class="o">(</span><span class="n">json</span><span class="o">).</span><span class="na">array</span><span class="o">().</span><span class="na">field</span><span class="o">(</span><span class="s2">&quot;someother&quot;</span><span class="o">).</span><span class="na">field</span><span class="o">(</span><span class="s2">&quot;nested&quot;</span><span class="o">).</span><span class="na">array</span><span class="o">(</span><span class="s2">&quot;withlist2&quot;</span><span class="o">).</span><span class="na">read</span><span class="o">(</span><span class="n">List</span><span class="o">)</span> <span class="o">==</span> <span class="o">[</span><span class="s1">&#39;a&#39;</span><span class="o">,</span> <span class="s1">&#39;b&#39;</span><span class="o">]</span>
+</span><span class='line'>        <span class="n">assertThat</span><span class="o">(</span><span class="n">json</span><span class="o">).</span><span class="na">array</span><span class="o">().</span><span class="na">field</span><span class="o">(</span><span class="s2">&quot;someother&quot;</span><span class="o">).</span><span class="na">field</span><span class="o">(</span><span class="s2">&quot;nested&quot;</span><span class="o">).</span><span class="na">field</span><span class="o">(</span><span class="s2">&quot;json&quot;</span><span class="o">).</span><span class="na">read</span><span class="o">(</span><span class="n">Boolean</span><span class="o">)</span> <span class="o">==</span> <span class="kc">true</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The <code>JsonVerifiable</code> extends the <code>JsonReader</code> that allows you to call the <code>read(Class&lt;T&gt; clazz)</code> method to retrieve the value from the JSON basing on the JSON Path.</p>
+
+<h2>Contact</h2>
+
+<p>Remember that JSON Assert has its own <a href="https://gitter.im/marcingrzejszczak/jsonassert">Gitter channel</a> so in case of questions do not hesitate to contact me there.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[UpToDate Gradle Plugin migrated]]></title>
@@ -73,7 +175,7 @@
 </pre></td><td class='code'><pre><code class=''><span class='line'>com.toomuchcoding</span></code></pre></td></tr></table></div></figure>
 
 
-<p>and that should be it :) Oh, and the version is 1.0.0</p>
+<p>and that should be it :) Oh, and change the version. I&rsquo;m starting versioning from 1.0.0.</p>
 
 <h2>I&rsquo;ve got questions - where to contact you?</h2>
 
@@ -735,8 +837,7 @@ instead of writing:</p>
 
 <h2>Contact</h2>
 
-<p>Remember that JSON Assert has its own <a href="https://gitter.im/marcingrzejszczak/jsonassert">Gitter channel</a> so in case of questions do not hesitate
-to contact me there.</p>
+<p>Remember that JSON Assert has its own <a href="https://gitter.im/marcingrzejszczak/jsonassert">Gitter channel</a> so in case of questions do not hesitate to contact me there.</p>
 ]]></content>
   </entry>
   
@@ -1191,18 +1292,6 @@ Hi!<br /><br /><a href="http://www.youtube.com/watch?v=JdSCDEkX0Tw">Click here t
     <id>http://toomuchcoding.com/blog/2014/02/19/warsaw-groovy-user-group-talk</id>
     <content type="html"><![CDATA[<div class='post'>
 Hi!<br /><br />Since tomorrow I'm giving a talk on XML transformations in Groovy I'd like to publish the code that will be presented during the presentation. Check out the <a href="https://github.com/marcingrzejszczak/groovy-xml">Github repo</a>&nbsp;and the <a href="https://bitbucket.org/gregorin1987/groovy-xml">Bitbucket repository</a>.<br /><br />The presentation (in polish) can be found on <a href="https://www.youtube.com/watch?feature=player_detailpage&amp;v=MGu0HHzROxA#t=2109">youtube</a>.</div>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Introduction to Groovy runtime metaprogramming and AST transforms]]></title>
-    <link href="http://toomuchcoding.com/blog/2014/02/04/introduction-to-groovy-runtime/"/>
-    <updated>2014-02-04T17:50:00-05:00</updated>
-    <id>http://toomuchcoding.com/blog/2014/02/04/introduction-to-groovy-runtime</id>
-    <content type="html"><![CDATA[<div class='post'>
-Hi!<br /><br />I'm very happy to share my presentation regarding <b><i>Groovy metaprogramming and AST transforms</i></b>. The slides are available at <a href="http://www.slideshare.net/MarcinGrzejszczak/introduction-to-groovy-runtime-metaprogramming-and-ast-transforms">SlideShare</a>&nbsp;and the code is available at <a href="https://bitbucket.org/gregorin1987/too-much-coding/src/e5ab7c69ab7b2796075fd6f087fbf31346aa2d2b/Groovy/ast/?at=default">TooMuchCoding Bitbucket</a>&nbsp;and <a href="https://github.com/marcingrzejszczak/too-much-coding/tree/master/Groovy/ast">TooMuchCoding Github</a> repositories. If you have any problems with reading any part of the slides or sth just post a comment here and I'll tr to help you :)<br /><br />Enjoy!<br /><br /><br /><a name='more'></a>
-<!--more-->
-<br /><iframe allowfullscreen="" frameborder="0" height="356" marginheight="0" marginwidth="0" scrolling="no" src="http://www.slideshare.net/slideshow/embed_code/30820561" style="border-width: 1px 1px 0; border: 1px solid #CCC; margin-bottom: 5px; max-width: 100%;" width="427"> </iframe> <br /><div style="margin-bottom: 5px;"><strong> <a href="https://www.slideshare.net/MarcinGrzejszczak/introduction-to-groovy-runtime-metaprogramming-and-ast-transforms" target="_blank" title="Introduction to Groovy runtime metaprogramming and AST transforms">Introduction to Groovy runtime metaprogramming and AST transforms</a> </strong> from <strong><a href="http://www.slideshare.net/MarcinGrzejszczak" target="_blank">Marcin Grzejszczak</a></strong> <br /><br />I had a discussion with one of the readers regarding issues related to creating an AST transformation that would be used on classes (and not on scripts). Often you can see that such a transformation does not work for you even though it should. The problem might be that you have the AST transformation compiled in the same time toghether with the class that you annotated with AST transformation related annotation.<br /><br />What you have to remember about is that your AST transformation related classes have to be compiled prior to using (that's why you can often find that your AST transformation is working when you right click on your annotated class in your IDE (or Groovy console) and manually compile that particular class. That's because you compile that particular class when other classes have already been compiled. That's the very same scenario as with compiling a script that is using an AST transformation - first your tranformations are compiled and afterwards at runtime the script gets compiled.<br /><br />Please check the additional repository <a href="https://github.com/marcingrzejszczak/ast_examples">ast_examples</a> that consists of the same examples as in the <a href="https://github.com/marcingrzejszczak/too-much-coding">TooMuchCoding </a>repository together with an additional AST transformation that is set on a class.</div></div>
 ]]></content>
   </entry>
   

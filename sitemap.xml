@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>http://toomuchcoding.com/blog/2016/04/13/json-assert-0-dot-4-0-released/</loc>
+<lastmod>2016-04-13T23:10:51-04:00</lastmod>
+</url>
+<url>
 <loc>http://toomuchcoding.com/blog/2016/04/11/uptodate-gradle-plugin-migrated/</loc>
 <lastmod>2016-04-11T07:28:43-04:00</lastmod>
 </url>
