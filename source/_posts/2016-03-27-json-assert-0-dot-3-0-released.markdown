@@ -57,5 +57,4 @@ You get a method that allows you to traverse the JSON fields by passing an array
 
 ## Contact
 
-Remember that JSON Assert has its own [Gitter channel](https://gitter.im/marcingrzejszczak/jsonassert) so in case of questions do not hesitate
-to contact me there.
+Remember that JSON Assert has its own [Gitter channel](https://gitter.im/marcingrzejszczak/jsonassert) so in case of questions do not hesitate to contact me there.
