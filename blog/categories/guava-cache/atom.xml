@@ -4,7 +4,7 @@
   <title><![CDATA[Category: guava cache | TOO MUCH CODING]]></title>
   <link href="http://toomuchcoding.com/blog/categories/guava-cache/atom.xml" rel="self"/>
   <link href="http://toomuchcoding.com/"/>
-  <updated>2016-04-13T23:16:58-04:00</updated>
+  <updated>2016-04-25T21:54:55+02:00</updated>
   <id>http://toomuchcoding.com/</id>
   <author>
     <name><![CDATA[Marcin Grzejszczak]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Google Guava Cache with regular expression patterns]]></title>
     <link href="http://toomuchcoding.com/blog/2012/12/24/google-guava-cache-with-regular/"/>
-    <updated>2012-12-24T08:54:00-05:00</updated>
+    <updated>2012-12-24T14:54:00+01:00</updated>
     <id>http://toomuchcoding.com/blog/2012/12/24/google-guava-cache-with-regular</id>
     <content type="html"><![CDATA[<div class='post'>
 <br /><br />Hi!  Merry Christmas everyone :)  Quite recently I've seen <a href="http://toomuchcoding.blogspot.com/2012/12/google-guava.html">a nice presentation about Google Guava</a> and we came to the conclusion in our project that it could be really interesting to use the <a href="http://code.google.com/p/guava-libraries/wiki/CachesExplained">its Cache functionallity</a>.  Let us take a look at the regexp Pattern class and its <a href="http://docs.oracle.com/javase/6/docs/api/java/util/regex/Pattern.html#compile(java.lang.String)">compile function</a>. Quite often in the code we can see that each time a regular expression is being used a programmer is repeatidly calling the aforementioned Pattern.compile() function with the same argument thus compiling the same regular expression over and over again. What could be done however is to cache the result of such compilations - let us take a look at the RegexpUtils utility class:<br /><br />

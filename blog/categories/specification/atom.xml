@@ -4,7 +4,7 @@
   <title><![CDATA[Category: specification | TOO MUCH CODING]]></title>
   <link href="http://toomuchcoding.com/blog/categories/specification/atom.xml" rel="self"/>
   <link href="http://toomuchcoding.com/"/>
-  <updated>2016-04-13T23:16:58-04:00</updated>
+  <updated>2016-04-25T21:54:55+02:00</updated>
   <id>http://toomuchcoding.com/</id>
   <author>
     <name><![CDATA[Marcin Grzejszczak]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Spock - return nested spies / mocks]]></title>
     <link href="http://toomuchcoding.com/blog/2013/08/06/spock-return-nested-spies-mocks/"/>
-    <updated>2013-08-06T07:24:00-04:00</updated>
+    <updated>2013-08-06T13:24:00+02:00</updated>
     <id>http://toomuchcoding.com/blog/2013/08/06/spock-return-nested-spies-mocks</id>
     <content type="html"><![CDATA[<div class='post'>
 <br />Hi! Some time ago I have written an article about Mockito and using <a href="http://toomuchcoding.blogspot.com/2013/06/mockito-returndeepstubs-for-jaxb.html">RETURNS_DEEP_STUBS when working with JAXB</a>. Quite recently we have faced a similliar issue with deeply nesetd JAXB and the awesome testing framework written in Groovy called&nbsp;<a href="https://code.google.com/p/spock/">Spock</a>. Natively Spock does not support creating deep stubs or spies so we needed to create a workaround for it and this article will show you how to do it.<br />

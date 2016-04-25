@@ -4,7 +4,7 @@
   <title><![CDATA[Category: stubrunner | TOO MUCH CODING]]></title>
   <link href="http://toomuchcoding.com/blog/categories/stubrunner/atom.xml" rel="self"/>
   <link href="http://toomuchcoding.com/"/>
-  <updated>2016-04-13T23:16:58-04:00</updated>
+  <updated>2016-04-25T21:54:55+02:00</updated>
   <id>http://toomuchcoding.com/</id>
   <author>
     <name><![CDATA[Marcin Grzejszczak]]></name>
@@ -14,9 +14,22 @@
 
   
   <entry>
+    <title type="html"><![CDATA[Accurest docs updated]]></title>
+    <link href="http://toomuchcoding.com/blog/2016/04/25/accurest-docs-updated/"/>
+    <updated>2016-04-25T21:49:59+02:00</updated>
+    <id>http://toomuchcoding.com/blog/2016/04/25/accurest-docs-updated</id>
+    <content type="html"><![CDATA[<p>After a lot of sleepless nights I&rsquo;ve finally migrated the <a href="http://codearte.github.io/accurest/">Accurest Docs</a> from Github&rsquo;s Wiki to Asciidoctor.
+With that change the vast majority of our snippets is taken from the tests. Also thanks to that change it will be much easier to keep the docs up to date
+since the documentation lives together with the code.</p>
+
+<p>Quite frankly recently when I didn&rsquo;t code <a href="https://github.com/spring-cloud/spring-cloud-sleuth">Spring Cloud Sleuth</a> I did a lot around <a href="http://codearte.github.io/accurest/">Accurest</a> and messaging so stay tuned! For sure there will be a new post about Consumer Driven Contracts and Messaging.</p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[AccuREST Stub Runner Released]]></title>
     <link href="http://toomuchcoding.com/blog/2016/04/06/accurest-stubrunner-released/"/>
-    <updated>2016-04-06T05:05:58-04:00</updated>
+    <updated>2016-04-06T11:05:58+02:00</updated>
     <id>http://toomuchcoding.com/blog/2016/04/06/accurest-stubrunner-released</id>
     <content type="html"><![CDATA[<p>It&rsquo;s been a good release time recently! I&rsquo;m blogging here at <a href="http://toomuchcoding.com">Too Much Coding blog</a> more about releases then about any concrete topics ;)</p>
 

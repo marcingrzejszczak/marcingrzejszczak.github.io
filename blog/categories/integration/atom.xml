@@ -4,7 +4,7 @@
   <title><![CDATA[Category: integration | TOO MUCH CODING]]></title>
   <link href="http://toomuchcoding.com/blog/categories/integration/atom.xml" rel="self"/>
   <link href="http://toomuchcoding.com/"/>
-  <updated>2016-04-13T23:16:58-04:00</updated>
+  <updated>2016-04-25T21:54:55+02:00</updated>
   <id>http://toomuchcoding.com/</id>
   <author>
     <name><![CDATA[Marcin Grzejszczak]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Execution of Groovy scripts from Java - XmlSlurper and MarkupBuilder in mapping issues]]></title>
     <link href="http://toomuchcoding.com/blog/2013/03/30/execution-of-groovy-scripts-from-java/"/>
-    <updated>2013-03-30T18:09:00-04:00</updated>
+    <updated>2013-03-30T23:09:00+01:00</updated>
     <id>http://toomuchcoding.com/blog/2013/03/30/execution-of-groovy-scripts-from-java</id>
     <content type="html"><![CDATA[<div class='post'>
 <br /><h2>Problem with mappings</h2><br />In our project we came across a really big problem related to mapping. Having two systems that initially were defined by the BA to be somehwat simillar we have chosen the simple XSLT (done through Altova Mapforce) of the input message to the output one.<br />
@@ -29,7 +29,7 @@
   <entry>
     <title type="html"><![CDATA[Apache Camel with Spring, routing with enrichment service]]></title>
     <link href="http://toomuchcoding.com/blog/2012/11/22/apache-camel-with-spring-routing-with/"/>
-    <updated>2012-11-22T17:13:00-05:00</updated>
+    <updated>2012-11-22T23:13:00+01:00</updated>
     <id>http://toomuchcoding.com/blog/2012/11/22/apache-camel-with-spring-routing-with</id>
     <content type="html"><![CDATA[<div class='post'>
 <br /><br />Sorry for not having posted anything in some time but I had plenty of work. Anyway today I will continue the example with JMS that I've shown you some time ago.<br />

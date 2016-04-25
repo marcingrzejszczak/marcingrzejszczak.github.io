@@ -4,7 +4,7 @@
   <title><![CDATA[Category: integration tests | TOO MUCH CODING]]></title>
   <link href="http://toomuchcoding.com/blog/categories/integration-tests/atom.xml" rel="self"/>
   <link href="http://toomuchcoding.com/"/>
-  <updated>2016-04-13T23:16:58-04:00</updated>
+  <updated>2016-04-25T21:54:55+02:00</updated>
   <id>http://toomuchcoding.com/</id>
   <author>
     <name><![CDATA[Marcin Grzejszczak]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[JSON Assert lib released]]></title>
     <link href="http://toomuchcoding.com/blog/2016/02/27/json-assert-lib-released/"/>
-    <updated>2016-02-27T17:20:00-05:00</updated>
+    <updated>2016-02-27T23:20:00+01:00</updated>
     <id>http://toomuchcoding.com/blog/2016/02/27/json-assert-lib-released</id>
     <content type="html"><![CDATA[<div class='post'>
 I'm really happy to present the <a href="https://github.com/marcingrzejszczak/jsonassert">JSON Assert library</a>&nbsp;-&nbsp;over-the-weekend project that came out from the <a href="https://github.com/Codearte/accurest">AccuREST library</a>. This post will describe the rationale behind creating this tool and how to use it.<br /><br /><br /><a name='more'></a>
@@ -29,7 +29,7 @@ I'm really happy to present the <a href="https://github.com/marcingrzejszczak/js
   <entry>
     <title type="html"><![CDATA[Mockito InvocationOnMock - checking an argument]]></title>
     <link href="http://toomuchcoding.com/blog/2012/10/24/mockito-invocationonmock-checking/"/>
-    <updated>2012-10-24T17:22:00-04:00</updated>
+    <updated>2012-10-24T23:22:00+02:00</updated>
     <id>http://toomuchcoding.com/blog/2012/10/24/mockito-invocationonmock-checking</id>
     <content type="html"><![CDATA[<div class='post'>
 <br /><br />Hi!<br /><br />In one of my projects we had a very interesting situation in terms of testing. We couldn't mock an invocation of a static method due to the fact that PowerMock was not allowed to be used so there were plenty of objects and dependencies being initialized. What is more we were using a custom made dependency injection system that had a possibility of injecting a mock.<br />
@@ -42,7 +42,7 @@ I'm really happy to present the <a href="https://github.com/marcingrzejszczak/js
   <entry>
     <title type="html"><![CDATA[Simulation of time consuming actions in integration tests]]></title>
     <link href="http://toomuchcoding.com/blog/2012/10/07/simulation-of-time-consuming-actions-in/"/>
-    <updated>2012-10-07T16:47:00-04:00</updated>
+    <updated>2012-10-07T22:47:00+02:00</updated>
     <id>http://toomuchcoding.com/blog/2012/10/07/simulation-of-time-consuming-actions-in</id>
     <content type="html"><![CDATA[<div class='post'>
 <br /><br />Hi!<br /><br />Quite recently in one of my projects I had a situation in which I needed to create an integration test for the application. That's not very odd isn't it? :)<br /><br />What was interesting was the fact that the logic of the app involved some concurrency issues and one of the components had to connect to an external service which would take a couple of seconds. Since in the integration test there was no need to make the actual connection, the component needed to be mocked. What about the simulation of the time consuming action? Well, let's take a look at the way I did it...<br />

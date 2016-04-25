@@ -4,7 +4,7 @@
   <title><![CDATA[Category: subject-collaborators-extension | TOO MUCH CODING]]></title>
   <link href="http://toomuchcoding.com/blog/categories/subject-collaborators-extension/atom.xml" rel="self"/>
   <link href="http://toomuchcoding.com/"/>
-  <updated>2016-04-13T23:16:58-04:00</updated>
+  <updated>2016-04-25T21:54:55+02:00</updated>
   <id>http://toomuchcoding.com/</id>
   <author>
     <name><![CDATA[Marcin Grzejszczak]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Spock Subject Collaborators Extension 1.0.1 released!]]></title>
     <link href="http://toomuchcoding.com/blog/2014/12/17/spock-subject-collaborators-extension/"/>
-    <updated>2014-12-17T17:28:00-05:00</updated>
+    <updated>2014-12-17T23:28:00+01:00</updated>
     <id>http://toomuchcoding.com/blog/2014/12/17/spock-subject-collaborators-extension</id>
     <content type="html"><![CDATA[<div class='post'>
 Hi!<br /><br />I'm really happy to say that I've just released a new version 1.0.1 of the <a href="https://github.com/marcingrzejszczak/spock-subjects-collaborators-extension">Spock Subject Collaborators Extension</a>.<br /><br />The changelog is as follows:<br /><br /><a name='more'></a><br />

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: spring | TOO MUCH CODING]]></title>
   <link href="http://toomuchcoding.com/blog/categories/spring/atom.xml" rel="self"/>
   <link href="http://toomuchcoding.com/"/>
-  <updated>2016-04-13T23:16:58-04:00</updated>
+  <updated>2016-04-25T21:54:55+02:00</updated>
   <id>http://toomuchcoding.com/</id>
   <author>
     <name><![CDATA[Marcin Grzejszczak]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Post on Spring blog]]></title>
     <link href="http://toomuchcoding.com/blog/2016/01/04/post-on-spring-blog/"/>
-    <updated>2016-01-04T12:28:00-05:00</updated>
+    <updated>2016-01-04T18:28:00+01:00</updated>
     <id>http://toomuchcoding.com/blog/2016/01/04/post-on-spring-blog</id>
     <content type="html"><![CDATA[<div class='post'>
 Hi!<br /><br />Since December I'm working for Pivotal and the Spring Cloud team. I've just posted my first blog post on the Spring blog. Check it out!<br /><br /><a href="https://spring.io/blog/2016/01/04/testing-spring-cloud-projects">Testing Spring Cloud Projects</a></div>
@@ -27,7 +27,7 @@ Hi!<br /><br />Since December I'm working for Pivotal and the Spring Cloud team.
   <entry>
     <title type="html"><![CDATA[Spring's @Primary annotation in action]]></title>
     <link href="http://toomuchcoding.com/blog/2013/12/12/springs-primary-annotation-in-action/"/>
-    <updated>2013-12-12T03:00:00-05:00</updated>
+    <updated>2013-12-12T09:00:00+01:00</updated>
     <id>http://toomuchcoding.com/blog/2013/12/12/springs-primary-annotation-in-action</id>
     <content type="html"><![CDATA[<div class='post'>
 <br />Spring is a framework that never stops to amaze me. It's because of the fact that it offers plenty of different solutions that allow us, developers, to complete our tasks without writing millions of lines of code. Instead we are able to do the same in a much more readable, standardized manner. In this post I will try to describe one of its features that most likely is well known to all of you but in my opinion its importance is undervalued. The feature that I'll be talking about is the <span style="font-family: Courier New, Courier, monospace;"><a href="http://docs.spring.io/spring/docs/3.2.5.RELEASE/javadoc-api/org/springframework/context/annotation/Primary.html">@Primary</a></span> annotation.<br />
@@ -40,7 +40,7 @@ Hi!<br /><br />Since December I'm working for Pivotal and the Spring Cloud team.
   <entry>
     <title type="html"><![CDATA[Injecting Test Doubles in Spring using Mockito and BeanPostProcessors]]></title>
     <link href="http://toomuchcoding.com/blog/2013/08/09/injecting-test-doubles-in-spring-using/"/>
-    <updated>2013-08-09T08:39:00-04:00</updated>
+    <updated>2013-08-09T14:39:00+02:00</updated>
     <id>http://toomuchcoding.com/blog/2013/08/09/injecting-test-doubles-in-spring-using</id>
     <content type="html"><![CDATA[<div class='post'>
 <br />I'm pretty sure that if you have ever used Spring and are familliar with unit testing, you have encountered a problem related to injecting mocks / spies (Test Doubles) in the Spring's application context which you wouldn't want to modify. This article presents an approach how to solve this issue using Spring's components.<br />
@@ -53,7 +53,7 @@ Hi!<br /><br />Since December I'm working for Pivotal and the Spring Cloud team.
   <entry>
     <title type="html"><![CDATA[Drools decision tables with Camel and Spring]]></title>
     <link href="http://toomuchcoding.com/blog/2013/02/03/drools-decision-tables-with-camel-and/"/>
-    <updated>2013-02-03T16:28:00-05:00</updated>
+    <updated>2013-02-03T22:28:00+01:00</updated>
     <id>http://toomuchcoding.com/blog/2013/02/03/drools-decision-tables-with-camel-and</id>
     <content type="html"><![CDATA[<div class='post'>
 <br /><br />Hi!<br /><br /><div style="text-align: justify;">As I've shown it in my previous post <a href="http://toomuchcoding.blogspot.com/2013/01/drools-integration-with-spring-vs.html">JBoss Drools are a very useful rules engine</a>. The only problem is that creating the rules in the Rule language might be pretty complicated for a non-technical person. That's why one can provide an easy way for creating business rules - decision tables created in a spreadsheet!</div><div style="text-align: justify;"><br />
@@ -66,7 +66,7 @@ Hi!<br /><br />Since December I'm working for Pivotal and the Spring Cloud team.
   <entry>
     <title type="html"><![CDATA[Drools integration with Spring vs manual rules creation]]></title>
     <link href="http://toomuchcoding.com/blog/2013/01/15/drools-integration-with-spring-vs/"/>
-    <updated>2013-01-15T11:04:00-05:00</updated>
+    <updated>2013-01-15T17:04:00+01:00</updated>
     <id>http://toomuchcoding.com/blog/2013/01/15/drools-integration-with-spring-vs</id>
     <content type="html"><![CDATA[<div class='post'>
 <br /><br />Hi!<br /><br />&nbsp;Often in your work you can come across with issues related to business logic. Let us assume that you have dozens of rules (for the time being in our project we have more than 50 and I used to work on a project where we had hundreds of those rules) that you have to implement, divide into some classes, subclasses, abstractions and of course unit test. This can be difficult and timeconsuming to both write and support. There are many ways of dealing with this problem and I will show you one of them - JBoss Drools.<br />

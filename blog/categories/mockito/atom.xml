@@ -4,7 +4,7 @@
   <title><![CDATA[Category: mockito | TOO MUCH CODING]]></title>
   <link href="http://toomuchcoding.com/blog/categories/mockito/atom.xml" rel="self"/>
   <link href="http://toomuchcoding.com/"/>
-  <updated>2016-04-13T23:16:58-04:00</updated>
+  <updated>2016-04-25T21:54:55+02:00</updated>
   <id>http://toomuchcoding.com/</id>
   <author>
     <name><![CDATA[Marcin Grzejszczak]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Mockito Cookbook is out!!]]></title>
     <link href="http://toomuchcoding.com/blog/2014/06/25/mockito-cookbook-is-out/"/>
-    <updated>2014-06-25T13:34:00-04:00</updated>
+    <updated>2014-06-25T19:34:00+02:00</updated>
     <id>http://toomuchcoding.com/blog/2014/06/25/mockito-cookbook-is-out</id>
     <content type="html"><![CDATA[<div class='post'>
 <br />I'm very pleased to announce that you can order my new book<a href="https://www.packtpub.com/mockito-cookbook/book"> Mockito Cookbook</a> here <a href="https://www.packtpub.com/mockito-cookbook/book">https://www.packtpub.com/mockito-cookbook/book</a> . I hope that you will enjoy it :)</div>
@@ -27,7 +27,7 @@
   <entry>
     <title type="html"><![CDATA[Pre-order Mockito Cookbook!!]]></title>
     <link href="http://toomuchcoding.com/blog/2014/06/12/pre-order-mockito-cookbook/"/>
-    <updated>2014-06-12T17:15:00-04:00</updated>
+    <updated>2014-06-12T23:15:00+02:00</updated>
     <id>http://toomuchcoding.com/blog/2014/06/12/pre-order-mockito-cookbook</id>
     <content type="html"><![CDATA[<div class='post'>
 <br />Hi!<br /><br />I'm pleased to announce that you can already pre-order my new book <a href="https://www.packtpub.com/mockito-cookbook/book">Mockito Cookbook</a>. You can buy it on <a href="https://www.packtpub.com/mockito-cookbook/book">Packt Publishing's website</a>. The whole code from the book + plenty of extras are available at <a href="https://github.com/marcingrzejszczak/mockito-cookbook">Github over here</a>. Enjoy :)</div>
@@ -38,7 +38,7 @@
   <entry>
     <title type="html"><![CDATA[Mockito Instant Code Repo at Github]]></title>
     <link href="http://toomuchcoding.com/blog/2014/06/04/mockito-instant-code-repo-at-github/"/>
-    <updated>2014-06-04T14:57:00-04:00</updated>
+    <updated>2014-06-04T20:57:00+02:00</updated>
     <id>http://toomuchcoding.com/blog/2014/06/04/mockito-instant-code-repo-at-github</id>
     <content type="html"><![CDATA[<div class='post'>
 Hi!<br /><br />Since I was asked for the code to the<a href="http://www.packtpub.com/how-to-create-stubs-mocks-spies-using-mockito/book"> "Mockito Instant"</a> book a couple of times I decided to place it on Github. Here is the link - <a href="https://github.com/marcingrzejszczak/mockito-instant">https://github.com/marcingrzejszczak/mockito-instant</a>. Enjoy :)</div>
@@ -49,7 +49,7 @@ Hi!<br /><br />Since I was asked for the code to the<a href="http://www.packtpub
   <entry>
     <title type="html"><![CDATA[Mockito Instant - my book has finally been published!]]></title>
     <link href="http://toomuchcoding.com/blog/2013/08/28/mockito-instant-my-book-has-finally/"/>
-    <updated>2013-08-28T04:20:00-04:00</updated>
+    <updated>2013-08-28T10:20:00+02:00</updated>
     <id>http://toomuchcoding.com/blog/2013/08/28/mockito-instant-my-book-has-finally</id>
     <content type="html"><![CDATA[<div class='post'>
 I am very pleased to announce that my book about Mockito entitled "Mockito Instant" has finally been published! You can buy it at&nbsp;<a href="http://www.packtpub.com/how-to-create-stubs-mocks-spies-using-mockito/book">Packt Publishing online shop</a>.</div>
@@ -60,7 +60,7 @@ I am very pleased to announce that my book about Mockito entitled "Mockito Insta
   <entry>
     <title type="html"><![CDATA[Injecting Test Doubles in Spring using Mockito and BeanPostProcessors]]></title>
     <link href="http://toomuchcoding.com/blog/2013/08/09/injecting-test-doubles-in-spring-using/"/>
-    <updated>2013-08-09T08:39:00-04:00</updated>
+    <updated>2013-08-09T14:39:00+02:00</updated>
     <id>http://toomuchcoding.com/blog/2013/08/09/injecting-test-doubles-in-spring-using</id>
     <content type="html"><![CDATA[<div class='post'>
 <br />I'm pretty sure that if you have ever used Spring and are familliar with unit testing, you have encountered a problem related to injecting mocks / spies (Test Doubles) in the Spring's application context which you wouldn't want to modify. This article presents an approach how to solve this issue using Spring's components.<br />

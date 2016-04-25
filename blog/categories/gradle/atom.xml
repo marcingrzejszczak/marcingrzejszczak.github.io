@@ -4,7 +4,7 @@
   <title><![CDATA[Category: gradle | TOO MUCH CODING]]></title>
   <link href="http://toomuchcoding.com/blog/categories/gradle/atom.xml" rel="self"/>
   <link href="http://toomuchcoding.com/"/>
-  <updated>2016-04-13T23:16:58-04:00</updated>
+  <updated>2016-04-25T21:54:55+02:00</updated>
   <id>http://toomuchcoding.com/</id>
   <author>
     <name><![CDATA[Marcin Grzejszczak]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[UpToDate Gradle Plugin migrated]]></title>
     <link href="http://toomuchcoding.com/blog/2016/04/11/uptodate-gradle-plugin-migrated/"/>
-    <updated>2016-04-11T07:28:43-04:00</updated>
+    <updated>2016-04-11T13:28:43+02:00</updated>
     <id>http://toomuchcoding.com/blog/2016/04/11/uptodate-gradle-plugin-migrated</id>
     <content type="html"><![CDATA[<p>Time for another release here at <a href="http://toomuchcoding.com">Too Much Coding blog</a>! This time it will be a short post :) I&rsquo;m happy to announce that the <a href="https://github.com/marcingrzejszczak/uptodate-gradle-plugin">UpToDate Gradle Plugin</a> has finally found a new home!</p>
 
@@ -82,7 +82,7 @@
   <entry>
     <title type="html"><![CDATA[How to speed up your Gradle build from 90 to 8 minutes]]></title>
     <link href="http://toomuchcoding.com/blog/2015/02/08/how-to-speed-up-your-gradle-build-from/"/>
-    <updated>2015-02-08T13:24:00-05:00</updated>
+    <updated>2015-02-08T19:24:00+01:00</updated>
     <id>http://toomuchcoding.com/blog/2015/02/08/how-to-speed-up-your-gradle-build-from</id>
     <content type="html"><![CDATA[<div class='post'>
 <div style="background-color: white; box-sizing: border-box; color: #262626; font-family: Georgia, serif; font-size: 19px; line-height: 27.55px;">Even though I was supposed to write a series of blog posts about&nbsp;<a href="http://toomuchcoding.blogspot.com/search/label/micro-infra-spring" style="background: transparent; box-sizing: border-box; color: black; cursor: pointer; text-decoration: none;">micro-infra-spring</a>&nbsp;here at&nbsp;<a href="http://toomuchcoding.blogspot.com/" style="background: transparent; box-sizing: border-box; color: black; cursor: pointer; text-decoration: none;">Too Much Coding blog</a>, today I'll write about how we've managed to decrease our biggest project's build time from 90 to 8 minutes!<br /><br /><a name='more'></a>
@@ -95,7 +95,7 @@
   <entry>
     <title type="html"><![CDATA[Spock Subject Collaborators Extension 1.0.1 released!]]></title>
     <link href="http://toomuchcoding.com/blog/2014/12/17/spock-subject-collaborators-extension/"/>
-    <updated>2014-12-17T17:28:00-05:00</updated>
+    <updated>2014-12-17T23:28:00+01:00</updated>
     <id>http://toomuchcoding.com/blog/2014/12/17/spock-subject-collaborators-extension</id>
     <content type="html"><![CDATA[<div class='post'>
 Hi!<br /><br />I'm really happy to say that I've just released a new version 1.0.1 of the <a href="https://github.com/marcingrzejszczak/spock-subjects-collaborators-extension">Spock Subject Collaborators Extension</a>.<br /><br />The changelog is as follows:<br /><br /><a name='more'></a><br />
@@ -108,7 +108,7 @@ Hi!<br /><br />I'm really happy to say that I've just released a new version 1.0
   <entry>
     <title type="html"><![CDATA[Execution of Groovy scripts from Java - XmlSlurper and MarkupBuilder in mapping issues]]></title>
     <link href="http://toomuchcoding.com/blog/2013/03/30/execution-of-groovy-scripts-from-java/"/>
-    <updated>2013-03-30T18:09:00-04:00</updated>
+    <updated>2013-03-30T23:09:00+01:00</updated>
     <id>http://toomuchcoding.com/blog/2013/03/30/execution-of-groovy-scripts-from-java</id>
     <content type="html"><![CDATA[<div class='post'>
 <br /><h2>Problem with mappings</h2><br />In our project we came across a really big problem related to mapping. Having two systems that initially were defined by the BA to be somehwat simillar we have chosen the simple XSLT (done through Altova Mapforce) of the input message to the output one.<br />
