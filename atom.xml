@@ -4,7 +4,7 @@
   <title><![CDATA[TOO MUCH CODING]]></title>
   <link href="http://toomuchcoding.com/atom.xml" rel="self"/>
   <link href="http://toomuchcoding.com/"/>
-  <updated>2016-04-30T14:52:18+02:00</updated>
+  <updated>2016-04-30T15:26:13+02:00</updated>
   <id>http://toomuchcoding.com/</id>
   <author>
     <name><![CDATA[Marcin Grzejszczak]]></name>
@@ -18,7 +18,7 @@
     <link href="http://toomuchcoding.com/blog/2016/04/30/accurest-and-stub-runner-1-dot-1-0-dot-m3/"/>
     <updated>2016-04-30T13:53:44+02:00</updated>
     <id>http://toomuchcoding.com/blog/2016/04/30/accurest-and-stub-runner-1-dot-1-0-dot-m3</id>
-    <content type="html"><![CDATA[<p>Currently at the Spring Team we&rsquo;re polishing our libraries for the upcoming final release of the Brixton train. It should happen soon :) Until then I&rsquo;m spending a lot of my free time on <a href="http://toomuchcoding.com/blog/2016/04/25/accurest-docs-updated/">Accurest</a> and <a href="http://toomuchcoding.com/blog/2016/04/06/accurest-stubrunner-released/">Stub Runner</a>.</p>
+    <content type="html"><![CDATA[<p>Currently at the Spring Team we&rsquo;re polishing our libraries for the upcoming final release of the Brixton train. It should happen soon :) Until then I&rsquo;m spending a lot of my after work, free time on <a href="http://toomuchcoding.com/blog/2016/04/25/accurest-docs-updated/">Accurest</a> and <a href="http://toomuchcoding.com/blog/2016/04/06/accurest-stubrunner-released/">Stub Runner</a>.</p>
 
 <p>Today&rsquo;s post will be about the new stuff that you will be able to profit from in the upcoming <code>1.1.0</code> release of Accurest. Also you can profit from most of these features in the <code>1.1.0.M3</code> release.</p>
 
@@ -439,8 +439,9 @@ we&rsquo;re checking if that message has proper headers and body.</p>
 <ul>
 <li>A lot work was done around Accurest and CDC</li>
 <li>Quite soon we&rsquo;ll release the 1.1.0 version</li>
+<li>You can use stubs of your dependencies that communicate over messaging</li>
 <li>You can use fixed ports and versions for your dependencies</li>
-<li>If you like the project star it on Github :) That will give us additional boost of energy to spend on coding instead of sleeping ;)</li>
+<li>If you like the project star it on <a href="https://github.com/Codearte/accurest">Github</a> :) That will give us additional boost of energy to spend on coding instead of sleeping ;)</li>
 </ul>
 
 
