@@ -309,8 +309,9 @@ We had some problems with explicit and transitive dependencies that got fixed. T
 
 - A lot work was done around Accurest and CDC
 - Quite soon we'll release the 1.1.0 version
+- You can use stubs of your dependencies that communicate over messaging
 - You can use fixed ports and versions for your dependencies
-- If you like the project star it on Github :) That will give us additional boost of energy to spend on coding instead of sleeping ;)
+- If you like the project star it on [Github](https://github.com/Codearte/accurest) :) That will give us additional boost of energy to spend on coding instead of sleeping ;)
 
 ### Links
 
