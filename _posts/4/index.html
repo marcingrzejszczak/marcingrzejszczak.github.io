@@ -9,7 +9,7 @@
   <meta name="author" content="Marcin Grzejszczak">
 
   
-  <meta name="description" content="Sorry for not having written for some time but I was busy with writing the JBoss Drools Refcard for DZone and I am in the middle of writing a book &hellip;">
+  <meta name="description" content="In the code I have quite recently came across a really bad piece of code that based on class casting in terms of performing some actions on objects &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -76,6 +76,49 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/06/12/mockito-extra-interfaces-with/">Mockito - Extra Interfaces With Annotations and Static Methods</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-06-12T13:12:00+02:00" pubdate data-updated="true"></time>
+        
+         | <a href="/blog/2013/06/12/mockito-extra-interfaces-with/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+<br />In the code I have quite recently came across a really bad piece of code that based on class casting in terms of performing some actions on objects. Of course the code needed to be refactored but sometimes you can't do it / or don't want to do it (and it should be understandable) if first you don't have unit tests of that functionality. In the following post I will show how to test such code, how to refactor it and in fact what I think about such code ;) <div><br /></div><div><a name='more'></a><br />
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2013/06/12/mockito-extra-interfaces-with/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
   
   
     <article>
@@ -448,49 +491,6 @@ A friend from my project (<strike>that will soon start his own blog ;)</strike> 
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/12/24/google-guava-cache-with-regular/">Google Guava Cache With Regular Expression Patterns</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-12-24T14:54:00+01:00" pubdate data-updated="true"></time>
-        
-         | <a href="/blog/2012/12/24/google-guava-cache-with-regular/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><div class='post'>
-<br /><br />Hi!  Merry Christmas everyone :)  Quite recently I've seen <a href="http://toomuchcoding.blogspot.com/2012/12/google-guava.html">a nice presentation about Google Guava</a> and we came to the conclusion in our project that it could be really interesting to use the <a href="http://code.google.com/p/guava-libraries/wiki/CachesExplained">its Cache functionallity</a>.  Let us take a look at the regexp Pattern class and its <a href="http://docs.oracle.com/javase/6/docs/api/java/util/regex/Pattern.html#compile(java.lang.String)">compile function</a>. Quite often in the code we can see that each time a regular expression is being used a programmer is repeatidly calling the aforementioned Pattern.compile() function with the same argument thus compiling the same regular expression over and over again. What could be done however is to cache the result of such compilations - let us take a look at the RegexpUtils utility class:<br /><br />
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2012/12/24/google-guava-cache-with-regular/">Read on &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
   <div class="pagination">
     <!-- 
       <a class="prev" href="5">&larr; Older</a>
@@ -525,6 +525,10 @@ A friend from my project (<strike>that will soon start his own blog ;)</strike> 
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2016/04/30/accurest-and-stub-runner-1-dot-1-0-dot-m3/">Accurest and Stub Runner 1.1.0.M3</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2016/04/25/accurest-docs-updated/">Accurest docs updated</a>
       </li>
     
@@ -538,10 +542,6 @@ A friend from my project (<strike>that will soon start his own blog ;)</strike> 
     
       <li class="post">
         <a href="/blog/2016/04/06/accurest-stubrunner-released/">AccuREST Stub Runner Released</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2016/03/27/json-assert-0-dot-3-0-released/">JSON Assert 0.3.0 released</a>
       </li>
     
   </ul>

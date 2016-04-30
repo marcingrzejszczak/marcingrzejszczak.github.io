@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>http://toomuchcoding.com/blog/2016/04/30/accurest-and-stub-runner-1-dot-1-0-dot-m3/</loc>
+<lastmod>2016-04-30T13:53:44+02:00</lastmod>
+</url>
+<url>
 <loc>http://toomuchcoding.com/blog/2016/04/25/accurest-docs-updated/</loc>
 <lastmod>2016-04-25T21:49:59+02:00</lastmod>
 </url>

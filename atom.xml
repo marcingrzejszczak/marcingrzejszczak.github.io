@@ -4,7 +4,7 @@
   <title><![CDATA[TOO MUCH CODING]]></title>
   <link href="http://toomuchcoding.com/atom.xml" rel="self"/>
   <link href="http://toomuchcoding.com/"/>
-  <updated>2016-04-25T21:54:55+02:00</updated>
+  <updated>2016-04-30T14:52:18+02:00</updated>
   <id>http://toomuchcoding.com/</id>
   <author>
     <name><![CDATA[Marcin Grzejszczak]]></name>
@@ -12,6 +12,451 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Accurest and Stub Runner 1.1.0.M3]]></title>
+    <link href="http://toomuchcoding.com/blog/2016/04/30/accurest-and-stub-runner-1-dot-1-0-dot-m3/"/>
+    <updated>2016-04-30T13:53:44+02:00</updated>
+    <id>http://toomuchcoding.com/blog/2016/04/30/accurest-and-stub-runner-1-dot-1-0-dot-m3</id>
+    <content type="html"><![CDATA[<p>Currently at the Spring Team we&rsquo;re polishing our libraries for the upcoming final release of the Brixton train. It should happen soon :) Until then I&rsquo;m spending a lot of my free time on <a href="http://toomuchcoding.com/blog/2016/04/25/accurest-docs-updated/">Accurest</a> and <a href="http://toomuchcoding.com/blog/2016/04/06/accurest-stubrunner-released/">Stub Runner</a>.</p>
+
+<p>Today&rsquo;s post will be about the new stuff that you will be able to profit from in the upcoming <code>1.1.0</code> release of Accurest. Also you can profit from most of these features in the <code>1.1.0.M3</code> release.</p>
+
+<p>I&rsquo;ll just quickly go through the features but note that you can read about all of them in more depth in our <a href="http://codearte.github.io/accurest">documentation </a>.</p>
+
+<!-- more -->
+
+
+<h2>Name change</h2>
+
+<p>AccuREST started as a library used to stub HTTP calls. In the upcoming <code>1.1.0</code> release you will be able to stub messaging functionality too. That&rsquo;s why the name changes to Accurest. That&rsquo;s a fantastic name isn&rsquo;t it? ;)</p>
+
+<p>Also since branding is important, now instead of calling <code>io.codearte.accurest.dsl.GroovyDsl</code> you can call <code>io.codearte.accurest.dsl.Accurest</code> :)</p>
+
+<h2>Messaging support</h2>
+
+<p>It took me quite some time to do this but it was worth it :) Several sleepless nights and now you can profit from defining contracts for messaging. In HTTP we had <code>client</code>/<code>stub</code> side and <code>server</code>/<code>test</code> side. For messaging we added methods to help discern the differences:</p>
+
+<ul>
+<li><code>publisher</code> the side for which the tests will be generated</li>
+<li><code>consumer</code> the side for which the messaging endpoints will be stubbed</li>
+</ul>
+
+
+<h3>Contract</h3>
+
+<p>There are 3 use cases from the message <code>Producer</code>&rsquo;s point of view.</p>
+
+<ul>
+<li>something happens in my application and I&rsquo;m producing an output message</li>
+<li>someone sends a message to destination (queue/topic), I&rsquo;m listening to that message and will produce an output message somewhere else</li>
+<li>someone sends a message to destination (queue/topic), I&rsquo;m listening to that message and will consume it without any message sending</li>
+</ul>
+
+
+<p>Here you can see examples of contracts for those three situations (you can read more about it in the  <a href="http://codearte.github.io/accurest/#messaging-top-level-elements">docs</a> ):</p>
+
+<h4>Output triggered by a method</h4>
+
+<p>The output message can be triggered by calling a method (e.g. a Scheduler was started and a message was sent)</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+</pre></td><td class='code'><pre><code class='groovy'><span class='line'><span class="kt">def</span> <span class="n">dsl</span> <span class="o">=</span> <span class="n">Accurest</span><span class="o">.</span><span class="na">make</span> <span class="o">{</span>
+</span><span class='line'>        <span class="c1">// Human readable description</span>
+</span><span class='line'>        <span class="n">description</span> <span class="s1">&#39;Some description&#39;</span>
+</span><span class='line'>        <span class="c1">// Label by means of which the output message can be triggered</span>
+</span><span class='line'>        <span class="n">label</span> <span class="s1">&#39;some_label&#39;</span>
+</span><span class='line'>        <span class="c1">// input to the contract</span>
+</span><span class='line'>        <span class="n">input</span> <span class="o">{</span>
+</span><span class='line'>                <span class="c1">// the contract will be triggered by a method</span>
+</span><span class='line'>                <span class="n">triggeredBy</span><span class="o">(</span><span class="s1">&#39;bookReturnedTriggered()&#39;</span><span class="o">)</span>
+</span><span class='line'>        <span class="o">}</span>
+</span><span class='line'>        <span class="c1">// output message of the contract</span>
+</span><span class='line'>        <span class="n">outputMessage</span> <span class="o">{</span>
+</span><span class='line'>                <span class="c1">// destination to which the output message will be sent</span>
+</span><span class='line'>                <span class="n">sentTo</span><span class="o">(</span><span class="s1">&#39;output&#39;</span><span class="o">)</span>
+</span><span class='line'>                <span class="c1">// the body of the output message</span>
+</span><span class='line'>                <span class="n">body</span><span class="o">(</span><span class="s1">&#39;&#39;&#39;{ &quot;bookName&quot; : &quot;foo&quot; }&#39;&#39;&#39;</span><span class="o">)</span>
+</span><span class='line'>                <span class="c1">// the headers of the output message</span>
+</span><span class='line'>                <span class="n">headers</span> <span class="o">{</span>
+</span><span class='line'>                        <span class="n">header</span><span class="o">(</span><span class="s1">&#39;BOOK-NAME&#39;</span><span class="o">,</span> <span class="s1">&#39;foo&#39;</span><span class="o">)</span>
+</span><span class='line'>                <span class="o">}</span>
+</span><span class='line'>        <span class="o">}</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>Output triggered by a message</h4>
+
+<p>The output message can be triggered by receiving a message.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+</pre></td><td class='code'><pre><code class='groovy'><span class='line'><span class="kt">def</span> <span class="n">dsl</span> <span class="o">=</span> <span class="n">GroovyDsl</span><span class="o">.</span><span class="na">make</span> <span class="o">{</span>
+</span><span class='line'>        <span class="n">description</span> <span class="s1">&#39;Some Description&#39;</span>
+</span><span class='line'>        <span class="n">label</span> <span class="s1">&#39;some_label&#39;</span>
+</span><span class='line'>        <span class="c1">// input is a message</span>
+</span><span class='line'>        <span class="n">input</span> <span class="o">{</span>
+</span><span class='line'>                <span class="c1">// the message was received from this destination</span>
+</span><span class='line'>                <span class="n">messageFrom</span><span class="o">(</span><span class="s1">&#39;input&#39;</span><span class="o">)</span>
+</span><span class='line'>                <span class="c1">// has the following body</span>
+</span><span class='line'>                <span class="n">messageBody</span><span class="o">([</span>
+</span><span class='line'>                        <span class="nl">bookName:</span> <span class="s1">&#39;foo&#39;</span>
+</span><span class='line'>                <span class="o">])</span>
+</span><span class='line'>                <span class="c1">// and the following headers</span>
+</span><span class='line'>                <span class="n">messageHeaders</span> <span class="o">{</span>
+</span><span class='line'>                        <span class="n">header</span><span class="o">(</span><span class="s1">&#39;sample&#39;</span><span class="o">,</span> <span class="s1">&#39;header&#39;</span><span class="o">)</span>
+</span><span class='line'>                <span class="o">}</span>
+</span><span class='line'>        <span class="o">}</span>
+</span><span class='line'>        <span class="n">outputMessage</span> <span class="o">{</span>
+</span><span class='line'>                <span class="n">sentTo</span><span class="o">(</span><span class="s1">&#39;output&#39;</span><span class="o">)</span>
+</span><span class='line'>                <span class="n">body</span><span class="o">([</span>
+</span><span class='line'>                        <span class="nl">bookName:</span> <span class="s1">&#39;foo&#39;</span>
+</span><span class='line'>                <span class="o">])</span>
+</span><span class='line'>                <span class="n">headers</span> <span class="o">{</span>
+</span><span class='line'>                        <span class="n">header</span><span class="o">(</span><span class="s1">&#39;BOOK-NAME&#39;</span><span class="o">,</span> <span class="s1">&#39;foo&#39;</span><span class="o">)</span>
+</span><span class='line'>                <span class="o">}</span>
+</span><span class='line'>        <span class="o">}</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>No output, only input</h4>
+
+<p>There can be only input without any output</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+</pre></td><td class='code'><pre><code class='groovy'><span class='line'><span class="kt">def</span> <span class="n">dsl</span> <span class="o">=</span> <span class="n">GroovyDsl</span><span class="o">.</span><span class="na">make</span> <span class="o">{</span>
+</span><span class='line'>        <span class="n">description</span> <span class="s1">&#39;Some Description&#39;</span>
+</span><span class='line'>        <span class="n">label</span> <span class="s1">&#39;some_label&#39;</span>
+</span><span class='line'>        <span class="c1">// input is a message</span>
+</span><span class='line'>        <span class="n">input</span> <span class="o">{</span>
+</span><span class='line'>                <span class="c1">// the message was received from this destination</span>
+</span><span class='line'>                <span class="n">messageFrom</span><span class="o">(</span><span class="s1">&#39;input&#39;</span><span class="o">)</span>
+</span><span class='line'>                <span class="c1">// has the following body</span>
+</span><span class='line'>                <span class="n">messageBody</span><span class="o">([</span>
+</span><span class='line'>                        <span class="nl">bookName:</span> <span class="s1">&#39;foo&#39;</span>
+</span><span class='line'>                <span class="o">])</span>
+</span><span class='line'>                <span class="c1">// and the following headers</span>
+</span><span class='line'>                <span class="n">messageHeaders</span> <span class="o">{</span>
+</span><span class='line'>                        <span class="n">header</span><span class="o">(</span><span class="s1">&#39;sample&#39;</span><span class="o">,</span> <span class="s1">&#39;header&#39;</span><span class="o">)</span>
+</span><span class='line'>                <span class="o">}</span>
+</span><span class='line'>        <span class="o">}</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Producer side</h3>
+
+<p>Here you can see an example of a JUnit generated test for the producer for the input / output scenario:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+</pre></td><td class='code'><pre><code class='groovy'><span class='line'><span class="c1">// given:</span>
+</span><span class='line'> <span class="n">AccurestMessage</span> <span class="n">inputMessage</span> <span class="o">=</span> <span class="n">accurestMessaging</span><span class="o">.</span><span class="na">create</span><span class="o">(</span>
+</span><span class='line'>  <span class="s2">&quot;{\\&quot;</span><span class="n">bookName</span><span class="err">\\</span><span class="s2">&quot;:\\&quot;</span><span class="n">foo</span><span class="err">\\</span><span class="s2">&quot;}&quot;</span>
+</span><span class='line'><span class="o">,</span> <span class="n">headers</span><span class="o">()</span>
+</span><span class='line'>  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s2">&quot;sample&quot;</span><span class="o">,</span> <span class="s2">&quot;header&quot;</span><span class="o">));</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// when:</span>
+</span><span class='line'> <span class="n">accurestMessaging</span><span class="o">.</span><span class="na">send</span><span class="o">(</span><span class="n">inputMessage</span><span class="o">,</span> <span class="s2">&quot;input&quot;</span><span class="o">);</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// then:</span>
+</span><span class='line'> <span class="n">AccurestMessage</span> <span class="n">response</span> <span class="o">=</span> <span class="n">accurestMessaging</span><span class="o">.</span><span class="na">receiveMessage</span><span class="o">(</span><span class="s2">&quot;output&quot;</span><span class="o">);</span>
+</span><span class='line'> <span class="n">assertThat</span><span class="o">(</span><span class="n">response</span><span class="o">).</span><span class="na">isNotNull</span><span class="o">();</span>
+</span><span class='line'> <span class="n">assertThat</span><span class="o">(</span><span class="n">response</span><span class="o">.</span><span class="na">getHeader</span><span class="o">(</span><span class="s2">&quot;BOOK-NAME&quot;</span><span class="o">)).</span><span class="na">isEqualTo</span><span class="o">(</span><span class="s2">&quot;foo&quot;</span><span class="o">);</span>
+</span><span class='line'><span class="c1">// and:</span>
+</span><span class='line'> <span class="n">DocumentContext</span> <span class="n">parsedJson</span> <span class="o">=</span> <span class="n">JsonPath</span><span class="o">.</span><span class="na">parse</span><span class="o">(</span><span class="n">accurestObjectMapper</span><span class="o">.</span><span class="na">writeValueAsString</span><span class="o">(</span><span class="n">response</span><span class="o">.</span><span class="na">getPayload</span><span class="o">()));</span>
+</span><span class='line'> <span class="n">assertThatJson</span><span class="o">(</span><span class="n">parsedJson</span><span class="o">).</span><span class="na">field</span><span class="o">(</span><span class="s2">&quot;bookName&quot;</span><span class="o">).</span><span class="na">isEqualTo</span><span class="o">(</span><span class="s2">&quot;foo&quot;</span><span class="o">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>We&rsquo;re sending a message to a destination called <code>input</code>. next we&rsquo;re checking if there&rsquo;s a message at the <code>output</code> destination. If that&rsquo;s the case
+we&rsquo;re checking if that message has proper headers and body.</p>
+
+<h3>Consumer side</h3>
+
+<p>It&rsquo;s enough to provide the dependency to proper Stub Runner module (check the next section for more information) and tell it which stubs should be downloaded. Yup, that&rsquo;s it! <a href="http://codearte.github.io/accurest/#stub-runner-for-messaging">Stub Runner will download the stubs and prepare stubbed routes</a>.</p>
+
+<p>Sometimes you&rsquo;ll need to trigger a message somehow in your tests. That&rsquo;s why we&rsquo;ve provided the <code>StubTrigger</code> interface that you can inject! If you&rsquo;re already familiar with Stub Runner Spring then you could use the <code>StubFinder</code> bean to find the URL of your dependency. Now <code>StubFinder</code> also extends the <code>StubTrigger</code> interface thus you don&rsquo;t have to inject any additional beans in your tests.</p>
+
+<p>There are multiple ways in which you can trigger a message:</p>
+
+<h4>Trigger by label</h4>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='groovy'><span class='line'><span class="n">stubFinder</span><span class="o">.</span><span class="na">trigger</span><span class="o">(</span><span class="s1">&#39;return_book_1&#39;</span><span class="o">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>Trigger by group and artifact ids</h4>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='groovy'><span class='line'><span class="n">stubFinder</span><span class="o">.</span><span class="na">trigger</span><span class="o">(</span><span class="s1">&#39;io.codearte.accurest.stubs:camelService&#39;</span><span class="o">,</span> <span class="s1">&#39;return_book_1&#39;</span><span class="o">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>Trigger by artifact id</h4>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='groovy'><span class='line'><span class="n">stubFinder</span><span class="o">.</span><span class="na">trigger</span><span class="o">(</span><span class="s1">&#39;camelService&#39;</span><span class="o">,</span> <span class="s1">&#39;return_book_1&#39;</span><span class="o">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>Trigger all messages</h4>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='groovy'><span class='line'><span class="n">stubFinder</span><span class="o">.</span><span class="na">trigger</span><span class="o">()</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Integrations</h3>
+
+<p>We provide the following out of the box integrations:</p>
+
+<ul>
+<li>Spring Integration</li>
+<li>Spring Cloud Stream</li>
+<li>Apache Camel</li>
+</ul>
+
+
+<p>Also we provide all the building blocks to provide a custom integration.</p>
+
+<p>Just by providing the proper dependency</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='groovy'><span class='line'><span class="c1">// for Apache Camel</span>
+</span><span class='line'><span class="n">testCompile</span> <span class="s2">&quot;io.codearte.accurest:accurest-messaging-camel:${accurestVersion}&quot;</span>
+</span><span class='line'><span class="c1">// for Spring Integration</span>
+</span><span class='line'><span class="n">testCompile</span> <span class="s2">&quot;io.codearte.accurest:accurest-messaging-integration:${accurestVersion}&quot;</span>
+</span><span class='line'><span class="c1">// for Spring Cloud Stream</span>
+</span><span class='line'><span class="n">testCompile</span> <span class="s2">&quot;io.codearte.accurest:accurest-messaging-stream:${accurestVersion}&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Your generated tests should just work.</p>
+
+<h2>Stub Runner Boot</h2>
+
+<p>I&rsquo;ve added a new module of <a href="http://codearte.github.io/accurest/#stub-runner-boot">Stub Runner</a> that operates on Spring Boot. Assuming that you&rsquo;re using Spring Cloud Stream you can create a project that has 2 dependencies:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='groovy'><span class='line'><span class="n">compile</span> <span class="s2">&quot;io.codearte.accurest:stub-runner-boot:${accurestVersion}&quot;</span>
+</span><span class='line'><span class="n">compile</span> <span class="s2">&quot;io.codearte.accurest:stub-runner-messaging-stream:${accurestVersion}&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Now if you pass the proper <a href="http://codearte.github.io/accurest/#common-properties-for-junit-and-spring">Stub Runner Spring configuration</a> e.g.:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='groovy'><span class='line'><span class="n">stubrunner</span><span class="o">.</span><span class="na">stubs</span><span class="o">.</span><span class="na">ids</span><span class="o">:</span> <span class="n">io</span><span class="o">.</span><span class="na">codearte</span><span class="o">.</span><span class="na">accurest</span><span class="o">.</span><span class="na">stubs</span><span class="o">:</span><span class="n">streamService</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>You will have a running app that exposes HTTP endpoints to</p>
+
+<ul>
+<li>trigger messages</li>
+<li>check the URLs of the registered WireMock stubs</li>
+</ul>
+
+
+<h2>Accurest Maven Plugin</h2>
+
+<p>Mariusz Smykuła has done a fantastic job by adding the <a href="http://codearte.github.io/accurest-maven-plugin/">Accurest Maven Plugin</a>. Now you can add Accurest to your project that runs with Maven. But that&rsquo;s not all since the Maven Plugin allows you to run the Accurest stubs using the <code>accurest:run</code> command!</p>
+
+<p>Read the <a href="http://codearte.github.io/accurest-maven-plugin/">docs</a> to know more!</p>
+
+<h2>Stub Runner changes</h2>
+
+<h3>Messaging</h3>
+
+<p>With messaging coming as a feature I&rsquo;ve added a bunch of messaging modules. You can read more about the <a href="http://codearte.github.io/accurest/#stub-runner-for-messaging">Stub Runner messaging modules here</a></p>
+
+<h3>Fixed ports and versions of stubs</h3>
+
+<p>Another feature that was missing and is really valuable is that now you can explicitly say that you want a particular dependency to be started at a given port. This feature is available since version <code>1.0.7</code> but the stub id has been changed in <code>1.1.0.M4</code> so be warned ;)</p>
+
+<p>The ids have changed because now you can provide the desired version of the stub that you want to download.</p>
+
+<h4>Via properties</h4>
+
+<p>Now you can provide the id of a stub like this:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='groovy'><span class='line'><span class="nl">groupId:artifactId:version:classifier:</span><span class="n">port</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>where version, classifier and port are optional.</p>
+
+<ul>
+<li>If you don’t provide the port then a random one will be picked</li>
+<li>If you don’t provide the classifier then the default one will be taken.</li>
+<li>If you don’t provide the version then the + will be passed and the latest one will be downloaded</li>
+</ul>
+
+
+<p>Where port means the port of the WireMock server.</p>
+
+<p>So if you provide your dependency like this:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='groovy'><span class='line'><span class="n">stubrunner</span><span class="o">.</span><span class="na">stubs</span><span class="o">.</span><span class="na">ids</span><span class="o">:</span> <span class="n">io</span><span class="o">.</span><span class="na">codearte</span><span class="o">.</span><span class="na">accurest</span><span class="o">.</span><span class="na">stubs</span><span class="o">:</span><span class="nl">streamService:</span><span class="mf">0.0</span><span class="o">.</span><span class="mi">1</span><span class="o">-</span><span class="nl">SNAPSHOT:stubs:</span><span class="mi">9090</span><span class="o">,</span><span class="n">io</span><span class="o">.</span><span class="na">codearte</span><span class="o">.</span><span class="na">accurest</span><span class="o">.</span><span class="na">stubs</span><span class="o">:</span><span class="nl">anotherService:</span><span class="o">+:</span><span class="mi">9095</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>It will make Stub Runner:</p>
+
+<ul>
+<li>download a stub with groupId: <code>io.codearte.accurest.stubs</code>, artifactId: <code>streamService</code>, version: <code>0.0.1-SNAPSHOT</code>, classifier: <code>stubs</code> and register it at port 9090</li>
+<li>download a stub with groupId: <code>io.codearte.accurest.stubs</code>, artifactId: <code>anotherService</code>, latest version, default classifier (<code>stubs</code>) and register it at port 9095</li>
+</ul>
+
+
+<h4>Via fluent API</h4>
+
+<p>When using the AccurestRule you can add a stub to download and then pass the port for the last downloaded stub.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='groovy'><span class='line'><span class="nd">@ClassRule</span> <span class="kd">public</span> <span class="kd">static</span> <span class="n">AccurestRule</span> <span class="n">rule</span> <span class="o">=</span> <span class="k">new</span> <span class="n">AccurestRule</span><span class="o">()</span>
+</span><span class='line'>                <span class="o">.</span><span class="na">repoRoot</span><span class="o">(</span><span class="n">repoRoot</span><span class="o">())</span>
+</span><span class='line'>                <span class="o">.</span><span class="na">downloadStub</span><span class="o">(</span><span class="s2">&quot;io.codearte.accurest.stubs&quot;</span><span class="o">,</span> <span class="s2">&quot;loanIssuance&quot;</span><span class="o">)</span>
+</span><span class='line'>                <span class="o">.</span><span class="na">withPort</span><span class="o">(</span><span class="mi">12345</span><span class="o">)</span>
+</span><span class='line'>                <span class="o">.</span><span class="na">downloadStub</span><span class="o">(</span><span class="s2">&quot;io.codearte.accurest.stubs:fraudDetectionServer:12346&quot;</span><span class="o">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>You can see that for this example the following test is valid:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='groovy'><span class='line'><span class="n">then</span><span class="o">(</span><span class="n">rule</span><span class="o">.</span><span class="na">findStubUrl</span><span class="o">(</span><span class="s2">&quot;loanIssuance&quot;</span><span class="o">)).</span><span class="na">isEqualTo</span><span class="o">(</span><span class="n">URI</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="s2">&quot;http://localhost:12345&quot;</span><span class="o">).</span><span class="na">toURL</span><span class="o">());</span>
+</span><span class='line'><span class="n">then</span><span class="o">(</span><span class="n">rule</span><span class="o">.</span><span class="na">findStubUrl</span><span class="o">(</span><span class="s2">&quot;fraudDetectionServer&quot;</span><span class="o">)).</span><span class="na">isEqualTo</span><span class="o">(</span><span class="n">URI</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="s2">&quot;http://localhost:12346&quot;</span><span class="o">).</span><span class="na">toURL</span><span class="o">());</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Technical changes</h2>
+
+<p>Apart from features we&rsquo;ve done some technical refactoring.</p>
+
+<h3>Grape -> Aether</h3>
+
+<p>I&rsquo;ve migrated the mechanism used to download dependencies from Groovy Grape to Aether. We had a lot of issues with Grape and Aether works very well for now. That&rsquo;s a backwards incompatible change so if you had some custom Grape configuration then you&rsquo;ll have to port it to Aether.</p>
+
+<h3>Dependencies fixed</h3>
+
+<p>We had some problems with explicit and transitive dependencies that got fixed. The Accurest jars should be smaller.</p>
+
+<h3>Summary</h3>
+
+<ul>
+<li>A lot work was done around Accurest and CDC</li>
+<li>Quite soon we&rsquo;ll release the 1.1.0 version</li>
+<li>You can use fixed ports and versions for your dependencies</li>
+<li>If you like the project star it on Github :) That will give us additional boost of energy to spend on coding instead of sleeping ;)</li>
+</ul>
+
+
+<h3>Links</h3>
+
+<ul>
+<li><a href="https://github.com/Codearte/accurest">Accurest Github Repository</a></li>
+<li><a href="http://codearte.github.io/accurest">Accurest Documentation</a></li>
+<li><a href="http://codearte.github.io/accurest/#stub-runner">Stub Runner Documentation</a></li>
+<li><a href="http://codearte.github.io/accurest/#stub-runner-for-messaging">Stub Runner Messaging Documentation</a></li>
+<li><a href="https://gitter.im/Codearte/accurest">Accurest Gitter</a></li>
+<li><a href="https://github.com/Codearte/accurest-maven-plugin">Accurest Maven Plugin</a></li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Accurest docs updated]]></title>
@@ -1285,16 +1730,6 @@ Hi!<br /><br />Since I was asked for the code to the<a href="http://www.packtpub
     <id>http://toomuchcoding.com/blog/2014/04/24/groovy-builder-ast-merged-to-groovy-core</id>
     <content type="html"><![CDATA[<div class='post'>
 <p dir=ltr>Hi! </p><p dir=ltr>Today it turned out that Paul King merged the Builder AST transform that based on my <a href="https://github.com/groovy/groovy-core/pull/341">PojoBuilder</a> to core of Groovy. So you will be able to use it when the new version of Groovy gets released.</p><p dir=ltr>You can take a look at the code here</p><p dir=ltr><a href="https://github.com/groovy/groovy-core/pull/389">https://github.com/groovy/groovy-core/pull/389</a></p><p dir=ltr>Many thanks go to <a href="http://solidsoft.wordpress.com"><b>Marcin Zaj&#261;czkowski</b></a> for his code review to the initial version.</p><p dir=ltr>It's not the biggest features in the world but anyway, enjoy :)</p></div>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Warsaw Groovy User Group Talk - AST Transformations]]></title>
-    <link href="http://toomuchcoding.com/blog/2014/03/21/warsaw-groovy-user-group-talk-ast/"/>
-    <updated>2014-03-21T09:19:00+01:00</updated>
-    <id>http://toomuchcoding.com/blog/2014/03/21/warsaw-groovy-user-group-talk-ast</id>
-    <content type="html"><![CDATA[<div class='post'>
-Hi!<br /><br /><a href="http://www.youtube.com/watch?v=JdSCDEkX0Tw">Click here to go to the on-air hangout (in PL) regarding AST Transformations from my yesterday's presentation on Warsaw Groovy User Group</a></div>
 ]]></content>
   </entry>
   

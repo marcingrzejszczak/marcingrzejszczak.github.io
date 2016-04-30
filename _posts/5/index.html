@@ -9,9 +9,7 @@
   <meta name="author" content="Marcin Grzejszczak">
 
   
-  <meta name="description" content="
-Some interesting link:Very nice presentation about Google Guava, sources
-">
+  <meta name="description" content="Hi! Merry Christmas everyone :) Quite recently I've seen a nice presentation about Google Guava and we came to the conclusion in our project that it &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -78,6 +76,49 @@ Some interesting link:Very nice presentation about Google Guava, sources
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/12/24/google-guava-cache-with-regular/">Google Guava Cache With Regular Expression Patterns</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-12-24T14:54:00+01:00" pubdate data-updated="true"></time>
+        
+         | <a href="/blog/2012/12/24/google-guava-cache-with-regular/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class='post'>
+<br /><br />Hi!  Merry Christmas everyone :)  Quite recently I've seen <a href="http://toomuchcoding.blogspot.com/2012/12/google-guava.html">a nice presentation about Google Guava</a> and we came to the conclusion in our project that it could be really interesting to use the <a href="http://code.google.com/p/guava-libraries/wiki/CachesExplained">its Cache functionallity</a>.  Let us take a look at the regexp Pattern class and its <a href="http://docs.oracle.com/javase/6/docs/api/java/util/regex/Pattern.html#compile(java.lang.String)">compile function</a>. Quite often in the code we can see that each time a regular expression is being used a programmer is repeatidly calling the aforementioned Pattern.compile() function with the same argument thus compiling the same regular expression over and over again. What could be done however is to cache the result of such compilations - let us take a look at the RegexpUtils utility class:<br /><br />
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2012/12/24/google-guava-cache-with-regular/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
   
   
     <article>
@@ -454,45 +495,6 @@ Next portion of interesting articles from dZone<br /><br /><a href="http://archi
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/10/17/interesting-articles/">Interesting Articles</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-10-17T15:43:00+02:00" pubdate data-updated="true"></time>
-        
-         | <a href="/blog/2012/10/17/interesting-articles/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><div class='post'>
-<br />Since one of my aims of starting a blog was to treat it as a notepad or a storage place for some interesting concepts regarding programming&nbsp;I recommend reading these articles:<br /><br /><a href="http://java.dzone.com/articles/how-tune-java-garbage">How to tune Java Garbage Collector</a><br /><a href="http://java.dzone.com/articles/nosql-week-review">NoSQL week review</a><br /><a href="http://java.dzone.com/articles/javascript-and-jquery">Javascript and jQuery</a><br /><br /></div>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     <!-- 
       <a class="prev" href="6">&larr; Older</a>
@@ -527,6 +529,10 @@ Next portion of interesting articles from dZone<br /><br /><a href="http://archi
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2016/04/30/accurest-and-stub-runner-1-dot-1-0-dot-m3/">Accurest and Stub Runner 1.1.0.M3</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2016/04/25/accurest-docs-updated/">Accurest docs updated</a>
       </li>
     
@@ -540,10 +546,6 @@ Next portion of interesting articles from dZone<br /><br /><a href="http://archi
     
       <li class="post">
         <a href="/blog/2016/04/06/accurest-stubrunner-released/">AccuREST Stub Runner Released</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2016/03/27/json-assert-0-dot-3-0-released/">JSON Assert 0.3.0 released</a>
       </li>
     
   </ul>
