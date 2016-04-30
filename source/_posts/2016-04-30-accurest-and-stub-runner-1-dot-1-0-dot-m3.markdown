@@ -10,7 +10,7 @@ categories:
 - testing
 ---
 
-Currently at the Spring Team we're polishing our libraries for the upcoming final release of the Brixton train. It should happen soon :) Until then I'm spending a lot of my free time on [Accurest](/blog/2016/04/25/accurest-docs-updated/) and [Stub Runner](http://toomuchcoding.com/blog/2016/04/06/accurest-stubrunner-released/).
+Currently at the Spring Team we're polishing our libraries for the upcoming final release of the Brixton train. It should happen soon :) Until then I'm spending a lot of my after work, free time on [Accurest](/blog/2016/04/25/accurest-docs-updated/) and [Stub Runner](http://toomuchcoding.com/blog/2016/04/06/accurest-stubrunner-released/).
 
 Today's post will be about the new stuff that you will be able to profit from in the upcoming `1.1.0` release of Accurest. Also you can profit from most of these features in the `1.1.0.M3` release.
 
