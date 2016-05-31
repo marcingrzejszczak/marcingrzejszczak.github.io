@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>http://toomuchcoding.com/blog/2016/05/31/zero-downtime-deployment-with-a-database/</loc>
+<lastmod>2016-05-31T11:58:52+02:00</lastmod>
+</url>
+<url>
 <loc>http://toomuchcoding.com/blog/2016/04/30/accurest-and-stub-runner-1-dot-1-0-dot-m3/</loc>
 <lastmod>2016-04-30T13:53:44+02:00</lastmod>
 </url>
@@ -557,5 +561,20 @@
 </url>
 <url>
 <loc>http://toomuchcoding.com/blog/categories/gradle-plugin/</loc>
+</url>
+<url>
+<loc>http://toomuchcoding.com/_posts/2/</loc>
+</url>
+<url>
+<loc>http://toomuchcoding.com/_posts/3/</loc>
+</url>
+<url>
+<loc>http://toomuchcoding.com/_posts/4/</loc>
+</url>
+<url>
+<loc>http://toomuchcoding.com/_posts/5/</loc>
+</url>
+<url>
+<loc>http://toomuchcoding.com/_posts/6/</loc>
 </url>
 </urlset>

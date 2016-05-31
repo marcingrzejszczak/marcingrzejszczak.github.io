@@ -4,7 +4,7 @@
   <title><![CDATA[Category: spring-cloud | TOO MUCH CODING]]></title>
   <link href="http://toomuchcoding.com/blog/categories/spring-cloud/atom.xml" rel="self"/>
   <link href="http://toomuchcoding.com/"/>
-  <updated>2016-04-30T16:46:49+02:00</updated>
+  <updated>2016-05-31T12:02:27+02:00</updated>
   <id>http://toomuchcoding.com/</id>
   <author>
     <name><![CDATA[Marcin Grzejszczak]]></name>
@@ -12,6 +12,17 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Zero Downtime Deployment with a Database]]></title>
+    <link href="http://toomuchcoding.com/blog/2016/05/31/zero-downtime-deployment-with-a-database/"/>
+    <updated>2016-05-31T11:58:52+02:00</updated>
+    <id>http://toomuchcoding.com/blog/2016/05/31/zero-downtime-deployment-with-a-database</id>
+    <content type="html"><![CDATA[<p>I&rsquo;ve just published an article at the Spring blog about <a href="https://spring.io/blog/2016/05/31/zero-downtime-deployment-with-a-database">Zero Downtime Deployment with a Database</a>. So if you&rsquo;re planning on doing
+zero downtime or blue/green deployment you&rsquo;d better check out that article :) The code is available here on
+<a href="https://github.com/spring-cloud-samples/zero-downtime-deployment">Github</a>.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Spring Cloud Sleuth RC1 deployed]]></title>
