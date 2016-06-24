@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>http://toomuchcoding.com/blog/2016/06/24/accurest-becomes-part-of-the-spring-cloud-contract/</loc>
+<lastmod>2016-06-24T18:43:07+02:00</lastmod>
+</url>
+<url>
 <loc>http://toomuchcoding.com/blog/2016/05/31/zero-downtime-deployment-with-a-database/</loc>
 <lastmod>2016-05-31T11:58:52+02:00</lastmod>
 </url>
@@ -563,18 +567,9 @@
 <loc>http://toomuchcoding.com/blog/categories/gradle-plugin/</loc>
 </url>
 <url>
-<loc>http://toomuchcoding.com/_posts/2/</loc>
+<loc>http://toomuchcoding.com/blog/categories/spring-cloud-contract/</loc>
 </url>
 <url>
-<loc>http://toomuchcoding.com/_posts/3/</loc>
-</url>
-<url>
-<loc>http://toomuchcoding.com/_posts/4/</loc>
-</url>
-<url>
-<loc>http://toomuchcoding.com/_posts/5/</loc>
-</url>
-<url>
-<loc>http://toomuchcoding.com/_posts/6/</loc>
+<loc>http://toomuchcoding.com/blog/categories/consumer-driven-contracts/</loc>
 </url>
 </urlset>

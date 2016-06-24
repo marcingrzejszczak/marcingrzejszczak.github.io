@@ -4,7 +4,7 @@
   <title><![CDATA[Category: cdc | TOO MUCH CODING]]></title>
   <link href="http://toomuchcoding.com/blog/categories/cdc/atom.xml" rel="self"/>
   <link href="http://toomuchcoding.com/"/>
-  <updated>2016-05-31T12:02:27+02:00</updated>
+  <updated>2016-06-24T20:11:24+02:00</updated>
   <id>http://toomuchcoding.com/</id>
   <author>
     <name><![CDATA[Marcin Grzejszczak]]></name>
@@ -12,6 +12,88 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Accurest becomes part of the Spring Cloud Contract]]></title>
+    <link href="http://toomuchcoding.com/blog/2016/06/24/accurest-becomes-part-of-the-spring-cloud-contract/"/>
+    <updated>2016-06-24T18:43:07+02:00</updated>
+    <id>http://toomuchcoding.com/blog/2016/06/24/accurest-becomes-part-of-the-spring-cloud-contract</id>
+    <content type="html"><![CDATA[<p>I&rsquo;m extremely happy to announce that we have successfully rebranded the <a href="https://codearte.github.io/accurest">Accurest project</a>. It&rsquo;s officially become part of the <a href="https://github.com/spring-cloud/spring-cloud-contract">Spring Cloud Contract</a> initiative. Ladies and Gentlemen please welcome the new projects:</p>
+
+<ul>
+<li><a href="https://codearte.github.io/accurest/">Spring Cloud Contract Verifier</a></li>
+<li><a href="https://codearte.github.io/accurest/#stub-runner">Spring Cloud Contract Stub Runner</a></li>
+</ul>
+
+
+<!-- more -->
+
+
+<h2>A little bit of history</h2>
+
+<p>Accurest was created because of lack of an easy-to-use tool for doing <a href="http://martinfowler.com/articles/consumerDrivenContracts.html">Consumer Driven Contracts</a>. From our production experience the biggest problem was lack of verification that the defined contract actually does what it says it does. We wanted to ensure that from the contract automatically tests are generated so that we can have a proof that the stubs are reliable. Since there was no such tool the first commit of Accurest took place on 12/2014. The very idea and its implementation was initially set by <a href="http://www.kubrynski.com/">Jakub Kubrynski</a> and me. The last available version of Accurest was 1.1.0 released on 06/2016 (the docs for the old version are <a href="https://codearte.github.io/accurest/deprecated/">available here</a>). During these 19 months a lot of feedback has been gathered. The tool has received a lot of very good reception and that made us want to work even harder. Many times we have decided to decrease the time required for sleeping so as to fix a bug or develop a new feature in Accurest.</p>
+
+<h2>Notable features</h2>
+
+<p>Speaking of features, especially quite a few of them definitely makes Accurest stand out on the &ldquo;market&rdquo; of Consumer Driven Contract (CDC) tooling. Out of many the most interesting are:</p>
+
+<ul>
+<li>Possibility to do CDC with messaging</li>
+<li>Clear and easy to use, statically typed DSL</li>
+<li>Possibility to copy paste your current JSON file to the contract and only edit its elements</li>
+<li>Automatic generation of tests from the defined Contract</li>
+<li>Stub Runner functionality - the stubs are automatically downloaded at runtime from Nexus / Artifactory</li>
+<li>Spring Cloud integration - no discovery service is needed for integration tests</li>
+</ul>
+
+
+<p>For more information check out my posts about <a href="http://toomuchcoding.com/blog/2016/04/06/accurest-stubrunner-released/">Stub Runner</a>, <a href="http://toomuchcoding.com/blog/2016/04/30/accurest-and-stub-runner-1-dot-1-0-dot-m3/">Accurest Messaging</a> or <a href="https://codearte.github.io/accurest/">just read the docs</a>.</p>
+
+<h2>Spring Cloud Contract</h2>
+
+<p>In Pivotal we came to the conclusion that Accurest could become an interesting addition to our Spring Cloud tooling. Due to the increased interest of the community in the Consumer Driven Contracts approach we&rsquo;ve decided to start the <a href="https://github.com/spring-cloud/spring-cloud-contract">Spring Cloud Contract</a> initiative.</p>
+
+<p>Accurest became <em>Spring Cloud Contract Verifier</em> (note: the name might change in the future) but for the time being will remain in the <a href="https://github.com/Codearte">Codearte repository</a>. It&rsquo;s becoming the part of Spring Cloud tooling as a mature tool with a growing community around it. Some arguments for that are that it has:</p>
+
+<ul>
+<li><a href="https://codearte.github.io/accurest/">a nice AsciiDoc documentation that was completely rewritten following users' feedback</a></li>
+<li><a href="https://gitter.im/Codearte/accurest">active Gitter channel where we try to immediately answer any support questions</a></li>
+<li><a href="https://github.com/Codearte/accurest/stargazers">Over 80 stars on Github and counting ;)</a></li>
+</ul>
+
+
+<p>Since we believe very much in the Consumer Driven Contract approach we also want to do the library in a Client Driven way. That means that we (server side) are very open to your feedback (consumer side) and want you be the main driver of changes in the library.</p>
+
+<h2>Credits</h2>
+
+<p>The Accurest project would never come to life without the hard work of the <a href="http://codearte.io">Codearte</a> developers (the order is random):</p>
+
+<ul>
+<li><a href="https://twitter.com/olga_maciaszek">Olga Maciaszek-Sharma</a></li>
+<li><a href="http://www.kubrynski.com">Jakub Kubrynski</a></li>
+<li><a href="https://solidsoft.wordpress.com/">Marcin Zajaczkowski</a></li>
+<li><a href="https://github.com/mariuszs">Mariusz Smykula</a></li>
+</ul>
+
+
+<p>and obviously everybody who has <a href="https://github.com/Codearte/accurest/graphs/contributors">ever commited something to the project</a>.</p>
+
+<h2>Links</h2>
+
+<p>If you want to read more about <em>Spring Cloud Contract Verifier</em> just check out the following links.</p>
+
+<ul>
+<li><a href="https://github.com/Codearte/accurest">Spring Cloud Contract Verifier Github Repository</a></li>
+<li><a href="http://codearte.github.io/accurest">Spring Cloud Contract Verifier Documentation</a></li>
+<li><a href="http://codearte.github.io/accurest/deprecated">Accurest Legacy Documentation</a></li>
+<li><a href="http://codearte.github.io/accurest/#stub-runner">Spring Cloud Contract Stub Runner Documentation</a></li>
+<li><a href="http://codearte.github.io/accurest/#stub-runner-for-messaging">Spring Cloud Contract Stub Runner Messaging Documentation</a></li>
+<li><a href="https://gitter.im/Codearte/accurest">Spring Cloud Contract Verifier Gitter</a></li>
+<li><a href="https://github.com/Codearte/accurest-maven-plugin">Spring Cloud Contract Verifier Maven Plugin</a></li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[JSON Assert lib released]]></title>
