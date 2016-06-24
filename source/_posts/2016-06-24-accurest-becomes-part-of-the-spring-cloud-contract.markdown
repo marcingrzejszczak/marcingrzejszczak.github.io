@@ -15,7 +15,7 @@ categories:
 I'm extremely happy to announce that we have successfully rebranded the [Accurest project](https://codearte.github.io/accurest). It's officially become part of the [Spring Cloud Contract](https://github.com/spring-cloud/spring-cloud-contract) initiative. Ladies and Gentlemen please welcome the new projects:
 
 * [Spring Cloud Contract Verifier](https://codearte.github.io/accurest/)
-* [Spring Cloud Contract Stub Runner](https://codearte.github.io/accurest/#stub-runner)
+* [Spring Cloud Contract Stub Runner](https://codearte.github.io/accurest/#spring-cloud-contract-stub-runner)
 
 <!-- more -->
 
@@ -66,7 +66,7 @@ If you want to read more about *Spring Cloud Contract Verifier* just check out t
 - [Spring Cloud Contract Verifier Github Repository](https://github.com/Codearte/accurest)
 - [Spring Cloud Contract Verifier Documentation](http://codearte.github.io/accurest)
 - [Accurest Legacy Documentation](http://codearte.github.io/accurest/deprecated)
-- [Spring Cloud Contract Stub Runner Documentation](http://codearte.github.io/accurest/#stub-runner)
+- [Spring Cloud Contract Stub Runner Documentation](https://codearte.github.io/accurest/#spring-cloud-contract-stub-runner)
 - [Spring Cloud Contract Stub Runner Messaging Documentation](http://codearte.github.io/accurest/#stub-runner-for-messaging)
 - [Spring Cloud Contract Verifier Gitter](https://gitter.im/Codearte/accurest)
 - [Spring Cloud Contract Verifier Maven Plugin](https://github.com/Codearte/accurest-maven-plugin)
