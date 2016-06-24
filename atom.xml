@@ -4,7 +4,7 @@
   <title><![CDATA[TOO MUCH CODING]]></title>
   <link href="http://toomuchcoding.com/atom.xml" rel="self"/>
   <link href="http://toomuchcoding.com/"/>
-  <updated>2016-06-24T20:11:24+02:00</updated>
+  <updated>2016-06-24T22:29:29+02:00</updated>
   <id>http://toomuchcoding.com/</id>
   <author>
     <name><![CDATA[Marcin Grzejszczak]]></name>
@@ -22,7 +22,7 @@
 
 <ul>
 <li><a href="https://codearte.github.io/accurest/">Spring Cloud Contract Verifier</a></li>
-<li><a href="https://codearte.github.io/accurest/#stub-runner">Spring Cloud Contract Stub Runner</a></li>
+<li><a href="https://codearte.github.io/accurest/#spring-cloud-contract-stub-runner">Spring Cloud Contract Stub Runner</a></li>
 </ul>
 
 
@@ -86,7 +86,7 @@
 <li><a href="https://github.com/Codearte/accurest">Spring Cloud Contract Verifier Github Repository</a></li>
 <li><a href="http://codearte.github.io/accurest">Spring Cloud Contract Verifier Documentation</a></li>
 <li><a href="http://codearte.github.io/accurest/deprecated">Accurest Legacy Documentation</a></li>
-<li><a href="http://codearte.github.io/accurest/#stub-runner">Spring Cloud Contract Stub Runner Documentation</a></li>
+<li><a href="https://codearte.github.io/accurest/#spring-cloud-contract-stub-runner">Spring Cloud Contract Stub Runner Documentation</a></li>
 <li><a href="http://codearte.github.io/accurest/#stub-runner-for-messaging">Spring Cloud Contract Stub Runner Messaging Documentation</a></li>
 <li><a href="https://gitter.im/Codearte/accurest">Spring Cloud Contract Verifier Gitter</a></li>
 <li><a href="https://github.com/Codearte/accurest-maven-plugin">Spring Cloud Contract Verifier Maven Plugin</a></li>
