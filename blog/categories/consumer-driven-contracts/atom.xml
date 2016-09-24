@@ -4,7 +4,7 @@
   <title><![CDATA[Category: consumer-driven-contracts | TOO MUCH CODING]]></title>
   <link href="http://toomuchcoding.com/blog/categories/consumer-driven-contracts/atom.xml" rel="self"/>
   <link href="http://toomuchcoding.com/"/>
-  <updated>2016-09-24T21:15:49+02:00</updated>
+  <updated>2016-09-24T21:22:00+02:00</updated>
   <id>http://toomuchcoding.com/</id>
   <author>
     <name><![CDATA[Marcin Grzejszczak]]></name>
@@ -23,7 +23,7 @@
 <p>I&rsquo;m really happy that the project is GA. Even though as the Accurest project we had already done a GA release, it really feels that a lot of effort was put in order to release the GA version under the Pivotal&rsquo;s Spring Cloud branding. Let&rsquo;s look at some numbers:</p>
 
 <ul>
-<li>first commit almost 2 years ago: <a href="https://github.com/spring-cloud/spring-cloud-contract/commit/dfaddaa98d645b818ba3947c9267ef7ac8ed9ba4">2014-12-06 18:20:29 by Jakub Kubrynski</a></li>
+<li>first commit almost 2 years ago: <a href="https://github.com/spring-cloud/spring-cloud-contract/commit/dfaddaa98d645b818ba3947c9267ef7ac8ed9ba4">2014-12-06 18:20:29 by Jakub Kubrynski</a> - thanks to <a href="http://codearte.eu">Codearte</a> the authors of <a href="http://devskiller.com">DevSkiller</a> for their support!!!</li>
 <li><a href="https://github.com/spring-cloud/spring-cloud-contract/commits/master">1.152 commits</a></li>
 <li><a href="https://github.com/spring-cloud/spring-cloud-contract/graphs/contributors">20 contributors</a></li>
 </ul>
