@@ -17,7 +17,7 @@ https://spring.io/blog/2016/09/23/spring-cloud-contract-1-0-0-release-is-availab
 
 I'm really happy that the project is GA. Even though as the Accurest project we had already done a GA release, it really feels that a lot of effort was put in order to release the GA version under the Pivotal's Spring Cloud branding. Let's look at some numbers:
 
-- first commit almost 2 years ago: [2014-12-06 18:20:29 by Jakub Kubrynski](https://github.com/spring-cloud/spring-cloud-contract/commit/dfaddaa98d645b818ba3947c9267ef7ac8ed9ba4)
+- first commit almost 2 years ago: [2014-12-06 18:20:29 by Jakub Kubrynski](https://github.com/spring-cloud/spring-cloud-contract/commit/dfaddaa98d645b818ba3947c9267ef7ac8ed9ba4) - thanks to [Codearte](http://codearte.eu) the authors of [DevSkiller](http://devskiller.com) for their support!!!
 - [1.152 commits](https://github.com/spring-cloud/spring-cloud-contract/commits/master)
 - [20 contributors](https://github.com/spring-cloud/spring-cloud-contract/graphs/contributors)
 
