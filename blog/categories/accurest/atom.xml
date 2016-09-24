@@ -4,7 +4,7 @@
   <title><![CDATA[Category: accurest | TOO MUCH CODING]]></title>
   <link href="http://toomuchcoding.com/blog/categories/accurest/atom.xml" rel="self"/>
   <link href="http://toomuchcoding.com/"/>
-  <updated>2016-09-24T20:38:12+02:00</updated>
+  <updated>2016-09-24T21:15:49+02:00</updated>
   <id>http://toomuchcoding.com/</id>
   <author>
     <name><![CDATA[Marcin Grzejszczak]]></name>
@@ -12,6 +12,392 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Spring Cloud Contract 1.0.0.RELEASE available!]]></title>
+    <link href="http://toomuchcoding.com/blog/2016/09/24/spring-cloud-contract-1-dot-0-0-dot-release-available/"/>
+    <updated>2016-09-24T20:39:25+02:00</updated>
+    <id>http://toomuchcoding.com/blog/2016/09/24/spring-cloud-contract-1-dot-0-0-dot-release-available</id>
+    <content type="html"><![CDATA[<p>I&rsquo;ve just published an article at the Spring blog about <a href="https://spring.io/blog/2016/09/23/spring-cloud-contract-1-0-0-release-is-available">Spring Cloud Contract 1.0.0.RELEASE is available</a>.</p>
+
+<p>I&rsquo;m really happy that the project is GA. Even though as the Accurest project we had already done a GA release, it really feels that a lot of effort was put in order to release the GA version under the Pivotal&rsquo;s Spring Cloud branding. Let&rsquo;s look at some numbers:</p>
+
+<ul>
+<li>first commit almost 2 years ago: <a href="https://github.com/spring-cloud/spring-cloud-contract/commit/dfaddaa98d645b818ba3947c9267ef7ac8ed9ba4">2014-12-06 18:20:29 by Jakub Kubrynski</a></li>
+<li><a href="https://github.com/spring-cloud/spring-cloud-contract/commits/master">1.152 commits</a></li>
+<li><a href="https://github.com/spring-cloud/spring-cloud-contract/graphs/contributors">20 contributors</a></li>
+</ul>
+
+
+<p>That&rsquo;s quite a lot of work! But there we are, with a library that has already been battle-proven on production by many companies, even before being GA as Spring Cloud Contract.</p>
+
+<!-- more -->
+
+
+<h2>What&rsquo;s new in comparison to Accurest?</h2>
+
+<p>Like I mentioned, Accurest was already GA. So what are the main difference apart from rebranding and bug fixes?</p>
+
+<ul>
+<li>we&rsquo;ve moved from Grapes to Aether to download stubs</li>
+<li><a href="https://cloud.spring.io/spring-cloud-contract/spring-cloud-contract.html#_what_is_this_value_consumer_producer">we generate fake data when you provide either consumer or producer in the DSL</a></li>
+<li><a href="https://cloud.spring.io/spring-cloud-contract/spring-cloud-contract.html#_common_repo_with_contracts">Consumer Contract approach is there</a></li>
+<li>Spring Cloud Contract is available on <a href="http://start.spring.io">start.spring.io</a></li>
+<li><a href="https://cloud.spring.io/spring-cloud-contract/spring-cloud-contract.html#_different_base_classes_for_contracts_2">you can have more than one base class for your tests</a></li>
+<li><a href="https://cloud.spring.io/spring-cloud-contract/spring-cloud-contract.html#_additional_configuration">Spring Cloud Stub Runner Boot can register stubs in Eureka / Consul / Zookeeper using Spring Cloud</a></li>
+<li>the whole build was moved from Gradle to the standard Spring Cloud Maven setup</li>
+</ul>
+
+
+<p>These are the Spring Cloud Contract Verifier changes. Apart from that Spring Cloud Contract consists of <a href="https://cloud.spring.io/spring-cloud-contract/spring-cloud-contract.html#_spring_cloud_contract_wiremock">Spring Cloud Contract WireMock support</a> and <a href="https://cloud.spring.io/spring-cloud-contract/spring-cloud-contract.html#_generating_stubs_using_restdocs">Spring Cloud Contract RestDocs</a>. Thanks to the first one the integration with <a href="http://wiremock.org">WireMock</a> is much more efficient and thanks to the latter you don&rsquo;t have to use the Groovy DSL - you can define your stubs by yourself by attaching them to an existing RestDocs test.</p>
+
+<p>As far as Spring Cloud Contract Verifier is concerned the biggest two changes are the <a href="https://cloud.spring.io/spring-cloud-contract/spring-cloud-contract.html#_common_repo_with_contracts">Consumer Contract support</a> and that <a href="https://cloud.spring.io/spring-cloud-contract/spring-cloud-contract.html#_different_base_classes_for_contracts_2">you can have more than one base class for your tests</a>. Let&rsquo;s take a closer look what&rsquo;s there in the docs about them&hellip;</p>
+
+<h3>Consumer Contract support</h3>
+
+<p>Another way of storing contracts other than having them with the producer is keeping them in a common place. It can be related to security issues where the consumers can’t clone the producer’s code. Also if you keep contracts in a single place then you, as a producer, will know how many consumers you have and which consumer will you break with your local changes.</p>
+
+<h4>Repo structure</h4>
+
+<p>Let’s assume that we have a producer with coordinates com.example:server and 3 consumers: client1, client2, client3. Then in the repository with common contracts you would have the following setup (which you can checkout here:</p>
+
+<pre><code>├── com
+│   └── example
+│       └── server
+│           ├── client1
+│           │   └── expectation.groovy
+│           ├── client2
+│           │   └── expectation.groovy
+│           ├── client3
+│           │   └── expectation.groovy
+│           └── pom.xml
+├── mvnw
+├── mvnw.cmd
+├── pom.xml
+└── src
+    └── assembly
+        └── contracts.xml
+</code></pre>
+
+<p>As you can see the under the slash-delimited groupid / artifact id folder (<code>com/example/server</code>) you have expectations of the 3 consumers (<code>client1</code>, <code>client2</code> and <code>client3</code>). Expectations are the standard Groovy DSL contract files as described throughout this documentation. This repository has to produce a JAR file that maps one to one to the contents of the repo.</p>
+
+<p>Example of a <code>pom.xml</code> inside the <code>server</code> folder.</p>
+
+<pre><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"&gt;
+    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+
+    &lt;groupId&gt;com.example&lt;/groupId&gt;
+    &lt;artifactId&gt;server&lt;/artifactId&gt;
+    &lt;version&gt;0.0.1-SNAPSHOT&lt;/version&gt;
+
+    &lt;name&gt;Server Stubs&lt;/name&gt;
+    &lt;description&gt;POM used to install locally stubs for consumer side&lt;/description&gt;
+
+    &lt;parent&gt;
+        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+        &lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt;
+        &lt;version&gt;1.4.0.BUILD-SNAPSHOT&lt;/version&gt;
+        &lt;relativePath /&gt;
+    &lt;/parent&gt;
+
+    &lt;properties&gt;
+        &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;
+        &lt;java.version&gt;1.8&lt;/java.version&gt;
+        &lt;spring-cloud-contract.version&gt;1.0.1.BUILD-SNAPSHOT&lt;/spring-cloud-contract.version&gt;
+        &lt;spring-cloud-dependencies.version&gt;Camden.BUILD-SNAPSHOT&lt;/spring-cloud-dependencies.version&gt;
+    &lt;/properties&gt;
+
+    &lt;dependencyManagement&gt;
+        &lt;dependencies&gt;
+            &lt;dependency&gt;
+                &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
+                &lt;artifactId&gt;spring-cloud-dependencies&lt;/artifactId&gt;
+                &lt;version&gt;${spring-cloud-dependencies.version}&lt;/version&gt;
+                &lt;type&gt;pom&lt;/type&gt;
+                &lt;scope&gt;import&lt;/scope&gt;
+            &lt;/dependency&gt;
+        &lt;/dependencies&gt;
+    &lt;/dependencyManagement&gt;
+
+    &lt;build&gt;
+        &lt;plugins&gt;
+            &lt;plugin&gt;
+                &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
+                &lt;artifactId&gt;spring-cloud-contract-maven-plugin&lt;/artifactId&gt;
+                &lt;version&gt;${spring-cloud-contract.version}&lt;/version&gt;
+                &lt;extensions&gt;true&lt;/extensions&gt;
+                &lt;configuration&gt;
+                    &lt;!-- By default it would search under src/test/resources/ --&gt;
+                    &lt;contractsDirectory&gt;${project.basedir}&lt;/contractsDirectory&gt;
+                &lt;/configuration&gt;
+            &lt;/plugin&gt;
+        &lt;/plugins&gt;
+    &lt;/build&gt;
+
+    &lt;repositories&gt;
+        &lt;repository&gt;
+            &lt;id&gt;spring-snapshots&lt;/id&gt;
+            &lt;name&gt;Spring Snapshots&lt;/name&gt;
+            &lt;url&gt;https://repo.spring.io/snapshot&lt;/url&gt;
+            &lt;snapshots&gt;
+                &lt;enabled&gt;true&lt;/enabled&gt;
+            &lt;/snapshots&gt;
+        &lt;/repository&gt;
+        &lt;repository&gt;
+            &lt;id&gt;spring-milestones&lt;/id&gt;
+            &lt;name&gt;Spring Milestones&lt;/name&gt;
+            &lt;url&gt;https://repo.spring.io/milestone&lt;/url&gt;
+            &lt;snapshots&gt;
+                &lt;enabled&gt;false&lt;/enabled&gt;
+            &lt;/snapshots&gt;
+        &lt;/repository&gt;
+        &lt;repository&gt;
+            &lt;id&gt;spring-releases&lt;/id&gt;
+            &lt;name&gt;Spring Releases&lt;/name&gt;
+            &lt;url&gt;https://repo.spring.io/release&lt;/url&gt;
+            &lt;snapshots&gt;
+                &lt;enabled&gt;false&lt;/enabled&gt;
+            &lt;/snapshots&gt;
+        &lt;/repository&gt;
+    &lt;/repositories&gt;
+    &lt;pluginRepositories&gt;
+        &lt;pluginRepository&gt;
+            &lt;id&gt;spring-snapshots&lt;/id&gt;
+            &lt;name&gt;Spring Snapshots&lt;/name&gt;
+            &lt;url&gt;https://repo.spring.io/snapshot&lt;/url&gt;
+            &lt;snapshots&gt;
+                &lt;enabled&gt;true&lt;/enabled&gt;
+            &lt;/snapshots&gt;
+        &lt;/pluginRepository&gt;
+        &lt;pluginRepository&gt;
+            &lt;id&gt;spring-milestones&lt;/id&gt;
+            &lt;name&gt;Spring Milestones&lt;/name&gt;
+            &lt;url&gt;https://repo.spring.io/milestone&lt;/url&gt;
+            &lt;snapshots&gt;
+                &lt;enabled&gt;false&lt;/enabled&gt;
+            &lt;/snapshots&gt;
+        &lt;/pluginRepository&gt;
+        &lt;pluginRepository&gt;
+            &lt;id&gt;spring-releases&lt;/id&gt;
+            &lt;name&gt;Spring Releases&lt;/name&gt;
+            &lt;url&gt;https://repo.spring.io/release&lt;/url&gt;
+            &lt;snapshots&gt;
+                &lt;enabled&gt;false&lt;/enabled&gt;
+            &lt;/snapshots&gt;
+        &lt;/pluginRepository&gt;
+    &lt;/pluginRepositories&gt;
+
+&lt;/project&gt;
+</code></pre>
+
+<p>As you can see there are no dependencies other than the Spring Cloud Contract Verifier Maven plugin. Those poms are necessary for the consumer side to run <code>mvn clean install -DskipTests</code> to locally install stubs of the producer project.</p>
+
+<p>The <code>pom.xml</code> in the root folder can look like this:</p>
+
+<pre><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"&gt;
+    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+
+    &lt;groupId&gt;com.example.standalone&lt;/groupId&gt;
+    &lt;artifactId&gt;contracts&lt;/artifactId&gt;
+    &lt;version&gt;0.0.1-SNAPSHOT&lt;/version&gt;
+
+    &lt;name&gt;Contracts&lt;/name&gt;
+    &lt;description&gt;Contains all the Spring Cloud Contracts, well, contracts. JAR used by the producers to generate tests and stubs&lt;/description&gt;
+
+    &lt;properties&gt;
+        &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;
+    &lt;/properties&gt;
+
+    &lt;build&gt;
+        &lt;plugins&gt;
+            &lt;plugin&gt;
+                &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+                &lt;artifactId&gt;maven-assembly-plugin&lt;/artifactId&gt;
+                &lt;executions&gt;
+                    &lt;execution&gt;
+                        &lt;id&gt;contracts&lt;/id&gt;
+                        &lt;phase&gt;prepare-package&lt;/phase&gt;
+                        &lt;goals&gt;
+                            &lt;goal&gt;single&lt;/goal&gt;
+                        &lt;/goals&gt;
+                        &lt;configuration&gt;
+                            &lt;attach&gt;true&lt;/attach&gt;
+                            &lt;descriptor&gt;${basedir}/src/assembly/contracts.xml&lt;/descriptor&gt;
+                            &lt;!-- If you want an explicit classifier remove the following line --&gt;
+                            &lt;appendAssemblyId&gt;false&lt;/appendAssemblyId&gt;
+                        &lt;/configuration&gt;
+                    &lt;/execution&gt;
+                &lt;/executions&gt;
+            &lt;/plugin&gt;
+        &lt;/plugins&gt;
+    &lt;/build&gt;
+
+&lt;/project&gt;
+</code></pre>
+
+<p>It’s using the assembly plugin in order to build the JAR with all the contracts. Example of such setup is here:</p>
+
+<pre><code>&lt;assembly xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.3"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.3 http://maven.apache.org/xsd/assembly-1.1.3.xsd"&gt;
+    &lt;id&gt;project&lt;/id&gt;
+    &lt;formats&gt;
+        &lt;format&gt;jar&lt;/format&gt;
+    &lt;/formats&gt;
+    &lt;includeBaseDirectory&gt;false&lt;/includeBaseDirectory&gt;
+    &lt;fileSets&gt;
+        &lt;fileSet&gt;
+            &lt;directory&gt;${project.basedir}&lt;/directory&gt;
+            &lt;outputDirectory&gt;/&lt;/outputDirectory&gt;
+            &lt;useDefaultExcludes&gt;true&lt;/useDefaultExcludes&gt;
+            &lt;excludes&gt;
+                &lt;exclude&gt;**/${project.build.directory}/**&lt;/exclude&gt;
+                &lt;exclude&gt;mvnw&lt;/exclude&gt;
+                &lt;exclude&gt;mvnw.cmd&lt;/exclude&gt;
+                &lt;exclude&gt;.mvn/**&lt;/exclude&gt;
+                &lt;exclude&gt;src/**&lt;/exclude&gt;
+            &lt;/excludes&gt;
+        &lt;/fileSet&gt;
+    &lt;/fileSets&gt;
+&lt;/assembly&gt;
+</code></pre>
+
+<h4>Workflow</h4>
+
+<p>The workflow would look similar to the one presented in the <a href="https://cloud.spring.io/spring-cloud-contract/spring-cloud-contract.html#_step_by_step_guide_to_cdc">Step by step guide to CDC</a>. The only difference is that the producer doesn’t own the contracts anymore. So the consumer and the producer have to work on common contracts in a common repository.</p>
+
+<h4>Consumer</h4>
+
+<p>When the consumer wants to work on the contracts offline, instead of cloning the producer code, the consumer team clones the common repository, goes to the required producer’s folder (e.g. <code>com/example/server</code>) and runs <code>mvn clean install -DskipTests</code> to install locally the stubs converted from the contracts.</p>
+
+<p><strong>REMEMBER! You need to have Maven installed locally</strong></p>
+
+<h4>Producer</h4>
+
+<p>As a producer it’s enough to alter the Spring Cloud Contract Verifier to provide the URL and the dependency of the JAR containing the contracts:</p>
+
+<pre><code>&lt;plugin&gt;
+    &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-cloud-contract-maven-plugin&lt;/artifactId&gt;
+    &lt;configuration&gt;
+        &lt;contractsRepositoryUrl&gt;http://link/to/your/nexus/or/artifactory/or/sth&lt;/contractsRepositoryUrl&gt;
+        &lt;contractDependency&gt;
+            &lt;groupId&gt;com.example.standalone&lt;/groupId&gt;
+            &lt;artifactId&gt;contracts&lt;/artifactId&gt;
+        &lt;/contractDependency&gt;
+    &lt;/configuration&gt;
+&lt;/plugin&gt;
+</code></pre>
+
+<p>With this setup the JAR with groupid <code>com.example.standalone</code> and artifactid contracts will be downloaded from <code>http://link/to/your/nexus/or/artifactory/or/sth</code>. It will be then unpacked in a local temporary folder and contracts present under the <code>com/example/server</code> will be picked as the ones used to generate the tests and the stubs. Due to this convention the producer team will know which consumer teams will be broken when some incompatible changes are done.</p>
+
+<p>The rest of the flow looks the same.</p>
+
+<h3>More than one base class</h3>
+
+<p>That was quite a problem when providing one single base class for all the tests. After some time the mock configurations were enormous! That&rsquo;s why we&rsquo;ve added a possibility to map a contract to its test base class.</p>
+
+<h4>Gradle</h4>
+
+<p>If your base classes differ between contracts you can tell the Spring Cloud Contract plugin which class should get extended by the autogenerated tests. You have two options:</p>
+
+<ul>
+<li>follow a convention by providing the <code>packageWithBaseClasses</code></li>
+<li>provide explicit mapping via <code>baseClassMappings</code></li>
+</ul>
+
+
+<h5>Convention</h5>
+
+<p>The convention is such that if you have a contract under e.g. <code>src/test/resources/contract/foo/bar/baz/</code> and provide the value of the <code>packageWithBaseClasses</code> property to <code>com.example.base</code> then we will assume that there is a <code>BarBazBase</code> class under <code>com.example.base</code> package. In other words we take last two parts of package if they exist and form a class with a <code>Base</code> suffix. Takes precedence over <code>baseClassForTests</code>. Example of usage in the contracts closure:</p>
+
+<pre><code>packageWithBaseClasses = 'com.example.base'
+</code></pre>
+
+<h5>Mapping</h5>
+
+<p>You can manually map a regular expression of the contract’s <em>package</em> (package, not folder) to fully qualified name of the base class for the matched contract. Let’s take a look at the following example:</p>
+
+<pre><code>baseClassForTests = "com.example.FooBase"
+baseClassMappings {
+    baseClassMapping('.*com.*', 'com.example.ComBase')
+    baseClassMapping('.*bar.*':'com.example.BarBase')
+}
+</code></pre>
+
+<p>Let’s assume that you have contracts under</p>
+
+<ul>
+<li><code>src/test/resources/contract/com/</code></li>
+<li><code>src/test/resources/contract/foo/</code></li>
+</ul>
+
+
+<p>By providing the <code>baseClassForTests</code> we have a fallback in case mapping didn’t succeed (you could also provide the <code>packageWithBaseClasses</code> as fallback). That way the tests generated from <code>src/test/resources/contract/com/</code> contracts will be extending the <code>com.example.ComBase</code> whereas the rest of tests will extend <code>com.example.FooBase</code> cause they don&rsquo;t match the base class mapping for <code>bar</code> folder.</p>
+
+<h4>Maven</h4>
+
+<p>Let&rsquo;s now look how it looks like for Maven.</p>
+
+<h5>Convention</h5>
+
+<p>To accomplish the same result as the one presented for Gradle you&rsquo;d have to set your configuration like this:</p>
+
+<pre><code>&lt;plugin&gt;
+    &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-cloud-contract-maven-plugin&lt;/artifactId&gt;
+    &lt;configuration&gt;
+        &lt;packageWithBaseClasses&gt;com.example.base&lt;/packageWithBaseClasses&gt;
+    &lt;/configuration&gt;
+&lt;/plugin&gt;
+</code></pre>
+
+<h5>Mapping</h5>
+
+<p>You can manually map a regular expression of the contract’s package to fully qualified name of the base class for the matched contract. You have to provide a list <code>baseClassMappings</code> of <code>baseClassMapping</code> that takes a <code>contractPackageRegex</code> to <code>baseClassFQN</code> mapping. Let’s take a look at the following example:</p>
+
+<pre><code>&lt;plugin&gt;
+    &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-cloud-contract-maven-plugin&lt;/artifactId&gt;
+    &lt;configuration&gt;
+        &lt;baseClassForTests&gt;com.example.FooBase&lt;/baseClassForTests&gt;
+        &lt;baseClassMappings&gt;
+            &lt;baseClassMapping&gt;
+                &lt;contractPackageRegex&gt;.*com.*&lt;/contractPackageRegex&gt;
+                &lt;baseClassFQN&gt;com.example.ComBase&lt;/baseClassFQN&gt;
+            &lt;/baseClassMapping&gt;
+            &lt;baseClassMapping&gt;
+                &lt;contractPackageRegex&gt;.*bar.*&lt;/contractPackageRegex&gt;
+                &lt;baseClassFQN&gt;com.example.BarBase&lt;/baseClassFQN&gt;
+            &lt;/baseClassMapping&gt;
+        &lt;/baseClassMappings&gt;
+    &lt;/configuration&gt;
+&lt;/plugin&gt;
+</code></pre>
+
+<h2>Summary</h2>
+
+<p>In this blog post we&rsquo;ve checked what are the new and shiny features in the GA of Spring Cloud Contract. We&rsquo;ve also checked some history around Accurest to Spring Cloud Contract migration.</p>
+
+<h2>Links</h2>
+
+<p>Here you can find interesting links related to Spring Cloud Contract Verifier:</p>
+
+<ul>
+<li><a href="https://github.com/spring-cloud/spring-cloud-contract/">Spring Cloud Contract Github Repository</a></li>
+<li><a href="https://cloud.spring.io/spring-cloud-contract/">Spring Cloud Contract Main project page</a></li>
+<li><a href="https://cloud.spring.io/spring-cloud-contract/spring-cloud-contract.html">Spring Cloud Contract Documentation</a></li>
+<li><a href="https://cloud.spring.io/spring-cloud-contract/spring-cloud-contract.html#_spring_cloud_contract_stub_runner">Spring Cloud Contract Stub Runner Documentation</a></li>
+<li><a href="https://gitter.im/spring-cloud/spring-cloud-contract">Spring Cloud Contract Gitter</a></li>
+<li><a href="https://cloud.spring.io/spring-cloud-contract/spring-cloud-contract-maven-plugin/">Spring Cloud Contract Maven Plugin Documentation</a></li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Spring Cloud Contract 1.0.0.M1 Released]]></title>
@@ -442,424 +828,6 @@ With that change the vast majority of our snippets is taken from the tests. Also
 since the documentation lives together with the code.</p>
 
 <p>Quite frankly recently when I didn&rsquo;t code <a href="https://github.com/spring-cloud/spring-cloud-sleuth">Spring Cloud Sleuth</a> I did a lot around <a href="http://codearte.github.io/accurest/">Accurest</a> and messaging so stay tuned! For sure there will be a new post about Consumer Driven Contracts and Messaging.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[AccuREST Stub Runner Released]]></title>
-    <link href="http://toomuchcoding.com/blog/2016/04/06/accurest-stubrunner-released/"/>
-    <updated>2016-04-06T11:05:58+02:00</updated>
-    <id>http://toomuchcoding.com/blog/2016/04/06/accurest-stubrunner-released</id>
-    <content type="html"><![CDATA[<p>It&rsquo;s been a good release time recently! I&rsquo;m blogging here at <a href="http://toomuchcoding.com">Too Much Coding blog</a> more about releases then about any concrete topics ;)</p>
-
-<p>After releasing <a href="/blog/2016/03/25/spring-cloud-sleuth-rc1-deployed/">Spring Cloud Sleuth as a part of Brixton RC1</a> we have just released a version 1.0.4 of <a href="https://github.com/Codearte/accurest">AccuREST</a>. We&rsquo;ve fixed a couple
-of bugs but we&rsquo;ve introduced a couple of big features including:</p>
-
-<ul>
-<li><a href="https://github.com/Codearte/accurest-maven-plugin">Maven plugin support</a></li>
-<li><em>Stub Runner</em> functionality</li>
-</ul>
-
-
-<p>This post will describe the latter feature in more depth.</p>
-
-<!-- more -->
-
-
-<h2>Introduction</h2>
-
-<p>I&rsquo;ve given quite a few talks about the library called <a href="https://github.com/4finance/micro-infra-spring">Micro-Infra-Spring</a> where I presented how you can profit from the <em>Stub Runner</em> functionality. Since my leaving the company owning that repository, the project is almost not maintained at all. For quite a long time any development was done mostly by me and actually I was the author of most of the <em>Stub Runner&rsquo;s</em> code. Due to the aforementioned and the fact that <em>Stub Runner</em> is tightly coupled with AccuREST&rsquo;s stub generation feature I&rsquo;ve decided to migrate it to the AccuREST&rsquo;s repository.</p>
-
-<h2>AccuREST recap</h2>
-
-<p><em>Stub Runner</em> is tightly coupled with the concepts coming from AccuREST. For more information about AccuREST you can check my <a href="/blog/categories/accurest/">blog entries</a> or check <a href="https://github.com/Codearte/accurest">AccuREST project on Github</a>. If you don&rsquo;t have a clue what that is I&rsquo;ll try to do a very fast recap.</p>
-
-<p>AccuREST is a <a href="http://martinfowler.com/articles/consumerDrivenContracts.html">Consumer Driven Contracts</a> verifier in which you define the contract of your API via a Groovy DSL. From that DSL, on the server side, tests are created to check if your contract is telling the truth. From the <em>Stub Runner&rsquo;s</em> perspective more interesting is the client side. For the client side AccuREST generates WireMock stubs from the provided DSL so that the clients of that API can be provided with reliable stubs.</p>
-
-<h2>What is Stub Runner?</h2>
-
-<p>Now that we remember what AccuREST does we can take a look in more depth at <em>Stub Runner</em>. Let&rsquo;s assume that we have a following flow of services (btw. <a href="http://cloud.spring.io/spring-cloud-sleuth/spring-cloud-sleuth.html">this is a screenshot from Zipkin integrated with Spring Cloud Sleuth</a> )</p>
-
-<p><img src="/images/accurest/stubrunner/dependencies_accurest.png" alt="Dependencies" /></p>
-
-<p>Let&rsquo;s imagine ourselves as developers of the <em>service2</em> - the one that calls <em>service3</em> and <em>service4</em>. Since we&rsquo;re doing the CDC (<a href="http://martinfowler.com/articles/consumerDrivenContracts.html">Consumer Driven Contracts</a>) approach let&rsquo;s assume that the stubs of <em>service3</em> and <em>service4</em> got already deployed to some Maven repository.</p>
-
-<p>If I&rsquo;m writing integration tests of <em>service2</em> I&rsquo;ll for sure have some points of interaction with <em>service3</em> and <em>service4</em>. Most likely in the majority of cases I&rsquo;ll just mock those interactions in my code but it would be valuable to have a real HTTP call done to the other application. Of course I don&rsquo;t want to download both services and run them only for integration tests - that would be an overkill. That&rsquo;s why the most preferable solution at this point would be to run the stubs of my collaborators.</p>
-
-<p>Since I&rsquo;m too lazy to do things manually I&rsquo;d prefer the stubs to be automatically downloaded for me, the WireMock servers started and fed with the stub definitions.</p>
-
-<p>And that&rsquo;s exactly what <em>Stub Runner</em> can do for you!</p>
-
-<h2>How does it work?</h2>
-
-<h3>Concept</h3>
-
-<p><a href="https://github.com/Codearte/accurest/wiki/8.-Stub-Runner">Stub Runner</a> at its core is using Groovy&rsquo;s Grape mechanism to download the stubs from a given Maven repository. Next it unpacks them to a temporary folder. Let&rsquo;s assume that you have the following structure of your WireMock stubs inside the stub JAR (example for a <code>service3-stubs.jar</code>)</p>
-
-<pre><code>├── META-INF
-│   └── MANIFEST.MF
-└── mappings
-    └── service3
-        ├── shouldMarkClientAsFraud.json
-        ├── notAWireMockMapping.json
-        └── shouldSayHello.json
-</code></pre>
-
-<p><em>Stub Runner</em> will scan the whole unpacked JAR for any <code>.json</code> files. There is a convention that stub definitions are placed under the <code>mappings</code> folder. So it will pick <code>shouldMarkClientAsFraud.json</code>, <code>notAWireMockMapping.json</code> and <code>shouldSayHello.json</code> files.</p>
-
-<p>Next, a WireMock instance is started for each dependency and every found JSON is attempted to be parsed as a WireMock stub definition. Any exceptions at this point are ignored (so assuming that <code>notAWireMockMapping.json</code> is not a valid WireMock definition, the exception will be suppressed). In our scenario 2 WireMock servers will be started - one for <code>service3</code> and one for <code>service4</code>.</p>
-
-<p>That way you don&rsquo;t have to copy the stubs manually. The stubs are centralized since they are stored in a Maven repository. It&rsquo;s extremely important cause <em>Stub Runner</em> downloads always the newest version of the stubs so you can be sure that your tests will break the moment someone does an incompatible change.</p>
-
-<h3>API</h3>
-
-<p>From the developer&rsquo;s perspective there are only a handful of <em>Stub Runner&rsquo;s</em> classes that should be used. In the majority of cases you will use the following ones:</p>
-
-<h4>StubFinder</h4>
-
-<p>An interface that allows you to find the URL of the started WireMock instance. You can find that URL by
-passing the Ivy notation (<code>groupId:artifactId</code>) or just the <code>artifactId</code> - <em>Stub Runner</em> will try to take care of the rest.</p>
-
-<pre><code class="groovy">interface StubFinder {
-  /**
-   * For the given groupId and artifactId tries to find the matching
-   * URL of the running stub.
-   *
-   * @param groupId - might be null. In that case a search only via artifactId takes place
-   * @return URL of a running stub or null if not found
-   */
-  URL findStubUrl(String groupId, String artifactId)
-
-  /**
-   * For the given Ivy notation {@code groupId:artifactId} tries to find the matching
-   * URL of the running stub. You can also pass only {@code artifactId}.
-   *
-   * @param ivyNotation - Ivy representation of the Maven artifact
-   * @return URL of a running stub or null if not found
-   */
-  URL findStubUrl(String ivyNotation)
-
-  /**
-   * Returns all running stubs
-   */
-  RunningStubs findAllRunningStubs()
-}
-</code></pre>
-
-<h4>RunningStubs</h4>
-
-<p>A structure representing the already running stubs. Give you some helper methods to retrieve Ivy representation of a particular stub, find a port for a stub etc.</p>
-
-<p><img src="/images/accurest/stubrunner/running_stubs.png" alt="RunningStubs" /></p>
-
-<h4>StubRunning</h4>
-
-<p>A contract for classes that can run the stubs:</p>
-
-<pre><code class="groovy">interface StubRunning extends Closeable, StubFinder {
-  /**
-   * Runs the stubs and returns the {@link RunningStubs}
-   */
-  RunningStubs runStubs()
-
-}
-</code></pre>
-
-<h4>StubRunner</h4>
-
-<p>Represents a single instance of ready-to-run stubs. It can run the stubs and will return the running instance of WireMock wrapped in <code>RunningStubs</code> class. Since it&rsquo;s implementing <code>StubFinder</code> can also be queried if the current groupid and artifactid are matching the corresponding running stub.</p>
-
-<h4>BatchStubRunner</h4>
-
-<p>If you have multiple services for which you want to run the WireMocks with stubs it&rsquo;s enough to use <code>BatchStubRunner</code>. It iterates over the given <code>Iterable</code> of <code>StubRunner</code> and executes the logic on each of them.</p>
-
-<h2>Running Stub Runner</h2>
-
-<p>In all the examples below let&rsquo;s assume that the stubs are stored in the Maven repository available under <code>http://toomuchcoding.com</code> URL. As <em>service2</em> I&rsquo;d like to download the stubs of <code>com.toomuchcoding:service3</code> and
-<code>com.toomuchcoding:service4</code> services.</p>
-
-<h3>Stub Runner as a fat JAR</h3>
-
-<h4>How to use it?</h4>
-
-<p><em>Stub Runner</em> comes with a main class (<code>io.codearte.accurest.stubrunner.StubRunnerMain</code>) which you can run with the following options:</p>
-
-<pre><code> -maxp (--maxPort) N            : Maximum port value to be assigned to the
-                                  Wiremock instance. Defaults to 15000
-                                  (default: 15000)
- -minp (--minPort) N            : Minimal port value to be assigned to the
-                                  Wiremock instance. Defaults to 10000
-                                  (default: 10000)
- -s (--stubs) VAL               : Comma separated list of Ivy representation of
-                                  jars with stubs. Eg. groupid:artifactid1,group
-                                  id2:artifactid2:classifier
- -sr (--stubRepositoryRoot) VAL : Location of a Jar containing server where you
-                                  keep your stubs (e.g. http://nexus.net/content
-                                  /repositories/repository)
- -ss (--stubsSuffix) VAL        : Suffix for the jar containing stubs (e.g.
-                                  'stubs' if the stub jar would have a 'stubs'
-                                  classifier for stubs: foobar-stubs ).
-                                  Defaults to 'stubs' (default: stubs)
- -wo (--workOffline)            : Switch to work offline. Defaults to 'false'
-                                  (default: false)
-</code></pre>
-
-<p>You can run that main class from IDE or build yourself a fat JAR. To do that just call the following command:</p>
-
-<pre><code>./gradlew stub-runner-root:stub-runner:shadowJar -PfatJar
-</code></pre>
-
-<p>Then inside the <code>build/lib</code> there will be a fat JAR with classifier <code>fatJar</code> waiting for you to execute.</p>
-
-<p>Coming back to our example once the fat JAR is built I would just call the following command the retrieve the stubs of <em>service3</em> and <em>service4</em> from the Maven repository available at <code>http://toomuchcoding.com</code>.</p>
-
-<pre><code>java -jar stub-runner-1.0.4-SNAPSHOT-fatJar.jar -sr http://toomuchcoding.com -s com.toomuchcoding:service3:stubs,com.toomuchcoding.service4
-</code></pre>
-
-<h4>When to use it?</h4>
-
-<p>Running <em>Stub Runner</em> as a main class makes most sense when you&rsquo;re running some fast smoke tests on a deployed application where you don&rsquo;t want to download and run all the collaborators of that application. For more rationale behind such an approach you can check my article about <a href="/blog/2015/09/27/microservice-deployment/">Microservice Deployment</a></p>
-
-<h3>Stub Runner JUnit Rule</h3>
-
-<h4>How to use it?</h4>
-
-<p>You can use the <em>Stub Runner&rsquo;s</em> JUnit rule to automatically download and run the stubs during your tests. The <code>AccurestRule</code> implements the <code>StubFinder</code> interface thus you can easily find the URLs of the services that you&rsquo;re interested in.</p>
-
-<p>This is how you could do it with Spock:</p>
-
-<pre><code class="groovy">class SomeSpec extends Specification {
-
-  @ClassRule @Shared AccurestRule rule = new AccurestRule()
-      .repoRoot('http://toomuchcoding.com')
-      .downloadStub("com.toomuchcoding", "service3")
-      .downloadStub("com.toomuchcoding:service4")
-
-  def 'should do something useful when service3 is called'() {
-        given:
-            URL service3Url = rule.findStubUrl('com.toomuchcoding', 'service3')
-        expect:
-            somethingUseful(service3Url)
-    }
-
-  def 'should do something even more useful when service4 is called'() {
-        given:
-            URL service4Url = rule.findStubUrl('service4')
-        expect:
-            somethingMoreUseful(service4Url)
-    }
-}
-</code></pre>
-
-<p>or with plain Java JUnit:</p>
-
-<pre><code>public class SomeTest {
-
-  @ClassRule public static AccurestRule rule = new AccurestRule()
-      .repoRoot("http://toomuchcoding.com")
-      .downloadStub("com.toomuchcoding", "service3")
-      .downloadStub("com.toomuchcoding:service4");
-
-  @Test
-  public void should_do_something_useful_when_service3_is_called() {
-        URL service3Url = rule.findStubUrl("com.toomuchcoding", "service3");
-
-        somethingUseful(service3Url);
-  }
-
-  @Test
-  public void should_do_something_even_more_useful_when_service4_is_called() {
-        URL service4Url = rule.findStubUrl("service4");
-
-        somethingMoreUseful(service4Url);
-  }
-}
-</code></pre>
-
-<h4>When to use it?</h4>
-
-<p>You can use this rule in any place you want to if we don&rsquo;t provide any integration with an existing framework.</p>
-
-<h3>Stub Runner Spring</h3>
-
-<h4>How to use it?</h4>
-
-<p>You can use the <em>Stub Runner&rsquo;s</em> Spring configuration to download the stubs of your collaborators and run the WireMock server upon Spring context booting. We&rsquo;re providing the <code>StubRunnerConfiguration</code> that you can import in your tests. In that configuration we&rsquo;re registering a <code>StubFinder</code> bean that you can autowire in your tests.</p>
-
-<p>Having the following <code>application.yaml</code> file:</p>
-
-<pre><code class="yml">stubrunner.stubs.repository.root: http://toomuchcoding.com
-stubrunner.stubs.ids: com.toomuchcoding:service3:stubs,com.toomuchcoding.service4
-</code></pre>
-
-<p>This is how you could do it with Spock</p>
-
-<pre><code class="groovy">@ContextConfiguration(classes = Config, loader = SpringApplicationContextLoader)
-class StubRunnerConfigurationSpec extends Specification {
-
-  @Autowired StubFinder stubFinder
-
-  def 'should do something useful when service3 is called'() {
-      given:
-          URL service3Url = stubFinder.findStubUrl('com.toomuchcoding', 'service3')
-      expect:
-          somethingUseful(service3Url)
-  }
-
-  def 'should do something even more useful when service4 is called'() {
-      given:
-          URL service4Url = stubFinder.findStubUrl('service4')
-      expect:
-          somethingMoreUseful(service4Url)
-  }
-
-  @Configuration
-  @Import(StubRunnerConfiguration)
-  @EnableAutoConfiguration
-  static class Config {}
-
-}
-</code></pre>
-
-<h4>When to use it?</h4>
-
-<p>In your tests if you have Spring and don&rsquo;t have Spring Cloud. Also you can add it in compile time (of course you would have to add some Spring profiles so as not to run it on production) to profit from a &ldquo;developer&rdquo; mode of running microservices. That means that if you boot up your application to click around it - all the stubs around you would have already been downloaded and started.</p>
-
-<h3>Stub Runner Spring Cloud</h3>
-
-<h4>How to use it?</h4>
-
-<p>You can use the <em>Stub Runner&rsquo;s</em> Spring Cloud configuration to profit from the stubbed collaborators when using Spring Cloud&rsquo;s abstractions over service discovery and when you&rsquo;re using Netflix Ribbon. <em>Stub Runner Spring Cloud</em> configuration is an <code>AutoConfiguration</code> so it&rsquo;s automatically started for you.</p>
-
-<p>Let&rsquo;s assume that you&rsquo;re referring to <em>service3</em> as <code>service3</code> in your code and to <em>service4</em> as <code>shouldMapThisNameToService4</code>. That means that you&rsquo;re using for example the <code>@LoadBalanced</code> <code>RestTemplate</code> in the following way (don&rsquo;t use field injection as I do in this example!!):</p>
-
-<pre><code class="groovy">@Component
-class SomeClass {
-
-  @Autowired @LoadBalanced RestTemplate restTemplate
-
-  void doSth() {
-    // code...
-    String service3Response = restTemplate.getForObject('http://service3/name', String)
-    String service4Response = restTemplate.getForObject('http://shouldMapThisNameToService4/name', String)
-    // more code...
-  }
-
-}
-</code></pre>
-
-<p>If the service Id that you&rsquo;re using to call other services maps exactly to the name of the artifact Id in a Maven repository then you&rsquo;re lucky and don&rsquo;t have to do anything to find your running stubs. If however that&rsquo;s not the case - don&rsquo;t worry, you&rsquo;ll just have to map it yourself.</p>
-
-<p>The <code>stubrunner.stubs.idsToServiceIds</code> property is the root path to a map in which the <em>key</em> is the <em>artifactID</em> of the downloaded stub and the <em>value</em> is the <em>serviceId</em> used in the code.</p>
-
-<p>Having the following <code>application.yaml</code> file:</p>
-
-<pre><code class="yml">stubrunner.stubs.repository.root: http://toomuchcoding.com
-stubrunner.stubs.ids: com.toomuchcoding:service3:stubs,com.toomuchcoding.service4
-
-stubrunner.stubs.idsToServiceIds:
-  service4: shouldMapThisNameToService4
-</code></pre>
-
-<p>This is how you could do it with Spock</p>
-
-<pre><code class="groovy">@ContextConfiguration(classes = Config, loader = SpringApplicationContextLoader)
-class StubRunnerConfigurationSpec extends Specification {
-
-  @Autowired SomeClass someClass
-
-  def 'should not explode'() {
-      when:
-          someClass.doSth()
-      expect:
-          noExceptionThrown()
-  }
-
-  @Configuration
-  @EnableAutoConfiguration
-  static class Config {}
-
-}
-</code></pre>
-
-<h4>When to use it?</h4>
-
-<p>When you&rsquo;re using Spring Cloud. You can profit from <code>Stub Runner Spring Cloud</code> also in &ldquo;developer&rdquo; mode as presented in the <code>Stub Runner Spring</code> section.</p>
-
-<h3>Additional Configuration Options</h3>
-
-<p>You can set the default value of the Maven repository by means of a system property:</p>
-
-<pre><code>-Dstubrunner.stubs.repository.root=http://your.maven.repo.com
-</code></pre>
-
-<p>The list of configurable properties contains:</p>
-
-<table>
-<thead>
-<tr>
-<th> Name </th>
-<th> Default value </th>
-<th> Description </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td> stubrunner.port.range.min </td>
-<td> 10000 </td>
-<td> Minimal value of a port for a WireMock server </td>
-</tr>
-<tr>
-<td> stubrunner.port.range.max </td>
-<td> 15000 </td>
-<td> Maximum value of a port for a WireMock server </td>
-</tr>
-<tr>
-<td> stubrunner.stubs.repository.root </td>
-<td>  </td>
-<td> Address to your M2 repo (will point to local M2 repo if none is provided) </td>
-</tr>
-<tr>
-<td> stubrunner.stubs.classifier </td>
-<td> stubs </td>
-<td> Default classifier for the JARs containing stubs </td>
-</tr>
-<tr>
-<td> stubrunner.work-offline </td>
-<td> false </td>
-<td> Should try to connect to any repo to download stubs (useful if there&rsquo;s no internet) </td>
-</tr>
-<tr>
-<td> stubrunner.stubs </td>
-<td> </td>
-<td> Default comma separated list of stubs to download </td>
-</tr>
-</tbody>
-</table>
-
-
-<h2>Summary</h2>
-
-<p><em>Stub Runner</em>:</p>
-
-<ul>
-<li>Has already proven to be a very useful tool when doing CDC.</li>
-<li>Was battle tested and more companies are declaring their interest in using it.</li>
-<li>Helps you produce an API that should make both sides (server and the client) equally happy (or unhappy but still they&rsquo;re both equal in their emotions ;) ).</li>
-<li>Is language / technology agnostic - you can run it as a fat JAR, use it with Spring, Guice or whatever you want.</li>
-<li>Helps you speed up the feedback cycle both from the API design and the compatibility perspective.</li>
-</ul>
-
-
-<h2>Links</h2>
-
-<ul>
-<li><a href="https://github.com/Codearte/accurest">AccuREST Github Repository</a></li>
-<li><a href="https://github.com/Codearte/accurest/wiki/8.-Stub-Runner">Stub Runner WIKI</a></li>
-<li><a href="https://gitter.im/Codearte/accurest">AccuREST Gitter</a></li>
-<li><a href="https://github.com/Codearte/accurest-maven-plugin">AccuREST Maven Plugin</a></li>
-</ul>
-
 ]]></content>
   </entry>
   
