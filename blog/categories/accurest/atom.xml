@@ -4,7 +4,7 @@
   <title><![CDATA[Category: accurest | TOO MUCH CODING]]></title>
   <link href="http://toomuchcoding.com/blog/categories/accurest/atom.xml" rel="self"/>
   <link href="http://toomuchcoding.com/"/>
-  <updated>2016-09-24T21:22:00+02:00</updated>
+  <updated>2016-10-07T23:30:22+02:00</updated>
   <id>http://toomuchcoding.com/</id>
   <author>
     <name><![CDATA[Marcin Grzejszczak]]></name>
@@ -12,6 +12,15 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Spring Cloud Contract Podcast]]></title>
+    <link href="http://toomuchcoding.com/blog/2016/10/07/spring-cloud-contract-podcast/"/>
+    <updated>2016-10-07T23:14:36+02:00</updated>
+    <id>http://toomuchcoding.com/blog/2016/10/07/spring-cloud-contract-podcast</id>
+    <content type="html"><![CDATA[<p>A podcast with Michael Cote and me about Spring Cloud Contract. <a href="https://soundcloud.com/pivotalconversations/037-microservices-governance-with-spring-cloud-contract-guest-marcin-grzejszczak">You can check it out here!</a>.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Spring Cloud Contract 1.0.0.RELEASE available!]]></title>
@@ -396,15 +405,6 @@ baseClassMappings {
 <li><a href="https://cloud.spring.io/spring-cloud-contract/spring-cloud-contract-maven-plugin/">Spring Cloud Contract Maven Plugin Documentation</a></li>
 </ul>
 
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Spring Cloud Contract 1.0.0.M1 Released]]></title>
-    <link href="http://toomuchcoding.com/blog/2016/07/25/spring-cloud-contract-1-dot-0-0-dot-m1-released/"/>
-    <updated>2016-07-25T17:07:39+02:00</updated>
-    <id>http://toomuchcoding.com/blog/2016/07/25/spring-cloud-contract-1-dot-0-0-dot-m1-released</id>
-    <content type="html"><![CDATA[<p>I&rsquo;ve just published an article at the Spring blog about <a href="https://spring.io/blog/2016/07/25/spring-cloud-contract-1-0-0-m1-released">Spring Cloud Contract 1.0.0.M1 Release</a>. Check out the new project formerly known as Accurest!</p>
 ]]></content>
   </entry>
   
