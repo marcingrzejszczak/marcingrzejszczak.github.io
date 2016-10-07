@@ -12,5 +12,5 @@ categories:
 - cdc
 ---
 
-A podcast with Michael Cote and me about Spring Cloud Contract. [You can check it out here!](
+A podcast with Michael Cote and me about Spring Cloud Contract was just published. [You can check it out here!](
 https://soundcloud.com/pivotalconversations/037-microservices-governance-with-spring-cloud-contract-guest-marcin-grzejszczak).
