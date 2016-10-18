@@ -1,4 +1,3 @@
-
 ---
 layout: post
 title: "Spring Cloud Contract 1.0.0.M1 Released"
