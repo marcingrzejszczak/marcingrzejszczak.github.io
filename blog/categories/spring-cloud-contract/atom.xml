@@ -4,7 +4,7 @@
   <title><![CDATA[Category: spring-cloud-contract | TOO MUCH CODING]]></title>
   <link href="http://toomuchcoding.com/blog/categories/spring-cloud-contract/atom.xml" rel="self"/>
   <link href="http://toomuchcoding.com/"/>
-  <updated>2016-10-07T23:32:15+02:00</updated>
+  <updated>2016-10-18T19:40:14+02:00</updated>
   <id>http://toomuchcoding.com/</id>
   <author>
     <name><![CDATA[Marcin Grzejszczak]]></name>
@@ -12,6 +12,41 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[New Project - Spring Cloud Pipelines]]></title>
+    <link href="http://toomuchcoding.com/blog/2016/10/18/new-project-spring-cloud-pipelines/"/>
+    <updated>2016-10-18T19:29:24+02:00</updated>
+    <id>http://toomuchcoding.com/blog/2016/10/18/new-project-spring-cloud-pipelines</id>
+    <content type="html"><![CDATA[<p>I&rsquo;ve just published an article at the Spring blog about the creation of a new project called <a href="https://spring.io/blog/2016/10/18/spring-cloud-pipelines">Spring Cloud Pipelines</a>.</p>
+
+<h1>Why?</h1>
+
+<p>Why a new project? Cause we&rsquo;ve been all doing repetitive work. <a href="http://toomuchcoding.com/blog/2015/09/27/microservice-deployment/">Check out this post</a> where I write about creation of
+a deployment pipeline. Every company does it and wastes money and resource on it. In Pivotal
+our goal is to give developers tools they need to deliver features as fast as possible.</p>
+
+<p><a href="http://cloud.spring.io/spring-cloud-pipelines/spring-cloud-pipelines.html">Spring Cloud Pipelines</a> gives you an opinionated deployment pipeline. You can use it straight away, you can modify it. Do whatever you please :)</p>
+
+<h1>Demo</h1>
+
+<p>The repo is setup with a demo for Concourse CI and Jenkins. Read the docs how to set it up for each of those tools. The deployment is done via Cloud Foundry. For the sake of demo we&rsquo;re using PCF Dev.</p>
+
+<h1>Links</h1>
+
+<ul>
+<li><a href="http://cloud.spring.io/spring-cloud-pipelines/">Project page</a></li>
+<li><a href="http://cloud.spring.io/spring-cloud-pipelines/spring-cloud-pipelines.html">Project documentation</a></li>
+<li><a href="http://cloud.spring.io/spring-cloud-pipelines/spring-cloud-pipelines.html#concourse">Concourse opinionated pipeline setup</a></li>
+<li><a href="http://concourse.ci">Concourse Website</a></li>
+<li><a href="http://cloud.spring.io/spring-cloud-pipelines/spring-cloud-pipelines.html#jenkins">Jenkins opinionated pipeline setup</a></li>
+<li><a href="https://github.com/jenkinsci/job-dsl-plugin/wiki">Jenkins Job Dsl Plugin</a></li>
+<li><a href="https://gitter.im/spring-cloud/spring-cloud-pipelines">Spring Cloud Pipelines Gitter</a></li>
+<li><a href="https://github.com/spring-cloud/spring-cloud-pipelines">Spring Cloud Pipelines GitHub page</a></li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Spring Cloud Contract Podcast]]></title>
@@ -405,6 +440,15 @@ baseClassMappings {
 <li><a href="https://cloud.spring.io/spring-cloud-contract/spring-cloud-contract-maven-plugin/">Spring Cloud Contract Maven Plugin Documentation</a></li>
 </ul>
 
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Spring Cloud Contract 1.0.0.M1 Released]]></title>
+    <link href="http://toomuchcoding.com/blog/2016/07/25/spring-cloud-contract-1-dot-0-0-dot-m1-released/"/>
+    <updated>2016-07-25T17:07:39+02:00</updated>
+    <id>http://toomuchcoding.com/blog/2016/07/25/spring-cloud-contract-1-dot-0-0-dot-m1-released</id>
+    <content type="html"><![CDATA[<p>I&rsquo;ve just published an article at the Spring blog about <a href="https://spring.io/blog/2016/07/25/spring-cloud-contract-1-0-0-m1-released">Spring Cloud Contract 1.0.0.M1 Release</a>. Check out the new project formerly known as Accurest!</p>
 ]]></content>
   </entry>
   
