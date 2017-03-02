@@ -4,7 +4,7 @@
   <title><![CDATA[TOO MUCH CODING]]></title>
   <link href="http://toomuchcoding.com/atom.xml" rel="self"/>
   <link href="http://toomuchcoding.com/"/>
-  <updated>2017-01-16T11:06:14+01:00</updated>
+  <updated>2017-03-02T17:24:24+01:00</updated>
   <id>http://toomuchcoding.com/</id>
   <author>
     <name><![CDATA[Marcin Grzejszczak]]></name>
@@ -58,7 +58,7 @@ our goal is to give developers tools they need to deliver features as fast as po
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Spring Cloud Contract 1.0.0.RELEASE available!]]></title>
+    <title type="html"><![CDATA[Spring Cloud Contract 1.0.0.RELEASE Available!]]></title>
     <link href="http://toomuchcoding.com/blog/2016/09/24/spring-cloud-contract-1-dot-0-0-dot-release-available/"/>
     <updated>2016-09-24T20:39:25+02:00</updated>
     <id>http://toomuchcoding.com/blog/2016/09/24/spring-cloud-contract-1-dot-0-0-dot-release-available</id>
@@ -681,7 +681,7 @@ our goal is to give developers tools they need to deliver features as fast as po
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Accurest becomes part of the Spring Cloud Contract]]></title>
+    <title type="html"><![CDATA[Accurest Becomes Part of the Spring Cloud Contract]]></title>
     <link href="http://toomuchcoding.com/blog/2016/06/24/accurest-becomes-part-of-the-spring-cloud-contract/"/>
     <updated>2016-06-24T18:43:07+02:00</updated>
     <id>http://toomuchcoding.com/blog/2016/06/24/accurest-becomes-part-of-the-spring-cloud-contract</id>
@@ -763,7 +763,7 @@ our goal is to give developers tools they need to deliver features as fast as po
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Zero Downtime Deployment with a Database]]></title>
+    <title type="html"><![CDATA[Zero Downtime Deployment With a Database]]></title>
     <link href="http://toomuchcoding.com/blog/2016/05/31/zero-downtime-deployment-with-a-database/"/>
     <updated>2016-05-31T11:58:52+02:00</updated>
     <id>http://toomuchcoding.com/blog/2016/05/31/zero-downtime-deployment-with-a-database</id>
@@ -1220,7 +1220,7 @@ we&rsquo;re checking if that message has proper headers and body.</p>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Accurest docs updated]]></title>
+    <title type="html"><![CDATA[Accurest Docs Updated]]></title>
     <link href="http://toomuchcoding.com/blog/2016/04/25/accurest-docs-updated/"/>
     <updated>2016-04-25T21:49:59+02:00</updated>
     <id>http://toomuchcoding.com/blog/2016/04/25/accurest-docs-updated</id>
@@ -1233,7 +1233,7 @@ since the documentation lives together with the code.</p>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[JSON Assert 0.4.0 released]]></title>
+    <title type="html"><![CDATA[JSON Assert 0.4.0 Released]]></title>
     <link href="http://toomuchcoding.com/blog/2016/04/14/json-assert-0-dot-4-0-released/"/>
     <updated>2016-04-14T05:10:51+02:00</updated>
     <id>http://toomuchcoding.com/blog/2016/04/14/json-assert-0-dot-4-0-released</id>
@@ -1335,7 +1335,7 @@ since the documentation lives together with the code.</p>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[UpToDate Gradle Plugin migrated]]></title>
+    <title type="html"><![CDATA[UpToDate Gradle Plugin Migrated]]></title>
     <link href="http://toomuchcoding.com/blog/2016/04/11/uptodate-gradle-plugin-migrated/"/>
     <updated>2016-04-11T13:28:43+02:00</updated>
     <id>http://toomuchcoding.com/blog/2016/04/11/uptodate-gradle-plugin-migrated</id>
@@ -1997,7 +1997,7 @@ passing the Ivy notation (<code>groupId:artifactId</code>) or just the <code>art
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[JSON Assert 0.3.0 released]]></title>
+    <title type="html"><![CDATA[JSON Assert 0.3.0 Released]]></title>
     <link href="http://toomuchcoding.com/blog/2016/03/27/json-assert-0-dot-3-0-released/"/>
     <updated>2016-03-27T23:17:21+02:00</updated>
     <id>http://toomuchcoding.com/blog/2016/03/27/json-assert-0-dot-3-0-released</id>
@@ -2061,7 +2061,7 @@ instead of writing:</p>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Spring Cloud Sleuth RC1 deployed]]></title>
+    <title type="html"><![CDATA[Spring Cloud Sleuth RC1 Deployed]]></title>
     <link href="http://toomuchcoding.com/blog/2016/03/25/spring-cloud-sleuth-rc1-deployed/"/>
     <updated>2016-03-25T14:18:22+01:00</updated>
     <id>http://toomuchcoding.com/blog/2016/03/25/spring-cloud-sleuth-rc1-deployed</id>
@@ -2295,7 +2295,7 @@ inject it to the <code>carrier</code>. Let&rsquo;s assume that in your system yo
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[JSON Assert 0.2.1 released]]></title>
+    <title type="html"><![CDATA[JSON Assert 0.2.1 Released]]></title>
     <link href="http://toomuchcoding.com/blog/2016/03/11/json-assert-0-dot-2-1-released/"/>
     <updated>2016-03-11T23:33:30+01:00</updated>
     <id>http://toomuchcoding.com/blog/2016/03/11/json-assert-0-dot-2-1-released</id>
@@ -2352,7 +2352,7 @@ If you don&rsquo;t care - just ignore it ;)</p>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Goodbye Blogspot welcome Octopress!]]></title>
+    <title type="html"><![CDATA[Goodbye Blogspot Welcome Octopress!]]></title>
     <link href="http://toomuchcoding.com/blog/2016/03/03/goodbye-blogspot-welcome-octopress/"/>
     <updated>2016-03-03T22:53:26+01:00</updated>
     <id>http://toomuchcoding.com/blog/2016/03/03/goodbye-blogspot-welcome-octopress</id>
@@ -2375,7 +2375,7 @@ Over 60 people have already registered! Contact us to be a part of this gr8 even
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[JSON Assert lib released]]></title>
+    <title type="html"><![CDATA[JSON Assert Lib Released]]></title>
     <link href="http://toomuchcoding.com/blog/2016/02/27/json-assert-lib-released/"/>
     <updated>2016-02-27T23:20:00+01:00</updated>
     <id>http://toomuchcoding.com/blog/2016/02/27/json-assert-lib-released</id>
@@ -2387,7 +2387,7 @@ I'm really happy to present the <a href="https://github.com/marcingrzejszczak/js
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Post on Spring blog]]></title>
+    <title type="html"><![CDATA[Post on Spring Blog]]></title>
     <link href="http://toomuchcoding.com/blog/2016/01/04/post-on-spring-blog/"/>
     <updated>2016-01-04T18:28:00+01:00</updated>
     <id>http://toomuchcoding.com/blog/2016/01/04/post-on-spring-blog</id>
@@ -2397,7 +2397,7 @@ Hi!<br /><br />Since December I'm working for Pivotal and the Spring Cloud team.
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Business value gone wild]]></title>
+    <title type="html"><![CDATA[Business Value Gone Wild]]></title>
     <link href="http://toomuchcoding.com/blog/2015/10/16/business-value-gone-wild/"/>
     <updated>2015-10-16T17:58:00+02:00</updated>
     <id>http://toomuchcoding.com/blog/2015/10/16/business-value-gone-wild</id>
@@ -2421,7 +2421,7 @@ It's been a while since my last post. In the meantime of course nothing has chan
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[How to speed up your Gradle build from 90 to 8 minutes]]></title>
+    <title type="html"><![CDATA[How to Speed Up Your Gradle Build From 90 to 8 Minutes]]></title>
     <link href="http://toomuchcoding.com/blog/2015/02/08/how-to-speed-up-your-gradle-build-from/"/>
     <updated>2015-02-08T19:24:00+01:00</updated>
     <id>http://toomuchcoding.com/blog/2015/02/08/how-to-speed-up-your-gradle-build-from</id>

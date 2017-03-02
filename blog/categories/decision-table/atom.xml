@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: decision table | TOO MUCH CODING]]></title>
+  <title><![CDATA[Category: Decision Table | TOO MUCH CODING]]></title>
   <link href="http://toomuchcoding.com/blog/categories/decision-table/atom.xml" rel="self"/>
   <link href="http://toomuchcoding.com/"/>
-  <updated>2017-01-16T11:06:14+01:00</updated>
+  <updated>2017-03-02T17:24:24+01:00</updated>
   <id>http://toomuchcoding.com/</id>
   <author>
     <name><![CDATA[Marcin Grzejszczak]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Execution of Groovy scripts from Java - XmlSlurper and MarkupBuilder in mapping issues]]></title>
+    <title type="html"><![CDATA[Execution of Groovy Scripts From Java - XmlSlurper and MarkupBuilder in Mapping Issues]]></title>
     <link href="http://toomuchcoding.com/blog/2013/03/30/execution-of-groovy-scripts-from-java/"/>
     <updated>2013-03-30T23:09:00+01:00</updated>
     <id>http://toomuchcoding.com/blog/2013/03/30/execution-of-groovy-scripts-from-java</id>
@@ -27,7 +27,7 @@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Drools decision tables with Camel and Spring]]></title>
+    <title type="html"><![CDATA[Drools Decision Tables With Camel and Spring]]></title>
     <link href="http://toomuchcoding.com/blog/2013/02/03/drools-decision-tables-with-camel-and/"/>
     <updated>2013-02-03T22:28:00+01:00</updated>
     <id>http://toomuchcoding.com/blog/2013/02/03/drools-decision-tables-with-camel-and</id>

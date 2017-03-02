@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: ast | TOO MUCH CODING]]></title>
+  <title><![CDATA[Category: Ast | TOO MUCH CODING]]></title>
   <link href="http://toomuchcoding.com/blog/categories/ast/atom.xml" rel="self"/>
   <link href="http://toomuchcoding.com/"/>
-  <updated>2017-01-16T11:06:14+01:00</updated>
+  <updated>2017-03-02T17:24:24+01:00</updated>
   <id>http://toomuchcoding.com/</id>
   <author>
     <name><![CDATA[Marcin Grzejszczak]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Groovy Builder AST merged to Groovy Core!]]></title>
+    <title type="html"><![CDATA[Groovy Builder AST Merged to Groovy Core!]]></title>
     <link href="http://toomuchcoding.com/blog/2014/04/24/groovy-builder-ast-merged-to-groovy-core/"/>
     <updated>2014-04-24T17:34:00+02:00</updated>
     <id>http://toomuchcoding.com/blog/2014/04/24/groovy-builder-ast-merged-to-groovy-core</id>
@@ -36,7 +36,7 @@ Hi!<br /><br /><a href="http://www.youtube.com/watch?v=JdSCDEkX0Tw">Click here t
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Introduction to Groovy runtime metaprogramming and AST transforms]]></title>
+    <title type="html"><![CDATA[Introduction to Groovy Runtime Metaprogramming and AST Transforms]]></title>
     <link href="http://toomuchcoding.com/blog/2014/02/04/introduction-to-groovy-runtime/"/>
     <updated>2014-02-04T23:50:00+01:00</updated>
     <id>http://toomuchcoding.com/blog/2014/02/04/introduction-to-groovy-runtime</id>

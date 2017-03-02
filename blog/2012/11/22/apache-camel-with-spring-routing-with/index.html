@@ -1,15 +1,11 @@
-
 <!DOCTYPE html>
-<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
-<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
-<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<html class="no-js" lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Apache Camel with Spring, routing with enrichment service - TOO MUCH CODING</title>
+  <title>Apache Camel With Spring, Routing With Enrichment Service - TOO MUCH CODING</title>
   <meta name="author" content="Marcin Grzejszczak">
 
   
-  <meta name="description" content="Sorry for not having posted anything in some time but I had plenty of work. Anyway today I will continue the example with JMS that I've shown you &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,71 +15,97 @@
 
   
   <link rel="canonical" href="http://toomuchcoding.com/blog/2012/11/22/apache-camel-with-spring-routing-with/">
-  <link href="/favicon.png" rel="icon">
-  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="/javascripts/ender.js"></script>
-  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/favicon.png" type="image/png" rel="icon">
   <link href="/atom.xml" rel="alternate" title="TOO MUCH CODING" type="application/atom+xml">
-  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
 
-<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  <!-- http://opengraphprotocol.org/ -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="http://toomuchcoding.com/blog/2012/11/22/apache-camel-with-spring-routing-with/">
+  <meta property="og:title" content="Apache Camel With Spring, Routing With Enrichment Service - TOO MUCH CODING">
+  
 
-  ga('create', 'UA-74671877-1', 'auto');
-  ga('send', 'pageview');
+  <script src="/javascripts/libs/jquery/jquery-2.1.3.min.js"></script>
 
-</script>
+<link href="/assets/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="/assets/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css">
+
+
+  
+  <link href="/stylesheets/screen.css" media="screen, projection, print" rel="stylesheet" type="text/css">
 
   
 
 </head>
 
-<body   >
-  <header role="banner"><hgroup>
-  <h1><a href="/">TOO MUCH CODING</a></h1>
-  
-    <h2>A blog for coding addicts by Marcin Grzejszczak</h2>
-  
-</hgroup>
+  <body   >
+    <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+    <div id="wrap">
+      <header role="banner">
+        <nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" title="toggle navbar" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">TOO MUCH CODING</a>
+        </div>
 
-</header>
-  <nav role="navigation"><ul class="subscription" data-subscription="rss">
-  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
-  
-</ul>
-  
-<form action="https://www.google.com/search" method="get">
-  <fieldset role="search">
-    <input type="hidden" name="q" value="site:toomuchcoding.com" />
-    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
-  </fieldset>
-</form>
-  
-<ul class="main-navigation">
-  <li><a href="/">Blog</a></li>
-  <li><a href="/blog/archives">Archives</a></li>
-  <li><a href="/oss/">OSS</a></li>
-  <li><a href="/abstracts/">Abstracts</a></li>
-</ul>
-
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="active">
+                    <a rel="index" href="/">Blog</a>
+                </li>
+                <li >
+                    <a href="/blog/archives">Archives</a>
+                </li>
+                <li >
+                    <a href="/oss">OSS</a>
+                </li>
+                <li >
+                    <a href="/abstracts">Abstracts</a>
+                </li>
+                <li >
+                    <a href="/talks">Talks</a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a class="subscribe-rss" href="/atom.xml" title="subscribe via RSS">
+                        <span class="visible-xs">RSS</span>
+                        <img class="hidden-xs" src="/images/rss.png" alt="RSS">
+                    </a>
+                </li>
+                
+            </ul>
+            
+                <form class="navbar-form navbar-right" action="https://www.google.com/search" method="GET">
+                    <input type="hidden" name="sitesearch" value="toomuchcoding.com">
+                    <div class="form-group">
+                        <input class="form-control" type="text" name="q" placeholder="Search">
+                    </div>
+                </form>
+            
+        </div>
+    </div>
 </nav>
-  <div id="main">
-    <div id="content">
-      <div>
-<article class="hentry" role="article">
-  
-  <header>
+
+
+      </header>
+      <div id="main" role="main" class="container">
+        <div id="content">
+          <div class="row">
+  <div class="page-content col-md-9" itemscope itemtype="http://schema.org/Blog">
+    <meta itemprop="name" content="TOO MUCH CODING" />
+    <meta itemprop="description" content="A blog for coding addicts about Java, Groovy, Buzzword, Spring, Microservices, Buzzword" />
+    <meta itemprop="url" content="http://toomuchcoding.com" />
+    <article class="hentry" role="article" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+      
+  <header class="page-header">
     
-      <h1 class="entry-title">Apache Camel With Spring, Routing With Enrichment Service</h1>
-    
-    
-      <p class="meta">
+      <p class="meta text-muted text-uppercase">
         
 
 
@@ -93,47 +115,57 @@
 
 
 
-  
 
 
-<time datetime="2012-11-22T23:13:00+01:00" pubdate data-updated="true"></time>
+
+
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2012-11-22T23:13:00+01:00"  data-updated="true" itemprop="datePublished dateCreated">ordinal</time>
         
-         | <a href="#disqus_thread">Comments</a>
+           | <a href="#disqus_thread" itemprop="discussionUrl"
+             data-disqus-identifier="http://toomuchcoding.com">Comments</a>
         
       </p>
+    
+    
+    <h1 class="entry-title" itemprop="name headline">
+        Apache Camel With Spring, Routing With Enrichment Service
+        
+    </h1>
     
   </header>
 
 
-<div class="entry-content"><div class='post'>
+<div class="entry-content clearfix" itemprop="articleBody description"><div class='post'>
 <br /><br />Sorry for not having posted anything in some time but I had plenty of work. Anyway today I will continue the example with JMS that I've shown you some time ago.<br />
 <!--more-->
 <br />The idea of the previous example was to simplify the work that we had to do in a manual way - we've sed JmsTemplate and Spring listener containers. The routing as such unfortunately was still done by us. In order to facilitate this process we can use <a href="http://camel.apache.org/">Apache Camel</a>.<br /><br />The following example bases on the one that we've seen in this post&nbsp;<a href="http://toomuchcoding.blogspot.com/2012/11/spring-jms-message-automatic-conversion.html">Spring JMS, message automatic conversion, JMS template</a>&nbsp;but with slight modifications:<br /><br /><b>CamelRouter.java</b><br /><br /><pre class="brush:java">package pl.grzejszczak.marcin.camel;<br /><br />import org.apache.camel.spring.Main;<br /><br />public class CamelRouter {<br /><br /> /**<br />  * @param args<br />  * @throws Exception<br />  */<br /> public static void main(String[] args) throws Exception {<br />  Main main = new Main();<br />  main.setApplicationContextUri("/camel/camelContext.xml");<br />  main.run(args);<br /> }<br /><br />}<br /><br /><br /></pre>What we can see here is the usage of the Camel's <span style="font-family: Courier New, Courier, monospace;">Main</span> class which you can reuse to more easily boot up Camel and keep it running until the JVM terminate. <br /><br />Then we have a new file <span style="font-family: Courier New, Courier, monospace;">camelContext.xml</span> in which we have the Camel context in the Spring configuration file.<br /><br /><b>camelContext.xml</b><br /><br /><br /><pre class="brush:xml">&lt;?xml version="1.0" encoding="UTF-8"?&gt;<br />&lt;beans xmlns="http://www.springframework.org/schema/beans" <br /> xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"<br /> xsi:schemaLocation="http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd "&gt;<br /> <br /> &lt;import resource="classpath:/camel/jmsApplicationContext.xml" /&gt;<br /> <br /> &lt;camel:camelContext id="camel" xmlns:camel="http://camel.apache.org/schema/spring"&gt;<br />  &lt;camel:dataFormats&gt;<br />   &lt;camel:jaxb id="jaxb" prettyPrint="true" contextPath="pl.grzejszczak.marcin.camel.jaxb.generated" /&gt;<br />  &lt;/camel:dataFormats&gt;<br /><br />  &lt;camel:route&gt;<br />   &lt;camel:from uri="activemq:topic:Initial.Topic" /&gt;<br />   &lt;camel:unmarshal ref="jaxb" /&gt;<br />   &lt;camel:bean ref="enrichingService" /&gt;<br />   &lt;camel:marshal ref="jaxb" /&gt;<br />   &lt;camel:to uri="activemq:topic:Routed.Topic" /&gt;<br />  &lt;/camel:route&gt;<br /><br /> &lt;/camel:camelContext&gt;<br />&lt;/beans&gt;<br /></pre><br />We are defining in this file in order to create a Camel Route - from the activemq topic called <i>Initial.Topic</i> to the one called <i>Routed.Topic</i>. In the meantime we are doing some unmarshalling and marshalling by means of Jaxb.<br /><br />In the jmsApplicationContext we no longer define the sender to the final topic: <i>Routed.Topic</i>.<br /><br /><b>jmsApplicationContext.java</b><br /><br /><pre class="brush:xml">&lt;?xml version="1.0" encoding="UTF-8"?&gt;<br />&lt;beans xmlns="http://www.springframework.org/schema/beans"<br /> xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"<br /> xmlns:jms="http://www.springframework.org/schema/jms" xmlns:oxm="http://www.springframework.org/schema/oxm"<br /> xsi:schemaLocation="http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd http://www.springframework.org/schema/jms http://www.springframework.org/schema/jms/spring-jms-3.0.xsd http://www.springframework.org/schema/oxm http://www.springframework.org/schema/oxm/spring-oxm-3.0.xsd"&gt;<br /><br /> &lt;!-- Spring configuration based on annotations --&gt;<br /> &lt;context:annotation-config /&gt;<br /> &lt;!-- Show Spring where to search for the beans (in which packages) --&gt;<br /> &lt;context:component-scan base-package="pl.grzejszczak.marcin.camel" /&gt;<br /> <br /> &lt;!-- Show Spring where to search for the properties files --&gt;<br /> &lt;context:property-placeholder location="classpath:/camel/jms.properties" /&gt;<br /><br /> &lt;!-- The ActiveMQ connection factory with specification of the server URL --&gt;<br /> &lt;bean id="activeMQConnectionFactory" class="org.apache.activemq.ActiveMQConnectionFactory"&gt;<br />  &lt;property name="brokerURL" value="tcp://localhost:61616" /&gt;<br /> &lt;/bean&gt;<br /><br /> &lt;!-- Spring's jms connection factory --&gt;<br /> &lt;bean id="cachingConnectionFactory"<br />  class="org.springframework.jms.connection.CachingConnectionFactory"&gt;<br />  &lt;property name="targetConnectionFactory" ref="activeMQConnectionFactory" /&gt;<br />  &lt;property name="sessionCacheSize" value="10" /&gt;<br /> &lt;/bean&gt;<br /><br /> &lt;!-- The name of the queue from which we will take the messages --&gt;<br /> &lt;bean id="origin" class="org.apache.activemq.command.ActiveMQTopic"&gt;<br />  &lt;constructor-arg value="${jms.origin}" /&gt;<br /> &lt;/bean&gt;<br /> &lt;!-- The name of the queue to which we will route the messages --&gt;<br /> &lt;bean id="destination" class="org.apache.activemq.command.ActiveMQTopic"&gt;<br />  &lt;constructor-arg value="${jms.destination}" /&gt;<br /> &lt;/bean&gt;<br /><br /> &lt;!-- Configuration of the JmsTemplate together with the connection factory and the message converter --&gt;<br /> &lt;bean id="producerTemplate" class="org.springframework.jms.core.JmsTemplate"&gt;<br />  &lt;property name="connectionFactory" ref="cachingConnectionFactory" /&gt;<br />  &lt;property name="messageConverter" ref="oxmMessageConverter" /&gt;<br /> &lt;/bean&gt;<br /><br /> &lt;!-- Custom message sender sending messages to the initial queue --&gt;<br /> &lt;bean id="originPlayerSender" class="pl.grzejszczak.marcin.camel.manual.jms.PlayerDetailsSenderImpl"&gt;<br />  &lt;property name="destination" ref="origin" /&gt;<br /> &lt;/bean&gt;<br /><br /> &lt;!-- Custom message listener - listens to the destination queue  --&gt;<br /> &lt;bean id="destinationListenerImpl" class="pl.grzejszczak.marcin.camel.manual.jms.FinalListenerImpl"/&gt;<br /><br /> <br /> &lt;!-- Spring's jms message listener container - specified the connection factory, the queue to be listened to and the component that listens to the queue --&gt;<br /> &lt;bean id="jmsDestinationContainer" class="org.springframework.jms.listener.DefaultMessageListenerContainer"&gt;<br />  &lt;property name="connectionFactory" ref="cachingConnectionFactory" /&gt;<br />  &lt;property name="destination" ref="destination" /&gt;<br />  &lt;property name="messageListener" ref="destinationListenerImpl" /&gt;<br /> &lt;/bean&gt;<br /> <br /> &lt;!-- Message converter - automatically marshalls and unmarshalls messages using the provided marshaller / unmarshaller--&gt;<br /> &lt;bean id="oxmMessageConverter" class="org.springframework.jms.support.converter.MarshallingMessageConverter"&gt;<br />          &lt;property name="marshaller" ref="marshaller" /&gt;<br />          &lt;property name="unmarshaller" ref="marshaller" /&gt;<br />     &lt;/bean&gt;<br /><br /> &lt;bean id="enrichingService" class="pl.grzejszczak.marcin.camel.service.EnrichingServiceImpl"/&gt;<br /><br /> &lt;!-- Spring's JAXB implementation of marshaller - provided a class the JAXB generated class --&gt;<br />     &lt;oxm:jaxb2-marshaller id="marshaller"&gt;<br />          &lt;oxm:class-to-be-bound name="pl.grzejszczak.marcin.camel.jaxb.generated.PlayerDetails" /&gt;<br />     &lt;/oxm:jaxb2-marshaller&gt;<br /><br />&lt;/beans&gt;<br /><br /></pre>Once we have already initialized our camel context, what we need to do is to send a message to the <i>Initial.Topic</i>. We are doing it by means of our modified <span style="font-family: Courier New, Courier, monospace;">ActiveMQRouter</span> class.<br /><br /><b>ActiveMQRouter.java</b><br /><br /><br /><pre class="brush:java">package pl.grzejszczak.marcin.camel.manual;<br /><br />import java.io.File;<br />import java.util.Scanner;<br /><br />import javax.jms.JMSException;<br /><br />import org.springframework.context.ApplicationContext;<br />import org.springframework.context.support.ClassPathXmlApplicationContext;<br />import org.springframework.core.io.ClassPathResource;<br />import org.springframework.core.io.Resource;<br /><br />import pl.grzejszczak.marcin.camel.jaxb.PlayerDetailsConverter;<br />import pl.grzejszczak.marcin.camel.jaxb.generated.PlayerDetails;<br />import pl.grzejszczak.marcin.camel.manual.jms.FinalListenerImpl;<br />import pl.grzejszczak.marcin.camel.manual.jms.Sender;<br /><br />public class ActiveMQRouter {<br /><br /> /**<br />  * @param args<br />  * @throws JMSException<br />  */<br /> public static void main(String[] args) throws Exception {<br />  ApplicationContext context = new ClassPathXmlApplicationContext("/camel/jmsApplicationContext.xml");<br />  @SuppressWarnings("unchecked")<br />  Sender&lt;PlayerDetails&gt; sender = (Sender&lt;PlayerDetails&gt;) context.getBean("originPlayerSender");<br /><br />  Resource resource = new ClassPathResource("/camel/RobertLewandowski.xml");<br /><br />  Scanner scanner = new Scanner(new File(resource.getURI())).useDelimiter("\\Z");<br />  String contents = scanner.next();<br /><br />  PlayerDetailsConverter converter = context.getBean(PlayerDetailsConverter.class);<br /><br />  FinalListenerImpl listener = (FinalListenerImpl) context.getBean("finalListenerImpl");<br /><br />  sender.sendMessage(converter.unmarshal(contents));<br /> }<br />}<br /><br /></pre>The class is reading the file and sending it to the initial topic. We also initialize a FinalListenerImpl - a class that will listen to the messages coming to the final topic - to prove that everything is working correctly.<br /><br />That's it! Now let's check out the logs. Logs of CamelRouter:<br /><br /><br /><pre class="brush:xml">2012-11-22 22:51:39,429 INFO  [main] org.apache.camel.main.MainSupport:300 Apache Camel 2.9.2 starting<br />2012-11-22 22:51:40,028 INFO  [main] org.springframework.context.support.ClassPathXmlApplicationContext:495 Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@4c5e176f: startup date [Thu Nov 22 22:51:40 CET 2012]; root of context hierarchy<br />2012-11-22 22:51:40,213 INFO  [main] org.springframework.beans.factory.xml.XmlBeanDefinitionReader:315 Loading XML bean definitions from class path resource [camel/camelContext.xml]<br />2012-11-22 22:51:40,746 INFO  [main] org.springframework.beans.factory.xml.XmlBeanDefinitionReader:315 Loading XML bean definitions from class path resource [camel/jmsApplicationContext.xml]<br />2012-11-22 22:51:41,120 INFO  [main] org.springframework.context.annotation.ClassPathBeanDefinitionScanner:210 JSR-330 'javax.inject.Named' annotation found and supported for component scanning<br />2012-11-22 22:51:43,219 INFO  [main] org.springframework.beans.factory.config.PropertyPlaceholderConfigurer:177 Loading properties file from class path resource [camel/jms.properties]<br />2012-11-22 22:51:43,233 INFO  [main] org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor:139 JSR-330 'javax.inject.Inject' annotation found and supported for autowiring<br />2012-11-22 22:51:43,274 INFO  [main] org.springframework.beans.factory.support.DefaultListableBeanFactory:557 Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@19d03a4e: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,AgeEnricher,ClubEnricher,PlayerDetailsConverter,finalListenerImpl,playerDetailsSenderImpl,org.springframework.beans.factory.config.PropertyPlaceholderConfigurer#0,activeMQConnectionFactory,cachingConnectionFactory,origin,destination,producerTemplate,originPlayerSender,destinationListenerImpl,jmsDestinationContainer,oxmMessageConverter,enrichingService,marshaller,template,consumerTemplate,camel:beanPostProcessor,camel,org.springframework.context.annotation.ConfigurationClassPostProcessor$ImportAwareBeanPostProcessor#0]; root of factory hierarchy<br />2012-11-22 22:51:43,424 INFO  [main] org.springframework.oxm.jaxb.Jaxb2Marshaller:436 Creating JAXBContext with classes to be bound [class pl.grzejszczak.marcin.camel.jaxb.generated.PlayerDetails]<br />2012-11-22 22:51:44,521 INFO  [main] org.springframework.context.support.DefaultLifecycleProcessor:334 Starting beans in phase 2147483647<br />2012-11-22 22:51:45,061 INFO  [main] org.springframework.jms.connection.CachingConnectionFactory:291 Established shared JMS Connection: ActiveMQConnection {id=ID:marcin-SR700-47684-1353621104666-1:1,clientId=null,started=false}<br />2012-11-22 22:51:45,608 INFO  [main] org.apache.camel.spring.SpringCamelContext:1374 Apache Camel 2.9.2 (CamelContext: camel) is starting<br />2012-11-22 22:51:45,611 INFO  [main] org.apache.camel.management.ManagementStrategyFactory:38 JMX enabled. Using ManagedManagementStrategy.<br />2012-11-22 22:51:45,850 INFO  [main] org.apache.camel.management.DefaultManagementLifecycleStrategy:790 StatisticsLevel at All so enabling load performance statistics<br />2012-11-22 22:51:45,961 INFO  [main] org.apache.camel.impl.converter.AnnotationTypeConverterLoader:119 Found 3 packages with 15 @Converter classes to load<br />2012-11-22 22:51:45,995 INFO  [main] org.apache.camel.impl.converter.DefaultTypeConverter:405 Loaded 170 core type converters (total 170 type converters)<br />2012-11-22 22:51:46,002 INFO  [main] org.apache.camel.impl.converter.AnnotationTypeConverterLoader:109 Loaded 2 @Converter classes<br />2012-11-22 22:51:46,023 INFO  [main] org.apache.camel.impl.converter.AnnotationTypeConverterLoader:119 Found 1 packages with 1 @Converter classes to load<br />2012-11-22 22:51:46,024 WARN  [main] org.apache.camel.impl.converter.DefaultTypeConverter:257 Overriding type converter from: StaticMethodTypeConverter: public static org.apache.activemq.command.ActiveMQDestination org.apache.camel.component.activemq.ActiveMQConverter.toDestination(java.lang.String) to: StaticMethodTypeConverter: public static org.apache.activemq.command.ActiveMQDestination org.apache.activemq.camel.converter.ActiveMQConverter.toDestination(java.lang.String)<br />2012-11-22 22:51:46,043 INFO  [main] org.apache.camel.impl.converter.DefaultTypeConverter:431 Loaded additional 3 type converters (total 173 type converters) in 0.041 seconds<br />2012-11-22 22:51:46,360 INFO  [main] org.apache.camel.converter.jaxb.JaxbDataFormat:277 Creating JAXBContext with contextPath: pl.grzejszczak.marcin.camel.jaxb.generated and ApplicationContextClassLoader: sun.misc.Launcher$AppClassLoader@35a16869<br />2012-11-22 22:51:46,500 INFO  [main] org.apache.camel.spring.SpringCamelContext:1980 Route: route1 started and consuming from: Endpoint[activemq://topic:Initial.Topic]<br />2012-11-22 22:51:46,509 INFO  [main] org.apache.camel.spring.SpringCamelContext:1409 Total 1 routes, of which 1 is started.<br />2012-11-22 22:51:46,510 INFO  [main] org.apache.camel.spring.SpringCamelContext:1410 Apache Camel 2.9.2 (CamelContext: camel) started in 0.901 seconds<br />2012-11-22 22:51:46,519 INFO  [main] org.springframework.context.support.DefaultLifecycleProcessor:334 Starting beans in phase 2147483647<br />2012-11-22 22:52:08,375 DEBUG [Camel (camel) thread #1 - JmsConsumer[Initial.Topic]] pl.grzejszczak.marcin.camel.service.EnrichingServiceImpl:21 Enriching player details<br />2012-11-22 22:52:08,377 DEBUG [Camel (camel) thread #1 - JmsConsumer[Initial.Topic]] pl.grzejszczak.marcin.camel.enricher.AgeEnricher:17 Enriching player [Lewandowski] with age data<br />2012-11-22 22:52:10,379 DEBUG [Camel (camel) thread #1 - JmsConsumer[Initial.Topic]] pl.grzejszczak.marcin.camel.enricher.ClubEnricher:16 Enriching player [Lewandowski] with club data<br />2012-11-22 22:52:12,462 DEBUG [jmsDestinationContainer-1] pl.grzejszczak.marcin.camel.manual.jms.FinalListenerImpl:35 Message already enriched! Shutting down the system<br /><br /></pre>We can see that the Camel Context has been initialized and then the bean that we have created in the <span style="font-family: Courier New, Courier, monospace;">jmsApplicationContext.xml</span> that is listening to the final destination is acknowledging that the message has been enriched properly.<br /><br />What about the <span style="font-family: Courier New, Courier, monospace;">ActiveMQRouter.java</span> logs?<br /><br /><br /><pre class="brush:xml">2012-11-22 22:52:06,077 INFO  [main] org.springframework.context.support.ClassPathXmlApplicationContext:495 Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@43462851: startup date [Thu Nov 22 22:52:06 CET 2012]; root of context hierarchy<br />2012-11-22 22:52:06,153 INFO  [main] org.springframework.beans.factory.xml.XmlBeanDefinitionReader:315 Loading XML bean definitions from class path resource [camel/jmsApplicationContext.xml]<br />2012-11-22 22:52:06,417 INFO  [main] org.springframework.context.annotation.ClassPathBeanDefinitionScanner:210 JSR-330 'javax.inject.Named' annotation found and supported for component scanning<br />2012-11-22 22:52:06,721 INFO  [main] org.springframework.beans.factory.config.PropertyPlaceholderConfigurer:177 Loading properties file from class path resource [camel/jms.properties]<br />2012-11-22 22:52:06,733 INFO  [main] org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor:139 JSR-330 'javax.inject.Inject' annotation found and supported for autowiring<br />2012-11-22 22:52:06,758 INFO  [main] org.springframework.beans.factory.support.DefaultListableBeanFactory:557 Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@362f0d54: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,AgeEnricher,ClubEnricher,PlayerDetailsConverter,finalListenerImpl,playerDetailsSenderImpl,org.springframework.beans.factory.config.PropertyPlaceholderConfigurer#0,activeMQConnectionFactory,cachingConnectionFactory,origin,destination,producerTemplate,originPlayerSender,destinationListenerImpl,jmsDestinationContainer,oxmMessageConverter,enrichingService,marshaller,org.springframework.context.annotation.ConfigurationClassPostProcessor$ImportAwareBeanPostProcessor#0]; root of factory hierarchy<br />2012-11-22 22:52:07,224 INFO  [main] org.springframework.oxm.jaxb.Jaxb2Marshaller:436 Creating JAXBContext with classes to be bound [class pl.grzejszczak.marcin.camel.jaxb.generated.PlayerDetails]<br />2012-11-22 22:52:07,628 INFO  [main] org.springframework.context.support.DefaultLifecycleProcessor:334 Starting beans in phase 2147483647<br />2012-11-22 22:52:07,883 INFO  [main] org.springframework.jms.connection.CachingConnectionFactory:291 Established shared JMS Connection: ActiveMQConnection {id=ID:marcin-SR700-53586-1353621127755-1:1,clientId=null,started=false}<br />2012-11-22 22:52:08,093 DEBUG [main] pl.grzejszczak.marcin.camel.manual.jms.PlayerDetailsSenderImpl:26 Sending [pl.grzejszczak.marcin.camel.jaxb.generated.PlayerDetails@3ea86d12] to topic [topic://Initial.Topic]<br />2012-11-22 22:52:12,463 DEBUG [jmsDestinationContainer-1] pl.grzejszczak.marcin.camel.manual.jms.FinalListenerImpl:35 Message already enriched! Shutting down the system<br /><br /></pre>First we see that our spring Context has been initialized and then we see that a message has been sent to the <i>Initial.Topic</i>. At the end of the processing we can see that the listener is confirming that the message has been properly enriched - so all the Camel work has been done in a proper way.<br /><br />This example is showing how easy and simple it can be to create a routing / enriching service by means of Spring and Camel (integrated with Spring).<br /><br />The sources are available at <a href="https://bitbucket.org/gregorin1987/too-much-coding/src/26b70bca3b44e37c20c627e0efe4644d28f8d468/Camel%20and%20Spring?at=default">Too Much Coding's repository at bitbucket</a>.<br /><br /></div>
 </div>
 
 
-  <footer>
-    <p class="meta">
-      
+      <footer>
+        <p class="meta text-muted">
+          
   
 
-<span class="byline author vcard">Posted by <span class="fn">Marcin Grzejszczak</span></span>
+<span class="glyphicon glyphicon-user"></span> <span class="byline author vcard" itemprop="author" itemscope itemtype="http://schema.org/Person">Posted by <span class="fn" itemprop="name">Marcin Grzejszczak</span></span>
 
-      
-
-
+          
 
 
 
 
 
 
-  
 
 
-<time datetime="2012-11-22T23:13:00+01:00" pubdate data-updated="true"></time>
-      
 
+
+
+
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2012-11-22T23:13:00+01:00"  data-updated="true" itemprop="datePublished dateCreated">ordinal</time>
+          
+
+<span class="glyphicon glyphicon-tags"></span>&nbsp;
 <span class="categories">
   
     <a class='category' href='/blog/categories/apache-camel/'>apache camel</a>, <a class='category' href='/blog/categories/bitbucket/'>bitbucket</a>, <a class='category' href='/blog/categories/integration/'>integration</a>, <a class='category' href='/blog/categories/java/'>java</a>, <a class='category' href='/blog/categories/jaxb/'>jaxb</a>, <a class='category' href='/blog/categories/jms/'>jms</a>, <a class='category' href='/blog/categories/jmstemplate/'>jmstemplate</a>, <a class='category' href='/blog/categories/spring/'>spring</a>
@@ -141,11 +173,11 @@
 </span>
 
 
-    </p>
-    
-      <div class="sharing">
+        </p>
+        
+          <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://toomuchcoding.com/blog/2012/11/22/apache-camel-with-spring-routing-with/" data-via="mgrzejszczak" data-counturl="http://toomuchcoding.com/blog/2012/11/22/apache-camel-with-spring-routing-with/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://toomuchcoding.com/blog/2012/11/22/apache-camel-with-spring-routing-with/" data-via="mgrzejszczak" data-counturl="http://toomuchcoding.com/blog/2012/11/22/apache-camel-with-spring-routing-with/" >Tweet</a>
   
   
   <div class="g-plusone" data-size="medium"></div>
@@ -155,29 +187,32 @@
   
 </div>
 
+        
+        
+          <ul class="meta text-muted pager">
+            
+            <li class="previous"><a href="/blog/2012/11/06/sources-to-blog-posts/" title="Previous Post: Sources to blog posts">&laquo; Sources to blog posts</a></li>
+            
+            
+            <li class="next"><a href="/blog/2012/12/07/google-guava/" title="Next Post: Google Guava">Google Guava &raquo;</a></li>
+            
+          </ul>
+        
+      </footer>
+    </article>
     
-    <p class="meta">
-      
-        <a class="basic-alignment left" href="/blog/2012/11/06/sources-to-blog-posts/" title="Previous Post: Sources to blog posts">&laquo; Sources to blog posts</a>
-      
-      
-        <a class="basic-alignment right" href="/blog/2012/12/07/google-guava/" title="Next Post: Google Guava">Google Guava &raquo;</a>
-      
-    </p>
-  </footer>
-</article>
-
-  <section>
-    <h1>Comments</h1>
-    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      <section>
+        <h2>Comments</h2>
+        <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </div>
-  </section>
+      </section>
+    
+  </div>
 
-</div>
-
-<aside class="sidebar">
   
-    <section>
+  <aside class="sidebar col-md-3">
+    
+      <section>
   <h1>About Me</h1>
   <p><img src="/images/ja.jpg" style="float:left;margin:5px;border-width:0px"/>
   Author of <a href="https://www.packtpub.com/application-development/instant-mockito">"Mockito Instant"</a> and <a href="https://www.packtpub.com/application-development/mockito-cookbook">"Mockito Cookbook"</a> books. OSS Contributor. Co-founder of the Warsaw Groovy User Group and <a href="www.meetup.com/Warsaw-Cloud-Native-Meetup/">Warsaw Cloud Native Meetup</a>.
@@ -191,70 +226,68 @@
   Contributed to Groovy, Mockito, Rest-assured, Drools, Moco. Author of <a href="https://github.com/marcingrzejszczak/uptodate-gradle-plugin">Uptodate Gradle plugin</a>, <a href="https://github.com/marcingrzejszczak/spock-subjects-collaborators-extension/">Spock subjects-collaborators extension</a>, <a href="https://github.com/marcingrzejszczak/gradle-test-profiler">gradle-test-profiler</a>, <a href="https://github.com/marcingrzejszczak/jsonassert">JSONAssert</a> and <a href="https://github.com/marcingrzejszczak/xmlassert">XMLAssert</a> open source projects.
   </p>
 
-  <p>Github profile</p>
-  <p><a href="https://github.com/marcingrzejszczak">https://github.com/marcingrzejszczak</a></p>
+  <p><a href="https://github.com/marcingrzejszczak">Github profile</a></p>
 
-  <p>Lanyrd profile</p>
-  <p><a href="http://lanyrd.com/profile/marcin-grzejszczak">http://lanyrd.com/profile/marcin-grzejszczak</a></p>
+  <p><a href="http://lanyrd.com/profile/marcin-grzejszczak">Lanyrd profile</a></p>
 
-  <p>Twitter profile</p>
-  <p><a href="https://twitter.com/MGrzejszczak">@MGrzejszczak</a></p>
+  <p><a href="https://twitter.com/MGrzejszczak">Twitter: @MGrzejszczak</a></p>
 
-  <p>Goodreads account</p>
-  <p><a href="https://www.goodreads.com/author/show/7284553.Marcin_Grzejszczak">https://www.goodreads.com/author/show/7284553.Marcin_Grzejszczak</a></p>
+  <p><a href="https://www.goodreads.com/author/show/7284553.Marcin_Grzejszczak">Goodreads account</a></p>
 </section>
-<section>
-  <h1>Recent Posts</h1>
-  <ul id="recent_posts">
-    
-      <li class="post">
-        <a href="/blog/2016/10/18/new-project-spring-cloud-pipelines/">New Project - Spring Cloud Pipelines</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2016/10/07/spring-cloud-contract-podcast/">Spring Cloud Contract Podcast</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2016/09/24/spring-cloud-contract-1-dot-0-0-dot-release-available/">Spring Cloud Contract 1.0.0.RELEASE available!</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2016/07/25/spring-cloud-contract-1-dot-0-0-dot-m1-released/">Spring Cloud Contract 1.0.0.M1 Released</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2016/06/24/accurest-becomes-part-of-the-spring-cloud-contract/">Accurest becomes part of the Spring Cloud Contract</a>
-      </li>
-    
-  </ul>
-</section>
-
-
-<section class="googleplus">
-  <h1>
-    <a href="https://plus.google.com/108408840893580782990?rel=author">
-      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
-      Google+
-    </a>
-  </h1>
-</section>
-
-
-
-  
-</aside>
-
-
-    </div>
+<section class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Recent Posts</h3>
   </div>
-  <footer role="contentinfo"><p>
-  Copyright &copy; 2017 - Marcin Grzejszczak -
-  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a>. Design by <a href="http://octopressthemes.com">Octopress Themes</a></span>
+  
+  <div id="recent_posts" class="list-group">
+    
+    <a class="list-group-item " href="/blog/2016/10/18/new-project-spring-cloud-pipelines/">New Project - Spring Cloud Pipelines</a>
+    
+    <a class="list-group-item " href="/blog/2016/10/07/spring-cloud-contract-podcast/">Spring Cloud Contract Podcast</a>
+    
+    <a class="list-group-item " href="/blog/2016/09/24/spring-cloud-contract-1-dot-0-0-dot-release-available/">Spring Cloud Contract 1.0.0.RELEASE Available!</a>
+    
+    <a class="list-group-item " href="/blog/2016/07/25/spring-cloud-contract-1-dot-0-0-dot-m1-released/">Spring Cloud Contract 1.0.0.M1 Released</a>
+    
+    <a class="list-group-item " href="/blog/2016/06/24/accurest-becomes-part-of-the-spring-cloud-contract/">Accurest Becomes Part of the Spring Cloud Contract</a>
+    
+  </div>
+</section>
+
+
+<section class="googleplus panel panel-default">
+  <div class="panel-body">
+    <h2>
+      <a href="https://plus.google.com/108408840893580782990?rel=author">
+        <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+        Google+
+      </a>
+    </h2>
+  </div>
+</section>
+
+
+
+    
+  </aside>
+  
+</div>
+
+        </div>
+      </div>
+    </div>
+    <footer role="contentinfo"><div class="container">
+    <p class="text-muted credits">
+  Copyright &copy; 2017 - Marcin Grzejszczak<br>
+  <small>
+      <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>,
+      <span class="credit">customized with <a href="https://github.com/kAworu/octostrap3">octostrap3</a></span>.
+  </small>
 </p>
 
+</div>
 </footer>
-  
+    
 
 <script type="text/javascript">
       var disqus_shortname = 'toomuchcoding';
@@ -267,7 +300,7 @@
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     }());
 </script>
@@ -278,7 +311,7 @@
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) {return;}
-  js = d.createElement(s); js.id = id;
+  js = d.createElement(s); js.id = id; js.async = true;
   js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
@@ -300,14 +333,15 @@
       var twitterWidgets = document.createElement('script');
       twitterWidgets.type = 'text/javascript';
       twitterWidgets.async = true;
-      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
       document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
     })();
   </script>
 
 
+<script src="/assets/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="/javascripts/modernizr.js"></script>
 
 
-
-</body>
+  </body>
 </html>

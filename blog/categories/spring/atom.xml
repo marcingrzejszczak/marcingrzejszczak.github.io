@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: spring | TOO MUCH CODING]]></title>
+  <title><![CDATA[Category: Spring | TOO MUCH CODING]]></title>
   <link href="http://toomuchcoding.com/blog/categories/spring/atom.xml" rel="self"/>
   <link href="http://toomuchcoding.com/"/>
-  <updated>2017-01-16T11:06:14+01:00</updated>
+  <updated>2017-03-02T17:24:24+01:00</updated>
   <id>http://toomuchcoding.com/</id>
   <author>
     <name><![CDATA[Marcin Grzejszczak]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Post on Spring blog]]></title>
+    <title type="html"><![CDATA[Post on Spring Blog]]></title>
     <link href="http://toomuchcoding.com/blog/2016/01/04/post-on-spring-blog/"/>
     <updated>2016-01-04T18:28:00+01:00</updated>
     <id>http://toomuchcoding.com/blog/2016/01/04/post-on-spring-blog</id>
@@ -25,7 +25,7 @@ Hi!<br /><br />Since December I'm working for Pivotal and the Spring Cloud team.
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Spring's @Primary annotation in action]]></title>
+    <title type="html"><![CDATA[Spring's @Primary Annotation in Action]]></title>
     <link href="http://toomuchcoding.com/blog/2013/12/12/springs-primary-annotation-in-action/"/>
     <updated>2013-12-12T09:00:00+01:00</updated>
     <id>http://toomuchcoding.com/blog/2013/12/12/springs-primary-annotation-in-action</id>
@@ -38,7 +38,7 @@ Hi!<br /><br />Since December I'm working for Pivotal and the Spring Cloud team.
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Injecting Test Doubles in Spring using Mockito and BeanPostProcessors]]></title>
+    <title type="html"><![CDATA[Injecting Test Doubles in Spring Using Mockito and BeanPostProcessors]]></title>
     <link href="http://toomuchcoding.com/blog/2013/08/09/injecting-test-doubles-in-spring-using/"/>
     <updated>2013-08-09T14:39:00+02:00</updated>
     <id>http://toomuchcoding.com/blog/2013/08/09/injecting-test-doubles-in-spring-using</id>
@@ -51,7 +51,7 @@ Hi!<br /><br />Since December I'm working for Pivotal and the Spring Cloud team.
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Drools decision tables with Camel and Spring]]></title>
+    <title type="html"><![CDATA[Drools Decision Tables With Camel and Spring]]></title>
     <link href="http://toomuchcoding.com/blog/2013/02/03/drools-decision-tables-with-camel-and/"/>
     <updated>2013-02-03T22:28:00+01:00</updated>
     <id>http://toomuchcoding.com/blog/2013/02/03/drools-decision-tables-with-camel-and</id>
@@ -64,7 +64,7 @@ Hi!<br /><br />Since December I'm working for Pivotal and the Spring Cloud team.
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Drools integration with Spring vs manual rules creation]]></title>
+    <title type="html"><![CDATA[Drools Integration With Spring vs Manual Rules Creation]]></title>
     <link href="http://toomuchcoding.com/blog/2013/01/15/drools-integration-with-spring-vs/"/>
     <updated>2013-01-15T17:04:00+01:00</updated>
     <id>http://toomuchcoding.com/blog/2013/01/15/drools-integration-with-spring-vs</id>

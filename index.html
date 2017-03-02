@@ -1,15 +1,11 @@
-
 <!DOCTYPE html>
-<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
-<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
-<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<html class="no-js" lang="en">
 <head>
   <meta charset="utf-8">
   <title>TOO MUCH CODING</title>
   <meta name="author" content="Marcin Grzejszczak">
 
   
-  <meta name="description" content="I&rsquo;ve just published an article at the Spring blog about the creation of a new project called Spring Cloud Pipelines. Why? Why a new project? &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,74 +15,101 @@
 
   
   <link rel="canonical" href="http://toomuchcoding.com/">
-  <link href="/favicon.png" rel="icon">
-  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="/javascripts/ender.js"></script>
-  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/favicon.png" type="image/png" rel="icon">
   <link href="/atom.xml" rel="alternate" title="TOO MUCH CODING" type="application/atom+xml">
-  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
 
-<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  <!-- http://opengraphprotocol.org/ -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="http://toomuchcoding.com/">
+  <meta property="og:title" content="TOO MUCH CODING">
+  <meta property="og:description" content="A blog for coding addicts about Java, Groovy, Buzzword, Spring, Microservices, Buzzword">
 
-  ga('create', 'UA-74671877-1', 'auto');
-  ga('send', 'pageview');
+  <script src="/javascripts/libs/jquery/jquery-2.1.3.min.js"></script>
 
-</script>
+<link href="/assets/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="/assets/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css">
+
+
+  
+  <link href="/stylesheets/screen.css" media="screen, projection, print" rel="stylesheet" type="text/css">
 
   
 
 </head>
 
-<body   >
-  <header role="banner"><hgroup>
-  <h1><a href="/">TOO MUCH CODING</a></h1>
-  
-    <h2>A blog for coding addicts by Marcin Grzejszczak</h2>
-  
-</hgroup>
+  <body   >
+    <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+    <div id="wrap">
+      <header role="banner">
+        <nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" title="toggle navbar" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">TOO MUCH CODING</a>
+        </div>
 
-</header>
-  <nav role="navigation"><ul class="subscription" data-subscription="rss">
-  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
-  
-</ul>
-  
-<form action="https://www.google.com/search" method="get">
-  <fieldset role="search">
-    <input type="hidden" name="q" value="site:toomuchcoding.com" />
-    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
-  </fieldset>
-</form>
-  
-<ul class="main-navigation">
-  <li><a href="/">Blog</a></li>
-  <li><a href="/blog/archives">Archives</a></li>
-  <li><a href="/oss/">OSS</a></li>
-  <li><a href="/abstracts/">Abstracts</a></li>
-</ul>
-
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="active">
+                    <a rel="index" href="/">Blog</a>
+                </li>
+                <li >
+                    <a href="/blog/archives">Archives</a>
+                </li>
+                <li >
+                    <a href="/oss">OSS</a>
+                </li>
+                <li >
+                    <a href="/abstracts">Abstracts</a>
+                </li>
+                <li >
+                    <a href="/talks">Talks</a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a class="subscribe-rss" href="/atom.xml" title="subscribe via RSS">
+                        <span class="visible-xs">RSS</span>
+                        <img class="hidden-xs" src="/images/rss.png" alt="RSS">
+                    </a>
+                </li>
+                
+            </ul>
+            
+                <form class="navbar-form navbar-right" action="https://www.google.com/search" method="GET">
+                    <input type="hidden" name="sitesearch" value="toomuchcoding.com">
+                    <div class="form-group">
+                        <input class="form-control" type="text" name="q" placeholder="Search">
+                    </div>
+                </form>
+            
+        </div>
+    </div>
 </nav>
-  <div id="main">
-    <div id="content">
-      <div class="blog-index">
-  
-  
-  
-    <article>
+
+
+      </header>
+      <div id="main" role="main" class="container">
+        <div id="content">
+          <div class="row">
+  <div class="page-content col-md-9">
+    <div class="blog-index" itemscope itemtype="http://schema.org/Blog">
+    <meta itemprop="name" content="TOO MUCH CODING" />
+    <meta itemprop="description" content="A blog for coding addicts about Java, Groovy, Buzzword, Spring, Microservices, Buzzword" />
+    <meta itemprop="url" content="http://toomuchcoding.com" />
       
-  <header>
+      
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
     
-      <h1 class="entry-title"><a href="/blog/2016/10/18/new-project-spring-cloud-pipelines/">New Project - Spring Cloud Pipelines</a></h1>
-    
-    
-      <p class="meta">
+      <p class="meta text-muted text-uppercase">
         
 
 
@@ -96,19 +119,24 @@
 
 
 
-  
 
 
-<time datetime="2016-10-18T19:29:24+02:00" pubdate data-updated="true"></time>
+
+
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2016-10-18T19:29:24+02:00"  data-updated="true" itemprop="datePublished dateCreated">ordinal</time>
         
-         | <a href="/blog/2016/10/18/new-project-spring-cloud-pipelines/#disqus_thread">Comments</a>
+           | <a href="/blog/2016/10/18/new-project-spring-cloud-pipelines/#disqus_thread" itemprop="discussionUrl"
+             data-disqus-identifier="http://toomuchcoding.com/blog/2016/10/18/new-project-spring-cloud-pipelines/">Comments</a>
         
       </p>
+    
+    
+      <h2 class="entry-title" itemprop="name headline"><a href="/blog/2016/10/18/new-project-spring-cloud-pipelines/" itemprop="url">New Project - Spring Cloud Pipelines</a></h2>
     
   </header>
 
 
-  <div class="entry-content"><p>I&rsquo;ve just published an article at the Spring blog about the creation of a new project called <a href="https://spring.io/blog/2016/10/18/spring-cloud-pipelines">Spring Cloud Pipelines</a>.</p>
+  <div class="entry-content clearfix" itemprop="articleBody description"><p>I&rsquo;ve just published an article at the Spring blog about the creation of a new project called <a href="https://spring.io/blog/2016/10/18/spring-cloud-pipelines">Spring Cloud Pipelines</a>.</p>
 
 <h1>Why?</h1>
 
@@ -140,17 +168,14 @@ our goal is to give developers tools they need to deliver features as fast as po
   
 
 
-    </article>
-  
-  
-    <article>
+        </article>
       
-  <header>
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
     
-      <h1 class="entry-title"><a href="/blog/2016/10/07/spring-cloud-contract-podcast/">Spring Cloud Contract Podcast</a></h1>
-    
-    
-      <p class="meta">
+      <p class="meta text-muted text-uppercase">
         
 
 
@@ -160,35 +185,37 @@ our goal is to give developers tools they need to deliver features as fast as po
 
 
 
-  
 
 
-<time datetime="2016-10-07T23:14:36+02:00" pubdate data-updated="true"></time>
+
+
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2016-10-07T23:14:36+02:00"  data-updated="true" itemprop="datePublished dateCreated">ordinal</time>
         
-         | <a href="/blog/2016/10/07/spring-cloud-contract-podcast/#disqus_thread">Comments</a>
+           | <a href="/blog/2016/10/07/spring-cloud-contract-podcast/#disqus_thread" itemprop="discussionUrl"
+             data-disqus-identifier="http://toomuchcoding.com/blog/2016/10/07/spring-cloud-contract-podcast/">Comments</a>
         
       </p>
+    
+    
+      <h2 class="entry-title" itemprop="name headline"><a href="/blog/2016/10/07/spring-cloud-contract-podcast/" itemprop="url">Spring Cloud Contract Podcast</a></h2>
     
   </header>
 
 
-  <div class="entry-content"><p>A podcast with Michael Cote and me about Spring Cloud Contract was just published. <a href="https://soundcloud.com/pivotalconversations/037-microservices-governance-with-spring-cloud-contract-guest-marcin-grzejszczak">You can check it out here!</a>.</p>
+  <div class="entry-content clearfix" itemprop="articleBody description"><p>A podcast with Michael Cote and me about Spring Cloud Contract was just published. <a href="https://soundcloud.com/pivotalconversations/037-microservices-governance-with-spring-cloud-contract-guest-marcin-grzejszczak">You can check it out here!</a>.</p>
 </div>
   
   
 
 
-    </article>
-  
-  
-    <article>
+        </article>
       
-  <header>
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
     
-      <h1 class="entry-title"><a href="/blog/2016/09/24/spring-cloud-contract-1-dot-0-0-dot-release-available/">Spring Cloud Contract 1.0.0.RELEASE Available!</a></h1>
-    
-    
-      <p class="meta">
+      <p class="meta text-muted text-uppercase">
         
 
 
@@ -198,19 +225,24 @@ our goal is to give developers tools they need to deliver features as fast as po
 
 
 
-  
 
 
-<time datetime="2016-09-24T20:39:25+02:00" pubdate data-updated="true"></time>
+
+
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2016-09-24T20:39:25+02:00"  data-updated="true" itemprop="datePublished dateCreated">ordinal</time>
         
-         | <a href="/blog/2016/09/24/spring-cloud-contract-1-dot-0-0-dot-release-available/#disqus_thread">Comments</a>
+           | <a href="/blog/2016/09/24/spring-cloud-contract-1-dot-0-0-dot-release-available/#disqus_thread" itemprop="discussionUrl"
+             data-disqus-identifier="http://toomuchcoding.com/blog/2016/09/24/spring-cloud-contract-1-dot-0-0-dot-release-available/">Comments</a>
         
       </p>
+    
+    
+      <h2 class="entry-title" itemprop="name headline"><a href="/blog/2016/09/24/spring-cloud-contract-1-dot-0-0-dot-release-available/" itemprop="url">Spring Cloud Contract 1.0.0.RELEASE Available!</a></h2>
     
   </header>
 
 
-  <div class="entry-content"><p>I&rsquo;ve just published an article at the Spring blog about <a href="https://spring.io/blog/2016/09/23/spring-cloud-contract-1-0-0-release-is-available">Spring Cloud Contract 1.0.0.RELEASE is available</a>.</p>
+  <div class="entry-content clearfix" itemprop="articleBody description"><p>I&rsquo;ve just published an article at the Spring blog about <a href="https://spring.io/blog/2016/09/23/spring-cloud-contract-1-0-0-release-is-available">Spring Cloud Contract 1.0.0.RELEASE is available</a>.</p>
 
 <p>I&rsquo;m really happy that the project is GA. Even though as the Accurest project we had already done a GA release, it really feels that a lot of effort was put in order to release the GA version under the Pivotal&rsquo;s Spring Cloud branding. Let&rsquo;s look at some numbers:</p>
 
@@ -227,22 +259,19 @@ our goal is to give developers tools they need to deliver features as fast as po
   
   
     <footer>
-      <a rel="full-article" href="/blog/2016/09/24/spring-cloud-contract-1-dot-0-0-dot-release-available/">Read on &rarr;</a>
+      <a class="read-more btn btn-default" href="/blog/2016/09/24/spring-cloud-contract-1-dot-0-0-dot-release-available/">Read on &rarr;</a>
     </footer>
   
 
 
-    </article>
-  
-  
-    <article>
+        </article>
       
-  <header>
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
     
-      <h1 class="entry-title"><a href="/blog/2016/07/25/spring-cloud-contract-1-dot-0-0-dot-m1-released/">Spring Cloud Contract 1.0.0.M1 Released</a></h1>
-    
-    
-      <p class="meta">
+      <p class="meta text-muted text-uppercase">
         
 
 
@@ -252,35 +281,37 @@ our goal is to give developers tools they need to deliver features as fast as po
 
 
 
-  
 
 
-<time datetime="2016-07-25T17:07:39+02:00" pubdate data-updated="true"></time>
+
+
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2016-07-25T17:07:39+02:00"  data-updated="true" itemprop="datePublished dateCreated">ordinal</time>
         
-         | <a href="/blog/2016/07/25/spring-cloud-contract-1-dot-0-0-dot-m1-released/#disqus_thread">Comments</a>
+           | <a href="/blog/2016/07/25/spring-cloud-contract-1-dot-0-0-dot-m1-released/#disqus_thread" itemprop="discussionUrl"
+             data-disqus-identifier="http://toomuchcoding.com/blog/2016/07/25/spring-cloud-contract-1-dot-0-0-dot-m1-released/">Comments</a>
         
       </p>
+    
+    
+      <h2 class="entry-title" itemprop="name headline"><a href="/blog/2016/07/25/spring-cloud-contract-1-dot-0-0-dot-m1-released/" itemprop="url">Spring Cloud Contract 1.0.0.M1 Released</a></h2>
     
   </header>
 
 
-  <div class="entry-content"><p>I&rsquo;ve just published an article at the Spring blog about <a href="https://spring.io/blog/2016/07/25/spring-cloud-contract-1-0-0-m1-released">Spring Cloud Contract 1.0.0.M1 Release</a>. Check out the new project formerly known as Accurest!</p>
+  <div class="entry-content clearfix" itemprop="articleBody description"><p>I&rsquo;ve just published an article at the Spring blog about <a href="https://spring.io/blog/2016/07/25/spring-cloud-contract-1-0-0-m1-released">Spring Cloud Contract 1.0.0.M1 Release</a>. Check out the new project formerly known as Accurest!</p>
 </div>
   
   
 
 
-    </article>
-  
-  
-    <article>
+        </article>
       
-  <header>
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
     
-      <h1 class="entry-title"><a href="/blog/2016/06/24/accurest-becomes-part-of-the-spring-cloud-contract/">Accurest Becomes Part of the Spring Cloud Contract</a></h1>
-    
-    
-      <p class="meta">
+      <p class="meta text-muted text-uppercase">
         
 
 
@@ -290,19 +321,24 @@ our goal is to give developers tools they need to deliver features as fast as po
 
 
 
-  
 
 
-<time datetime="2016-06-24T18:43:07+02:00" pubdate data-updated="true"></time>
+
+
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2016-06-24T18:43:07+02:00"  data-updated="true" itemprop="datePublished dateCreated">ordinal</time>
         
-         | <a href="/blog/2016/06/24/accurest-becomes-part-of-the-spring-cloud-contract/#disqus_thread">Comments</a>
+           | <a href="/blog/2016/06/24/accurest-becomes-part-of-the-spring-cloud-contract/#disqus_thread" itemprop="discussionUrl"
+             data-disqus-identifier="http://toomuchcoding.com/blog/2016/06/24/accurest-becomes-part-of-the-spring-cloud-contract/">Comments</a>
         
       </p>
+    
+    
+      <h2 class="entry-title" itemprop="name headline"><a href="/blog/2016/06/24/accurest-becomes-part-of-the-spring-cloud-contract/" itemprop="url">Accurest Becomes Part of the Spring Cloud Contract</a></h2>
     
   </header>
 
 
-  <div class="entry-content"><p>I&rsquo;m extremely happy to announce that we have successfully rebranded the <a href="https://codearte.github.io/accurest">Accurest project</a>. It&rsquo;s officially become part of the <a href="https://github.com/spring-cloud/spring-cloud-contract">Spring Cloud Contract</a> initiative. Ladies and Gentlemen please welcome the new projects:</p>
+  <div class="entry-content clearfix" itemprop="articleBody description"><p>I&rsquo;m extremely happy to announce that we have successfully rebranded the <a href="https://codearte.github.io/accurest">Accurest project</a>. It&rsquo;s officially become part of the <a href="https://github.com/spring-cloud/spring-cloud-contract">Spring Cloud Contract</a> initiative. Ladies and Gentlemen please welcome the new projects:</p>
 
 <ul>
 <li><a href="https://codearte.github.io/accurest/">Spring Cloud Contract Verifier</a></li>
@@ -314,22 +350,19 @@ our goal is to give developers tools they need to deliver features as fast as po
   
   
     <footer>
-      <a rel="full-article" href="/blog/2016/06/24/accurest-becomes-part-of-the-spring-cloud-contract/">Read on &rarr;</a>
+      <a class="read-more btn btn-default" href="/blog/2016/06/24/accurest-becomes-part-of-the-spring-cloud-contract/">Read on &rarr;</a>
     </footer>
   
 
 
-    </article>
-  
-  
-    <article>
+        </article>
       
-  <header>
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
     
-      <h1 class="entry-title"><a href="/blog/2016/05/31/zero-downtime-deployment-with-a-database/">Zero Downtime Deployment With a Database</a></h1>
-    
-    
-      <p class="meta">
+      <p class="meta text-muted text-uppercase">
         
 
 
@@ -339,19 +372,24 @@ our goal is to give developers tools they need to deliver features as fast as po
 
 
 
-  
 
 
-<time datetime="2016-05-31T11:58:52+02:00" pubdate data-updated="true"></time>
+
+
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2016-05-31T11:58:52+02:00"  data-updated="true" itemprop="datePublished dateCreated">ordinal</time>
         
-         | <a href="/blog/2016/05/31/zero-downtime-deployment-with-a-database/#disqus_thread">Comments</a>
+           | <a href="/blog/2016/05/31/zero-downtime-deployment-with-a-database/#disqus_thread" itemprop="discussionUrl"
+             data-disqus-identifier="http://toomuchcoding.com/blog/2016/05/31/zero-downtime-deployment-with-a-database/">Comments</a>
         
       </p>
+    
+    
+      <h2 class="entry-title" itemprop="name headline"><a href="/blog/2016/05/31/zero-downtime-deployment-with-a-database/" itemprop="url">Zero Downtime Deployment With a Database</a></h2>
     
   </header>
 
 
-  <div class="entry-content"><p>I&rsquo;ve just published an article at the Spring blog about <a href="https://spring.io/blog/2016/05/31/zero-downtime-deployment-with-a-database">Zero Downtime Deployment with a Database</a>. So if you&rsquo;re planning on doing
+  <div class="entry-content clearfix" itemprop="articleBody description"><p>I&rsquo;ve just published an article at the Spring blog about <a href="https://spring.io/blog/2016/05/31/zero-downtime-deployment-with-a-database">Zero Downtime Deployment with a Database</a>. So if you&rsquo;re planning on doing
 zero downtime or blue/green deployment you&rsquo;d better check out that article :) The code is available here on
 <a href="https://github.com/spring-cloud-samples/zero-downtime-deployment">Github</a>.</p>
 </div>
@@ -359,17 +397,14 @@ zero downtime or blue/green deployment you&rsquo;d better check out that article
   
 
 
-    </article>
-  
-  
-    <article>
+        </article>
       
-  <header>
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
     
-      <h1 class="entry-title"><a href="/blog/2016/04/30/accurest-and-stub-runner-1-dot-1-0-dot-m3/">Accurest and Stub Runner 1.1.0.M3</a></h1>
-    
-    
-      <p class="meta">
+      <p class="meta text-muted text-uppercase">
         
 
 
@@ -379,19 +414,24 @@ zero downtime or blue/green deployment you&rsquo;d better check out that article
 
 
 
-  
 
 
-<time datetime="2016-04-30T13:53:44+02:00" pubdate data-updated="true"></time>
+
+
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2016-04-30T13:53:44+02:00"  data-updated="true" itemprop="datePublished dateCreated">ordinal</time>
         
-         | <a href="/blog/2016/04/30/accurest-and-stub-runner-1-dot-1-0-dot-m3/#disqus_thread">Comments</a>
+           | <a href="/blog/2016/04/30/accurest-and-stub-runner-1-dot-1-0-dot-m3/#disqus_thread" itemprop="discussionUrl"
+             data-disqus-identifier="http://toomuchcoding.com/blog/2016/04/30/accurest-and-stub-runner-1-dot-1-0-dot-m3/">Comments</a>
         
       </p>
+    
+    
+      <h2 class="entry-title" itemprop="name headline"><a href="/blog/2016/04/30/accurest-and-stub-runner-1-dot-1-0-dot-m3/" itemprop="url">Accurest and Stub Runner 1.1.0.M3</a></h2>
     
   </header>
 
 
-  <div class="entry-content"><p>Currently at the Spring Team we&rsquo;re polishing our libraries for the upcoming final release of the Brixton train. It should happen soon :) Until then I&rsquo;m spending a lot of my after work, free time on <a href="/blog/2016/04/25/accurest-docs-updated/">Accurest</a> and <a href="http://toomuchcoding.com/blog/2016/04/06/accurest-stubrunner-released/">Stub Runner</a>.</p>
+  <div class="entry-content clearfix" itemprop="articleBody description"><p>Currently at the Spring Team we&rsquo;re polishing our libraries for the upcoming final release of the Brixton train. It should happen soon :) Until then I&rsquo;m spending a lot of my after work, free time on <a href="/blog/2016/04/25/accurest-docs-updated/">Accurest</a> and <a href="http://toomuchcoding.com/blog/2016/04/06/accurest-stubrunner-released/">Stub Runner</a>.</p>
 
 <p>Today&rsquo;s post will be about the new stuff that you will be able to profit from in the upcoming <code>1.1.0</code> release of Accurest. Also you can profit from most of these features in the <code>1.1.0.M3</code> release.</p>
 
@@ -401,22 +441,19 @@ zero downtime or blue/green deployment you&rsquo;d better check out that article
   
   
     <footer>
-      <a rel="full-article" href="/blog/2016/04/30/accurest-and-stub-runner-1-dot-1-0-dot-m3/">Read on &rarr;</a>
+      <a class="read-more btn btn-default" href="/blog/2016/04/30/accurest-and-stub-runner-1-dot-1-0-dot-m3/">Read on &rarr;</a>
     </footer>
   
 
 
-    </article>
-  
-  
-    <article>
+        </article>
       
-  <header>
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
     
-      <h1 class="entry-title"><a href="/blog/2016/04/25/accurest-docs-updated/">Accurest Docs Updated</a></h1>
-    
-    
-      <p class="meta">
+      <p class="meta text-muted text-uppercase">
         
 
 
@@ -426,19 +463,24 @@ zero downtime or blue/green deployment you&rsquo;d better check out that article
 
 
 
-  
 
 
-<time datetime="2016-04-25T21:49:59+02:00" pubdate data-updated="true"></time>
+
+
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2016-04-25T21:49:59+02:00"  data-updated="true" itemprop="datePublished dateCreated">ordinal</time>
         
-         | <a href="/blog/2016/04/25/accurest-docs-updated/#disqus_thread">Comments</a>
+           | <a href="/blog/2016/04/25/accurest-docs-updated/#disqus_thread" itemprop="discussionUrl"
+             data-disqus-identifier="http://toomuchcoding.com/blog/2016/04/25/accurest-docs-updated/">Comments</a>
         
       </p>
+    
+    
+      <h2 class="entry-title" itemprop="name headline"><a href="/blog/2016/04/25/accurest-docs-updated/" itemprop="url">Accurest Docs Updated</a></h2>
     
   </header>
 
 
-  <div class="entry-content"><p>After a lot of sleepless nights I&rsquo;ve finally migrated the <a href="http://codearte.github.io/accurest/">Accurest Docs</a> from Github&rsquo;s Wiki to Asciidoctor.
+  <div class="entry-content clearfix" itemprop="articleBody description"><p>After a lot of sleepless nights I&rsquo;ve finally migrated the <a href="http://codearte.github.io/accurest/">Accurest Docs</a> from Github&rsquo;s Wiki to Asciidoctor.
 With that change the vast majority of our snippets is taken from the tests. Also thanks to that change it will be much easier to keep the docs up to date
 since the documentation lives together with the code.</p>
 
@@ -448,17 +490,14 @@ since the documentation lives together with the code.</p>
   
 
 
-    </article>
-  
-  
-    <article>
+        </article>
       
-  <header>
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
     
-      <h1 class="entry-title"><a href="/blog/2016/04/14/json-assert-0-dot-4-0-released/">JSON Assert 0.4.0 Released</a></h1>
-    
-    
-      <p class="meta">
+      <p class="meta text-muted text-uppercase">
         
 
 
@@ -468,19 +507,24 @@ since the documentation lives together with the code.</p>
 
 
 
-  
 
 
-<time datetime="2016-04-14T05:10:51+02:00" pubdate data-updated="true"></time>
+
+
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2016-04-14T05:10:51+02:00"  data-updated="true" itemprop="datePublished dateCreated">ordinal</time>
         
-         | <a href="/blog/2016/04/14/json-assert-0-dot-4-0-released/#disqus_thread">Comments</a>
+           | <a href="/blog/2016/04/14/json-assert-0-dot-4-0-released/#disqus_thread" itemprop="discussionUrl"
+             data-disqus-identifier="http://toomuchcoding.com/blog/2016/04/14/json-assert-0-dot-4-0-released/">Comments</a>
         
       </p>
+    
+    
+      <h2 class="entry-title" itemprop="name headline"><a href="/blog/2016/04/14/json-assert-0-dot-4-0-released/" itemprop="url">JSON Assert 0.4.0 Released</a></h2>
     
   </header>
 
 
-  <div class="entry-content"><p>I&rsquo;m pleased to announce that JSON Assert version 0.4.0 got released! The following feature has been added</p>
+  <div class="entry-content clearfix" itemprop="articleBody description"><p>I&rsquo;m pleased to announce that JSON Assert version 0.4.0 got released! The following feature has been added</p>
 
 <ul>
 <li><a href="https://github.com/marcingrzejszczak/jsonassert/issues/8">Retrieving value basing on the JSON Path</a></li>
@@ -491,22 +535,19 @@ since the documentation lives together with the code.</p>
   
   
     <footer>
-      <a rel="full-article" href="/blog/2016/04/14/json-assert-0-dot-4-0-released/">Read on &rarr;</a>
+      <a class="read-more btn btn-default" href="/blog/2016/04/14/json-assert-0-dot-4-0-released/">Read on &rarr;</a>
     </footer>
   
 
 
-    </article>
-  
-  
-    <article>
+        </article>
       
-  <header>
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
     
-      <h1 class="entry-title"><a href="/blog/2016/04/11/uptodate-gradle-plugin-migrated/">UpToDate Gradle Plugin Migrated</a></h1>
-    
-    
-      <p class="meta">
+      <p class="meta text-muted text-uppercase">
         
 
 
@@ -516,42 +557,53 @@ since the documentation lives together with the code.</p>
 
 
 
-  
 
 
-<time datetime="2016-04-11T13:28:43+02:00" pubdate data-updated="true"></time>
+
+
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2016-04-11T13:28:43+02:00"  data-updated="true" itemprop="datePublished dateCreated">ordinal</time>
         
-         | <a href="/blog/2016/04/11/uptodate-gradle-plugin-migrated/#disqus_thread">Comments</a>
+           | <a href="/blog/2016/04/11/uptodate-gradle-plugin-migrated/#disqus_thread" itemprop="discussionUrl"
+             data-disqus-identifier="http://toomuchcoding.com/blog/2016/04/11/uptodate-gradle-plugin-migrated/">Comments</a>
         
       </p>
+    
+    
+      <h2 class="entry-title" itemprop="name headline"><a href="/blog/2016/04/11/uptodate-gradle-plugin-migrated/" itemprop="url">UpToDate Gradle Plugin Migrated</a></h2>
     
   </header>
 
 
-  <div class="entry-content"><p>Time for another release here at <a href="http://toomuchcoding.com">Too Much Coding blog</a>! This time it will be a short post :) I&rsquo;m happy to announce that the <a href="https://github.com/marcingrzejszczak/uptodate-gradle-plugin">UpToDate Gradle Plugin</a> has finally found a new home!</p>
+  <div class="entry-content clearfix" itemprop="articleBody description"><p>Time for another release here at <a href="http://toomuchcoding.com">Too Much Coding blog</a>! This time it will be a short post :) I&rsquo;m happy to announce that the <a href="https://github.com/marcingrzejszczak/uptodate-gradle-plugin">UpToDate Gradle Plugin</a> has finally found a new home!</p>
 
 </div>
   
   
     <footer>
-      <a rel="full-article" href="/blog/2016/04/11/uptodate-gradle-plugin-migrated/">Read on &rarr;</a>
+      <a class="read-more btn btn-default" href="/blog/2016/04/11/uptodate-gradle-plugin-migrated/">Read on &rarr;</a>
     </footer>
   
 
 
-    </article>
-  
-  <div class="pagination">
-    <!-- 
-      <a class="prev" href="2">&larr; Older</a>
-     -->
-    <a href="/blog/archives">Blog Archives</a>
-    <!--  -->
+        </article>
+      
+    </div>
+
+    <ul class="pager">
+      
+        <li class="previous"><a href="/_posts/2">&larr;&nbsp;Older</a></li>
+      
+      <li><a href="/blog/archives">Blog Archives</a></li>
+      
+        <li class="next disabled"><a href="#">Newer&nbsp;&rarr;</a></li>
+      
+    </ul>
   </div>
-</div>
-<aside class="sidebar">
+
   
-    <section>
+    <aside class="sidebar col-md-3">
+      
+        <section>
   <h1>About Me</h1>
   <p><img src="/images/ja.jpg" style="float:left;margin:5px;border-width:0px"/>
   Author of <a href="https://www.packtpub.com/application-development/instant-mockito">"Mockito Instant"</a> and <a href="https://www.packtpub.com/application-development/mockito-cookbook">"Mockito Cookbook"</a> books. OSS Contributor. Co-founder of the Warsaw Groovy User Group and <a href="www.meetup.com/Warsaw-Cloud-Native-Meetup/">Warsaw Cloud Native Meetup</a>.
@@ -565,69 +617,68 @@ since the documentation lives together with the code.</p>
   Contributed to Groovy, Mockito, Rest-assured, Drools, Moco. Author of <a href="https://github.com/marcingrzejszczak/uptodate-gradle-plugin">Uptodate Gradle plugin</a>, <a href="https://github.com/marcingrzejszczak/spock-subjects-collaborators-extension/">Spock subjects-collaborators extension</a>, <a href="https://github.com/marcingrzejszczak/gradle-test-profiler">gradle-test-profiler</a>, <a href="https://github.com/marcingrzejszczak/jsonassert">JSONAssert</a> and <a href="https://github.com/marcingrzejszczak/xmlassert">XMLAssert</a> open source projects.
   </p>
 
-  <p>Github profile</p>
-  <p><a href="https://github.com/marcingrzejszczak">https://github.com/marcingrzejszczak</a></p>
+  <p><a href="https://github.com/marcingrzejszczak">Github profile</a></p>
 
-  <p>Lanyrd profile</p>
-  <p><a href="http://lanyrd.com/profile/marcin-grzejszczak">http://lanyrd.com/profile/marcin-grzejszczak</a></p>
+  <p><a href="http://lanyrd.com/profile/marcin-grzejszczak">Lanyrd profile</a></p>
 
-  <p>Twitter profile</p>
-  <p><a href="https://twitter.com/MGrzejszczak">@MGrzejszczak</a></p>
+  <p><a href="https://twitter.com/MGrzejszczak">Twitter: @MGrzejszczak</a></p>
 
-  <p>Goodreads account</p>
-  <p><a href="https://www.goodreads.com/author/show/7284553.Marcin_Grzejszczak">https://www.goodreads.com/author/show/7284553.Marcin_Grzejszczak</a></p>
+  <p><a href="https://www.goodreads.com/author/show/7284553.Marcin_Grzejszczak">Goodreads account</a></p>
 </section>
-<section>
-  <h1>Recent Posts</h1>
-  <ul id="recent_posts">
-    
-      <li class="post">
-        <a href="/blog/2016/10/18/new-project-spring-cloud-pipelines/">New Project - Spring Cloud Pipelines</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2016/10/07/spring-cloud-contract-podcast/">Spring Cloud Contract Podcast</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2016/09/24/spring-cloud-contract-1-dot-0-0-dot-release-available/">Spring Cloud Contract 1.0.0.RELEASE available!</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2016/07/25/spring-cloud-contract-1-dot-0-0-dot-m1-released/">Spring Cloud Contract 1.0.0.M1 Released</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2016/06/24/accurest-becomes-part-of-the-spring-cloud-contract/">Accurest becomes part of the Spring Cloud Contract</a>
-      </li>
-    
-  </ul>
-</section>
-
-
-<section class="googleplus">
-  <h1>
-    <a href="https://plus.google.com/108408840893580782990?rel=author">
-      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
-      Google+
-    </a>
-  </h1>
-</section>
-
-
-
-  
-</aside>
-
-    </div>
+<section class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Recent Posts</h3>
   </div>
-  <footer role="contentinfo"><p>
-  Copyright &copy; 2017 - Marcin Grzejszczak -
-  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a>. Design by <a href="http://octopressthemes.com">Octopress Themes</a></span>
+  
+  <div id="recent_posts" class="list-group">
+    
+    <a class="list-group-item " href="/blog/2016/10/18/new-project-spring-cloud-pipelines/">New Project - Spring Cloud Pipelines</a>
+    
+    <a class="list-group-item " href="/blog/2016/10/07/spring-cloud-contract-podcast/">Spring Cloud Contract Podcast</a>
+    
+    <a class="list-group-item " href="/blog/2016/09/24/spring-cloud-contract-1-dot-0-0-dot-release-available/">Spring Cloud Contract 1.0.0.RELEASE Available!</a>
+    
+    <a class="list-group-item " href="/blog/2016/07/25/spring-cloud-contract-1-dot-0-0-dot-m1-released/">Spring Cloud Contract 1.0.0.M1 Released</a>
+    
+    <a class="list-group-item " href="/blog/2016/06/24/accurest-becomes-part-of-the-spring-cloud-contract/">Accurest Becomes Part of the Spring Cloud Contract</a>
+    
+  </div>
+</section>
+
+
+<section class="googleplus panel panel-default">
+  <div class="panel-body">
+    <h2>
+      <a href="https://plus.google.com/108408840893580782990?rel=author">
+        <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+        Google+
+      </a>
+    </h2>
+  </div>
+</section>
+
+
+
+      
+    </aside>
+  
+</div>
+
+        </div>
+      </div>
+    </div>
+    <footer role="contentinfo"><div class="container">
+    <p class="text-muted credits">
+  Copyright &copy; 2017 - Marcin Grzejszczak<br>
+  <small>
+      <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>,
+      <span class="credit">customized with <a href="https://github.com/kAworu/octostrap3">octostrap3</a></span>.
+  </small>
 </p>
 
+</div>
 </footer>
-  
+    
 
 <script type="text/javascript">
       var disqus_shortname = 'toomuchcoding';
@@ -637,7 +688,7 @@ since the documentation lives together with the code.</p>
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     }());
 </script>
@@ -648,7 +699,7 @@ since the documentation lives together with the code.</p>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) {return;}
-  js = d.createElement(s); js.id = id;
+  js = d.createElement(s); js.id = id; js.async = true;
   js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
@@ -670,14 +721,15 @@ since the documentation lives together with the code.</p>
       var twitterWidgets = document.createElement('script');
       twitterWidgets.type = 'text/javascript';
       twitterWidgets.async = true;
-      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
       document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
     })();
   </script>
 
 
+<script src="/assets/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="/javascripts/modernizr.js"></script>
 
 
-
-</body>
+  </body>
 </html>

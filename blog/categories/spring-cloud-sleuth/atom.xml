@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: spring-cloud-sleuth | TOO MUCH CODING]]></title>
+  <title><![CDATA[Category: Spring-cloud-sleuth | TOO MUCH CODING]]></title>
   <link href="http://toomuchcoding.com/blog/categories/spring-cloud-sleuth/atom.xml" rel="self"/>
   <link href="http://toomuchcoding.com/"/>
-  <updated>2017-01-16T11:06:14+01:00</updated>
+  <updated>2017-03-02T17:24:24+01:00</updated>
   <id>http://toomuchcoding.com/</id>
   <author>
     <name><![CDATA[Marcin Grzejszczak]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Spring Cloud Sleuth RC1 deployed]]></title>
+    <title type="html"><![CDATA[Spring Cloud Sleuth RC1 Deployed]]></title>
     <link href="http://toomuchcoding.com/blog/2016/03/25/spring-cloud-sleuth-rc1-deployed/"/>
     <updated>2016-03-25T14:18:22+01:00</updated>
     <id>http://toomuchcoding.com/blog/2016/03/25/spring-cloud-sleuth-rc1-deployed</id>

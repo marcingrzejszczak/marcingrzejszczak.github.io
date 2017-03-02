@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: spock | TOO MUCH CODING]]></title>
+  <title><![CDATA[Category: Spock | TOO MUCH CODING]]></title>
   <link href="http://toomuchcoding.com/blog/categories/spock/atom.xml" rel="self"/>
   <link href="http://toomuchcoding.com/"/>
-  <updated>2017-01-16T11:06:14+01:00</updated>
+  <updated>2017-03-02T17:24:24+01:00</updated>
   <id>http://toomuchcoding.com/</id>
   <author>
     <name><![CDATA[Marcin Grzejszczak]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Spock Subject Collaborators Extension 1.0.1 released!]]></title>
+    <title type="html"><![CDATA[Spock Subject Collaborators Extension 1.0.1 Released!]]></title>
     <link href="http://toomuchcoding.com/blog/2014/12/17/spock-subject-collaborators-extension/"/>
     <updated>2014-12-17T23:28:00+01:00</updated>
     <id>http://toomuchcoding.com/blog/2014/12/17/spock-subject-collaborators-extension</id>
@@ -27,7 +27,7 @@ Hi!<br /><br />I'm really happy to say that I've just released a new version 1.0
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Spock - return nested spies / mocks]]></title>
+    <title type="html"><![CDATA[Spock - Return Nested Spies / Mocks]]></title>
     <link href="http://toomuchcoding.com/blog/2013/08/06/spock-return-nested-spies-mocks/"/>
     <updated>2013-08-06T13:24:00+02:00</updated>
     <id>http://toomuchcoding.com/blog/2013/08/06/spock-return-nested-spies-mocks</id>

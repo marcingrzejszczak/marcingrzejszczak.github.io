@@ -1,17 +1,11 @@
-
 <!DOCTYPE html>
-<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
-<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
-<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<html class="no-js" lang="en">
 <head>
   <meta charset="utf-8">
   <title>TOO MUCH CODING</title>
   <meta name="author" content="Marcin Grzejszczak">
 
   
-  <meta name="description" content="
-Nice article about concurrency in web applications (in Polish)
-">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -21,74 +15,101 @@ Nice article about concurrency in web applications (in Polish)
 
   
   <link rel="canonical" href="http://toomuchcoding.com/_posts/5/">
-  <link href="/favicon.png" rel="icon">
-  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="/javascripts/ender.js"></script>
-  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/favicon.png" type="image/png" rel="icon">
   <link href="/atom.xml" rel="alternate" title="TOO MUCH CODING" type="application/atom+xml">
-  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
 
-<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  <!-- http://opengraphprotocol.org/ -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="http://toomuchcoding.com/_posts/5/">
+  <meta property="og:title" content="TOO MUCH CODING">
+  <meta property="og:description" content="A blog for coding addicts about Java, Groovy, Buzzword, Spring, Microservices, Buzzword">
 
-  ga('create', 'UA-74671877-1', 'auto');
-  ga('send', 'pageview');
+  <script src="/javascripts/libs/jquery/jquery-2.1.3.min.js"></script>
 
-</script>
+<link href="/assets/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="/assets/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css">
+
+
+  
+  <link href="/stylesheets/screen.css" media="screen, projection, print" rel="stylesheet" type="text/css">
 
   
 
 </head>
 
-<body   >
-  <header role="banner"><hgroup>
-  <h1><a href="/">TOO MUCH CODING</a></h1>
-  
-    <h2>A blog for coding addicts by Marcin Grzejszczak</h2>
-  
-</hgroup>
+  <body   >
+    <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+    <div id="wrap">
+      <header role="banner">
+        <nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" title="toggle navbar" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">TOO MUCH CODING</a>
+        </div>
 
-</header>
-  <nav role="navigation"><ul class="subscription" data-subscription="rss">
-  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
-  
-</ul>
-  
-<form action="https://www.google.com/search" method="get">
-  <fieldset role="search">
-    <input type="hidden" name="q" value="site:toomuchcoding.com" />
-    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
-  </fieldset>
-</form>
-  
-<ul class="main-navigation">
-  <li><a href="/">Blog</a></li>
-  <li><a href="/blog/archives">Archives</a></li>
-  <li><a href="/oss/">OSS</a></li>
-  <li><a href="/abstracts/">Abstracts</a></li>
-</ul>
-
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="active">
+                    <a rel="index" href="/">Blog</a>
+                </li>
+                <li >
+                    <a href="/blog/archives">Archives</a>
+                </li>
+                <li >
+                    <a href="/oss">OSS</a>
+                </li>
+                <li >
+                    <a href="/abstracts">Abstracts</a>
+                </li>
+                <li >
+                    <a href="/talks">Talks</a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a class="subscribe-rss" href="/atom.xml" title="subscribe via RSS">
+                        <span class="visible-xs">RSS</span>
+                        <img class="hidden-xs" src="/images/rss.png" alt="RSS">
+                    </a>
+                </li>
+                
+            </ul>
+            
+                <form class="navbar-form navbar-right" action="https://www.google.com/search" method="GET">
+                    <input type="hidden" name="sitesearch" value="toomuchcoding.com">
+                    <div class="form-group">
+                        <input class="form-control" type="text" name="q" placeholder="Search">
+                    </div>
+                </form>
+            
+        </div>
+    </div>
 </nav>
-  <div id="main">
-    <div id="content">
-      <div class="blog-index">
-  
-  
-  
-    <article>
+
+
+      </header>
+      <div id="main" role="main" class="container">
+        <div id="content">
+          <div class="row">
+  <div class="page-content col-md-9">
+    <div class="blog-index" itemscope itemtype="http://schema.org/Blog">
+    <meta itemprop="name" content="TOO MUCH CODING" />
+    <meta itemprop="description" content="A blog for coding addicts about Java, Groovy, Buzzword, Spring, Microservices, Buzzword" />
+    <meta itemprop="url" content="http://toomuchcoding.com" />
       
-  <header>
+      
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
     
-      <h1 class="entry-title"><a href="/blog/2013/01/28/concurrency-in-web-applications/">Concurrency in Web Applications</a></h1>
-    
-    
-      <p class="meta">
+      <p class="meta text-muted text-uppercase">
         
 
 
@@ -98,36 +119,38 @@ Nice article about concurrency in web applications (in Polish)
 
 
 
-  
 
 
-<time datetime="2013-01-28T10:20:00+01:00" pubdate data-updated="true"></time>
+
+
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-01-28T10:20:00+01:00"  data-updated="true" itemprop="datePublished dateCreated">ordinal</time>
         
-         | <a href="/blog/2013/01/28/concurrency-in-web-applications/#disqus_thread">Comments</a>
+           | <a href="/blog/2013/01/28/concurrency-in-web-applications/#disqus_thread" itemprop="discussionUrl"
+             data-disqus-identifier="http://toomuchcoding.com/blog/2013/01/28/concurrency-in-web-applications/">Comments</a>
         
       </p>
+    
+    
+      <h2 class="entry-title" itemprop="name headline"><a href="/blog/2013/01/28/concurrency-in-web-applications/" itemprop="url">Concurrency in Web Applications</a></h2>
     
   </header>
 
 
-  <div class="entry-content"><div class='post'>
+  <div class="entry-content clearfix" itemprop="articleBody description"><div class='post'>
 Nice article about <a href="http://blog.atena.pl/zrownoleglenie-operacji-w-aplikacji-webowej-2">concurrency in web applications (in Polish)</a></div>
 </div>
   
   
 
 
-    </article>
-  
-  
-    <article>
+        </article>
       
-  <header>
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
     
-      <h1 class="entry-title"><a href="/blog/2013/01/23/drools-rete-alogrithm-explanation/">Drools - Rete Alogrithm Explanation</a></h1>
-    
-    
-      <p class="meta">
+      <p class="meta text-muted text-uppercase">
         
 
 
@@ -137,36 +160,38 @@ Nice article about <a href="http://blog.atena.pl/zrownoleglenie-operacji-w-aplik
 
 
 
-  
 
 
-<time datetime="2013-01-23T12:48:00+01:00" pubdate data-updated="true"></time>
+
+
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-01-23T12:48:00+01:00"  data-updated="true" itemprop="datePublished dateCreated">ordinal</time>
         
-         | <a href="/blog/2013/01/23/drools-rete-alogrithm-explanation/#disqus_thread">Comments</a>
+           | <a href="/blog/2013/01/23/drools-rete-alogrithm-explanation/#disqus_thread" itemprop="discussionUrl"
+             data-disqus-identifier="http://toomuchcoding.com/blog/2013/01/23/drools-rete-alogrithm-explanation/">Comments</a>
         
       </p>
+    
+    
+      <h2 class="entry-title" itemprop="name headline"><a href="/blog/2013/01/23/drools-rete-alogrithm-explanation/" itemprop="url">Drools - Rete Alogrithm Explanation</a></h2>
     
   </header>
 
 
-  <div class="entry-content"><div class='post'>
+  <div class="entry-content clearfix" itemprop="articleBody description"><div class='post'>
 Quite recently I have found <a href="http://salaboy.com/2011/06/06/drools-reteoo-for-dummies-1-intro/">a very nice article about the Rete Algorithm.</a></div>
 </div>
   
   
 
 
-    </article>
-  
-  
-    <article>
+        </article>
       
-  <header>
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
     
-      <h1 class="entry-title"><a href="/blog/2013/01/17/new-too-much-coding-repository/">New Too Much Coding Repository!</a></h1>
-    
-    
-      <p class="meta">
+      <p class="meta text-muted text-uppercase">
         
 
 
@@ -176,36 +201,38 @@ Quite recently I have found <a href="http://salaboy.com/2011/06/06/drools-reteoo
 
 
 
-  
 
 
-<time datetime="2013-01-17T20:06:00+01:00" pubdate data-updated="true"></time>
+
+
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-01-17T20:06:00+01:00"  data-updated="true" itemprop="datePublished dateCreated">ordinal</time>
         
-         | <a href="/blog/2013/01/17/new-too-much-coding-repository/#disqus_thread">Comments</a>
+           | <a href="/blog/2013/01/17/new-too-much-coding-repository/#disqus_thread" itemprop="discussionUrl"
+             data-disqus-identifier="http://toomuchcoding.com/blog/2013/01/17/new-too-much-coding-repository/">Comments</a>
         
       </p>
+    
+    
+      <h2 class="entry-title" itemprop="name headline"><a href="/blog/2013/01/17/new-too-much-coding-repository/" itemprop="url">New Too Much Coding Repository!</a></h2>
     
   </header>
 
 
-  <div class="entry-content"><div class='post'>
+  <div class="entry-content clearfix" itemprop="articleBody description"><div class='post'>
 Hi!<br /><br />As you know there is a code repository of <a href="https://bitbucket.org/gregorin1987/too-much-coding/src">Too Much Coding sources here at Bitbucket</a>. If you don't like it you can also find the <a href="https://github.com/marcingrzejszczak/too-much-coding">Too Much Coding sources at GitHub!</a><br /><br />Enjoy :)</div>
 </div>
   
   
 
 
-    </article>
-  
-  
-    <article>
+        </article>
       
-  <header>
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
     
-      <h1 class="entry-title"><a href="/blog/2013/01/15/drools-integration-with-spring-vs/">Drools Integration With Spring vs Manual Rules Creation</a></h1>
-    
-    
-      <p class="meta">
+      <p class="meta text-muted text-uppercase">
         
 
 
@@ -215,40 +242,42 @@ Hi!<br /><br />As you know there is a code repository of <a href="https://bitbuc
 
 
 
-  
 
 
-<time datetime="2013-01-15T17:04:00+01:00" pubdate data-updated="true"></time>
+
+
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-01-15T17:04:00+01:00"  data-updated="true" itemprop="datePublished dateCreated">ordinal</time>
         
-         | <a href="/blog/2013/01/15/drools-integration-with-spring-vs/#disqus_thread">Comments</a>
+           | <a href="/blog/2013/01/15/drools-integration-with-spring-vs/#disqus_thread" itemprop="discussionUrl"
+             data-disqus-identifier="http://toomuchcoding.com/blog/2013/01/15/drools-integration-with-spring-vs/">Comments</a>
         
       </p>
+    
+    
+      <h2 class="entry-title" itemprop="name headline"><a href="/blog/2013/01/15/drools-integration-with-spring-vs/" itemprop="url">Drools Integration With Spring vs Manual Rules Creation</a></h2>
     
   </header>
 
 
-  <div class="entry-content"><div class='post'>
+  <div class="entry-content clearfix" itemprop="articleBody description"><div class='post'>
 <br /><br />Hi!<br /><br />&nbsp;Often in your work you can come across with issues related to business logic. Let us assume that you have dozens of rules (for the time being in our project we have more than 50 and I used to work on a project where we had hundreds of those rules) that you have to implement, divide into some classes, subclasses, abstractions and of course unit test. This can be difficult and timeconsuming to both write and support. There are many ways of dealing with this problem and I will show you one of them - JBoss Drools.<br />
 </div>
   
   
     <footer>
-      <a rel="full-article" href="/blog/2013/01/15/drools-integration-with-spring-vs/">Read on &rarr;</a>
+      <a class="read-more btn btn-default" href="/blog/2013/01/15/drools-integration-with-spring-vs/">Read on &rarr;</a>
     </footer>
   
 
 
-    </article>
-  
-  
-    <article>
+        </article>
       
-  <header>
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
     
-      <h1 class="entry-title"><a href="/blog/2013/01/07/very-interesting-article-about-xsd/">Very Interesting Article About XSD</a></h1>
-    
-    
-      <p class="meta">
+      <p class="meta text-muted text-uppercase">
         
 
 
@@ -258,36 +287,38 @@ Hi!<br /><br />As you know there is a code repository of <a href="https://bitbuc
 
 
 
-  
 
 
-<time datetime="2013-01-07T17:15:00+01:00" pubdate data-updated="true"></time>
+
+
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-01-07T17:15:00+01:00"  data-updated="true" itemprop="datePublished dateCreated">ordinal</time>
         
-         | <a href="/blog/2013/01/07/very-interesting-article-about-xsd/#disqus_thread">Comments</a>
+           | <a href="/blog/2013/01/07/very-interesting-article-about-xsd/#disqus_thread" itemprop="discussionUrl"
+             data-disqus-identifier="http://toomuchcoding.com/blog/2013/01/07/very-interesting-article-about-xsd/">Comments</a>
         
       </p>
+    
+    
+      <h2 class="entry-title" itemprop="name headline"><a href="/blog/2013/01/07/very-interesting-article-about-xsd/" itemprop="url">Very Interesting Article About XSD</a></h2>
     
   </header>
 
 
-  <div class="entry-content"><div class='post'>
+  <div class="entry-content clearfix" itemprop="articleBody description"><div class='post'>
 A friend from my project (<strike>that will soon start his own blog ;)</strike> <a href="http://yetanothercoding.blogspot.com/">here is his blog</a> ) has found a very interesting article about XSDs and namespaces.<br /><br />&nbsp;<a href="http://www.liquid-technologies.com/Tutorials/XmlSchemas/XsdTutorial_04.aspx">Tutorial about XSD and namespaces</a></div>
 </div>
   
   
 
 
-    </article>
-  
-  
-    <article>
+        </article>
       
-  <header>
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
     
-      <h1 class="entry-title"><a href="/blog/2013/01/04/hamcrest-matchers-guava-predicate-and/">Hamcrest Matchers, Guava Predicate and Builder Design Pattern</a></h1>
-    
-    
-      <p class="meta">
+      <p class="meta text-muted text-uppercase">
         
 
 
@@ -297,40 +328,42 @@ A friend from my project (<strike>that will soon start his own blog ;)</strike> 
 
 
 
-  
 
 
-<time datetime="2013-01-04T01:35:00+01:00" pubdate data-updated="true"></time>
+
+
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2013-01-04T01:35:00+01:00"  data-updated="true" itemprop="datePublished dateCreated">ordinal</time>
         
-         | <a href="/blog/2013/01/04/hamcrest-matchers-guava-predicate-and/#disqus_thread">Comments</a>
+           | <a href="/blog/2013/01/04/hamcrest-matchers-guava-predicate-and/#disqus_thread" itemprop="discussionUrl"
+             data-disqus-identifier="http://toomuchcoding.com/blog/2013/01/04/hamcrest-matchers-guava-predicate-and/">Comments</a>
         
       </p>
+    
+    
+      <h2 class="entry-title" itemprop="name headline"><a href="/blog/2013/01/04/hamcrest-matchers-guava-predicate-and/" itemprop="url">Hamcrest Matchers, Guava Predicate and Builder Design Pattern</a></h2>
     
   </header>
 
 
-  <div class="entry-content"><div class='post'>
+  <div class="entry-content clearfix" itemprop="articleBody description"><div class='post'>
 <br /><br />Hi coding addicts :)<br /><br />Often, while coding we have to deal with some POJO objects that have dozens of fields in them. Many times we initialize those classes through a constructor having dozens of arguments which is terrible in any possibly imaginable way :) Apart from that the functions that use those constructors are hardly testable. Let's take a closer look at using a Builder to change that situation, together with Hamcrest matchers and Guava Predicates to unit test it.<br />
 </div>
   
   
     <footer>
-      <a rel="full-article" href="/blog/2013/01/04/hamcrest-matchers-guava-predicate-and/">Read on &rarr;</a>
+      <a class="read-more btn btn-default" href="/blog/2013/01/04/hamcrest-matchers-guava-predicate-and/">Read on &rarr;</a>
     </footer>
   
 
 
-    </article>
-  
-  
-    <article>
+        </article>
       
-  <header>
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
     
-      <h1 class="entry-title"><a href="/blog/2012/12/24/google-guava-cache-with-regular/">Google Guava Cache With Regular Expression Patterns</a></h1>
-    
-    
-      <p class="meta">
+      <p class="meta text-muted text-uppercase">
         
 
 
@@ -340,40 +373,42 @@ A friend from my project (<strike>that will soon start his own blog ;)</strike> 
 
 
 
-  
 
 
-<time datetime="2012-12-24T14:54:00+01:00" pubdate data-updated="true"></time>
+
+
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2012-12-24T14:54:00+01:00"  data-updated="true" itemprop="datePublished dateCreated">ordinal</time>
         
-         | <a href="/blog/2012/12/24/google-guava-cache-with-regular/#disqus_thread">Comments</a>
+           | <a href="/blog/2012/12/24/google-guava-cache-with-regular/#disqus_thread" itemprop="discussionUrl"
+             data-disqus-identifier="http://toomuchcoding.com/blog/2012/12/24/google-guava-cache-with-regular/">Comments</a>
         
       </p>
+    
+    
+      <h2 class="entry-title" itemprop="name headline"><a href="/blog/2012/12/24/google-guava-cache-with-regular/" itemprop="url">Google Guava Cache With Regular Expression Patterns</a></h2>
     
   </header>
 
 
-  <div class="entry-content"><div class='post'>
+  <div class="entry-content clearfix" itemprop="articleBody description"><div class='post'>
 <br /><br />Hi!  Merry Christmas everyone :)  Quite recently I've seen <a href="http://toomuchcoding.blogspot.com/2012/12/google-guava.html">a nice presentation about Google Guava</a> and we came to the conclusion in our project that it could be really interesting to use the <a href="http://code.google.com/p/guava-libraries/wiki/CachesExplained">its Cache functionallity</a>.  Let us take a look at the regexp Pattern class and its <a href="http://docs.oracle.com/javase/6/docs/api/java/util/regex/Pattern.html#compile(java.lang.String)">compile function</a>. Quite often in the code we can see that each time a regular expression is being used a programmer is repeatidly calling the aforementioned Pattern.compile() function with the same argument thus compiling the same regular expression over and over again. What could be done however is to cache the result of such compilations - let us take a look at the RegexpUtils utility class:<br /><br />
 </div>
   
   
     <footer>
-      <a rel="full-article" href="/blog/2012/12/24/google-guava-cache-with-regular/">Read on &rarr;</a>
+      <a class="read-more btn btn-default" href="/blog/2012/12/24/google-guava-cache-with-regular/">Read on &rarr;</a>
     </footer>
   
 
 
-    </article>
-  
-  
-    <article>
+        </article>
       
-  <header>
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
     
-      <h1 class="entry-title"><a href="/blog/2012/12/07/google-guava/">Google Guava</a></h1>
-    
-    
-      <p class="meta">
+      <p class="meta text-muted text-uppercase">
         
 
 
@@ -383,36 +418,38 @@ A friend from my project (<strike>that will soon start his own blog ;)</strike> 
 
 
 
-  
 
 
-<time datetime="2012-12-07T13:18:00+01:00" pubdate data-updated="true"></time>
+
+
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2012-12-07T13:18:00+01:00"  data-updated="true" itemprop="datePublished dateCreated">ordinal</time>
         
-         | <a href="/blog/2012/12/07/google-guava/#disqus_thread">Comments</a>
+           | <a href="/blog/2012/12/07/google-guava/#disqus_thread" itemprop="discussionUrl"
+             data-disqus-identifier="http://toomuchcoding.com/blog/2012/12/07/google-guava/">Comments</a>
         
       </p>
+    
+    
+      <h2 class="entry-title" itemprop="name headline"><a href="/blog/2012/12/07/google-guava/" itemprop="url">Google Guava</a></h2>
     
   </header>
 
 
-  <div class="entry-content"><div class='post'>
+  <div class="entry-content clearfix" itemprop="articleBody description"><div class='post'>
 Some interesting link:<br /><br /><a href="http://tomaszdziurko.pl/2012/02/google-guava/">Very nice presentation about Google Guava</a>, <a href="https://github.com/tdziurko/Guava-Lessons">sources</a></div>
 </div>
   
   
 
 
-    </article>
-  
-  
-    <article>
+        </article>
       
-  <header>
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
     
-      <h1 class="entry-title"><a href="/blog/2012/11/22/apache-camel-with-spring-routing-with/">Apache Camel With Spring, Routing With Enrichment Service</a></h1>
-    
-    
-      <p class="meta">
+      <p class="meta text-muted text-uppercase">
         
 
 
@@ -422,40 +459,42 @@ Some interesting link:<br /><br /><a href="http://tomaszdziurko.pl/2012/02/googl
 
 
 
-  
 
 
-<time datetime="2012-11-22T23:13:00+01:00" pubdate data-updated="true"></time>
+
+
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2012-11-22T23:13:00+01:00"  data-updated="true" itemprop="datePublished dateCreated">ordinal</time>
         
-         | <a href="/blog/2012/11/22/apache-camel-with-spring-routing-with/#disqus_thread">Comments</a>
+           | <a href="/blog/2012/11/22/apache-camel-with-spring-routing-with/#disqus_thread" itemprop="discussionUrl"
+             data-disqus-identifier="http://toomuchcoding.com/blog/2012/11/22/apache-camel-with-spring-routing-with/">Comments</a>
         
       </p>
+    
+    
+      <h2 class="entry-title" itemprop="name headline"><a href="/blog/2012/11/22/apache-camel-with-spring-routing-with/" itemprop="url">Apache Camel With Spring, Routing With Enrichment Service</a></h2>
     
   </header>
 
 
-  <div class="entry-content"><div class='post'>
+  <div class="entry-content clearfix" itemprop="articleBody description"><div class='post'>
 <br /><br />Sorry for not having posted anything in some time but I had plenty of work. Anyway today I will continue the example with JMS that I've shown you some time ago.<br />
 </div>
   
   
     <footer>
-      <a rel="full-article" href="/blog/2012/11/22/apache-camel-with-spring-routing-with/">Read on &rarr;</a>
+      <a class="read-more btn btn-default" href="/blog/2012/11/22/apache-camel-with-spring-routing-with/">Read on &rarr;</a>
     </footer>
   
 
 
-    </article>
-  
-  
-    <article>
+        </article>
       
-  <header>
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+          
+  <header class="page-header">
     
-      <h1 class="entry-title"><a href="/blog/2012/11/06/sources-to-blog-posts/">Sources to Blog Posts</a></h1>
-    
-    
-      <p class="meta">
+      <p class="meta text-muted text-uppercase">
         
 
 
@@ -465,40 +504,49 @@ Some interesting link:<br /><br /><a href="http://tomaszdziurko.pl/2012/02/googl
 
 
 
-  
 
 
-<time datetime="2012-11-06T17:58:00+01:00" pubdate data-updated="true"></time>
+
+
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2012-11-06T17:58:00+01:00"  data-updated="true" itemprop="datePublished dateCreated">ordinal</time>
         
-         | <a href="/blog/2012/11/06/sources-to-blog-posts/#disqus_thread">Comments</a>
+           | <a href="/blog/2012/11/06/sources-to-blog-posts/#disqus_thread" itemprop="discussionUrl"
+             data-disqus-identifier="http://toomuchcoding.com/blog/2012/11/06/sources-to-blog-posts/">Comments</a>
         
       </p>
+    
+    
+      <h2 class="entry-title" itemprop="name headline"><a href="/blog/2012/11/06/sources-to-blog-posts/" itemprop="url">Sources to Blog Posts</a></h2>
     
   </header>
 
 
-  <div class="entry-content"><div class='post'>
+  <div class="entry-content clearfix" itemprop="articleBody description"><div class='post'>
 I am happy to announce that I managed to find some time in order to create a repository for the code that I've been presenting here (at least for the most of it). You can find the <a href="https://bitbucket.org/gregorin1987/too-much-coding">Too Much Coding sources by clicking here</a> or type in the address&nbsp;<a href="https://bitbucket.org/gregorin1987/too-much-coding">https://bitbucket.org/gregorin1987/too-much-coding</a>.<br /><br />Enjoy :)</div>
 </div>
   
   
 
 
-    </article>
-  
-  <div class="pagination">
-    <!-- 
-      <a class="prev" href="6">&larr; Older</a>
-     -->
-    <a href="/blog/archives">Blog Archives</a>
-    <!-- 
-    <a class="next" href="4">Newer &rarr;</a>
-     -->
+        </article>
+      
+    </div>
+
+    <ul class="pager">
+      
+        <li class="previous"><a href="/_posts/6">&larr;&nbsp;Older</a></li>
+      
+      <li><a href="/blog/archives">Blog Archives</a></li>
+      
+        <li class="next"><a href="/_posts/4">Newer&nbsp;&rarr;</a></li>
+      
+    </ul>
   </div>
-</div>
-<aside class="sidebar">
+
   
-    <section>
+    <aside class="sidebar col-md-3">
+      
+        <section>
   <h1>About Me</h1>
   <p><img src="/images/ja.jpg" style="float:left;margin:5px;border-width:0px"/>
   Author of <a href="https://www.packtpub.com/application-development/instant-mockito">"Mockito Instant"</a> and <a href="https://www.packtpub.com/application-development/mockito-cookbook">"Mockito Cookbook"</a> books. OSS Contributor. Co-founder of the Warsaw Groovy User Group and <a href="www.meetup.com/Warsaw-Cloud-Native-Meetup/">Warsaw Cloud Native Meetup</a>.
@@ -512,69 +560,68 @@ I am happy to announce that I managed to find some time in order to create a rep
   Contributed to Groovy, Mockito, Rest-assured, Drools, Moco. Author of <a href="https://github.com/marcingrzejszczak/uptodate-gradle-plugin">Uptodate Gradle plugin</a>, <a href="https://github.com/marcingrzejszczak/spock-subjects-collaborators-extension/">Spock subjects-collaborators extension</a>, <a href="https://github.com/marcingrzejszczak/gradle-test-profiler">gradle-test-profiler</a>, <a href="https://github.com/marcingrzejszczak/jsonassert">JSONAssert</a> and <a href="https://github.com/marcingrzejszczak/xmlassert">XMLAssert</a> open source projects.
   </p>
 
-  <p>Github profile</p>
-  <p><a href="https://github.com/marcingrzejszczak">https://github.com/marcingrzejszczak</a></p>
+  <p><a href="https://github.com/marcingrzejszczak">Github profile</a></p>
 
-  <p>Lanyrd profile</p>
-  <p><a href="http://lanyrd.com/profile/marcin-grzejszczak">http://lanyrd.com/profile/marcin-grzejszczak</a></p>
+  <p><a href="http://lanyrd.com/profile/marcin-grzejszczak">Lanyrd profile</a></p>
 
-  <p>Twitter profile</p>
-  <p><a href="https://twitter.com/MGrzejszczak">@MGrzejszczak</a></p>
+  <p><a href="https://twitter.com/MGrzejszczak">Twitter: @MGrzejszczak</a></p>
 
-  <p>Goodreads account</p>
-  <p><a href="https://www.goodreads.com/author/show/7284553.Marcin_Grzejszczak">https://www.goodreads.com/author/show/7284553.Marcin_Grzejszczak</a></p>
+  <p><a href="https://www.goodreads.com/author/show/7284553.Marcin_Grzejszczak">Goodreads account</a></p>
 </section>
-<section>
-  <h1>Recent Posts</h1>
-  <ul id="recent_posts">
-    
-      <li class="post">
-        <a href="/blog/2016/10/18/new-project-spring-cloud-pipelines/">New Project - Spring Cloud Pipelines</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2016/10/07/spring-cloud-contract-podcast/">Spring Cloud Contract Podcast</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2016/09/24/spring-cloud-contract-1-dot-0-0-dot-release-available/">Spring Cloud Contract 1.0.0.RELEASE available!</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2016/07/25/spring-cloud-contract-1-dot-0-0-dot-m1-released/">Spring Cloud Contract 1.0.0.M1 Released</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2016/06/24/accurest-becomes-part-of-the-spring-cloud-contract/">Accurest becomes part of the Spring Cloud Contract</a>
-      </li>
-    
-  </ul>
-</section>
-
-
-<section class="googleplus">
-  <h1>
-    <a href="https://plus.google.com/108408840893580782990?rel=author">
-      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
-      Google+
-    </a>
-  </h1>
-</section>
-
-
-
-  
-</aside>
-
-    </div>
+<section class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Recent Posts</h3>
   </div>
-  <footer role="contentinfo"><p>
-  Copyright &copy; 2017 - Marcin Grzejszczak -
-  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a>. Design by <a href="http://octopressthemes.com">Octopress Themes</a></span>
+  
+  <div id="recent_posts" class="list-group">
+    
+    <a class="list-group-item " href="/blog/2016/10/18/new-project-spring-cloud-pipelines/">New Project - Spring Cloud Pipelines</a>
+    
+    <a class="list-group-item " href="/blog/2016/10/07/spring-cloud-contract-podcast/">Spring Cloud Contract Podcast</a>
+    
+    <a class="list-group-item " href="/blog/2016/09/24/spring-cloud-contract-1-dot-0-0-dot-release-available/">Spring Cloud Contract 1.0.0.RELEASE Available!</a>
+    
+    <a class="list-group-item " href="/blog/2016/07/25/spring-cloud-contract-1-dot-0-0-dot-m1-released/">Spring Cloud Contract 1.0.0.M1 Released</a>
+    
+    <a class="list-group-item " href="/blog/2016/06/24/accurest-becomes-part-of-the-spring-cloud-contract/">Accurest Becomes Part of the Spring Cloud Contract</a>
+    
+  </div>
+</section>
+
+
+<section class="googleplus panel panel-default">
+  <div class="panel-body">
+    <h2>
+      <a href="https://plus.google.com/108408840893580782990?rel=author">
+        <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+        Google+
+      </a>
+    </h2>
+  </div>
+</section>
+
+
+
+      
+    </aside>
+  
+</div>
+
+        </div>
+      </div>
+    </div>
+    <footer role="contentinfo"><div class="container">
+    <p class="text-muted credits">
+  Copyright &copy; 2017 - Marcin Grzejszczak<br>
+  <small>
+      <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>,
+      <span class="credit">customized with <a href="https://github.com/kAworu/octostrap3">octostrap3</a></span>.
+  </small>
 </p>
 
+</div>
 </footer>
-  
+    
 
 <script type="text/javascript">
       var disqus_shortname = 'toomuchcoding';
@@ -584,7 +631,7 @@ I am happy to announce that I managed to find some time in order to create a rep
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     }());
 </script>
@@ -595,7 +642,7 @@ I am happy to announce that I managed to find some time in order to create a rep
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) {return;}
-  js = d.createElement(s); js.id = id;
+  js = d.createElement(s); js.id = id; js.async = true;
   js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
@@ -617,14 +664,15 @@ I am happy to announce that I managed to find some time in order to create a rep
       var twitterWidgets = document.createElement('script');
       twitterWidgets.type = 'text/javascript';
       twitterWidgets.async = true;
-      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
       document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
     })();
   </script>
 
 
+<script src="/assets/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="/javascripts/modernizr.js"></script>
 
 
-
-</body>
+  </body>
 </html>

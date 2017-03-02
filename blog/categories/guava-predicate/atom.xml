@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: guava predicate | TOO MUCH CODING]]></title>
+  <title><![CDATA[Category: Guava Predicate | TOO MUCH CODING]]></title>
   <link href="http://toomuchcoding.com/blog/categories/guava-predicate/atom.xml" rel="self"/>
   <link href="http://toomuchcoding.com/"/>
-  <updated>2017-01-16T11:06:14+01:00</updated>
+  <updated>2017-03-02T17:24:24+01:00</updated>
   <id>http://toomuchcoding.com/</id>
   <author>
     <name><![CDATA[Marcin Grzejszczak]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Hamcrest Matchers, Guava Predicate and Builder design pattern]]></title>
+    <title type="html"><![CDATA[Hamcrest Matchers, Guava Predicate and Builder Design Pattern]]></title>
     <link href="http://toomuchcoding.com/blog/2013/01/04/hamcrest-matchers-guava-predicate-and/"/>
     <updated>2013-01-04T01:35:00+01:00</updated>
     <id>http://toomuchcoding.com/blog/2013/01/04/hamcrest-matchers-guava-predicate-and</id>

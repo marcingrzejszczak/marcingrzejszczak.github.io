@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: tdd | TOO MUCH CODING]]></title>
+  <title><![CDATA[Category: Tdd | TOO MUCH CODING]]></title>
   <link href="http://toomuchcoding.com/blog/categories/tdd/atom.xml" rel="self"/>
   <link href="http://toomuchcoding.com/"/>
-  <updated>2017-01-16T11:06:14+01:00</updated>
+  <updated>2017-03-02T17:24:24+01:00</updated>
   <id>http://toomuchcoding.com/</id>
   <author>
     <name><![CDATA[Marcin Grzejszczak]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Review of the Instant Mock Testing with PowerMock]]></title>
+    <title type="html"><![CDATA[Review of the Instant Mock Testing With PowerMock]]></title>
     <link href="http://toomuchcoding.com/blog/2013/12/16/review-of-instant-mock-testing-with/"/>
     <updated>2013-12-16T23:47:00+01:00</updated>
     <id>http://toomuchcoding.com/blog/2013/12/16/review-of-instant-mock-testing-with</id>

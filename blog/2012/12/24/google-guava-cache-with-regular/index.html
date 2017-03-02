@@ -1,15 +1,11 @@
-
 <!DOCTYPE html>
-<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
-<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
-<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<html class="no-js" lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Google Guava Cache with regular expression patterns - TOO MUCH CODING</title>
+  <title>Google Guava Cache With Regular Expression Patterns - TOO MUCH CODING</title>
   <meta name="author" content="Marcin Grzejszczak">
 
   
-  <meta name="description" content="Hi! Merry Christmas everyone :) Quite recently I've seen a nice presentation about Google Guava and we came to the conclusion in our project that it &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,71 +15,97 @@
 
   
   <link rel="canonical" href="http://toomuchcoding.com/blog/2012/12/24/google-guava-cache-with-regular/">
-  <link href="/favicon.png" rel="icon">
-  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="/javascripts/ender.js"></script>
-  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/favicon.png" type="image/png" rel="icon">
   <link href="/atom.xml" rel="alternate" title="TOO MUCH CODING" type="application/atom+xml">
-  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
 
-<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  <!-- http://opengraphprotocol.org/ -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="http://toomuchcoding.com/blog/2012/12/24/google-guava-cache-with-regular/">
+  <meta property="og:title" content="Google Guava Cache With Regular Expression Patterns - TOO MUCH CODING">
+  
 
-  ga('create', 'UA-74671877-1', 'auto');
-  ga('send', 'pageview');
+  <script src="/javascripts/libs/jquery/jquery-2.1.3.min.js"></script>
 
-</script>
+<link href="/assets/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="/assets/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css">
+
+
+  
+  <link href="/stylesheets/screen.css" media="screen, projection, print" rel="stylesheet" type="text/css">
 
   
 
 </head>
 
-<body   >
-  <header role="banner"><hgroup>
-  <h1><a href="/">TOO MUCH CODING</a></h1>
-  
-    <h2>A blog for coding addicts by Marcin Grzejszczak</h2>
-  
-</hgroup>
+  <body   >
+    <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+    <div id="wrap">
+      <header role="banner">
+        <nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" title="toggle navbar" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">TOO MUCH CODING</a>
+        </div>
 
-</header>
-  <nav role="navigation"><ul class="subscription" data-subscription="rss">
-  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
-  
-</ul>
-  
-<form action="https://www.google.com/search" method="get">
-  <fieldset role="search">
-    <input type="hidden" name="q" value="site:toomuchcoding.com" />
-    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
-  </fieldset>
-</form>
-  
-<ul class="main-navigation">
-  <li><a href="/">Blog</a></li>
-  <li><a href="/blog/archives">Archives</a></li>
-  <li><a href="/oss/">OSS</a></li>
-  <li><a href="/abstracts/">Abstracts</a></li>
-</ul>
-
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="active">
+                    <a rel="index" href="/">Blog</a>
+                </li>
+                <li >
+                    <a href="/blog/archives">Archives</a>
+                </li>
+                <li >
+                    <a href="/oss">OSS</a>
+                </li>
+                <li >
+                    <a href="/abstracts">Abstracts</a>
+                </li>
+                <li >
+                    <a href="/talks">Talks</a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a class="subscribe-rss" href="/atom.xml" title="subscribe via RSS">
+                        <span class="visible-xs">RSS</span>
+                        <img class="hidden-xs" src="/images/rss.png" alt="RSS">
+                    </a>
+                </li>
+                
+            </ul>
+            
+                <form class="navbar-form navbar-right" action="https://www.google.com/search" method="GET">
+                    <input type="hidden" name="sitesearch" value="toomuchcoding.com">
+                    <div class="form-group">
+                        <input class="form-control" type="text" name="q" placeholder="Search">
+                    </div>
+                </form>
+            
+        </div>
+    </div>
 </nav>
-  <div id="main">
-    <div id="content">
-      <div>
-<article class="hentry" role="article">
-  
-  <header>
+
+
+      </header>
+      <div id="main" role="main" class="container">
+        <div id="content">
+          <div class="row">
+  <div class="page-content col-md-9" itemscope itemtype="http://schema.org/Blog">
+    <meta itemprop="name" content="TOO MUCH CODING" />
+    <meta itemprop="description" content="A blog for coding addicts about Java, Groovy, Buzzword, Spring, Microservices, Buzzword" />
+    <meta itemprop="url" content="http://toomuchcoding.com" />
+    <article class="hentry" role="article" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+      
+  <header class="page-header">
     
-      <h1 class="entry-title">Google Guava Cache With Regular Expression Patterns</h1>
-    
-    
-      <p class="meta">
+      <p class="meta text-muted text-uppercase">
         
 
 
@@ -93,47 +115,57 @@
 
 
 
-  
 
 
-<time datetime="2012-12-24T14:54:00+01:00" pubdate data-updated="true"></time>
+
+
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2012-12-24T14:54:00+01:00"  data-updated="true" itemprop="datePublished dateCreated">ordinal</time>
         
-         | <a href="#disqus_thread">Comments</a>
+           | <a href="#disqus_thread" itemprop="discussionUrl"
+             data-disqus-identifier="http://toomuchcoding.com">Comments</a>
         
       </p>
+    
+    
+    <h1 class="entry-title" itemprop="name headline">
+        Google Guava Cache With Regular Expression Patterns
+        
+    </h1>
     
   </header>
 
 
-<div class="entry-content"><div class='post'>
+<div class="entry-content clearfix" itemprop="articleBody description"><div class='post'>
 <br /><br />Hi!  Merry Christmas everyone :)  Quite recently I've seen <a href="http://toomuchcoding.blogspot.com/2012/12/google-guava.html">a nice presentation about Google Guava</a> and we came to the conclusion in our project that it could be really interesting to use the <a href="http://code.google.com/p/guava-libraries/wiki/CachesExplained">its Cache functionallity</a>.  Let us take a look at the regexp Pattern class and its <a href="http://docs.oracle.com/javase/6/docs/api/java/util/regex/Pattern.html#compile(java.lang.String)">compile function</a>. Quite often in the code we can see that each time a regular expression is being used a programmer is repeatidly calling the aforementioned Pattern.compile() function with the same argument thus compiling the same regular expression over and over again. What could be done however is to cache the result of such compilations - let us take a look at the RegexpUtils utility class:<br /><br />
 <!--more-->
 <b>RegexpUtils.java </b><br /><b><br /></b><pre class="brush:java">package pl.grzejszczak.marcin.guava.cache.utils;<br /><br />import com.google.common.cache.CacheBuilder;<br />import com.google.common.cache.CacheLoader;<br />import com.google.common.cache.LoadingCache;<br /><br />import java.util.concurrent.ExecutionException;<br />import java.util.regex.Matcher;<br />import java.util.regex.Pattern;<br /><br />import static java.lang.String.format;<br /><br />public final class RegexpUtils {<br /><br />    private RegexpUtils() {<br />        throw new UnsupportedOperationException("RegexpUtils is a utility class - don't instantiate it!");<br />    }<br /><br />    private static final LoadingCache&lt;String, Pattern&gt; COMPILED_PATTERNS =<br />            CacheBuilder.newBuilder().build(new CacheLoader&lt;String, Pattern&gt;() {<br />                @Override<br />                public Pattern load(String regexp) throws Exception {<br />                    return Pattern.compile(regexp);<br />                }<br />            });<br /><br />    public static Pattern getPattern(String regexp) {<br />        try {<br />            return COMPILED_PATTERNS.get(regexp);<br />        } catch (ExecutionException e) {<br />            throw new RuntimeException(format("Error when getting a pattern [%s] from cache", regexp), e);<br />        }<br />    }<br /><br />    public static boolean matches(String stringToCheck, String regexp) {<br />        return doGetMatcher(stringToCheck, regexp).matches();<br />    }<br /><br />    public static Matcher getMatcher(String stringToCheck, String regexp) {<br />        return doGetMatcher(stringToCheck, regexp);<br />    }<br /><br />    private static Matcher doGetMatcher(String stringToCheck, String regexp) {<br />        Pattern pattern = getPattern(regexp);<br />        return pattern.matcher(stringToCheck);<br />    }<br /><br />}<br /><br /></pre>As you can see the Guava's LoadingCache with the CacheBuilder is being used to populate a cache with a new compiled pattern if one is not found. Due to caching the compiled pattern if a compilation has already taken place it will not be repeated ever again (in our case since we dno't have any expiry set).  Now a simple test<br /><br /><b>GuavaCache.java </b><br /><b><br /></b><pre class="brush:java">package pl.grzejszczak.marcin.guava.cache;<br /><br /><br />import com.google.common.base.Stopwatch;<br />import org.slf4j.Logger;<br />import org.slf4j.LoggerFactory;<br />import pl.grzejszczak.marcin.guava.cache.utils.RegexpUtils;<br /><br />import java.util.regex.Pattern;<br /><br />import static java.lang.String.format;<br /><br />public class GuavaCache {<br />    private static final Logger LOGGER = LoggerFactory.getLogger(GuavaCache.class);<br />    public static final String STRING_TO_MATCH = "something";<br /><br />    public static void main(String[] args) {<br />        runTestForManualCompilationAndOneUsingCache(1);<br />        runTestForManualCompilationAndOneUsingCache(10);<br />        runTestForManualCompilationAndOneUsingCache(100);<br />        runTestForManualCompilationAndOneUsingCache(1000);<br />        runTestForManualCompilationAndOneUsingCache(10000);<br />        runTestForManualCompilationAndOneUsingCache(100000);<br />        runTestForManualCompilationAndOneUsingCache(1000000);<br />    }<br /><br />    private static void runTestForManualCompilationAndOneUsingCache(int firstNoOfRepetitions) {<br />        repeatManualCompilation(firstNoOfRepetitions);<br />        repeatCompilationWithCache(firstNoOfRepetitions);<br />    }<br /><br />    private static void repeatManualCompilation(int noOfRepetitions) {<br />        Stopwatch stopwatch = new Stopwatch().start();<br />        compileAndMatchPatternManually(noOfRepetitions);<br />        LOGGER.debug(format("Time needed to compile and check regexp expression [%d] ms, no of iterations [%d]", stopwatch.elapsedMillis(), noOfRepetitions));<br />    }<br /><br />    private static void repeatCompilationWithCache(int noOfRepetitions) {<br />        Stopwatch stopwatch = new Stopwatch().start();<br />        compileAndMatchPatternUsingCache(noOfRepetitions);<br />        LOGGER.debug(format("Time needed to compile and check regexp expression using Cache [%d] ms, no of iterations [%d]", stopwatch.elapsedMillis(), noOfRepetitions));<br />    }<br /><br />    private static void compileAndMatchPatternManually(int limit) {<br />        for (int i = 0; i &lt; limit; i++) {<br />            Pattern.compile("something").matcher(STRING_TO_MATCH).matches();<br />            Pattern.compile("something1").matcher(STRING_TO_MATCH).matches();<br />            Pattern.compile("something2").matcher(STRING_TO_MATCH).matches();<br />            Pattern.compile("something3").matcher(STRING_TO_MATCH).matches();<br />            Pattern.compile("something4").matcher(STRING_TO_MATCH).matches();<br />            Pattern.compile("something5").matcher(STRING_TO_MATCH).matches();<br />            Pattern.compile("something6").matcher(STRING_TO_MATCH).matches();<br />            Pattern.compile("something7").matcher(STRING_TO_MATCH).matches();<br />            Pattern.compile("something8").matcher(STRING_TO_MATCH).matches();<br />            Pattern.compile("something9").matcher(STRING_TO_MATCH).matches();<br />        }<br />    }<br /><br /><br />    private static void compileAndMatchPatternUsingCache(int limit) {<br />        for (int i = 0; i &lt; limit; i++) {<br />            RegexpUtils.matches(STRING_TO_MATCH, "something");<br />            RegexpUtils.matches(STRING_TO_MATCH, "something1");<br />            RegexpUtils.matches(STRING_TO_MATCH, "something2");<br />            RegexpUtils.matches(STRING_TO_MATCH, "something3");<br />            RegexpUtils.matches(STRING_TO_MATCH, "something4");<br />            RegexpUtils.matches(STRING_TO_MATCH, "something5");<br />            RegexpUtils.matches(STRING_TO_MATCH, "something6");<br />            RegexpUtils.matches(STRING_TO_MATCH, "something7");<br />            RegexpUtils.matches(STRING_TO_MATCH, "something8");<br />            RegexpUtils.matches(STRING_TO_MATCH, "something9");<br />        }<br />    }<br /><br />}<br /><br /></pre>We are running a series of tests and checking the time of their execution. Note that the results of these tests are not precise due to the fact that the application is not being run in isolation so numerous conditions can affect the time of the execution. We are interested in showing some degree of the problem rather than showing the precise execution time.  For a given number of iterations (1,10,100,1000,10000,100000,1000000) we are either compiling 10 regular expressions or using a Guava's cache to retrieve the compiled Pattern and then we match them against a string to match.  These are the logs: <br /><br /><pre class="brush:xml">pl.grzejszczak.marcin.guava.cache.GuavaCache:34 Time needed to compile and check regexp expression [1] ms, no of iterations [1]<br />pl.grzejszczak.marcin.guava.cache.GuavaCache:40 Time needed to compile and check regexp expression using Cache [35] ms, no of iterations [1]<br />pl.grzejszczak.marcin.guava.cache.GuavaCache:34 Time needed to compile and check regexp expression [1] ms, no of iterations [10]<br />pl.grzejszczak.marcin.guava.cache.GuavaCache:40 Time needed to compile and check regexp expression using Cache [0] ms, no of iterations [10]<br />pl.grzejszczak.marcin.guava.cache.GuavaCache:34 Time needed to compile and check regexp expression [8] ms, no of iterations [100]<br />pl.grzejszczak.marcin.guava.cache.GuavaCache:40 Time needed to compile and check regexp expression using Cache [3] ms, no of iterations [100]<br />pl.grzejszczak.marcin.guava.cache.GuavaCache:34 Time needed to compile and check regexp expression [10] ms, no of iterations [1000]<br />pl.grzejszczak.marcin.guava.cache.GuavaCache:40 Time needed to compile and check regexp expression using Cache [10] ms, no of iterations [1000]<br />pl.grzejszczak.marcin.guava.cache.GuavaCache:34 Time needed to compile and check regexp expression [83] ms, no of iterations [10000]<br />pl.grzejszczak.marcin.guava.cache.GuavaCache:40 Time needed to compile and check regexp expression using Cache [33] ms, no of iterations [10000]<br />pl.grzejszczak.marcin.guava.cache.GuavaCache:34 Time needed to compile and check regexp expression [800] ms, no of iterations [100000]<br />pl.grzejszczak.marcin.guava.cache.GuavaCache:40 Time needed to compile and check regexp expression using Cache [279] ms, no of iterations [100000]<br />pl.grzejszczak.marcin.guava.cache.GuavaCache:34 Time needed to compile and check regexp expression [7562] ms, no of iterations [1000000]<br />pl.grzejszczak.marcin.guava.cache.GuavaCache:40 Time needed to compile and check regexp expression using Cache [3067] ms, no of iterations [1000000]<br /></pre><br />You can find the <a href="https://bitbucket.org/gregorin1987/too-much-coding/src">sources over here</a> under the Guava/Cache directory or go to the url <a href="https://bitbucket.org/gregorin1987/too-much-coding/src">https://bitbucket.org/gregorin1987/too-much-coding/src</a>  </div>
 </div>
 
 
-  <footer>
-    <p class="meta">
-      
+      <footer>
+        <p class="meta text-muted">
+          
   
 
-<span class="byline author vcard">Posted by <span class="fn">Marcin Grzejszczak</span></span>
+<span class="glyphicon glyphicon-user"></span> <span class="byline author vcard" itemprop="author" itemscope itemtype="http://schema.org/Person">Posted by <span class="fn" itemprop="name">Marcin Grzejszczak</span></span>
 
-      
-
-
+          
 
 
 
 
 
 
-  
 
 
-<time datetime="2012-12-24T14:54:00+01:00" pubdate data-updated="true"></time>
-      
 
+
+
+
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2012-12-24T14:54:00+01:00"  data-updated="true" itemprop="datePublished dateCreated">ordinal</time>
+          
+
+<span class="glyphicon glyphicon-tags"></span>&nbsp;
 <span class="categories">
   
     <a class='category' href='/blog/categories/google-guava/'>google guava</a>, <a class='category' href='/blog/categories/guava-cache/'>guava cache</a>, <a class='category' href='/blog/categories/java/'>java</a>, <a class='category' href='/blog/categories/regexp/'>regexp</a>, <a class='category' href='/blog/categories/stopwatch/'>stopwatch</a>
@@ -141,11 +173,11 @@
 </span>
 
 
-    </p>
-    
-      <div class="sharing">
+        </p>
+        
+          <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://toomuchcoding.com/blog/2012/12/24/google-guava-cache-with-regular/" data-via="mgrzejszczak" data-counturl="http://toomuchcoding.com/blog/2012/12/24/google-guava-cache-with-regular/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://toomuchcoding.com/blog/2012/12/24/google-guava-cache-with-regular/" data-via="mgrzejszczak" data-counturl="http://toomuchcoding.com/blog/2012/12/24/google-guava-cache-with-regular/" >Tweet</a>
   
   
   <div class="g-plusone" data-size="medium"></div>
@@ -155,29 +187,32 @@
   
 </div>
 
+        
+        
+          <ul class="meta text-muted pager">
+            
+            <li class="previous"><a href="/blog/2012/12/07/google-guava/" title="Previous Post: Google Guava">&laquo; Google Guava</a></li>
+            
+            
+            <li class="next"><a href="/blog/2013/01/04/hamcrest-matchers-guava-predicate-and/" title="Next Post: Hamcrest Matchers, Guava Predicate and Builder design pattern">Hamcrest Matchers, Guava Predicate and Builder design pattern &raquo;</a></li>
+            
+          </ul>
+        
+      </footer>
+    </article>
     
-    <p class="meta">
-      
-        <a class="basic-alignment left" href="/blog/2012/12/07/google-guava/" title="Previous Post: Google Guava">&laquo; Google Guava</a>
-      
-      
-        <a class="basic-alignment right" href="/blog/2013/01/04/hamcrest-matchers-guava-predicate-and/" title="Next Post: Hamcrest Matchers, Guava Predicate and Builder design pattern">Hamcrest Matchers, Guava Predicate and Builder design pattern &raquo;</a>
-      
-    </p>
-  </footer>
-</article>
-
-  <section>
-    <h1>Comments</h1>
-    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      <section>
+        <h2>Comments</h2>
+        <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </div>
-  </section>
+      </section>
+    
+  </div>
 
-</div>
-
-<aside class="sidebar">
   
-    <section>
+  <aside class="sidebar col-md-3">
+    
+      <section>
   <h1>About Me</h1>
   <p><img src="/images/ja.jpg" style="float:left;margin:5px;border-width:0px"/>
   Author of <a href="https://www.packtpub.com/application-development/instant-mockito">"Mockito Instant"</a> and <a href="https://www.packtpub.com/application-development/mockito-cookbook">"Mockito Cookbook"</a> books. OSS Contributor. Co-founder of the Warsaw Groovy User Group and <a href="www.meetup.com/Warsaw-Cloud-Native-Meetup/">Warsaw Cloud Native Meetup</a>.
@@ -191,70 +226,68 @@
   Contributed to Groovy, Mockito, Rest-assured, Drools, Moco. Author of <a href="https://github.com/marcingrzejszczak/uptodate-gradle-plugin">Uptodate Gradle plugin</a>, <a href="https://github.com/marcingrzejszczak/spock-subjects-collaborators-extension/">Spock subjects-collaborators extension</a>, <a href="https://github.com/marcingrzejszczak/gradle-test-profiler">gradle-test-profiler</a>, <a href="https://github.com/marcingrzejszczak/jsonassert">JSONAssert</a> and <a href="https://github.com/marcingrzejszczak/xmlassert">XMLAssert</a> open source projects.
   </p>
 
-  <p>Github profile</p>
-  <p><a href="https://github.com/marcingrzejszczak">https://github.com/marcingrzejszczak</a></p>
+  <p><a href="https://github.com/marcingrzejszczak">Github profile</a></p>
 
-  <p>Lanyrd profile</p>
-  <p><a href="http://lanyrd.com/profile/marcin-grzejszczak">http://lanyrd.com/profile/marcin-grzejszczak</a></p>
+  <p><a href="http://lanyrd.com/profile/marcin-grzejszczak">Lanyrd profile</a></p>
 
-  <p>Twitter profile</p>
-  <p><a href="https://twitter.com/MGrzejszczak">@MGrzejszczak</a></p>
+  <p><a href="https://twitter.com/MGrzejszczak">Twitter: @MGrzejszczak</a></p>
 
-  <p>Goodreads account</p>
-  <p><a href="https://www.goodreads.com/author/show/7284553.Marcin_Grzejszczak">https://www.goodreads.com/author/show/7284553.Marcin_Grzejszczak</a></p>
+  <p><a href="https://www.goodreads.com/author/show/7284553.Marcin_Grzejszczak">Goodreads account</a></p>
 </section>
-<section>
-  <h1>Recent Posts</h1>
-  <ul id="recent_posts">
-    
-      <li class="post">
-        <a href="/blog/2016/10/18/new-project-spring-cloud-pipelines/">New Project - Spring Cloud Pipelines</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2016/10/07/spring-cloud-contract-podcast/">Spring Cloud Contract Podcast</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2016/09/24/spring-cloud-contract-1-dot-0-0-dot-release-available/">Spring Cloud Contract 1.0.0.RELEASE available!</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2016/07/25/spring-cloud-contract-1-dot-0-0-dot-m1-released/">Spring Cloud Contract 1.0.0.M1 Released</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2016/06/24/accurest-becomes-part-of-the-spring-cloud-contract/">Accurest becomes part of the Spring Cloud Contract</a>
-      </li>
-    
-  </ul>
-</section>
-
-
-<section class="googleplus">
-  <h1>
-    <a href="https://plus.google.com/108408840893580782990?rel=author">
-      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
-      Google+
-    </a>
-  </h1>
-</section>
-
-
-
-  
-</aside>
-
-
-    </div>
+<section class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Recent Posts</h3>
   </div>
-  <footer role="contentinfo"><p>
-  Copyright &copy; 2017 - Marcin Grzejszczak -
-  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a>. Design by <a href="http://octopressthemes.com">Octopress Themes</a></span>
+  
+  <div id="recent_posts" class="list-group">
+    
+    <a class="list-group-item " href="/blog/2016/10/18/new-project-spring-cloud-pipelines/">New Project - Spring Cloud Pipelines</a>
+    
+    <a class="list-group-item " href="/blog/2016/10/07/spring-cloud-contract-podcast/">Spring Cloud Contract Podcast</a>
+    
+    <a class="list-group-item " href="/blog/2016/09/24/spring-cloud-contract-1-dot-0-0-dot-release-available/">Spring Cloud Contract 1.0.0.RELEASE Available!</a>
+    
+    <a class="list-group-item " href="/blog/2016/07/25/spring-cloud-contract-1-dot-0-0-dot-m1-released/">Spring Cloud Contract 1.0.0.M1 Released</a>
+    
+    <a class="list-group-item " href="/blog/2016/06/24/accurest-becomes-part-of-the-spring-cloud-contract/">Accurest Becomes Part of the Spring Cloud Contract</a>
+    
+  </div>
+</section>
+
+
+<section class="googleplus panel panel-default">
+  <div class="panel-body">
+    <h2>
+      <a href="https://plus.google.com/108408840893580782990?rel=author">
+        <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+        Google+
+      </a>
+    </h2>
+  </div>
+</section>
+
+
+
+    
+  </aside>
+  
+</div>
+
+        </div>
+      </div>
+    </div>
+    <footer role="contentinfo"><div class="container">
+    <p class="text-muted credits">
+  Copyright &copy; 2017 - Marcin Grzejszczak<br>
+  <small>
+      <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>,
+      <span class="credit">customized with <a href="https://github.com/kAworu/octostrap3">octostrap3</a></span>.
+  </small>
 </p>
 
+</div>
 </footer>
-  
+    
 
 <script type="text/javascript">
       var disqus_shortname = 'toomuchcoding';
@@ -267,7 +300,7 @@
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     }());
 </script>
@@ -278,7 +311,7 @@
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) {return;}
-  js = d.createElement(s); js.id = id;
+  js = d.createElement(s); js.id = id; js.async = true;
   js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
@@ -300,14 +333,15 @@
       var twitterWidgets = document.createElement('script');
       twitterWidgets.type = 'text/javascript';
       twitterWidgets.async = true;
-      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
       document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
     })();
   </script>
 
 
+<script src="/assets/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="/javascripts/modernizr.js"></script>
 
 
-
-</body>
+  </body>
 </html>

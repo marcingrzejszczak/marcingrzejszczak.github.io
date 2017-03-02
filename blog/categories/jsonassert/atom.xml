@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: jsonassert | TOO MUCH CODING]]></title>
+  <title><![CDATA[Category: Jsonassert | TOO MUCH CODING]]></title>
   <link href="http://toomuchcoding.com/blog/categories/jsonassert/atom.xml" rel="self"/>
   <link href="http://toomuchcoding.com/"/>
-  <updated>2017-01-16T11:06:14+01:00</updated>
+  <updated>2017-03-02T17:24:24+01:00</updated>
   <id>http://toomuchcoding.com/</id>
   <author>
     <name><![CDATA[Marcin Grzejszczak]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[JSON Assert 0.4.0 released]]></title>
+    <title type="html"><![CDATA[JSON Assert 0.4.0 Released]]></title>
     <link href="http://toomuchcoding.com/blog/2016/04/14/json-assert-0-dot-4-0-released/"/>
     <updated>2016-04-14T05:10:51+02:00</updated>
     <id>http://toomuchcoding.com/blog/2016/04/14/json-assert-0-dot-4-0-released</id>
@@ -79,7 +79,7 @@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[JSON Assert 0.3.0 released]]></title>
+    <title type="html"><![CDATA[JSON Assert 0.3.0 Released]]></title>
     <link href="http://toomuchcoding.com/blog/2016/03/27/json-assert-0-dot-3-0-released/"/>
     <updated>2016-03-27T23:17:21+02:00</updated>
     <id>http://toomuchcoding.com/blog/2016/03/27/json-assert-0-dot-3-0-released</id>
@@ -140,7 +140,7 @@ instead of writing:</p>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[JSON Assert 0.2.1 released]]></title>
+    <title type="html"><![CDATA[JSON Assert 0.2.1 Released]]></title>
     <link href="http://toomuchcoding.com/blog/2016/03/11/json-assert-0-dot-2-1-released/"/>
     <updated>2016-03-11T23:33:30+01:00</updated>
     <id>http://toomuchcoding.com/blog/2016/03/11/json-assert-0-dot-2-1-released</id>
@@ -193,7 +193,7 @@ If you don&rsquo;t care - just ignore it ;)</p>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[JSON Assert lib released]]></title>
+    <title type="html"><![CDATA[JSON Assert Lib Released]]></title>
     <link href="http://toomuchcoding.com/blog/2016/02/27/json-assert-lib-released/"/>
     <updated>2016-02-27T23:20:00+01:00</updated>
     <id>http://toomuchcoding.com/blog/2016/02/27/json-assert-lib-released</id>

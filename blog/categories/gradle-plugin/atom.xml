@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: gradle plugin | TOO MUCH CODING]]></title>
+  <title><![CDATA[Category: Gradle Plugin | TOO MUCH CODING]]></title>
   <link href="http://toomuchcoding.com/blog/categories/gradle-plugin/atom.xml" rel="self"/>
   <link href="http://toomuchcoding.com/"/>
-  <updated>2017-01-16T11:06:14+01:00</updated>
+  <updated>2017-03-02T17:24:24+01:00</updated>
   <id>http://toomuchcoding.com/</id>
   <author>
     <name><![CDATA[Marcin Grzejszczak]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[UpToDate Gradle Plugin migrated]]></title>
+    <title type="html"><![CDATA[UpToDate Gradle Plugin Migrated]]></title>
     <link href="http://toomuchcoding.com/blog/2016/04/11/uptodate-gradle-plugin-migrated/"/>
     <updated>2016-04-11T13:28:43+02:00</updated>
     <id>http://toomuchcoding.com/blog/2016/04/11/uptodate-gradle-plugin-migrated</id>

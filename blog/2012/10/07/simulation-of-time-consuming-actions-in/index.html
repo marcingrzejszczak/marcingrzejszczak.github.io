@@ -1,15 +1,11 @@
-
 <!DOCTYPE html>
-<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
-<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
-<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<html class="no-js" lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Simulation of time consuming actions in integration tests - TOO MUCH CODING</title>
+  <title>Simulation of Time Consuming Actions in Integration Tests - TOO MUCH CODING</title>
   <meta name="author" content="Marcin Grzejszczak">
 
   
-  <meta name="description" content="Hi!Quite recently in one of my projects I had a situation in which I needed to create an integration test for the application. That's not very odd &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,71 +15,97 @@
 
   
   <link rel="canonical" href="http://toomuchcoding.com/blog/2012/10/07/simulation-of-time-consuming-actions-in/">
-  <link href="/favicon.png" rel="icon">
-  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="/javascripts/ender.js"></script>
-  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/favicon.png" type="image/png" rel="icon">
   <link href="/atom.xml" rel="alternate" title="TOO MUCH CODING" type="application/atom+xml">
-  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
 
-<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  <!-- http://opengraphprotocol.org/ -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="http://toomuchcoding.com/blog/2012/10/07/simulation-of-time-consuming-actions-in/">
+  <meta property="og:title" content="Simulation of Time Consuming Actions in Integration Tests - TOO MUCH CODING">
+  
 
-  ga('create', 'UA-74671877-1', 'auto');
-  ga('send', 'pageview');
+  <script src="/javascripts/libs/jquery/jquery-2.1.3.min.js"></script>
 
-</script>
+<link href="/assets/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="/assets/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css">
+
+
+  
+  <link href="/stylesheets/screen.css" media="screen, projection, print" rel="stylesheet" type="text/css">
 
   
 
 </head>
 
-<body   >
-  <header role="banner"><hgroup>
-  <h1><a href="/">TOO MUCH CODING</a></h1>
-  
-    <h2>A blog for coding addicts by Marcin Grzejszczak</h2>
-  
-</hgroup>
+  <body   >
+    <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+    <div id="wrap">
+      <header role="banner">
+        <nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" title="toggle navbar" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">TOO MUCH CODING</a>
+        </div>
 
-</header>
-  <nav role="navigation"><ul class="subscription" data-subscription="rss">
-  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
-  
-</ul>
-  
-<form action="https://www.google.com/search" method="get">
-  <fieldset role="search">
-    <input type="hidden" name="q" value="site:toomuchcoding.com" />
-    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
-  </fieldset>
-</form>
-  
-<ul class="main-navigation">
-  <li><a href="/">Blog</a></li>
-  <li><a href="/blog/archives">Archives</a></li>
-  <li><a href="/oss/">OSS</a></li>
-  <li><a href="/abstracts/">Abstracts</a></li>
-</ul>
-
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="active">
+                    <a rel="index" href="/">Blog</a>
+                </li>
+                <li >
+                    <a href="/blog/archives">Archives</a>
+                </li>
+                <li >
+                    <a href="/oss">OSS</a>
+                </li>
+                <li >
+                    <a href="/abstracts">Abstracts</a>
+                </li>
+                <li >
+                    <a href="/talks">Talks</a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a class="subscribe-rss" href="/atom.xml" title="subscribe via RSS">
+                        <span class="visible-xs">RSS</span>
+                        <img class="hidden-xs" src="/images/rss.png" alt="RSS">
+                    </a>
+                </li>
+                
+            </ul>
+            
+                <form class="navbar-form navbar-right" action="https://www.google.com/search" method="GET">
+                    <input type="hidden" name="sitesearch" value="toomuchcoding.com">
+                    <div class="form-group">
+                        <input class="form-control" type="text" name="q" placeholder="Search">
+                    </div>
+                </form>
+            
+        </div>
+    </div>
 </nav>
-  <div id="main">
-    <div id="content">
-      <div>
-<article class="hentry" role="article">
-  
-  <header>
+
+
+      </header>
+      <div id="main" role="main" class="container">
+        <div id="content">
+          <div class="row">
+  <div class="page-content col-md-9" itemscope itemtype="http://schema.org/Blog">
+    <meta itemprop="name" content="TOO MUCH CODING" />
+    <meta itemprop="description" content="A blog for coding addicts about Java, Groovy, Buzzword, Spring, Microservices, Buzzword" />
+    <meta itemprop="url" content="http://toomuchcoding.com" />
+    <article class="hentry" role="article" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+      
+  <header class="page-header">
     
-      <h1 class="entry-title">Simulation of Time Consuming Actions in Integration Tests</h1>
-    
-    
-      <p class="meta">
+      <p class="meta text-muted text-uppercase">
         
 
 
@@ -93,47 +115,57 @@
 
 
 
-  
 
 
-<time datetime="2012-10-07T22:47:00+02:00" pubdate data-updated="true"></time>
+
+
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2012-10-07T22:47:00+02:00"  data-updated="true" itemprop="datePublished dateCreated">ordinal</time>
         
-         | <a href="#disqus_thread">Comments</a>
+           | <a href="#disqus_thread" itemprop="discussionUrl"
+             data-disqus-identifier="http://toomuchcoding.com">Comments</a>
         
       </p>
+    
+    
+    <h1 class="entry-title" itemprop="name headline">
+        Simulation of Time Consuming Actions in Integration Tests
+        
+    </h1>
     
   </header>
 
 
-<div class="entry-content"><div class='post'>
+<div class="entry-content clearfix" itemprop="articleBody description"><div class='post'>
 <br /><br />Hi!<br /><br />Quite recently in one of my projects I had a situation in which I needed to create an integration test for the application. That's not very odd isn't it? :)<br /><br />What was interesting was the fact that the logic of the app involved some concurrency issues and one of the components had to connect to an external service which would take a couple of seconds. Since in the integration test there was no need to make the actual connection, the component needed to be mocked. What about the simulation of the time consuming action? Well, let's take a look at the way I did it...<br />
 <!--more-->
 <br /><b>The task.</b><br /><br /><pre class="brush:java">package pl.grzejszczak.marcin;<br /><br />import org.slf4j.Logger;<br />import org.slf4j.LoggerFactory;<br /><br />/**<br /> * Service that does some things including processing of the external service<br /> * <br /> * @author marcin<br /> * <br /> */<br />public class SomeTask implements Runnable {<br /><br /> private static final Logger LOGGER = LoggerFactory.getLogger(SomeTask.class);<br /><br /> // Service is injected via a dependency injection system<br /> private Processable timeConsumingExternalService;<br /><br /> private void methodThatConnectsToExternalServices() {<br />  // connects to an external service and spends a couple of seconds there<br />  LOGGER.debug("Before processing");<br />  timeConsumingExternalService.process();<br />  LOGGER.debug("After processing");<br />  // some other things to do<br /> }<br /><br /> public void run() {<br />  methodThatConnectsToExternalServices();<br /> }<br /><br /> public void setTimeConsumingExternalService(Processable timeConsumingExternalService) {<br />  this.timeConsumingExternalService = timeConsumingExternalService;<br /> }<br /><br />}</pre><b>The integration test.</b><br /><br /><pre class="brush:java">package pl.grzejszczak.marcin;<br /><br />import java.util.concurrent.ExecutorService;<br />import java.util.concurrent.Executors;<br /><br />import org.mockito.Mockito;<br />import org.mockito.invocation.InvocationOnMock;<br />import org.mockito.stubbing.Answer;<br />import org.slf4j.Logger;<br />import org.slf4j.LoggerFactory;<br /><br />public class ServiceIntegrationTest {<br /><br /> private static final Logger LOGGER = LoggerFactory.getLogger(ServiceIntegrationTest.class);<br /><br /> private ExecutorService executorService = Executors.newCachedThreadPool();<br /> private Processable timeConsumingExternalServiceMock = Mockito.mock(Processable.class);<br /> private SomeTask someTask = new SomeTask();<br /><br /> public ServiceIntegrationTest() {<br />  initializeMocks();<br /> }<br /><br /> private void initializeMocks() {<br />  Mockito.doAnswer(new Answer&lt;Object&gt;() {<br />   public Object answer(InvocationOnMock invocation) throws Throwable {<br />    // Simulation of connection to external services<br />    LOGGER.debug("Sleeping");<br />    Thread.sleep(5000);<br />    LOGGER.debug("Stopped Sleeping");<br />    return null;<br />   }<br />  }).when(timeConsumingExternalServiceMock).process();<br />  // Inject the mock to the Task - in any possible way<br />  someTask.setTimeConsumingExternalService(timeConsumingExternalServiceMock);<br /> }<br /><br /> public void executeTest() {<br />  executorService.execute(someTask);<br /> }<br /><br /> public static void main(String args[]) {<br />  ServiceIntegrationTest integrationTest = new ServiceIntegrationTest();<br />  integrationTest.executeTest();<br /> }<br />}<br /></pre><br /><br />And the output to the console:<br /><br />2012-10-07 22:42:37,378 DEBUG pl.grzejszczak.marcin.SomeTask:21 Before processing<br />2012-10-07 22:42:37,389 DEBUG pl.grzejszczak.marcin.ServiceIntegrationTest:28 Sleeping<br />2012-10-07 22:42:42,390 DEBUG pl.grzejszczak.marcin.ServiceIntegrationTest:30 Stopped Sleeping<br />2012-10-07 22:42:42,392 DEBUG pl.grzejszczak.marcin.SomeTask:23 After processing<br /><br />Let's take a closer look at the most important part in which an Answer for the execution of the service is being created  <br /><pre class="brush:java">Mockito.doAnswer(new Answer&lt;Object&gt;() {<br />   public Object answer(InvocationOnMock invocation) throws Throwable {<br />    // Simulation of connection to external services<br />    LOGGER.debug("Sleeping");<br />    Thread.sleep(5000);<br />    LOGGER.debug("Stopped Sleeping");<br />    return null;<br />   }<br />  }).when(timeConsumingExternalServiceMock).process();<br /></pre><br />This piece of code changes the default action that should be done by the given object on a given method execution. In this particular case we had to mock a method that returns void - that's why we start with doAnswer(...) and finish with when(...).process(). <br /><br />That is how inside the integration test I managed to create a simulation of waiting for the service to finish. If you have any ideas or comments on how you would do it in another way please feel free to post a comment below :) </div>
 </div>
 
 
-  <footer>
-    <p class="meta">
-      
+      <footer>
+        <p class="meta text-muted">
+          
   
 
-<span class="byline author vcard">Posted by <span class="fn">Marcin Grzejszczak</span></span>
+<span class="glyphicon glyphicon-user"></span> <span class="byline author vcard" itemprop="author" itemscope itemtype="http://schema.org/Person">Posted by <span class="fn" itemprop="name">Marcin Grzejszczak</span></span>
 
-      
-
-
+          
 
 
 
 
 
 
-  
 
 
-<time datetime="2012-10-07T22:47:00+02:00" pubdate data-updated="true"></time>
-      
 
+
+
+
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2012-10-07T22:47:00+02:00"  data-updated="true" itemprop="datePublished dateCreated">ordinal</time>
+          
+
+<span class="glyphicon glyphicon-tags"></span>&nbsp;
 <span class="categories">
   
     <a class='category' href='/blog/categories/answer/'>answer</a>, <a class='category' href='/blog/categories/integration-tests/'>integration tests</a>, <a class='category' href='/blog/categories/java/'>java</a>, <a class='category' href='/blog/categories/mockito/'>mockito</a>
@@ -141,11 +173,11 @@
 </span>
 
 
-    </p>
-    
-      <div class="sharing">
+        </p>
+        
+          <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://toomuchcoding.com/blog/2012/10/07/simulation-of-time-consuming-actions-in/" data-via="mgrzejszczak" data-counturl="http://toomuchcoding.com/blog/2012/10/07/simulation-of-time-consuming-actions-in/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://toomuchcoding.com/blog/2012/10/07/simulation-of-time-consuming-actions-in/" data-via="mgrzejszczak" data-counturl="http://toomuchcoding.com/blog/2012/10/07/simulation-of-time-consuming-actions-in/" >Tweet</a>
   
   
   <div class="g-plusone" data-size="medium"></div>
@@ -155,29 +187,32 @@
   
 </div>
 
+        
+        
+          <ul class="meta text-muted pager">
+            
+            <li class="previous"><a href="/blog/2012/10/06/and-so-we-code/" title="Previous Post: And so we code...">&laquo; And so we code...</a></li>
+            
+            
+            <li class="next"><a href="/blog/2012/10/16/calculating-coherence-cluster-size-on/" title="Next Post: Calculating Coherence cluster size on a remote server using JMX">Calculating Coherence cluster size on a remote server using JMX &raquo;</a></li>
+            
+          </ul>
+        
+      </footer>
+    </article>
     
-    <p class="meta">
-      
-        <a class="basic-alignment left" href="/blog/2012/10/06/and-so-we-code/" title="Previous Post: And so we code...">&laquo; And so we code...</a>
-      
-      
-        <a class="basic-alignment right" href="/blog/2012/10/16/calculating-coherence-cluster-size-on/" title="Next Post: Calculating Coherence cluster size on a remote server using JMX">Calculating Coherence cluster size on a remote server using JMX &raquo;</a>
-      
-    </p>
-  </footer>
-</article>
-
-  <section>
-    <h1>Comments</h1>
-    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      <section>
+        <h2>Comments</h2>
+        <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </div>
-  </section>
+      </section>
+    
+  </div>
 
-</div>
-
-<aside class="sidebar">
   
-    <section>
+  <aside class="sidebar col-md-3">
+    
+      <section>
   <h1>About Me</h1>
   <p><img src="/images/ja.jpg" style="float:left;margin:5px;border-width:0px"/>
   Author of <a href="https://www.packtpub.com/application-development/instant-mockito">"Mockito Instant"</a> and <a href="https://www.packtpub.com/application-development/mockito-cookbook">"Mockito Cookbook"</a> books. OSS Contributor. Co-founder of the Warsaw Groovy User Group and <a href="www.meetup.com/Warsaw-Cloud-Native-Meetup/">Warsaw Cloud Native Meetup</a>.
@@ -191,70 +226,68 @@
   Contributed to Groovy, Mockito, Rest-assured, Drools, Moco. Author of <a href="https://github.com/marcingrzejszczak/uptodate-gradle-plugin">Uptodate Gradle plugin</a>, <a href="https://github.com/marcingrzejszczak/spock-subjects-collaborators-extension/">Spock subjects-collaborators extension</a>, <a href="https://github.com/marcingrzejszczak/gradle-test-profiler">gradle-test-profiler</a>, <a href="https://github.com/marcingrzejszczak/jsonassert">JSONAssert</a> and <a href="https://github.com/marcingrzejszczak/xmlassert">XMLAssert</a> open source projects.
   </p>
 
-  <p>Github profile</p>
-  <p><a href="https://github.com/marcingrzejszczak">https://github.com/marcingrzejszczak</a></p>
+  <p><a href="https://github.com/marcingrzejszczak">Github profile</a></p>
 
-  <p>Lanyrd profile</p>
-  <p><a href="http://lanyrd.com/profile/marcin-grzejszczak">http://lanyrd.com/profile/marcin-grzejszczak</a></p>
+  <p><a href="http://lanyrd.com/profile/marcin-grzejszczak">Lanyrd profile</a></p>
 
-  <p>Twitter profile</p>
-  <p><a href="https://twitter.com/MGrzejszczak">@MGrzejszczak</a></p>
+  <p><a href="https://twitter.com/MGrzejszczak">Twitter: @MGrzejszczak</a></p>
 
-  <p>Goodreads account</p>
-  <p><a href="https://www.goodreads.com/author/show/7284553.Marcin_Grzejszczak">https://www.goodreads.com/author/show/7284553.Marcin_Grzejszczak</a></p>
+  <p><a href="https://www.goodreads.com/author/show/7284553.Marcin_Grzejszczak">Goodreads account</a></p>
 </section>
-<section>
-  <h1>Recent Posts</h1>
-  <ul id="recent_posts">
-    
-      <li class="post">
-        <a href="/blog/2016/10/18/new-project-spring-cloud-pipelines/">New Project - Spring Cloud Pipelines</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2016/10/07/spring-cloud-contract-podcast/">Spring Cloud Contract Podcast</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2016/09/24/spring-cloud-contract-1-dot-0-0-dot-release-available/">Spring Cloud Contract 1.0.0.RELEASE available!</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2016/07/25/spring-cloud-contract-1-dot-0-0-dot-m1-released/">Spring Cloud Contract 1.0.0.M1 Released</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2016/06/24/accurest-becomes-part-of-the-spring-cloud-contract/">Accurest becomes part of the Spring Cloud Contract</a>
-      </li>
-    
-  </ul>
-</section>
-
-
-<section class="googleplus">
-  <h1>
-    <a href="https://plus.google.com/108408840893580782990?rel=author">
-      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
-      Google+
-    </a>
-  </h1>
-</section>
-
-
-
-  
-</aside>
-
-
-    </div>
+<section class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Recent Posts</h3>
   </div>
-  <footer role="contentinfo"><p>
-  Copyright &copy; 2017 - Marcin Grzejszczak -
-  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a>. Design by <a href="http://octopressthemes.com">Octopress Themes</a></span>
+  
+  <div id="recent_posts" class="list-group">
+    
+    <a class="list-group-item " href="/blog/2016/10/18/new-project-spring-cloud-pipelines/">New Project - Spring Cloud Pipelines</a>
+    
+    <a class="list-group-item " href="/blog/2016/10/07/spring-cloud-contract-podcast/">Spring Cloud Contract Podcast</a>
+    
+    <a class="list-group-item " href="/blog/2016/09/24/spring-cloud-contract-1-dot-0-0-dot-release-available/">Spring Cloud Contract 1.0.0.RELEASE Available!</a>
+    
+    <a class="list-group-item " href="/blog/2016/07/25/spring-cloud-contract-1-dot-0-0-dot-m1-released/">Spring Cloud Contract 1.0.0.M1 Released</a>
+    
+    <a class="list-group-item " href="/blog/2016/06/24/accurest-becomes-part-of-the-spring-cloud-contract/">Accurest Becomes Part of the Spring Cloud Contract</a>
+    
+  </div>
+</section>
+
+
+<section class="googleplus panel panel-default">
+  <div class="panel-body">
+    <h2>
+      <a href="https://plus.google.com/108408840893580782990?rel=author">
+        <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+        Google+
+      </a>
+    </h2>
+  </div>
+</section>
+
+
+
+    
+  </aside>
+  
+</div>
+
+        </div>
+      </div>
+    </div>
+    <footer role="contentinfo"><div class="container">
+    <p class="text-muted credits">
+  Copyright &copy; 2017 - Marcin Grzejszczak<br>
+  <small>
+      <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>,
+      <span class="credit">customized with <a href="https://github.com/kAworu/octostrap3">octostrap3</a></span>.
+  </small>
 </p>
 
+</div>
 </footer>
-  
+    
 
 <script type="text/javascript">
       var disqus_shortname = 'toomuchcoding';
@@ -267,7 +300,7 @@
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     }());
 </script>
@@ -278,7 +311,7 @@
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) {return;}
-  js = d.createElement(s); js.id = id;
+  js = d.createElement(s); js.id = id; js.async = true;
   js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
@@ -300,14 +333,15 @@
       var twitterWidgets = document.createElement('script');
       twitterWidgets.type = 'text/javascript';
       twitterWidgets.async = true;
-      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
       document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
     })();
   </script>
 
 
+<script src="/assets/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="/javascripts/modernizr.js"></script>
 
 
-
-</body>
+  </body>
 </html>
