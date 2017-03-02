@@ -1,0 +1,243 @@
+- date: 2017.01.25
+  eventName: Zielona Gora JUG
+  city: Zielona Gora
+  country: Poland
+  talkTitle: Microservices tracing with Spring Cloud Sleuth and Zipkin
+  resources: |
+    <a href="https://www.meetup.com/Zielona-Gora-JUG/events/236619601/">Meetup</a>
+
+- date: 2016.12.15
+  eventName: Bydgoszcz JUG #3
+  city: Bydgoszcz
+  country: Poland
+  talkTitle: TDD at the Architecture Level with Consumer-Driven Contracts
+  resources: |
+    <a href="https://www.meetup.com/BydgoszczJUG/events/235878695/">Meetup</a>
+
+- date: 2016.12.02
+  eventName: Power Workshop @DevTernity 2016
+  city: Riga
+  country: Latvia
+  talkTitle: Building Cloud Native microservices with Spring Cloud & Netflix OSS
+  resources: |
+    <p><a href="http://devternity.com">Conference</a></p>
+
+- date: 2016.12.01
+  eventName: DevTernity 2016
+  city: Riga
+  country: Latvia
+  talkTitle: TDD at the Architecture Level with Consumer-Driven Contracts
+  resources: |
+    <p><a href="http://devternity.com">Conference</a></p>
+
+- date: 2016.11.15
+  eventName: WJUG #189
+  city: Warsaw
+  country: Poland
+  talkTitle: Consumer Driven Contracts and Your Microservice Architecture
+  resources: |
+    <a href="http://warszawa.jug.pl/#/meeting/189">WJUG #189</a>
+
+- date: 2016.10.06
+  eventName: JUGtoberfest
+  city: Lodz
+  country: Poland
+  resources: |
+
+
+- date: 2016.09.04
+  eventName: SpringOne Platform
+  city: Las Vegas
+  country: USA
+  resources: |
+
+
+- date: 2016.06.22
+  eventName: Devoxx Poland 2016
+  city: Cracow
+  country: Poland
+  resources: |
+
+
+- date: 2016.05.24
+  eventName: WJUG #182
+  city: Warsaw
+  country: Poland
+  resources: |
+
+
+- date: 2016.05.21
+  eventName: CybercomDev 2016
+  city: Lodz
+  country: Poland
+  activityType: Speaker
+  resources: |
+
+
+- date: 2016.05.11
+  eventName: GeeCon 2016
+  city: Cracow
+  country: Poland
+  activityType: Speaker
+  resources: |
+
+
+- date: 2016.04.08
+  eventName: Greach 2016
+  city: Madrid
+  country: Spain
+  resources: |
+
+
+- date: 2016.03.19
+  eventName: GR8 Day Warsaw
+  city: Warsaw
+  country: Poland
+  resources: |
+
+
+- date: 2015.12.01
+  eventName: DevTernity 2015
+  city: Riga
+  country: Latvia
+  resources: |
+
+
+- date: 2015.11.09
+  eventName: muCon 2015
+  city: London
+  country: England
+  resources: |
+
+
+- date: 2015.10.22
+  eventName: Geecon Prague
+  city: Prague
+  country: Czech Republic
+  resources: |
+
+
+- date: 2015.09.18
+  eventName: Voxxed Days
+  city: Vilinus
+  country: Lithuania
+  resources: |
+
+
+- date: 2015.09.17
+  eventName: Kaunas JUG #20
+  city: Kaunas
+  country: Lithuania
+  resources: |
+
+
+- date: 2015.09.11
+  eventName: Geecon Microservices
+  city: Sopot
+  country: Poland
+  resources: |
+
+
+- date: 2015.09.08
+  eventName: WJUG #165
+  city: Warsaw
+  country: Poland
+  resources: |
+
+
+- date: 2015.08.28
+  eventName: Codepot
+  city: Warsaw
+  country: Poland
+  resources: |
+
+
+- date: 2015.07.04
+  eventName: Confitura 2015
+  city: Warsaw
+  country: Poland
+  resources: |
+
+
+- date: 2015.06.22
+  eventName: Devoxx Poland
+  city: Cracow
+  country: Poland
+  resources: |
+
+
+- date: 2015.06.08
+  eventName: Prague JUG
+  city: Prague
+  country: Czech Republic
+  resources: |
+
+
+- date: 2015.05.18
+  eventName: Atmosphere
+  city: Cracow
+  country: Poland
+  resources: |
+
+
+- date: 2015.05.13
+  eventName: Geecon 2015
+  city: Cracow
+  country: Poland
+  resources: |
+
+
+- date: 2015.04.20
+  eventName: 4Developers
+  city: Warsaw
+  country: Poland
+  resources: |
+
+
+- date: 2015.05.21
+  eventName: Lodz JUG Hackathon
+  city: Lodz
+  country: Poland
+  resources: |
+
+
+- date: 2015.01.30
+  eventName: TGG Geecon
+  city: Poznan
+  country: Poland
+  resources: |
+
+
+- date: 2014.12.04
+  eventName: Lodz JUG
+  city: Lodz
+  country: Poland
+  resources: |
+
+
+- date: 2014.08.26
+  eventName: Warsjawa
+  city: Warsaw
+  country: Poland
+  resources: |
+
+
+- date: 2014.08.08
+  eventName: Microservice Hackathon
+  city: Warsaw
+  country: Poland
+  resources: |
+
+
+- date: 2014.02.20
+  eventName: Warsaw Groovy User Group
+  city: Warsaw
+  country: Poland
+  resources: |
+
+
+- date: 2014.02.12
+  eventName: Jinkubator (Groovy)
+  city: Warsaw
+  country: Poland
+  resources: |

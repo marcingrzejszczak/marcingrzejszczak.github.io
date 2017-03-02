@@ -1,0 +1,38 @@
+---
+layout: page
+title: "Talks"
+date: 2017-01-02 16:35
+comments: true
+sharing: true
+footer: true
+---
+<p>
+  Here you can find a list of the talks that I've given (to most of them)
+</p>
+
+<table class="table table-bordered table-hover table-responsive table-striped">
+  <thead>
+    <tr class="bg-primary">
+      <th>#</th>
+      <th>Date</th>
+      <th>Name</th>
+      <th>City</th>
+      <th>Country</th>
+      <th>Talk title</th>
+      <th>Resources</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for talk in site.data.talks %}
+    <tr>
+      <th scope="row">{{ forloop.index }}</th>
+      <td>{{ talk.date }}</td>
+      <td>{{ talk.eventName }}</td>
+      <td>{{ talk.city }}</td>
+      <td>{{ talk.country }}</td>
+      <td>{{ talk.talkTitle }}</td>
+      <td>{{ talk.resources }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>

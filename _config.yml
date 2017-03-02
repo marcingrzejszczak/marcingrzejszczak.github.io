@@ -19,7 +19,7 @@ date_format: "ordinal"
 subscribe_rss: /atom.xml
 subscribe_email:
 # RSS feeds can list your email address if you like
-email:
+email: blog@toomuchcoding.com
 
 # ----------------------- #
 #    Jekyll & Plugins     #
@@ -99,9 +99,6 @@ google_analytics_tracking_id:
 
 # Facebook Like
 facebook_like: true
-
-# Email
-email: blog@toomuchcoding.com
 
 # Linked IN
 linkedin_user: marcin-grzejszczak-15565119
