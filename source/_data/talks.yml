@@ -4,7 +4,7 @@
   country: Poland
   talkTitle: Microservices tracing with Spring Cloud Sleuth and Zipkin
   resources:
-    - <a href="https://www.meetup.com/Zielona-Gora-JUG/events/236619601/">Event</a></li>
+    - <a href="https://www.meetup.com/Zielona-Gora-JUG/events/236619601/">Event</a>
 
 - date: 2016.12.15
   eventName: "Bydgoszcz JUG #3"
@@ -20,7 +20,7 @@
   country: Latvia
   talkTitle: Building Cloud Native microservices with Spring Cloud & Netflix OSS
   resources:
-    - <p><a href="http://devternity.com">Conference</a></p>
+    - <a href="http://devternity.com">Conference</a>
 
 - date: 2016.12.01
   eventName: DevTernity 2016
