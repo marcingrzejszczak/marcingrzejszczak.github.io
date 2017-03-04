@@ -31,7 +31,13 @@ footer: true
       <td>{{ talk.city }}</td>
       <td>{{ talk.country }}</td>
       <td>{{ talk.talkTitle }}</td>
-      <td>{{ talk.resources }}</td>
+      <td>
+        <ul>
+        {% for resource in talk.resources %}
+          <li>{{ resource }}</li>
+        {% endfor %}
+      </ul>
+      </td>
     </tr>
     {% endfor %}
   </tbody>

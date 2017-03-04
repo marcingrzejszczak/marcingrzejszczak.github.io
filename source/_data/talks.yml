@@ -3,82 +3,101 @@
   city: Zielona Gora
   country: Poland
   talkTitle: Microservices tracing with Spring Cloud Sleuth and Zipkin
-  resources: |
-    <a href="https://www.meetup.com/Zielona-Gora-JUG/events/236619601/">Meetup</a>
+  resources:
+    - <a href="https://www.meetup.com/Zielona-Gora-JUG/events/236619601/">Event</a></li>
 
 - date: 2016.12.15
-  eventName: Bydgoszcz JUG #3
+  eventName: "Bydgoszcz JUG #3"
   city: Bydgoszcz
   country: Poland
   talkTitle: TDD at the Architecture Level with Consumer-Driven Contracts
-  resources: |
-    <a href="https://www.meetup.com/BydgoszczJUG/events/235878695/">Meetup</a>
+  resources:
+    - <a href="https://www.meetup.com/BydgoszczJUG/events/235878695/">Event</a>
 
 - date: 2016.12.02
   eventName: Power Workshop @DevTernity 2016
   city: Riga
   country: Latvia
   talkTitle: Building Cloud Native microservices with Spring Cloud & Netflix OSS
-  resources: |
-    <p><a href="http://devternity.com">Conference</a></p>
+  resources:
+    - <p><a href="http://devternity.com">Conference</a></p>
 
 - date: 2016.12.01
   eventName: DevTernity 2016
   city: Riga
   country: Latvia
   talkTitle: TDD at the Architecture Level with Consumer-Driven Contracts
-  resources: |
-    <p><a href="http://devternity.com">Conference</a></p>
+  resources:
+    - <a href="http://devternity.com">Conference</a>
 
 - date: 2016.11.15
-  eventName: WJUG #189
+  eventName: "WJUG #189"
   city: Warsaw
   country: Poland
   talkTitle: Consumer Driven Contracts and Your Microservice Architecture
-  resources: |
-    <a href="http://warszawa.jug.pl/#/meeting/189">WJUG #189</a>
+  resources:
+    - <a href="http://warszawa.jug.pl/#/meeting/189">Event</a>
+    - <a href="https://www.slideshare.net/MarcinGrzejszczak/consumer-driven-contracts-and-your-microservice-architecture-warsaw-jug">Slides</a>
+    - <a href="https://www.youtube.com/watch?time_continue=538&v=sAAklvxmPmk">Video</a>
 
 - date: 2016.10.06
   eventName: JUGtoberfest
   city: Lodz
   country: Poland
-  resources: |
-
+  talkTitle: Consumer Driven Contracts and Your Microservice Architecture
+  resources:
+    - <a href="https://www.meetup.com/Java-User-Group-Lodz/events/233741565/">Event</a>
+    - <a href="https://www.slideshare.net/MarcinGrzejszczak/spring-cloud-contract-and-your-microservice-architecture">Slides</a>
 
 - date: 2016.09.04
   eventName: SpringOne Platform
   city: Las Vegas
   country: USA
-  resources: |
-
+  talkTitle: |
+    Consumer Driven Contracts and Your Microservice Architecture</br>
+    Implementing Microservices Tracing with Spring Cloud and Zipkin
+  resources:
+    - <a href="https://2016.event.springoneplatform.io/schedule/sessions/">Event</a>
+    - <a href="http://www.slideshare.net/SpringCentral/implementing-microservices-tracing-with-spring-cloud-and-zipkin">Slides Tracing</a>
+    - <a href="https://www.youtube.com/watch?v=vpFL4MZ0jlI&list=PLAdzTan_eSPQ1fuLSBhyB4eEZF7JQM0Mx&index=139">Video Tracing</a>
+    - <a href="http://www.slideshare.net/SpringCentral/consumer-driven-contracts-and-your-microservice-architecture-64844061">Slides Contracts</a>
+    - <a href="https://www.youtube.com/watch?v=YnGssIG4nMQ&list=PLAdzTan_eSPQ1fuLSBhyB4eEZF7JQM0Mx&index=138">Video Contracts</a>
 
 - date: 2016.06.22
   eventName: Devoxx Poland 2016
   city: Cracow
   country: Poland
-  resources: |
+  talkTitle: Microservices Tracing with Spring Cloud and Zipkin
+  resources:
+    - <a href="http://devoxx.pl/">Event</a>
+    - <a href="https://www.slideshare.net/MarcinGrzejszczak/microservices-tracing-with-spring-cloud-and-zipkin-devoxx">Slides</a>
+    - <a href="https://www.youtube.com/watch?v=eQV71Mw1u1c">Video</a>
 
 
 - date: 2016.05.24
-  eventName: WJUG #182
+  eventName: "WJUG #182"
   city: Warsaw
   country: Poland
-  resources: |
+  talkTitle: Microservices Tracing with Spring Cloud and Zipkin
+  resources:
+    - <a href="http://warszawa.jug.pl/#/meeting/182">Event</a>
+    - <a href="https://www.youtube.com/watch?v=CM2y8K-sCWg&t=93s">Video</a>
 
 
 - date: 2016.05.21
   eventName: CybercomDev 2016
   city: Lodz
   country: Poland
-  activityType: Speaker
-  resources: |
+  talkTitle: Microservices Tracing with Spring Cloud and Zipkin
+  resources:
+    - <a href="https://cybercomdev.pl">Event</a>
+    - <a href="https://www.slideshare.net/MarcinGrzejszczak/microservices-tracing-with-spring-cloud-and-zipkin-cybercomdev">Slides</a>
 
 
 - date: 2016.05.11
   eventName: GeeCon 2016
   city: Cracow
   country: Poland
-  activityType: Speaker
   resources: |
 
 
@@ -125,7 +144,7 @@
 
 
 - date: 2015.09.17
-  eventName: Kaunas JUG #20
+  eventName: "Kaunas JUG #20"
   city: Kaunas
   country: Lithuania
   resources: |
@@ -139,7 +158,7 @@
 
 
 - date: 2015.09.08
-  eventName: WJUG #165
+  eventName: "WJUG #165"
   city: Warsaw
   country: Poland
   resources: |
