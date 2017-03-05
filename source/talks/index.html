@@ -6,8 +6,20 @@ comments: true
 sharing: true
 footer: true
 ---
+<link href="{{ root_url }}/assets/flags/css/flag-icon.min.css" rel="stylesheet" type="text/css">
+
 <p>
   Here you can find a list of the talks that I've given (to most of them)
+</p>
+
+<p>
+  Stats:
+  <ul>
+    <li>gave <b>{{ site.data.talks.size }}</b> talks</li>
+    {% assign talksPerCountry = site.data.talks | group_by:"countryCode" %}
+    <li>in <b>{{ talksPerCountry | size  }}</b> countries ( {% for country in talksPerCountry %} <span class="flag-icon flag-icon-{{country.name}}"></span> {% endfor %})</li>
+    <li>in <b>{{ site.data.talks | group_by:"city" | size  }}</b> cities</li>
+  </ul>
 </p>
 
 <table class="table table-bordered table-hover table-responsive table-striped">
@@ -23,7 +35,8 @@ footer: true
     </tr>
   </thead>
   <tbody>
-    {% for talk in site.data.talks %}
+    {% assign talksByDate = site.data.talks | sort: "date" | reverse %}
+    {% for talk in talksByDate %}
     <tr>
       <th scope="row">{{ forloop.index }}</th>
       <td>{{ talk.date }}</td>
