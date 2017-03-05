@@ -43,13 +43,30 @@ footer: true
       <td>{{ talk.eventName }}</td>
       <td>{{ talk.city }}</td>
       <td>{{ talk.country }}</td>
-      <td>{{ talk.talkTitle }}</td>
+      <td>
+        {% for talkTitle in talk.talks %}
+        <p>{{ talkTitle }}</p>
+        {% endfor %}
+      </td>
       <td>
         <ul>
-        {% for resource in talk.resources %}
-          <li>{{ resource }}</li>
-        {% endfor %}
-      </ul>
+          <li><a href="{{talk.resources.event}}">Event</a></li>
+          {% for medium in talk.resources.media %}
+            {% if medium.name == null %}
+              {% assign mediumSlides = "Slides" %}
+              {% assign mediumVideo = "Video" %}
+            {% else %}
+              {% assign mediumSlides = "Slides " | append: medium.name %}
+              {% assign mediumVideo = "Video " | append: medium.name %}
+            {% endif %}
+            {% if medium.slides != null %}
+              <li><a href="{{medium.slides}}">{{mediumSlides}}</a></li>
+            {% endif %}
+            {% if medium.video != null %}
+              <li><a href="{{medium.video}}">{{mediumVideo}}</a></li>
+            {% endif %}
+          {% endfor %}
+        </ul>
       </td>
     </tr>
     {% endfor %}
