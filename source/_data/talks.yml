@@ -98,14 +98,21 @@
   eventName: GeeCon 2016
   city: Cracow
   country: Poland
-  resources: |
+  talkTitle: Microservices tracing with Spring Cloud and Zipkin
+  resources:
+    - <a href="https://2016.geecon.org/schedule/">Event</>
+    - <a href="https://www.slideshare.net/MarcinGrzejszczak/microservices-tracing-with-spring-cloud-and-zipkin-61942031">Slides</a>
 
 
 - date: 2016.04.08
   eventName: Greach 2016
   city: Madrid
   country: Spain
-  resources: |
+  talkTitle: Spring Cloud's Groovy
+  resources:
+    - <a href="http://greachconf.com/speakers/marcin-grzejszczak-spring-cloud-s-groovy/">Event</>
+    - <a href="https://www.youtube.com/watch?v=ioacZuzGwKU">Video</a>
+    - <a href="https://www.slideshare.net/MarcinGrzejszczak/spring-clouds-groovy">Slides</a>
 
 
 - date: 2016.03.19
