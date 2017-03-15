@@ -333,7 +333,11 @@
   city: Poznan
   country: Poland
   countryCode: pl
-  resources: |
+  talks: Stick to the rules - Consumer Driven Contracts
+  resources:
+      event: https://2015.tdd.geecon.org/
+      media:
+          - video: https://vimeo.com/120570949
 
 
 - date: 2014.12.04
@@ -341,7 +345,9 @@
   city: Lodz
   country: Poland
   countryCode: pl
-  resources: |
+  talks: Microservices
+  resources:
+      event: http://www.juglodz.pl/opis_spotkan/2014-12-04mikroserwisy
 
 
 - date: 2014.08.26
@@ -349,7 +355,9 @@
   city: Warsaw
   country: Poland
   countryCode: pl
-  resources: |
+  talks: Microservices
+  resources:
+      event: http://warsjawa.pl/
 
 
 - date: 2014.08.08
@@ -357,7 +365,9 @@
   city: Warsaw
   country: Poland
   countryCode: pl
-  resources: |
+  talks: Microservices Hackathon
+  resources:
+      event: https://www.meetup.com/Warszawa-JUG/events/192220832/
 
 
 - date: 2014.02.20
@@ -365,7 +375,9 @@
   city: Warsaw
   country: Poland
   countryCode: pl
-  resources: |
+  talks: AST transformations
+  resources:
+      event: https://www.youtube.com/watch?v=JdSCDEkX0Tw
 
 
 - date: 2014.02.12
@@ -373,4 +385,6 @@
   city: Warsaw
   country: Poland
   countryCode: pl
-  resources: |
+  talks: Groovy
+  resources:
+      event: https://www.youtube.com/watch?v=-mG4HDYNfOE
