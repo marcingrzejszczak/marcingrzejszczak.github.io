@@ -1,3 +1,12 @@
+- date: 2017.03.15
+  eventName: Szczecin JUG
+  city: Szczecin
+  country: Poland
+  countryCode: pl
+  talks: Microservices tracing with Spring Cloud Sleuth and Zipkin
+  resources:
+    event: https://www.meetup.com/Szczecin-Java-Users-Group/events/238001954/
+
 - date: 2017.01.25
   eventName: Zielona Gora JUG
   city: Zielona Gora
@@ -62,7 +71,7 @@
   city: Las Vegas
   country: USA
   countryCode: us
-  talks:  
+  talks:
     - Consumer Driven Contracts and Your Microservice Architecture
     - Implementing Microservices Tracing with Spring Cloud and Zipkin
   resources:
@@ -248,7 +257,9 @@
   city: Warsaw
   country: Poland
   countryCode: pl
-  resources: |
+  talks: Stick to the rules! Consumer Driven Contracts
+  resources:
+      event: http://2015.confitura.pl/
 
 
 - date: 2015.06.22
@@ -256,7 +267,11 @@
   city: Cracow
   country: Poland
   countryCode: pl
-  resources: |
+  talks: Microservices - enough with theory, let's code some
+  resources:
+      event: http://devoxx.pl/
+      media:
+          - video: https://www.youtube.com/watch?v=cJzqkDIZ2oM&t=2422s&list=PLklQqdqnBkPh4vfnOjYyOtOrmtNr2eb2j&index=22
 
 
 - date: 2015.06.08
@@ -264,7 +279,7 @@
   city: Prague
   country: Czech Republic
   countryCode: cz
-  resources: |
+  talks: Microservices at ...
 
 
 - date: 2015.05.18
@@ -272,7 +287,11 @@
   city: Cracow
   country: Poland
   countryCode: pl
-  resources: |
+  talks: Do you think you're doing microservices?
+  resources:
+      event: http://atmosphere.org.pl/2015/05/
+      media:
+          - video: https://www.youtube.com/watch?v=rWz74iLSxZs&index=30&list=PLnKL6-WWWE_Wr7LLzRhCVxvNYBeRhwa6k
 
 
 - date: 2015.05.13
@@ -280,7 +299,11 @@
   city: Cracow
   country: Poland
   countryCode: pl
-  resources: |
+  talks: Stick to the rules! Consumer Driven Contracts
+  resources:
+      event: http://2015.geecon.org
+      media:
+          - video: https://vimeo.com/130779882
 
 
 - date: 2015.04.20
@@ -288,7 +311,11 @@
   city: Warsaw
   country: Poland
   countryCode: pl
-  resources: |
+  talks: Stick to the rules - Consumer Driven Contracts
+  resources:
+      event: http://2015.4developers.org.pl/en/
+      media:
+          - video: https://www.youtube.com/watch?v=JEoiIAuiTlI
 
 
 - date: 2015.05.21
@@ -296,7 +323,9 @@
   city: Lodz
   country: Poland
   countryCode: pl
-  resources: |
+  talks: Microhackathon
+  resources:
+      event: https://www.meetup.com/Java-User-Group-Lodz/events/220850670/
 
 
 - date: 2015.01.30
