@@ -377,7 +377,9 @@
   countryCode: pl
   talks: AST transformations
   resources:
-      event: https://www.youtube.com/watch?v=JdSCDEkX0Tw
+      event: https://www.meetup.com/Warsaw-Groovy-User-Group/events/167965592/
+      media:
+          - video: https://www.youtube.com/watch?v=JdSCDEkX0Tw
 
 
 - date: 2014.02.12
@@ -387,4 +389,6 @@
   countryCode: pl
   talks: Groovy
   resources:
-      event: https://www.youtube.com/watch?v=-mG4HDYNfOE
+      event: https://www.meetup.com/Warszawa-JUG/events/218935557/
+      media:
+          - video: https://www.youtube.com/watch?v=-mG4HDYNfOE
