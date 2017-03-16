@@ -5,6 +5,8 @@
   countryCode: pl
   talks: Microservices tracing with Spring Cloud Sleuth and Zipkin
   resources:
+    media:
+        - slides: https://www.slideshare.net/MarcinGrzejszczak/microservices-tracing-with-spring-cloud-and-zipkin-szczecin-jug
     event: https://www.meetup.com/Szczecin-Java-Users-Group/events/238001954/
 
 - date: 2017.01.25
