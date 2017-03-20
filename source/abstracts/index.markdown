@@ -9,7 +9,7 @@ footer: true
 
 Here you can find a list of abstracts to talks that I have given:
 
-## Microservices tracing with Spring Cloud Sleuth and Zipkin
+## Tracing Microservices with Zipkin
 
 The hype related to microservices continues. It's already common knowledge that creating distributed systems is not easy. It's high time to show how that complexity can be contained.
 
@@ -25,7 +25,7 @@ Consumer driven contracts (CDC) are like TDD applied to the API. It’s especial
 
 We will write a system using the CDC approach together with Spring Boot, Spring Cloud Contract verifier. I'll show you how easy it is to write applications that have a consumer driven API and that will allow a developer to speed up the time of writing his better quality software.
 
-## Continuous Deployment to the Cloud with Spring Cloud Pipelines
+## Continuous Deployment to the Cloud
 
 “I have stopped counting how many times I’ve done this from scratch” - was one of the responses to the tweet about starting the project called Spring Cloud Pipelines. Every company sets up a pipeline from scratch. Every company creates some sort of automation to deploy its applications to servers. Enough is enough - time to automate that and focus on delivering business value.
 
