@@ -1,3 +1,14 @@
+- date: 2017.04.24
+  eventName: Warsaw Cloud Native Meetup
+  city: Warsaw
+  country: Poland
+  countryCode: pl
+  talks: Continuous Deployment to the Cloud
+  resources:
+    media:
+        - slides: https://www.slideshare.net/MarcinGrzejszczak/continuous-deployment-to-the-cloud-with-spring-cloud-pipelines-warsawcloudnativemeetup
+    event: https://www.meetup.com/Warsaw-Cloud-Native-Meetup/events/239181385/
+
 - date: 2017.03.15
   eventName: Szczecin JUG
   city: Szczecin
