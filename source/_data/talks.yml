@@ -1,3 +1,14 @@
+- date: 2017.05.18
+  eventName: Geecon
+  city: Cracow
+  country: Poland
+  countryCode: pl
+  talks: Consumer-Driven Contracts to enable API evolution
+  resources:
+    media:
+        - slides: https://www.slideshare.net/MarcinGrzejszczak/consumer-driven-contracts-to-enable-api-evolution-geecon
+    event: https://2017.geecon.org/schedule-day2/
+
 - date: 2017.04.24
   eventName: Warsaw Cloud Native Meetup
   city: Warsaw
