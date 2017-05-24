@@ -1,3 +1,14 @@
+- date: 2017.05.23
+  eventName: Chicago JUG
+  city: Chicago
+  country: USA
+  countryCode: us
+  talks: Consumer-Driven Contracts and Your Microservice Architecture
+  resources:
+    media:
+        - slides: https://www.slideshare.net/MarcinGrzejszczak/consumer-driven-contracts-to-enable-api-evolution-geecon
+    event: https://www.meetup.com/ChicagoJUG/events/238468346/
+
 - date: 2017.05.18
   eventName: Geecon 2017
   city: Cracow
