@@ -1,3 +1,14 @@
+- date: 2017.05.25
+  eventName: Toronto JUG
+  city: Toronto
+  country: Canada
+  countryCode: ca
+  talks: Tracing Microservices with Zipkin with Marcin Grzejszczak
+  resources:
+    media:
+        - slides: https://www.slideshare.net/MarcinGrzejszczak/microservices-tracing-with-spring-cloud-and-zipkin-szczecin-jug
+    event: https://www.meetup.com/Toronto-Java-Users-Group/events/238578242/
+
 - date: 2017.05.23
   eventName: Chicago JUG
   city: Chicago
