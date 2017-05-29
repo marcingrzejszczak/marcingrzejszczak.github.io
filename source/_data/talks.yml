@@ -10,6 +10,17 @@
         - video: https://www.youtube.com/watch?v=tzAyFyB56lQ&feature=youtu.be
     event: https://www.meetup.com/Toronto-Java-Users-Group/events/238578242/
 
+- date: 2017.05.25
+  eventName: Pivotal Toronto User Group
+  city: Toronto
+  country: Canada
+  countryCode: ca
+  talks: Hands on Consumer Driven Contracts Workshop with Spring Cloud Contract
+  resources:
+    media:
+        - slides: https://docs.google.com/presentation/d/1xvzdV0julkKwTz2R5Z8Ra8jYRjBy0qfhPbcKEFjaa8M/edit?usp=sharing
+    event: https://www.meetup.com/Toronto-Pivotal-User-Group/events/239923082/
+
 - date: 2017.05.23
   eventName: Chicago JUG
   city: Chicago
