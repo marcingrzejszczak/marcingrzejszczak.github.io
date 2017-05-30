@@ -1,4 +1,13 @@
 - date: 2017.05.25
+  eventName: Pivotal Webinar
+  city: Warsaw
+  country: Poland
+  countryCode: pl
+  talks: Continuous Deployment to the Cloud
+  resources:
+    event: https://content.pivotal.io/webinars/continuous-deployment-to-the-cloud
+
+- date: 2017.05.25
   eventName: Toronto JUG
   city: Toronto
   country: Canada
