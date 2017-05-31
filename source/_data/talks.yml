@@ -1,10 +1,13 @@
-- date: 2017.05.25
+- date: 2017.05.30
   eventName: Pivotal Webinar
   city: Warsaw
   country: Poland
   countryCode: pl
   talks: Continuous Deployment to the Cloud
   resources:
+    media:
+        - slides: https://www.slideshare.net/MarcinGrzejszczak/continuous-deployment-to-the-cloud
+        - video: https://content.pivotal.io/webinars/continuous-deployment-to-the-cloud
     event: https://content.pivotal.io/webinars/continuous-deployment-to-the-cloud
 
 - date: 2017.05.25
