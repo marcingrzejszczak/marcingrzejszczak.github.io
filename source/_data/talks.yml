@@ -1,14 +1,3 @@
-- date: 2017.06.12
-  eventName: "Allegro Tech Talks Poznan #5"
-  city: Poznan
-  country: Poland
-  countryCode: pl
-  talks: Consumer Driven Contracts and Your Microservice Architecture
-  resources:
-    media:
-        - video: https://www.facebook.com/allegro.tech/
-    event: https://www.meetup.com/allegrotech/events/240231546/
-
 - date: 2017.05.30
   eventName: Pivotal Webinar
   city: Warsaw
