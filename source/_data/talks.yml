@@ -1,4 +1,24 @@
 - date: 2017.06.12
+  eventName: "Devoxx Poland"
+  city: Cracow
+  country: Poland
+  countryCode: pl
+  talks: Consumer Driven Contracts and Your Microservice Architecture
+  resources:
+    event: http://cfp.devoxx.pl/2017/index.html
+
+- date: 2017.06.12
+  eventName: "Devoxx Poland"
+  city: Cracow
+  country: Poland
+  countryCode: pl
+  talks: Continuous Deployment to the Cloud
+  resources:
+    media:
+        - slides: https://www.slideshare.net/MarcinGrzejszczak/continuous-deployment-to-the-cloud-devoxxpl-2017
+    event: http://cfp.devoxx.pl/2017/index.html
+
+- date: 2017.06.12
   eventName: "Allegro Tech Talks Poznan #5"
   city: Poznan
   country: Poland
@@ -156,6 +176,19 @@
   countryCode: us
   talks:
     - Consumer Driven Contracts and Your Microservice Architecture
+  resources:
+    event: https://2016.event.springoneplatform.io/schedule/sessions/
+    media:
+        - slides: http://www.slideshare.net/SpringCentral/consumer-driven-contracts-and-your-microservice-architecture-64844061
+          video: https://www.youtube.com/watch?v=YnGssIG4nMQ&list=PLAdzTan_eSPQ1fuLSBhyB4eEZF7JQM0Mx&index=138
+          name: Contracts
+
+- date: 2016.09.04
+  eventName: SpringOne Platform
+  city: Las Vegas
+  country: USA
+  countryCode: us
+  talks:
     - Implementing Microservices Tracing with Spring Cloud and Zipkin
   resources:
     event: https://2016.event.springoneplatform.io/schedule/sessions/
@@ -163,9 +196,6 @@
         - slides: http://www.slideshare.net/SpringCentral/implementing-microservices-tracing-with-spring-cloud-and-zipkin
           video: https://www.youtube.com/watch?v=vpFL4MZ0jlI&list=PLAdzTan_eSPQ1fuLSBhyB4eEZF7JQM0Mx&index=139
           name: Tracing
-        - slides: http://www.slideshare.net/SpringCentral/consumer-driven-contracts-and-your-microservice-architecture-64844061
-          video: https://www.youtube.com/watch?v=YnGssIG4nMQ&list=PLAdzTan_eSPQ1fuLSBhyB4eEZF7JQM0Mx&index=138
-          name: Contracts
 
 - date: 2016.06.22
   eventName: Devoxx Poland 2016
