@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Aop | TOO MUCH CODING]]></title>
   <link href="http://toomuchcoding.com/blog/categories/aop/atom.xml" rel="self"/>
   <link href="http://toomuchcoding.com/"/>
-  <updated>2017-06-13T09:30:50+02:00</updated>
+  <updated>2017-06-23T16:54:40+02:00</updated>
   <id>http://toomuchcoding.com/</id>
   <author>
     <name><![CDATA[Marcin Grzejszczak]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Spring AOP in Security - Controlling Creation of UI Components via Aspects]]></title>
-    <link href="http://toomuchcoding.com/blog/2012/10/28/spring-aop-in-security-controlling/"/>
-    <updated>2012-10-28T02:06:00+01:00</updated>
-    <id>http://toomuchcoding.com/blog/2012/10/28/spring-aop-in-security-controlling</id>
+    <link href="http://toomuchcoding.com/blog/2012/10/27/spring-aop-in-security-controlling/"/>
+    <updated>2012-10-27T18:06:00-07:00</updated>
+    <id>http://toomuchcoding.com/blog/2012/10/27/spring-aop-in-security-controlling</id>
     <content type="html"><![CDATA[<div class='post'>
 <br /><br />The following post will show how in one of the projects that I took part in we used Spring's AOP to introduce some security related functionalities. The concept was such that in order for the user to see some UI components he needed to have a certain level of security privillages. If that requirement was not met then the UIComponent was not presented. Let's take a look at the project structure:<br />
 <!--more-->

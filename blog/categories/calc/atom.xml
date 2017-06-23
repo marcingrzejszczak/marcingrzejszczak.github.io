@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Calc | TOO MUCH CODING]]></title>
   <link href="http://toomuchcoding.com/blog/categories/calc/atom.xml" rel="self"/>
   <link href="http://toomuchcoding.com/"/>
-  <updated>2017-06-13T09:30:50+02:00</updated>
+  <updated>2017-06-23T16:54:40+02:00</updated>
   <id>http://toomuchcoding.com/</id>
   <author>
     <name><![CDATA[Marcin Grzejszczak]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Drools Decision Tables With Camel and Spring]]></title>
     <link href="http://toomuchcoding.com/blog/2013/02/03/drools-decision-tables-with-camel-and/"/>
-    <updated>2013-02-03T22:28:00+01:00</updated>
+    <updated>2013-02-03T13:28:00-08:00</updated>
     <id>http://toomuchcoding.com/blog/2013/02/03/drools-decision-tables-with-camel-and</id>
     <content type="html"><![CDATA[<div class='post'>
 <br /><br />Hi!<br /><br /><div style="text-align: justify;">As I've shown it in my previous post <a href="http://toomuchcoding.blogspot.com/2013/01/drools-integration-with-spring-vs.html">JBoss Drools are a very useful rules engine</a>. The only problem is that creating the rules in the Rule language might be pretty complicated for a non-technical person. That's why one can provide an easy way for creating business rules - decision tables created in a spreadsheet!</div><div style="text-align: justify;"><br />

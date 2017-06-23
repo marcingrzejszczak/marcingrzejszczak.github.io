@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Xslt | TOO MUCH CODING]]></title>
   <link href="http://toomuchcoding.com/blog/categories/xslt/atom.xml" rel="self"/>
   <link href="http://toomuchcoding.com/"/>
-  <updated>2017-06-13T09:30:50+02:00</updated>
+  <updated>2017-06-23T16:54:40+02:00</updated>
   <id>http://toomuchcoding.com/</id>
   <author>
     <name><![CDATA[Marcin Grzejszczak]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Execution of Groovy Scripts From Java - XmlSlurper and MarkupBuilder in Mapping Issues]]></title>
     <link href="http://toomuchcoding.com/blog/2013/03/30/execution-of-groovy-scripts-from-java/"/>
-    <updated>2013-03-30T23:09:00+01:00</updated>
+    <updated>2013-03-30T15:09:00-07:00</updated>
     <id>http://toomuchcoding.com/blog/2013/03/30/execution-of-groovy-scripts-from-java</id>
     <content type="html"><![CDATA[<div class='post'>
 <br /><h2>Problem with mappings</h2><br />In our project we came across a really big problem related to mapping. Having two systems that initially were defined by the BA to be somehwat simillar we have chosen the simple XSLT (done through Altova Mapforce) of the input message to the output one.<br />

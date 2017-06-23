@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Unit Tests | TOO MUCH CODING]]></title>
   <link href="http://toomuchcoding.com/blog/categories/unit-tests/atom.xml" rel="self"/>
   <link href="http://toomuchcoding.com/"/>
-  <updated>2017-06-13T09:30:50+02:00</updated>
+  <updated>2017-06-23T16:54:40+02:00</updated>
   <id>http://toomuchcoding.com/</id>
   <author>
     <name><![CDATA[Marcin Grzejszczak]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Mockito Instant - My Book Has Finally Been Published!]]></title>
     <link href="http://toomuchcoding.com/blog/2013/08/28/mockito-instant-my-book-has-finally/"/>
-    <updated>2013-08-28T10:20:00+02:00</updated>
+    <updated>2013-08-28T01:20:00-07:00</updated>
     <id>http://toomuchcoding.com/blog/2013/08/28/mockito-instant-my-book-has-finally</id>
     <content type="html"><![CDATA[<div class='post'>
 I am very pleased to announce that my book about Mockito entitled "Mockito Instant" has finally been published! You can buy it at&nbsp;<a href="http://www.packtpub.com/how-to-create-stubs-mocks-spies-using-mockito/book">Packt Publishing online shop</a>.</div>
@@ -27,7 +27,7 @@ I am very pleased to announce that my book about Mockito entitled "Mockito Insta
   <entry>
     <title type="html"><![CDATA[Mockito - Extra Interfaces With Annotations and Static Methods]]></title>
     <link href="http://toomuchcoding.com/blog/2013/06/12/mockito-extra-interfaces-with/"/>
-    <updated>2013-06-12T13:12:00+02:00</updated>
+    <updated>2013-06-12T04:12:00-07:00</updated>
     <id>http://toomuchcoding.com/blog/2013/06/12/mockito-extra-interfaces-with</id>
     <content type="html"><![CDATA[<div class='post'>
 <br />In the code I have quite recently came across a really bad piece of code that based on class casting in terms of performing some actions on objects. Of course the code needed to be refactored but sometimes you can't do it / or don't want to do it (and it should be understandable) if first you don't have unit tests of that functionality. In the following post I will show how to test such code, how to refactor it and in fact what I think about such code ;) <div><br /></div><div><a name='more'></a><br />
@@ -40,7 +40,7 @@ I am very pleased to announce that my book about Mockito entitled "Mockito Insta
   <entry>
     <title type="html"><![CDATA[Drools Integration With Spring vs Manual Rules Creation]]></title>
     <link href="http://toomuchcoding.com/blog/2013/01/15/drools-integration-with-spring-vs/"/>
-    <updated>2013-01-15T17:04:00+01:00</updated>
+    <updated>2013-01-15T08:04:00-08:00</updated>
     <id>http://toomuchcoding.com/blog/2013/01/15/drools-integration-with-spring-vs</id>
     <content type="html"><![CDATA[<div class='post'>
 <br /><br />Hi!<br /><br />&nbsp;Often in your work you can come across with issues related to business logic. Let us assume that you have dozens of rules (for the time being in our project we have more than 50 and I used to work on a project where we had hundreds of those rules) that you have to implement, divide into some classes, subclasses, abstractions and of course unit test. This can be difficult and timeconsuming to both write and support. There are many ways of dealing with this problem and I will show you one of them - JBoss Drools.<br />
@@ -52,9 +52,9 @@ I am very pleased to announce that my book about Mockito entitled "Mockito Insta
   
   <entry>
     <title type="html"><![CDATA[Spring AOP in Security - Controlling Creation of UI Components via Aspects]]></title>
-    <link href="http://toomuchcoding.com/blog/2012/10/28/spring-aop-in-security-controlling/"/>
-    <updated>2012-10-28T02:06:00+01:00</updated>
-    <id>http://toomuchcoding.com/blog/2012/10/28/spring-aop-in-security-controlling</id>
+    <link href="http://toomuchcoding.com/blog/2012/10/27/spring-aop-in-security-controlling/"/>
+    <updated>2012-10-27T18:06:00-07:00</updated>
+    <id>http://toomuchcoding.com/blog/2012/10/27/spring-aop-in-security-controlling</id>
     <content type="html"><![CDATA[<div class='post'>
 <br /><br />The following post will show how in one of the projects that I took part in we used Spring's AOP to introduce some security related functionalities. The concept was such that in order for the user to see some UI components he needed to have a certain level of security privillages. If that requirement was not met then the UIComponent was not presented. Let's take a look at the project structure:<br />
 <!--more-->
@@ -66,7 +66,7 @@ I am very pleased to announce that my book about Mockito entitled "Mockito Insta
   <entry>
     <title type="html"><![CDATA[Mockito InvocationOnMock - Checking an Argument]]></title>
     <link href="http://toomuchcoding.com/blog/2012/10/24/mockito-invocationonmock-checking/"/>
-    <updated>2012-10-24T23:22:00+02:00</updated>
+    <updated>2012-10-24T14:22:00-07:00</updated>
     <id>http://toomuchcoding.com/blog/2012/10/24/mockito-invocationonmock-checking</id>
     <content type="html"><![CDATA[<div class='post'>
 <br /><br />Hi!<br /><br />In one of my projects we had a very interesting situation in terms of testing. We couldn't mock an invocation of a static method due to the fact that PowerMock was not allowed to be used so there were plenty of objects and dependencies being initialized. What is more we were using a custom made dependency injection system that had a possibility of injecting a mock.<br />

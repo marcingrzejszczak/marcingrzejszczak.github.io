@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Mixin | TOO MUCH CODING]]></title>
   <link href="http://toomuchcoding.com/blog/categories/mixin/atom.xml" rel="self"/>
   <link href="http://toomuchcoding.com/"/>
-  <updated>2017-06-13T09:30:50+02:00</updated>
+  <updated>2017-06-23T16:54:40+02:00</updated>
   <id>http://toomuchcoding.com/</id>
   <author>
     <name><![CDATA[Marcin Grzejszczak]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Introduction to Groovy Runtime Metaprogramming and AST Transforms]]></title>
     <link href="http://toomuchcoding.com/blog/2014/02/04/introduction-to-groovy-runtime/"/>
-    <updated>2014-02-04T23:50:00+01:00</updated>
+    <updated>2014-02-04T14:50:00-08:00</updated>
     <id>http://toomuchcoding.com/blog/2014/02/04/introduction-to-groovy-runtime</id>
     <content type="html"><![CDATA[<div class='post'>
 Hi!<br /><br />I'm very happy to share my presentation regarding <b><i>Groovy metaprogramming and AST transforms</i></b>. The slides are available at <a href="http://www.slideshare.net/MarcinGrzejszczak/introduction-to-groovy-runtime-metaprogramming-and-ast-transforms">SlideShare</a>&nbsp;and the code is available at <a href="https://bitbucket.org/gregorin1987/too-much-coding/src/e5ab7c69ab7b2796075fd6f087fbf31346aa2d2b/Groovy/ast/?at=default">TooMuchCoding Bitbucket</a>&nbsp;and <a href="https://github.com/marcingrzejszczak/too-much-coding/tree/master/Groovy/ast">TooMuchCoding Github</a> repositories. If you have any problems with reading any part of the slides or sth just post a comment here and I'll tr to help you :)<br /><br />Enjoy!<br /><br /><br /><a name='more'></a>

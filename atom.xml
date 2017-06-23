@@ -4,7 +4,7 @@
   <title><![CDATA[TOO MUCH CODING]]></title>
   <link href="http://toomuchcoding.com/atom.xml" rel="self"/>
   <link href="http://toomuchcoding.com/"/>
-  <updated>2017-06-13T09:30:50+02:00</updated>
+  <updated>2017-06-23T16:54:40+02:00</updated>
   <id>http://toomuchcoding.com/</id>
   <author>
     <name><![CDATA[Marcin Grzejszczak]]></name>
@@ -1234,9 +1234,9 @@ since the documentation lives together with the code.</p>
   
   <entry>
     <title type="html"><![CDATA[JSON Assert 0.4.0 Released]]></title>
-    <link href="http://toomuchcoding.com/blog/2016/04/14/json-assert-0-dot-4-0-released/"/>
-    <updated>2016-04-14T05:10:51+02:00</updated>
-    <id>http://toomuchcoding.com/blog/2016/04/14/json-assert-0-dot-4-0-released</id>
+    <link href="http://toomuchcoding.com/blog/2016/04/13/json-assert-0-dot-4-0-released/"/>
+    <updated>2016-04-13T23:10:51-04:00</updated>
+    <id>http://toomuchcoding.com/blog/2016/04/13/json-assert-0-dot-4-0-released</id>
     <content type="html"><![CDATA[<p>I&rsquo;m pleased to announce that JSON Assert version 0.4.0 got released! The following feature has been added</p>
 
 <ul>
@@ -2377,7 +2377,7 @@ Over 60 people have already registered! Contact us to be a part of this gr8 even
   <entry>
     <title type="html"><![CDATA[JSON Assert Lib Released]]></title>
     <link href="http://toomuchcoding.com/blog/2016/02/27/json-assert-lib-released/"/>
-    <updated>2016-02-27T23:20:00+01:00</updated>
+    <updated>2016-02-27T14:20:00-08:00</updated>
     <id>http://toomuchcoding.com/blog/2016/02/27/json-assert-lib-released</id>
     <content type="html"><![CDATA[<div class='post'>
 I'm really happy to present the <a href="https://github.com/marcingrzejszczak/jsonassert">JSON Assert library</a>&nbsp;-&nbsp;over-the-weekend project that came out from the <a href="https://github.com/Codearte/accurest">AccuREST library</a>. This post will describe the rationale behind creating this tool and how to use it.<br /><br /><br /><a name='more'></a>
@@ -2389,7 +2389,7 @@ I'm really happy to present the <a href="https://github.com/marcingrzejszczak/js
   <entry>
     <title type="html"><![CDATA[Post on Spring Blog]]></title>
     <link href="http://toomuchcoding.com/blog/2016/01/04/post-on-spring-blog/"/>
-    <updated>2016-01-04T18:28:00+01:00</updated>
+    <updated>2016-01-04T09:28:00-08:00</updated>
     <id>http://toomuchcoding.com/blog/2016/01/04/post-on-spring-blog</id>
     <content type="html"><![CDATA[<div class='post'>
 Hi!<br /><br />Since December I'm working for Pivotal and the Spring Cloud team. I've just posted my first blog post on the Spring blog. Check it out!<br /><br /><a href="https://spring.io/blog/2016/01/04/testing-spring-cloud-projects">Testing Spring Cloud Projects</a></div>
@@ -2399,7 +2399,7 @@ Hi!<br /><br />Since December I'm working for Pivotal and the Spring Cloud team.
   <entry>
     <title type="html"><![CDATA[Business Value Gone Wild]]></title>
     <link href="http://toomuchcoding.com/blog/2015/10/16/business-value-gone-wild/"/>
-    <updated>2015-10-16T17:58:00+02:00</updated>
+    <updated>2015-10-16T08:58:00-07:00</updated>
     <id>http://toomuchcoding.com/blog/2015/10/16/business-value-gone-wild</id>
     <content type="html"><![CDATA[<div class='post'>
 This blog post will not be about microservices, Spring or any technology that I've already talked about in <a href="http://toomuchcoding.blogspot.com/">Too much coding blog</a>. This time it will be my opinion on two subjects<br /><ul><li>the more and more frequent "it's not my problem" approach in the IT industry running in a corporation.&nbsp;</li><li>the "business value" frenzy of the management</li></ul>This article is definitely not a motivational one. Quite frankly, you might get depressed after reading it. Nonetheless, it's better to know how really corporate life sometimes looks like rather than get hit in the face.<br /><br />TL;DR : the more you care in a corporate enterprise the worse for you. Eventually some developers will hate your ideas of quality and standards because they are paid to tap the keys. Your management will fire you for not bringing "business value". The faster you embrace it, the better for you - you'll start searching for a new job sooner.<br /><div><br /><div><a name='more'></a>
@@ -2410,9 +2410,9 @@ This blog post will not be about microservices, Spring or any technology that I'
   
   <entry>
     <title type="html"><![CDATA[Microservice Deployment]]></title>
-    <link href="http://toomuchcoding.com/blog/2015/09/27/microservice-deployment/"/>
-    <updated>2015-09-27T00:13:00+02:00</updated>
-    <id>http://toomuchcoding.com/blog/2015/09/27/microservice-deployment</id>
+    <link href="http://toomuchcoding.com/blog/2015/09/26/microservice-deployment/"/>
+    <updated>2015-09-26T15:13:00-07:00</updated>
+    <id>http://toomuchcoding.com/blog/2015/09/26/microservice-deployment</id>
     <content type="html"><![CDATA[<div class='post'>
 It's been a while since my last post. In the meantime of course nothing has changed in terms of the microservice hype. I've been &nbsp;attending many microservice's talks and what I'm always missing are concrete details on many different subjects. One of which is deployment. In this post I'll try to depict how in a big, multinational company one would want to do microservice deployment. I'll walk you through the most basic deployment pipeline that could be created in such an enterprise.<br /><br /><a name='more'></a>
 <!--more-->
@@ -2423,7 +2423,7 @@ It's been a while since my last post. In the meantime of course nothing has chan
   <entry>
     <title type="html"><![CDATA[How to Speed Up Your Gradle Build From 90 to 8 Minutes]]></title>
     <link href="http://toomuchcoding.com/blog/2015/02/08/how-to-speed-up-your-gradle-build-from/"/>
-    <updated>2015-02-08T19:24:00+01:00</updated>
+    <updated>2015-02-08T10:24:00-08:00</updated>
     <id>http://toomuchcoding.com/blog/2015/02/08/how-to-speed-up-your-gradle-build-from</id>
     <content type="html"><![CDATA[<div class='post'>
 <div style="background-color: white; box-sizing: border-box; color: #262626; font-family: Georgia, serif; font-size: 19px; line-height: 27.55px;">Even though I was supposed to write a series of blog posts about&nbsp;<a href="http://toomuchcoding.blogspot.com/search/label/micro-infra-spring" style="background: transparent; box-sizing: border-box; color: black; cursor: pointer; text-decoration: none;">micro-infra-spring</a>&nbsp;here at&nbsp;<a href="http://toomuchcoding.blogspot.com/" style="background: transparent; box-sizing: border-box; color: black; cursor: pointer; text-decoration: none;">Too Much Coding blog</a>, today I'll write about how we've managed to decrease our biggest project's build time from 90 to 8 minutes!<br /><br /><a name='more'></a>

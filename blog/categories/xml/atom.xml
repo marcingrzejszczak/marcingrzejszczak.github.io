@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Xml | TOO MUCH CODING]]></title>
   <link href="http://toomuchcoding.com/blog/categories/xml/atom.xml" rel="self"/>
   <link href="http://toomuchcoding.com/"/>
-  <updated>2017-06-13T09:30:50+02:00</updated>
+  <updated>2017-06-23T16:54:40+02:00</updated>
   <id>http://toomuchcoding.com/</id>
   <author>
     <name><![CDATA[Marcin Grzejszczak]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Warsaw Groovy User Group Talk]]></title>
     <link href="http://toomuchcoding.com/blog/2014/02/19/warsaw-groovy-user-group-talk/"/>
-    <updated>2014-02-19T23:39:00+01:00</updated>
+    <updated>2014-02-19T14:39:00-08:00</updated>
     <id>http://toomuchcoding.com/blog/2014/02/19/warsaw-groovy-user-group-talk</id>
     <content type="html"><![CDATA[<div class='post'>
 Hi!<br /><br />Since tomorrow I'm giving a talk on XML transformations in Groovy I'd like to publish the code that will be presented during the presentation. Check out the <a href="https://github.com/marcingrzejszczak/groovy-xml">Github repo</a>&nbsp;and the <a href="https://bitbucket.org/gregorin1987/groovy-xml">Bitbucket repository</a>.<br /><br />The presentation (in polish) can be found on <a href="https://www.youtube.com/watch?feature=player_detailpage&amp;v=MGu0HHzROxA#t=2109">youtube</a>.</div>

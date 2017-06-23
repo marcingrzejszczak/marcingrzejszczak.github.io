@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Github | TOO MUCH CODING]]></title>
   <link href="http://toomuchcoding.com/blog/categories/github/atom.xml" rel="self"/>
   <link href="http://toomuchcoding.com/"/>
-  <updated>2017-06-13T09:30:50+02:00</updated>
+  <updated>2017-06-23T16:54:40+02:00</updated>
   <id>http://toomuchcoding.com/</id>
   <author>
     <name><![CDATA[Marcin Grzejszczak]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Spock Subject Collaborators Extension 1.0.1 Released!]]></title>
     <link href="http://toomuchcoding.com/blog/2014/12/17/spock-subject-collaborators-extension/"/>
-    <updated>2014-12-17T23:28:00+01:00</updated>
+    <updated>2014-12-17T14:28:00-08:00</updated>
     <id>http://toomuchcoding.com/blog/2014/12/17/spock-subject-collaborators-extension</id>
     <content type="html"><![CDATA[<div class='post'>
 Hi!<br /><br />I'm really happy to say that I've just released a new version 1.0.1 of the <a href="https://github.com/marcingrzejszczak/spock-subjects-collaborators-extension">Spock Subject Collaborators Extension</a>.<br /><br />The changelog is as follows:<br /><br /><a name='more'></a><br />
@@ -29,7 +29,7 @@ Hi!<br /><br />I'm really happy to say that I've just released a new version 1.0
   <entry>
     <title type="html"><![CDATA[Mockito Instant Code Repo at Github]]></title>
     <link href="http://toomuchcoding.com/blog/2014/06/04/mockito-instant-code-repo-at-github/"/>
-    <updated>2014-06-04T20:57:00+02:00</updated>
+    <updated>2014-06-04T11:57:00-07:00</updated>
     <id>http://toomuchcoding.com/blog/2014/06/04/mockito-instant-code-repo-at-github</id>
     <content type="html"><![CDATA[<div class='post'>
 Hi!<br /><br />Since I was asked for the code to the<a href="http://www.packtpub.com/how-to-create-stubs-mocks-spies-using-mockito/book"> "Mockito Instant"</a> book a couple of times I decided to place it on Github. Here is the link - <a href="https://github.com/marcingrzejszczak/mockito-instant">https://github.com/marcingrzejszczak/mockito-instant</a>. Enjoy :)</div>
@@ -40,7 +40,7 @@ Hi!<br /><br />Since I was asked for the code to the<a href="http://www.packtpub
   <entry>
     <title type="html"><![CDATA[New Too Much Coding Repository!]]></title>
     <link href="http://toomuchcoding.com/blog/2013/01/17/new-too-much-coding-repository/"/>
-    <updated>2013-01-17T20:06:00+01:00</updated>
+    <updated>2013-01-17T11:06:00-08:00</updated>
     <id>http://toomuchcoding.com/blog/2013/01/17/new-too-much-coding-repository</id>
     <content type="html"><![CDATA[<div class='post'>
 Hi!<br /><br />As you know there is a code repository of <a href="https://bitbucket.org/gregorin1987/too-much-coding/src">Too Much Coding sources here at Bitbucket</a>. If you don't like it you can also find the <a href="https://github.com/marcingrzejszczak/too-much-coding">Too Much Coding sources at GitHub!</a><br /><br />Enjoy :)</div>

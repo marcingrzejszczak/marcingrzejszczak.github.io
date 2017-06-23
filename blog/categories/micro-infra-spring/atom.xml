@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Micro-infra-spring | TOO MUCH CODING]]></title>
   <link href="http://toomuchcoding.com/blog/categories/micro-infra-spring/atom.xml" rel="self"/>
   <link href="http://toomuchcoding.com/"/>
-  <updated>2017-06-13T09:30:50+02:00</updated>
+  <updated>2017-06-23T16:54:40+02:00</updated>
   <id>http://toomuchcoding.com/</id>
   <author>
     <name><![CDATA[Marcin Grzejszczak]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Microservice Deployment]]></title>
-    <link href="http://toomuchcoding.com/blog/2015/09/27/microservice-deployment/"/>
-    <updated>2015-09-27T00:13:00+02:00</updated>
-    <id>http://toomuchcoding.com/blog/2015/09/27/microservice-deployment</id>
+    <link href="http://toomuchcoding.com/blog/2015/09/26/microservice-deployment/"/>
+    <updated>2015-09-26T15:13:00-07:00</updated>
+    <id>http://toomuchcoding.com/blog/2015/09/26/microservice-deployment</id>
     <content type="html"><![CDATA[<div class='post'>
 It's been a while since my last post. In the meantime of course nothing has changed in terms of the microservice hype. I've been &nbsp;attending many microservice's talks and what I'm always missing are concrete details on many different subjects. One of which is deployment. In this post I'll try to depict how in a big, multinational company one would want to do microservice deployment. I'll walk you through the most basic deployment pipeline that could be created in such an enterprise.<br /><br /><a name='more'></a>
 <!--more-->
@@ -29,7 +29,7 @@ It's been a while since my last post. In the meantime of course nothing has chan
   <entry>
     <title type="html"><![CDATA[How to Speed Up Your Gradle Build From 90 to 8 Minutes]]></title>
     <link href="http://toomuchcoding.com/blog/2015/02/08/how-to-speed-up-your-gradle-build-from/"/>
-    <updated>2015-02-08T19:24:00+01:00</updated>
+    <updated>2015-02-08T10:24:00-08:00</updated>
     <id>http://toomuchcoding.com/blog/2015/02/08/how-to-speed-up-your-gradle-build-from</id>
     <content type="html"><![CDATA[<div class='post'>
 <div style="background-color: white; box-sizing: border-box; color: #262626; font-family: Georgia, serif; font-size: 19px; line-height: 27.55px;">Even though I was supposed to write a series of blog posts about&nbsp;<a href="http://toomuchcoding.blogspot.com/search/label/micro-infra-spring" style="background: transparent; box-sizing: border-box; color: black; cursor: pointer; text-decoration: none;">micro-infra-spring</a>&nbsp;here at&nbsp;<a href="http://toomuchcoding.blogspot.com/" style="background: transparent; box-sizing: border-box; color: black; cursor: pointer; text-decoration: none;">Too Much Coding blog</a>, today I'll write about how we've managed to decrease our biggest project's build time from 90 to 8 minutes!<br /><br /><a name='more'></a>

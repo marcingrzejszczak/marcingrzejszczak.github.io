@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Extrainterfaces | TOO MUCH CODING]]></title>
   <link href="http://toomuchcoding.com/blog/categories/extrainterfaces/atom.xml" rel="self"/>
   <link href="http://toomuchcoding.com/"/>
-  <updated>2017-06-13T09:30:50+02:00</updated>
+  <updated>2017-06-23T16:54:40+02:00</updated>
   <id>http://toomuchcoding.com/</id>
   <author>
     <name><![CDATA[Marcin Grzejszczak]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Mockito - Extra Interfaces With Annotations and Static Methods]]></title>
     <link href="http://toomuchcoding.com/blog/2013/06/12/mockito-extra-interfaces-with/"/>
-    <updated>2013-06-12T13:12:00+02:00</updated>
+    <updated>2013-06-12T04:12:00-07:00</updated>
     <id>http://toomuchcoding.com/blog/2013/06/12/mockito-extra-interfaces-with</id>
     <content type="html"><![CDATA[<div class='post'>
 <br />In the code I have quite recently came across a really bad piece of code that based on class casting in terms of performing some actions on objects. Of course the code needed to be refactored but sometimes you can't do it / or don't want to do it (and it should be understandable) if first you don't have unit tests of that functionality. In the following post I will show how to test such code, how to refactor it and in fact what I think about such code ;) <div><br /></div><div><a name='more'></a><br />

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Answer | TOO MUCH CODING]]></title>
   <link href="http://toomuchcoding.com/blog/categories/answer/atom.xml" rel="self"/>
   <link href="http://toomuchcoding.com/"/>
-  <updated>2017-06-13T09:30:50+02:00</updated>
+  <updated>2017-06-23T16:54:40+02:00</updated>
   <id>http://toomuchcoding.com/</id>
   <author>
     <name><![CDATA[Marcin Grzejszczak]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Simulation of Time Consuming Actions in Integration Tests]]></title>
     <link href="http://toomuchcoding.com/blog/2012/10/07/simulation-of-time-consuming-actions-in/"/>
-    <updated>2012-10-07T22:47:00+02:00</updated>
+    <updated>2012-10-07T13:47:00-07:00</updated>
     <id>http://toomuchcoding.com/blog/2012/10/07/simulation-of-time-consuming-actions-in</id>
     <content type="html"><![CDATA[<div class='post'>
 <br /><br />Hi!<br /><br />Quite recently in one of my projects I had a situation in which I needed to create an integration test for the application. That's not very odd isn't it? :)<br /><br />What was interesting was the fact that the logic of the app involved some concurrency issues and one of the components had to connect to an external service which would take a couple of seconds. Since in the integration test there was no need to make the actual connection, the component needed to be mocked. What about the simulation of the time consuming action? Well, let's take a look at the way I did it...<br />
