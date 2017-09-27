@@ -9,7 +9,7 @@ footer: true
 
 Here you can find a list of abstracts to talks that I have given:
 
-## Tracing Microservices with Zipkin
+## Tracing Applications with Zipkin
 
 The hype related to microservices continues. It's already common knowledge that creating distributed systems is not easy. It's high time to show how that complexity can be contained.
 
@@ -19,7 +19,7 @@ That's fixing difficulties related to writing code - what about solving the comp
 
 The presentation will consist of some theory but there'll also be live coding and demos.
 
-## Consumer Driven Contracts and Your Microservice Architecture
+## Consumer Driven Contracts like TDD to the API
 
 Consumer driven contracts (CDC) are like TDD applied to the API. It’s especially important in the world of microservices. Since it’s driven by consumers, it’s much more user friendly. Of course microservices are really cool, but most people do not take into consideration plenty of potential obstacles that should be tackled. Then instead of frequent, fully automated deploys via a delivery pipeline, you might end up in an asylum due to frequent mental breakdowns caused by production disasters.
 
@@ -29,4 +29,4 @@ We will write a system using the CDC approach together with Spring Boot, Spring 
 
 “I have stopped counting how many times I’ve done this from scratch” - was one of the responses to the tweet about starting the project called Spring Cloud Pipelines. Every company sets up a pipeline to take code from your source control, through unit testing and integration testing, to production from scratch. Every company creates some sort of automation to deploy its applications to servers. Enough is enough - time to automate that and focus on delivering business value.
 
-In this presentation we’ll go through the contents of the Spring Cloud Pipelines project. We’ll start a new project for which we’ll have a deployment pipeline set up in no time. We’ll deploy to Cloud Foundry and check if our application is backwards compatible so that we can roll it back on production.
+In this presentation we’ll go through the contents of the Spring Cloud Pipelines project. We’ll start a new project for which we’ll have a deployment pipeline set up in no time. We’ll deploy to Cloud Foundry (but we also could do it with Kubernetes) and check if our application is backwards compatible so that we can roll it back on production.
