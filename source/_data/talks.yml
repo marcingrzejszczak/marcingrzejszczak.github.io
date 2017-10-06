@@ -1,3 +1,14 @@
+- date: 2017.10.05
+  eventName: JUGtoberfest
+  city: Lodz
+  country: Poland
+  countryCode: pl
+  talks: Continuous Deployment of your Application
+  resources:
+    event: https://www.meetup.com/Java-User-Group-Lodz/events/242792922/
+    media:
+        - slides: https://www.slideshare.net/MarcinGrzejszczak/continuous-deployment-of-your-application-jugtoberfest
+
 - date: 2017.06.23
   eventName: "Devoxx Poland"
   city: Cracow
