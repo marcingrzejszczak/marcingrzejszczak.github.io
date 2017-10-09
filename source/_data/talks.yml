@@ -1,4 +1,13 @@
 - date: 2017.10.05
+  eventName: Agile & Automation Days 2017
+  city: Cracow
+  country: Poland
+  countryCode: pl
+  talks: Consumer Driven Contracts and Your Microservice Architecture
+  resources:
+    event: http://aadays.pl
+
+- date: 2017.10.05
   eventName: JUGtoberfest
   city: Lodz
   country: Poland

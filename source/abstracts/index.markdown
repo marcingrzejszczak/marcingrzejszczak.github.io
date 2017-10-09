@@ -24,6 +24,13 @@ The presentation will consist of some theory but there'll also be live coding an
 Consumer driven contracts (CDC) are like TDD applied to the API. It’s especially important in the world of microservices. Since it’s driven by consumers, it’s much more user friendly. Of course microservices are really cool, but most people do not take into consideration plenty of potential obstacles that should be tackled. Then instead of frequent, fully automated deploys via a delivery pipeline, you might end up in an asylum due to frequent mental breakdowns caused by production disasters.
 
 We will write a system using the CDC approach together with Spring Boot, Spring Cloud Contract verifier. I'll show you how easy it is to write applications that have a consumer driven API and that will allow a developer to speed up the time of writing his better quality software.
+The presentation will consist of some theory but there'll also be live coding and demos.
+
+## Why Contract Tests Matter?
+
+You are writing integration tests, aren't you? Have you ever needed to stub the HTTP or a messaging call? Have your tests passed? That's awesome, but it doesn't mean that your application is working fine or that your system will not break on end to end tests.
+
+In this presentation you'll see a system composing of two apps written from scratch. We'll present the most frequent mistakes that take place during writing integration tests and we'll show how you can use contract testing to fix those problems.
 
 ## Continuous Deployment of Your Application
 
