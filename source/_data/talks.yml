@@ -15,6 +15,8 @@
   talks: Consumer Driven Contracts and Your Microservice Architecture
   resources:
     event: http://aadays.pl
+    media:
+        - video: https://www.youtube.com/watch?v=YoqSblR1nmI
 
 - date: 2017.10.05
   eventName: JUGtoberfest
