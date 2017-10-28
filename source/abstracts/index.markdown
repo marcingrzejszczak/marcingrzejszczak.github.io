@@ -11,6 +11,8 @@ Here you can find a list of abstracts to talks that I have given:
 
 ## Tracing Applications with Zipkin
 
+_Presentation and live coding_
+
 The hype related to microservices continues. It's already common knowledge that creating distributed systems is not easy. It's high time to show how that complexity can be contained.
 
 Service Discovery and Registry (Zookeeper / Consul / Eureka), easy request sending with client side load balancing (Feign + Ribbon), request proxying with Zuul. Everything is easy with Spring Cloud. Just add a dependency, a couple of lines of configuration and you're ready to go.
@@ -21,6 +23,8 @@ The presentation will consist of some theory but there'll also be live coding an
 
 ## Consumer Driven Contracts like TDD to the API
 
+_Presentation and live coding_
+
 Consumer driven contracts (CDC) are like TDD applied to the API. It’s especially important in the world of microservices. Since it’s driven by consumers, it’s much more user friendly. Of course microservices are really cool, but most people do not take into consideration plenty of potential obstacles that should be tackled. Then instead of frequent, fully automated deploys via a delivery pipeline, you might end up in an asylum due to frequent mental breakdowns caused by production disasters.
 
 We will write a system using the CDC approach together with Spring Boot, Spring Cloud Contract verifier. I'll show you how easy it is to write applications that have a consumer driven API and that will allow a developer to speed up the time of writing his better quality software.
@@ -28,11 +32,15 @@ The presentation will consist of some theory but there'll also be live coding an
 
 ## Why Contract Tests Matter?
 
+_Live coding_
+
 You are writing integration tests, aren't you? Have you ever needed to stub the HTTP or a messaging call? Have your tests passed? That's awesome, but it doesn't mean that your application is working fine or that your system will not break on end to end tests.
 
 In this presentation you'll see a system composing of two apps written from scratch. We'll present the most frequent mistakes that take place during writing integration tests and we'll show how you can use contract testing to fix those problems.
 
 ## Continuous Deployment of Your Application
+
+_Presentation and demo_
 
 “I have stopped counting how many times I’ve done this from scratch” - was one of the responses to the tweet about starting the project called Spring Cloud Pipelines. Every company sets up a pipeline to take code from your source control, through unit testing and integration testing, to production from scratch. Every company creates some sort of automation to deploy its applications to servers. Enough is enough - time to automate that and focus on delivering business value.
 
