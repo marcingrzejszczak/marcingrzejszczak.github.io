@@ -16,8 +16,8 @@
   resources:
     event: http://aadays.pl
     media:
-        - slides: https://www.slideshare.net/MarcinGrzejszczak/continuous-deployment-of-your-application-jsession5
-        - video: https://www.youtube.com/watch?v=YoqSblR1nmI
+      - slides: https://www.slideshare.net/MarcinGrzejszczak/continuous-deployment-of-your-application-jsession5
+      - video: https://www.youtube.com/watch?v=YoqSblR1nmI
 
 - date: 2017.10.05
   eventName: JUGtoberfest
@@ -28,7 +28,18 @@
   resources:
     event: https://www.meetup.com/Java-User-Group-Lodz/events/242792922/
     media:
-        - slides: https://www.slideshare.net/MarcinGrzejszczak/continuous-deployment-of-your-application-jugtoberfest
+      - slides: https://www.slideshare.net/MarcinGrzejszczak/continuous-deployment-of-your-application-jugtoberfest
+
+- date: 2017.07.01
+  eventName: Confitura 2017
+  city: Warsaw
+  country: Poland
+  countryCode: pl
+  talks: Tracing Microservices with Zipkin
+  resources:
+    event: https://2017.confitura.pl/
+    media:
+      - video: https://www.youtube.com/watch?v=cQstWCqv7y4&feature=youtu.be&a=
 
 - date: 2017.06.23
   eventName: "Devoxx Poland"
