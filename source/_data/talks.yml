@@ -1,3 +1,21 @@
+- date: 2017.11.09
+  eventName: DevOps-TestBustersNi­ght
+  city: Vienna
+  country: Austria
+  countryCode: at
+  talks: Continuous Deployment of your Application
+  resources:
+    event: https://www.meetup.com/Agile-Testautomation/events/243579409/?comment_table_id=485993511&comment_table_name=event_comment
+
+- date: 2017.11.09
+  eventName: DevOps-TestBustersNi­ght
+  city: Vienna
+  country: Austria
+  countryCode: at
+  talks: Continuous Deployment of your Application
+  resources:
+    event: https://www.meetup.com/Agile-Testautomation/events/243579409/?comment_table_id=485993511&comment_table_name=event_comment
+
 - date: 2017.10.27
   eventName: jSession 5
   city: Białystok
