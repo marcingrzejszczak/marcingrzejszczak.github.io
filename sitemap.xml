@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>http://toomuchcoding.com/blog/2017/12/03/continuous-delivery-of-a-startup/</loc>
+<lastmod>2017-12-03T07:11:22-05:00</lastmod>
+</url>
+<url>
 <loc>http://toomuchcoding.com/blog/2016/10/18/new-project-spring-cloud-pipelines/</loc>
 <lastmod>2016-10-18T19:29:24+02:00</lastmod>
 </url>
@@ -241,13 +245,13 @@
 <lastmod>2012-10-06T14:07:00-07:00</lastmod>
 </url>
 <url>
-<loc>http://toomuchcoding.com/blog/archives/</loc>
+<loc>http://toomuchcoding.com/</loc>
 </url>
 <url>
 <loc>http://toomuchcoding.com/talks/</loc>
 </url>
 <url>
-<loc>http://toomuchcoding.com/</loc>
+<loc>http://toomuchcoding.com/blog/archives/</loc>
 </url>
 <url>
 <loc>http://toomuchcoding.com/abstracts/</loc>
@@ -611,5 +615,8 @@
 </url>
 <url>
 <loc>http://toomuchcoding.com/_posts/6/</loc>
+</url>
+<url>
+<loc>http://toomuchcoding.com/_posts/7/</loc>
 </url>
 </urlset>
