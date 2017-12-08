@@ -3,7 +3,7 @@
   city: San Francisco
   country: USA
   countryCode: us
-  talks: Distributed Tracing : Latency Analysis for Your Microservices Using Spring Cloud & Zipkin
+  talks: Distributed Tracing Latency Analysis for Your Microservices Using Spring Cloud & Zipkin
   resources:
     event: https://springoneplatform.io/
 
