@@ -24,6 +24,8 @@
   talks: Continuous Deployment to the Cloud
   resources:
     event: https://springoneplatform.io/
+    media:
+        - slides: https://www.slideshare.net/ciberkleid/continuous-deployment-of-your-application-springone
 
 - date: 2017.11.09
   eventName: DevOps-TestBustersNi­ght
