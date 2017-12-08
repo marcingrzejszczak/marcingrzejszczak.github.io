@@ -1,3 +1,30 @@
+- date: 2017.12.07
+  eventName: Spring One Platform 2017
+  city: San Francisco
+  country: USA
+  countryCode: us
+  talks: Distributed Tracing : Latency Analysis for Your Microservices Using Spring Cloud & Zipkin
+  resources:
+    event: https://springoneplatform.io/
+
+- date: 2017.12.07
+  eventName: Spring One Platform 2017
+  city: San Francisco
+  country: USA
+  countryCode: us
+  talks: Consumer Driven Contracts and Your Microservice Architecture
+  resources:
+    event: https://springoneplatform.io/
+
+- date: 2017.12.06
+  eventName: Spring One Platform 2017
+  city: San Francisco
+  country: USA
+  countryCode: us
+  talks: Continuous Deployment to the Cloud
+  resources:
+    event: https://springoneplatform.io/
+
 - date: 2017.11.09
   eventName: DevOps-TestBustersNi­ght
   city: Vienna
