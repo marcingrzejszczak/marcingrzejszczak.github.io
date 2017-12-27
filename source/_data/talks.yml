@@ -6,6 +6,8 @@
   talks: Distributed Tracing Latency Analysis for Your Microservices Using Spring Cloud & Zipkin
   resources:
     event: https://springoneplatform.io/
+    media:
+        - video: https://content.pivotal.io/springone-platform-2017/distributed-tracing-latency-analysis-for-your-microservices-grzejszczak-krishna
 
 - date: 2017.12.07
   eventName: Spring One Platform 2017
@@ -17,6 +19,7 @@
     event: https://springoneplatform.io/
     media:
         - slides: https://www.slideshare.net/MarcinGrzejszczak/consumer-driven-contracts-and-your-microservice-architecture-83680416
+        - video: https://content.pivotal.io/springone-platform-2017/consumer-driven-contracts-and-your-microservice-architecture-marcin-grzejszczak-adib-saikali
 
 - date: 2017.12.06
   eventName: Spring One Platform 2017
@@ -28,6 +31,7 @@
     event: https://springoneplatform.io/
     media:
         - slides: https://www.slideshare.net/ciberkleid/continuous-deployment-of-your-application-springone
+        - video: https://content.pivotal.io/springone-platform-2017/continuous-deployment-to-the-cloud-marcin-grzejszczak-cora-iberkleid
 
 - date: 2017.11.09
   eventName: DevOps-TestBustersNi­ght
