@@ -46,6 +46,16 @@ Is your legacy application talking to a service that is never up and running on 
 
 In this presentation you'll see how to migrate a legacy application to work with stubs of external applications. We'll show different ways of increasing your test reliability by writing adding contract tests of your API. You'll see the difference between producer and consumer driven contracts.
 
+## Testing Your Message-Driven Application
+
+_Presentation and demo_
+
+So you end up with messaging and event-driven architecture. You also have heard about event sourcing and applied this principle in a few places in your code. Everything seems to be working perfectly, you are about to perform the first release and you've decided to change the structure of one event. The event you have changed was both used for state reconstruction (event sourcing) and integration (event-driven architecture). Due to that change, out of a sudden, your acceptance environment stopped working... "How come?! I have only changed an implementation detail in my cool event-sourced domain!" said the senior developer.
+
+In this talk we will chat about how to work with events that are used as integration messages in your system. We will tackle content-negotiation, versioning and acceptance tests.
+
+There will be a lot about Spring Cloud stack and we will see how we can benefit from Consumer Driven Contracts when NOT using REST APIs.
+
 ## Continuous Deployment of Your Application
 
 _Presentation and demo_
