@@ -1,3 +1,19 @@
+- date: 2018.03.15
+  eventName: BialQA \#12
+  city: Białystok
+  country: Poland
+  countryCode: pl
+  talks: Contract Tests in the Enterprise
+  resources:
+    event: https://www.facebook.com/events/1972331083031786/
+- date: 2018.03.15
+  eventName: BialQA \#12
+  city: Białystok
+  country: Poland
+  countryCode: pl
+  talks: Continuous Deployment of Your Application
+  resources:
+    event: https://www.facebook.com/events/1972331083031786/
 - date: 2017.12.07
   eventName: Spring One Platform 2017
   city: San Francisco
