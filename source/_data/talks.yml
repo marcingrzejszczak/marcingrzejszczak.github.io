@@ -1,3 +1,13 @@
+- date: 2018.03.28
+  eventName: It talk & Lublin Java User Group
+  city: Lublin
+  country: Poland
+  countryCode: pl
+  talks: Distributed Tracing Latency Analysis for Your Microservices Using Spring Cloud & Zipkin
+  resources:
+  event: https://www.facebook.com/events/1876129442429451/1915288085180253/?notif_t=admin_plan_mall_activity&notif_id=1522174791043029
+  media:
+      - video: https://www.youtube.com/watch?v=TvpkZu1e2Dc
 - date: 2018.03.15
   eventName: "BialQA #12"
   city: Białystok
