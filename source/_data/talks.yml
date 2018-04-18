@@ -1,3 +1,11 @@
+- date: 2018.04.18
+  eventName: Java With The Best
+  city: Warsaw
+  country: Poland
+  countryCode: pl
+  talks: Why Contract Tests Matter?
+  resources:
+    event: https://java-platform.withthebest.com/#/conference/5abd0f634e5f840004e1e7c9
 - date: 2018.04.09
   eventName: 4Developers
   city: Warsaw
