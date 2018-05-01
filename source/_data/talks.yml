@@ -1,3 +1,27 @@
+- date: 2018.05.01
+  eventName: Toronto Pivotal User Group
+  city: Toronto
+  country: Canada
+  countryCode: ca
+  talks: Contract Tests in the Enterprise
+  resources:
+    event: https://www.meetup.com/Toronto-Pivotal-User-Group/events/248993914/
+- date: 2018.05.01
+  eventName: Securing,Testing & Deploying Microservices Using Spring Cloud
+  city: Toronto
+  country: Canada
+  countryCode: ca
+  talks: Why Contract Tests Matter?
+  resources:
+    event: https://docs.google.com/forms/d/e/1FAIpQLSclevpmjC6mrxQRvX0rfDjmMmhvl_38V9kVEZ0RlsDxfkl23Q/viewform
+- date: 2018.05.01
+  eventName: Securing,Testing & Deploying Microservices Using Spring Cloud
+  city: Toronto
+  country: Canada
+  countryCode: ca
+  talks: Continuous Deployment of Your Application?
+  resources:
+    event: https://docs.google.com/forms/d/e/1FAIpQLSclevpmjC6mrxQRvX0rfDjmMmhvl_38V9kVEZ0RlsDxfkl23Q/viewform
 - date: 2018.04.18
   eventName: Java With The Best
   city: Warsaw
