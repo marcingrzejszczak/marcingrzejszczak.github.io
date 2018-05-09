@@ -1,3 +1,15 @@
+
+- date: 2018.05.09
+  eventName: Geecon 2018
+  city: Cracow
+  country: Poland
+  countryCode: pl
+  talks: Continuous Deployment of your Application
+  resources:
+    media:
+        - slides: https://docs.google.com/presentation/d/1p7e5yx72pd_acu2jvNIU6M33mL2d9GnG4lhiyKQpzhM/edit?usp=sharing
+    event: https://2018.geecon.org/schedule/
+
 - date: 2018.05.01
   eventName: Toronto Pivotal User Group
   city: Toronto
