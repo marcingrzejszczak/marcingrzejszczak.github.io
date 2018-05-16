@@ -1,0 +1,71 @@
+- date: 2018.05.18
+  eventName: Segfault
+  city: Lodz
+  country: Poland
+  countryCode: pl
+  talks: Contract Tests in the Enterprise
+  resources:
+    event: http://lodz2018.segfault.events/
+
+- date: 2018.05.22
+  eventName: Infoshare
+  city: Gdansk
+  country: Poland
+  countryCode: pl
+  talks: Contract Tests in the Enterprise
+  resources:
+    event: http://infoshare.pl
+
+- date: 2018.05.24
+  eventName: Spring IO
+  city: Barcelona
+  country: Spain
+  countryCode: es
+  talks: Continuous Deployment of your Application
+  resources:
+    event: https://2018.springio.net/
+
+- date: 2018.05.20
+  eventName: "Devoxx Poland"
+  city: Cracow
+  country: Poland
+  countryCode: pl
+  talks: Contract Tests in the Enterprise
+  resources:
+    event: https://2018.springio.net/
+
+- date: 2018.05.30
+  eventName: "Devoxx Poland"
+  city: Cracow
+  country: Poland
+  countryCode: pl
+  talks: Testing your Message-Driven Application
+  resources:
+    event: https://2017.confitura.pl/presentations
+
+- date: 2018.07.05
+  eventName: "Wieczorek ze Springinem"
+  city: Lodz
+  country: Poland
+  countryCode: pl
+  talks: TBD
+  resources:
+    event: https://www.meetup.com/Java-User-Group-Lodz/events/250679061/
+
+- date: 2018.09.14
+  eventName: "Bitconf"
+  city: Bydgoszcz
+  country: Poland
+  countryCode: pl
+  talks: TBD
+  resources:
+    event: https://www.bitconf.pl/
+
+- date: 2018.09.24
+  eventName: Spring One Platform 2018
+  city: Washington
+  country: USA
+  countryCode: us
+  talks: TBD
+  resources:
+    event: https://springoneplatform.io/

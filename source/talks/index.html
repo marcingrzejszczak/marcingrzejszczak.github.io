@@ -8,9 +8,7 @@ footer: true
 ---
 <link href="{{ root_url }}/assets/flags/css/flag-icon.min.css" rel="stylesheet" type="text/css">
 
-<p>
-  Here you can find a list of the public presentations that I've given
-</p>
+{% capture currentDate %}{{ site.time | date: '%F' }}{% endcapture %}
 
 <p>
   Stats:
@@ -20,6 +18,65 @@ footer: true
     <li>in <b>{{ talksPerCountry | size  }}</b> countries ( {% for country in talksPerCountry %} <span class="flag-icon flag-icon-{{country.name}}"></span> {% endfor %})</li>
     <li>in <b>{{ site.data.talks | group_by:"city" | size  }}</b> cities</li>
   </ul>
+</p>
+
+<p>
+  Here you can find a list of the public presentations that I will give (the closest one to the top)
+</p>
+
+<table class="table table-bordered table-hover table-responsive table-striped">
+  <thead>
+    <tr class="bg-primary">
+      <th>#</th>
+      <th>Date</th>
+      <th>Name</th>
+      <th>City</th>
+      <th>Country</th>
+      <th>Talk title</th>
+      <th>Resources</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% assign talksByDate = site.data.future_talks | sort: "date" %}
+    {% for talk in talksByDate %}
+    <tr>
+      <th scope="row">{{ forloop.index }}</th>
+      <td>{{ talk.date }}</td>
+      <td>{{ talk.eventName }}</td>
+      <td>{{ talk.city }}</td>
+      <td>{{ talk.country }}</td>
+      <td>
+        {% for talkTitle in talk.talks %}
+        <p>{{ talkTitle }}</p>
+        {% endfor %}
+      </td>
+      <td>
+        <ul>
+          <li><a href="{{talk.resources.event}}">Event</a></li>
+          {% for medium in talk.resources.media %}
+            {% if medium.name == null %}
+              {% assign mediumSlides = "Slides" %}
+              {% assign mediumVideo = "Video" %}
+            {% else %}
+              {% assign mediumSlides = "Slides " | append: medium.name %}
+              {% assign mediumVideo = "Video " | append: medium.name %}
+            {% endif %}
+            {% if medium.slides != null %}
+              <li><a href="{{medium.slides}}">{{mediumSlides}}</a></li>
+            {% endif %}
+            {% if medium.video != null %}
+              <li><a href="{{medium.video}}">{{mediumVideo}}</a></li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+<p>
+  Here you can find a list of the public presentations that I've given (the most recent one to the top)
 </p>
 
 <table class="table table-bordered table-hover table-responsive table-striped">
