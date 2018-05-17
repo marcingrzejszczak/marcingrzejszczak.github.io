@@ -329,6 +329,8 @@
   talks: TDD at the Architecture Level with Consumer-Driven Contracts
   resources:
     event: http://devternity.com
+    media:
+        - video: https://www.youtube.com/watch?v=UuBfgiAjWWQ
 
 - date: 2016.11.15
   eventName: "WJUG #189"
