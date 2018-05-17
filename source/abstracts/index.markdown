@@ -69,7 +69,7 @@ In this presentation you'll see a system composing of two apps written from scra
 
 ### Type
 
-_Presentation and live coding_
+_Presentation_
 
 ### Abstract
 
