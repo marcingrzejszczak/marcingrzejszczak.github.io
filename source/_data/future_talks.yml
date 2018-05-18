@@ -1,12 +1,3 @@
-- date: 2018.05.18
-  eventName: Segfault
-  city: Lodz
-  country: Poland
-  countryCode: pl
-  talks: Contract Tests in the Enterprise
-  resources:
-    event: http://lodz2018.segfault.events/
-
 - date: 2018.05.22
   eventName: Infoshare
   city: Gdansk
