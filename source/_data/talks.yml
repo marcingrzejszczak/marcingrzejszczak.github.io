@@ -5,8 +5,10 @@
   countryCode: pl
   talks: Contract Tests in the Enterprise
   resources:
+    media:
+        - slides: https://docs.google.com/presentation/d/1scPcn2UmxbZAoZA5cdGC6cHgvNTmhF0d9ExbQadEG9I/edit?usp=sharing
     event: http://lodz2018.segfault.events/
-    
+
 - date: 2018.05.09
   eventName: Geecon 2018
   city: Cracow
