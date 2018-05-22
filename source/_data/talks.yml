@@ -1,3 +1,14 @@
+- date: 2018.05.22
+  eventName: Infoshare
+  city: Gdansk
+  country: Poland
+  countryCode: pl
+  talks: Contract Tests in the Enterprise
+  resources:
+    event: http://infoshare.pl
+    media:
+        - slides: https://docs.google.com/presentation/d/1IevIZBgNXTDAF7Wf4809Vp47i4J1XXVSGYhLkKyjUJg/edit?usp=sharing
+
 - date: 2018.05.18
   eventName: Segfault
   city: Lodz
