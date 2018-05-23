@@ -25,15 +25,6 @@
   resources:
     event: https://2017.confitura.pl/presentations
 
-- date: 2018.07.05
-  eventName: "Wieczorek ze Springinem"
-  city: Lodz
-  country: Poland
-  countryCode: pl
-  talks: TBD
-  resources:
-    event: https://www.meetup.com/Java-User-Group-Lodz/events/250679061/
-
 - date: 2018.09.14
   eventName: "Bitconf"
   city: Bydgoszcz
