@@ -1,3 +1,14 @@
+- date: 2018.05.24
+  eventName: Spring IO
+  city: Barcelona
+  country: Spain
+  countryCode: es
+  talks: Continuous Deployment of your Application
+  resources:
+    event: https://2018.springio.net/
+    media:
+        - slides: https://docs.google.com/presentation/d/10Pib-EjegE1WdMmBpkIlpeL_XqgBSfX5I5nZ-6flBDs/edit?usp=sharing
+
 - date: 2018.05.22
   eventName: Infoshare
   city: Gdansk
