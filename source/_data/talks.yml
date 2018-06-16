@@ -29,6 +29,7 @@
   resources:
     media:
         - slides: https://docs.google.com/presentation/d/1scPcn2UmxbZAoZA5cdGC6cHgvNTmhF0d9ExbQadEG9I/edit?usp=sharing
+        - video: https://www.youtube.com/watch?v=G7XYlwHFLU8&feature=youtu.be
     event: http://lodz2018.segfault.events/
 
 - date: 2018.05.09
