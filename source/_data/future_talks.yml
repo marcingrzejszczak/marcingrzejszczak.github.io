@@ -1,12 +1,3 @@
-- date: 2018.06.20
-  eventName: "Devoxx Poland"
-  city: Cracow
-  country: Poland
-  countryCode: pl
-  talks: Contract Tests in the Enterprise
-  resources:
-    event: https://2018.springio.net/
-
 - date: 2018.06.30
   eventName: "Confitura"
   city: Warsaw
