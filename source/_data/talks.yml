@@ -1,3 +1,12 @@
+ date: 2018.06.20
+  eventName: "Devoxx Poland"
+  city: Cracow
+  country: Poland
+  countryCode: pl
+  talks: Contract Tests in the Enterprise
+  resources:
+    event: https://cfp.devoxx.pl/2018/byday/thu
+
 - date: 2018.05.24
   eventName: Spring IO
   city: Barcelona
