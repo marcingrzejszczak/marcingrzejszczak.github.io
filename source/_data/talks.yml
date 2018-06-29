@@ -1,3 +1,14 @@
+- date: 2018.06.29
+  eventName: "Code’n’Quality"
+  city: Warsaw
+  country: Poland
+  countryCode: pl
+  talks: Contract Tests in the Enterprise
+  resources:
+    event: https://www.meetup.com/MIT-dev-conferences/events/251875279/
+    media:
+        - slides: https://docs.google.com/presentation/d/1AX_MVrQRUsOznk7Fd-DeK6qhPMIRmoEggl1joJ6M8y8/edit?usp=sharing
+
 - date: 2018.06.20
   eventName: "Devoxx Poland"
   city: Cracow

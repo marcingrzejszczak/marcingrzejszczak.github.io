@@ -1,12 +1,3 @@
-- date: 2018.06.29
-  eventName: "Code’n’Quality - programowanie najwyższej jakości"
-  city: Warsaw
-  country: Poland
-  countryCode: pl
-  talks: Contract Tests in the Enterprise
-  resources:
-    event: https://www.meetup.com/MIT-dev-conferences/events/251875279/
-
 - date: 2018.06.30
   eventName: "Confitura"
   city: Warsaw
