@@ -1,3 +1,12 @@
+- date: 2018.06.30
+  eventName: "Confitura"
+  city: Warsaw
+  country: Poland
+  countryCode: pl
+  talks: Testing your Message-Driven Application
+  resources:
+    event: https://2017.confitura.pl/presentations
+
 - date: 2018.06.29
   eventName: "Code’n’Quality"
   city: Warsaw
