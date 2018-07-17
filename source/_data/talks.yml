@@ -26,6 +26,9 @@
   talks: Contract Tests in the Enterprise
   resources:
     event: https://cfp.devoxx.pl/2018/byday/thu
+    media:
+        - video: https://www.youtube.com/watch?v=ZyHG-VOzPZg
+        - slides: https://docs.google.com/presentation/d/1Je_IZ-xjLnOHf5YgH0r4ihlqhIrob6fC0NBT95xDHoo/edit?usp=sharing
 
 - date: 2018.05.24
   eventName: Spring IO
