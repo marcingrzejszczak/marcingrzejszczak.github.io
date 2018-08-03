@@ -73,6 +73,7 @@
   resources:
     media:
         - slides: https://docs.google.com/presentation/d/1p7e5yx72pd_acu2jvNIU6M33mL2d9GnG4lhiyKQpzhM/edit?usp=sharing
+        - video: https://www.youtube.com/watch?v=rFeM_4oeBQE&index=54&list=PLxZQe6I1pYpexdJDn5ZZUHiMHWPsINghJ
     event: https://2018.geecon.org/schedule/
 
 - date: 2018.05.01
