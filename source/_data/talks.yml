@@ -39,6 +39,7 @@
   resources:
     event: https://2018.springio.net/
     media:
+        - video: https://www.youtube.com/watch?&v=Kv0BWS4oCJ0
         - slides: https://docs.google.com/presentation/d/10Pib-EjegE1WdMmBpkIlpeL_XqgBSfX5I5nZ-6flBDs/edit?usp=sharing
 
 - date: 2018.05.22

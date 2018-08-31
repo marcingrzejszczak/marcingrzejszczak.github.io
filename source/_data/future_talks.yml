@@ -1,3 +1,21 @@
+- date: 2018.09.05
+  eventName: "Wieczorek ze Springiem"
+  city: Lodz
+  country: Poland
+  countryCode: pl
+  talks: Testing your Message-Driven Application
+  resources:
+    event: https://www.meetup.com/Java-User-Group-Lodz/events/250679061/
+
+- date: 2018.09.05
+  eventName: "Wieczorek ze Springiem"
+  city: Lodz
+  country: Poland
+  countryCode: pl
+  talks: Consumer Driven Contracts like TDD to the API
+  resources:
+    event: https://www.meetup.com/Java-User-Group-Lodz/events/250679061/
+
 - date: 2018.09.14
   eventName: "Bitconf"
   city: Bydgoszcz
