@@ -1,3 +1,25 @@
+- date: 2018.09.14
+  eventName: "Bitconf"
+  city: Bydgoszcz
+  country: Poland
+  countryCode: pl
+  talks: Testing your Messaging Application
+  resources:
+    event: https://www.bitconf.pl/
+    media:
+      - slides: https://docs.google.com/presentation/d/1FpomQSxOqldtsKakEiIo0BLmfCG2YWtkERoJr2-da_k/edit?usp=sharing
+
+- date: 2018.09.14
+  eventName: "Bitconf"
+  city: Bydgoszcz
+  country: Poland
+  countryCode: pl
+  talks: Consumer Driven Contracts and Your Microservice Architecture
+  resources:
+    event: https://www.bitconf.pl/
+    media:
+      - slides: https://docs.google.com/presentation/d/1d1HAm-S6bIPVim9Gi-DxrFMDi1GxK2Zz7AubtVtjbyo/edit#slide=id.g28446d2d55_0_1
+
 - date: 2018.09.05
   eventName: "Wieczorek ze Springiem"
   city: Lodz
@@ -6,6 +28,8 @@
   talks: Testing your Message-Driven Application
   resources:
     event: https://www.meetup.com/Java-User-Group-Lodz/events/250679061/
+    media:
+      - slides: https://docs.google.com/presentation/d/1FpomQSxOqldtsKakEiIo0BLmfCG2YWtkERoJr2-da_k/edit?usp=sharing
 
 - date: 2018.09.05
   eventName: "Wieczorek ze Springiem"
@@ -15,7 +39,9 @@
   talks: Consumer Driven Contracts like TDD to the API
   resources:
     event: https://www.meetup.com/Java-User-Group-Lodz/events/250679061/
-    
+    media:
+      - slides: https://docs.google.com/presentation/d/1d1HAm-S6bIPVim9Gi-DxrFMDi1GxK2Zz7AubtVtjbyo/edit#slide=id.g28446d2d55_0_1
+
 - date: 2018.06.30
   eventName: "Confitura"
   city: Warsaw

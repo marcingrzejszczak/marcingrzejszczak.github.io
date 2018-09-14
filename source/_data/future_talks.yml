@@ -1,12 +1,3 @@
-- date: 2018.09.14
-  eventName: "Bitconf"
-  city: Bydgoszcz
-  country: Poland
-  countryCode: pl
-  talks: TBD
-  resources:
-    event: https://www.bitconf.pl/
-
 - date: 2018.09.24
   eventName: Spring One Platform 2018
   city: Washington
