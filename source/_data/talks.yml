@@ -30,6 +30,7 @@
     event: https://www.meetup.com/Java-User-Group-Lodz/events/250679061/
     media:
       - slides: https://docs.google.com/presentation/d/1FpomQSxOqldtsKakEiIo0BLmfCG2YWtkERoJr2-da_k/edit?usp=sharing
+      - video: https://www.youtube.com/watch?v=JuQ7VJKmTTw
 
 - date: 2018.09.05
   eventName: "Wieczorek ze Springiem"
