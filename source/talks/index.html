@@ -20,6 +20,7 @@ footer: true
   </ul>
 </p>
 
+{% if site.data.future_talks.size >= 0 %}
 <p>
   Here you can find a list of the public presentations that I will give (the closest one to the top)
 </p>
@@ -74,6 +75,8 @@ footer: true
     {% endfor %}
   </tbody>
 </table>
+
+{% endif %}
 
 <p>
   Here you can find a list of the public presentations that I've given (the most recent one to the top)
