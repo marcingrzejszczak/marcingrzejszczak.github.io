@@ -1,11 +1,33 @@
-- date: 2018.09.14
-  eventName: "Bitconf"
-  city: Bydgoszcz
-  country: Poland
-  countryCode: pl
+- date: 2018.09.26
+  eventName: Spring One Platform 2018
+  city: Washington
+  country: USA
+  countryCode: us
+  talks: Zero to Multi-Cloud
+  resources:
+    event: https://springoneplatform.io/
+    media:
+      - slides: https://docs.google.com/presentation/d/1UFsIwU8A8DoxDeWu2mONGbVJxxcYnMpUaLGkzG24ViE/
+
+- date: 2018.09.26
+  eventName: Spring One Platform 2018
+  city: Washington
+  country: USA
+  countryCode: us
+  talks: How Sleuth Bravely Cracked the Case of "Too Much to Code"
+  resources:
+    event: https://springoneplatform.io/
+    media:
+      - slides: https://docs.google.com/presentation/d/1FpomQSxOqldtsKakEiIo0BLmfCG2YWtkERoJr2-da_k/
+
+- date: 2018.09.25
+  eventName: Spring One Platform 2018
+  city: Washington
+  country: USA
+  countryCode: us
   talks: Testing your Messaging Application
   resources:
-    event: https://www.bitconf.pl/
+    event: https://springoneplatform.io/
     media:
       - slides: https://docs.google.com/presentation/d/1FpomQSxOqldtsKakEiIo0BLmfCG2YWtkERoJr2-da_k/edit?usp=sharing
 
