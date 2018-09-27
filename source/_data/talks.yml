@@ -64,7 +64,7 @@
     event: https://www.meetup.com/Java-User-Group-Lodz/events/250679061/
     media:
       - slides: https://docs.google.com/presentation/d/1d1HAm-S6bIPVim9Gi-DxrFMDi1GxK2Zz7AubtVtjbyo/edit#slide=id.g28446d2d55_0_1
-      - vide: https://www.youtube.com/watch?v=jWCM6BZbRjc&feature=youtu.be
+      - video: https://www.youtube.com/watch?v=jWCM6BZbRjc&feature=youtu.be
 
 - date: 2018.06.30
   eventName: "Confitura"
@@ -74,6 +74,8 @@
   talks: Testing your Message-Driven Application
   resources:
     event: https://2017.confitura.pl/presentations
+    media:
+      - video: https://www.youtube.com/watch?v=7ZY0bE061X0&feature=youtu.be
 
 - date: 2018.06.29
   eventName: "Code’n’Quality"
