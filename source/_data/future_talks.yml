@@ -1,0 +1,35 @@
+- date: 2018.10.15
+  eventName: Agile & Automation Days
+  city: Cracow
+  country: Poland
+  talks: Building Resilient Microservices
+  countryCode: pl
+  resources:
+    event: https://aadays.pl
+
+- date: 2018.10.16
+  eventName: It's Complicated. Gender Balance in Leadership
+  city: Cracow
+  country: Poland
+  talks: BOF
+  countryCode: pl
+  resources:
+    event: http://www.diversityhub.pl/web-events/6
+
+- date: 2018.11.26
+  eventName: Women in Technology Summit
+  city: Warsaw
+  country: Poland
+  talks: TBD
+  countryCode: pl
+  resources:
+    event: https://www.womenintechsummit.pl/
+
+- date: 2018.12.08
+  eventName: J-Santa
+  city: Lublin
+  country: Poland
+  talks: Consumer Driven Contracts like TDD to the API
+  countryCode: pl
+  resources:
+    event: https://j-santa.pl
