@@ -95,6 +95,10 @@ In this talk, we will chat about how to work with events that are used as integr
 
 There will be a lot of Spring Cloud stack and we will see how we can benefit from Consumer Driven Contracts when NOT using REST APIs.
 
+### Video Samples
+
+- [Example](https://www.youtube.com/watch?v=hRgD4bpS7hY&list=PLAdzTan_eSPQsR_aqYBQxpYTEQZnjhTN6&t=0s&index=64)
+
 ## Continuous Deployment of Your Application
 
 ### Type
