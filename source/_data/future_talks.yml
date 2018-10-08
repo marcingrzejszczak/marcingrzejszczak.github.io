@@ -7,15 +7,6 @@
   resources:
     event: https://aadays.pl
 
-- date: 2018.10.16
-  eventName: It's Complicated. Gender Balance in Leadership
-  city: Cracow
-  country: Poland
-  talks: BOF
-  countryCode: pl
-  resources:
-    event: http://www.diversityhub.pl/web-events/6
-
 - date: 2018.11.26
   eventName: Women in Technology Summit
   city: Warsaw
