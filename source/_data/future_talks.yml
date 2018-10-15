@@ -1,12 +1,3 @@
-- date: 2018.10.15
-  eventName: Agile & Automation Days
-  city: Cracow
-  country: Poland
-  talks: Building Resilient Microservices
-  countryCode: pl
-  resources:
-    event: https://aadays.pl
-
 - date: 2018.11.26
   eventName: Women in Technology Summit
   city: Warsaw
