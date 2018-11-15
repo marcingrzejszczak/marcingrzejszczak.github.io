@@ -6,7 +6,10 @@
   countryCode: pl
   resources:
     event: https://aadays.pl
-    
+    media:
+      - slides: https://docs.google.com/presentation/d/1z2OeLnWyOXcLAc9Fvx_veqD74chLnmirK-h77W2ZnjI/edit?usp=sharing
+      - video: https://www.youtube.com/watch?v=5YaRDUVac9c
+
 - date: 2018.09.26
   eventName: Spring One Platform 2018
   city: Washington
