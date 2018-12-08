@@ -6,6 +6,8 @@
   countryCode: pl
   resources:
     event: https://j-santa.pl
+    media:
+      - slides: https://docs.google.com/presentation/d/1nqI029DlWe-ecUIpAQG14jF6wVDHSGvutRThaU4CU8M/edit?usp=sharing
 
 - date: 2018.12.08
   eventName: J-Santa
@@ -15,6 +17,8 @@
   countryCode: pl
   resources:
     event: https://j-santa.pl
+    media:
+      - slides: https://docs.google.com/presentation/d/1QOMxxJXtwjhKPFWRl7gTQ4QCX_749Aimze7W1z0K5-U/edit?usp=sharing
 
 - date: 2018.10.15
   eventName: Agile & Automation Days
