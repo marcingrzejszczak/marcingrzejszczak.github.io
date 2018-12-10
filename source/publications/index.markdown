@@ -24,3 +24,4 @@ Below you can find a list of my publications (check [the talks page](/talks/) fo
 - [How Contract Tests Improve the Quality of Your Distributed Systems](https://www.infoq.com/articles/contract-testing-spring-cloud-contract?utm_source=infoq&utm_campaign=user_page&utm_medium=link)
 - [Q&A with Marcin Grzejszczak on Spring Cloud Contract](https://www.infoq.com/news/2017/04/spring-cloud-contract)
 - [Spring Cloud Contract in a Polyglot World](https://spring.io/blog/2018/02/13/spring-cloud-contract-in-a-polyglot-world)
+- [Zero Downtime Deployment with a Database](https://spring.io/blog/2016/05/31/zero-downtime-deployment-with-a-database)
