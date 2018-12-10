@@ -11,7 +11,7 @@ footer: true
 
 ![drawing](/images/ja.jpeg)
 
-Author of [Mockito Instant](https://www.packtpub.com/application-development/instant-mockito) and [Mockito Cookbook](https://www.packtpub.com/application-development/mockito-cookbook) books. Co-author of [Applied Continuous Delivery Live Lessons](http://bit.ly/appliedCD). Co-founder of the Warsaw Groovy User Group and [Warsaw Cloud Native Meetup](www.meetup.com/Warsaw-Cloud-Native-Meetup/) and the [DiverseIT](www.diverseit.io) initiative.
+Author of [Mockito Instant](https://www.packtpub.com/application-development/instant-mockito) and [Mockito Cookbook](https://www.packtpub.com/application-development/mockito-cookbook) books. Co-author of [Applied Continuous Delivery Live Lessons](http://bit.ly/appliedCD). Co-founder of the Warsaw Groovy User Group and [Warsaw Cloud Native Meetup](www.meetup.com/Warsaw-Cloud-Native-Meetup/) and the [DiverseIT](http://www.diverseit.io) initiative.
 
 Lead of [Spring Cloud Sleuth](https://cloud.spring.io/spring-cloud-sleuth/), [Spring Cloud Contract](https://cloud.spring.io/spring-cloud-contract/) and [Spring Cloud Pipelines](https://cloud.spring.io/spring-cloud-pipelines) projects at [Pivotal](http://spring.io).
 
