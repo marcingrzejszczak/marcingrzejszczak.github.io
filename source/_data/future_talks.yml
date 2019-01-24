@@ -30,7 +30,7 @@
   eventName: Jax
   city: Mainz
   country: Germany
-  talks: TBD
+  talks: Consumer Driven Contracts like TDD to the API
   countryCode: de
   resources:
-    event: https://jax.de/en/
+    event: https://jax.de/serverside-enterprise-java/consumer-driven-contracts-its-like-tdd-applied-to-the-api/
