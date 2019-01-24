@@ -9,6 +9,8 @@ footer: true
 
 Here you can find a list of abstracts to talks that I have given:
 
+# English
+
 ## Tracing Applications with Zipkin
 
 ### Type
@@ -109,9 +111,24 @@ _Presentation and demo_
 
 “I have stopped counting how many times I’ve done this from scratch” - was one of the responses to the tweet about starting the project called Cloud Pipelines. Every company sets up a pipeline to take code from your source control, through unit testing and integration testing, to production from scratch. Every company creates some sort of automation to deploy its applications to servers. Enough is enough - time to automate that and focus on delivering business value.
 
-In this presentation we’ll go through the contents of the Cloud Pipelines project. We’ll start a new project for which we’ll have a deployment pipeline set up in no time. We’ll deploy to Cloud Foundry (but we also could do it with Kubernetes and Ansible) and check if our application is backwards compatible so that we can roll it back on production.
+In this presentation we’ll go through the contents of the Cloud Pipelines project. We’ll look at how we think a good deployment looks like and how a new project can have the deployment pipeline set up in no time. We’ll deploy the application to Cloud Foundry (but we also could do it with Kubernetes and Ansible) and check if it's is backwards compatible so that we can roll it back on production.
 
 ### Video Samples
 
 - [Example](https://content.pivotal.io/springone-platform-2017/continuous-deployment-to-the-cloud-marcin-grzejszczak-cora-iberkleid)
 - [Example](https://www.youtube.com/watch?v=glhXS34umbw&list=PLH21tc7N2sw0WUoamLp4UqTlKq-_xZgMB&index=41)
+
+
+# Polskie
+
+## Ciągłe wdrażanie Twoich aplikacji
+
+### Typ
+
+_Prezentacja i demo_
+
+### Abstrakt
+
+"Przestałem liczyć ile razy musiałem zbudować to od zera" - to jedna z odpowiedzi na Tweet dot. rozpoczęcia projektu Cloud Pipelines. W każdej firmie, na nowo tworzone są rury wdrożeniowe, które wyciągają kod z repozytorium, odpalają testy jednostkowe i integracyjne, po czym wdrażają paczkę na produkcję. Automatyzacja samego wdrożenia często też jest tworzona od nowa, za pomocą przeróżnych skryptów. Mamy tego dość! Czas zautomatyzować wszystkie te procesy i skupić się na dowożeniu wartości biznesowych.
+
+W tej prezentacji przejdziemy przez koncepcje zawarte w projekcie Cloud Pipelines. Zobaczymy jak wygląda nasza modelowa rura wdrożeniowa i jak nowoutworzony projekt może z niej skorzystać. Wgramy aplikację na Cloud Foundry (moglibyśmy też ją wgrać do Kubernetesa lub gdziekolwiek za pomocą Ansiblea) i zweryfikujemy kompatybilność wsteczną aplikacji w celu przywrócenia wersji na produkcji w przypadku jakichkolwiek komplikacji.
