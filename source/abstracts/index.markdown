@@ -7,7 +7,7 @@ sharing: true
 footer: true
 ---
 
-Here you can find a list of abstracts to talks that I have given:
+Here you can find a list of abstracts to talks that I have given
 
 # English
 
@@ -117,6 +117,16 @@ In this presentation we’ll go through the contents of the Cloud Pipelines proj
 
 - [Example](https://content.pivotal.io/springone-platform-2017/continuous-deployment-to-the-cloud-marcin-grzejszczak-cora-iberkleid)
 - [Example](https://www.youtube.com/watch?v=glhXS34umbw&list=PLH21tc7N2sw0WUoamLp4UqTlKq-_xZgMB&index=41)
+
+## How to live in a post-Spring-Cloud-Netflix world
+
+### Type
+
+_Presentation and demo_
+
+### Abstract
+
+Zuul? Gateway? Should we get rid of Ribbon? What is going on with Hystrix? If you have ever faced those questions, come and listen to this talk. In December 2018, Netflix decided to move a number of their popular OSS projects, like Hystrix and Ribbon into maintenance mode and to make newer, backward incompatible versions of some others, like Zuul and Archaius. The Spring Cloud team moved some of the corresponding Spring-Cloud-Netflix projects into maintenance mode as well and proposed a newer, more modern Spring Cloud stack that could be used instead. During this talk, we would like to show how to move over to these newer solutions. We will discuss possible approaches, show a code demo and speak about potential issues and solutions.
 
 
 # Polskie
