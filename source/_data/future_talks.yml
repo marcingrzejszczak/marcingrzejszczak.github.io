@@ -1,12 +1,3 @@
-- date: 2019.02.21
-  eventName: IT Akademia JLabs
-  city: Warsaw
-  country: Poland
-  talks: Consumer Driven Contracts like TDD to the API
-  countryCode: pl
-  resources:
-    event: http://itakademia.j-labs.pl/
-
 - date: 2019.03.14
   eventName: Segfault Gdańsk
   city: Gdańsk
