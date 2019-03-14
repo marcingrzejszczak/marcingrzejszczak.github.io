@@ -1,3 +1,12 @@
+- date: 2019.03.14
+  eventName: Segfault Gdańsk
+  city: Gdańsk
+  country: Poland
+  talks: How to live in a post Spring-Cloud-Netflix world?
+  countryCode: pl
+  resources:
+    event: http://segfault.events/gdansk2019/
+
 - date: 2019.02.21
   eventName: IT Akademia JLabs
   city: Warsaw

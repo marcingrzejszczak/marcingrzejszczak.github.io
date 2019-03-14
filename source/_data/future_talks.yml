@@ -1,21 +1,20 @@
-- date: 2019.03.14
-  eventName: Segfault Gdańsk
-  city: Gdańsk
-  country: Poland
-  talks: TBD
-  countryCode: pl
-  resources:
-    event: http://segfault.events/gdansk2019/
-
 - date: 2019.03.21
   eventName: Spring One Tour
   city: Amsterdam
   country: Netherlands
-  talks: TBD
+  talks: Consumer Driven Contracts like TDD to the API
   countryCode: nl
   resources:
     event: https://springonetour.io/2019/amsterdam
 
+- date: 2019.03.28
+  eventName: Soirée Spring Cloud Contracts avec Marcin Grzejszczak et Olga Maciaszek-Sharma
+  city: Paris
+  country: France
+  talks: Consumer Driven Contracts like TDD to the API
+  countryCode: fr
+  resources:
+    event: https://www.meetup.com/Spring-Meetup-Paris/events/258527286/
 
 - date: 2019.05.07
   eventName: Jax
