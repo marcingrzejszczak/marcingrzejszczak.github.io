@@ -1,12 +1,3 @@
-- date: 2019.03.28
-  eventName: Soirée Spring Cloud Contracts avec Marcin Grzejszczak et Olga Maciaszek-Sharma
-  city: Paris
-  country: France
-  talks: Consumer Driven Contracts like TDD to the API
-  countryCode: fr
-  resources:
-    event: https://www.meetup.com/Spring-Meetup-Paris/events/258527286/
-
 - date: 2019.05.07
   eventName: Jax
   city: Mainz
