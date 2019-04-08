@@ -17,7 +17,7 @@ I've just published an article at the Spring blog about the creation of a new pr
 
 # Why?
 
-Why a new project? Cause we've been all doing repetitive work. [Check out this post](http://toomuchcoding.com/blog/2015/09/27/microservice-deployment/) where I write about creation of
+Why a new project? Cause we've been all doing repetitive work. [Check out this post](https://toomuchcoding.com/blog/2015/09/27/microservice-deployment/) where I write about creation of
 a deployment pipeline. Every company does it and wastes money and resource on it. In Pivotal
 our goal is to give developers tools they need to deliver features as fast as possible.
 

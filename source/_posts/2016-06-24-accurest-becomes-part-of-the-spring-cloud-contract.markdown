@@ -34,7 +34,7 @@ Speaking of features, especially quite a few of them definitely makes Accurest s
 - Stub Runner functionality - the stubs are automatically downloaded at runtime from Nexus / Artifactory
 - Spring Cloud integration - no discovery service is needed for integration tests
 
-For more information check out my posts about [Stub Runner](http://toomuchcoding.com/blog/2016/04/06/accurest-stubrunner-released/), [Accurest Messaging](http://toomuchcoding.com/blog/2016/04/30/accurest-and-stub-runner-1-dot-1-0-dot-m3/) or [just read the docs](https://codearte.github.io/accurest/).
+For more information check out my posts about [Stub Runner](https://toomuchcoding.com/blog/2016/04/06/accurest-stubrunner-released/), [Accurest Messaging](https://toomuchcoding.com/blog/2016/04/30/accurest-and-stub-runner-1-dot-1-0-dot-m3/) or [just read the docs](https://codearte.github.io/accurest/).
 
 ## Spring Cloud Contract
 

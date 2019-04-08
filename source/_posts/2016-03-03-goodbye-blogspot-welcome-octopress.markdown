@@ -11,7 +11,7 @@ blogging technology - Octopress! Thanks to [Tomek Dziurko](http://tomaszdziurko.
 was the one that suggested to choose that technology.
 
 Also as you can see I've finally bought a domain for the *Too Much Coding blog* which is
-[http://toomuchcoding.com](http://toomuchcoding.com). I don't even know why I'm
+[https://toomuchcoding.com](https://toomuchcoding.com). I don't even know why I'm
 writing it since you can see the address in your browser ;) You can also send me an email
 at *blog (at) toomuchcoding.com*.
 

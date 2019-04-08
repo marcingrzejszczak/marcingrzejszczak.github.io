@@ -9,7 +9,7 @@ categories:
 - testing
 ---
 
-It's been a good release time recently! I'm blogging here at [Too Much Coding blog](http://toomuchcoding.com) more about releases then about any concrete topics ;)
+It's been a good release time recently! I'm blogging here at [Too Much Coding blog](https://toomuchcoding.com) more about releases then about any concrete topics ;)
 
 After releasing [Spring Cloud Sleuth as a part of Brixton RC1](/blog/2016/03/25/spring-cloud-sleuth-rc1-deployed/) we have just released a version 1.0.4 of [AccuREST](https://github.com/Codearte/accurest). We've fixed a couple
 of bugs but we've introduced a couple of big features including:
@@ -133,7 +133,7 @@ If you have multiple services for which you want to run the WireMocks with stubs
 
 ## Running Stub Runner
 
-In all the examples below let's assume that the stubs are stored in the Maven repository available under `http://toomuchcoding.com` URL. As _service2_ I'd like to download the stubs of `com.toomuchcoding:service3` and
+In all the examples below let's assume that the stubs are stored in the Maven repository available under `https://toomuchcoding.com` URL. As _service2_ I'd like to download the stubs of `com.toomuchcoding:service3` and
 `com.toomuchcoding:service4` services.
 
 ### Stub Runner as a fat JAR
@@ -172,10 +172,10 @@ You can run that main class from IDE or build yourself a fat JAR. To do that jus
 
 Then inside the `build/lib` there will be a fat JAR with classifier `fatJar` waiting for you to execute.
 
-Coming back to our example once the fat JAR is built I would just call the following command the retrieve the stubs of _service3_ and _service4_ from the Maven repository available at `http://toomuchcoding.com`.
+Coming back to our example once the fat JAR is built I would just call the following command the retrieve the stubs of _service3_ and _service4_ from the Maven repository available at `https://toomuchcoding.com`.
 
 ```
-java -jar stub-runner-1.0.4-SNAPSHOT-fatJar.jar -sr http://toomuchcoding.com -s com.toomuchcoding:service3:stubs,com.toomuchcoding.service4
+java -jar stub-runner-1.0.4-SNAPSHOT-fatJar.jar -sr https://toomuchcoding.com -s com.toomuchcoding:service3:stubs,com.toomuchcoding.service4
 ```
 #### When to use it?
 
@@ -193,7 +193,7 @@ This is how you could do it with Spock:
 class SomeSpec extends Specification {
 
   @ClassRule @Shared AccurestRule rule = new AccurestRule()
-      .repoRoot('http://toomuchcoding.com')
+      .repoRoot('https://toomuchcoding.com')
       .downloadStub("com.toomuchcoding", "service3")
       .downloadStub("com.toomuchcoding:service4")
 
@@ -219,7 +219,7 @@ or with plain Java JUnit:
 public class SomeTest {
 
   @ClassRule public static AccurestRule rule = new AccurestRule()
-      .repoRoot("http://toomuchcoding.com")
+      .repoRoot("https://toomuchcoding.com")
       .downloadStub("com.toomuchcoding", "service3")
       .downloadStub("com.toomuchcoding:service4");
 
@@ -252,7 +252,7 @@ You can use the *Stub Runner's* Spring configuration to download the stubs of yo
 Having the following `application.yaml` file:
 
 ```yml
-stubrunner.stubs.repository.root: http://toomuchcoding.com
+stubrunner.stubs.repository.root: https://toomuchcoding.com
 stubrunner.stubs.ids: com.toomuchcoding:service3:stubs,com.toomuchcoding.service4
 ```
 
@@ -321,7 +321,7 @@ The `stubrunner.stubs.idsToServiceIds` property is the root path to a map in whi
 Having the following `application.yaml` file:
 
 ```yml
-stubrunner.stubs.repository.root: http://toomuchcoding.com
+stubrunner.stubs.repository.root: https://toomuchcoding.com
 stubrunner.stubs.ids: com.toomuchcoding:service3:stubs,com.toomuchcoding.service4
 
 stubrunner.stubs.idsToServiceIds:

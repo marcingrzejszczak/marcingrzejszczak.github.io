@@ -9,7 +9,7 @@ categories:
 - gradle plugin
 ---
 
-Time for another release here at [Too Much Coding blog](http://toomuchcoding.com)! This time it will be a short post :) I'm happy to announce that the [UpToDate Gradle Plugin](https://github.com/marcingrzejszczak/uptodate-gradle-plugin) has finally found a new home!
+Time for another release here at [Too Much Coding blog](https://toomuchcoding.com)! This time it will be a short post :) I'm happy to announce that the [UpToDate Gradle Plugin](https://github.com/marcingrzejszczak/uptodate-gradle-plugin) has finally found a new home!
 
 <!-- more -->
 
