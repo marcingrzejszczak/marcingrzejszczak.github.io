@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Concourse | TOO MUCH CODING]]></title>
-  <link href="http://toomuchcoding.com/blog/categories/concourse/atom.xml" rel="self"/>
-  <link href="http://toomuchcoding.com/"/>
-  <updated>2019-03-29T13:25:07+01:00</updated>
-  <id>http://toomuchcoding.com/</id>
+  <link href="https://toomuchcoding.com/blog/categories/concourse/atom.xml" rel="self"/>
+  <link href="https://toomuchcoding.com/"/>
+  <updated>2019-04-08T15:11:07+02:00</updated>
+  <id>https://toomuchcoding.com/</id>
   <author>
     <name><![CDATA[Marcin Grzejszczak]]></name>
     <email><![CDATA[blog@toomuchcoding.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Continuous Delivery of a Startup]]></title>
-    <link href="http://toomuchcoding.com/blog/2017/12/03/continuous-delivery-of-a-startup/"/>
+    <link href="https://toomuchcoding.com/blog/2017/12/03/continuous-delivery-of-a-startup/"/>
     <updated>2017-12-03T07:11:22-05:00</updated>
-    <id>http://toomuchcoding.com/blog/2017/12/03/continuous-delivery-of-a-startup</id>
+    <id>https://toomuchcoding.com/blog/2017/12/03/continuous-delivery-of-a-startup</id>
     <content type="html"><![CDATA[<p>Hi!</p>
 
 <p>After a very long pause, finally I&rsquo;ve managed to write a new blog post. It&rsquo;s an interview with <a href="https://twitter.com/jkubrynski">Jakub Kubryński</a> about Continuous Delivery of a Startup. It&rsquo;s published as part of the <a href="https://www.javaadvent.com/2017/12/cd-of-a-startup.html">Java Advent Calendar</a>.</p>
@@ -28,14 +28,14 @@
   
   <entry>
     <title type="html"><![CDATA[New Project - Spring Cloud Pipelines]]></title>
-    <link href="http://toomuchcoding.com/blog/2016/10/18/new-project-spring-cloud-pipelines/"/>
+    <link href="https://toomuchcoding.com/blog/2016/10/18/new-project-spring-cloud-pipelines/"/>
     <updated>2016-10-18T19:29:24+02:00</updated>
-    <id>http://toomuchcoding.com/blog/2016/10/18/new-project-spring-cloud-pipelines</id>
+    <id>https://toomuchcoding.com/blog/2016/10/18/new-project-spring-cloud-pipelines</id>
     <content type="html"><![CDATA[<p>I&rsquo;ve just published an article at the Spring blog about the creation of a new project called <a href="https://spring.io/blog/2016/10/18/spring-cloud-pipelines">Spring Cloud Pipelines</a>.</p>
 
 <h1>Why?</h1>
 
-<p>Why a new project? Cause we&rsquo;ve been all doing repetitive work. <a href="http://toomuchcoding.com/blog/2015/09/27/microservice-deployment/">Check out this post</a> where I write about creation of
+<p>Why a new project? Cause we&rsquo;ve been all doing repetitive work. <a href="https://toomuchcoding.com/blog/2015/09/27/microservice-deployment/">Check out this post</a> where I write about creation of
 a deployment pipeline. Every company does it and wastes money and resource on it. In Pivotal
 our goal is to give developers tools they need to deliver features as fast as possible.</p>
 

@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Sql | TOO MUCH CODING]]></title>
-  <link href="http://toomuchcoding.com/blog/categories/sql/atom.xml" rel="self"/>
-  <link href="http://toomuchcoding.com/"/>
-  <updated>2019-03-29T13:25:07+01:00</updated>
-  <id>http://toomuchcoding.com/</id>
+  <link href="https://toomuchcoding.com/blog/categories/sql/atom.xml" rel="self"/>
+  <link href="https://toomuchcoding.com/"/>
+  <updated>2019-04-08T15:11:07+02:00</updated>
+  <id>https://toomuchcoding.com/</id>
   <author>
     <name><![CDATA[Marcin Grzejszczak]]></name>
     <email><![CDATA[blog@toomuchcoding.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[More Interesting Articles]]></title>
-    <link href="http://toomuchcoding.com/blog/2012/10/24/more-interesting-articles/"/>
+    <link href="https://toomuchcoding.com/blog/2012/10/24/more-interesting-articles/"/>
     <updated>2012-10-24T06:25:00-07:00</updated>
-    <id>http://toomuchcoding.com/blog/2012/10/24/more-interesting-articles</id>
+    <id>https://toomuchcoding.com/blog/2012/10/24/more-interesting-articles</id>
     <content type="html"><![CDATA[<div class='post'>
 Next portion of interesting articles from dZone<br /><br /><a href="http://architects.dzone.com/articles/understanding-jvm-internals">Understanding JVM internals</a><br /><a href="http://architects.dzone.com/articles/how-analyze-java-thread-dumps">How to analyze Java thread dumps</a><br /><a href="http://java.dzone.com/articles/practicing-code-java-and">Practicing Code, Java, and Databases</a><br /><a href="http://java.dzone.com/articles/10-things-i-never-want-see">10 Things I Never Want to See a Java Developer Do Again</a><br /><a href="http://architects.dzone.com/articles/jquery-kwicks-sexy-sliding">jQuery Kwicks - Sexy Sliding Panels And Navigational Interaction</a><br /><a href="http://java.dzone.com/articles/why-do-bad-things-happen-good">Why Do Bad Things Happen to Good Code?</a><br /><br />and sth about <a href="http://java.dzone.com/articles/open-source-integration-apache">Apache Camel</a></div>
 
@@ -26,9 +26,9 @@ Next portion of interesting articles from dZone<br /><br /><a href="http://archi
   
   <entry>
     <title type="html"><![CDATA[Hibernate Inheritance Table Per Subclass With Different Foreign Key Names]]></title>
-    <link href="http://toomuchcoding.com/blog/2012/10/23/hibernate-inheritance-table-per/"/>
+    <link href="https://toomuchcoding.com/blog/2012/10/23/hibernate-inheritance-table-per/"/>
     <updated>2012-10-23T14:34:00-07:00</updated>
-    <id>http://toomuchcoding.com/blog/2012/10/23/hibernate-inheritance-table-per</id>
+    <id>https://toomuchcoding.com/blog/2012/10/23/hibernate-inheritance-table-per</id>
     <content type="html"><![CDATA[<div class='post'>
 <br /><br />In one of the projects we were supposed to implement an inheritance in the db. The project based on Spring and Hibernate so we could pick one of the three inheritance methods. We decided to pick the inheritance of table for subclass. The problem as been discussed in many ways but it is not common that the names of the foreign keys are not equal to the name of the primary key.  <br /><br />
 <!--more-->
@@ -39,9 +39,9 @@ Next portion of interesting articles from dZone<br /><br /><a href="http://archi
   
   <entry>
     <title type="html"><![CDATA[Interesting Articles]]></title>
-    <link href="http://toomuchcoding.com/blog/2012/10/17/interesting-articles/"/>
+    <link href="https://toomuchcoding.com/blog/2012/10/17/interesting-articles/"/>
     <updated>2012-10-17T06:43:00-07:00</updated>
-    <id>http://toomuchcoding.com/blog/2012/10/17/interesting-articles</id>
+    <id>https://toomuchcoding.com/blog/2012/10/17/interesting-articles</id>
     <content type="html"><![CDATA[<div class='post'>
 <br />Since one of my aims of starting a blog was to treat it as a notepad or a storage place for some interesting concepts regarding programming&nbsp;I recommend reading these articles:<br /><br /><a href="http://java.dzone.com/articles/how-tune-java-garbage">How to tune Java Garbage Collector</a><br /><a href="http://java.dzone.com/articles/nosql-week-review">NoSQL week review</a><br /><a href="http://java.dzone.com/articles/javascript-and-jquery">Javascript and jQuery</a><br /><br /></div>
 

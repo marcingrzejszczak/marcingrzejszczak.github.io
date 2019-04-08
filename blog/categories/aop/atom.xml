@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Aop | TOO MUCH CODING]]></title>
-  <link href="http://toomuchcoding.com/blog/categories/aop/atom.xml" rel="self"/>
-  <link href="http://toomuchcoding.com/"/>
-  <updated>2019-03-29T13:25:07+01:00</updated>
-  <id>http://toomuchcoding.com/</id>
+  <link href="https://toomuchcoding.com/blog/categories/aop/atom.xml" rel="self"/>
+  <link href="https://toomuchcoding.com/"/>
+  <updated>2019-04-08T15:11:07+02:00</updated>
+  <id>https://toomuchcoding.com/</id>
   <author>
     <name><![CDATA[Marcin Grzejszczak]]></name>
     <email><![CDATA[blog@toomuchcoding.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Spring AOP in Security - Controlling Creation of UI Components via Aspects]]></title>
-    <link href="http://toomuchcoding.com/blog/2012/10/27/spring-aop-in-security-controlling/"/>
+    <link href="https://toomuchcoding.com/blog/2012/10/27/spring-aop-in-security-controlling/"/>
     <updated>2012-10-27T18:06:00-07:00</updated>
-    <id>http://toomuchcoding.com/blog/2012/10/27/spring-aop-in-security-controlling</id>
+    <id>https://toomuchcoding.com/blog/2012/10/27/spring-aop-in-security-controlling</id>
     <content type="html"><![CDATA[<div class='post'>
 <br /><br />The following post will show how in one of the projects that I took part in we used Spring's AOP to introduce some security related functionalities. The concept was such that in order for the user to see some UI components he needed to have a certain level of security privillages. If that requirement was not met then the UIComponent was not presented. Let's take a look at the project structure:<br />
 <!--more-->

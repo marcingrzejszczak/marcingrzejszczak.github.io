@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: 
 
-Sitemap: http://toomuchcoding.com/sitemap.xml 
+Sitemap: https://toomuchcoding.com/sitemap.xml 

@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Octopress | TOO MUCH CODING]]></title>
-  <link href="http://toomuchcoding.com/blog/categories/octopress/atom.xml" rel="self"/>
-  <link href="http://toomuchcoding.com/"/>
-  <updated>2019-03-29T13:25:07+01:00</updated>
-  <id>http://toomuchcoding.com/</id>
+  <link href="https://toomuchcoding.com/blog/categories/octopress/atom.xml" rel="self"/>
+  <link href="https://toomuchcoding.com/"/>
+  <updated>2019-04-08T15:11:07+02:00</updated>
+  <id>https://toomuchcoding.com/</id>
   <author>
     <name><![CDATA[Marcin Grzejszczak]]></name>
     <email><![CDATA[blog@toomuchcoding.com]]></email>
@@ -15,15 +15,15 @@
   
   <entry>
     <title type="html"><![CDATA[Goodbye Blogspot Welcome Octopress!]]></title>
-    <link href="http://toomuchcoding.com/blog/2016/03/03/goodbye-blogspot-welcome-octopress/"/>
+    <link href="https://toomuchcoding.com/blog/2016/03/03/goodbye-blogspot-welcome-octopress/"/>
     <updated>2016-03-03T22:53:26+01:00</updated>
-    <id>http://toomuchcoding.com/blog/2016/03/03/goodbye-blogspot-welcome-octopress</id>
+    <id>https://toomuchcoding.com/blog/2016/03/03/goodbye-blogspot-welcome-octopress</id>
     <content type="html"><![CDATA[<p>I&rsquo;m more than happy to announce that I&rsquo;ve finally migrated from Blogspot to a decent
 blogging technology - Octopress! Thanks to <a href="http://tomaszdziurko.pl/">Tomek Dziurko</a> who
 was the one that suggested to choose that technology.</p>
 
 <p>Also as you can see I&rsquo;ve finally bought a domain for the <em>Too Much Coding blog</em> which is
-<a href="http://toomuchcoding.com">http://toomuchcoding.com</a>. I don&rsquo;t even know why I&rsquo;m
+<a href="https://toomuchcoding.com">https://toomuchcoding.com</a>. I don&rsquo;t even know why I&rsquo;m
 writing it since you can see the address in your browser ;) You can also send me an email
 at <em>blog (at) toomuchcoding.com</em>.</p>
 

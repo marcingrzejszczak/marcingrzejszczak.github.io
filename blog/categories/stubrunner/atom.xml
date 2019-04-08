@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Stubrunner | TOO MUCH CODING]]></title>
-  <link href="http://toomuchcoding.com/blog/categories/stubrunner/atom.xml" rel="self"/>
-  <link href="http://toomuchcoding.com/"/>
-  <updated>2019-03-29T13:25:07+01:00</updated>
-  <id>http://toomuchcoding.com/</id>
+  <link href="https://toomuchcoding.com/blog/categories/stubrunner/atom.xml" rel="self"/>
+  <link href="https://toomuchcoding.com/"/>
+  <updated>2019-04-08T15:11:07+02:00</updated>
+  <id>https://toomuchcoding.com/</id>
   <author>
     <name><![CDATA[Marcin Grzejszczak]]></name>
     <email><![CDATA[blog@toomuchcoding.com]]></email>
@@ -15,10 +15,10 @@
   
   <entry>
     <title type="html"><![CDATA[Accurest and Stub Runner 1.1.0.M3]]></title>
-    <link href="http://toomuchcoding.com/blog/2016/04/30/accurest-and-stub-runner-1-dot-1-0-dot-m3/"/>
+    <link href="https://toomuchcoding.com/blog/2016/04/30/accurest-and-stub-runner-1-dot-1-0-dot-m3/"/>
     <updated>2016-04-30T13:53:44+02:00</updated>
-    <id>http://toomuchcoding.com/blog/2016/04/30/accurest-and-stub-runner-1-dot-1-0-dot-m3</id>
-    <content type="html"><![CDATA[<p>Currently at the Spring Team we&rsquo;re polishing our libraries for the upcoming final release of the Brixton train. It should happen soon :) Until then I&rsquo;m spending a lot of my after work, free time on <a href="/blog/2016/04/25/accurest-docs-updated/">Accurest</a> and <a href="http://toomuchcoding.com/blog/2016/04/06/accurest-stubrunner-released/">Stub Runner</a>.</p>
+    <id>https://toomuchcoding.com/blog/2016/04/30/accurest-and-stub-runner-1-dot-1-0-dot-m3</id>
+    <content type="html"><![CDATA[<p>Currently at the Spring Team we&rsquo;re polishing our libraries for the upcoming final release of the Brixton train. It should happen soon :) Until then I&rsquo;m spending a lot of my after work, free time on <a href="/blog/2016/04/25/accurest-docs-updated/">Accurest</a> and <a href="https://toomuchcoding.com/blog/2016/04/06/accurest-stubrunner-released/">Stub Runner</a>.</p>
 
 <p>Today&rsquo;s post will be about the new stuff that you will be able to profit from in the upcoming <code>1.1.0</code> release of Accurest. Also you can profit from most of these features in the <code>1.1.0.M3</code> release.</p>
 
@@ -343,9 +343,9 @@ then(rule.findStubUrl("fraudDetectionServer")).isEqualTo(URI.create("http://loca
   
   <entry>
     <title type="html"><![CDATA[Accurest Docs Updated]]></title>
-    <link href="http://toomuchcoding.com/blog/2016/04/25/accurest-docs-updated/"/>
+    <link href="https://toomuchcoding.com/blog/2016/04/25/accurest-docs-updated/"/>
     <updated>2016-04-25T21:49:59+02:00</updated>
-    <id>http://toomuchcoding.com/blog/2016/04/25/accurest-docs-updated</id>
+    <id>https://toomuchcoding.com/blog/2016/04/25/accurest-docs-updated</id>
     <content type="html"><![CDATA[<p>After a lot of sleepless nights I&rsquo;ve finally migrated the <a href="http://codearte.github.io/accurest/">Accurest Docs</a> from Github&rsquo;s Wiki to Asciidoctor.
 With that change the vast majority of our snippets is taken from the tests. Also thanks to that change it will be much easier to keep the docs up to date
 since the documentation lives together with the code.</p>
@@ -356,10 +356,10 @@ since the documentation lives together with the code.</p>
   
   <entry>
     <title type="html"><![CDATA[AccuREST Stub Runner Released]]></title>
-    <link href="http://toomuchcoding.com/blog/2016/04/06/accurest-stubrunner-released/"/>
+    <link href="https://toomuchcoding.com/blog/2016/04/06/accurest-stubrunner-released/"/>
     <updated>2016-04-06T11:05:58+02:00</updated>
-    <id>http://toomuchcoding.com/blog/2016/04/06/accurest-stubrunner-released</id>
-    <content type="html"><![CDATA[<p>It&rsquo;s been a good release time recently! I&rsquo;m blogging here at <a href="http://toomuchcoding.com">Too Much Coding blog</a> more about releases then about any concrete topics ;)</p>
+    <id>https://toomuchcoding.com/blog/2016/04/06/accurest-stubrunner-released</id>
+    <content type="html"><![CDATA[<p>It&rsquo;s been a good release time recently! I&rsquo;m blogging here at <a href="https://toomuchcoding.com">Too Much Coding blog</a> more about releases then about any concrete topics ;)</p>
 
 <p>After releasing <a href="/blog/2016/03/25/spring-cloud-sleuth-rc1-deployed/">Spring Cloud Sleuth as a part of Brixton RC1</a> we have just released a version 1.0.4 of <a href="https://github.com/Codearte/accurest">AccuREST</a>. We&rsquo;ve fixed a couple
 of bugs but we&rsquo;ve introduced a couple of big features including:</p>
@@ -484,7 +484,7 @@ passing the Ivy notation (<code>groupId:artifactId</code>) or just the <code>art
 
 <h2>Running Stub Runner</h2>
 
-<p>In all the examples below let&rsquo;s assume that the stubs are stored in the Maven repository available under <code>http://toomuchcoding.com</code> URL. As <em>service2</em> I&rsquo;d like to download the stubs of <code>com.toomuchcoding:service3</code> and
+<p>In all the examples below let&rsquo;s assume that the stubs are stored in the Maven repository available under <code>https://toomuchcoding.com</code> URL. As <em>service2</em> I&rsquo;d like to download the stubs of <code>com.toomuchcoding:service3</code> and
 <code>com.toomuchcoding:service4</code> services.</p>
 
 <h3>Stub Runner as a fat JAR</h3>
@@ -520,9 +520,9 @@ passing the Ivy notation (<code>groupId:artifactId</code>) or just the <code>art
 
 <p>Then inside the <code>build/lib</code> there will be a fat JAR with classifier <code>fatJar</code> waiting for you to execute.</p>
 
-<p>Coming back to our example once the fat JAR is built I would just call the following command the retrieve the stubs of <em>service3</em> and <em>service4</em> from the Maven repository available at <code>http://toomuchcoding.com</code>.</p>
+<p>Coming back to our example once the fat JAR is built I would just call the following command the retrieve the stubs of <em>service3</em> and <em>service4</em> from the Maven repository available at <code>https://toomuchcoding.com</code>.</p>
 
-<pre><code>java -jar stub-runner-1.0.4-SNAPSHOT-fatJar.jar -sr http://toomuchcoding.com -s com.toomuchcoding:service3:stubs,com.toomuchcoding.service4
+<pre><code>java -jar stub-runner-1.0.4-SNAPSHOT-fatJar.jar -sr https://toomuchcoding.com -s com.toomuchcoding:service3:stubs,com.toomuchcoding.service4
 </code></pre>
 
 <h4>When to use it?</h4>
@@ -540,7 +540,7 @@ passing the Ivy notation (<code>groupId:artifactId</code>) or just the <code>art
 <pre><code class="groovy">class SomeSpec extends Specification {
 
   @ClassRule @Shared AccurestRule rule = new AccurestRule()
-      .repoRoot('http://toomuchcoding.com')
+      .repoRoot('https://toomuchcoding.com')
       .downloadStub("com.toomuchcoding", "service3")
       .downloadStub("com.toomuchcoding:service4")
 
@@ -565,7 +565,7 @@ passing the Ivy notation (<code>groupId:artifactId</code>) or just the <code>art
 <pre><code>public class SomeTest {
 
   @ClassRule public static AccurestRule rule = new AccurestRule()
-      .repoRoot("http://toomuchcoding.com")
+      .repoRoot("https://toomuchcoding.com")
       .downloadStub("com.toomuchcoding", "service3")
       .downloadStub("com.toomuchcoding:service4");
 
@@ -597,7 +597,7 @@ passing the Ivy notation (<code>groupId:artifactId</code>) or just the <code>art
 
 <p>Having the following <code>application.yaml</code> file:</p>
 
-<pre><code class="yml">stubrunner.stubs.repository.root: http://toomuchcoding.com
+<pre><code class="yml">stubrunner.stubs.repository.root: https://toomuchcoding.com
 stubrunner.stubs.ids: com.toomuchcoding:service3:stubs,com.toomuchcoding.service4
 </code></pre>
 
@@ -663,7 +663,7 @@ class SomeClass {
 
 <p>Having the following <code>application.yaml</code> file:</p>
 
-<pre><code class="yml">stubrunner.stubs.repository.root: http://toomuchcoding.com
+<pre><code class="yml">stubrunner.stubs.repository.root: https://toomuchcoding.com
 stubrunner.stubs.ids: com.toomuchcoding:service3:stubs,com.toomuchcoding.service4
 
 stubrunner.stubs.idsToServiceIds:

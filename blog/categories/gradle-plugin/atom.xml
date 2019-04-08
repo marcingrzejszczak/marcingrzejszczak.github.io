@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Gradle Plugin | TOO MUCH CODING]]></title>
-  <link href="http://toomuchcoding.com/blog/categories/gradle-plugin/atom.xml" rel="self"/>
-  <link href="http://toomuchcoding.com/"/>
-  <updated>2019-03-29T13:25:07+01:00</updated>
-  <id>http://toomuchcoding.com/</id>
+  <link href="https://toomuchcoding.com/blog/categories/gradle-plugin/atom.xml" rel="self"/>
+  <link href="https://toomuchcoding.com/"/>
+  <updated>2019-04-08T15:11:07+02:00</updated>
+  <id>https://toomuchcoding.com/</id>
   <author>
     <name><![CDATA[Marcin Grzejszczak]]></name>
     <email><![CDATA[blog@toomuchcoding.com]]></email>
@@ -15,10 +15,10 @@
   
   <entry>
     <title type="html"><![CDATA[UpToDate Gradle Plugin Migrated]]></title>
-    <link href="http://toomuchcoding.com/blog/2016/04/11/uptodate-gradle-plugin-migrated/"/>
+    <link href="https://toomuchcoding.com/blog/2016/04/11/uptodate-gradle-plugin-migrated/"/>
     <updated>2016-04-11T13:28:43+02:00</updated>
-    <id>http://toomuchcoding.com/blog/2016/04/11/uptodate-gradle-plugin-migrated</id>
-    <content type="html"><![CDATA[<p>Time for another release here at <a href="http://toomuchcoding.com">Too Much Coding blog</a>! This time it will be a short post :) I&rsquo;m happy to announce that the <a href="https://github.com/marcingrzejszczak/uptodate-gradle-plugin">UpToDate Gradle Plugin</a> has finally found a new home!</p>
+    <id>https://toomuchcoding.com/blog/2016/04/11/uptodate-gradle-plugin-migrated</id>
+    <content type="html"><![CDATA[<p>Time for another release here at <a href="https://toomuchcoding.com">Too Much Coding blog</a>! This time it will be a short post :) I&rsquo;m happy to announce that the <a href="https://github.com/marcingrzejszczak/uptodate-gradle-plugin">UpToDate Gradle Plugin</a> has finally found a new home!</p>
 
 <!-- more -->
 
