@@ -27,7 +27,7 @@
   talks: How to live in a post Spring-Cloud-Netflix world?
   countryCode: pl
   resources:
-    event: http://segfault.events/gdansk2019/
+    event: https://segfault.events/gdansk2019/
 
 - date: 2019.02.21
   eventName: IT Akademia JLabs
@@ -36,7 +36,7 @@
   talks: Consumer Driven Contracts  jako TDD na poziomie API
   countryCode: pl
   resources:
-    event: http://itakademia.j-labs.pl/
+    event: https://itakademia.j-labs.pl/
     media:
       - video: https://www.facebook.com/JlabsSoftwareSpecialists/videos/436667900206866/?hc_ref=ARRpp_n-5a3kpGStmb4s3tQ1-Y5W9N6-IER5CLh2FEVhHSprmKLSlVJRUs9jHkXaWXQ&__xts__[0]=68.ARDuO4GHmqNFHFpdEcF-VGIJlf3acHHjacf5_BzpEgIpp8sQ3LDOEUQTGewZOSkXnIdfJf0BAIXSkuaUv_yShNFRSpJ4_7O0omtX5Ck9gKgYRh3AnGBS7bSp9q97O73MeoOMqt3FZqFlQpObviQDlAqxi8ZIgSD5VEEn05uBz3sYl3nxO-a_0qipNWEMKt_BSGNrb2IM00MRQOlGyJWF15lzwMeD6pK_pt-5X9GrShS_EiarPi4D3-9twEQRqZZ4tGz4mPx1mHlGYvM3-KjrKWUUGkVe3lVfyJN88NQZU4gnHO-zT-yPw5MxlmqNhpHjJhDT3epS_vJql0iCQAEfppKEIR266Opklg&__tn__=FC-R
       - slides: https://drive.google.com/open?id=1DkgqtnnMyFliM0PUtJRSlW2pYbuVq1994dVuuW_lC9w
@@ -200,7 +200,7 @@
   countryCode: pl
   talks: Contract Tests in the Enterprise
   resources:
-    event: http://infoshare.pl
+    event: https://infoshare.pl
     media:
         - slides: https://docs.google.com/presentation/d/1IevIZBgNXTDAF7Wf4809Vp47i4J1XXVSGYhLkKyjUJg/edit?usp=sharing
 
@@ -214,7 +214,7 @@
     media:
         - slides: https://docs.google.com/presentation/d/1scPcn2UmxbZAoZA5cdGC6cHgvNTmhF0d9ExbQadEG9I/edit?usp=sharing
         - video: https://www.youtube.com/watch?v=G7XYlwHFLU8&feature=youtu.be
-    event: http://lodz2018.segfault.events/
+    event: https://lodz2018.segfault.events/
 
 - date: 2018.05.09
   eventName: Geecon 2018
@@ -370,7 +370,7 @@
   countryCode: pl
   talks: Consumer Driven Contracts and Your Microservice Architecture
   resources:
-    event: http://aadays.pl
+    event: https://aadays.pl
     media:
       - slides: https://www.slideshare.net/MarcinGrzejszczak/continuous-deployment-of-your-application-jsession5
       - video: https://www.youtube.com/watch?v=YoqSblR1nmI
@@ -404,7 +404,7 @@
   countryCode: pl
   talks: Consumer Driven Contracts and Your Microservice Architecture
   resources:
-    event: http://cfp.devoxx.pl/2017/index.html
+    event: https://cfp.devoxx.pl/2017/index.html
     media:
       - video: https://www.youtube.com/watch?v=IiK9A9nQ6NU&list=PLH21tc7N2sw0WUoamLp4UqTlKq-_xZgMB&index=23
 
@@ -418,7 +418,7 @@
     media:
         - slides: https://www.slideshare.net/MarcinGrzejszczak/continuous-deployment-to-the-cloud-devoxxpl-2017
         - video: https://www.youtube.com/watch?v=glhXS34umbw&list=PLH21tc7N2sw0WUoamLp4UqTlKq-_xZgMB&index=41
-    event: http://cfp.devoxx.pl/2017/index.html
+    event: https://cfp.devoxx.pl/2017/index.html
 
 - date: 2017.06.12
   eventName: "Allegro Tech Talks Poznan #5"
@@ -538,7 +538,7 @@
   countryCode: lv
   talks: Building Cloud Native microservices with Spring Cloud & Netflix OSS
   resources:
-    event: http://devternity.com
+    event: https://devternity.com
 
 - date: 2016.12.01
   eventName: DevTernity 2016
@@ -547,7 +547,7 @@
   countryCode: lv
   talks: TDD at the Architecture Level with Consumer-Driven Contracts
   resources:
-    event: http://devternity.com
+    event: https://devternity.com
     media:
         - video: https://www.youtube.com/watch?v=UuBfgiAjWWQ
 
@@ -558,7 +558,7 @@
   countryCode: pl
   talks: Consumer Driven Contracts and Your Microservice Architecture
   resources:
-    event: http://warszawa.jug.pl/#/meeting/189
+    event: https://warszawa.jug.pl/#/meeting/189
     media:
         - slides: https://www.slideshare.net/MarcinGrzejszczak/consumer-driven-contracts-and-your-microservice-architecture-warsaw-jug
           video: https://www.youtube.com/watch?time_continue=538&v=sAAklvxmPmk
@@ -584,7 +584,7 @@
   resources:
     event: https://2016.event.springoneplatform.io/schedule/sessions/
     media:
-        - slides: http://www.slideshare.net/SpringCentral/consumer-driven-contracts-and-your-microservice-architecture-64844061
+        - slides: https://www.slideshare.net/SpringCentral/consumer-driven-contracts-and-your-microservice-architecture-64844061
           video: https://www.youtube.com/watch?v=YnGssIG4nMQ&list=PLAdzTan_eSPQ1fuLSBhyB4eEZF7JQM0Mx&index=138
           name: Contracts
 
@@ -598,7 +598,7 @@
   resources:
     event: https://2016.event.springoneplatform.io/schedule/sessions/
     media:
-        - slides: http://www.slideshare.net/SpringCentral/implementing-microservices-tracing-with-spring-cloud-and-zipkin
+        - slides: https://www.slideshare.net/SpringCentral/implementing-microservices-tracing-with-spring-cloud-and-zipkin
           video: https://www.youtube.com/watch?v=vpFL4MZ0jlI&list=PLAdzTan_eSPQ1fuLSBhyB4eEZF7JQM0Mx&index=139
           name: Tracing
 
@@ -609,7 +609,7 @@
   countryCode: pl
   talks: Microservices Tracing with Spring Cloud and Zipkin
   resources:
-    event: http://devoxx.pl/
+    event: https://devoxx.pl/
     media:
         - slides: https://www.slideshare.net/MarcinGrzejszczak/microservices-tracing-with-spring-cloud-and-zipkin-devoxx
           video: https://www.youtube.com/watch?v=eQV71Mw1u1c
@@ -622,7 +622,7 @@
   countryCode: pl
   talks: Microservices Tracing with Spring Cloud and Zipkin
   resources:
-    event: http://warszawa.jug.pl/#/meeting/182
+    event: https://warszawa.jug.pl/#/meeting/182
     media:
         - video: https://www.youtube.com/watch?v=CM2y8K-sCWg&t=93s
 
@@ -659,7 +659,7 @@
   countryCode: es
   talks: Spring Cloud's Groovy
   resources:
-    event: http://greachconf.com/speakers/marcin-grzejszczak-spring-cloud-s-groovy/
+    event: https://greachconf.com/speakers/marcin-grzejszczak-spring-cloud-s-groovy/
     media:
         - slides: https://www.slideshare.net/MarcinGrzejszczak/spring-clouds-groovy
           video: https://www.youtube.com/watch?v=ioacZuzGwKU
@@ -672,7 +672,7 @@
   countryCode: pl
   talks: Spring Cloud's Groovy
   resources:
-    event: http://gr8days.github.io/warsaw-2016/#/talk/340
+    event: https://gr8days.github.io/warsaw-2016/#/talk/340
     media:
         - slides: https://www.slideshare.net/MarcinGrzejszczak/spring-clouds-groovy
           video: https://www.youtube.com/watch?v=ioacZuzGwKU
@@ -685,7 +685,7 @@
   countryCode: lv
   talks: Microservices - enough with theory, let's code some
   resources:
-    event: http://devternity.com
+    event: https://devternity.com
     media:
         - slides: https://www.slideshare.net/MarcinGrzejszczak/spring-clouds-groovy
           video: https://www.youtube.com/watch?v=WoyU2LmmyVQ&index=8&list=PLZQDTUIhS27DiqLxmgs80R52QfX6MQ1Ik
@@ -713,7 +713,7 @@
   resources:
     event: https://2015.geecon.cz
     media:
-        - slides: http://www.slideshare.net/MarcinGrzejszczak/microservices-enough-with-theory-lets-do-some-code-geecon-prague-2015
+        - slides: https://www.slideshare.net/MarcinGrzejszczak/microservices-enough-with-theory-lets-do-some-code-geecon-prague-2015
           video: https://vimeo.com/146251928
 
 
@@ -724,7 +724,7 @@
   countryCode: lt
   talks: Microservices - enough with theory, let's code some
   resources:
-    event: http://voxxeddays.com/vilnius15/
+    event: https://voxxeddays.com/vilnius15/
     media:
         - slides: https://www.slideshare.net/szimano/microservices-voxxed-vilnus-2015
 
@@ -743,9 +743,9 @@
   countryCode: pl
   talks: Microservices - enough with theory, let's code some
   resources:
-    event: http://2015.microservices.geecon.org/
+    event: https://2015.microservices.geecon.org/
     media:
-        - slides: http://www.slideshare.net/MarcinGrzejszczak/microservices-enough-with-theory-lets-do-some-code-geecon-prague-2015
+        - slides: https://www.slideshare.net/MarcinGrzejszczak/microservices-enough-with-theory-lets-do-some-code-geecon-prague-2015
 
 
 - date: 2015.09.08
@@ -755,7 +755,7 @@
   countryCode: pl
   talks: Microservices - enough with theory, let's code some
   resources:
-      event: http://warszawa.jug.pl/#/meeting/165
+      event: https://warszawa.jug.pl/#/meeting/165
       media:
           - video: https://www.youtube.com/watch?v=L7zrYHXSCKM
 
@@ -767,7 +767,7 @@
   countryCode: pl
   talks: Microservices - enough with theory, let's code some
   resources:
-      event: http://codepot.pl/
+      event: https://codepot.pl/
 
 
 - date: 2015.07.04
@@ -777,7 +777,7 @@
   countryCode: pl
   talks: Stick to the rules! Consumer Driven Contracts
   resources:
-      event: http://2015.confitura.pl/
+      event: https://2015.confitura.pl/
 
 
 - date: 2015.06.22
@@ -787,7 +787,7 @@
   countryCode: pl
   talks: Microservices - enough with theory, let's code some
   resources:
-      event: http://devoxx.pl/
+      event: https://devoxx.pl/
       media:
           - video: https://www.youtube.com/watch?v=cJzqkDIZ2oM&t=2422s&list=PLklQqdqnBkPh4vfnOjYyOtOrmtNr2eb2j&index=22
 
@@ -807,7 +807,7 @@
   countryCode: pl
   talks: Do you think you're doing microservices?
   resources:
-      event: http://atmosphere.org.pl/2015/05/
+      event: https://atmosphere.org.pl/2015/05/
       media:
           - video: https://www.youtube.com/watch?v=rWz74iLSxZs&index=30&list=PLnKL6-WWWE_Wr7LLzRhCVxvNYBeRhwa6k
 
@@ -819,7 +819,7 @@
   countryCode: pl
   talks: Stick to the rules! Consumer Driven Contracts
   resources:
-      event: http://2015.geecon.org
+      event: https://2015.geecon.org
       media:
           - video: https://vimeo.com/130779882
 
@@ -831,7 +831,7 @@
   countryCode: pl
   talks: Stick to the rules - Consumer Driven Contracts
   resources:
-      event: http://2015.4developers.org.pl/en/
+      event: https://2015.4developers.org.pl/en/
       media:
           - video: https://www.youtube.com/watch?v=JEoiIAuiTlI
 
@@ -865,7 +865,7 @@
   countryCode: pl
   talks: Microservices
   resources:
-      event: http://www.juglodz.pl/opis_spotkan/2014-12-04mikroserwisy
+      event: https://www.juglodz.pl/opis_spotkan/2014-12-04mikroserwisy
 
 
 - date: 2014.08.26
@@ -875,7 +875,7 @@
   countryCode: pl
   talks: Microservices
   resources:
-      event: http://warsjawa.pl/
+      event: https://warsjawa.pl/
 
 
 - date: 2014.08.08

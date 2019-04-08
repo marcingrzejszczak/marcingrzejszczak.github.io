@@ -14,7 +14,7 @@ Currently at the Spring Team we're polishing our libraries for the upcoming fina
 
 Today's post will be about the new stuff that you will be able to profit from in the upcoming `1.1.0` release of Accurest. Also you can profit from most of these features in the `1.1.0.M3` release.
 
-I'll just quickly go through the features but note that you can read about all of them in more depth in our [documentation ](http://codearte.github.io/accurest).
+I'll just quickly go through the features but note that you can read about all of them in more depth in our [documentation ](https://codearte.github.io/accurest).
 
 <!-- more -->
 
@@ -39,7 +39,7 @@ There are 3 use cases from the message `Producer`'s point of view.
 - someone sends a message to destination (queue/topic), I'm listening to that message and will produce an output message somewhere else
 - someone sends a message to destination (queue/topic), I'm listening to that message and will consume it without any message sending
 
-Here you can see examples of contracts for those three situations (you can read more about it in the  [docs](http://codearte.github.io/accurest/#messaging-top-level-elements) ):
+Here you can see examples of contracts for those three situations (you can read more about it in the  [docs](https://codearte.github.io/accurest/#messaging-top-level-elements) ):
 
 #### Output triggered by a method
 
@@ -155,7 +155,7 @@ we're checking if that message has proper headers and body.
 
 ### Consumer side
 
-It's enough to provide the dependency to proper Stub Runner module (check the next section for more information) and tell it which stubs should be downloaded. Yup, that's it! [Stub Runner will download the stubs and prepare stubbed routes](http://codearte.github.io/accurest/#stub-runner-for-messaging).
+It's enough to provide the dependency to proper Stub Runner module (check the next section for more information) and tell it which stubs should be downloaded. Yup, that's it! [Stub Runner will download the stubs and prepare stubbed routes](https://codearte.github.io/accurest/#stub-runner-for-messaging).
 
 Sometimes you'll need to trigger a message somehow in your tests. That's why we've provided the `StubTrigger` interface that you can inject! If you're already familiar with Stub Runner Spring then you could use the `StubFinder` bean to find the URL of your dependency. Now `StubFinder` also extends the `StubTrigger` interface thus you don't have to inject any additional beans in your tests.
 
@@ -210,14 +210,14 @@ Your generated tests should just work.
 
 ## Stub Runner Boot
 
-I've added a new module of [Stub Runner](http://codearte.github.io/accurest/#stub-runner-boot) that operates on Spring Boot. Assuming that you're using Spring Cloud Stream you can create a project that has 2 dependencies:
+I've added a new module of [Stub Runner](https://codearte.github.io/accurest/#stub-runner-boot) that operates on Spring Boot. Assuming that you're using Spring Cloud Stream you can create a project that has 2 dependencies:
 
 ```
 compile "io.codearte.accurest:stub-runner-boot:${accurestVersion}"
 compile "io.codearte.accurest:stub-runner-messaging-stream:${accurestVersion}"
 ```
 
-Now if you pass the proper [Stub Runner Spring configuration](http://codearte.github.io/accurest/#common-properties-for-junit-and-spring) e.g.:
+Now if you pass the proper [Stub Runner Spring configuration](https://codearte.github.io/accurest/#common-properties-for-junit-and-spring) e.g.:
 
 ```
 stubrunner.stubs.ids: io.codearte.accurest.stubs:streamService
@@ -230,15 +230,15 @@ You will have a running app that exposes HTTP endpoints to
 
 ## Accurest Maven Plugin
 
-Mariusz Smykuła has done a fantastic job by adding the [Accurest Maven Plugin](http://codearte.github.io/accurest-maven-plugin/). Now you can add Accurest to your project that runs with Maven. But that's not all since the Maven Plugin allows you to run the Accurest stubs using the `accurest:run` command!
+Mariusz Smykuła has done a fantastic job by adding the [Accurest Maven Plugin](https://codearte.github.io/accurest-maven-plugin/). Now you can add Accurest to your project that runs with Maven. But that's not all since the Maven Plugin allows you to run the Accurest stubs using the `accurest:run` command!
 
-Read the [docs](http://codearte.github.io/accurest-maven-plugin/) to know more!
+Read the [docs](https://codearte.github.io/accurest-maven-plugin/) to know more!
 
 ## Stub Runner changes
 
 ### Messaging
 
-With messaging coming as a feature I've added a bunch of messaging modules. You can read more about the [Stub Runner messaging modules here](http://codearte.github.io/accurest/#stub-runner-for-messaging)
+With messaging coming as a feature I've added a bunch of messaging modules. You can read more about the [Stub Runner messaging modules here](https://codearte.github.io/accurest/#stub-runner-for-messaging)
 
 ### Fixed ports and versions of stubs
 
@@ -289,8 +289,8 @@ When using the AccurestRule you can add a stub to download and then pass the por
 You can see that for this example the following test is valid:
 
 ```
-then(rule.findStubUrl("loanIssuance")).isEqualTo(URI.create("http://localhost:12345").toURL());
-then(rule.findStubUrl("fraudDetectionServer")).isEqualTo(URI.create("http://localhost:12346").toURL());
+then(rule.findStubUrl("loanIssuance")).isEqualTo(URI.create("https://localhost:12345").toURL());
+then(rule.findStubUrl("fraudDetectionServer")).isEqualTo(URI.create("https://localhost:12346").toURL());
 ```
 
 ## Technical changes
@@ -316,8 +316,8 @@ We had some problems with explicit and transitive dependencies that got fixed. T
 ### Links
 
 - [Accurest Github Repository](https://github.com/Codearte/accurest)
-- [Accurest Documentation](http://codearte.github.io/accurest)
-- [Stub Runner Documentation](http://codearte.github.io/accurest/#stub-runner)
-- [Stub Runner Messaging Documentation](http://codearte.github.io/accurest/#stub-runner-for-messaging)
+- [Accurest Documentation](https://codearte.github.io/accurest)
+- [Stub Runner Documentation](https://codearte.github.io/accurest/#stub-runner)
+- [Stub Runner Messaging Documentation](https://codearte.github.io/accurest/#stub-runner-for-messaging)
 - [Accurest Gitter](https://gitter.im/Codearte/accurest)
 - [Accurest Maven Plugin](https://github.com/Codearte/accurest-maven-plugin)

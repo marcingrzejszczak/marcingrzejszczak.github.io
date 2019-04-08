@@ -1,5 +1,5 @@
 # Title: Render Partial Tag for Jekyll
-# Author: Brandon Mathis http://brandonmathis.com
+# Author: Brandon Mathis https://brandonmathis.com
 # Description: Import files on your filesystem into any blog post and render them inline.
 # Note: Paths are relative to the source directory, if you import a file with yaml front matter, the yaml will be stripped out.
 #

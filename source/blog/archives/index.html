@@ -5,7 +5,7 @@ title: Blog Archive
 footer: false
 ---
 
-<div id="blog-archives" itemscope itemtype="http://schema.org/Blog">
+<div id="blog-archives" itemscope itemtype="https://schema.org/Blog">
 <meta itemprop="name" content="{{site.title}}" />
 {% if site.description %}<meta itemprop="description" content="{{site.description}}" />{% endif %}
 <meta itemprop="url" content="{{site.url}}" />
@@ -15,7 +15,7 @@ footer: false
   {% assign year = this_year %}
   <h2 class="year">{{ year }}</h2>
 {% endunless %}
-<article class="page-header" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+<article class="page-header" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   {% include archive_post.html %}
 </article>
 {% endfor %}

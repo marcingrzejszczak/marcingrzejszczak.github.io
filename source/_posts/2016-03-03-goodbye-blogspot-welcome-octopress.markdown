@@ -7,7 +7,7 @@ categories: Octopress
 ---
 
 I'm more than happy to announce that I've finally migrated from Blogspot to a decent
-blogging technology - Octopress! Thanks to [Tomek Dziurko](http://tomaszdziurko.pl/) who
+blogging technology - Octopress! Thanks to [Tomek Dziurko](https://tomaszdziurko.pl/) who
 was the one that suggested to choose that technology.
 
 Also as you can see I've finally bought a domain for the *Too Much Coding blog* which is
@@ -19,5 +19,5 @@ Even though initially I had some doubts about choosing Octopress I have to admit
 it seems like an awesome technology and you should definitely give it a try!
 
 P.S.
-We're looking for sponsors for the upcoming [Warsaw GR8 Day Conference](http://warsaw.gr8days.pl) (19.03.2016).
+We're looking for sponsors for the upcoming [Warsaw GR8 Day Conference](https://warsaw.gr8days.pl) (19.03.2016).
 Over 60 people have already registered! Contact us to be a part of this gr8 event!

@@ -29,15 +29,15 @@ I've given quite a few talks about the library called [Micro-Infra-Spring](https
 
 *Stub Runner* is tightly coupled with the concepts coming from AccuREST. For more information about AccuREST you can check my [blog entries](/blog/categories/accurest/) or check [AccuREST project on Github](https://github.com/Codearte/accurest). If you don't have a clue what that is I'll try to do a very fast recap.
 
-AccuREST is a [Consumer Driven Contracts](http://martinfowler.com/articles/consumerDrivenContracts.html) verifier in which you define the contract of your API via a Groovy DSL. From that DSL, on the server side, tests are created to check if your contract is telling the truth. From the *Stub Runner's* perspective more interesting is the client side. For the client side AccuREST generates WireMock stubs from the provided DSL so that the clients of that API can be provided with reliable stubs.
+AccuREST is a [Consumer Driven Contracts](https://martinfowler.com/articles/consumerDrivenContracts.html) verifier in which you define the contract of your API via a Groovy DSL. From that DSL, on the server side, tests are created to check if your contract is telling the truth. From the *Stub Runner's* perspective more interesting is the client side. For the client side AccuREST generates WireMock stubs from the provided DSL so that the clients of that API can be provided with reliable stubs.
 
 ## What is Stub Runner?
 
-Now that we remember what AccuREST does we can take a look in more depth at *Stub Runner*. Let's assume that we have a following flow of services (btw. [this is a screenshot from Zipkin integrated with Spring Cloud Sleuth](http://cloud.spring.io/spring-cloud-sleuth/spring-cloud-sleuth.html) )
+Now that we remember what AccuREST does we can take a look in more depth at *Stub Runner*. Let's assume that we have a following flow of services (btw. [this is a screenshot from Zipkin integrated with Spring Cloud Sleuth](https://cloud.spring.io/spring-cloud-sleuth/spring-cloud-sleuth.html) )
 
 ![Dependencies](/images/accurest/stubrunner/dependencies_accurest.png)
 
-Let's imagine ourselves as developers of the _service2_ - the one that calls _service3_ and _service4_. Since we're doing the CDC ([Consumer Driven Contracts](http://martinfowler.com/articles/consumerDrivenContracts.html)) approach let's assume that the stubs of _service3_ and _service4_ got already deployed to some Maven repository.
+Let's imagine ourselves as developers of the _service2_ - the one that calls _service3_ and _service4_. Since we're doing the CDC ([Consumer Driven Contracts](https://martinfowler.com/articles/consumerDrivenContracts.html)) approach let's assume that the stubs of _service3_ and _service4_ got already deployed to some Maven repository.
 
 If I'm writing integration tests of _service2_ I'll for sure have some points of interaction with _service3_ and _service4_. Most likely in the majority of cases I'll just mock those interactions in my code but it would be valuable to have a real HTTP call done to the other application. Of course I don't want to download both services and run them only for integration tests - that would be an overkill. That's why the most preferable solution at this point would be to run the stubs of my collaborators.
 
@@ -153,7 +153,7 @@ In all the examples below let's assume that the stubs are stored in the Maven re
                                   jars with stubs. Eg. groupid:artifactid1,group
                                   id2:artifactid2:classifier
  -sr (--stubRepositoryRoot) VAL : Location of a Jar containing server where you
-                                  keep your stubs (e.g. http://nexus.net/content
+                                  keep your stubs (e.g. https://nexus.net/content
                                   /repositories/repository)
  -ss (--stubsSuffix) VAL        : Suffix for the jar containing stubs (e.g.
                                   'stubs' if the stub jar would have a 'stubs'
@@ -179,7 +179,7 @@ java -jar stub-runner-1.0.4-SNAPSHOT-fatJar.jar -sr https://toomuchcoding.com -s
 ```
 #### When to use it?
 
-Running *Stub Runner* as a main class makes most sense when you're running some fast smoke tests on a deployed application where you don't want to download and run all the collaborators of that application. For more rationale behind such an approach you can check my article about [Microservice Deployment](/blog/2015/09/27/microservice-deployment/)
+Running *Stub Runner* as a main class makes most sense when you're running some fast smoke tests on a deployed application where you don't want to download and run all the collaborators of that application. For more rationale behind such an approach you can check my article about [Microservice Deployment](/blog/2015/09/26/microservice-deployment/)
 
 ### Stub Runner JUnit Rule
 
@@ -306,8 +306,8 @@ class SomeClass {
 
   void doSth() {
     // code...
-    String service3Response = restTemplate.getForObject('http://service3/name', String)
-    String service4Response = restTemplate.getForObject('http://shouldMapThisNameToService4/name', String)
+    String service3Response = restTemplate.getForObject('https://service3/name', String)
+    String service4Response = restTemplate.getForObject('https://shouldMapThisNameToService4/name', String)
     // more code...
   }
 
@@ -359,7 +359,7 @@ When you're using Spring Cloud. You can profit from `Stub Runner Spring Cloud` a
 You can set the default value of the Maven repository by means of a system property:
 
 ```
--Dstubrunner.stubs.repository.root=http://your.maven.repo.com
+-Dstubrunner.stubs.repository.root=https://your.maven.repo.com
 ```
 
 The list of configurable properties contains:

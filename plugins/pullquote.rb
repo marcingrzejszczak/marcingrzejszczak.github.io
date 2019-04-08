@@ -1,6 +1,6 @@
 #
 # Author: Brandon Mathis
-# Based on the semantic pullquote technique by Maykel Loomans at http://miekd.com/articles/pull-quotes-with-html5-and-css/
+# Based on the semantic pullquote technique by Maykel Loomans at https://miekd.com/articles/pull-quotes-with-html5-and-css/
 #
 # Outputs a span with a data-pullquote attribute set from the marked pullquote. Example:
 #

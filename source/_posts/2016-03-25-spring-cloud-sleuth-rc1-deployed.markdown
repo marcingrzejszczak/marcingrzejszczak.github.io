@@ -11,7 +11,7 @@ categories:
 On the 24.03.2016 we've managed to move our [release train called Brixton to the next station: RC1](https://spring.io/blog/2016/03/24/spring-cloud-brixton-rc1-is-now-available).
 I'm really happy about this cause it cost us a lot of energy but it was worth it!
 
-I'm recently mostly focusing on the [Spring Cloud Sleuth project](http://cloud.spring.io/spring-cloud-sleuth/spring-cloud-sleuth.html) and actually quite gigantic changes happened there since the M5 release. In this short post I'll show you the rationale and describe briefly the features related to span naming and customizations related to span propagation.
+I'm recently mostly focusing on the [Spring Cloud Sleuth project](https://cloud.spring.io/spring-cloud-sleuth/spring-cloud-sleuth.html) and actually quite gigantic changes happened there since the M5 release. In this short post I'll show you the rationale and describe briefly the features related to span naming and customizations related to span propagation.
 
 <!-- more -->
 
@@ -19,11 +19,11 @@ I'm recently mostly focusing on the [Spring Cloud Sleuth project](http://cloud.s
 
 For those who don't know what Spring Cloud Sleuth is - it's a library that implements a distributed tracing solution for Spring Cloud. You can check its code at [Github](https://github.com/spring-cloud/spring-cloud-sleuth).
 
-We're also trying to be aligned with the concepts, terminology and approaches present in the [OpenTracing Project](http://opentracing.io/).
+We're also trying to be aligned with the concepts, terminology and approaches present in the [OpenTracing Project](https://opentracing.io/).
 
 ## Distributed tracing terminology
 
-I'll quote the [documentation](http://cloud.spring.io/spring-cloud-sleuth/spring-cloud-sleuth.html) to present some of the basic concepts of distributed tracing.
+I'll quote the [documentation](https://cloud.spring.io/spring-cloud-sleuth/spring-cloud-sleuth.html) to present some of the basic concepts of distributed tracing.
 
 > *Span*: The basic unit of work. For example, sending an RPC is a new span, as is sending a response to an RPC. Span’s are identified by a unique 64-bit ID for the span and another 64-bit ID for the trace the span is a part of. Spans also have other data, such as descriptions, timestamped events, key-value annotations (tags), the ID of the span that caused them, and process ID’s (normally IP address).
 >
@@ -183,6 +183,6 @@ Again note that we're considering that the values are Zipkin compatible (64bit v
 
 ## Summary
 
-In this very short post you could see two quite big features available in the RC1 release. You can check [Spring Cloud Sleuth documentation](http://cloud.spring.io/spring-cloud-sleuth/spring-cloud-sleuth.html) for more information about the integrations and configurations of Sleuth. Actually you can check all the things that have changed in the RC1 release by checking the [closed issues](https://github.com/spring-cloud/spring-cloud-sleuth/issues?q=is%3Aissue+is%3Aclosed+milestone%3A1.0.0.RC1) and [merged PRs](https://github.com/spring-cloud/spring-cloud-sleuth/pulls?q=is%3Apr+milestone%3A1.0.0.RC1+is%3Aclosed).
+In this very short post you could see two quite big features available in the RC1 release. You can check [Spring Cloud Sleuth documentation](https://cloud.spring.io/spring-cloud-sleuth/spring-cloud-sleuth.html) for more information about the integrations and configurations of Sleuth. Actually you can check all the things that have changed in the RC1 release by checking the [closed issues](https://github.com/spring-cloud/spring-cloud-sleuth/issues?q=is%3Aissue+is%3Aclosed+milestone%3A1.0.0.RC1) and [merged PRs](https://github.com/spring-cloud/spring-cloud-sleuth/pulls?q=is%3Apr+milestone%3A1.0.0.RC1+is%3Aclosed).
 
 In case of any questions do not hesitate to ping us on the [Gitter channel](https://gitter.im/spring-cloud/spring-cloud-sleuth) or [file an issue on Github](https://github.com/spring-cloud/spring-cloud-sleuth/issues).

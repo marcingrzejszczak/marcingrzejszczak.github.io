@@ -17,7 +17,7 @@ https://spring.io/blog/2016/09/23/spring-cloud-contract-1-0-0-release-is-availab
 
 I'm really happy that the project is GA. Even though as the Accurest project we had already done a GA release, it really feels that a lot of effort was put in order to release the GA version under the Pivotal's Spring Cloud branding. Let's look at some numbers:
 
-- first commit almost 2 years ago: [2014-12-06 18:20:29 by Jakub Kubrynski](https://github.com/spring-cloud/spring-cloud-contract/commit/dfaddaa98d645b818ba3947c9267ef7ac8ed9ba4) - thanks to [Codearte](http://codearte.eu) the authors of [DevSkiller](http://devskiller.com) for their support!!!
+- first commit almost 2 years ago: [2014-12-06 18:20:29 by Jakub Kubrynski](https://github.com/spring-cloud/spring-cloud-contract/commit/dfaddaa98d645b818ba3947c9267ef7ac8ed9ba4) - thanks to [Codearte](https://codearte.eu) the authors of [DevSkiller](https://devskiller.com) for their support!!!
 - [1.152 commits](https://github.com/spring-cloud/spring-cloud-contract/commits/master)
 - [20 contributors](https://github.com/spring-cloud/spring-cloud-contract/graphs/contributors)
 
@@ -32,12 +32,12 @@ Like I mentioned, Accurest was already GA. So what are the main difference apart
 - we've moved from Grapes to Aether to download stubs
 - [we generate fake data when you provide either consumer or producer in the DSL](https://cloud.spring.io/spring-cloud-contract/spring-cloud-contract.html#_what_is_this_value_consumer_producer)
 - [Consumer Contract approach is there](https://cloud.spring.io/spring-cloud-contract/spring-cloud-contract.html#_common_repo_with_contracts)
-- Spring Cloud Contract is available on [start.spring.io](http://start.spring.io)
+- Spring Cloud Contract is available on [start.spring.io](https://start.spring.io)
 - [you can have more than one base class for your tests](https://cloud.spring.io/spring-cloud-contract/spring-cloud-contract.html#_different_base_classes_for_contracts_2)
 - [Spring Cloud Stub Runner Boot can register stubs in Eureka / Consul / Zookeeper using Spring Cloud](https://cloud.spring.io/spring-cloud-contract/spring-cloud-contract.html#_additional_configuration)
 - the whole build was moved from Gradle to the standard Spring Cloud Maven setup
 
-These are the Spring Cloud Contract Verifier changes. Apart from that Spring Cloud Contract consists of [Spring Cloud Contract WireMock support](https://cloud.spring.io/spring-cloud-contract/spring-cloud-contract.html#_spring_cloud_contract_wiremock) and [Spring Cloud Contract RestDocs](https://cloud.spring.io/spring-cloud-contract/spring-cloud-contract.html#_generating_stubs_using_restdocs). Thanks to the first one the integration with [WireMock](http://wiremock.org) is much more efficient and thanks to the latter you don't have to use the Groovy DSL - you can define your stubs by yourself by attaching them to an existing RestDocs test.
+These are the Spring Cloud Contract Verifier changes. Apart from that Spring Cloud Contract consists of [Spring Cloud Contract WireMock support](https://cloud.spring.io/spring-cloud-contract/spring-cloud-contract.html#_spring_cloud_contract_wiremock) and [Spring Cloud Contract RestDocs](https://cloud.spring.io/spring-cloud-contract/spring-cloud-contract.html#_generating_stubs_using_restdocs). Thanks to the first one the integration with [WireMock](https://wiremock.org) is much more efficient and thanks to the latter you don't have to use the Groovy DSL - you can define your stubs by yourself by attaching them to an existing RestDocs test.
 
 As far as Spring Cloud Contract Verifier is concerned the biggest two changes are the [Consumer Contract support](https://cloud.spring.io/spring-cloud-contract/spring-cloud-contract.html#_common_repo_with_contracts) and that [you can have more than one base class for your tests](https://cloud.spring.io/spring-cloud-contract/spring-cloud-contract.html#_different_base_classes_for_contracts_2). Let's take a closer look what's there in the docs about them...
 
@@ -73,8 +73,8 @@ Example of a `pom.xml` inside the `server` folder.
 
 ```
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="https://maven.apache.org/POM/4.0.0" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="https://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.example</groupId>
@@ -187,8 +187,8 @@ The `pom.xml` in the root folder can look like this:
 
 ```
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="https://maven.apache.org/POM/4.0.0" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="https://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.example.standalone</groupId>
@@ -232,9 +232,9 @@ The `pom.xml` in the root folder can look like this:
 It’s using the assembly plugin in order to build the JAR with all the contracts. Example of such setup is here:
 
 ```
-<assembly xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.3"
-		  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-		  xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.3 http://maven.apache.org/xsd/assembly-1.1.3.xsd">
+<assembly xmlns="https://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.3"
+		  xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
+		  xsi:schemaLocation="https://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.3 https://maven.apache.org/xsd/assembly-1.1.3.xsd">
 	<id>project</id>
 	<formats>
 		<format>jar</format>
@@ -276,7 +276,7 @@ As a producer it’s enough to alter the Spring Cloud Contract Verifier to provi
 	<groupId>org.springframework.cloud</groupId>
 	<artifactId>spring-cloud-contract-maven-plugin</artifactId>
 	<configuration>
-		<contractsRepositoryUrl>http://link/to/your/nexus/or/artifactory/or/sth</contractsRepositoryUrl>
+		<contractsRepositoryUrl>https://link/to/your/nexus/or/artifactory/or/sth</contractsRepositoryUrl>
 		<contractDependency>
 			<groupId>com.example.standalone</groupId>
 			<artifactId>contracts</artifactId>
@@ -285,7 +285,7 @@ As a producer it’s enough to alter the Spring Cloud Contract Verifier to provi
 </plugin>
 ```
 
-With this setup the JAR with groupid `com.example.standalone` and artifactid contracts will be downloaded from `http://link/to/your/nexus/or/artifactory/or/sth`. It will be then unpacked in a local temporary folder and contracts present under the `com/example/server` will be picked as the ones used to generate the tests and the stubs. Due to this convention the producer team will know which consumer teams will be broken when some incompatible changes are done.
+With this setup the JAR with groupid `com.example.standalone` and artifactid contracts will be downloaded from `https://link/to/your/nexus/or/artifactory/or/sth`. It will be then unpacked in a local temporary folder and contracts present under the `com/example/server` will be picked as the ones used to generate the tests and the stubs. Due to this convention the producer team will know which consumer teams will be broken when some incompatible changes are done.
 
 The rest of the flow looks the same.
 

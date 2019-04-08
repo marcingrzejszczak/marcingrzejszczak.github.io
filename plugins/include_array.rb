@@ -1,5 +1,5 @@
 # Title: Include Array Tag for Jekyll
-# Author: Jason Woodward http://www.woodwardjd.com
+# Author: Jason Woodward https://www.woodwardjd.com
 # Description: Import files on your filesystem as specified in a configuration variable in _config.yml.  Mostly cribbed from Jekyll's include tag.
 # Syntax: {% include_array variable_name_from_config.yml %}
 #

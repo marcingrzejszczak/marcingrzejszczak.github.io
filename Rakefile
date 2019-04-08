@@ -391,9 +391,9 @@ end
 def blog_url(user, project, source_dir)
   cname = "#{source_dir}/CNAME"
   url = if File.exists?(cname)
-    "http://#{IO.read(cname).strip}"
+    "https://#{IO.read(cname).strip}"
   else
-    "http://#{user.downcase}.github.io"
+    "https://#{user.downcase}.github.io"
   end
   url += "/#{project}" unless project == ''
   url

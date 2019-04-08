@@ -1,15 +1,15 @@
 # Title: Simple Video tag for Jekyll
-# Author: Brandon Mathis http://brandonmathis.com
+# Author: Brandon Mathis https://brandonmathis.com
 # Description: Easily output MPEG4 HTML5 video with a flash backup.
 #
 # Syntax {% video url/to/video [width height] [url/to/poster] %}
 #
 # Example:
-# {% video http://site.com/video.mp4 720 480 http://site.com/poster-frame.jpg %}
+# {% video https://site.com/video.mp4 720 480 https://site.com/poster-frame.jpg %}
 #
 # Output:
-# <video width='720' height='480' preload='none' controls poster='http://site.com/poster-frame.jpg'>
-#   <source src='http://site.com/video.mp4' type='video/mp4; codecs=\"avc1.42E01E, mp4a.40.2\"'/>
+# <video width='720' height='480' preload='none' controls poster='https://site.com/poster-frame.jpg'>
+#   <source src='https://site.com/video.mp4' type='video/mp4; codecs=\"avc1.42E01E, mp4a.40.2\"'/>
 # </video>
 #
 
