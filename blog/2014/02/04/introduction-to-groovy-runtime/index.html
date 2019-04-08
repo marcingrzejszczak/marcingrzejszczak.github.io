@@ -8,7 +8,7 @@
   
   
 
-  <!-- http://t.co/dKP3o1e -->
+  <!-- https://t.co/dKP3o1e -->
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -18,7 +18,7 @@
   <link href="/favicon.png" type="image/png" rel="icon">
   <link href="/atom.xml" rel="alternate" title="TOO MUCH CODING" type="application/atom+xml">
 
-  <!-- http://opengraphprotocol.org/ -->
+  <!-- https://opengraphprotocol.org/ -->
   <meta name="twitter:card" content="summary_large_image">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://toomuchcoding.com/blog/2014/02/04/introduction-to-groovy-runtime/">
@@ -103,11 +103,11 @@
       <div id="main" role="main" class="container">
         <div id="content">
           <div class="row">
-  <div class="page-content col-md-9" itemscope itemtype="http://schema.org/Blog">
+  <div class="page-content col-md-9" itemscope itemtype="https://schema.org/Blog">
     <meta itemprop="name" content="TOO MUCH CODING" />
     <meta itemprop="description" content="A blog for coding addicts about Java, Groovy, Buzzword, Spring, Microservices, Buzzword" />
     <meta itemprop="url" content="https://toomuchcoding.com" />
-    <article class="hentry" role="article" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+    <article class="hentry" role="article" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
       
   <header class="page-header">
     
@@ -142,9 +142,9 @@
 
 
 <div class="entry-content clearfix" itemprop="articleBody description"><div class='post'>
-Hi!<br /><br />I'm very happy to share my presentation regarding <b><i>Groovy metaprogramming and AST transforms</i></b>. The slides are available at <a href="http://www.slideshare.net/MarcinGrzejszczak/introduction-to-groovy-runtime-metaprogramming-and-ast-transforms">SlideShare</a>&nbsp;and the code is available at <a href="https://bitbucket.org/gregorin1987/too-much-coding/src/e5ab7c69ab7b2796075fd6f087fbf31346aa2d2b/Groovy/ast/?at=default">TooMuchCoding Bitbucket</a>&nbsp;and <a href="https://github.com/marcingrzejszczak/too-much-coding/tree/master/Groovy/ast">TooMuchCoding Github</a> repositories. If you have any problems with reading any part of the slides or sth just post a comment here and I'll tr to help you :)<br /><br />Enjoy!<br /><br /><br /><a name='more'></a>
+Hi!<br /><br />I'm very happy to share my presentation regarding <b><i>Groovy metaprogramming and AST transforms</i></b>. The slides are available at <a href="https://www.slideshare.net/MarcinGrzejszczak/introduction-to-groovy-runtime-metaprogramming-and-ast-transforms">SlideShare</a>&nbsp;and the code is available at <a href="https://bitbucket.org/gregorin1987/too-much-coding/src/e5ab7c69ab7b2796075fd6f087fbf31346aa2d2b/Groovy/ast/?at=default">TooMuchCoding Bitbucket</a>&nbsp;and <a href="https://github.com/marcingrzejszczak/too-much-coding/tree/master/Groovy/ast">TooMuchCoding Github</a> repositories. If you have any problems with reading any part of the slides or sth just post a comment here and I'll tr to help you :)<br /><br />Enjoy!<br /><br /><br /><a name='more'></a>
 <!--more-->
-<br /><iframe allowfullscreen="" frameborder="0" height="356" marginheight="0" marginwidth="0" scrolling="no" src="http://www.slideshare.net/slideshow/embed_code/30820561" style="border-width: 1px 1px 0; border: 1px solid #CCC; margin-bottom: 5px; max-width: 100%;" width="427"> </iframe> <br /><div style="margin-bottom: 5px;"><strong> <a href="https://www.slideshare.net/MarcinGrzejszczak/introduction-to-groovy-runtime-metaprogramming-and-ast-transforms" target="_blank" title="Introduction to Groovy runtime metaprogramming and AST transforms">Introduction to Groovy runtime metaprogramming and AST transforms</a> </strong> from <strong><a href="http://www.slideshare.net/MarcinGrzejszczak" target="_blank">Marcin Grzejszczak</a></strong> <br /><br />I had a discussion with one of the readers regarding issues related to creating an AST transformation that would be used on classes (and not on scripts). Often you can see that such a transformation does not work for you even though it should. The problem might be that you have the AST transformation compiled in the same time toghether with the class that you annotated with AST transformation related annotation.<br /><br />What you have to remember about is that your AST transformation related classes have to be compiled prior to using (that's why you can often find that your AST transformation is working when you right click on your annotated class in your IDE (or Groovy console) and manually compile that particular class. That's because you compile that particular class when other classes have already been compiled. That's the very same scenario as with compiling a script that is using an AST transformation - first your tranformations are compiled and afterwards at runtime the script gets compiled.<br /><br />Please check the additional repository <a href="https://github.com/marcingrzejszczak/ast_examples">ast_examples</a> that consists of the same examples as in the <a href="https://github.com/marcingrzejszczak/too-much-coding">TooMuchCoding </a>repository together with an additional AST transformation that is set on a class.</div></div>
+<br /><iframe allowfullscreen="" frameborder="0" height="356" marginheight="0" marginwidth="0" scrolling="no" src="https://www.slideshare.net/slideshow/embed_code/30820561" style="border-width: 1px 1px 0; border: 1px solid #CCC; margin-bottom: 5px; max-width: 100%;" width="427"> </iframe> <br /><div style="margin-bottom: 5px;"><strong> <a href="https://www.slideshare.net/MarcinGrzejszczak/introduction-to-groovy-runtime-metaprogramming-and-ast-transforms" target="_blank" title="Introduction to Groovy runtime metaprogramming and AST transforms">Introduction to Groovy runtime metaprogramming and AST transforms</a> </strong> from <strong><a href="https://www.slideshare.net/MarcinGrzejszczak" target="_blank">Marcin Grzejszczak</a></strong> <br /><br />I had a discussion with one of the readers regarding issues related to creating an AST transformation that would be used on classes (and not on scripts). Often you can see that such a transformation does not work for you even though it should. The problem might be that you have the AST transformation compiled in the same time toghether with the class that you annotated with AST transformation related annotation.<br /><br />What you have to remember about is that your AST transformation related classes have to be compiled prior to using (that's why you can often find that your AST transformation is working when you right click on your annotated class in your IDE (or Groovy console) and manually compile that particular class. That's because you compile that particular class when other classes have already been compiled. That's the very same scenario as with compiling a script that is using an AST transformation - first your tranformations are compiled and afterwards at runtime the script gets compiled.<br /><br />Please check the additional repository <a href="https://github.com/marcingrzejszczak/ast_examples">ast_examples</a> that consists of the same examples as in the <a href="https://github.com/marcingrzejszczak/too-much-coding">TooMuchCoding </a>repository together with an additional AST transformation that is set on a class.</div></div>
 </div>
 
 
@@ -153,7 +153,7 @@ Hi!<br /><br />I'm very happy to share my presentation regarding <b><i>Groovy me
           
   
 
-<span class="glyphicon glyphicon-user"></span> <span class="byline author vcard" itemprop="author" itemscope itemtype="http://schema.org/Person">Posted by <span class="fn" itemprop="name">Marcin Grzejszczak</span></span>
+<span class="glyphicon glyphicon-user"></span> <span class="byline author vcard" itemprop="author" itemscope itemtype="https://schema.org/Person">Posted by <span class="fn" itemprop="name">Marcin Grzejszczak</span></span>
 
           
 
@@ -209,7 +209,7 @@ Hi!<br /><br />I'm very happy to share my presentation regarding <b><i>Groovy me
     
       <section>
         <h2>Comments</h2>
-        <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </div>
       </section>
     
@@ -221,11 +221,11 @@ Hi!<br /><br />I'm very happy to share my presentation regarding <b><i>Groovy me
       <section>
   <h1>About Me</h1>
   <p><img src="/images/ja.jpeg" style="float:left;margin:5px;border-width:0px;width:100%;height:100%"/>
-  Author of <a href="https://www.packtpub.com/application-development/instant-mockito">"Mockito Instant"</a> and <a href="https://www.packtpub.com/application-development/mockito-cookbook">"Mockito Cookbook"</a> books. Author of <a href="https://learning.oreilly.com/videos/hands-on-guide-to/9780135598436">Hands-On Guide to Spring Cloud Contract: Creating Consumer-Driven Contracts to Leverage Contract Tests and Improve Your Code</a> and co-author of <a href="http://bit.ly/appliedCD">Applied Continuous Delivery Live Lessons</a>. Co-founder of the Warsaw Groovy User Group, <a href="https://www.meetup.com/Warsaw-Cloud-Native-Meetup/">Warsaw Cloud Native Meetup</a> and the <a href="http://www.diverseit.io">DiverseIT</a> initiative.
+  Author of <a href="https://www.packtpub.com/application-development/instant-mockito">"Mockito Instant"</a> and <a href="https://www.packtpub.com/application-development/mockito-cookbook">"Mockito Cookbook"</a> books. Author of <a href="https://learning.oreilly.com/videos/hands-on-guide-to/9780135598436">Hands-On Guide to Spring Cloud Contract: Creating Consumer-Driven Contracts to Leverage Contract Tests and Improve Your Code</a> and co-author of <a href="https://bit.ly/appliedCD">Applied Continuous Delivery Live Lessons</a>. Co-founder of the Warsaw Groovy User Group, <a href="https://www.meetup.com/Warsaw-Cloud-Native-Meetup/">Warsaw Cloud Native Meetup</a> and the <a href="https://www.diverseit.io">DiverseIT</a> initiative.
   </p>
 
   <p>
-  Lead of <a href="https://cloud.spring.io/spring-cloud-sleuth/">Spring Cloud Sleuth</a>, <a href="https://cloud.spring.io/spring-cloud-contract/">Spring Cloud Contract</a> and <a href="https://spring.io/blog/2018/11/13/spring-cloud-pipelines-to-cloud-pipelines-migration">Cloud Pipelines</a> projects at <a href="http://spring.io">Pivotal</a>
+  Lead of <a href="https://cloud.spring.io/spring-cloud-sleuth/">Spring Cloud Sleuth</a>, <a href="https://cloud.spring.io/spring-cloud-contract/">Spring Cloud Contract</a> and <a href="https://spring.io/blog/2018/11/13/spring-cloud-pipelines-to-cloud-pipelines-migration">Cloud Pipelines</a> projects at <a href="https://spring.io">Pivotal</a>
   </p>
 
   <p><a href="https://github.com/marcingrzejszczak">Github profile</a></p>
@@ -259,7 +259,7 @@ Hi!<br /><br />I'm very happy to share my presentation regarding <b><i>Groovy me
   <div class="panel-body">
     <h2>
       <a href="https://plus.google.com/108408840893580782990?rel=author">
-        <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+        <img src="https://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
         Google+
       </a>
     </h2>
@@ -280,7 +280,7 @@ Hi!<br /><br />I'm very happy to share my presentation regarding <b><i>Groovy me
     <p class="text-muted credits">
   Copyright &copy; 2019 - Marcin Grzejszczak<br>
   <small>
-      <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>,
+      <span class="credit">Powered by <a href="https://octopress.org">Octopress</a></span>,
       <span class="credit">customized with <a href="https://github.com/kAworu/octostrap3">octostrap3</a></span>.
   </small>
 </p>

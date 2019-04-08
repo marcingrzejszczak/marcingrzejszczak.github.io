@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
+<feed xmlns="https://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Concourse | TOO MUCH CODING]]></title>
   <link href="https://toomuchcoding.com/blog/categories/concourse/atom.xml" rel="self"/>
   <link href="https://toomuchcoding.com/"/>
-  <updated>2019-04-08T15:17:02+02:00</updated>
+  <updated>2019-04-08T15:35:21+02:00</updated>
   <id>https://toomuchcoding.com/</id>
   <author>
     <name><![CDATA[Marcin Grzejszczak]]></name>
     <email><![CDATA[blog@toomuchcoding.com]]></email>
   </author>
-  <generator uri="http://octopress.org/">Octopress</generator>
+  <generator uri="https://octopress.org/">Octopress</generator>
 
   
   <entry>
@@ -35,11 +35,11 @@
 
 <h1>Why?</h1>
 
-<p>Why a new project? Cause we&rsquo;ve been all doing repetitive work. <a href="https://toomuchcoding.com/blog/2015/09/27/microservice-deployment/">Check out this post</a> where I write about creation of
+<p>Why a new project? Cause we&rsquo;ve been all doing repetitive work. <a href="https://toomuchcoding.com/blog/2015/09/26/microservice-deployment/">Check out this post</a> where I write about creation of
 a deployment pipeline. Every company does it and wastes money and resource on it. In Pivotal
 our goal is to give developers tools they need to deliver features as fast as possible.</p>
 
-<p><a href="http://cloud.spring.io/spring-cloud-pipelines/spring-cloud-pipelines.html">Spring Cloud Pipelines</a> gives you an opinionated deployment pipeline. You can use it straight away, you can modify it. Do whatever you please :)</p>
+<p><a href="https://cloud.spring.io/spring-cloud-pipelines/spring-cloud-pipelines.html">Spring Cloud Pipelines</a> gives you an opinionated deployment pipeline. You can use it straight away, you can modify it. Do whatever you please :)</p>
 
 <h1>Demo</h1>
 
@@ -48,11 +48,11 @@ our goal is to give developers tools they need to deliver features as fast as po
 <h1>Links</h1>
 
 <ul>
-<li><a href="http://cloud.spring.io/spring-cloud-pipelines/">Project page</a></li>
-<li><a href="http://cloud.spring.io/spring-cloud-pipelines/spring-cloud-pipelines.html">Project documentation</a></li>
-<li><a href="http://cloud.spring.io/spring-cloud-pipelines/spring-cloud-pipelines.html#concourse">Concourse opinionated pipeline setup</a></li>
-<li><a href="http://concourse.ci">Concourse Website</a></li>
-<li><a href="http://cloud.spring.io/spring-cloud-pipelines/spring-cloud-pipelines.html#jenkins">Jenkins opinionated pipeline setup</a></li>
+<li><a href="https://cloud.spring.io/spring-cloud-pipelines/">Project page</a></li>
+<li><a href="https://cloud.spring.io/spring-cloud-pipelines/spring-cloud-pipelines.html">Project documentation</a></li>
+<li><a href="https://cloud.spring.io/spring-cloud-pipelines/spring-cloud-pipelines.html#concourse">Concourse opinionated pipeline setup</a></li>
+<li><a href="https://concourse.ci">Concourse Website</a></li>
+<li><a href="https://cloud.spring.io/spring-cloud-pipelines/spring-cloud-pipelines.html#jenkins">Jenkins opinionated pipeline setup</a></li>
 <li><a href="https://github.com/jenkinsci/job-dsl-plugin/wiki">Jenkins Job Dsl Plugin</a></li>
 <li><a href="https://gitter.im/spring-cloud/spring-cloud-pipelines">Spring Cloud Pipelines Gitter</a></li>
 <li><a href="https://github.com/spring-cloud/spring-cloud-pipelines">Spring Cloud Pipelines GitHub page</a></li>

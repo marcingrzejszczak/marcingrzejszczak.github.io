@@ -8,7 +8,7 @@
   
   
 
-  <!-- http://t.co/dKP3o1e -->
+  <!-- https://t.co/dKP3o1e -->
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -18,7 +18,7 @@
   <link href="/favicon.png" type="image/png" rel="icon">
   <link href="/atom.xml" rel="alternate" title="TOO MUCH CODING" type="application/atom+xml">
 
-  <!-- http://opengraphprotocol.org/ -->
+  <!-- https://opengraphprotocol.org/ -->
   <meta name="twitter:card" content="summary_large_image">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://toomuchcoding.com/blog/2016/04/06/accurest-stubrunner-released/">
@@ -103,11 +103,11 @@
       <div id="main" role="main" class="container">
         <div id="content">
           <div class="row">
-  <div class="page-content col-md-9" itemscope itemtype="http://schema.org/Blog">
+  <div class="page-content col-md-9" itemscope itemtype="https://schema.org/Blog">
     <meta itemprop="name" content="TOO MUCH CODING" />
     <meta itemprop="description" content="A blog for coding addicts about Java, Groovy, Buzzword, Spring, Microservices, Buzzword" />
     <meta itemprop="url" content="https://toomuchcoding.com" />
-    <article class="hentry" role="article" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+    <article class="hentry" role="article" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
       
   <header class="page-header">
     
@@ -165,15 +165,15 @@ of bugs but we&rsquo;ve introduced a couple of big features including:</p>
 
 <p><em>Stub Runner</em> is tightly coupled with the concepts coming from AccuREST. For more information about AccuREST you can check my <a href="/blog/categories/accurest/">blog entries</a> or check <a href="https://github.com/Codearte/accurest">AccuREST project on Github</a>. If you don&rsquo;t have a clue what that is I&rsquo;ll try to do a very fast recap.</p>
 
-<p>AccuREST is a <a href="http://martinfowler.com/articles/consumerDrivenContracts.html">Consumer Driven Contracts</a> verifier in which you define the contract of your API via a Groovy DSL. From that DSL, on the server side, tests are created to check if your contract is telling the truth. From the <em>Stub Runner&rsquo;s</em> perspective more interesting is the client side. For the client side AccuREST generates WireMock stubs from the provided DSL so that the clients of that API can be provided with reliable stubs.</p>
+<p>AccuREST is a <a href="https://martinfowler.com/articles/consumerDrivenContracts.html">Consumer Driven Contracts</a> verifier in which you define the contract of your API via a Groovy DSL. From that DSL, on the server side, tests are created to check if your contract is telling the truth. From the <em>Stub Runner&rsquo;s</em> perspective more interesting is the client side. For the client side AccuREST generates WireMock stubs from the provided DSL so that the clients of that API can be provided with reliable stubs.</p>
 
 <h2>What is Stub Runner?</h2>
 
-<p>Now that we remember what AccuREST does we can take a look in more depth at <em>Stub Runner</em>. Let&rsquo;s assume that we have a following flow of services (btw. <a href="http://cloud.spring.io/spring-cloud-sleuth/spring-cloud-sleuth.html">this is a screenshot from Zipkin integrated with Spring Cloud Sleuth</a> )</p>
+<p>Now that we remember what AccuREST does we can take a look in more depth at <em>Stub Runner</em>. Let&rsquo;s assume that we have a following flow of services (btw. <a href="https://cloud.spring.io/spring-cloud-sleuth/spring-cloud-sleuth.html">this is a screenshot from Zipkin integrated with Spring Cloud Sleuth</a> )</p>
 
 <p><img src="/images/accurest/stubrunner/dependencies_accurest.png" alt="Dependencies" /></p>
 
-<p>Let&rsquo;s imagine ourselves as developers of the <em>service2</em> - the one that calls <em>service3</em> and <em>service4</em>. Since we&rsquo;re doing the CDC (<a href="http://martinfowler.com/articles/consumerDrivenContracts.html">Consumer Driven Contracts</a>) approach let&rsquo;s assume that the stubs of <em>service3</em> and <em>service4</em> got already deployed to some Maven repository.</p>
+<p>Let&rsquo;s imagine ourselves as developers of the <em>service2</em> - the one that calls <em>service3</em> and <em>service4</em>. Since we&rsquo;re doing the CDC (<a href="https://martinfowler.com/articles/consumerDrivenContracts.html">Consumer Driven Contracts</a>) approach let&rsquo;s assume that the stubs of <em>service3</em> and <em>service4</em> got already deployed to some Maven repository.</p>
 
 <p>If I&rsquo;m writing integration tests of <em>service2</em> I&rsquo;ll for sure have some points of interaction with <em>service3</em> and <em>service4</em>. Most likely in the majority of cases I&rsquo;ll just mock those interactions in my code but it would be valuable to have a real HTTP call done to the other application. Of course I don&rsquo;t want to download both services and run them only for integration tests - that would be an overkill. That&rsquo;s why the most preferable solution at this point would be to run the stubs of my collaborators.</p>
 
@@ -343,7 +343,7 @@ passing the Ivy notation (<code>groupId:artifactId</code>) or just the <code>art
 </span><span class='line'>                                  <span class="n">jars</span> <span class="n">with</span> <span class="n">stubs</span><span class="o">.</span> <span class="n">Eg</span><span class="o">.</span> <span class="nl">groupid:</span><span class="n">artifactid1</span><span class="o">,</span><span class="n">group</span>
 </span><span class='line'>                                  <span class="nl">id2:artifactid2:</span><span class="n">classifier</span>
 </span><span class='line'> <span class="o">-</span><span class="n">sr</span> <span class="o">(--</span><span class="n">stubRepositoryRoot</span><span class="o">)</span> <span class="n">VAL</span> <span class="o">:</span> <span class="n">Location</span> <span class="n">of</span> <span class="n">a</span> <span class="n">Jar</span> <span class="n">containing</span> <span class="n">server</span> <span class="n">where</span> <span class="n">you</span>
-</span><span class='line'>                                  <span class="n">keep</span> <span class="n">your</span> <span class="nf">stubs</span> <span class="o">(</span><span class="n">e</span><span class="o">.</span><span class="na">g</span><span class="o">.</span> <span class="nl">http:</span><span class="c1">//nexus.net/content</span>
+</span><span class='line'>                                  <span class="n">keep</span> <span class="n">your</span> <span class="nf">stubs</span> <span class="o">(</span><span class="n">e</span><span class="o">.</span><span class="na">g</span><span class="o">.</span> <span class="nl">https:</span><span class="c1">//nexus.net/content</span>
 </span><span class='line'>                                  <span class="s">/repositories/</span><span class="n">repository</span><span class="o">)</span>
 </span><span class='line'> <span class="o">-</span><span class="n">ss</span> <span class="o">(--</span><span class="n">stubsSuffix</span><span class="o">)</span> <span class="n">VAL</span>        <span class="o">:</span> <span class="n">Suffix</span> <span class="k">for</span> <span class="n">the</span> <span class="n">jar</span> <span class="n">containing</span> <span class="n">stubs</span> <span class="o">(</span><span class="n">e</span><span class="o">.</span><span class="na">g</span><span class="o">.</span>
 </span><span class='line'>                                  <span class="s1">&#39;stubs&#39;</span> <span class="k">if</span> <span class="n">the</span> <span class="n">stub</span> <span class="n">jar</span> <span class="n">would</span> <span class="n">have</span> <span class="n">a</span> <span class="s1">&#39;stubs&#39;</span>
@@ -372,7 +372,7 @@ passing the Ivy notation (<code>groupId:artifactId</code>) or just the <code>art
 
 <h4>When to use it?</h4>
 
-<p>Running <em>Stub Runner</em> as a main class makes most sense when you&rsquo;re running some fast smoke tests on a deployed application where you don&rsquo;t want to download and run all the collaborators of that application. For more rationale behind such an approach you can check my article about <a href="/blog/2015/09/27/microservice-deployment/">Microservice Deployment</a></p>
+<p>Running <em>Stub Runner</em> as a main class makes most sense when you&rsquo;re running some fast smoke tests on a deployed application where you don&rsquo;t want to download and run all the collaborators of that application. For more rationale behind such an approach you can check my article about <a href="/blog/2015/09/26/microservice-deployment/">Microservice Deployment</a></p>
 
 <h3>Stub Runner JUnit Rule</h3>
 
@@ -580,8 +580,8 @@ passing the Ivy notation (<code>groupId:artifactId</code>) or just the <code>art
 </span><span class='line'>
 </span><span class='line'>  <span class="kt">void</span> <span class="nf">doSth</span><span class="o">()</span> <span class="o">{</span>
 </span><span class='line'>    <span class="c1">// code...</span>
-</span><span class='line'>    <span class="n">String</span> <span class="n">service3Response</span> <span class="o">=</span> <span class="n">restTemplate</span><span class="o">.</span><span class="na">getForObject</span><span class="o">(</span><span class="s1">&#39;http://service3/name&#39;</span><span class="o">,</span> <span class="n">String</span><span class="o">)</span>
-</span><span class='line'>    <span class="n">String</span> <span class="n">service4Response</span> <span class="o">=</span> <span class="n">restTemplate</span><span class="o">.</span><span class="na">getForObject</span><span class="o">(</span><span class="s1">&#39;http://shouldMapThisNameToService4/name&#39;</span><span class="o">,</span> <span class="n">String</span><span class="o">)</span>
+</span><span class='line'>    <span class="n">String</span> <span class="n">service3Response</span> <span class="o">=</span> <span class="n">restTemplate</span><span class="o">.</span><span class="na">getForObject</span><span class="o">(</span><span class="s1">&#39;https://service3/name&#39;</span><span class="o">,</span> <span class="n">String</span><span class="o">)</span>
+</span><span class='line'>    <span class="n">String</span> <span class="n">service4Response</span> <span class="o">=</span> <span class="n">restTemplate</span><span class="o">.</span><span class="na">getForObject</span><span class="o">(</span><span class="s1">&#39;https://shouldMapThisNameToService4/name&#39;</span><span class="o">,</span> <span class="n">String</span><span class="o">)</span>
 </span><span class='line'>    <span class="c1">// more code...</span>
 </span><span class='line'>  <span class="o">}</span>
 </span><span class='line'>
@@ -656,7 +656,7 @@ passing the Ivy notation (<code>groupId:artifactId</code>) or just the <code>art
 <p>You can set the default value of the Maven repository by means of a system property:</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='groovy'><span class='line'><span class="o">-</span><span class="n">Dstubrunner</span><span class="o">.</span><span class="na">stubs</span><span class="o">.</span><span class="na">repository</span><span class="o">.</span><span class="na">root</span><span class="o">=</span><span class="nl">http:</span><span class="c1">//your.maven.repo.com</span>
+</pre></td><td class='code'><pre><code class='groovy'><span class='line'><span class="o">-</span><span class="n">Dstubrunner</span><span class="o">.</span><span class="na">stubs</span><span class="o">.</span><span class="na">repository</span><span class="o">.</span><span class="na">root</span><span class="o">=</span><span class="nl">https:</span><span class="c1">//your.maven.repo.com</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
@@ -735,7 +735,7 @@ passing the Ivy notation (<code>groupId:artifactId</code>) or just the <code>art
           
   
 
-<span class="glyphicon glyphicon-user"></span> <span class="byline author vcard" itemprop="author" itemscope itemtype="http://schema.org/Person">Posted by <span class="fn" itemprop="name">Marcin Grzejszczak</span></span>
+<span class="glyphicon glyphicon-user"></span> <span class="byline author vcard" itemprop="author" itemscope itemtype="https://schema.org/Person">Posted by <span class="fn" itemprop="name">Marcin Grzejszczak</span></span>
 
           
 
@@ -791,7 +791,7 @@ passing the Ivy notation (<code>groupId:artifactId</code>) or just the <code>art
     
       <section>
         <h2>Comments</h2>
-        <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </div>
       </section>
     
@@ -803,11 +803,11 @@ passing the Ivy notation (<code>groupId:artifactId</code>) or just the <code>art
       <section>
   <h1>About Me</h1>
   <p><img src="/images/ja.jpeg" style="float:left;margin:5px;border-width:0px;width:100%;height:100%"/>
-  Author of <a href="https://www.packtpub.com/application-development/instant-mockito">"Mockito Instant"</a> and <a href="https://www.packtpub.com/application-development/mockito-cookbook">"Mockito Cookbook"</a> books. Author of <a href="https://learning.oreilly.com/videos/hands-on-guide-to/9780135598436">Hands-On Guide to Spring Cloud Contract: Creating Consumer-Driven Contracts to Leverage Contract Tests and Improve Your Code</a> and co-author of <a href="http://bit.ly/appliedCD">Applied Continuous Delivery Live Lessons</a>. Co-founder of the Warsaw Groovy User Group, <a href="https://www.meetup.com/Warsaw-Cloud-Native-Meetup/">Warsaw Cloud Native Meetup</a> and the <a href="http://www.diverseit.io">DiverseIT</a> initiative.
+  Author of <a href="https://www.packtpub.com/application-development/instant-mockito">"Mockito Instant"</a> and <a href="https://www.packtpub.com/application-development/mockito-cookbook">"Mockito Cookbook"</a> books. Author of <a href="https://learning.oreilly.com/videos/hands-on-guide-to/9780135598436">Hands-On Guide to Spring Cloud Contract: Creating Consumer-Driven Contracts to Leverage Contract Tests and Improve Your Code</a> and co-author of <a href="https://bit.ly/appliedCD">Applied Continuous Delivery Live Lessons</a>. Co-founder of the Warsaw Groovy User Group, <a href="https://www.meetup.com/Warsaw-Cloud-Native-Meetup/">Warsaw Cloud Native Meetup</a> and the <a href="https://www.diverseit.io">DiverseIT</a> initiative.
   </p>
 
   <p>
-  Lead of <a href="https://cloud.spring.io/spring-cloud-sleuth/">Spring Cloud Sleuth</a>, <a href="https://cloud.spring.io/spring-cloud-contract/">Spring Cloud Contract</a> and <a href="https://spring.io/blog/2018/11/13/spring-cloud-pipelines-to-cloud-pipelines-migration">Cloud Pipelines</a> projects at <a href="http://spring.io">Pivotal</a>
+  Lead of <a href="https://cloud.spring.io/spring-cloud-sleuth/">Spring Cloud Sleuth</a>, <a href="https://cloud.spring.io/spring-cloud-contract/">Spring Cloud Contract</a> and <a href="https://spring.io/blog/2018/11/13/spring-cloud-pipelines-to-cloud-pipelines-migration">Cloud Pipelines</a> projects at <a href="https://spring.io">Pivotal</a>
   </p>
 
   <p><a href="https://github.com/marcingrzejszczak">Github profile</a></p>
@@ -841,7 +841,7 @@ passing the Ivy notation (<code>groupId:artifactId</code>) or just the <code>art
   <div class="panel-body">
     <h2>
       <a href="https://plus.google.com/108408840893580782990?rel=author">
-        <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+        <img src="https://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
         Google+
       </a>
     </h2>
@@ -862,7 +862,7 @@ passing the Ivy notation (<code>groupId:artifactId</code>) or just the <code>art
     <p class="text-muted credits">
   Copyright &copy; 2019 - Marcin Grzejszczak<br>
   <small>
-      <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>,
+      <span class="credit">Powered by <a href="https://octopress.org">Octopress</a></span>,
       <span class="credit">customized with <a href="https://github.com/kAworu/octostrap3">octostrap3</a></span>.
   </small>
 </p>

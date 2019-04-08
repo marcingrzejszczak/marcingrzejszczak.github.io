@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
+<feed xmlns="https://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Concurrency | TOO MUCH CODING]]></title>
   <link href="https://toomuchcoding.com/blog/categories/concurrency/atom.xml" rel="self"/>
   <link href="https://toomuchcoding.com/"/>
-  <updated>2019-04-08T15:17:02+02:00</updated>
+  <updated>2019-04-08T15:35:21+02:00</updated>
   <id>https://toomuchcoding.com/</id>
   <author>
     <name><![CDATA[Marcin Grzejszczak]]></name>
     <email><![CDATA[blog@toomuchcoding.com]]></email>
   </author>
-  <generator uri="http://octopress.org/">Octopress</generator>
+  <generator uri="https://octopress.org/">Octopress</generator>
 
   
   <entry>
@@ -19,7 +19,7 @@
     <updated>2013-01-28T01:20:00-08:00</updated>
     <id>https://toomuchcoding.com/blog/2013/01/28/concurrency-in-web-applications</id>
     <content type="html"><![CDATA[<div class='post'>
-Nice article about <a href="http://blog.atena.pl/zrownoleglenie-operacji-w-aplikacji-webowej-2">concurrency in web applications (in Polish)</a></div>
+Nice article about <a href="https://blog.atena.pl/zrownoleglenie-operacji-w-aplikacji-webowej-2">concurrency in web applications (in Polish)</a></div>
 
 ]]></content>
   </entry>

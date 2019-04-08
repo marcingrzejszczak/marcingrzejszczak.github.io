@@ -8,7 +8,7 @@
   
   
 
-  <!-- http://t.co/dKP3o1e -->
+  <!-- https://t.co/dKP3o1e -->
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -18,7 +18,7 @@
   <link href="/favicon.png" type="image/png" rel="icon">
   <link href="/atom.xml" rel="alternate" title="TOO MUCH CODING" type="application/atom+xml">
 
-  <!-- http://opengraphprotocol.org/ -->
+  <!-- https://opengraphprotocol.org/ -->
   <meta name="twitter:card" content="summary_large_image">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://toomuchcoding.com/blog/2016/09/24/spring-cloud-contract-1-dot-0-0-dot-release-available/">
@@ -103,11 +103,11 @@
       <div id="main" role="main" class="container">
         <div id="content">
           <div class="row">
-  <div class="page-content col-md-9" itemscope itemtype="http://schema.org/Blog">
+  <div class="page-content col-md-9" itemscope itemtype="https://schema.org/Blog">
     <meta itemprop="name" content="TOO MUCH CODING" />
     <meta itemprop="description" content="A blog for coding addicts about Java, Groovy, Buzzword, Spring, Microservices, Buzzword" />
     <meta itemprop="url" content="https://toomuchcoding.com" />
-    <article class="hentry" role="article" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+    <article class="hentry" role="article" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
       
   <header class="page-header">
     
@@ -146,7 +146,7 @@
 <p>I&rsquo;m really happy that the project is GA. Even though as the Accurest project we had already done a GA release, it really feels that a lot of effort was put in order to release the GA version under the Pivotal&rsquo;s Spring Cloud branding. Let&rsquo;s look at some numbers:</p>
 
 <ul>
-<li>first commit almost 2 years ago: <a href="https://github.com/spring-cloud/spring-cloud-contract/commit/dfaddaa98d645b818ba3947c9267ef7ac8ed9ba4">2014-12-06 18:20:29 by Jakub Kubrynski</a> - thanks to <a href="http://codearte.eu">Codearte</a> the authors of <a href="http://devskiller.com">DevSkiller</a> for their support!!!</li>
+<li>first commit almost 2 years ago: <a href="https://github.com/spring-cloud/spring-cloud-contract/commit/dfaddaa98d645b818ba3947c9267ef7ac8ed9ba4">2014-12-06 18:20:29 by Jakub Kubrynski</a> - thanks to <a href="https://codearte.eu">Codearte</a> the authors of <a href="https://devskiller.com">DevSkiller</a> for their support!!!</li>
 <li><a href="https://github.com/spring-cloud/spring-cloud-contract/commits/master">1.152 commits</a></li>
 <li><a href="https://github.com/spring-cloud/spring-cloud-contract/graphs/contributors">20 contributors</a></li>
 </ul>
@@ -165,14 +165,14 @@
 <li>we&rsquo;ve moved from Grapes to Aether to download stubs</li>
 <li><a href="https://cloud.spring.io/spring-cloud-contract/spring-cloud-contract.html#_what_is_this_value_consumer_producer">we generate fake data when you provide either consumer or producer in the DSL</a></li>
 <li><a href="https://cloud.spring.io/spring-cloud-contract/spring-cloud-contract.html#_common_repo_with_contracts">Consumer Contract approach is there</a></li>
-<li>Spring Cloud Contract is available on <a href="http://start.spring.io">start.spring.io</a></li>
+<li>Spring Cloud Contract is available on <a href="https://start.spring.io">start.spring.io</a></li>
 <li><a href="https://cloud.spring.io/spring-cloud-contract/spring-cloud-contract.html#_different_base_classes_for_contracts_2">you can have more than one base class for your tests</a></li>
 <li><a href="https://cloud.spring.io/spring-cloud-contract/spring-cloud-contract.html#_additional_configuration">Spring Cloud Stub Runner Boot can register stubs in Eureka / Consul / Zookeeper using Spring Cloud</a></li>
 <li>the whole build was moved from Gradle to the standard Spring Cloud Maven setup</li>
 </ul>
 
 
-<p>These are the Spring Cloud Contract Verifier changes. Apart from that Spring Cloud Contract consists of <a href="https://cloud.spring.io/spring-cloud-contract/spring-cloud-contract.html#_spring_cloud_contract_wiremock">Spring Cloud Contract WireMock support</a> and <a href="https://cloud.spring.io/spring-cloud-contract/spring-cloud-contract.html#_generating_stubs_using_restdocs">Spring Cloud Contract RestDocs</a>. Thanks to the first one the integration with <a href="http://wiremock.org">WireMock</a> is much more efficient and thanks to the latter you don&rsquo;t have to use the Groovy DSL - you can define your stubs by yourself by attaching them to an existing RestDocs test.</p>
+<p>These are the Spring Cloud Contract Verifier changes. Apart from that Spring Cloud Contract consists of <a href="https://cloud.spring.io/spring-cloud-contract/spring-cloud-contract.html#_spring_cloud_contract_wiremock">Spring Cloud Contract WireMock support</a> and <a href="https://cloud.spring.io/spring-cloud-contract/spring-cloud-contract.html#_generating_stubs_using_restdocs">Spring Cloud Contract RestDocs</a>. Thanks to the first one the integration with <a href="https://wiremock.org">WireMock</a> is much more efficient and thanks to the latter you don&rsquo;t have to use the Groovy DSL - you can define your stubs by yourself by attaching them to an existing RestDocs test.</p>
 
 <p>As far as Spring Cloud Contract Verifier is concerned the biggest two changes are the <a href="https://cloud.spring.io/spring-cloud-contract/spring-cloud-contract.html#_common_repo_with_contracts">Consumer Contract support</a> and that <a href="https://cloud.spring.io/spring-cloud-contract/spring-cloud-contract.html#_different_base_classes_for_contracts_2">you can have more than one base class for your tests</a>. Let&rsquo;s take a closer look what&rsquo;s there in the docs about them&hellip;</p>
 
@@ -330,8 +330,8 @@
 <span class='line-number'>106</span>
 <span class='line-number'>107</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-</span><span class='line'>&lt;project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-</span><span class='line'>  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"&gt;
+</span><span class='line'>&lt;project xmlns="https://maven.apache.org/POM/4.0.0" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
+</span><span class='line'>  xsi:schemaLocation="https://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd"&gt;
 </span><span class='line'>  &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
 </span><span class='line'>
 </span><span class='line'>  &lt;groupId&gt;com.example&lt;/groupId&gt;
@@ -484,8 +484,8 @@
 <span class='line-number'>40</span>
 <span class='line-number'>41</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-</span><span class='line'>&lt;project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-</span><span class='line'>       xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"&gt;
+</span><span class='line'>&lt;project xmlns="https://maven.apache.org/POM/4.0.0" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
+</span><span class='line'>       xsi:schemaLocation="https://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd"&gt;
 </span><span class='line'>  &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
 </span><span class='line'>
 </span><span class='line'>  &lt;groupId&gt;com.example.standalone&lt;/groupId&gt;
@@ -551,9 +551,9 @@
 <span class='line-number'>21</span>
 <span class='line-number'>22</span>
 <span class='line-number'>23</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;assembly xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.3"
-</span><span class='line'>        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-</span><span class='line'>        xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.3 http://maven.apache.org/xsd/assembly-1.1.3.xsd"&gt;
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;assembly xmlns="https://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.3"
+</span><span class='line'>        xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
+</span><span class='line'>        xsi:schemaLocation="https://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.3 https://maven.apache.org/xsd/assembly-1.1.3.xsd"&gt;
 </span><span class='line'>  &lt;id&gt;project&lt;/id&gt;
 </span><span class='line'>  &lt;formats&gt;
 </span><span class='line'>      &lt;format&gt;jar&lt;/format&gt;
@@ -605,7 +605,7 @@
 </span><span class='line'>  &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
 </span><span class='line'>  &lt;artifactId&gt;spring-cloud-contract-maven-plugin&lt;/artifactId&gt;
 </span><span class='line'>  &lt;configuration&gt;
-</span><span class='line'>      &lt;contractsRepositoryUrl&gt;http://link/to/your/nexus/or/artifactory/or/sth&lt;/contractsRepositoryUrl&gt;
+</span><span class='line'>      &lt;contractsRepositoryUrl&gt;https://link/to/your/nexus/or/artifactory/or/sth&lt;/contractsRepositoryUrl&gt;
 </span><span class='line'>      &lt;contractDependency&gt;
 </span><span class='line'>          &lt;groupId&gt;com.example.standalone&lt;/groupId&gt;
 </span><span class='line'>          &lt;artifactId&gt;contracts&lt;/artifactId&gt;
@@ -614,7 +614,7 @@
 </span><span class='line'>&lt;/plugin&gt;</span></code></pre></td></tr></table></div></figure>
 
 
-<p>With this setup the JAR with groupid <code>com.example.standalone</code> and artifactid contracts will be downloaded from <code>http://link/to/your/nexus/or/artifactory/or/sth</code>. It will be then unpacked in a local temporary folder and contracts present under the <code>com/example/server</code> will be picked as the ones used to generate the tests and the stubs. Due to this convention the producer team will know which consumer teams will be broken when some incompatible changes are done.</p>
+<p>With this setup the JAR with groupid <code>com.example.standalone</code> and artifactid contracts will be downloaded from <code>https://link/to/your/nexus/or/artifactory/or/sth</code>. It will be then unpacked in a local temporary folder and contracts present under the <code>com/example/server</code> will be picked as the ones used to generate the tests and the stubs. Due to this convention the producer team will know which consumer teams will be broken when some incompatible changes are done.</p>
 
 <p>The rest of the flow looks the same.</p>
 
@@ -755,7 +755,7 @@
           
   
 
-<span class="glyphicon glyphicon-user"></span> <span class="byline author vcard" itemprop="author" itemscope itemtype="http://schema.org/Person">Posted by <span class="fn" itemprop="name">Marcin Grzejszczak</span></span>
+<span class="glyphicon glyphicon-user"></span> <span class="byline author vcard" itemprop="author" itemscope itemtype="https://schema.org/Person">Posted by <span class="fn" itemprop="name">Marcin Grzejszczak</span></span>
 
           
 
@@ -811,7 +811,7 @@
     
       <section>
         <h2>Comments</h2>
-        <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </div>
       </section>
     
@@ -823,11 +823,11 @@
       <section>
   <h1>About Me</h1>
   <p><img src="/images/ja.jpeg" style="float:left;margin:5px;border-width:0px;width:100%;height:100%"/>
-  Author of <a href="https://www.packtpub.com/application-development/instant-mockito">"Mockito Instant"</a> and <a href="https://www.packtpub.com/application-development/mockito-cookbook">"Mockito Cookbook"</a> books. Author of <a href="https://learning.oreilly.com/videos/hands-on-guide-to/9780135598436">Hands-On Guide to Spring Cloud Contract: Creating Consumer-Driven Contracts to Leverage Contract Tests and Improve Your Code</a> and co-author of <a href="http://bit.ly/appliedCD">Applied Continuous Delivery Live Lessons</a>. Co-founder of the Warsaw Groovy User Group, <a href="https://www.meetup.com/Warsaw-Cloud-Native-Meetup/">Warsaw Cloud Native Meetup</a> and the <a href="http://www.diverseit.io">DiverseIT</a> initiative.
+  Author of <a href="https://www.packtpub.com/application-development/instant-mockito">"Mockito Instant"</a> and <a href="https://www.packtpub.com/application-development/mockito-cookbook">"Mockito Cookbook"</a> books. Author of <a href="https://learning.oreilly.com/videos/hands-on-guide-to/9780135598436">Hands-On Guide to Spring Cloud Contract: Creating Consumer-Driven Contracts to Leverage Contract Tests and Improve Your Code</a> and co-author of <a href="https://bit.ly/appliedCD">Applied Continuous Delivery Live Lessons</a>. Co-founder of the Warsaw Groovy User Group, <a href="https://www.meetup.com/Warsaw-Cloud-Native-Meetup/">Warsaw Cloud Native Meetup</a> and the <a href="https://www.diverseit.io">DiverseIT</a> initiative.
   </p>
 
   <p>
-  Lead of <a href="https://cloud.spring.io/spring-cloud-sleuth/">Spring Cloud Sleuth</a>, <a href="https://cloud.spring.io/spring-cloud-contract/">Spring Cloud Contract</a> and <a href="https://spring.io/blog/2018/11/13/spring-cloud-pipelines-to-cloud-pipelines-migration">Cloud Pipelines</a> projects at <a href="http://spring.io">Pivotal</a>
+  Lead of <a href="https://cloud.spring.io/spring-cloud-sleuth/">Spring Cloud Sleuth</a>, <a href="https://cloud.spring.io/spring-cloud-contract/">Spring Cloud Contract</a> and <a href="https://spring.io/blog/2018/11/13/spring-cloud-pipelines-to-cloud-pipelines-migration">Cloud Pipelines</a> projects at <a href="https://spring.io">Pivotal</a>
   </p>
 
   <p><a href="https://github.com/marcingrzejszczak">Github profile</a></p>
@@ -861,7 +861,7 @@
   <div class="panel-body">
     <h2>
       <a href="https://plus.google.com/108408840893580782990?rel=author">
-        <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+        <img src="https://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
         Google+
       </a>
     </h2>
@@ -882,7 +882,7 @@
     <p class="text-muted credits">
   Copyright &copy; 2019 - Marcin Grzejszczak<br>
   <small>
-      <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>,
+      <span class="credit">Powered by <a href="https://octopress.org">Octopress</a></span>,
       <span class="credit">customized with <a href="https://github.com/kAworu/octostrap3">octostrap3</a></span>.
   </small>
 </p>

@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
+<feed xmlns="https://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Deployment | TOO MUCH CODING]]></title>
   <link href="https://toomuchcoding.com/blog/categories/deployment/atom.xml" rel="self"/>
   <link href="https://toomuchcoding.com/"/>
-  <updated>2019-04-08T15:17:02+02:00</updated>
+  <updated>2019-04-08T15:35:21+02:00</updated>
   <id>https://toomuchcoding.com/</id>
   <author>
     <name><![CDATA[Marcin Grzejszczak]]></name>
     <email><![CDATA[blog@toomuchcoding.com]]></email>
   </author>
-  <generator uri="http://octopress.org/">Octopress</generator>
+  <generator uri="https://octopress.org/">Octopress</generator>
 
   
   <entry>
@@ -35,11 +35,11 @@
 
 <h1>Why?</h1>
 
-<p>Why a new project? Cause we&rsquo;ve been all doing repetitive work. <a href="https://toomuchcoding.com/blog/2015/09/27/microservice-deployment/">Check out this post</a> where I write about creation of
+<p>Why a new project? Cause we&rsquo;ve been all doing repetitive work. <a href="https://toomuchcoding.com/blog/2015/09/26/microservice-deployment/">Check out this post</a> where I write about creation of
 a deployment pipeline. Every company does it and wastes money and resource on it. In Pivotal
 our goal is to give developers tools they need to deliver features as fast as possible.</p>
 
-<p><a href="http://cloud.spring.io/spring-cloud-pipelines/spring-cloud-pipelines.html">Spring Cloud Pipelines</a> gives you an opinionated deployment pipeline. You can use it straight away, you can modify it. Do whatever you please :)</p>
+<p><a href="https://cloud.spring.io/spring-cloud-pipelines/spring-cloud-pipelines.html">Spring Cloud Pipelines</a> gives you an opinionated deployment pipeline. You can use it straight away, you can modify it. Do whatever you please :)</p>
 
 <h1>Demo</h1>
 
@@ -48,11 +48,11 @@ our goal is to give developers tools they need to deliver features as fast as po
 <h1>Links</h1>
 
 <ul>
-<li><a href="http://cloud.spring.io/spring-cloud-pipelines/">Project page</a></li>
-<li><a href="http://cloud.spring.io/spring-cloud-pipelines/spring-cloud-pipelines.html">Project documentation</a></li>
-<li><a href="http://cloud.spring.io/spring-cloud-pipelines/spring-cloud-pipelines.html#concourse">Concourse opinionated pipeline setup</a></li>
-<li><a href="http://concourse.ci">Concourse Website</a></li>
-<li><a href="http://cloud.spring.io/spring-cloud-pipelines/spring-cloud-pipelines.html#jenkins">Jenkins opinionated pipeline setup</a></li>
+<li><a href="https://cloud.spring.io/spring-cloud-pipelines/">Project page</a></li>
+<li><a href="https://cloud.spring.io/spring-cloud-pipelines/spring-cloud-pipelines.html">Project documentation</a></li>
+<li><a href="https://cloud.spring.io/spring-cloud-pipelines/spring-cloud-pipelines.html#concourse">Concourse opinionated pipeline setup</a></li>
+<li><a href="https://concourse.ci">Concourse Website</a></li>
+<li><a href="https://cloud.spring.io/spring-cloud-pipelines/spring-cloud-pipelines.html#jenkins">Jenkins opinionated pipeline setup</a></li>
 <li><a href="https://github.com/jenkinsci/job-dsl-plugin/wiki">Jenkins Job Dsl Plugin</a></li>
 <li><a href="https://gitter.im/spring-cloud/spring-cloud-pipelines">Spring Cloud Pipelines Gitter</a></li>
 <li><a href="https://github.com/spring-cloud/spring-cloud-pipelines">Spring Cloud Pipelines GitHub page</a></li>
@@ -80,7 +80,7 @@ our goal is to give developers tools they need to deliver features as fast as po
 <p>I&rsquo;m really happy that the project is GA. Even though as the Accurest project we had already done a GA release, it really feels that a lot of effort was put in order to release the GA version under the Pivotal&rsquo;s Spring Cloud branding. Let&rsquo;s look at some numbers:</p>
 
 <ul>
-<li>first commit almost 2 years ago: <a href="https://github.com/spring-cloud/spring-cloud-contract/commit/dfaddaa98d645b818ba3947c9267ef7ac8ed9ba4">2014-12-06 18:20:29 by Jakub Kubrynski</a> - thanks to <a href="http://codearte.eu">Codearte</a> the authors of <a href="http://devskiller.com">DevSkiller</a> for their support!!!</li>
+<li>first commit almost 2 years ago: <a href="https://github.com/spring-cloud/spring-cloud-contract/commit/dfaddaa98d645b818ba3947c9267ef7ac8ed9ba4">2014-12-06 18:20:29 by Jakub Kubrynski</a> - thanks to <a href="https://codearte.eu">Codearte</a> the authors of <a href="https://devskiller.com">DevSkiller</a> for their support!!!</li>
 <li><a href="https://github.com/spring-cloud/spring-cloud-contract/commits/master">1.152 commits</a></li>
 <li><a href="https://github.com/spring-cloud/spring-cloud-contract/graphs/contributors">20 contributors</a></li>
 </ul>
@@ -99,14 +99,14 @@ our goal is to give developers tools they need to deliver features as fast as po
 <li>we&rsquo;ve moved from Grapes to Aether to download stubs</li>
 <li><a href="https://cloud.spring.io/spring-cloud-contract/spring-cloud-contract.html#_what_is_this_value_consumer_producer">we generate fake data when you provide either consumer or producer in the DSL</a></li>
 <li><a href="https://cloud.spring.io/spring-cloud-contract/spring-cloud-contract.html#_common_repo_with_contracts">Consumer Contract approach is there</a></li>
-<li>Spring Cloud Contract is available on <a href="http://start.spring.io">start.spring.io</a></li>
+<li>Spring Cloud Contract is available on <a href="https://start.spring.io">start.spring.io</a></li>
 <li><a href="https://cloud.spring.io/spring-cloud-contract/spring-cloud-contract.html#_different_base_classes_for_contracts_2">you can have more than one base class for your tests</a></li>
 <li><a href="https://cloud.spring.io/spring-cloud-contract/spring-cloud-contract.html#_additional_configuration">Spring Cloud Stub Runner Boot can register stubs in Eureka / Consul / Zookeeper using Spring Cloud</a></li>
 <li>the whole build was moved from Gradle to the standard Spring Cloud Maven setup</li>
 </ul>
 
 
-<p>These are the Spring Cloud Contract Verifier changes. Apart from that Spring Cloud Contract consists of <a href="https://cloud.spring.io/spring-cloud-contract/spring-cloud-contract.html#_spring_cloud_contract_wiremock">Spring Cloud Contract WireMock support</a> and <a href="https://cloud.spring.io/spring-cloud-contract/spring-cloud-contract.html#_generating_stubs_using_restdocs">Spring Cloud Contract RestDocs</a>. Thanks to the first one the integration with <a href="http://wiremock.org">WireMock</a> is much more efficient and thanks to the latter you don&rsquo;t have to use the Groovy DSL - you can define your stubs by yourself by attaching them to an existing RestDocs test.</p>
+<p>These are the Spring Cloud Contract Verifier changes. Apart from that Spring Cloud Contract consists of <a href="https://cloud.spring.io/spring-cloud-contract/spring-cloud-contract.html#_spring_cloud_contract_wiremock">Spring Cloud Contract WireMock support</a> and <a href="https://cloud.spring.io/spring-cloud-contract/spring-cloud-contract.html#_generating_stubs_using_restdocs">Spring Cloud Contract RestDocs</a>. Thanks to the first one the integration with <a href="https://wiremock.org">WireMock</a> is much more efficient and thanks to the latter you don&rsquo;t have to use the Groovy DSL - you can define your stubs by yourself by attaching them to an existing RestDocs test.</p>
 
 <p>As far as Spring Cloud Contract Verifier is concerned the biggest two changes are the <a href="https://cloud.spring.io/spring-cloud-contract/spring-cloud-contract.html#_common_repo_with_contracts">Consumer Contract support</a> and that <a href="https://cloud.spring.io/spring-cloud-contract/spring-cloud-contract.html#_different_base_classes_for_contracts_2">you can have more than one base class for your tests</a>. Let&rsquo;s take a closer look what&rsquo;s there in the docs about them&hellip;</p>
 
@@ -141,8 +141,8 @@ our goal is to give developers tools they need to deliver features as fast as po
 <p>Example of a <code>pom.xml</code> inside the <code>server</code> folder.</p>
 
 <pre><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"&gt;
+&lt;project xmlns="https://maven.apache.org/POM/4.0.0" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="https://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd"&gt;
     &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
 
     &lt;groupId&gt;com.example&lt;/groupId&gt;
@@ -254,8 +254,8 @@ our goal is to give developers tools they need to deliver features as fast as po
 <p>The <code>pom.xml</code> in the root folder can look like this:</p>
 
 <pre><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"&gt;
+&lt;project xmlns="https://maven.apache.org/POM/4.0.0" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd"&gt;
     &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
 
     &lt;groupId&gt;com.example.standalone&lt;/groupId&gt;
@@ -298,9 +298,9 @@ our goal is to give developers tools they need to deliver features as fast as po
 
 <p>It’s using the assembly plugin in order to build the JAR with all the contracts. Example of such setup is here:</p>
 
-<pre><code>&lt;assembly xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.3"
-          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-          xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.3 http://maven.apache.org/xsd/assembly-1.1.3.xsd"&gt;
+<pre><code>&lt;assembly xmlns="https://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.3"
+          xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="https://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.3 https://maven.apache.org/xsd/assembly-1.1.3.xsd"&gt;
     &lt;id&gt;project&lt;/id&gt;
     &lt;formats&gt;
         &lt;format&gt;jar&lt;/format&gt;
@@ -341,7 +341,7 @@ our goal is to give developers tools they need to deliver features as fast as po
     &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
     &lt;artifactId&gt;spring-cloud-contract-maven-plugin&lt;/artifactId&gt;
     &lt;configuration&gt;
-        &lt;contractsRepositoryUrl&gt;http://link/to/your/nexus/or/artifactory/or/sth&lt;/contractsRepositoryUrl&gt;
+        &lt;contractsRepositoryUrl&gt;https://link/to/your/nexus/or/artifactory/or/sth&lt;/contractsRepositoryUrl&gt;
         &lt;contractDependency&gt;
             &lt;groupId&gt;com.example.standalone&lt;/groupId&gt;
             &lt;artifactId&gt;contracts&lt;/artifactId&gt;
@@ -350,7 +350,7 @@ our goal is to give developers tools they need to deliver features as fast as po
 &lt;/plugin&gt;
 </code></pre>
 
-<p>With this setup the JAR with groupid <code>com.example.standalone</code> and artifactid contracts will be downloaded from <code>http://link/to/your/nexus/or/artifactory/or/sth</code>. It will be then unpacked in a local temporary folder and contracts present under the <code>com/example/server</code> will be picked as the ones used to generate the tests and the stubs. Due to this convention the producer team will know which consumer teams will be broken when some incompatible changes are done.</p>
+<p>With this setup the JAR with groupid <code>com.example.standalone</code> and artifactid contracts will be downloaded from <code>https://link/to/your/nexus/or/artifactory/or/sth</code>. It will be then unpacked in a local temporary folder and contracts present under the <code>com/example/server</code> will be picked as the ones used to generate the tests and the stubs. Due to this convention the producer team will know which consumer teams will be broken when some incompatible changes are done.</p>
 
 <p>The rest of the flow looks the same.</p>
 

@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
+<feed xmlns="https://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Namespace | TOO MUCH CODING]]></title>
   <link href="https://toomuchcoding.com/blog/categories/namespace/atom.xml" rel="self"/>
   <link href="https://toomuchcoding.com/"/>
-  <updated>2019-04-08T15:17:02+02:00</updated>
+  <updated>2019-04-08T15:35:21+02:00</updated>
   <id>https://toomuchcoding.com/</id>
   <author>
     <name><![CDATA[Marcin Grzejszczak]]></name>
     <email><![CDATA[blog@toomuchcoding.com]]></email>
   </author>
-  <generator uri="http://octopress.org/">Octopress</generator>
+  <generator uri="https://octopress.org/">Octopress</generator>
 
   
   <entry>
@@ -19,7 +19,7 @@
     <updated>2013-01-07T08:15:00-08:00</updated>
     <id>https://toomuchcoding.com/blog/2013/01/07/very-interesting-article-about-xsd</id>
     <content type="html"><![CDATA[<div class='post'>
-A friend from my project (<strike>that will soon start his own blog ;)</strike> <a href="http://yetanothercoding.blogspot.com/">here is his blog</a> ) has found a very interesting article about XSDs and namespaces.<br /><br />&nbsp;<a href="http://www.liquid-technologies.com/Tutorials/XmlSchemas/XsdTutorial_04.aspx">Tutorial about XSD and namespaces</a></div>
+A friend from my project (<strike>that will soon start his own blog ;)</strike> <a href="https://yetanothercoding.blogspot.com/">here is his blog</a> ) has found a very interesting article about XSDs and namespaces.<br /><br />&nbsp;<a href="https://www.liquid-technologies.com/Tutorials/XmlSchemas/XsdTutorial_04.aspx">Tutorial about XSD and namespaces</a></div>
 
 ]]></content>
   </entry>
