@@ -1,3 +1,14 @@
+- date: 2019.04.12
+  eventName: Developers Conference 2019 - Mauritius
+  city: Moka
+  country: Mauritius
+  talks: Contract Tests in the Enterprise
+  countryCode: mu
+  resources:
+    event: https://conference.mscc.mu/
+    media:
+      - slides: https://docs.google.com/presentation/d/1Lled123KGpxKd7kXUhvw7-lVCBnF85j6qPolL0prD_c/edit?usp=sharing
+
 - date: 2019.03.28
   eventName: Soirée Spring Cloud Contracts avec Marcin Grzejszczak et Olga Maciaszek-Sharma
   city: Paris

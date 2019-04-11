@@ -1,12 +1,3 @@
-- date: 2019.04.12
-  eventName: Developers Conference 2019 - Mauritius
-  city: Moka
-  country: Mauritius
-  talks: TBD
-  countryCode: mu
-  resources:
-    event: https://conference.mscc.mu/
-
 - date: 2019.05.09
   eventName: Jax
   city: Mainz
