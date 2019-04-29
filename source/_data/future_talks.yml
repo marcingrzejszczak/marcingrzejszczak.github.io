@@ -6,3 +6,12 @@
   countryCode: de
   resources:
     event: https://jax.de/serverside-enterprise-java/consumer-driven-contracts-its-like-tdd-applied-to-the-api/
+
+- date: 2019.05.24
+  eventName: Voxxed Days Minsk
+  city: Minsk
+  country: Belarus
+  talks: Contract Tests in the Enterprise
+  countryCode: by
+  resources:
+    event: https://voxxeddays.com/minsk/2019/contract-tests-in-the-enterprise/
