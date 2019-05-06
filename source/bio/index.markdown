@@ -25,7 +25,7 @@ Profiles:
 
 ![image](/images/ja.jpeg)
 
-Autor książęk [Mockito Instant](https://www.packtpub.com/application-development/instant-mockito) oraz [Mockito Cookbook](https://www.packtpub.com/application-development/mockito-cookbook). Współtwórca kursów wideo [Applied Continuous Delivery Live Lessons](https://bit.ly/appliedCD). Współzałożyciel Warsaw Groovy User Group, [Warsaw Cloud Native Meetup](https://www.meetup.com/Warsaw-Cloud-Native-Meetup/) oraz inicjatywy [DiverseIT](https://www.diverseit.io).
+Autor książęk [Mockito Instant](https://www.packtpub.com/application-development/instant-mockito) oraz [Mockito Cookbook](https://www.packtpub.com/application-development/mockito-cookbook). Twórca kursu [Hands-On Guide to Spring Cloud Contract: Creating Consumer-Driven Contracts to Leverage Contract Tests and Improve Your Code](https://learning.oreilly.com/videos/hands-on-guide-to/9780135598436) oraz współtwórca kursu [Applied Continuous Delivery Live Lessons](https://bit.ly/appliedCD). Współzałożyciel Warsaw Groovy User Group, [Warsaw Cloud Native Meetup](https://www.meetup.com/Warsaw-Cloud-Native-Meetup/) oraz inicjatywy [DiverseIT](https://www.diverseit.io).
 
 Lead projektów [Spring Cloud Sleuth](https://cloud.spring.io/spring-cloud-sleuth/), [Spring Cloud Contract](https://cloud.spring.io/spring-cloud-contract/) oraz [Cloud Pipelines](https://cloud.spring.io/spring-cloud-pipelines) w [Pivotalu](https://spring.io).
 
