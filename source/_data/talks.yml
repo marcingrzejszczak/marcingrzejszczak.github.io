@@ -1,3 +1,12 @@
+- date: 2019.05.09
+  eventName: Jax
+  city: Mainz
+  country: Germany
+  talks: Consumer Driven Contracts like TDD to the API
+  countryCode: de
+  resources:
+    event: https://jax.de/serverside-enterprise-java/consumer-driven-contracts-its-like-tdd-applied-to-the-api/
+    
 - date: 2019.04.12
   eventName: Developers Conference 2019 - Mauritius
   city: Moka
