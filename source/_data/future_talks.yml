@@ -1,3 +1,25 @@
+- date: 2019.05.17
+  eventName: Spring IO
+  city: Barcelona
+  country: Spain
+  talks: How to live in a post Spring-Cloud-Netflix world?
+  countryCode: es
+  resources:
+    event: https://2019.springio.net/
+    media:
+      - slides: https://docs.google.com/presentation/d/1NVu8BPJ5SMlhdrwZKVGhVPQeZ7jDVv4eaBsK2mwdn1U/edit#slide=id.g528dfefaf9_0_45
+
+- date: 2019.05.17
+  eventName: Spring IO
+  city: Barcelona
+  country: Spain
+  talks: Connect your car with Spring Tools
+  countryCode: es
+  resources:
+    event: https://2019.springio.net/
+    media:
+      - slides: https://docs.google.com/presentation/d/1eR1Rs47bJ-Rgy6EiBTWXwLk8LMcqnMzYg6z8vHSjM9I/edit?ts=5cd67ac4#slide=id.g59dc5a452d_0_36
+
 - date: 2019.05.24
   eventName: Voxxed Days Minsk
   city: Minsk
@@ -6,3 +28,46 @@
   countryCode: by
   resources:
     event: https://voxxeddays.com/minsk/2019/contract-tests-in-the-enterprise/
+
+- date: 2019.06.24
+  eventName: Devoxx Poland
+  city: Cracow
+  country: Poland
+  countryCode: pl
+  talks: Testing your messaging application
+  resources:
+    event: https://cfp.devoxx.pl/2019/index.html
+
+- date: 2019.07.14
+  eventName: JCrete
+  city: "?"
+  country: Greece
+  countryCode: gr
+  talks: TBD
+  resources:
+    event: http://www.jcrete.org/
+
+- date: 2019.09.21
+  eventName: IT Matters - Diversity Meeting
+  city: Warsaw
+  country: Poland
+  countryCode: pl
+  talks: Co trzech białych mężczyzn może zrobić w kwestii różnorodności?
+  resources:
+    event: http://itmatters.pl/
+
+- date: 2019.10.08
+  eventName: Spring One Platform
+  city: Austin
+  country: USA
+  countryCode: us
+  talks: TBD
+  resources:
+    event: https://springoneplatform.io/2019/schedule
+
+- date: 2019.11.19
+  eventName: DevOps Pro Moscow
+  city: Moscow
+  country: Russia
+  countryCode: ru
+  talks: Continuous Deployment of your Application
