@@ -40,7 +40,7 @@
 
 - date: 2019.07.14
   eventName: JCrete
-  city: "?"
+  city: Kolymbari
   country: Greece
   countryCode: gr
   talks: TBD
@@ -71,3 +71,5 @@
   country: Russia
   countryCode: ru
   talks: Continuous Deployment of your Application
+  resources:
+    event: https://www.devopspro.ru/en/
