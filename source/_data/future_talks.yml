@@ -1,21 +1,3 @@
-- date: 2019.05.24
-  eventName: Voxxed Days Minsk
-  city: Minsk
-  country: Belarus
-  talks: Contract Tests in the Enterprise
-  countryCode: by
-  resources:
-    event: https://voxxeddays.com/minsk/2019/contract-tests-in-the-enterprise/
-
-- date: 2019.05.25
-  eventName: Voxxed Days Minsk
-  city: Minsk
-  country: Belarus
-  talks: Testing Your Messaging Application
-  countryCode: by
-  resources:
-    event: https://voxxeddays.com/minsk/2019/testing-your-messaging-application/
-
 - date: 2019.06.24
   eventName: Devoxx Poland
   city: Cracow

@@ -1,3 +1,23 @@
+- date: 2019.05.24
+  eventName: Voxxed Days Minsk
+  city: Minsk
+  country: Belarus
+  talks: Contract Tests in the Enterprise
+  countryCode: by
+  resources:
+    event: https://voxxeddays.com/minsk/2019/contract-tests-in-the-enterprise/
+    media:
+      - slides: https://docs.google.com/presentation/d/1xQYXceRvhZ93fgEpmlIRwlcB1aDp8-JMWbk7fB2ks_k/edit#slide=id.g2b578f0b81_0_244
+
+- date: 2019.05.25
+  eventName: Voxxed Days Minsk
+  city: Minsk
+  country: Belarus
+  talks: Testing Your Messaging Application
+  countryCode: by
+  resources:
+    event: https://voxxeddays.com/minsk/2019/testing-your-messaging-application/
+
 - date: 2019.05.17
   eventName: Spring IO
   city: Barcelona
