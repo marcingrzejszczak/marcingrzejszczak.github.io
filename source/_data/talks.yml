@@ -28,6 +28,7 @@
     event: https://2019.springio.net/
     media:
       - slides: https://docs.google.com/presentation/d/1NVu8BPJ5SMlhdrwZKVGhVPQeZ7jDVv4eaBsK2mwdn1U/edit#slide=id.g528dfefaf9_0_45
+      - video : https://www.youtube.com/watch?v=CcL8wrguhhM
 
 - date: 2019.05.17
   eventName: Spring IO
@@ -39,6 +40,7 @@
     event: https://2019.springio.net/
     media:
       - slides: https://docs.google.com/presentation/d/1eR1Rs47bJ-Rgy6EiBTWXwLk8LMcqnMzYg6z8vHSjM9I/edit?ts=5cd67ac4#slide=id.g59dc5a452d_0_36
+      - video: https://www.youtube.com/watch?v=lYNtF223y70
       
 - date: 2019.05.09
   eventName: Jax
