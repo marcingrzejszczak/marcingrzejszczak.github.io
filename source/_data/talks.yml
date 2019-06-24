@@ -17,6 +17,8 @@
   countryCode: by
   resources:
     event: https://voxxeddays.com/minsk/2019/testing-your-messaging-application/
+    media:
+      - video : https://www.youtube.com/watch?v=CcL8wrguhhM
 
 - date: 2019.05.17
   eventName: Spring IO
