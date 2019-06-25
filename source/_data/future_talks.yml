@@ -7,15 +7,6 @@
   resources:
     event: http://www.jcrete.org/
 
-- date: 2019.09.21
-  eventName: IT Matters - Diversity Meeting
-  city: Warsaw
-  country: Poland
-  countryCode: pl
-  talks: Co trzech białych mężczyzn może zrobić w kwestii różnorodności?
-  resources:
-    event: http://itmatters.pl/
-
 - date: 2019.10.08
   eventName: Spring One Platform
   city: Austin
