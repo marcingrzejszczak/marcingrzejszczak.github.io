@@ -1,12 +1,3 @@
-- date: 2019.06.24
-  eventName: Devoxx Poland
-  city: Cracow
-  country: Poland
-  countryCode: pl
-  talks: Testing your messaging application
-  resources:
-    event: https://cfp.devoxx.pl/2019/index.html
-
 - date: 2019.07.14
   eventName: JCrete
   city: Kolymbari
