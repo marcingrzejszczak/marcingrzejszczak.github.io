@@ -1,12 +1,3 @@
-- date: 2019.07.14
-  eventName: JCrete
-  city: Kolymbari
-  country: Greece
-  countryCode: gr
-  talks: TBD
-  resources:
-    event: http://www.jcrete.org/
-
 - date: 2019.10.08
   eventName: Spring One Platform
   city: Austin
@@ -15,12 +6,3 @@
   talks: TBD
   resources:
     event: https://springoneplatform.io/2019/schedule
-
-- date: 2019.11.19
-  eventName: DevOps Pro Moscow
-  city: Moscow
-  country: Russia
-  countryCode: ru
-  talks: Continuous Deployment of your Application
-  resources:
-    event: https://www.devopspro.ru/en/

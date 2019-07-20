@@ -1,3 +1,12 @@
+- date: 2019.07.14
+  eventName: JCrete
+  city: Kolymbari
+  country: Greece
+  countryCode: gr
+  talks: Parallel tests and deployment pipelines
+  resources:
+    event: http://www.jcrete.org/
+
 - date: 2019.06.24
   eventName: Devoxx Poland
   city: Cracow
