@@ -15,6 +15,8 @@
   talks: Testing your messaging application
   resources:
     event: https://cfp.devoxx.pl/2019/index.html
+    media:
+      - video: https://www.youtube.com/watch?v=QZxtZC22uTs&t=1768s
     
 - date: 2019.05.24
   eventName: Voxxed Days Minsk
