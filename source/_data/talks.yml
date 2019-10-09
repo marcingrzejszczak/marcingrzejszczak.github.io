@@ -1,3 +1,14 @@
+- date: 2019.10.08
+  eventName: Spring One Platform
+  city: Austin
+  country: USA
+  countryCode: us
+  talks: How To Live In A Post-Spring-Cloud Netflix World?
+  resources:
+    event: https://springoneplatform.io/2019/schedule
+    media:
+      - slides: https://speakerdeck.com/olgamaciaszek/how-to-live-in-a-post-spring-cloud-netflix-world-spring-one-platform-2019
+
 - date: 2019.07.14
   eventName: JCrete
   city: Kolymbari
