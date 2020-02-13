@@ -14,11 +14,16 @@ Below you can find a list of my publications (check [the talks page](/talks/) fo
 - [Applied Continuous Delivery](https://www.oreilly.com/library/view/applied-continuous-delivery/9780134857053/)
 - [Hands-On Guide to Spring Cloud Contract: Creating Consumer-Driven Contracts to Leverage Contract Tests and Improve Your Code](https://learning.oreilly.com/videos/hands-on-guide-to/9780135598436)
 - [Consumer Driven Contracts a Hands On Guide to Spring Cloud Contract](https://www.safaribooksonline.com/live-training/courses/consumer-driven-contracts-a-hands-on-guide-to-spring-cloud-contract/0636920208242/)
+- [Microservices with Spring Cloud](https://learning.oreilly.com/live-training/courses/microservices-with-spring-cloud/0636920353201/)
 
 ## Books
 
 - [Mockito Instant](https://www.packtpub.com/application-development/instant-mockito)
 - [Mockito Cookbook](https://www.packtpub.com/application-development/mockito-cookbook)
+
+## Workshops
+
+- [Mikroserwisy ze Spring Cloud - koniec z teorią, kodujemy](https://bottega.com.pl/szkolenie-spring-cloud-coding?show)
 
 ## Notable Articles / Interviews
 
