@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>https://toomuchcoding.com/blog/2020/08/13/smarttesting-dot-pl/</loc>
+<lastmod>2020-08-13T15:36:35+02:00</lastmod>
+</url>
+<url>
 <loc>https://toomuchcoding.com/blog/2018/02/13/spring-cloud-contract-in-the-polyglot-world/</loc>
 <lastmod>2018-02-13T21:39:51+01:00</lastmod>
 </url>
@@ -610,5 +614,8 @@
 </url>
 <url>
 <loc>https://toomuchcoding.com/blog/categories/concourse/</loc>
+</url>
+<url>
+<loc>https://toomuchcoding.com/blog/categories/testowanie/</loc>
 </url>
 </urlset>
