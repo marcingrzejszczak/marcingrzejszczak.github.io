@@ -1,3 +1,14 @@
+- date: 2020.10.21
+  eventName: SmartTesting Conf
+  city: Online
+  country: Poland
+  countryCode: pl
+  talks: "3 sytuacje, w których testy kontraktowe ułatwią Ci życie"
+  resources:
+    event: https://smarttesting.pl
+    media:
+      - slides: https://docs.google.com/presentation/d/1Cqm_Sx3gX2kS77nLT6UtPkaNGuypacCOLEXWMULDEm8/edit?usp=sharing
+
 - date: 2019.12.17
   eventName: Javafaktura
   city: Lodz
