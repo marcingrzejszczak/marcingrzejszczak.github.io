@@ -3,7 +3,7 @@
 ## Create a new blog post
 
 ```bash
-$ jekyll new jekyll-blog
+$ bundle exec jekyll new jekyll-blog
 ```
 
 ## Run locally
@@ -21,7 +21,7 @@ $ bundle
 ## Deploying
 
 ```bash
-# Will publish the documentation to [public]
+# Will publish the documentation to [docs]
 $ bundle exec jekyll build
-$ temporaryDir="/tmp/toomuchcoding"  && rm -rf "${temporaryDir}" && mkdir -p "${temporaryDir}" && cp -r public/* "${temporaryDir}" && git checkout master && git reset --hard origin/master && git rm -rf . && cp -rf "${temporaryDir}"/* . && git restore .gitignore && git add .
+$ git add docs && git commit -m "New docs" && git push origin master
 ```

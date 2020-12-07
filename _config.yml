@@ -30,7 +30,7 @@ email: blog@toomuchcoding.com
 # permalink: /blog/:year/:month/:day/:title/
 permalink: ":categories/:year/:month/:day/:title/"
 source: source
-destination: public
+destination: docs
 plugins: [jekyll-paginate]
 code_dir: downloads/code
 category_dir: blog/categories
