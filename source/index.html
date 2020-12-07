@@ -35,11 +35,7 @@ navbar: Blog
 
   {% unless site.default_asides == empty and site.blog_index_asides == empty %}
     <aside class="sidebar col-md-3">
-      {% if site.blog_index_asides.size %}
-        {% include_array blog_index_asides %}
-      {% else %}
-        {% include_array default_asides %}
-      {% endif %}
-    </aside>
+        {% include custom/asides/about.html %}
+      </aside>
   {% endunless %}
 </div>

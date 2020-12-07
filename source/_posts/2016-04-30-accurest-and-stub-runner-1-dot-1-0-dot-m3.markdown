@@ -3,8 +3,10 @@ layout: post
 title: "Accurest and Stub Runner 1.1.0.M3"
 date: 2016-04-30 13:53:44 +0200
 comments: true
-categories:
-categories:
+categories: articles
+tags:
+categories: articles
+tags:
 - accurest
 - stubrunner
 - testing

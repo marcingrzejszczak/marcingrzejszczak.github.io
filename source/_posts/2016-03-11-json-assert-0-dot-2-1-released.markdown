@@ -3,7 +3,8 @@ layout: post
 title: "JSON Assert 0.2.1 released"
 date: 2016-03-11 23:33:30 +0100
 comments: true
-categories:
+categories: articles
+tags:
 - jsonassert
 - testing
 ---

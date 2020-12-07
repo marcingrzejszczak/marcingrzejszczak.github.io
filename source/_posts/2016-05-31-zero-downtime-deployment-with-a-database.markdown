@@ -3,7 +3,8 @@ layout: post
 title: "Zero Downtime Deployment with a Database"
 date: 2016-05-31 11:58:52 +0200
 comments: true
-categories:
+categories: articles
+tags:
 - spring-cloud
 - deployment
 ---

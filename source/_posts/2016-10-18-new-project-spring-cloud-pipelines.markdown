@@ -3,7 +3,8 @@ layout: post
 title: "New Project - Spring Cloud Pipelines"
 date: 2016-10-18 19:29:24 +0200
 comments: true
-categories:
+categories: articles
+tags:
 - spring-cloud
 - deployment
 - spring-cloud-contract

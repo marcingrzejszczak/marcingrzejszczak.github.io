@@ -3,7 +3,8 @@ layout: post
 title: "AccuREST Stub Runner Released"
 date: 2016-04-06 11:05:58 +0200
 comments: true
-categories:
+categories: articles
+tags:
 - accurest
 - stubrunner
 - testing

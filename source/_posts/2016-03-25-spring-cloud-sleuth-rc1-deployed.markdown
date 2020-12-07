@@ -3,7 +3,8 @@ layout: post
 title: "Spring Cloud Sleuth RC1 deployed"
 date: 2016-03-25 14:18:22 +0100
 comments: true
-categories:
+categories: articles
+tags:
 - spring-cloud
 - spring-cloud-sleuth
 ---

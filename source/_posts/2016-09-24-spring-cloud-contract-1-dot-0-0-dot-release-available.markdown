@@ -3,7 +3,8 @@ layout: post
 title: "Spring Cloud Contract 1.0.0.RELEASE available!"
 date: 2016-09-24 20:39:25 +0200
 comments: true
-categories:
+categories: articles
+tags:
 - spring-cloud
 - deployment
 - accurest

@@ -3,7 +3,8 @@ layout: post
 title: "Accurest docs updated"
 date: 2016-04-25 21:49:59 +0200
 comments: true
-categories:
+categories: articles
+tags:
 - accurest
 - stubrunner
 - testing

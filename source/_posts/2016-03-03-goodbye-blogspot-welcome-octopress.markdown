@@ -3,7 +3,8 @@ layout: post
 title: "Goodbye Blogspot welcome Octopress!"
 date: 2016-03-03 22:53:26 +0100
 comments: true
-categories: Octopress
+categories: articles
+tags: Octopress
 ---
 
 I'm more than happy to announce that I've finally migrated from Blogspot to a decent

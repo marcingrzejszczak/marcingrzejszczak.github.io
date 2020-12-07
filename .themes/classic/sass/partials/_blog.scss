@@ -76,7 +76,8 @@ article {
       clear: both;
       overflow: hidden;
     }
-    .byline + time:before, time +time:before, .comments:before, .byline ~ .categories:before {
+    .byline + time:before, time +time:before, .comments:before, .byline ~ .categories: articles
+tags:before {
       @extend .separator;
     }
   }

@@ -3,7 +3,8 @@ layout: post
 title: "Spring Cloud Contract Podcast"
 date: 2016-10-07 23:14:36 +0200
 comments: true
-categories:
+categories: articles
+tags:
 - spring-cloud
 - deployment
 - accurest

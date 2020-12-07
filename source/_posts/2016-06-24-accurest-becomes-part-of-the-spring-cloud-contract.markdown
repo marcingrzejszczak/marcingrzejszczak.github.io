@@ -3,7 +3,8 @@ layout: post
 title: "Accurest becomes part of the Spring Cloud Contract"
 date: 2016-06-24 18:43:07 +0200
 comments: true
-categories:
+categories: articles
+tags:
 - spring-cloud
 - deployment
 - accurest

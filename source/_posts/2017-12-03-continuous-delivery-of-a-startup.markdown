@@ -3,7 +3,8 @@ layout: post
 title: "Continuous Delivery of a Startup"
 date: 2017-12-03 07:11:22 -0500
 comments: true
-categories:
+categories: articles
+tags:
 - spring-cloud
 - deployment
 - spring-cloud-contract

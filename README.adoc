@@ -1,0 +1,27 @@
+# Useful scripts
+
+## Create a new blog post
+
+```bash
+$ jekyll new jekyll-blog
+```
+
+## Run locally
+
+```bash
+$ bundle exec jekyll serve
+```
+
+## Installing gems
+
+```bash
+$ bundle
+``` 
+
+## Deploying
+
+```bash
+# Will publish the documentation to [public]
+$ bundle exec jekyll build
+$ temporaryDir="$(mktemp -d)" && cp -r public/* "${temporaryDir}" && git checkout master && git reset --hard origin/master
+```

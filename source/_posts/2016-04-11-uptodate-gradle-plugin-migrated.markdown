@@ -3,7 +3,8 @@ layout: post
 title: "UpToDate Gradle Plugin migrated"
 date: 2016-04-11 13:28:43 +0200
 comments: true
-categories:
+categories: articles
+tags:
 - uptodate
 - gradle
 - gradle plugin

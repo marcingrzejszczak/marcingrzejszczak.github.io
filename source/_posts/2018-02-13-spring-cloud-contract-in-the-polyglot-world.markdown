@@ -3,7 +3,8 @@ layout: post
 title: "Spring Cloud Contract in the polyglot world"
 date: 2018-02-13 21:39:51 +0100
 comments: true
-categories:
+categories: articles
+tags:
 - spring-cloud
 - spring-cloud-contract
 - consumer-driven-contracts

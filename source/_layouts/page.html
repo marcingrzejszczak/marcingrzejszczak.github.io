@@ -48,11 +48,7 @@ layout: default
 
   {% unless page.sidebar == false or site.page_asides == empty and site.default_asides == empty %}
     <aside class="sidebar col-md-3">
-      {% if site.page_asides.size %}
-        {% include_array page_asides %}
-      {% else %}
-        {% include_array default_asides %}
-      {% endif %}
+        {% include custom/asides/about.html %}
     </aside>
   {% endunless %}
 </div>

@@ -3,7 +3,8 @@ layout: post
 title: "SmartTesting.pl"
 date: 2020-08-13 15:36:35 +0200
 comments: true
-categories:
+categories: articles
+tags:
 - testing
 - testowanie
 ---
