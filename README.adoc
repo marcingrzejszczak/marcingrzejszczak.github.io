@@ -21,7 +21,7 @@ $ bundle
 ## Deploying
 
 ```bash
-# Will publish the documentation to [docs]
+# Will publish the documentation to [public]
 $ bundle exec jekyll build
-$ git add docs && git commit -m "New docs" && git push origin master
+$ temporaryDir="/tmp/toomuchcoding"  && rm -rf "${temporaryDir}" && mkdir -p "${temporaryDir}" && cp -r public/* "${temporaryDir}" && git checkout master && git reset --hard origin/master && git rm -rf . && cp -rf "${temporaryDir}"/* . && git restore --staged .gitignore && git restore .gitignore && git add . && git commit -m "Updated site" && git push origin master && git checkout source
 ```
