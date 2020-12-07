@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>How to speed up your Gradle build from 90 to 8 minutes - TOO MUCH CODING</title>
+  <meta name="author" content="Marcin Grzejszczak">
+
+  
+  
+
+  <!-- https://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="https://toomuchcoding.com/articles/2015/02/08/how-to-speed-up-your-gradle-build-from/">
+  <link href="/favicon.png" type="image/png" rel="icon">
+  <link href="/atom.xml" rel="alternate" title="TOO MUCH CODING" type="application/atom+xml">
+
+  <!-- https://opengraphprotocol.org/ -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://toomuchcoding.com/articles/2015/02/08/how-to-speed-up-your-gradle-build-from/">
+  <meta property="og:title" content="How to speed up your Gradle build from 90 to 8 minutes - TOO MUCH CODING">
+  
+
+  <script src="/javascripts/libs/jquery/jquery-2.1.3.min.js"></script>
+
+<link href="/assets/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="/assets/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css">
+
+
+  
+  <link href="/stylesheets/screen.css" media="screen, projection, print" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+  <body   >
+    <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+    <div id="wrap">
+      <header role="banner">
+        <nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" title="toggle navbar" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">TOO MUCH CODING</a>
+        </div>
+
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li >
+                    <a rel="index" href="/">Blog</a>
+                </li>
+                <li >
+                    <a href="/blog/archives">Archives</a>
+                </li>
+                <li >
+                    <a href="/oss">OSS</a>
+                </li>
+                <li >
+                    <a href="/abstracts">Abstracts</a>
+                </li>
+                <li >
+                    <a href="/talks">Talks</a>
+                </li>
+                <li >
+                    <a href="/publications">Publications</a>
+                </li>
+                <li >
+                    <a href="/bio">Bio</a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a class="subscribe-rss" href="/atom.xml" title="subscribe via RSS">
+                        <span class="visible-xs">RSS</span>
+                        <img class="hidden-xs" src="/images/rss.png" alt="RSS">
+                    </a>
+                </li>
+                
+            </ul>
+            
+                <form class="navbar-form navbar-right" action="https://www.google.com/search" method="GET">
+                    <input type="hidden" name="sitesearch" value="https://toomuchcoding.com">
+                    <div class="form-group">
+                        <input class="form-control" type="text" name="q" placeholder="Search">
+                    </div>
+                </form>
+            
+        </div>
+    </div>
+</nav>
+
+
+      </header>
+      <div id="main" role="main" class="container">
+        <div id="content">
+          <div class="row">
+  <div class="page-content col-md-9" itemscope itemtype="https://schema.org/Blog">
+    <meta itemprop="name" content="TOO MUCH CODING" />
+    <meta itemprop="description" content="A blog for coding addicts about Java, Groovy, Buzzword, Spring, Microservices, Buzzword" />
+    <meta itemprop="url" content="https://toomuchcoding.com" />
+    <article class="hentry" role="article" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+      
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2015-02-08T19:24:00+01:00"  data-updated="true" itemprop="datePublished dateCreated">ordinal</time>
+        
+           | <a href="#disqus_thread" itemprop="discussionUrl"
+             data-disqus-identifier="https://toomuchcoding.com">Comments</a>
+        
+      </p>
+    
+    
+    <h1 class="entry-title" itemprop="name headline">
+        How to speed up your Gradle build from 90 to 8 minutes
+        
+    </h1>
+    
+  </header>
+
+
+<div class="entry-content clearfix" itemprop="articleBody description"><div class='post'>
+<div style="background-color: white; box-sizing: border-box; color: #262626; font-family: Georgia, serif; font-size: 19px; line-height: 27.55px;">Even though I was supposed to write a series of blog posts about&nbsp;<a href="https://toomuchcoding.blogspot.com/search/label/micro-infra-spring" style="background: transparent; box-sizing: border-box; color: black; cursor: pointer; text-decoration: none;">micro-infra-spring</a>&nbsp;here at&nbsp;<a href="https://toomuchcoding.blogspot.com/" style="background: transparent; box-sizing: border-box; color: black; cursor: pointer; text-decoration: none;">Too Much Coding blog</a>, today I'll write about how we've managed to decrease our biggest project's build time from 90 to 8 minutes!<br /><br /><a name='more'></a>
+<!--more-->
+  <br style="box-sizing: border-box;" /><br /><br style="box-sizing: border-box;" />At one of the companies that I've been working we've faced a big problem related to pull request build times. We have one monolithic application that we are in progress of slicing into microservices but still until this process is finished we have to build that big app for each PR. We needed to change things to have really fast feedback from our build so that pull request builds don't get queued up endlessly in our CI. You can only imagine the frustration of developers who can't have their branches merged to master because of the waiting time.<br /><br style="box-sizing: border-box;" /><div style="box-sizing: border-box; margin-bottom: 15px; margin-top: 5px;"><strong style="box-sizing: border-box;">Structure</strong></div>In that project we have over 200 Gradle modules and over a dozen big projects (countries) from which we can build some (really fat) fat-jars. We have also a core module that if we change then we would have to rebuild all the big projects to check if they weren't affected by the modifications. There are a few old countries that are using GWT compilers and we have some JS tasks executed too.<br /><br style="box-sizing: border-box;" /><div style="box-sizing: border-box; margin-bottom: 15px; margin-top: 5px;"><strong style="box-sizing: border-box;">Initial stats</strong></div>Before we started to work on optimization of the process the whole application (all the countries) was built in about 1h 30 minutes.<br /><br style="box-sizing: border-box;" /><i style="box-sizing: border-box;">Current build time: ~90 minutes.</i></div><div style="background-color: white; box-sizing: border-box; color: #262626; font-family: Georgia, serif; font-size: 19px; line-height: 27.55px;"><br style="box-sizing: border-box;" /><div style="box-sizing: border-box; margin-bottom: 15px; margin-top: 5px;"><strong style="box-sizing: border-box;">Profile your build</strong></div>First thing that we've done was to run the build with the&nbsp;--profile&nbsp;switch.<br /><br style="box-sizing: border-box;" />That way Gradle created awesome stats for our build. If you are doing any sort of optimization then it's crucial to gather measurements and statistics. Check out this&nbsp;<a href="https://gradle.org/docs/current/userguide/tutorial_gradle_command_line.html#sec:profiling_build" style="background: transparent; box-sizing: border-box; color: black; cursor: pointer; text-decoration: none;">Gradle page about profiling your build&nbsp;</a>for more info on that switch and features.</div><div style="background-color: white; box-sizing: border-box; color: #262626; font-family: Georgia, serif; font-size: 19px; line-height: 27.55px;"><br style="box-sizing: border-box;" /><div style="box-sizing: border-box; margin-bottom: 15px; margin-top: 5px;"><strong style="box-sizing: border-box;">Exclude long running tasks in dev mode</strong></div><div style="box-sizing: border-box;"><span data-fr-verified="true" style="background-color: initial; box-sizing: border-box;"><span data-fr-verified="true" style="box-sizing: border-box; line-height: 1.45em;"><span data-fr-verified="true" style="box-sizing: border-box; font-size: 15px;"><span data-fr-verified="true" style="box-sizing: border-box; font-family: &quot;arial&quot; , &quot;helvetica&quot; , &quot;verdana&quot; , &quot;tahoma&quot; , sans-serif;">It turned out that we are spending a lot of time on JS minification and on GWT compilation. That's why we have added a custom property&nbsp;-PdevMode&nbsp;to disable some long running tasks in dev mode build. Those tasks were:</span></span></span></span></div><br style="box-sizing: border-box;" /><ul style="box-sizing: border-box; margin-bottom: 10px; margin-top: 0px; padding-left: 25px;"><li style="box-sizing: border-box; padding: 0px 0px 8px;">excluded JS minification</li><ul style="box-sizing: border-box; margin-bottom: 0px; margin-top: 0px; padding-left: 25px;"><li style="box-sizing: border-box; padding: 0px 0px 8px;">benefit: 13 countries * ~60 secs * at least 2 modules where minification occurred ~ 26 minutes</li></ul><li style="box-sizing: border-box; padding: 0px 0px 8px;">optimized GWT compilation:&nbsp;</li><ul style="box-sizing: border-box; margin-bottom: 0px; margin-top: 0px; padding-left: 25px;"><li style="box-sizing: border-box; padding: 0px 0px 8px;">have permutations done for only 1 browser (by default it's done for multiple browsers)</li><li style="box-sizing: border-box; padding: 0px 0px 8px;">disable optimization of the compilation (-optimize 0)</li><li style="box-sizing: border-box; padding: 0px 0px 8px;">add the -draftCompile switch to to compile quickly with minimal optimizations</li><li style="box-sizing: border-box; padding: 0px 0px 8px;">benefit: about 2 minutes less on GWT compilation * sth like 5 projects with GWT ~ 10 minutes</li></ul></ul><i style="box-sizing: border-box;">Overall gain: ~ 40 minutes.</i><br /><div style="box-sizing: border-box;"><em style="box-sizing: border-box;">Current build time: ~50 minutes.</em></div><div style="box-sizing: border-box;"><br style="box-sizing: border-box;" /><div style="box-sizing: border-box; margin-bottom: 15px; margin-top: 5px;"><strong style="box-sizing: border-box;">Check out your tests</strong></div>Together with the one and only&nbsp;<a href="https://github.com/achudzik" style="background: transparent; box-sizing: border-box; color: black; cursor: pointer; text-decoration: none;">Adam Chudzik</a>&nbsp;we have started to write our own&nbsp;<a href="https://github.com/marcingrzejszczak/gradle-test-profiler" style="background: transparent; box-sizing: border-box; color: black; cursor: pointer; text-decoration: none;">Gradle Test Profiler</a>&nbsp;(it's a super beta version ;) ) that created a single CSV with sorted tests by their execution time. We needed quick and easy gains without endless test refactoring and it turned out that it's really simple. One of our tests took 50 seconds to execute and it was testing a feature that has and will never be turned on on production. Of course there were plenty of other tests that we should take a look into (we'd have to look for test duplication, check out the test setup etc.) but it would involve more time, help of a QA and we needed quick gains.<br /><br style="box-sizing: border-box;" />Benefit: By simple disabling this test we gained about 1 minute.<br /><i style="box-sizing: border-box;">Overall gain: ~ 41 minutes.</i><br /><div style="box-sizing: border-box;"><em style="box-sizing: border-box;">Current build time: ~49 minutes.</em></div><div style="box-sizing: border-box;"><br style="box-sizing: border-box;" /></div><div style="box-sizing: border-box; margin-bottom: 15px; margin-top: 5px;"><strong style="box-sizing: border-box;">Turn on the --parallel Gradle flag at least for the compilation</strong></div>Even though at this point our gains were more or less 40 minutes it was still unacceptable for us to wait 40 minutes for the pull request to be built.<br /><br style="box-sizing: border-box;" />That's why we decided to go parallel! Let's build the projects (over 200) in parallel and we'll gain a lot of time on that. When you execute the Gradle build with the --parallel flag Gradle calculates how many threads can be used to concurrently build the modules. For more info go to the&nbsp;<a href="https://gradle.org/docs/current/userguide/multi_project_builds.html#sec:parallel_execution" style="background: transparent; box-sizing: border-box; color: black; cursor: pointer; text-decoration: none;">Gradle's documentation on parallel project execution</a>.<br /><br style="box-sizing: border-box;" />It's an incubating feature so wen we started to get&nbsp;BindExceptions&nbsp;on port allocation we initially thought that most likely it's Gradle's fault. Then we had a chat with&nbsp;<a href="https://twitter.com/szczepiq" style="background: transparent; box-sizing: border-box; color: black; cursor: pointer; text-decoration: none;">Szczepan Faber</a>who worked for Gradleware and it turns out that the feature is actually really mature (thx Szczepan for the help BTW :) ).<br /><br style="box-sizing: border-box;" />We needed quick gains so instead of fixing the port binding stuff we decided only to compile everything in parallel and then run tests sequentially.</div><div style="box-sizing: border-box;"><br />Benefit: By doing this lame looking hack we gained ~4 mintues (on my 8 core laptop).<br /><i style="box-sizing: border-box;">Overall gain: ~ 45 minutes.</i><br /><div style="box-sizing: border-box;"><em style="box-sizing: border-box;">Current build time: ~45 minutes.</em></div><div style="box-sizing: border-box;"><br style="box-sizing: border-box;" /></div><div style="box-sizing: border-box; margin-bottom: 15px; margin-top: 5px;"><strong style="box-sizing: border-box;">Don't be a jerk - just prepare your tests for parallelization</strong></div>This command seemed so lame that we couldn't even look at it. That's why we said - let's not be jerks and just fix the port issues.<br /><br style="box-sizing: border-box;" />So we went through the code, randomized all the fixed ports, patched&nbsp;<a href="https://github.com/4finance/micro-infra-spring" style="background: transparent; box-sizing: border-box; color: black; cursor: pointer; text-decoration: none;">micro-infra-spring</a>&nbsp;so it does the same upon Wiremock and Zookeeper instantiation and just ran the building of the project like this:<br /><br style="box-sizing: border-box;" />We were sure that this is the killer feature that we were lacking and we're going to win the lottery. Much to our surprise the result was really disappointing.<br /><br style="box-sizing: border-box;" />Benefit: Concurrent project build decreased the time by ~5 minutes.<br /><i style="box-sizing: border-box;">Overall gain: ~ 50 minutes.</i><br /><div style="box-sizing: border-box;"><em style="box-sizing: border-box;">Current build time: ~40 minutes.</em></div><div style="box-sizing: border-box;"><br style="box-sizing: border-box;" /></div><div style="box-sizing: border-box; margin-bottom: 15px; margin-top: 5px;"><strong style="box-sizing: border-box;">Check out your project structure</strong></div>You can only imagine the number of WTFs that were there in our office. How on earth is that possible?<br /><br style="box-sizing: border-box;" />We've opened up&nbsp;htop,&nbsp;iotop&nbsp;and all the possible tools including&nbsp;vmstat&nbsp; to see what the hell was going on. It turned out that context switching is at an acceptable level whereas at some point of the build only part of the cores are used as if sth was executed sequentially!<br /><br style="box-sizing: border-box;" />The answer to that mystery was pretty simple. We had a wrong project structure.<br /><br style="box-sizing: border-box;" />We had a module that ended up as a test-jar in&nbsp;testCompile&nbsp;dependency of other projects. That means that the vast majority of modules where waiting for this project to be built. Built means compiled and tested. It turned out that this test-jar module had also plenty of slow integration tests in it so only after those tests were executed could other modules be actually built!<br /><br style="box-sizing: border-box;" /><div style="box-sizing: border-box; margin-bottom: 15px; margin-top: 5px;"><strong style="box-sizing: border-box;">Simple source moving can drastically increase your speed</strong></div>By simply moving those slow tests to a separate module we've unblocked the build of all modules that were previously waiting.<br /><br style="box-sizing: border-box;" />Now we could do further optimization - we've split the slow integration tests into two modules to make all the modules in the whole project be built in more or less equal time (around 3,5 minutes).<br />.<br />Benefit: Fixing the project structure decreased the time by ~10 minutes<br /><i style="box-sizing: border-box;">Overall gain: ~ 60 minutes.</i><br /><div style="box-sizing: border-box;"><em style="box-sizing: border-box;">Current build time: ~30 minutes.</em></div><div style="box-sizing: border-box; margin-bottom: 15px; margin-top: 5px;"><strong style="box-sizing: border-box;">Don't save on machine power</strong></div><div style="box-sizing: border-box;"><span data-fr-verified="true" style="background-color: initial; box-sizing: border-box;"><span data-fr-verified="true" style="box-sizing: border-box; line-height: 1.45em;"><span data-fr-verified="true" style="box-sizing: border-box; font-size: 15px;"><span data-fr-verified="true" style="box-sizing: border-box; font-family: &quot;arial&quot; , &quot;helvetica&quot; , &quot;verdana&quot; , &quot;tahoma&quot; , sans-serif;">We've invested in some big AWS instance with 32 cores and 60 gb of RAM to really profit from the parallel build's possibilities. We're paying about 1.68$ per one hour of such machine's (c3.8xlarge) working time.</span></span></span></span></div><br style="box-sizing: border-box;" />If someone form the management tells you that that machine costs a lot of money and the company can't afford it you can actually do a fast calculation. You can ask this manager what is more expensive - paying for the machine or paying the developer for 77 minutes * number of builds of waiting?<br /><br style="box-sizing: border-box;" />Benefit: Paying for a really good machine on AWS decreased the build time by ~22 minutes<br /><i style="box-sizing: border-box;">Overall gain: ~ 82 minutes.</i><br /><div style="box-sizing: border-box;"><em style="box-sizing: border-box;">Current build time: ~8 minutes.</em></div><div style="box-sizing: border-box;"><br style="box-sizing: border-box;" /></div><div style="box-sizing: border-box; margin-bottom: 15px; margin-top: 5px;"><strong style="box-sizing: border-box;">What else can we do?</strong></div>Is that it? Can we decrease the time further on? Sure we can!<br /><br style="box-sizing: border-box;" />Possible solutions are:<br /><br style="box-sizing: border-box;" /><ul style="box-sizing: border-box; margin-bottom: 10px; margin-top: 0px; padding-left: 25px;"><li style="box-sizing: border-box; padding: 0px 0px 8px;">Go through all of the tests and check why some of them take so long to run</li><li style="box-sizing: border-box; padding: 0px 0px 8px;">Go through the integration tests and check if don't duplicate the logic - we will remove them</li><li style="box-sizing: border-box; padding: 0px 0px 8px;">We're using Liquibase for schema versioning and we haven't merged the changests for some time thus sth like 100 changesets are executed each time we boot up Spring context (it takes more or less 30 seconds)</li><li style="box-sizing: border-box; padding: 0px 0px 8px;">We could limit the Spring context scope for different parts of our applications so that Spring boots up faster</li><li style="box-sizing: border-box; padding: 0px 0px 8px;">Buy a more powerful machine ;)</li></ul><div style="box-sizing: border-box;">There is also another, better way ;)</div><div style="box-sizing: border-box;">SPLIT THE MONOLITH INTO MICROSERVICES AND GO TO PRODUCTION IN 5 MINUTES ;)</div><br style="box-sizing: border-box;" /><div style="box-sizing: border-box; margin-bottom: 15px; margin-top: 5px;"><strong style="box-sizing: border-box;">Summary</strong></div>Hopefully I've managed to show you how you can really speed up your build process. The work to be done is difficult, sometimes really frustrating but as you can see very fruitful.</div></div></div>
+</div>
+
+
+      <footer>
+        <p class="meta text-muted">
+          
+<span class="glyphicon glyphicon-user"></span> <span class="byline author vcard" itemprop="author" itemscope itemtype="https://schema.org/Person">Posted by <span class="fn" itemprop="name">Marcin Grzejszczak</span></span>
+
+          
+
+
+
+
+
+
+
+
+
+
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2015-02-08T19:24:00+01:00"  data-updated="true" itemprop="datePublished dateCreated">ordinal</time>
+          
+
+<span class="glyphicon glyphicon-tags"></span>&nbsp;
+<span class="categories">
+  
+    articles
+  
+</span>
+
+
+        </p>
+        
+          <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="https://toomuchcoding.com/articles/2015/02/08/how-to-speed-up-your-gradle-build-from/" data-via="mgrzejszczak" data-counturl="https://toomuchcoding.com/articles/2015/02/08/how-to-speed-up-your-gradle-build-from/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+        
+        
+          <ul class="meta text-muted pager">
+            
+            <li class="previous"><a href="/articles/2014/12/17/spock-subject-collaborators-extension/" title="Previous Post: Spock Subject Collaborators Extension 1.0.1 released!">&laquo; Spock Subject Collaborators Extension 1.0.1 released!</a></li>
+            
+            
+            <li class="next"><a href="/articles/2015/09/27/microservice-deployment/" title="Next Post: Microservice Deployment">Microservice Deployment &raquo;</a></li>
+            
+          </ul>
+        
+      </footer>
+    </article>
+    
+      <section>
+        <h2>Comments</h2>
+        <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+      </section>
+    
+  </div>
+
+  
+  <aside class="sidebar col-md-3">
+      <section>
+  <h1>About Me</h1>
+  <p><img src="/images/ja.jpeg" style="float:left;margin:5px;border-width:0px;width:100%;height:100%"/>
+  Co-author of <a href="https://smarttesting.pl">SmartTesting</a>, author of <a href="https://learning.oreilly.com/videos/hands-on-guide-to/9780135598436">Hands-On Guide to Spring Cloud Contract: Creating Consumer-Driven Contracts to Leverage Contract Tests and Improve Your Code</a> and co-author of <a href="https://bit.ly/appliedCD">Applied Continuous Delivery Live Lessons</a>. Co-founder of the Warsaw Groovy User Group, <a href="https://www.meetup.com/Warsaw-Cloud-Native-Meetup/">Warsaw Cloud Native Meetup</a> and the <a href="https://www.diverseit.io">DiverseIT</a> initiative. Author of <a href="https://www.packtpub.com/application-development/instant-mockito">"Mockito Instant"</a> and <a href="https://www.packtpub.com/application-development/mockito-cookbook">"Mockito Cookbook"</a> books.
+  </p>
+
+  <p>
+  Lead of <a href="https://cloud.spring.io/spring-cloud-sleuth/">Spring Cloud Sleuth</a>, <a href="https://cloud.spring.io/spring-cloud-contract/">Spring Cloud Contract</a> and <a href="https://spring.io/blog/2018/11/13/spring-cloud-pipelines-to-cloud-pipelines-migration">Cloud Pipelines</a> projects at <a href="https://spring.io">Pivotal</a>
+  </p>
+
+  <p><a href="https://github.com/marcingrzejszczak">Github profile</a></p>
+
+  <p><a href="https://twitter.com/MGrzejszczak">Twitter: @MGrzejszczak</a></p>
+
+  <p><a href="https://www.goodreads.com/author/show/7284553.Marcin_Grzejszczak">Goodreads account</a></p>
+</section>
+
+  </aside>
+  
+</div>
+
+        </div>
+      </div>
+    </div>
+    <footer role="contentinfo"><div class="container">
+    <p class="text-muted credits">
+  Copyright &copy; 2020 - Marcin Grzejszczak<br>
+  <small>
+      <span class="credit">Powered by <a href="https://octopress.org">Octopress</a></span>,
+      <span class="credit">customized with <a href="https://github.com/kAworu/octostrap3">octostrap3</a></span>.
+  </small>
+</p>
+
+</div>
+</footer>
+    
+
+<script type="text/javascript">
+      var disqus_shortname = 'toomuchcoding';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'https://toomuchcoding.com/articles/2015/02/08/how-to-speed-up-your-gradle-build-from/';
+        var disqus_url = 'https://toomuchcoding.com/articles/2015/02/08/how-to-speed-up-your-gradle-build-from/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+<script src="/assets/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="/javascripts/modernizr.js"></script>
+
+
+  </body>
+</html>

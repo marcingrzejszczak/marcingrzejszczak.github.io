@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Accurest becomes part of the Spring Cloud Contract - TOO MUCH CODING</title>
+  <meta name="author" content="Marcin Grzejszczak">
+
+  
+  
+
+  <!-- https://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="https://toomuchcoding.com/articles/2016/06/24/accurest-becomes-part-of-the-spring-cloud-contract/">
+  <link href="/favicon.png" type="image/png" rel="icon">
+  <link href="/atom.xml" rel="alternate" title="TOO MUCH CODING" type="application/atom+xml">
+
+  <!-- https://opengraphprotocol.org/ -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://toomuchcoding.com/articles/2016/06/24/accurest-becomes-part-of-the-spring-cloud-contract/">
+  <meta property="og:title" content="Accurest becomes part of the Spring Cloud Contract - TOO MUCH CODING">
+  
+
+  <script src="/javascripts/libs/jquery/jquery-2.1.3.min.js"></script>
+
+<link href="/assets/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="/assets/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css">
+
+
+  
+  <link href="/stylesheets/screen.css" media="screen, projection, print" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+  <body   >
+    <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+    <div id="wrap">
+      <header role="banner">
+        <nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" title="toggle navbar" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">TOO MUCH CODING</a>
+        </div>
+
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li >
+                    <a rel="index" href="/">Blog</a>
+                </li>
+                <li >
+                    <a href="/blog/archives">Archives</a>
+                </li>
+                <li >
+                    <a href="/oss">OSS</a>
+                </li>
+                <li >
+                    <a href="/abstracts">Abstracts</a>
+                </li>
+                <li >
+                    <a href="/talks">Talks</a>
+                </li>
+                <li >
+                    <a href="/publications">Publications</a>
+                </li>
+                <li >
+                    <a href="/bio">Bio</a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a class="subscribe-rss" href="/atom.xml" title="subscribe via RSS">
+                        <span class="visible-xs">RSS</span>
+                        <img class="hidden-xs" src="/images/rss.png" alt="RSS">
+                    </a>
+                </li>
+                
+            </ul>
+            
+                <form class="navbar-form navbar-right" action="https://www.google.com/search" method="GET">
+                    <input type="hidden" name="sitesearch" value="https://toomuchcoding.com">
+                    <div class="form-group">
+                        <input class="form-control" type="text" name="q" placeholder="Search">
+                    </div>
+                </form>
+            
+        </div>
+    </div>
+</nav>
+
+
+      </header>
+      <div id="main" role="main" class="container">
+        <div id="content">
+          <div class="row">
+  <div class="page-content col-md-9" itemscope itemtype="https://schema.org/Blog">
+    <meta itemprop="name" content="TOO MUCH CODING" />
+    <meta itemprop="description" content="A blog for coding addicts about Java, Groovy, Buzzword, Spring, Microservices, Buzzword" />
+    <meta itemprop="url" content="https://toomuchcoding.com" />
+    <article class="hentry" role="article" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+      
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2016-06-24T18:43:07+02:00"  data-updated="true" itemprop="datePublished dateCreated">ordinal</time>
+        
+           | <a href="#disqus_thread" itemprop="discussionUrl"
+             data-disqus-identifier="https://toomuchcoding.com">Comments</a>
+        
+      </p>
+    
+    
+    <h1 class="entry-title" itemprop="name headline">
+        Accurest becomes part of the Spring Cloud Contract
+        
+    </h1>
+    
+  </header>
+
+
+<div class="entry-content clearfix" itemprop="articleBody description"><p>I’m extremely happy to announce that we have successfully rebranded the <a href="https://codearte.github.io/accurest">Accurest project</a>. It’s officially become part of the <a href="https://github.com/spring-cloud/spring-cloud-contract">Spring Cloud Contract</a> initiative. Ladies and Gentlemen please welcome the new projects:</p>
+
+<ul>
+  <li><a href="https://codearte.github.io/accurest/">Spring Cloud Contract Verifier</a></li>
+  <li><a href="https://codearte.github.io/accurest/#spring-cloud-contract-stub-runner">Spring Cloud Contract Stub Runner</a></li>
+</ul>
+
+<!-- more -->
+
+<h2 id="a-little-bit-of-history">A little bit of history</h2>
+
+<p>Accurest was created because of lack of an easy-to-use tool for doing <a href="https://martinfowler.com/articles/consumerDrivenContracts.html">Consumer Driven Contracts</a>. From our production experience the biggest problem was lack of verification that the defined contract actually does what it says it does. We wanted to ensure that from the contract automatically tests are generated so that we can have a proof that the stubs are reliable. Since there was no such tool the first commit of Accurest took place on 12/2014. The very idea and its implementation was initially set by <a href="https://www.kubrynski.com/">Jakub Kubrynski</a> and me. The last available version of Accurest was 1.1.0 released on 06/2016 (the docs for the old version are <a href="https://codearte.github.io/accurest/deprecated/">available here</a>). During these 19 months a lot of feedback has been gathered. The tool has received a lot of very good reception and that made us want to work even harder. Many times we have decided to decrease the time required for sleeping so as to fix a bug or develop a new feature in Accurest.</p>
+
+<h2 id="notable-features">Notable features</h2>
+
+<p>Speaking of features, especially quite a few of them definitely makes Accurest stand out on the “market” of Consumer Driven Contract (CDC) tooling. Out of many the most interesting are:</p>
+
+<ul>
+  <li>Possibility to do CDC with messaging</li>
+  <li>Clear and easy to use, statically typed DSL</li>
+  <li>Possibility to copy paste your current JSON file to the contract and only edit its elements</li>
+  <li>Automatic generation of tests from the defined Contract</li>
+  <li>Stub Runner functionality - the stubs are automatically downloaded at runtime from Nexus / Artifactory</li>
+  <li>Spring Cloud integration - no discovery service is needed for integration tests</li>
+</ul>
+
+<p>For more information check out my posts about <a href="https://toomuchcoding.com/blog/2016/04/06/accurest-stubrunner-released/">Stub Runner</a>, <a href="https://toomuchcoding.com/blog/2016/04/30/accurest-and-stub-runner-1-dot-1-0-dot-m3/">Accurest Messaging</a> or <a href="https://codearte.github.io/accurest/">just read the docs</a>.</p>
+
+<h2 id="spring-cloud-contract">Spring Cloud Contract</h2>
+
+<p>In Pivotal we came to the conclusion that Accurest could become an interesting addition to our Spring Cloud tooling. Due to the increased interest of the community in the Consumer Driven Contracts approach we’ve decided to start the <a href="https://github.com/spring-cloud/spring-cloud-contract">Spring Cloud Contract</a> initiative.</p>
+
+<p>Accurest became <em>Spring Cloud Contract Verifier</em> (note: the name might change in the future) but for the time being will remain in the <a href="https://github.com/Codearte">Codearte repository</a>. It’s becoming the part of Spring Cloud tooling as a mature tool with a growing community around it. Some arguments for that are that it has:</p>
+
+<ul>
+  <li><a href="https://codearte.github.io/accurest/">a nice AsciiDoc documentation that was completely rewritten following users’ feedback</a></li>
+  <li><a href="https://gitter.im/Codearte/accurest">active Gitter channel where we try to immediately answer any support questions</a></li>
+  <li><a href="https://github.com/Codearte/accurest/stargazers">Over 80 stars on Github and counting ;)</a></li>
+</ul>
+
+<p>Since we believe very much in the Consumer Driven Contract approach we also want to do the library in a Client Driven way. That means that we (server side) are very open to your feedback (consumer side) and want you be the main driver of changes in the library.</p>
+
+<h2 id="credits">Credits</h2>
+
+<p>The Accurest project would never come to life without the hard work of the <a href="https://codearte.io">Codearte</a> developers (the order is random):</p>
+
+<ul>
+  <li><a href="https://twitter.com/olga_maciaszek">Olga Maciaszek-Sharma</a></li>
+  <li><a href="https://www.kubrynski.com">Jakub Kubrynski</a></li>
+  <li><a href="https://solidsoft.wordpress.com/">Marcin Zajaczkowski</a></li>
+  <li><a href="https://github.com/mariuszs">Mariusz Smykula</a></li>
+</ul>
+
+<p>and obviously everybody who has <a href="https://github.com/Codearte/accurest/graphs/contributors">ever commited something to the project</a>.</p>
+
+<h2 id="links">Links</h2>
+
+<p>If you want to read more about <em>Spring Cloud Contract Verifier</em> just check out the following links.</p>
+
+<ul>
+  <li><a href="https://github.com/Codearte/accurest">Spring Cloud Contract Verifier Github Repository</a></li>
+  <li><a href="https://codearte.github.io/accurest">Spring Cloud Contract Verifier Documentation</a></li>
+  <li><a href="https://codearte.github.io/accurest/deprecated">Accurest Legacy Documentation</a></li>
+  <li><a href="https://codearte.github.io/accurest/#spring-cloud-contract-stub-runner">Spring Cloud Contract Stub Runner Documentation</a></li>
+  <li><a href="https://codearte.github.io/accurest/#stub-runner-for-messaging">Spring Cloud Contract Stub Runner Messaging Documentation</a></li>
+  <li><a href="https://gitter.im/Codearte/accurest">Spring Cloud Contract Verifier Gitter</a></li>
+  <li><a href="https://github.com/Codearte/accurest-maven-plugin">Spring Cloud Contract Verifier Maven Plugin</a></li>
+</ul>
+</div>
+
+
+      <footer>
+        <p class="meta text-muted">
+          
+<span class="glyphicon glyphicon-user"></span> <span class="byline author vcard" itemprop="author" itemscope itemtype="https://schema.org/Person">Posted by <span class="fn" itemprop="name">Marcin Grzejszczak</span></span>
+
+          
+
+
+
+
+
+
+
+
+
+
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2016-06-24T18:43:07+02:00"  data-updated="true" itemprop="datePublished dateCreated">ordinal</time>
+          
+
+<span class="glyphicon glyphicon-tags"></span>&nbsp;
+<span class="categories">
+  
+    articles
+  
+</span>
+
+
+        </p>
+        
+          <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="https://toomuchcoding.com/articles/2016/06/24/accurest-becomes-part-of-the-spring-cloud-contract/" data-via="mgrzejszczak" data-counturl="https://toomuchcoding.com/articles/2016/06/24/accurest-becomes-part-of-the-spring-cloud-contract/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+        
+        
+          <ul class="meta text-muted pager">
+            
+            <li class="previous"><a href="/articles/2016/05/31/zero-downtime-deployment-with-a-database/" title="Previous Post: Zero Downtime Deployment with a Database">&laquo; Zero Downtime Deployment with a Database</a></li>
+            
+            
+            <li class="next"><a href="/articles/2016/07/25/spring-cloud-contract-1-dot-0-0-dot-m1-released/" title="Next Post: Spring Cloud Contract 1.0.0.M1 Released">Spring Cloud Contract 1.0.0.M1 Released &raquo;</a></li>
+            
+          </ul>
+        
+      </footer>
+    </article>
+    
+      <section>
+        <h2>Comments</h2>
+        <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+      </section>
+    
+  </div>
+
+  
+  <aside class="sidebar col-md-3">
+      <section>
+  <h1>About Me</h1>
+  <p><img src="/images/ja.jpeg" style="float:left;margin:5px;border-width:0px;width:100%;height:100%"/>
+  Co-author of <a href="https://smarttesting.pl">SmartTesting</a>, author of <a href="https://learning.oreilly.com/videos/hands-on-guide-to/9780135598436">Hands-On Guide to Spring Cloud Contract: Creating Consumer-Driven Contracts to Leverage Contract Tests and Improve Your Code</a> and co-author of <a href="https://bit.ly/appliedCD">Applied Continuous Delivery Live Lessons</a>. Co-founder of the Warsaw Groovy User Group, <a href="https://www.meetup.com/Warsaw-Cloud-Native-Meetup/">Warsaw Cloud Native Meetup</a> and the <a href="https://www.diverseit.io">DiverseIT</a> initiative. Author of <a href="https://www.packtpub.com/application-development/instant-mockito">"Mockito Instant"</a> and <a href="https://www.packtpub.com/application-development/mockito-cookbook">"Mockito Cookbook"</a> books.
+  </p>
+
+  <p>
+  Lead of <a href="https://cloud.spring.io/spring-cloud-sleuth/">Spring Cloud Sleuth</a>, <a href="https://cloud.spring.io/spring-cloud-contract/">Spring Cloud Contract</a> and <a href="https://spring.io/blog/2018/11/13/spring-cloud-pipelines-to-cloud-pipelines-migration">Cloud Pipelines</a> projects at <a href="https://spring.io">Pivotal</a>
+  </p>
+
+  <p><a href="https://github.com/marcingrzejszczak">Github profile</a></p>
+
+  <p><a href="https://twitter.com/MGrzejszczak">Twitter: @MGrzejszczak</a></p>
+
+  <p><a href="https://www.goodreads.com/author/show/7284553.Marcin_Grzejszczak">Goodreads account</a></p>
+</section>
+
+  </aside>
+  
+</div>
+
+        </div>
+      </div>
+    </div>
+    <footer role="contentinfo"><div class="container">
+    <p class="text-muted credits">
+  Copyright &copy; 2020 - Marcin Grzejszczak<br>
+  <small>
+      <span class="credit">Powered by <a href="https://octopress.org">Octopress</a></span>,
+      <span class="credit">customized with <a href="https://github.com/kAworu/octostrap3">octostrap3</a></span>.
+  </small>
+</p>
+
+</div>
+</footer>
+    
+
+<script type="text/javascript">
+      var disqus_shortname = 'toomuchcoding';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'https://toomuchcoding.com/articles/2016/06/24/accurest-becomes-part-of-the-spring-cloud-contract/';
+        var disqus_url = 'https://toomuchcoding.com/articles/2016/06/24/accurest-becomes-part-of-the-spring-cloud-contract/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+<script src="/assets/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="/javascripts/modernizr.js"></script>
+
+
+  </body>
+</html>
