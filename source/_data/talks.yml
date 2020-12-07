@@ -1,0 +1,1031 @@
+- date: 2020.10.21
+  eventName: SmartTesting Conf
+  city: Online
+  country: Poland
+  countryCode: pl
+  talks: "3 sytuacje, w których testy kontraktowe ułatwią Ci życie"
+  resources:
+    event: https://smarttesting.pl
+    media:
+      - slides: https://docs.google.com/presentation/d/1Cqm_Sx3gX2kS77nLT6UtPkaNGuypacCOLEXWMULDEm8/edit?usp=sharing
+
+- date: 2019.12.17
+  eventName: Javafaktura
+  city: Lodz
+  country: Poland
+  countryCode: pl
+  talks: "S02 E06: Kontrakty i testy - nie tylko dla osób na samozatrudnieniu"
+  resources:
+    event: https://www.meetup.com/Java-User-Group-Lodz/events/267108889
+
+- date: 2019.10.08
+  eventName: Spring One Platform
+  city: Austin
+  country: USA
+  countryCode: us
+  talks: How To Live In A Post-Spring-Cloud Netflix World?
+  resources:
+    event: https://springoneplatform.io/2019/schedule
+    media:
+      - slides: https://speakerdeck.com/olgamaciaszek/how-to-live-in-a-post-spring-cloud-netflix-world-spring-one-platform-2019
+
+- date: 2019.07.14
+  eventName: JCrete
+  city: Kolymbari
+  country: Greece
+  countryCode: gr
+  talks: Parallel tests and deployment pipelines
+  resources:
+    event: http://www.jcrete.org/
+
+- date: 2019.06.24
+  eventName: Devoxx Poland
+  city: Cracow
+  country: Poland
+  countryCode: pl
+  talks: Testing your messaging application
+  resources:
+    event: https://cfp.devoxx.pl/2019/index.html
+    media:
+      - video: https://www.youtube.com/watch?v=QZxtZC22uTs&t=1768s
+    
+- date: 2019.05.24
+  eventName: Voxxed Days Minsk
+  city: Minsk
+  country: Belarus
+  talks: Contract Tests in the Enterprise
+  countryCode: by
+  resources:
+    event: https://voxxeddays.com/minsk/2019/contract-tests-in-the-enterprise/
+    media:
+      - slides: https://docs.google.com/presentation/d/1xQYXceRvhZ93fgEpmlIRwlcB1aDp8-JMWbk7fB2ks_k/edit#slide=id.g2b578f0b81_0_244
+
+- date: 2019.05.25
+  eventName: Voxxed Days Minsk
+  city: Minsk
+  country: Belarus
+  talks: Testing Your Messaging Application
+  countryCode: by
+  resources:
+    event: https://voxxeddays.com/minsk/2019/testing-your-messaging-application/
+    media:
+      - video : https://www.youtube.com/watch?v=CcL8wrguhhM
+
+- date: 2019.05.17
+  eventName: Spring IO
+  city: Barcelona
+  country: Spain
+  talks: How to live in a post Spring-Cloud-Netflix world?
+  countryCode: es
+  resources:
+    event: https://2019.springio.net/
+    media:
+      - slides: https://docs.google.com/presentation/d/1NVu8BPJ5SMlhdrwZKVGhVPQeZ7jDVv4eaBsK2mwdn1U/edit#slide=id.g528dfefaf9_0_45
+      - video : https://www.youtube.com/watch?v=CcL8wrguhhM
+
+- date: 2019.05.17
+  eventName: Spring IO
+  city: Barcelona
+  country: Spain
+  talks: Connect your car with Spring Tools
+  countryCode: es
+  resources:
+    event: https://2019.springio.net/
+    media:
+      - slides: https://docs.google.com/presentation/d/1eR1Rs47bJ-Rgy6EiBTWXwLk8LMcqnMzYg6z8vHSjM9I/edit?ts=5cd67ac4#slide=id.g59dc5a452d_0_36
+      - video: https://www.youtube.com/watch?v=lYNtF223y70
+      
+- date: 2019.05.09
+  eventName: Jax
+  city: Mainz
+  country: Germany
+  talks: Consumer Driven Contracts like TDD to the API
+  countryCode: de
+  resources:
+    event: https://jax.de/serverside-enterprise-java/consumer-driven-contracts-its-like-tdd-applied-to-the-api/
+    
+- date: 2019.04.12
+  eventName: Developers Conference 2019 - Mauritius
+  city: Moka
+  country: Mauritius
+  talks: Contract Tests in the Enterprise
+  countryCode: mu
+  resources:
+    event: https://conference.mscc.mu/
+    media:
+      - slides: https://docs.google.com/presentation/d/1Lled123KGpxKd7kXUhvw7-lVCBnF85j6qPolL0prD_c/edit?usp=sharing
+
+- date: 2019.03.28
+  eventName: Soirée Spring Cloud Contracts avec Marcin Grzejszczak et Olga Maciaszek-Sharma
+  city: Paris
+  country: France
+  talks: Consumer Driven Contracts like TDD to the API
+  countryCode: fr
+  resources:
+    event: https://www.meetup.com/Spring-Meetup-Paris/events/258527286/
+    media:
+      - slides: https://drive.google.com/open?id=1R47gDWe9MZout-wKGZ3aJPRe5hPRMrX0Zl7Ci6TNfD4
+
+- date: 2019.03.21
+  eventName: Spring One Tour
+  city: Amsterdam
+  country: Netherlands
+  talks: Consumer Driven Contracts like TDD to the API
+  countryCode: nl
+  resources:
+    event: https://springonetour.io/2019/amsterdam
+    media:
+      - slides: https://docs.google.com/presentation/d/1_TT9fiMIX99ELKc6LEXJol8ZiWxdYD_Uu1rDbw3NLAA/edit#slide=id.g28446d2d55_0_1
+
+- date: 2019.03.14
+  eventName: Segfault Gdańsk
+  city: Gdańsk
+  country: Poland
+  talks: How to live in a post Spring-Cloud-Netflix world?
+  countryCode: pl
+  resources:
+    event: https://segfault.events/gdansk2019/
+    media:
+      - video: https://www.youtube.com/watch?v=NevcSTiWKQ8&feature=youtu.be 
+
+- date: 2019.02.21
+  eventName: IT Akademia JLabs
+  city: Warsaw
+  country: Poland
+  talks: Consumer Driven Contracts  jako TDD na poziomie API
+  countryCode: pl
+  resources:
+    event: https://itakademia.j-labs.pl/
+    media:
+      - video: https://www.facebook.com/JlabsSoftwareSpecialists/videos/436667900206866/?hc_ref=ARRpp_n-5a3kpGStmb4s3tQ1-Y5W9N6-IER5CLh2FEVhHSprmKLSlVJRUs9jHkXaWXQ&__xts__[0]=68.ARDuO4GHmqNFHFpdEcF-VGIJlf3acHHjacf5_BzpEgIpp8sQ3LDOEUQTGewZOSkXnIdfJf0BAIXSkuaUv_yShNFRSpJ4_7O0omtX5Ck9gKgYRh3AnGBS7bSp9q97O73MeoOMqt3FZqFlQpObviQDlAqxi8ZIgSD5VEEn05uBz3sYl3nxO-a_0qipNWEMKt_BSGNrb2IM00MRQOlGyJWF15lzwMeD6pK_pt-5X9GrShS_EiarPi4D3-9twEQRqZZ4tGz4mPx1mHlGYvM3-KjrKWUUGkVe3lVfyJN88NQZU4gnHO-zT-yPw5MxlmqNhpHjJhDT3epS_vJql0iCQAEfppKEIR266Opklg&__tn__=FC-R
+      - slides: https://drive.google.com/open?id=1DkgqtnnMyFliM0PUtJRSlW2pYbuVq1994dVuuW_lC9w
+
+- date: 2018.12.08
+  eventName: J-Santa
+  city: Lublin
+  country: Poland
+  talks: Tracing Applications with Zipkin
+  countryCode: pl
+  resources:
+    event: https://j-santa.pl
+    media:
+      - slides: https://docs.google.com/presentation/d/1nqI029DlWe-ecUIpAQG14jF6wVDHSGvutRThaU4CU8M/edit?usp=sharing
+
+- date: 2018.12.08
+  eventName: J-Santa
+  city: Lublin
+  country: Poland
+  talks: Consumer Driven Contracts like TDD to the API
+  countryCode: pl
+  resources:
+    event: https://j-santa.pl
+    media:
+      - slides: https://docs.google.com/presentation/d/1QOMxxJXtwjhKPFWRl7gTQ4QCX_749Aimze7W1z0K5-U/edit?usp=sharing
+
+- date: 2018.10.15
+  eventName: Agile & Automation Days
+  city: Cracow
+  country: Poland
+  talks: Building Resilient Microservices
+  countryCode: pl
+  resources:
+    event: https://aadays.pl
+    media:
+      - slides: https://docs.google.com/presentation/d/1z2OeLnWyOXcLAc9Fvx_veqD74chLnmirK-h77W2ZnjI/edit?usp=sharing
+      - video: https://www.youtube.com/watch?v=5YaRDUVac9c
+
+- date: 2018.09.26
+  eventName: Spring One Platform 2018
+  city: Washington
+  country: USA
+  countryCode: us
+  talks: Zero to Multi-Cloud
+  resources:
+    event: https://springoneplatform.io/
+    media:
+      - slides: https://docs.google.com/presentation/d/1UFsIwU8A8DoxDeWu2mONGbVJxxcYnMpUaLGkzG24ViE/
+      - video: https://www.youtube.com/watch?v=aboYxcestfc&list=PLAdzTan_eSPQsR_aqYBQxpYTEQZnjhTN6&t=0s&index=63
+
+- date: 2018.09.26
+  eventName: Spring One Platform 2018
+  city: Washington
+  country: USA
+  countryCode: us
+  talks: How Sleuth Bravely Cracked the Case of "Too Much to Code"
+  resources:
+    event: https://springoneplatform.io/
+    media:
+      - slides: https://docs.google.com/presentation/d/1uzfe-3zh5auaVf3eYbXc9uh6IwVDgNtIvXZ8warChpo
+      - video: https://www.youtube.com/watch?v=6o9zPMiM6F0&list=PLAdzTan_eSPQsR_aqYBQxpYTEQZnjhTN6&t=0s&index=71
+
+- date: 2018.09.25
+  eventName: Spring One Platform 2018
+  city: Washington
+  country: USA
+  countryCode: us
+  talks: Testing your Messaging Application
+  resources:
+    event: https://springoneplatform.io/
+    media:
+      - slides: https://docs.google.com/presentation/d/1FpomQSxOqldtsKakEiIo0BLmfCG2YWtkERoJr2-da_k/edit?usp=sharing
+      - video: https://www.youtube.com/watch?v=hRgD4bpS7hY&list=PLAdzTan_eSPQsR_aqYBQxpYTEQZnjhTN6&t=0s&index=64
+
+- date: 2018.09.14
+  eventName: "Bitconf"
+  city: Bydgoszcz
+  country: Poland
+  countryCode: pl
+  talks: Consumer Driven Contracts and Your Microservice Architecture
+  resources:
+    event: https://www.bitconf.pl/
+    media:
+      - slides: https://docs.google.com/presentation/d/1d1HAm-S6bIPVim9Gi-DxrFMDi1GxK2Zz7AubtVtjbyo/edit#slide=id.g28446d2d55_0_1
+      - video: https://www.youtube.com/watch?v=pDkC_00hhvA
+
+- date: 2018.09.05
+  eventName: "Wieczorek ze Springiem"
+  city: Lodz
+  country: Poland
+  countryCode: pl
+  talks: Testing your Message-Driven Application
+  resources:
+    event: https://www.meetup.com/Java-User-Group-Lodz/events/250679061/
+    media:
+      - slides: https://docs.google.com/presentation/d/1FpomQSxOqldtsKakEiIo0BLmfCG2YWtkERoJr2-da_k/edit?usp=sharing
+      - video: https://www.youtube.com/watch?v=JuQ7VJKmTTw
+
+- date: 2018.09.05
+  eventName: "Wieczorek ze Springiem"
+  city: Lodz
+  country: Poland
+  countryCode: pl
+  talks: Consumer Driven Contracts like TDD to the API
+  resources:
+    event: https://www.meetup.com/Java-User-Group-Lodz/events/250679061/
+    media:
+      - slides: https://docs.google.com/presentation/d/1d1HAm-S6bIPVim9Gi-DxrFMDi1GxK2Zz7AubtVtjbyo/edit#slide=id.g28446d2d55_0_1
+      - video: https://www.youtube.com/watch?v=jWCM6BZbRjc&feature=youtu.be
+
+- date: 2018.06.30
+  eventName: "Confitura"
+  city: Warsaw
+  country: Poland
+  countryCode: pl
+  talks: Testing your Message-Driven Application
+  resources:
+    event: https://2017.confitura.pl/presentations
+    media:
+      - video: https://www.youtube.com/watch?v=7ZY0bE061X0&feature=youtu.be
+
+- date: 2018.06.29
+  eventName: "Code’n’Quality"
+  city: Warsaw
+  country: Poland
+  countryCode: pl
+  talks: Contract Tests in the Enterprise
+  resources:
+    event: https://www.meetup.com/MIT-dev-conferences/events/251875279/
+    media:
+        - slides: https://docs.google.com/presentation/d/1AX_MVrQRUsOznk7Fd-DeK6qhPMIRmoEggl1joJ6M8y8/edit?usp=sharing
+
+- date: 2018.06.20
+  eventName: "Devoxx Poland"
+  city: Cracow
+  country: Poland
+  countryCode: pl
+  talks: Contract Tests in the Enterprise
+  resources:
+    event: https://cfp.devoxx.pl/2018/byday/thu
+    media:
+        - video: https://www.youtube.com/watch?v=ZyHG-VOzPZg
+        - slides: https://docs.google.com/presentation/d/1Je_IZ-xjLnOHf5YgH0r4ihlqhIrob6fC0NBT95xDHoo/edit?usp=sharing
+
+- date: 2018.05.24
+  eventName: Spring IO
+  city: Barcelona
+  country: Spain
+  countryCode: es
+  talks: Continuous Deployment of your Application
+  resources:
+    event: https://2018.springio.net/
+    media:
+        - video: https://www.youtube.com/watch?&v=Kv0BWS4oCJ0
+        - slides: https://docs.google.com/presentation/d/10Pib-EjegE1WdMmBpkIlpeL_XqgBSfX5I5nZ-6flBDs/edit?usp=sharing
+
+- date: 2018.05.22
+  eventName: Infoshare
+  city: Gdansk
+  country: Poland
+  countryCode: pl
+  talks: Contract Tests in the Enterprise
+  resources:
+    event: https://infoshare.pl
+    media:
+        - slides: https://docs.google.com/presentation/d/1IevIZBgNXTDAF7Wf4809Vp47i4J1XXVSGYhLkKyjUJg/edit?usp=sharing
+
+- date: 2018.05.18
+  eventName: Segfault
+  city: Lodz
+  country: Poland
+  countryCode: pl
+  talks: Contract Tests in the Enterprise
+  resources:
+    media:
+        - slides: https://docs.google.com/presentation/d/1scPcn2UmxbZAoZA5cdGC6cHgvNTmhF0d9ExbQadEG9I/edit?usp=sharing
+        - video: https://www.youtube.com/watch?v=G7XYlwHFLU8&feature=youtu.be
+    event: https://lodz2018.segfault.events/
+
+- date: 2018.05.09
+  eventName: Geecon 2018
+  city: Cracow
+  country: Poland
+  countryCode: pl
+  talks: Continuous Deployment of your Application
+  resources:
+    media:
+        - slides: https://docs.google.com/presentation/d/1p7e5yx72pd_acu2jvNIU6M33mL2d9GnG4lhiyKQpzhM/edit?usp=sharing
+        - video: https://www.youtube.com/watch?v=rFeM_4oeBQE&index=54&list=PLxZQe6I1pYpexdJDn5ZZUHiMHWPsINghJ
+    event: https://2018.geecon.org/schedule/
+
+- date: 2018.05.01
+  eventName: Toronto Pivotal User Group
+  city: Toronto
+  country: Canada
+  countryCode: ca
+  talks: Contract Tests in the Enterprise
+  resources:
+    event: https://www.meetup.com/Toronto-Pivotal-User-Group/events/248993914/
+    media:
+        - slides: https://docs.google.com/presentation/d/1eEL_4-Th0nM5HwKnsyFlhC0dfBJj1hG49oPrjAQ8jLA/edit?usp=sharing
+
+- date: 2018.05.01
+  eventName: Securing,Testing & Deploying Microservices Using Spring Cloud
+  city: Toronto
+  country: Canada
+  countryCode: ca
+  talks: Why Contract Tests Matter?
+  resources:
+    event: https://docs.google.com/forms/d/e/1FAIpQLSclevpmjC6mrxQRvX0rfDjmMmhvl_38V9kVEZ0RlsDxfkl23Q/viewform
+    media:
+        - slides: https://docs.google.com/presentation/d/1KYdoMoHIqEcPBHsqZ6d0rptcx6YjKgTObguwAUgR4p4/edit?usp=sharing
+- date: 2018.05.01
+  eventName: Securing,Testing & Deploying Microservices Using Spring Cloud
+  city: Toronto
+  country: Canada
+  countryCode: ca
+  talks: Continuous Deployment of Your Application?
+  resources:
+    event: https://docs.google.com/presentation/d/1hT9evNT_Cx5FGmQgarEz4J5gDilTVd65-WDC86n0Q2g/edit?usp=sharing
+    media:
+        - slides: https://docs.google.com/presentation/d/1hT9evNT_Cx5FGmQgarEz4J5gDilTVd65-WDC86n0Q2g/edit#slide=id.g2be28c493c_0_0
+- date: 2018.04.18
+  eventName: Java With The Best
+  city: Warsaw
+  country: Poland
+  countryCode: pl
+  talks: Why Contract Tests Matter?
+  resources:
+    event: https://java-platform.withthebest.com/#/conference/5abd0f634e5f840004e1e7c9
+- date: 2018.04.09
+  eventName: 4Developers
+  city: Warsaw
+  country: Poland
+  countryCode: pl
+  talks: Testing Your Message-Driven Application
+  resources:
+    event: https://4developers.org.pl/
+- date: 2018.03.28
+  eventName: It talk & Lublin Java User Group
+  city: Lublin
+  country: Poland
+  countryCode: pl
+  talks: Why Contract Tests Matter?
+  resources:
+    event: https://www.facebook.com/events/1876129442429451/1915288085180253/?notif_t=admin_plan_mall_activity&notif_id=1522174791043029
+    media:
+        - video: https://www.youtube.com/watch?v=TvpkZu1e2Dc
+- date: 2018.03.15
+  eventName: "BialQA #12"
+  city: Białystok
+  country: Poland
+  countryCode: pl
+  talks: Contract Tests in the Enterprise
+  resources:
+    event: https://www.facebook.com/events/1972331083031786/
+- date: 2018.03.15
+  eventName: "BialQA #12"
+  city: Białystok
+  country: Poland
+  countryCode: pl
+  talks: Continuous Deployment of Your Application
+  resources:
+    event: https://www.facebook.com/events/1972331083031786/
+- date: 2017.12.07
+  eventName: Spring One Platform 2017
+  city: San Francisco
+  country: USA
+  countryCode: us
+  talks: Distributed Tracing Latency Analysis for Your Microservices Using Spring Cloud & Zipkin
+  resources:
+    event: https://springoneplatform.io/
+    media:
+        - video: https://content.pivotal.io/springone-platform-2017/distributed-tracing-latency-analysis-for-your-microservices-grzejszczak-krishna
+
+- date: 2017.12.07
+  eventName: Spring One Platform 2017
+  city: San Francisco
+  country: USA
+  countryCode: us
+  talks: Consumer Driven Contracts and Your Microservice Architecture
+  resources:
+    event: https://springoneplatform.io/
+    media:
+        - slides: https://www.slideshare.net/MarcinGrzejszczak/consumer-driven-contracts-and-your-microservice-architecture-83680416
+        - video: https://content.pivotal.io/springone-platform-2017/consumer-driven-contracts-and-your-microservice-architecture-marcin-grzejszczak-adib-saikali
+
+- date: 2017.12.06
+  eventName: Spring One Platform 2017
+  city: San Francisco
+  country: USA
+  countryCode: us
+  talks: Continuous Deployment to the Cloud
+  resources:
+    event: https://springoneplatform.io/
+    media:
+        - slides: https://www.slideshare.net/ciberkleid/continuous-deployment-of-your-application-springone
+        - video: https://content.pivotal.io/springone-platform-2017/continuous-deployment-to-the-cloud-marcin-grzejszczak-cora-iberkleid
+
+- date: 2017.11.09
+  eventName: DevOps-TestBustersNi­ght
+  city: Vienna
+  country: Austria
+  countryCode: at
+  talks: Continuous Deployment of your Application
+  resources:
+    event: https://www.meetup.com/Agile-Testautomation/events/243579409/?comment_table_id=485993511&comment_table_name=event_comment
+
+- date: 2017.11.09
+  eventName: DevOps-TestBustersNi­ght
+  city: Vienna
+  country: Austria
+  countryCode: at
+  talks: Continuous Deployment of your Application
+  resources:
+    event: https://www.meetup.com/Agile-Testautomation/events/243579409/?comment_table_id=485993511&comment_table_name=event_comment
+
+- date: 2017.10.27
+  eventName: jSession 5
+  city: Białystok
+  country: Poland
+  countryCode: pl
+  talks: Continuous Deployment of your Application
+  resources:
+    event: https://www.facebook.com/events/1548816855197807/permalink/1551987221547437/?action_history=[%7B%22surface%22%3A%22group%22%2C%22mechanism%22%3A%22surface%22%2C%22extra_data%22%3A[]%7D]
+
+- date: 2017.10.10
+  eventName: Agile & Automation Days 2017
+  city: Cracow
+  country: Poland
+  countryCode: pl
+  talks: Consumer Driven Contracts and Your Microservice Architecture
+  resources:
+    event: https://aadays.pl
+    media:
+      - slides: https://www.slideshare.net/MarcinGrzejszczak/continuous-deployment-of-your-application-jsession5
+      - video: https://www.youtube.com/watch?v=YoqSblR1nmI
+
+- date: 2017.10.05
+  eventName: JUGtoberfest
+  city: Lodz
+  country: Poland
+  countryCode: pl
+  talks: Continuous Deployment of your Application
+  resources:
+    event: https://www.meetup.com/Java-User-Group-Lodz/events/242792922/
+    media:
+      - slides: https://www.slideshare.net/MarcinGrzejszczak/continuous-deployment-of-your-application-jugtoberfest
+
+- date: 2017.07.01
+  eventName: Confitura 2017
+  city: Warsaw
+  country: Poland
+  countryCode: pl
+  talks: Tracing Microservices with Zipkin
+  resources:
+    event: https://2017.confitura.pl/
+    media:
+      - video: https://www.youtube.com/watch?v=cQstWCqv7y4&feature=youtu.be&a=
+
+- date: 2017.06.23
+  eventName: "Devoxx Poland"
+  city: Cracow
+  country: Poland
+  countryCode: pl
+  talks: Consumer Driven Contracts and Your Microservice Architecture
+  resources:
+    event: https://cfp.devoxx.pl/2017/index.html
+    media:
+      - video: https://www.youtube.com/watch?v=IiK9A9nQ6NU&list=PLH21tc7N2sw0WUoamLp4UqTlKq-_xZgMB&index=23
+
+- date: 2017.06.21
+  eventName: "Devoxx Poland"
+  city: Cracow
+  country: Poland
+  countryCode: pl
+  talks: Continuous Deployment to the Cloud
+  resources:
+    media:
+        - slides: https://www.slideshare.net/MarcinGrzejszczak/continuous-deployment-to-the-cloud-devoxxpl-2017
+        - video: https://www.youtube.com/watch?v=glhXS34umbw&list=PLH21tc7N2sw0WUoamLp4UqTlKq-_xZgMB&index=41
+    event: https://cfp.devoxx.pl/2017/index.html
+
+- date: 2017.06.12
+  eventName: "Allegro Tech Talks Poznan #5"
+  city: Poznan
+  country: Poland
+  countryCode: pl
+  talks: Consumer Driven Contracts and Your Microservice Architecture
+  resources:
+    media:
+        - video: https://www.facebook.com/allegro.tech/
+    event: https://www.meetup.com/allegrotech/events/240231546/
+
+- date: 2017.05.30
+  eventName: Pivotal Webinar
+  city: Warsaw
+  country: Poland
+  countryCode: pl
+  talks: Continuous Deployment to the Cloud
+  resources:
+    media:
+        - slides: https://www.slideshare.net/MarcinGrzejszczak/continuous-deployment-to-the-cloud
+        - video: https://content.pivotal.io/webinars/continuous-deployment-to-the-cloud
+    event: https://content.pivotal.io/webinars/continuous-deployment-to-the-cloud
+
+- date: 2017.05.25
+  eventName: Toronto JUG
+  city: Toronto
+  country: Canada
+  countryCode: ca
+  talks: Tracing Microservices with Zipkin with Marcin Grzejszczak
+  resources:
+    media:
+        - slides: https://www.slideshare.net/MarcinGrzejszczak/microservices-tracing-with-spring-cloud-and-zipkin-szczecin-jug
+        - video: https://www.youtube.com/watch?v=tzAyFyB56lQ&feature=youtu.be
+    event: https://www.meetup.com/Toronto-Java-Users-Group/events/238578242/
+
+- date: 2017.05.25
+  eventName: Pivotal Toronto User Group
+  city: Toronto
+  country: Canada
+  countryCode: ca
+  talks: Hands on Consumer Driven Contracts Workshop with Spring Cloud Contract
+  resources:
+    media:
+        - slides: https://docs.google.com/presentation/d/1xvzdV0julkKwTz2R5Z8Ra8jYRjBy0qfhPbcKEFjaa8M/edit?usp=sharing
+    event: https://www.meetup.com/Toronto-Pivotal-User-Group/events/239923082/
+
+- date: 2017.05.23
+  eventName: Chicago JUG
+  city: Chicago
+  country: USA
+  countryCode: us
+  talks: Consumer-Driven Contracts and Your Microservice Architecture
+  resources:
+    media:
+        - slides: https://www.slideshare.net/MarcinGrzejszczak/consumer-driven-contracts-to-enable-api-evolution-geecon
+    event: https://www.meetup.com/ChicagoJUG/events/238468346/
+
+- date: 2017.05.18
+  eventName: Geecon 2017
+  city: Cracow
+  country: Poland
+  countryCode: pl
+  talks: Consumer-Driven Contracts to enable API evolution
+  resources:
+    media:
+        - slides: https://www.slideshare.net/MarcinGrzejszczak/consumer-driven-contracts-to-enable-api-evolution-geecon
+        - video: https://www.youtube.com/watch?v=UwwaWodTj1k&list=PLxZQe6I1pYpfbUI587PZ7CY0l3oKPg9hH&index=28
+    event: https://2017.geecon.org/schedule-day2/
+
+- date: 2017.04.24
+  eventName: Warsaw Cloud Native Meetup
+  city: Warsaw
+  country: Poland
+  countryCode: pl
+  talks: Continuous Deployment to the Cloud
+  resources:
+    media:
+        - slides: https://www.slideshare.net/MarcinGrzejszczak/continuous-deployment-to-the-cloud-with-spring-cloud-pipelines-warsawcloudnativemeetup
+    event: https://www.meetup.com/Warsaw-Cloud-Native-Meetup/events/239181385/
+
+- date: 2017.03.15
+  eventName: Szczecin JUG
+  city: Szczecin
+  country: Poland
+  countryCode: pl
+  talks: Microservices tracing with Spring Cloud Sleuth and Zipkin
+  resources:
+    media:
+        - slides: https://www.slideshare.net/MarcinGrzejszczak/microservices-tracing-with-spring-cloud-and-zipkin-szczecin-jug
+    event: https://www.meetup.com/Szczecin-Java-Users-Group/events/238001954/
+
+- date: 2017.01.25
+  eventName: Zielona Gora JUG
+  city: Zielona Gora
+  country: Poland
+  countryCode: pl
+  talks: Microservices tracing with Spring Cloud Sleuth and Zipkin
+  resources:
+    event: https://www.meetup.com/Zielona-Gora-JUG/events/236619601/
+    media:
+        - video: https://www.youtube.com/watch?v=l09kn2J-lHI
+
+- date: 2016.12.15
+  eventName: "Bydgoszcz JUG #3"
+  city: Bydgoszcz
+  country: Poland
+  countryCode: pl
+  talks: TDD at the Architecture Level with Consumer-Driven Contracts
+  resources:
+    event: https://www.meetup.com/BydgoszczJUG/events/235878695/
+
+- date: 2016.12.02
+  eventName: Power Workshop @DevTernity 2016
+  city: Riga
+  country: Latvia
+  countryCode: lv
+  talks: Building Cloud Native microservices with Spring Cloud & Netflix OSS
+  resources:
+    event: https://devternity.com
+
+- date: 2016.12.01
+  eventName: DevTernity 2016
+  city: Riga
+  country: Latvia
+  countryCode: lv
+  talks: TDD at the Architecture Level with Consumer-Driven Contracts
+  resources:
+    event: https://devternity.com
+    media:
+        - video: https://www.youtube.com/watch?v=UuBfgiAjWWQ
+
+- date: 2016.11.15
+  eventName: "WJUG #189"
+  city: Warsaw
+  country: Poland
+  countryCode: pl
+  talks: Consumer Driven Contracts and Your Microservice Architecture
+  resources:
+    event: https://warszawa.jug.pl/#/meeting/189
+    media:
+        - slides: https://www.slideshare.net/MarcinGrzejszczak/consumer-driven-contracts-and-your-microservice-architecture-warsaw-jug
+          video: https://www.youtube.com/watch?time_continue=538&v=sAAklvxmPmk
+
+- date: 2016.10.06
+  eventName: JUGtoberfest
+  city: Lodz
+  country: Poland
+  countryCode: pl
+  talks: Consumer Driven Contracts and Your Microservice Architecture
+  resources:
+    event: https://www.meetup.com/Java-User-Group-Lodz/events/233741565/
+    media:
+        - slides: https://www.slideshare.net/MarcinGrzejszczak/spring-cloud-contract-and-your-microservice-architecture
+
+- date: 2016.09.04
+  eventName: SpringOne Platform
+  city: Las Vegas
+  country: USA
+  countryCode: us
+  talks:
+    - Consumer Driven Contracts and Your Microservice Architecture
+  resources:
+    event: https://2016.event.springoneplatform.io/schedule/sessions/
+    media:
+        - slides: https://www.slideshare.net/SpringCentral/consumer-driven-contracts-and-your-microservice-architecture-64844061
+          video: https://www.youtube.com/watch?v=YnGssIG4nMQ&list=PLAdzTan_eSPQ1fuLSBhyB4eEZF7JQM0Mx&index=138
+          name: Contracts
+
+- date: 2016.09.04
+  eventName: SpringOne Platform
+  city: Las Vegas
+  country: USA
+  countryCode: us
+  talks:
+    - Implementing Microservices Tracing with Spring Cloud and Zipkin
+  resources:
+    event: https://2016.event.springoneplatform.io/schedule/sessions/
+    media:
+        - slides: https://www.slideshare.net/SpringCentral/implementing-microservices-tracing-with-spring-cloud-and-zipkin
+          video: https://www.youtube.com/watch?v=vpFL4MZ0jlI&list=PLAdzTan_eSPQ1fuLSBhyB4eEZF7JQM0Mx&index=139
+          name: Tracing
+
+- date: 2016.06.22
+  eventName: Devoxx Poland 2016
+  city: Cracow
+  country: Poland
+  countryCode: pl
+  talks: Microservices Tracing with Spring Cloud and Zipkin
+  resources:
+    event: https://devoxx.pl/
+    media:
+        - slides: https://www.slideshare.net/MarcinGrzejszczak/microservices-tracing-with-spring-cloud-and-zipkin-devoxx
+          video: https://www.youtube.com/watch?v=eQV71Mw1u1c
+
+
+- date: 2016.05.24
+  eventName: "WJUG #182"
+  city: Warsaw
+  country: Poland
+  countryCode: pl
+  talks: Microservices Tracing with Spring Cloud and Zipkin
+  resources:
+    event: https://warszawa.jug.pl/#/meeting/182
+    media:
+        - video: https://www.youtube.com/watch?v=CM2y8K-sCWg&t=93s
+
+
+- date: 2016.05.21
+  eventName: CybercomDev 2016
+  city: Lodz
+  country: Poland
+  countryCode: pl
+  talks: Microservices Tracing with Spring Cloud and Zipkin
+  resources:
+    event: https://cybercomdev.pl
+    media:
+        - slides: https://www.slideshare.net/MarcinGrzejszczak/microservices-tracing-with-spring-cloud-and-zipkin-cybercomdev
+          video: https://www.youtube.com/watch?v=eQV71Mw1u1c
+
+
+- date: 2016.05.11
+  eventName: GeeCon 2016
+  city: Cracow
+  country: Poland
+  countryCode: pl
+  talks: Microservices tracing with Spring Cloud and Zipkin
+  resources:
+    event: https://2016.geecon.org/schedule/
+    media:
+        - slides: https://www.slideshare.net/MarcinGrzejszczak/microservices-tracing-with-spring-cloud-and-zipkin-61942031
+
+
+- date: 2016.04.08
+  eventName: Greach 2016
+  city: Madrid
+  country: Spain
+  countryCode: es
+  talks: Spring Cloud's Groovy
+  resources:
+    event: https://greachconf.com/speakers/marcin-grzejszczak-spring-cloud-s-groovy/
+    media:
+        - slides: https://www.slideshare.net/MarcinGrzejszczak/spring-clouds-groovy
+          video: https://www.youtube.com/watch?v=ioacZuzGwKU
+
+
+- date: 2016.03.19
+  eventName: GR8 Day Warsaw
+  city: Warsaw
+  country: Poland
+  countryCode: pl
+  talks: Spring Cloud's Groovy
+  resources:
+    event: https://gr8days.github.io/warsaw-2016/#/talk/340
+    media:
+        - slides: https://www.slideshare.net/MarcinGrzejszczak/spring-clouds-groovy
+          video: https://www.youtube.com/watch?v=ioacZuzGwKU
+
+
+- date: 2015.12.01
+  eventName: DevTernity 2015
+  city: Riga
+  country: Latvia
+  countryCode: lv
+  talks: Microservices - enough with theory, let's code some
+  resources:
+    event: https://devternity.com
+    media:
+        - slides: https://www.slideshare.net/MarcinGrzejszczak/spring-clouds-groovy
+          video: https://www.youtube.com/watch?v=WoyU2LmmyVQ&index=8&list=PLZQDTUIhS27DiqLxmgs80R52QfX6MQ1Ik
+
+
+- date: 2015.11.09
+  eventName: muCon 2015
+  city: London
+  country: England
+  countryCode: gb
+  talks: Microservices - enough with theory, let's code some
+  resources:
+    event: https://skillsmatter.com/conferences/7062-mucon-2015-the-microservices-conference
+    media:
+        - slides: https://www.slideshare.net/MarcinGrzejszczak/microservices-enough-with-theory-lets-do-some-code-mucon2015
+          video: https://skillsmatter.com/skillscasts/6912-microservices-enough-with-theory-let-s-do-some-coding
+
+
+- date: 2015.10.22
+  eventName: Geecon Prague
+  city: Prague
+  country: Czech Republic
+  countryCode: cz
+  talks: Microservices - enough with theory, let's code some
+  resources:
+    event: https://2015.geecon.cz
+    media:
+        - slides: https://www.slideshare.net/MarcinGrzejszczak/microservices-enough-with-theory-lets-do-some-code-geecon-prague-2015
+          video: https://vimeo.com/146251928
+
+
+- date: 2015.09.18
+  eventName: Voxxed Days
+  city: Vilinus
+  country: Lithuania
+  countryCode: lt
+  talks: Microservices - enough with theory, let's code some
+  resources:
+    event: https://voxxeddays.com/vilnius15/
+    media:
+        - slides: https://www.slideshare.net/szimano/microservices-voxxed-vilnus-2015
+
+- date: 2015.09.17
+  eventName: "Kaunas JUG #20"
+  city: Kaunas
+  country: Lithuania
+  countryCode: lt
+  talks: Microservices at ...
+
+
+- date: 2015.09.11
+  eventName: Geecon Microservices
+  city: Sopot
+  country: Poland
+  countryCode: pl
+  talks: Microservices - enough with theory, let's code some
+  resources:
+    event: https://2015.microservices.geecon.org/
+    media:
+        - slides: https://www.slideshare.net/MarcinGrzejszczak/microservices-enough-with-theory-lets-do-some-code-geecon-prague-2015
+
+
+- date: 2015.09.08
+  eventName: "WJUG #165"
+  city: Warsaw
+  country: Poland
+  countryCode: pl
+  talks: Microservices - enough with theory, let's code some
+  resources:
+      event: https://warszawa.jug.pl/#/meeting/165
+      media:
+          - video: https://www.youtube.com/watch?v=L7zrYHXSCKM
+
+
+- date: 2015.08.28
+  eventName: Codepot
+  city: Warsaw
+  country: Poland
+  countryCode: pl
+  talks: Microservices - enough with theory, let's code some
+  resources:
+      event: https://codepot.pl/
+
+
+- date: 2015.07.04
+  eventName: Confitura 2015
+  city: Warsaw
+  country: Poland
+  countryCode: pl
+  talks: Stick to the rules! Consumer Driven Contracts
+  resources:
+      event: https://2015.confitura.pl/
+
+
+- date: 2015.06.22
+  eventName: Devoxx Poland
+  city: Cracow
+  country: Poland
+  countryCode: pl
+  talks: Microservices - enough with theory, let's code some
+  resources:
+      event: https://devoxx.pl/
+      media:
+          - video: https://www.youtube.com/watch?v=cJzqkDIZ2oM&t=2422s&list=PLklQqdqnBkPh4vfnOjYyOtOrmtNr2eb2j&index=22
+
+
+- date: 2015.06.08
+  eventName: Prague JUG
+  city: Prague
+  country: Czech Republic
+  countryCode: cz
+  talks: Microservices at ...
+
+
+- date: 2015.05.18
+  eventName: Atmosphere
+  city: Cracow
+  country: Poland
+  countryCode: pl
+  talks: Do you think you're doing microservices?
+  resources:
+      event: https://atmosphere.org.pl/2015/05/
+      media:
+          - video: https://www.youtube.com/watch?v=rWz74iLSxZs&index=30&list=PLnKL6-WWWE_Wr7LLzRhCVxvNYBeRhwa6k
+
+
+- date: 2015.05.13
+  eventName: Geecon 2015
+  city: Cracow
+  country: Poland
+  countryCode: pl
+  talks: Stick to the rules! Consumer Driven Contracts
+  resources:
+      event: https://2015.geecon.org
+      media:
+          - video: https://vimeo.com/130779882
+
+
+- date: 2015.04.20
+  eventName: 4Developers
+  city: Warsaw
+  country: Poland
+  countryCode: pl
+  talks: Stick to the rules - Consumer Driven Contracts
+  resources:
+      event: https://2015.4developers.org.pl/en/
+      media:
+          - video: https://www.youtube.com/watch?v=JEoiIAuiTlI
+
+
+- date: 2015.05.21
+  eventName: Lodz JUG Hackathon
+  city: Lodz
+  country: Poland
+  countryCode: pl
+  talks: Microhackathon
+  resources:
+      event: https://www.meetup.com/Java-User-Group-Lodz/events/220850670/
+
+
+- date: 2015.01.30
+  eventName: TDD Geecon
+  city: Poznan
+  country: Poland
+  countryCode: pl
+  talks: Stick to the rules - Consumer Driven Contracts
+  resources:
+      event: https://2015.tdd.geecon.org/
+      media:
+          - video: https://vimeo.com/120570949
+
+
+- date: 2014.12.04
+  eventName: Lodz JUG
+  city: Lodz
+  country: Poland
+  countryCode: pl
+  talks: Microservices
+  resources:
+      event: https://www.juglodz.pl/opis_spotkan/2014-12-04mikroserwisy
+
+
+- date: 2014.08.26
+  eventName: Warsjawa
+  city: Warsaw
+  country: Poland
+  countryCode: pl
+  talks: Microservices
+  resources:
+      event: https://warsjawa.pl/
+
+
+- date: 2014.08.08
+  eventName: Microservice Hackathon
+  city: Warsaw
+  country: Poland
+  countryCode: pl
+  talks: Microservices Hackathon
+  resources:
+      event: https://www.meetup.com/Warszawa-JUG/events/192220832/
+
+
+- date: 2014.02.20
+  eventName: Warsaw Groovy User Group
+  city: Warsaw
+  country: Poland
+  countryCode: pl
+  talks: AST transformations
+  resources:
+      event: https://www.meetup.com/Warsaw-Groovy-User-Group/events/167965592/
+      media:
+          - video: https://www.youtube.com/watch?v=JdSCDEkX0Tw
+
+
+- date: 2014.02.12
+  eventName: Jinkubator (Groovy)
+  city: Warsaw
+  country: Poland
+  countryCode: pl
+  talks: Groovy
+  resources:
+      event: https://www.meetup.com/Warszawa-JUG/events/218935557/
+      media:
+          - video: https://www.youtube.com/watch?v=-mG4HDYNfOE
