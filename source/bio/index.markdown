@@ -1,10 +1,11 @@
 ---
 layout: page
-title: "bio"
+title: "Bio"
 date: 2016-03-11 22:27
 comments: true
 sharing: true
 footer: true
+sidebar: false
 ---
 
 ## About Me
