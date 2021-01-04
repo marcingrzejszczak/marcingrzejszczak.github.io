@@ -4,7 +4,7 @@
   <title><![CDATA[TOO MUCH CODING]]></title>
   <link href="https://toomuchcoding.com/atom.xml" rel="self"/>
   <link href="https://toomuchcoding.com/"/>
-  <updated>2020-12-09T15:25:44+01:00</updated>
+  <updated>2021-01-04T11:18:25+01:00</updated>
   <id>https://toomuchcoding.com/</id>
   <author>
     <name><![CDATA[Marcin Grzejszczak]]></name>
@@ -12,6 +12,184 @@
   </author>
   <generator uri="https://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Spring Cloud Contract 3.0.0 released]]></title>
+    <link href="https://toomuchcoding.com/articles/2020/12/23/spring-cloud-contract-3-0-0-released/"/>
+    <updated>2020-12-23T14:58:00+01:00</updated>
+    <id>https://toomuchcoding.com/articles/2020/12/23/spring-cloud-contract-3-0-0-released</id>
+    <content type="html"><![CDATA[<p>With the release of the Spring Cloud 2020.0.0 (aka Ilford) release train we’re more than happy to announce the general availability of Spring Cloud Contract 3.0.0. In this blog post I’ll describe the most notable released features (in order of their release dates).</p>
+
+<!--more-->
+
+<h2 id="incremental-test-generation-for-maven">Incremental Test Generation for Maven</h2>
+
+<p>With the <a href="https://github.com/spring-cloud/spring-cloud-contract/pull/1361">Incremental Test Generation for Maven</a> we’re generating tests, stubs and stubs jar only if the contracts have changed. The feature is opt-out (enabled by default).</p>
+
+<h2 id="resolves-credentials-from-settingsxml">Resolves Credentials from settings.xml</h2>
+
+<p>With the <a href="https://github.com/spring-cloud/spring-cloud-contract/pull/1362">
+support to resolve credentials from settings.xml</a> when using Aether based solution to fetch the contracts / stubs, we will reuse your <code>settings.xml</code> credentials for the given server id (via the <code>stubrunner.server-id </code> property).</p>
+
+<h2 id="rewrite-groovy-to-java">Rewrite Groovy to Java</h2>
+
+<p>It was fantastic to see so many people take part in rewriting the Spring Cloud Contract’s codebase from Groovy to Java. You can check <a href="https://github.com/spring-cloud/spring-cloud-contract/issues/1470">this issue</a> for more information.</p>
+
+<h2 id="allow-to-extend-contract--stubs">Allow to Extend Contract &amp; Stubs</h2>
+
+<p>With <a href="https://github.com/spring-cloud/spring-cloud-contract/issues/1465">this issue</a> and this <a href="https://github.com/spring-cloud/spring-cloud-contract/pull/1466">pull request</a> we’ve added an option to provide <code>metadata</code> to your contracts. Since we didn’t want to map all WireMock properties to the core of our Contract definition, we’ve allowed passing of metadata under the <code>wiremock</code> key. The passed value can be an actual WireMock definition. We will map that part to the generated stub.</p>
+
+<p>Example of adding delays:</p>
+
+<pre><code class="language-groovy">Contract.make {
+		request {
+			method GET()
+			url '/drunks'
+		}
+		response {
+			status OK()
+			body([
+				count: 100
+			])
+			headers {
+				contentType("application/json")
+			}
+		}
+		metadata([wiremock: '''\
+	{
+		"response" : {
+			"delayDistribution": {
+                    "type": "lognormal",
+                    "median": 80,
+                    "sigma": 0.4
+            }
+		}
+	}
+'''
+		])
+</code></pre>
+
+<p>That also means that you can provide your own metadata. You can read more about this in the documentation</p>
+
+<ul>
+  <li><a href="https://docs.spring.io/spring-cloud-contract/docs/3.0.0/reference/html/project-features.html#contract-dsl-metadata">existing metadata entries</a></li>
+  <li><a href="https://docs.spring.io/spring-cloud-contract/docs/3.0.0/reference/htmlsingle/#customization-wiremock-from-metadata">customization of WireMock via metadata</a></li>
+  <li><a href="https://docs.spring.io/spring-cloud-contract/docs/3.0.0/reference/htmlsingle/#customization-wiremock-from-metadata-custom-processor">customization of WireMock via metadata &amp; custom post processor</a></li>
+</ul>
+
+<h2 id="new-custom-mode-of-test-generation">New [Custom] Mode of Test Generation</h2>
+
+<p>With <a href="https://github.com/spring-cloud/spring-cloud-contract/pull/1511">this pr</a> we’ve introduced a new <code>custom</code> mode of test generation. You’re able to pass your own implementation of an HTTP client (you can reuse our <code>OkHttpHttpVerifier</code>), thanks to which you can e.g. use HTTP/2. This was a prerequisite for the GRPC task. Thanks to the Spring Cloud Contract Workshops and the following refactoring of Spring Cloud Contract it was quite easy to add this feature, so thanks everyone involved then!</p>
+
+<p>You can read more about this in <a href="https://docs.spring.io/spring-cloud-contract/docs/3.0.0/reference/html/project-features.html#features-custom-mode">the documentation</a>.</p>
+
+<h2 id="experimental-grpc-support">Experimental GRPC Support</h2>
+
+<p>With the custom mode in place we could add the experimental GRPC support. Why experimental? Due to GRPC’s tweaking of the HTTP/2 Header frames, it’s impossible to assert the <code>grpc-status</code> header. You can read more about the feature, the issue and workarounds in <a href="https://docs.spring.io/spring-cloud-contract/docs/3.0.0/reference/html/project-features.html#features-grpc">the documentation</a>.</p>
+
+<p>Here you can find an example of <a href="https://github.com/spring-cloud-samples/spring-cloud-contract-samples/tree/master/producer_grpc">GRPC producer</a> and of a <a href="https://github.com/spring-cloud-samples/spring-cloud-contract-samples/tree/master/consumer_grpc">GRPC consumer</a>.</p>
+
+<h2 id="graphql-support">GraphQL Support</h2>
+
+<p>With <a href="https://github.com/spring-cloud/spring-cloud-contract/pull/1506">this PR</a> we’ve added GraphQL support. Since GraphQL is essentially POST to and endpoint with specific body, you can create such a contract and set the proper metadata. You can read more about this in <a href="https://docs.spring.io/spring-cloud-contract/docs/3.0.0/reference/html/project-features.html#features-graphql">the documentation</a>.</p>
+
+<p>Here you can find an example of <a href="https://github.com/spring-cloud-samples/spring-cloud-contract-samples/tree/master/producer_graphql">GraphQL producer</a> and of a <a href="https://github.com/spring-cloud-samples/spring-cloud-contract-samples/blob/master/consumer/src/test/java/com/example/BeerControllerGraphQLTest.java">GraphQL consumer</a>.</p>
+
+<h2 id="stub-runner-boot-thin-jar">Stub Runner Boot Thin JAR</h2>
+
+<p>With <a href="https://github.com/spring-cloud/spring-cloud-contract/issues/1385">this issue</a> we’ve migrated the Stub Runner Boot application to be a thin jar based application. Not only have we managed to lower the size of the produced artifact, but also we’re able via properties turn on profiles (e.g. <code>kafka</code> or <code>rabbit</code> profiles) that would fetch additional dependencies at runtime.</p>
+
+<h2 id="messaging-polyglot-support">Messaging Polyglot Support</h2>
+
+<h3 id="pre-built-kafka-and-amqp-support">Pre-built kafka and amqp support</h3>
+
+<p>With the thin jar rewrite and <a href="https://github.com/spring-cloud/spring-cloud-contract/pull/1472">this PR</a> and <a href="https://github.com/spring-cloud/spring-cloud-contract/issues/1468">this issue</a> we’re adding support for Kafka and AMQP based solutions with the Docker images.</p>
+
+<p>You’ll have to have the following prerequisites met:</p>
+
+<ul>
+  <li>Middleware (e.g. RabbitMQ or Kafka) must be running before generating tests</li>
+  <li>Your contract needs to call a method <code>triggerMessage(...)</code> with a String parameter that is equal to the contract’s label.</li>
+  <li>Your application needs to have a HTTP endpoint via which we can trigger a message</li>
+  <li>That endpoint should not be available on production (could be enabled via an environment variable)</li>
+</ul>
+
+<p>Your contract can leverage the <code>kafka</code> and <code>amqp</code> metadata sections like below:</p>
+
+<pre><code class="language-yaml">description: 'Send a pong message in response to a ping message'
+label: 'ping_pong'
+input:
+    # You have to provide the `triggerMessage` method with the `label`
+    # as a String parameter of the method
+    triggeredBy: 'triggerMessage("ping_pong")'
+outputMessage:
+    sentTo: 'output'
+    body:
+        message: 'pong'
+metadata:
+    amqp:
+        outputMessage:
+            connectToBroker:
+                declareQueueWithName: "queue"
+            messageProperties:
+				receivedRoutingKey: '#'
+</code></pre>
+
+<h3 id="standalone-mode">Standalone mode</h3>
+
+<p>There is legitimate reason to run your contract tests against existing middleware. Some
+testing frameworks might give you false positive results - the test within your build
+passes whereas on production the communication fails.</p>
+
+<p>In Spring Cloud Contract docker images we give an option to connect to existing middleware.
+As presented in previous subsections we do support Kafka and RabbitMQ out of the box. However,
+via <a href="https://camel.apache.org/components/latest/index.html">Apache Camel Components</a> we can support
+other middleware too. Let’s take a look at the following examples of usage.</p>
+
+<p>Example of a contract connecting to a real RabbitMQ instance:</p>
+
+<pre><code class="language-yaml">description: 'Send a pong message in response to a ping message'
+label: 'standalone_ping_pong'
+input:
+  triggeredBy: 'triggerMessage("ping_pong")'
+outputMessage:
+  sentTo: 'rabbitmq:output'
+  body:
+    message: 'pong'
+metadata:
+  standalone:
+    setup:
+      options: rabbitmq:output?queue=output&amp;routingKey=#
+    outputMessage:
+	  additionalOptions: routingKey=#&amp;queue=output
+</code></pre>
+
+<p>You can read more about setting this up in <a href="https://github.com/spring-cloud/spring-cloud-contract/pull/1472">this PR</a> under the <code>Documentation of the feature with standalone mode (aka with running middleware)</code> section.</p>
+
+<h2 id="messaging-with-existing-middleware">Messaging with Existing Middleware</h2>
+
+<p>Since it’s extremely easy to start a docker image with a broker via <a href="https://testcontainers.org">Testcontainers</a>, we’re suggesting to slowly migrate your messaging tests to such an approach. From the perspective of Spring Cloud Contract it’s also better since we won’t need to replicate in our code the special cases of how frameworks behave when calling a real broker. Here you can find an example of how you can connect to a JMS broker on <a href="https://github.com/spring-cloud-samples/spring-cloud-contract-samples/tree/master/producer_jms_middleware">the producer side</a> and <a href="https://github.com/spring-cloud-samples/spring-cloud-contract-samples/tree/master/producer_jms_middleware">here how you can consume it</a>.</p>
+
+<h2 id="gradle-plugin-rewrite">Gradle Plugin rewrite</h2>
+
+<p>This one is fully done by the one and only <a href="https://github.com/shanman190">shanman190</a>. The whole work on the Gradle plugin was done by him so you should buy him a beer once you get to see him :) Anyways, there are various changes to the Gradle plugin that you can check out.</p>
+
+<ul>
+  <li><a href="https://github.com/spring-cloud/spring-cloud-contract/pull/1464">Disable the stubs jar publication by default</a></li>
+  <li><a href="https://github.com/spring-cloud/spring-cloud-contract/pull/1558">Attempt to keep Kotlin off the classpath</a></li>
+</ul>
+
+<h2 id="stay-in-touch">Stay in touch!</h2>
+
+<p>In case of any questions don’t hesitate to ping us</p>
+
+<ul>
+  <li>On <a href="https://github.com/spring-cloud/spring-cloud-contract/">Github</a></li>
+  <li>On <a href="https://gitter.im/spring-cloud/spring-cloud-contract">Gitter</a></li>
+  <li>On <a href="https://stackoverflow.com/questions/tagged/spring-cloud-contract">Stackoverflow</a></li>
+</ul>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[SmartTesting.pl]]></title>
@@ -1768,16 +1946,6 @@ Over 60 people have already registered! Contact us to be a part of this gr8 even
 I'm really happy to present the <a href="https://github.com/marcingrzejszczak/jsonassert">JSON Assert library</a>&nbsp;-&nbsp;over-the-weekend project that came out from the <a href="https://github.com/Codearte/accurest">AccuREST library</a>. This post will describe the rationale behind creating this tool and how to use it.<br /><br /><br /><a name='more'></a>
 <!--more-->
 <br /><br /><h4>Rationale</h4>In AccuREST (the Consumer Driven Contracts implementation library) we're creating tests of the server side. For more information on what is AccuREST and what Consumer Driven Contracts is check the <a href="https://github.com/Codearte/accurest/wiki">AccurREST wiki</a>. Anyways, we're checking if the response from the server matches the one described in the contract.<br /><br />So having such a Groovy DSL:<br /><br /><pre style="background: #fff; color: black;">io.codearte.accurest.dsl.GroovyDsl<span style="color: #0100b6; font-weight: 700;">.</span>make {<br />    priority <span style="color: #cd0000; font-style: italic;">1</span><br />    request {<br />        method <span style="color: #d80800;">'POST'</span><br />        url <span style="color: #d80800;">'/users/password'</span><br />        headers {<br />            header <span style="color: #d80800;">'Content-Type'</span>: <span style="color: #d80800;">'application/json'</span><br />        }<br />        body(<br />                <span style="color: #c5060b; font-style: italic;">email</span>: $(stub(optional(regex(email()))), test(<span style="color: #d80800;">'abc@abc.com'</span>)),<br />                <span style="color: #c5060b; font-style: italic;">callback_url</span>: $(stub(regex(hostname())), test(<span style="color: #d80800;">'https://partners.com'</span>))<br />        )<br />    }<br />    response {<br />        status <span style="color: #cd0000; font-style: italic;">404</span><br />        headers {<br />            header <span style="color: #d80800;">'Content-Type'</span>: <span style="color: #d80800;">'application/json'</span><br />        }<br />        body(<br />                <span style="color: #c5060b; font-style: italic;">code</span>: value(stub(<span style="color: #d80800;">"123123"</span>), test(optional(<span style="color: #d80800;">"123123"</span>))),<br />                <span style="color: #c5060b; font-style: italic;">message</span>: <span style="color: #d80800;">"User not found by email = [<span style="color: #26b31a;">${value(test(regex(email())), stub('not.existing@user.com'))}</span>]"</span><br />        )<br />    }<br />}<br /></pre><br />Resulted in creation of the following server side response verification<br /><br /><pre style="background: #fff; color: black;"><span style="color: #c5060b; font-style: italic;">given</span>:<br />  def request <span style="color: #0100b6; font-weight: 700;">=</span> given()<br />    .header(<span style="color: #d80800;">'Content-Type'</span>, <span style="color: #d80800;">'application/json'</span>)<br />    .body(<span style="color: #d80800;">'{"email":"abc@abc.com","callback_url":"https://partners.com"}'</span>)<br /><br /> <span style="color: #c5060b; font-style: italic;">when</span>:<br />  def response <span style="color: #0100b6; font-weight: 700;">=</span> given()<span style="color: #0100b6; font-weight: 700;">.</span>spec(request)<br />    .post(<span style="color: #d80800;">"/users/password"</span>)<br /><br /> <span style="color: #c5060b; font-style: italic;">then</span>:<br />  response<span style="color: #0100b6; font-weight: 700;">.</span>statusCode <span style="color: #0100b6; font-weight: 700;">==</span> <span style="color: #cd0000; font-style: italic;">404</span><br />  response<span style="color: #0100b6; font-weight: 700;">.</span>header(<span style="color: #d80800;">'Content-Type'</span>)  <span style="color: #0100b6; font-weight: 700;">==</span> <span style="color: #d80800;">'application/json'</span><br /> <span style="color: #c5060b; font-style: italic;">and</span>:<br />  DocumentContext parsedJson <span style="color: #0100b6; font-weight: 700;">=</span> JsonPath<span style="color: #0100b6; font-weight: 700;">.</span>parse(response<span style="color: #0100b6; font-weight: 700;">.</span>body<span style="color: #0100b6; font-weight: 700;">.</span>asString())<br />  <span style="color: #0100b6; font-weight: 700;">!</span>parsedJson<span style="color: #0100b6; font-weight: 700;">.</span>read(<span style="color: #d80800;">'''$[?(@.code =~ /(123123)?/)]'''</span>, JSONArray)<span style="color: #0100b6; font-weight: 700;">.</span>empty<br />  <span style="color: #0100b6; font-weight: 700;">!</span>parsedJson<span style="color: #0100b6; font-weight: 700;">.</span>read(<span style="color: #d80800;">'''$[?(@.message =~ /User not found by email = <span style="color: #26b31a;">\\</span>[[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+<span style="color: #26b31a;">\\</span>.[a-zA-Z]{2,4}<span style="color: #26b31a;">\\</span>]/)]'''</span>, JSONArray)<span style="color: #0100b6; font-weight: 700;">.</span>empty<br /><br /></pre><br />AccuREST users stated that their biggest problem is this part:<br /><br /><pre style="background: #fff; color: black;"><span style="color: #0100b6; font-weight: 700;">!</span>parsedJson<span style="color: #0100b6; font-weight: 700;">.</span>read(<span style="color: #d80800;">'''$[?(@.code =~ /(123123)?/)]'''</span>, JSONArray)<span style="color: #0100b6; font-weight: 700;">.</span>empty<br />  <span style="color: #0100b6; font-weight: 700;">!</span>parsedJson<span style="color: #0100b6; font-weight: 700;">.</span>read(<span style="color: #d80800;">'''$[?(@.message =~ /User not found by email = <span style="color: #26b31a;">\\</span>[[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+<span style="color: #26b31a;">\\</span>.[a-zA-Z]{2,4}<span style="color: #26b31a;">\\</span>]/)]'''</span>, JSONArray)<span style="color: #0100b6; font-weight: 700;">.</span>empty<br /></pre><br />They said that JSON Paths are too difficult for them to read.<br /><br />That's why I've created the&nbsp;<a href="https://github.com/marcingrzejszczak/jsonassert">JSON Assert library</a>. So that instead of the aforementioned code one gets sth like this:<br /><br /><pre style="background: #fff; color: black;">  assertThatJson(parsedJson)<span style="color: #0100b6; font-weight: 700;">.</span>field(<span style="color: #d80800;">'code'</span>)<span style="color: #0100b6; font-weight: 700;">.</span>matches(<span style="color: #d80800;">'123123?'</span>)<br />  assertThatJson(parsedJson)<span style="color: #0100b6; font-weight: 700;">.</span>field(<span style="color: #d80800;">'message'</span>)<span style="color: #0100b6; font-weight: 700;">.</span>matches(<span style="color: #d80800;">'User not found by email = <span style="color: #26b31a;">\\</span>[[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+<span style="color: #26b31a;">\\</span>.[a-zA-Z]{2,4}<span style="color: #26b31a;">\\</span>]/)]'</span>);<br /></pre><br /><h4>How to add it to your project</h4><br />If your using Gradle just add (<a href="https://search.maven.org/#search%7Cga%7C1%7Cg%3A%22com.blogspot.toomuchcoding%22%20a%3A%22jsonassert%22">check the latest version number</a>):<br /><br /><pre style="background: #fff; color: black;"> testCompile `com<span style="color: #0100b6; font-weight: 700;">.</span>blogspot<span style="color: #0100b6; font-weight: 700;">.</span><span style="color: #c5060b; font-style: italic;">toomuchcoding</span>:<span style="color: #c5060b; font-style: italic;">jsonassert</span>:<span style="color: #cd0000; font-style: italic;">0.1</span><span style="color: #cd0000; font-style: italic;">.2</span>`<br /></pre><br />and if Maven just add:<br /><br /><pre style="background: #fff; color: black;"><span style="color: #1c02ff;">&lt;<span style="font-weight: 700;">dependency</span>&gt;</span><br />    <span style="color: #1c02ff;">&lt;<span style="font-weight: 700;">groupId</span>&gt;</span>com.blogspot.toomuchcoding<span style="color: #1c02ff;">&lt;/<span style="font-weight: 700;">groupId</span>&gt;</span><br />    <span style="color: #1c02ff;">&lt;<span style="font-weight: 700;">artifactId</span>&gt;</span>jsonassert<span style="color: #1c02ff;">&lt;/<span style="font-weight: 700;">artifactId</span>&gt;</span><br />    <span style="color: #1c02ff;">&lt;<span style="font-weight: 700;">version</span>&gt;</span>0.1.2<span style="color: #1c02ff;">&lt;/<span style="font-weight: 700;">version</span>&gt;</span><br /><span style="color: #1c02ff;">&lt;/<span style="font-weight: 700;">dependency</span>&gt;</span><br /></pre><h4><br />How to use it</h4><br />Since almost everything in JSON Assert is package scoped you have access to two public classes. One of which is the &nbsp;<span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;"><a href="https://github.com/marcingrzejszczak/jsonassert/blob/master/src/main/java/com/blogspot/toomuchcoding/jsonassert/JsonAssertion.java">JsonAssertion</a></span> class. It gives you a couple of public methods that give you the entry point to the fluent interface of the library.<br /><br />You can check the JavaDocs of the <a href="https://github.com/marcingrzejszczak/jsonassert/blob/master/src/main/java/com/blogspot/toomuchcoding/jsonassert/JsonVerifiable.java">JsonVerifiable</a> interface in order to see what kind of methods can be used.<br /><br /><h4>Examples</h4><div><br />Best examples are <a href="https://github.com/marcingrzejszczak/jsonassert/blob/master/src/test/groovy/com/blogspot/toomuchcoding/jsonassert/JsonAssertionSpec.groovy">tests</a>. I'll show you a couple of them here.<br /><br /><br /><b>Example 1</b><br /><br />Having a JSON:<br /><br /><pre style="background: #fff; color: black;">[ {<br />                                <span style="color: #d80800;">"some"</span> : {<br />                                    <span style="color: #d80800;">"nested"</span> : {<br />                                        <span style="color: #d80800;">"json"</span> : <span style="color: #d80800;">"with value"</span>,<br />                                        <span style="color: #d80800;">"anothervalue"</span>: <span style="color: #cd0000; font-style: italic;">4</span>,<br />                                        <span style="color: #d80800;">"withlist"</span> : [<br />                                            { <span style="color: #d80800;">"name"</span> :<span style="color: #d80800;">"name1"</span>} , {<span style="color: #d80800;">"name"</span>: <span style="color: #d80800;">"name2"</span>}, {<span style="color: #d80800;">"anothernested"</span>: { <span style="color: #d80800;">"name"</span>: <span style="color: #d80800;">"name3"</span>} }<br />                                        ]<br />                                    }<br />                                }<br />                            },<br />                            {<br />                                <span style="color: #d80800;">"someother"</span> : {<br />                                    <span style="color: #d80800;">"nested"</span> : {<br />                                        <span style="color: #d80800;">"json"</span> : <span style="color: #d80800;">"with value"</span>,<br />                                        <span style="color: #d80800;">"anothervalue"</span>: <span style="color: #cd0000; font-style: italic;">4</span>,<br />                                        <span style="color: #d80800;">"withlist"</span> : [<br />                                            { <span style="color: #d80800;">"name"</span> :<span style="color: #d80800;">"name1"</span>} , {<span style="color: #d80800;">"name"</span>: <span style="color: #d80800;">"name2"</span>}<br />                                        ]<br />                                    }<br />                                }<br />                            }<br />                        ]<br /></pre><br /></div><div><br /></div><div>Instead of writing:</div><div><br /><pre style="background: #fff; color: black;">$[<span style="color: #0100b6; font-weight: 700;">*</span>].some.nested.withlist[<span style="color: #0100b6; font-weight: 700;">*</span>].anothernested[<span style="color: #0100b6; font-weight: 700;">?</span>(@.name == <span style="color: #d80800;">'name3'</span>)]<br /></pre></div><div><br /></div><div>you can write<br /><br /><pre style="background: #fff; color: black;"><span style="color: #3c4c72; font-weight: 700;">assertThat</span>(json)<span style="color: #0100b6; font-weight: 700;">.</span>array()<span style="color: #0100b6; font-weight: 700;">.</span>field(<span style="color: #d80800;">"some"</span>)<span style="color: #0100b6; font-weight: 700;">.</span>field(<span style="color: #d80800;">"nested"</span>)<span style="color: #0100b6; font-weight: 700;">.</span>array(<span style="color: #d80800;">"withlist"</span>)<span style="color: #0100b6; font-weight: 700;">.</span>field(<span style="color: #d80800;">"anothernested"</span>)<span style="color: #0100b6; font-weight: 700;">.</span>field(<span style="color: #d80800;">"name"</span>)<span style="color: #0100b6; font-weight: 700;">.</span>isEqualTo(<span style="color: #d80800;">"name3"</span>)<br /></pre><br /><b>Example 2</b><br /><br />Having a JSON:<br /><br /><pre style="background: #fff; color: black;">{<br />    <span style="color: #d80800;">"property1"</span>: [<br />        { <span style="color: #d80800;">"property2"</span>: <span style="color: #d80800;">"test1"</span>},<br />        { <span style="color: #d80800;">"property3"</span>: <span style="color: #d80800;">"test2"</span>}<br />    ]<br />}<br /></pre><br /></div><div><br /></div><div>Instead of writing:</div><div><br /><pre style="background: #fff; color: black;">$.property1[<span style="color: #0100b6; font-weight: 700;">*</span>][<span style="color: #0100b6; font-weight: 700;">?</span>(@.property2 == <span style="color: #d80800;">'test1'</span>)]<br /></pre></div><div><br /></div><div>you can write<br /><br /><pre style="background: #fff; color: black;"><span style="color: #3c4c72; font-weight: 700;">assertThat</span>(json)<span style="color: #0100b6; font-weight: 700;">.</span>array(<span style="color: #d80800;">"property1"</span>)<span style="color: #0100b6; font-weight: 700;">.</span>contains(<span style="color: #d80800;">"property2"</span>)<span style="color: #0100b6; font-weight: 700;">.</span>isEqualTo(<span style="color: #d80800;">"test1"</span>)<br /></pre><br /></div><h4>Future plans</h4><br />It would be nice to:<br /><br /><ul><li>integrate with <a href="https://joel-costigliola.github.io/assertj/">AssertJ</a></li><li>add more <a href="https://github.com/jayway/JsonPath#functions">JSON Path features</a> (functions, filters etc.)</li></ul><div><br /></div><h4>Links</h4><ul><li><a href="https://github.com/marcingrzejszczak/jsonassert">JSON Assert</a></li><li><a href="https://github.com/Codearte/accurest/wiki">AccuREST</a></li><li><a href="https://www.youtube.com/watch?v=daafmTYFoDU">Video about AccuREST </a>by <a href="https://twitter.com/olga_maciaszek">Olga Maciaszek-Sharma</a></li><li><a href="https://github.com/jayway/JsonPath">Jayway JSON Path</a></li><li><a href="https://joel-costigliola.github.io/assertj/">AssertJ</a></li></ul><br /><br /></div>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Post on Spring blog]]></title>
-    <link href="https://toomuchcoding.com/articles/2016/01/04/post-on-spring-blog/"/>
-    <updated>2016-01-04T18:28:00+01:00</updated>
-    <id>https://toomuchcoding.com/articles/2016/01/04/post-on-spring-blog</id>
-    <content type="html"><![CDATA[<div class='post'>
-Hi!<br /><br />Since December I'm working for Pivotal and the Spring Cloud team. I've just posted my first blog post on the Spring blog. Check it out!<br /><br /><a href="https://spring.io/blog/2016/01/04/testing-spring-cloud-projects">Testing Spring Cloud Projects</a></div>
 ]]></content>
   </entry>
   

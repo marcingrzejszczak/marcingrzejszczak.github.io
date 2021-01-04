@@ -127,6 +127,213 @@
 
 
 
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2020-12-23T14:58:00+01:00"  data-updated="true" itemprop="datePublished dateCreated">ordinal</time>
+        
+           | <a href="/articles/2020/12/23/spring-cloud-contract-3-0-0-released/#disqus_thread" itemprop="discussionUrl"
+             data-disqus-identifier="https://toomuchcoding.com/articles/2020/12/23/spring-cloud-contract-3-0-0-released/">Comments</a>
+        
+      </p>
+    
+    
+      <h2 class="entry-title" itemprop="name headline"><a href="/articles/2020/12/23/spring-cloud-contract-3-0-0-released/" itemprop="url">Spring Cloud Contract 3.0.0 released</a></h2>
+    
+  </header>
+
+
+  <div class="entry-content clearfix" itemprop="articleBody description"><p>With the release of the Spring Cloud 2020.0.0 (aka Ilford) release train we’re more than happy to announce the general availability of Spring Cloud Contract 3.0.0. In this blog post I’ll describe the most notable released features (in order of their release dates).</p>
+
+<!--more-->
+
+<h2 id="incremental-test-generation-for-maven">Incremental Test Generation for Maven</h2>
+
+<p>With the <a href="https://github.com/spring-cloud/spring-cloud-contract/pull/1361">Incremental Test Generation for Maven</a> we’re generating tests, stubs and stubs jar only if the contracts have changed. The feature is opt-out (enabled by default).</p>
+
+<h2 id="resolves-credentials-from-settingsxml">Resolves Credentials from settings.xml</h2>
+
+<p>With the <a href="https://github.com/spring-cloud/spring-cloud-contract/pull/1362">
+support to resolve credentials from settings.xml</a> when using Aether based solution to fetch the contracts / stubs, we will reuse your <code>settings.xml</code> credentials for the given server id (via the <code>stubrunner.server-id </code> property).</p>
+
+<h2 id="rewrite-groovy-to-java">Rewrite Groovy to Java</h2>
+
+<p>It was fantastic to see so many people take part in rewriting the Spring Cloud Contract’s codebase from Groovy to Java. You can check <a href="https://github.com/spring-cloud/spring-cloud-contract/issues/1470">this issue</a> for more information.</p>
+
+<h2 id="allow-to-extend-contract--stubs">Allow to Extend Contract &amp; Stubs</h2>
+
+<p>With <a href="https://github.com/spring-cloud/spring-cloud-contract/issues/1465">this issue</a> and this <a href="https://github.com/spring-cloud/spring-cloud-contract/pull/1466">pull request</a> we’ve added an option to provide <code>metadata</code> to your contracts. Since we didn’t want to map all WireMock properties to the core of our Contract definition, we’ve allowed passing of metadata under the <code>wiremock</code> key. The passed value can be an actual WireMock definition. We will map that part to the generated stub.</p>
+
+<p>Example of adding delays:</p>
+
+<pre><code class="language-groovy">Contract.make {
+		request {
+			method GET()
+			url '/drunks'
+		}
+		response {
+			status OK()
+			body([
+				count: 100
+			])
+			headers {
+				contentType("application/json")
+			}
+		}
+		metadata([wiremock: '''\
+	{
+		"response" : {
+			"delayDistribution": {
+                    "type": "lognormal",
+                    "median": 80,
+                    "sigma": 0.4
+            }
+		}
+	}
+'''
+		])
+</code></pre>
+
+<p>That also means that you can provide your own metadata. You can read more about this in the documentation</p>
+
+<ul>
+  <li><a href="https://docs.spring.io/spring-cloud-contract/docs/3.0.0/reference/html/project-features.html#contract-dsl-metadata">existing metadata entries</a></li>
+  <li><a href="https://docs.spring.io/spring-cloud-contract/docs/3.0.0/reference/htmlsingle/#customization-wiremock-from-metadata">customization of WireMock via metadata</a></li>
+  <li><a href="https://docs.spring.io/spring-cloud-contract/docs/3.0.0/reference/htmlsingle/#customization-wiremock-from-metadata-custom-processor">customization of WireMock via metadata &amp; custom post processor</a></li>
+</ul>
+
+<h2 id="new-custom-mode-of-test-generation">New [Custom] Mode of Test Generation</h2>
+
+<p>With <a href="https://github.com/spring-cloud/spring-cloud-contract/pull/1511">this pr</a> we’ve introduced a new <code>custom</code> mode of test generation. You’re able to pass your own implementation of an HTTP client (you can reuse our <code>OkHttpHttpVerifier</code>), thanks to which you can e.g. use HTTP/2. This was a prerequisite for the GRPC task. Thanks to the Spring Cloud Contract Workshops and the following refactoring of Spring Cloud Contract it was quite easy to add this feature, so thanks everyone involved then!</p>
+
+<p>You can read more about this in <a href="https://docs.spring.io/spring-cloud-contract/docs/3.0.0/reference/html/project-features.html#features-custom-mode">the documentation</a>.</p>
+
+<h2 id="experimental-grpc-support">Experimental GRPC Support</h2>
+
+<p>With the custom mode in place we could add the experimental GRPC support. Why experimental? Due to GRPC’s tweaking of the HTTP/2 Header frames, it’s impossible to assert the <code>grpc-status</code> header. You can read more about the feature, the issue and workarounds in <a href="https://docs.spring.io/spring-cloud-contract/docs/3.0.0/reference/html/project-features.html#features-grpc">the documentation</a>.</p>
+
+<p>Here you can find an example of <a href="https://github.com/spring-cloud-samples/spring-cloud-contract-samples/tree/master/producer_grpc">GRPC producer</a> and of a <a href="https://github.com/spring-cloud-samples/spring-cloud-contract-samples/tree/master/consumer_grpc">GRPC consumer</a>.</p>
+
+<h2 id="graphql-support">GraphQL Support</h2>
+
+<p>With <a href="https://github.com/spring-cloud/spring-cloud-contract/pull/1506">this PR</a> we’ve added GraphQL support. Since GraphQL is essentially POST to and endpoint with specific body, you can create such a contract and set the proper metadata. You can read more about this in <a href="https://docs.spring.io/spring-cloud-contract/docs/3.0.0/reference/html/project-features.html#features-graphql">the documentation</a>.</p>
+
+<p>Here you can find an example of <a href="https://github.com/spring-cloud-samples/spring-cloud-contract-samples/tree/master/producer_graphql">GraphQL producer</a> and of a <a href="https://github.com/spring-cloud-samples/spring-cloud-contract-samples/blob/master/consumer/src/test/java/com/example/BeerControllerGraphQLTest.java">GraphQL consumer</a>.</p>
+
+<h2 id="stub-runner-boot-thin-jar">Stub Runner Boot Thin JAR</h2>
+
+<p>With <a href="https://github.com/spring-cloud/spring-cloud-contract/issues/1385">this issue</a> we’ve migrated the Stub Runner Boot application to be a thin jar based application. Not only have we managed to lower the size of the produced artifact, but also we’re able via properties turn on profiles (e.g. <code>kafka</code> or <code>rabbit</code> profiles) that would fetch additional dependencies at runtime.</p>
+
+<h2 id="messaging-polyglot-support">Messaging Polyglot Support</h2>
+
+<h3 id="pre-built-kafka-and-amqp-support">Pre-built kafka and amqp support</h3>
+
+<p>With the thin jar rewrite and <a href="https://github.com/spring-cloud/spring-cloud-contract/pull/1472">this PR</a> and <a href="https://github.com/spring-cloud/spring-cloud-contract/issues/1468">this issue</a> we’re adding support for Kafka and AMQP based solutions with the Docker images.</p>
+
+<p>You’ll have to have the following prerequisites met:</p>
+
+<ul>
+  <li>Middleware (e.g. RabbitMQ or Kafka) must be running before generating tests</li>
+  <li>Your contract needs to call a method <code>triggerMessage(...)</code> with a String parameter that is equal to the contract’s label.</li>
+  <li>Your application needs to have a HTTP endpoint via which we can trigger a message</li>
+  <li>That endpoint should not be available on production (could be enabled via an environment variable)</li>
+</ul>
+
+<p>Your contract can leverage the <code>kafka</code> and <code>amqp</code> metadata sections like below:</p>
+
+<pre><code class="language-yaml">description: 'Send a pong message in response to a ping message'
+label: 'ping_pong'
+input:
+    # You have to provide the `triggerMessage` method with the `label`
+    # as a String parameter of the method
+    triggeredBy: 'triggerMessage("ping_pong")'
+outputMessage:
+    sentTo: 'output'
+    body:
+        message: 'pong'
+metadata:
+    amqp:
+        outputMessage:
+            connectToBroker:
+                declareQueueWithName: "queue"
+            messageProperties:
+				receivedRoutingKey: '#'
+</code></pre>
+
+<h3 id="standalone-mode">Standalone mode</h3>
+
+<p>There is legitimate reason to run your contract tests against existing middleware. Some
+testing frameworks might give you false positive results - the test within your build
+passes whereas on production the communication fails.</p>
+
+<p>In Spring Cloud Contract docker images we give an option to connect to existing middleware.
+As presented in previous subsections we do support Kafka and RabbitMQ out of the box. However,
+via <a href="https://camel.apache.org/components/latest/index.html">Apache Camel Components</a> we can support
+other middleware too. Let’s take a look at the following examples of usage.</p>
+
+<p>Example of a contract connecting to a real RabbitMQ instance:</p>
+
+<pre><code class="language-yaml">description: 'Send a pong message in response to a ping message'
+label: 'standalone_ping_pong'
+input:
+  triggeredBy: 'triggerMessage("ping_pong")'
+outputMessage:
+  sentTo: 'rabbitmq:output'
+  body:
+    message: 'pong'
+metadata:
+  standalone:
+    setup:
+      options: rabbitmq:output?queue=output&amp;routingKey=#
+    outputMessage:
+	  additionalOptions: routingKey=#&amp;queue=output
+</code></pre>
+
+<p>You can read more about setting this up in <a href="https://github.com/spring-cloud/spring-cloud-contract/pull/1472">this PR</a> under the <code>Documentation of the feature with standalone mode (aka with running middleware)</code> section.</p>
+
+<h2 id="messaging-with-existing-middleware">Messaging with Existing Middleware</h2>
+
+<p>Since it’s extremely easy to start a docker image with a broker via <a href="https://testcontainers.org">Testcontainers</a>, we’re suggesting to slowly migrate your messaging tests to such an approach. From the perspective of Spring Cloud Contract it’s also better since we won’t need to replicate in our code the special cases of how frameworks behave when calling a real broker. Here you can find an example of how you can connect to a JMS broker on <a href="https://github.com/spring-cloud-samples/spring-cloud-contract-samples/tree/master/producer_jms_middleware">the producer side</a> and <a href="https://github.com/spring-cloud-samples/spring-cloud-contract-samples/tree/master/producer_jms_middleware">here how you can consume it</a>.</p>
+
+<h2 id="gradle-plugin-rewrite">Gradle Plugin rewrite</h2>
+
+<p>This one is fully done by the one and only <a href="https://github.com/shanman190">shanman190</a>. The whole work on the Gradle plugin was done by him so you should buy him a beer once you get to see him :) Anyways, there are various changes to the Gradle plugin that you can check out.</p>
+
+<ul>
+  <li><a href="https://github.com/spring-cloud/spring-cloud-contract/pull/1464">Disable the stubs jar publication by default</a></li>
+  <li><a href="https://github.com/spring-cloud/spring-cloud-contract/pull/1558">Attempt to keep Kotlin off the classpath</a></li>
+</ul>
+
+<h2 id="stay-in-touch">Stay in touch!</h2>
+
+<p>In case of any questions don’t hesitate to ping us</p>
+
+<ul>
+  <li>On <a href="https://github.com/spring-cloud/spring-cloud-contract/">Github</a></li>
+  <li>On <a href="https://gitter.im/spring-cloud/spring-cloud-contract">Gitter</a></li>
+  <li>On <a href="https://stackoverflow.com/questions/tagged/spring-cloud-contract">Stackoverflow</a></li>
+</ul>
+</div>
+  
+  
+
+
+        </article>
+      
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+          
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
 <span class="glyphicon glyphicon-calendar"></span> <time datetime="2020-08-13T15:36:35+02:00"  data-updated="true" itemprop="datePublished dateCreated">ordinal</time>
         
            | <a href="/articles/2020/08/13/smarttesting-dot-pl/#disqus_thread" itemprop="discussionUrl"
@@ -920,354 +1127,6 @@ zero downtime or blue/green deployment you’d better check out that article :) 
 
         </article>
       
-      
-        <article class="post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-          
-  <header class="page-header">
-    
-      <p class="meta text-muted text-uppercase">
-        
-
-
-
-
-
-
-
-
-
-
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2016-04-30T13:53:44+02:00"  data-updated="true" itemprop="datePublished dateCreated">ordinal</time>
-        
-           | <a href="/articles/2016/04/30/accurest-and-stub-runner-1-dot-1-0-dot-m3/#disqus_thread" itemprop="discussionUrl"
-             data-disqus-identifier="https://toomuchcoding.com/articles/2016/04/30/accurest-and-stub-runner-1-dot-1-0-dot-m3/">Comments</a>
-        
-      </p>
-    
-    
-      <h2 class="entry-title" itemprop="name headline"><a href="/articles/2016/04/30/accurest-and-stub-runner-1-dot-1-0-dot-m3/" itemprop="url">Accurest and Stub Runner 1.1.0.M3</a></h2>
-    
-  </header>
-
-
-  <div class="entry-content clearfix" itemprop="articleBody description"><p>Currently at the Spring Team we’re polishing our libraries for the upcoming final release of the Brixton train. It should happen soon :) Until then I’m spending a lot of my after work, free time on <a href="/blog/2016/04/25/accurest-docs-updated/">Accurest</a> and <a href="https://toomuchcoding.com/blog/2016/04/06/accurest-stubrunner-released/">Stub Runner</a>.</p>
-
-<p>Today’s post will be about the new stuff that you will be able to profit from in the upcoming <code>1.1.0</code> release of Accurest. Also you can profit from most of these features in the <code>1.1.0.M3</code> release.</p>
-
-<p>I’ll just quickly go through the features but note that you can read about all of them in more depth in our <a href="https://codearte.github.io/accurest">documentation </a>.</p>
-
-<!-- more -->
-
-<h2 id="name-change">Name change</h2>
-
-<p>AccuREST started as a library used to stub HTTP calls. In the upcoming <code>1.1.0</code> release you will be able to stub messaging functionality too. That’s why the name changes to Accurest. That’s a fantastic name isn’t it? ;)</p>
-
-<p>Also since branding is important, now instead of calling <code>io.codearte.accurest.dsl.GroovyDsl</code> you can call <code>io.codearte.accurest.dsl.Accurest</code> :)</p>
-
-<h2 id="messaging-support">Messaging support</h2>
-
-<p>It took me quite some time to do this but it was worth it :) Several sleepless nights and now you can profit from defining contracts for messaging. In HTTP we had <code>client</code>/<code>stub</code> side and <code>server</code>/<code>test</code> side. For messaging we added methods to help discern the differences:</p>
-
-<ul>
-  <li><code>publisher</code> the side for which the tests will be generated</li>
-  <li><code>consumer</code> the side for which the messaging endpoints will be stubbed</li>
-</ul>
-
-<h3 id="contract">Contract</h3>
-
-<p>There are 3 use cases from the message <code>Producer</code>’s point of view.</p>
-
-<ul>
-  <li>something happens in my application and I’m producing an output message</li>
-  <li>someone sends a message to destination (queue/topic), I’m listening to that message and will produce an output message somewhere else</li>
-  <li>someone sends a message to destination (queue/topic), I’m listening to that message and will consume it without any message sending</li>
-</ul>
-
-<p>Here you can see examples of contracts for those three situations (you can read more about it in the  <a href="https://codearte.github.io/accurest/#messaging-top-level-elements">docs</a> ):</p>
-
-<h4 id="output-triggered-by-a-method">Output triggered by a method</h4>
-
-<p>The output message can be triggered by calling a method (e.g. a Scheduler was started and a message was sent)</p>
-
-<pre><code class="language-groovy">def dsl = Accurest.make {
-        // Human readable description
-        description 'Some description'
-        // Label by means of which the output message can be triggered
-        label 'some_label'
-        // input to the contract
-        input {
-                // the contract will be triggered by a method
-                triggeredBy('bookReturnedTriggered()')
-        }
-        // output message of the contract
-        outputMessage {
-                // destination to which the output message will be sent
-                sentTo('output')
-                // the body of the output message
-                body('''{ "bookName" : "foo" }''')
-                // the headers of the output message
-                headers {
-                        header('BOOK-NAME', 'foo')
-                }
-        }
-}
-</code></pre>
-
-<h4 id="output-triggered-by-a-message">Output triggered by a message</h4>
-
-<p>The output message can be triggered by receiving a message.</p>
-
-<pre><code class="language-groovy">def dsl = GroovyDsl.make {
-        description 'Some Description'
-        label 'some_label'
-        // input is a message
-        input {
-                // the message was received from this destination
-                messageFrom('input')
-                // has the following body
-                messageBody([
-                        bookName: 'foo'
-                ])
-                // and the following headers
-                messageHeaders {
-                        header('sample', 'header')
-                }
-        }
-        outputMessage {
-                sentTo('output')
-                body([
-                        bookName: 'foo'
-                ])
-                headers {
-                        header('BOOK-NAME', 'foo')
-                }
-        }
-}
-</code></pre>
-
-<h4 id="no-output-only-input">No output, only input</h4>
-
-<p>There can be only input without any output</p>
-
-<pre><code class="language-groovy">def dsl = GroovyDsl.make {
-        description 'Some Description'
-        label 'some_label'
-        // input is a message
-        input {
-                // the message was received from this destination
-                messageFrom('input')
-                // has the following body
-                messageBody([
-                        bookName: 'foo'
-                ])
-                // and the following headers
-                messageHeaders {
-                        header('sample', 'header')
-                }
-        }
-}
-</code></pre>
-
-<h3 id="producer-side">Producer side</h3>
-
-<p>Here you can see an example of a JUnit generated test for the producer for the input / output scenario:</p>
-
-<pre><code>// given:
- AccurestMessage inputMessage = accurestMessaging.create(
-  "{\\"bookName\\":\\"foo\\"}"
-, headers()
-  .header("sample", "header"));
-
-// when:
- accurestMessaging.send(inputMessage, "input");
-
-// then:
- AccurestMessage response = accurestMessaging.receiveMessage("output");
- assertThat(response).isNotNull();
- assertThat(response.getHeader("BOOK-NAME")).isEqualTo("foo");
-// and:
- DocumentContext parsedJson = JsonPath.parse(accurestObjectMapper.writeValueAsString(response.getPayload()));
- assertThatJson(parsedJson).field("bookName").isEqualTo("foo");
-</code></pre>
-
-<p>We’re sending a message to a destination called <code>input</code>. next we’re checking if there’s a message at the <code>output</code> destination. If that’s the case
-we’re checking if that message has proper headers and body.</p>
-
-<h3 id="consumer-side">Consumer side</h3>
-
-<p>It’s enough to provide the dependency to proper Stub Runner module (check the next section for more information) and tell it which stubs should be downloaded. Yup, that’s it! <a href="https://codearte.github.io/accurest/#stub-runner-for-messaging">Stub Runner will download the stubs and prepare stubbed routes</a>.</p>
-
-<p>Sometimes you’ll need to trigger a message somehow in your tests. That’s why we’ve provided the <code>StubTrigger</code> interface that you can inject! If you’re already familiar with Stub Runner Spring then you could use the <code>StubFinder</code> bean to find the URL of your dependency. Now <code>StubFinder</code> also extends the <code>StubTrigger</code> interface thus you don’t have to inject any additional beans in your tests.</p>
-
-<p>There are multiple ways in which you can trigger a message:</p>
-
-<h4 id="trigger-by-label">Trigger by label</h4>
-
-<pre><code>stubFinder.trigger('return_book_1')
-</code></pre>
-
-<h4 id="trigger-by-group-and-artifact-ids">Trigger by group and artifact ids</h4>
-
-<pre><code>stubFinder.trigger('io.codearte.accurest.stubs:camelService', 'return_book_1')
-</code></pre>
-
-<h4 id="trigger-by-artifact-id">Trigger by artifact id</h4>
-
-<pre><code>stubFinder.trigger('camelService', 'return_book_1')
-</code></pre>
-
-<h4 id="trigger-all-messages">Trigger all messages</h4>
-
-<pre><code>stubFinder.trigger()
-</code></pre>
-
-<h3 id="integrations">Integrations</h3>
-
-<p>We provide the following out of the box integrations:</p>
-
-<ul>
-  <li>Spring Integration</li>
-  <li>Spring Cloud Stream</li>
-  <li>Apache Camel</li>
-</ul>
-
-<p>Also we provide all the building blocks to provide a custom integration.</p>
-
-<p>Just by providing the proper dependency</p>
-
-<pre><code>// for Apache Camel
-testCompile "io.codearte.accurest:accurest-messaging-camel:${accurestVersion}"
-// for Spring Integration
-testCompile "io.codearte.accurest:accurest-messaging-integration:${accurestVersion}"
-// for Spring Cloud Stream
-testCompile "io.codearte.accurest:accurest-messaging-stream:${accurestVersion}"
-</code></pre>
-
-<p>Your generated tests should just work.</p>
-
-<h2 id="stub-runner-boot">Stub Runner Boot</h2>
-
-<p>I’ve added a new module of <a href="https://codearte.github.io/accurest/#stub-runner-boot">Stub Runner</a> that operates on Spring Boot. Assuming that you’re using Spring Cloud Stream you can create a project that has 2 dependencies:</p>
-
-<pre><code>compile "io.codearte.accurest:stub-runner-boot:${accurestVersion}"
-compile "io.codearte.accurest:stub-runner-messaging-stream:${accurestVersion}"
-</code></pre>
-
-<p>Now if you pass the proper <a href="https://codearte.github.io/accurest/#common-properties-for-junit-and-spring">Stub Runner Spring configuration</a> e.g.:</p>
-
-<pre><code>stubrunner.stubs.ids: io.codearte.accurest.stubs:streamService
-</code></pre>
-
-<p>You will have a running app that exposes HTTP endpoints to</p>
-
-<ul>
-  <li>trigger messages</li>
-  <li>check the URLs of the registered WireMock stubs</li>
-</ul>
-
-<h2 id="accurest-maven-plugin">Accurest Maven Plugin</h2>
-
-<p>Mariusz Smykuła has done a fantastic job by adding the <a href="https://codearte.github.io/accurest-maven-plugin/">Accurest Maven Plugin</a>. Now you can add Accurest to your project that runs with Maven. But that’s not all since the Maven Plugin allows you to run the Accurest stubs using the <code>accurest:run</code> command!</p>
-
-<p>Read the <a href="https://codearte.github.io/accurest-maven-plugin/">docs</a> to know more!</p>
-
-<h2 id="stub-runner-changes">Stub Runner changes</h2>
-
-<h3 id="messaging">Messaging</h3>
-
-<p>With messaging coming as a feature I’ve added a bunch of messaging modules. You can read more about the <a href="https://codearte.github.io/accurest/#stub-runner-for-messaging">Stub Runner messaging modules here</a></p>
-
-<h3 id="fixed-ports-and-versions-of-stubs">Fixed ports and versions of stubs</h3>
-
-<p>Another feature that was missing and is really valuable is that now you can explicitly say that you want a particular dependency to be started at a given port. This feature is available since version <code>1.0.7</code> but the stub id has been changed in <code>1.1.0.M4</code> so be warned ;)</p>
-
-<p>The ids have changed because now you can provide the desired version of the stub that you want to download.</p>
-
-<h4 id="via-properties">Via properties</h4>
-
-<p>Now you can provide the id of a stub like this:</p>
-
-<pre><code>groupId:artifactId:version:classifier:port
-</code></pre>
-
-<p>where version, classifier and port are optional.</p>
-
-<ul>
-  <li>If you don’t provide the port then a random one will be picked</li>
-  <li>If you don’t provide the classifier then the default one will be taken.</li>
-  <li>If you don’t provide the version then the + will be passed and the latest one will be downloaded</li>
-</ul>
-
-<p>Where port means the port of the WireMock server.</p>
-
-<p>So if you provide your dependency like this:</p>
-
-<pre><code>stubrunner.stubs.ids: io.codearte.accurest.stubs:streamService:0.0.1-SNAPSHOT:stubs:9090,io.codearte.accurest.stubs:anotherService:+:9095
-</code></pre>
-
-<p>It will make Stub Runner:</p>
-
-<ul>
-  <li>download a stub with groupId: <code>io.codearte.accurest.stubs</code>, artifactId: <code>streamService</code>, version: <code>0.0.1-SNAPSHOT</code>, classifier: <code>stubs</code> and register it at port 9090</li>
-  <li>download a stub with groupId: <code>io.codearte.accurest.stubs</code>, artifactId: <code>anotherService</code>, latest version, default classifier (<code>stubs</code>) and register it at port 9095</li>
-</ul>
-
-<h4 id="via-fluent-api">Via fluent API</h4>
-
-<p>When using the AccurestRule you can add a stub to download and then pass the port for the last downloaded stub.</p>
-
-<pre><code>@ClassRule public static AccurestRule rule = new AccurestRule()
-                .repoRoot(repoRoot())
-                .downloadStub("io.codearte.accurest.stubs", "loanIssuance")
-                .withPort(12345)
-                .downloadStub("io.codearte.accurest.stubs:fraudDetectionServer:12346");
-</code></pre>
-
-<p>You can see that for this example the following test is valid:</p>
-
-<pre><code>then(rule.findStubUrl("loanIssuance")).isEqualTo(URI.create("https://localhost:12345").toURL());
-then(rule.findStubUrl("fraudDetectionServer")).isEqualTo(URI.create("https://localhost:12346").toURL());
-</code></pre>
-
-<h2 id="technical-changes">Technical changes</h2>
-
-<p>Apart from features we’ve done some technical refactoring.</p>
-
-<h3 id="grape---aether">Grape -&gt; Aether</h3>
-
-<p>I’ve migrated the mechanism used to download dependencies from Groovy Grape to Aether. We had a lot of issues with Grape and Aether works very well for now. That’s a backwards incompatible change so if you had some custom Grape configuration then you’ll have to port it to Aether.</p>
-
-<h3 id="dependencies-fixed">Dependencies fixed</h3>
-
-<p>We had some problems with explicit and transitive dependencies that got fixed. The Accurest jars should be smaller.</p>
-
-<h3 id="summary">Summary</h3>
-
-<ul>
-  <li>A lot work was done around Accurest and CDC</li>
-  <li>Quite soon we’ll release the 1.1.0 version</li>
-  <li>You can use stubs of your dependencies that communicate over messaging</li>
-  <li>You can use fixed ports and versions for your dependencies</li>
-  <li>If you like the project star it on <a href="https://github.com/Codearte/accurest">Github</a> :) That will give us additional boost of energy to spend on coding instead of sleeping ;)</li>
-</ul>
-
-<h3 id="links">Links</h3>
-
-<ul>
-  <li><a href="https://github.com/Codearte/accurest">Accurest Github Repository</a></li>
-  <li><a href="https://codearte.github.io/accurest">Accurest Documentation</a></li>
-  <li><a href="https://codearte.github.io/accurest/#stub-runner">Stub Runner Documentation</a></li>
-  <li><a href="https://codearte.github.io/accurest/#stub-runner-for-messaging">Stub Runner Messaging Documentation</a></li>
-  <li><a href="https://gitter.im/Codearte/accurest">Accurest Gitter</a></li>
-  <li><a href="https://github.com/Codearte/accurest-maven-plugin">Accurest Maven Plugin</a></li>
-</ul>
-</div>
-  
-  
-
-
-        </article>
-      
     </div>
 
     <ul class="pager">
@@ -1309,7 +1168,7 @@ then(rule.findStubUrl("fraudDetectionServer")).isEqualTo(URI.create("https://loc
     </div>
     <footer role="contentinfo"><div class="container">
     <p class="text-muted credits">
-  Copyright &copy; 2020 - Marcin Grzejszczak<br>
+  Copyright &copy; 2021 - Marcin Grzejszczak<br>
   <small>
       <span class="credit">Powered by <a href="https://octopress.org">Octopress</a></span>,
       <span class="credit">customized with <a href="https://github.com/kAworu/octostrap3">octostrap3</a></span>.
