@@ -4,7 +4,7 @@
   <title><![CDATA[TOO MUCH CODING]]></title>
   <link href="https://toomuchcoding.com/atom.xml" rel="self"/>
   <link href="https://toomuchcoding.com/"/>
-  <updated>2021-01-04T11:18:25+01:00</updated>
+  <updated>2021-01-05T11:48:18+01:00</updated>
   <id>https://toomuchcoding.com/</id>
   <author>
     <name><![CDATA[Marcin Grzejszczak]]></name>
@@ -12,6 +12,91 @@
   </author>
   <generator uri="https://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Spring Cloud Sleuth 3.0.0 released]]></title>
+    <link href="https://toomuchcoding.com/articles/2021/01/04/spring-cloud-sleuth-3-0-0-released/"/>
+    <updated>2021-01-04T16:11:00+01:00</updated>
+    <id>https://toomuchcoding.com/articles/2021/01/04/spring-cloud-sleuth-3-0-0-released</id>
+    <content type="html"><![CDATA[<p>With the release of the Spring Cloud 2020.0.0 (aka Ilford) release train we’re more than happy to announce the general availability of Spring Cloud Sleuth 3.0.0. In this blog post I’ll describe the most notable released features (in order of their release dates).</p>
+
+<!--more-->
+
+<h2 id="removes-deprecated-modules">Removes Deprecated Modules</h2>
+
+<p>Removes ribbon, zuul, hystrix and Spring Cloud Aws support. Check this <a href="https://github.com/spring-cloud/spring-cloud-sleuth/pull/1533">PR for more information</a>.</p>
+
+<h2 id="removes-zipkin-dependencies-from-core">Removes Zipkin Dependencies from Core</h2>
+
+<p>Zipkin is no longer a part of core of Sleuth. You can check out more in <a href="https://github.com/spring-cloud/spring-cloud-sleuth/pull/1649">this PR</a>.</p>
+
+<h2 id="added-manual-reactor-instrumentation">Added MANUAL Reactor Instrumentation</h2>
+
+<p>Up till now we’ve been supporting <code>ON_EACH</code> and <code>ON_LAST</code> Reactor instrumentation modes. That means that we would wrap every single Reactor operator (<code>ON_EACH</code>) or the last operator (<code>ON_LAST</code>). Those wrappings would do their best to put trace related entries in such a way that thread local based instrumentations would work out of the box (e.g. the MDC context, <code>Tracer.currentSpan()</code> etc.). The problem was that on each wrapping downgraded performance drastically and worked most of the time. The on last operator wrapping downgraded performance a lot and worked sometimes. Both had their issues when <code>flatMap</code> operators were called and thread switching took place.</p>
+
+<p>With <a href="https://github.com/spring-cloud/spring-cloud-sleuth/commit/bd149ce4a7c2154fe8526394d14b6ab89addd62e">this commit</a> we’ve introduced the manual way of instrumenting Reactor. We came to the conclusion that the thread local based paradigm doesn’t work well with Reactor. We can’t guess for the user what they really want to achieve and which operators should be wrapped. That’s why with the <code>MANUAL</code> instrumentation mode you can use the <code>WebFluxSleuthOperators</code> or <code>MessagingSleuthOperators</code> to provide a lambda that should have the tracing context set in thread local.</p>
+
+<h2 id="manual-reactor-instrumentation-default-in-spring-cloud-gateway">MANUAL Reactor Instrumentation Default in Spring Cloud Gateway</h2>
+
+<p>With <a href="https://github.com/spring-cloud/spring-cloud-sleuth/issues/1710">this issue</a> we’re setting the manual instrumentation as the default one for Spring Cloud Gateway. The performance gets drastically improved and the tracing context still gets automatically propagated. If you need to do some customized logging etc. just use the <code>WebFluxSleuthOperators</code>.</p>
+
+<h2 id="remove-the-legacy-mdc-entries">Remove The Legacy MDC Entries</h2>
+
+<p><a href="https://github.com/spring-cloud/spring-cloud-sleuth/issues/1221">This issue</a> introduces a change in the MDC keys (no more <code>X-B3-...</code> entries in MDC).</p>
+
+<p>Before</p>
+
+<pre><code>2019-06-27 19:36:11,774 INFO {X-B3-SpanId=e30b6a75bcff782b, X-B3-TraceId=e30b6a75bcff782b, X-Span-Export=false, spanExportable=false, spanId=e30b6a75bcff782b, traceId=e30b6a75bcff782b} some log!
+</code></pre>
+
+<p>After</p>
+
+<pre><code>2019-06-27 19:36:11,774 INFO {spanId=e30b6a75bcff782b, traceId=e30b6a75bcff782b} some log!
+</code></pre>
+
+<h2 id="code-refactoring">Code Refactoring</h2>
+
+<h3 id="removing-zipkin-starter">Removing Zipkin Starter</h3>
+
+<p>The <code>spring-cloud-starter-zipkin</code> dependency is removed. You need to add <code>spring-cloud-starter-sleuth</code> and the <code>spring-cloud-sleuth-zipkin</code> dependency.</p>
+
+<h3 id="new-tracer-abstraction">New Tracer Abstraction</h3>
+
+<p>OpenZipkin Brave was there in Sleuth’s code as the main abstraction since Sleuth 2.0.0. We’ve decided that with Sleuth 3.0.0 we can create our own abstraction (as we do in each Spring Cloud project) so that OpenZipkin Brave becomes one of the supported tracer implementations.</p>
+
+<p>With <a href="https://github.com/spring-cloud/spring-cloud-sleuth/pull/1757">this PR</a> we’ve introduced a new abstraction that wraps Brave. We also added support for another tracer - <a href="https://github.com/spring-cloud/spring-cloud-sleuth/issues/1497">OpenTelemetry</a>.</p>
+
+<h3 id="aligning-with-spring-boot">Aligning with Spring Boot</h3>
+
+<p>With <a href="https://github.com/spring-cloud/spring-cloud-sleuth/pull/1762">this PR</a> and <a href="https://github.com/spring-cloud/spring-cloud-sleuth/pull/1784">that PR</a> we’ve refactored Spring Cloud Sleuth to reflect Spring Boot’s module setup. We’ve split the project into API, instrumentations, auto-configurations etc. Also the documentation layout was updated to look in the same way the Spring Boot one does.</p>
+
+<h2 id="opentelemetry-support">OpenTelemetry support</h2>
+
+<p>Initially, with <a href="https://github.com/spring-cloud/spring-cloud-sleuth/commit/6e306e594d20361483fd19739e0f5f8e82354bf5">this commit</a>, we’ve added a <code>spring-cloud-sleuth-otel</code> module inside Spring Cloud Sleuth that introduced <a href="https://opentelemetry.io">OpenTelemetry</a> support.</p>
+
+<p>With <a href="https://github.com/spring-cloud/spring-cloud-sleuth/pull/1802">this PR</a> we’ve decided to move Spring Cloud Sleuth and OpenTelemetry integration to an <a href="https://github.com/spring-cloud-incubator/spring-cloud-sleuth-otel/">incubator project</a>. Once OpenTelemetry &amp; OpenTelemetry Instrumentation projects become stable we will consider next steps.</p>
+
+<h1 id="links">Links</h1>
+
+<ul>
+  <li><a href="https://docs.spring.io/spring-cloud-sleuth/docs/3.0.0/reference/html/">Spring Cloud Sleuth 3.0.0 docs</a></li>
+  <li><a href="https://github.com/spring-cloud-incubator/spring-cloud-sleuth-otel/">Spring Cloud Sleuth OpenTelemetry project</a></li>
+  <li><a href="https://spring-cloud-incubator.github.io/spring-cloud-sleuth-otel/docs/current/reference/html/index.html">Spring Cloud Sleuth OpenTelemetry docs</a></li>
+  <li><a href="https://github.com/spring-cloud/spring-cloud-release/wiki/Spring-Cloud-2020.0-Release-Notes#spring-cloud-sleuth">Spring Cloud Sleuth 3.0.0 release notes</a></li>
+  <li><a href="https://github.com/spring-cloud/spring-cloud-sleuth/wiki/Spring-Cloud-Sleuth-3.0-Migration-Guide">Spring Cloud Sleuth 3.0.0 migration guide</a></li>
+</ul>
+
+<h2 id="stay-in-touch">Stay in touch!</h2>
+
+<p>In case of any questions don’t hesitate to ping us</p>
+
+<ul>
+  <li>On <a href="https://github.com/spring-cloud/spring-cloud-sleuth/">Github</a></li>
+  <li>On <a href="https://gitter.im/spring-cloud/spring-cloud-sleuth">Gitter</a></li>
+  <li>On <a href="https://stackoverflow.com/questions/tagged/spring-cloud-sleuth">Stackoverflow</a></li>
+</ul>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Spring Cloud Contract 3.0.0 released]]></title>
@@ -1934,18 +2019,6 @@ it seems like an awesome technology and you should definitely give it a try!</p>
 <p>P.S.
 We’re looking for sponsors for the upcoming <a href="https://warsaw.gr8days.pl">Warsaw GR8 Day Conference</a> (19.03.2016).
 Over 60 people have already registered! Contact us to be a part of this gr8 event!</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[JSON Assert lib released]]></title>
-    <link href="https://toomuchcoding.com/articles/2016/02/27/json-assert-lib-released/"/>
-    <updated>2016-02-27T23:20:00+01:00</updated>
-    <id>https://toomuchcoding.com/articles/2016/02/27/json-assert-lib-released</id>
-    <content type="html"><![CDATA[<div class='post'>
-I'm really happy to present the <a href="https://github.com/marcingrzejszczak/jsonassert">JSON Assert library</a>&nbsp;-&nbsp;over-the-weekend project that came out from the <a href="https://github.com/Codearte/accurest">AccuREST library</a>. This post will describe the rationale behind creating this tool and how to use it.<br /><br /><br /><a name='more'></a>
-<!--more-->
-<br /><br /><h4>Rationale</h4>In AccuREST (the Consumer Driven Contracts implementation library) we're creating tests of the server side. For more information on what is AccuREST and what Consumer Driven Contracts is check the <a href="https://github.com/Codearte/accurest/wiki">AccurREST wiki</a>. Anyways, we're checking if the response from the server matches the one described in the contract.<br /><br />So having such a Groovy DSL:<br /><br /><pre style="background: #fff; color: black;">io.codearte.accurest.dsl.GroovyDsl<span style="color: #0100b6; font-weight: 700;">.</span>make {<br />    priority <span style="color: #cd0000; font-style: italic;">1</span><br />    request {<br />        method <span style="color: #d80800;">'POST'</span><br />        url <span style="color: #d80800;">'/users/password'</span><br />        headers {<br />            header <span style="color: #d80800;">'Content-Type'</span>: <span style="color: #d80800;">'application/json'</span><br />        }<br />        body(<br />                <span style="color: #c5060b; font-style: italic;">email</span>: $(stub(optional(regex(email()))), test(<span style="color: #d80800;">'abc@abc.com'</span>)),<br />                <span style="color: #c5060b; font-style: italic;">callback_url</span>: $(stub(regex(hostname())), test(<span style="color: #d80800;">'https://partners.com'</span>))<br />        )<br />    }<br />    response {<br />        status <span style="color: #cd0000; font-style: italic;">404</span><br />        headers {<br />            header <span style="color: #d80800;">'Content-Type'</span>: <span style="color: #d80800;">'application/json'</span><br />        }<br />        body(<br />                <span style="color: #c5060b; font-style: italic;">code</span>: value(stub(<span style="color: #d80800;">"123123"</span>), test(optional(<span style="color: #d80800;">"123123"</span>))),<br />                <span style="color: #c5060b; font-style: italic;">message</span>: <span style="color: #d80800;">"User not found by email = [<span style="color: #26b31a;">${value(test(regex(email())), stub('not.existing@user.com'))}</span>]"</span><br />        )<br />    }<br />}<br /></pre><br />Resulted in creation of the following server side response verification<br /><br /><pre style="background: #fff; color: black;"><span style="color: #c5060b; font-style: italic;">given</span>:<br />  def request <span style="color: #0100b6; font-weight: 700;">=</span> given()<br />    .header(<span style="color: #d80800;">'Content-Type'</span>, <span style="color: #d80800;">'application/json'</span>)<br />    .body(<span style="color: #d80800;">'{"email":"abc@abc.com","callback_url":"https://partners.com"}'</span>)<br /><br /> <span style="color: #c5060b; font-style: italic;">when</span>:<br />  def response <span style="color: #0100b6; font-weight: 700;">=</span> given()<span style="color: #0100b6; font-weight: 700;">.</span>spec(request)<br />    .post(<span style="color: #d80800;">"/users/password"</span>)<br /><br /> <span style="color: #c5060b; font-style: italic;">then</span>:<br />  response<span style="color: #0100b6; font-weight: 700;">.</span>statusCode <span style="color: #0100b6; font-weight: 700;">==</span> <span style="color: #cd0000; font-style: italic;">404</span><br />  response<span style="color: #0100b6; font-weight: 700;">.</span>header(<span style="color: #d80800;">'Content-Type'</span>)  <span style="color: #0100b6; font-weight: 700;">==</span> <span style="color: #d80800;">'application/json'</span><br /> <span style="color: #c5060b; font-style: italic;">and</span>:<br />  DocumentContext parsedJson <span style="color: #0100b6; font-weight: 700;">=</span> JsonPath<span style="color: #0100b6; font-weight: 700;">.</span>parse(response<span style="color: #0100b6; font-weight: 700;">.</span>body<span style="color: #0100b6; font-weight: 700;">.</span>asString())<br />  <span style="color: #0100b6; font-weight: 700;">!</span>parsedJson<span style="color: #0100b6; font-weight: 700;">.</span>read(<span style="color: #d80800;">'''$[?(@.code =~ /(123123)?/)]'''</span>, JSONArray)<span style="color: #0100b6; font-weight: 700;">.</span>empty<br />  <span style="color: #0100b6; font-weight: 700;">!</span>parsedJson<span style="color: #0100b6; font-weight: 700;">.</span>read(<span style="color: #d80800;">'''$[?(@.message =~ /User not found by email = <span style="color: #26b31a;">\\</span>[[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+<span style="color: #26b31a;">\\</span>.[a-zA-Z]{2,4}<span style="color: #26b31a;">\\</span>]/)]'''</span>, JSONArray)<span style="color: #0100b6; font-weight: 700;">.</span>empty<br /><br /></pre><br />AccuREST users stated that their biggest problem is this part:<br /><br /><pre style="background: #fff; color: black;"><span style="color: #0100b6; font-weight: 700;">!</span>parsedJson<span style="color: #0100b6; font-weight: 700;">.</span>read(<span style="color: #d80800;">'''$[?(@.code =~ /(123123)?/)]'''</span>, JSONArray)<span style="color: #0100b6; font-weight: 700;">.</span>empty<br />  <span style="color: #0100b6; font-weight: 700;">!</span>parsedJson<span style="color: #0100b6; font-weight: 700;">.</span>read(<span style="color: #d80800;">'''$[?(@.message =~ /User not found by email = <span style="color: #26b31a;">\\</span>[[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+<span style="color: #26b31a;">\\</span>.[a-zA-Z]{2,4}<span style="color: #26b31a;">\\</span>]/)]'''</span>, JSONArray)<span style="color: #0100b6; font-weight: 700;">.</span>empty<br /></pre><br />They said that JSON Paths are too difficult for them to read.<br /><br />That's why I've created the&nbsp;<a href="https://github.com/marcingrzejszczak/jsonassert">JSON Assert library</a>. So that instead of the aforementioned code one gets sth like this:<br /><br /><pre style="background: #fff; color: black;">  assertThatJson(parsedJson)<span style="color: #0100b6; font-weight: 700;">.</span>field(<span style="color: #d80800;">'code'</span>)<span style="color: #0100b6; font-weight: 700;">.</span>matches(<span style="color: #d80800;">'123123?'</span>)<br />  assertThatJson(parsedJson)<span style="color: #0100b6; font-weight: 700;">.</span>field(<span style="color: #d80800;">'message'</span>)<span style="color: #0100b6; font-weight: 700;">.</span>matches(<span style="color: #d80800;">'User not found by email = <span style="color: #26b31a;">\\</span>[[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+<span style="color: #26b31a;">\\</span>.[a-zA-Z]{2,4}<span style="color: #26b31a;">\\</span>]/)]'</span>);<br /></pre><br /><h4>How to add it to your project</h4><br />If your using Gradle just add (<a href="https://search.maven.org/#search%7Cga%7C1%7Cg%3A%22com.blogspot.toomuchcoding%22%20a%3A%22jsonassert%22">check the latest version number</a>):<br /><br /><pre style="background: #fff; color: black;"> testCompile `com<span style="color: #0100b6; font-weight: 700;">.</span>blogspot<span style="color: #0100b6; font-weight: 700;">.</span><span style="color: #c5060b; font-style: italic;">toomuchcoding</span>:<span style="color: #c5060b; font-style: italic;">jsonassert</span>:<span style="color: #cd0000; font-style: italic;">0.1</span><span style="color: #cd0000; font-style: italic;">.2</span>`<br /></pre><br />and if Maven just add:<br /><br /><pre style="background: #fff; color: black;"><span style="color: #1c02ff;">&lt;<span style="font-weight: 700;">dependency</span>&gt;</span><br />    <span style="color: #1c02ff;">&lt;<span style="font-weight: 700;">groupId</span>&gt;</span>com.blogspot.toomuchcoding<span style="color: #1c02ff;">&lt;/<span style="font-weight: 700;">groupId</span>&gt;</span><br />    <span style="color: #1c02ff;">&lt;<span style="font-weight: 700;">artifactId</span>&gt;</span>jsonassert<span style="color: #1c02ff;">&lt;/<span style="font-weight: 700;">artifactId</span>&gt;</span><br />    <span style="color: #1c02ff;">&lt;<span style="font-weight: 700;">version</span>&gt;</span>0.1.2<span style="color: #1c02ff;">&lt;/<span style="font-weight: 700;">version</span>&gt;</span><br /><span style="color: #1c02ff;">&lt;/<span style="font-weight: 700;">dependency</span>&gt;</span><br /></pre><h4><br />How to use it</h4><br />Since almost everything in JSON Assert is package scoped you have access to two public classes. One of which is the &nbsp;<span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;"><a href="https://github.com/marcingrzejszczak/jsonassert/blob/master/src/main/java/com/blogspot/toomuchcoding/jsonassert/JsonAssertion.java">JsonAssertion</a></span> class. It gives you a couple of public methods that give you the entry point to the fluent interface of the library.<br /><br />You can check the JavaDocs of the <a href="https://github.com/marcingrzejszczak/jsonassert/blob/master/src/main/java/com/blogspot/toomuchcoding/jsonassert/JsonVerifiable.java">JsonVerifiable</a> interface in order to see what kind of methods can be used.<br /><br /><h4>Examples</h4><div><br />Best examples are <a href="https://github.com/marcingrzejszczak/jsonassert/blob/master/src/test/groovy/com/blogspot/toomuchcoding/jsonassert/JsonAssertionSpec.groovy">tests</a>. I'll show you a couple of them here.<br /><br /><br /><b>Example 1</b><br /><br />Having a JSON:<br /><br /><pre style="background: #fff; color: black;">[ {<br />                                <span style="color: #d80800;">"some"</span> : {<br />                                    <span style="color: #d80800;">"nested"</span> : {<br />                                        <span style="color: #d80800;">"json"</span> : <span style="color: #d80800;">"with value"</span>,<br />                                        <span style="color: #d80800;">"anothervalue"</span>: <span style="color: #cd0000; font-style: italic;">4</span>,<br />                                        <span style="color: #d80800;">"withlist"</span> : [<br />                                            { <span style="color: #d80800;">"name"</span> :<span style="color: #d80800;">"name1"</span>} , {<span style="color: #d80800;">"name"</span>: <span style="color: #d80800;">"name2"</span>}, {<span style="color: #d80800;">"anothernested"</span>: { <span style="color: #d80800;">"name"</span>: <span style="color: #d80800;">"name3"</span>} }<br />                                        ]<br />                                    }<br />                                }<br />                            },<br />                            {<br />                                <span style="color: #d80800;">"someother"</span> : {<br />                                    <span style="color: #d80800;">"nested"</span> : {<br />                                        <span style="color: #d80800;">"json"</span> : <span style="color: #d80800;">"with value"</span>,<br />                                        <span style="color: #d80800;">"anothervalue"</span>: <span style="color: #cd0000; font-style: italic;">4</span>,<br />                                        <span style="color: #d80800;">"withlist"</span> : [<br />                                            { <span style="color: #d80800;">"name"</span> :<span style="color: #d80800;">"name1"</span>} , {<span style="color: #d80800;">"name"</span>: <span style="color: #d80800;">"name2"</span>}<br />                                        ]<br />                                    }<br />                                }<br />                            }<br />                        ]<br /></pre><br /></div><div><br /></div><div>Instead of writing:</div><div><br /><pre style="background: #fff; color: black;">$[<span style="color: #0100b6; font-weight: 700;">*</span>].some.nested.withlist[<span style="color: #0100b6; font-weight: 700;">*</span>].anothernested[<span style="color: #0100b6; font-weight: 700;">?</span>(@.name == <span style="color: #d80800;">'name3'</span>)]<br /></pre></div><div><br /></div><div>you can write<br /><br /><pre style="background: #fff; color: black;"><span style="color: #3c4c72; font-weight: 700;">assertThat</span>(json)<span style="color: #0100b6; font-weight: 700;">.</span>array()<span style="color: #0100b6; font-weight: 700;">.</span>field(<span style="color: #d80800;">"some"</span>)<span style="color: #0100b6; font-weight: 700;">.</span>field(<span style="color: #d80800;">"nested"</span>)<span style="color: #0100b6; font-weight: 700;">.</span>array(<span style="color: #d80800;">"withlist"</span>)<span style="color: #0100b6; font-weight: 700;">.</span>field(<span style="color: #d80800;">"anothernested"</span>)<span style="color: #0100b6; font-weight: 700;">.</span>field(<span style="color: #d80800;">"name"</span>)<span style="color: #0100b6; font-weight: 700;">.</span>isEqualTo(<span style="color: #d80800;">"name3"</span>)<br /></pre><br /><b>Example 2</b><br /><br />Having a JSON:<br /><br /><pre style="background: #fff; color: black;">{<br />    <span style="color: #d80800;">"property1"</span>: [<br />        { <span style="color: #d80800;">"property2"</span>: <span style="color: #d80800;">"test1"</span>},<br />        { <span style="color: #d80800;">"property3"</span>: <span style="color: #d80800;">"test2"</span>}<br />    ]<br />}<br /></pre><br /></div><div><br /></div><div>Instead of writing:</div><div><br /><pre style="background: #fff; color: black;">$.property1[<span style="color: #0100b6; font-weight: 700;">*</span>][<span style="color: #0100b6; font-weight: 700;">?</span>(@.property2 == <span style="color: #d80800;">'test1'</span>)]<br /></pre></div><div><br /></div><div>you can write<br /><br /><pre style="background: #fff; color: black;"><span style="color: #3c4c72; font-weight: 700;">assertThat</span>(json)<span style="color: #0100b6; font-weight: 700;">.</span>array(<span style="color: #d80800;">"property1"</span>)<span style="color: #0100b6; font-weight: 700;">.</span>contains(<span style="color: #d80800;">"property2"</span>)<span style="color: #0100b6; font-weight: 700;">.</span>isEqualTo(<span style="color: #d80800;">"test1"</span>)<br /></pre><br /></div><h4>Future plans</h4><br />It would be nice to:<br /><br /><ul><li>integrate with <a href="https://joel-costigliola.github.io/assertj/">AssertJ</a></li><li>add more <a href="https://github.com/jayway/JsonPath#functions">JSON Path features</a> (functions, filters etc.)</li></ul><div><br /></div><h4>Links</h4><ul><li><a href="https://github.com/marcingrzejszczak/jsonassert">JSON Assert</a></li><li><a href="https://github.com/Codearte/accurest/wiki">AccuREST</a></li><li><a href="https://www.youtube.com/watch?v=daafmTYFoDU">Video about AccuREST </a>by <a href="https://twitter.com/olga_maciaszek">Olga Maciaszek-Sharma</a></li><li><a href="https://github.com/jayway/JsonPath">Jayway JSON Path</a></li><li><a href="https://joel-costigliola.github.io/assertj/">AssertJ</a></li></ul><br /><br /></div>
 ]]></content>
   </entry>
   

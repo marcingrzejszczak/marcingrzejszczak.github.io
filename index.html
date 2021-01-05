@@ -127,6 +127,120 @@
 
 
 
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2021-01-04T16:11:00+01:00"  data-updated="true" itemprop="datePublished dateCreated">ordinal</time>
+        
+           | <a href="/articles/2021/01/04/spring-cloud-sleuth-3-0-0-released/#disqus_thread" itemprop="discussionUrl"
+             data-disqus-identifier="https://toomuchcoding.com/articles/2021/01/04/spring-cloud-sleuth-3-0-0-released/">Comments</a>
+        
+      </p>
+    
+    
+      <h2 class="entry-title" itemprop="name headline"><a href="/articles/2021/01/04/spring-cloud-sleuth-3-0-0-released/" itemprop="url">Spring Cloud Sleuth 3.0.0 released</a></h2>
+    
+  </header>
+
+
+  <div class="entry-content clearfix" itemprop="articleBody description"><p>With the release of the Spring Cloud 2020.0.0 (aka Ilford) release train we’re more than happy to announce the general availability of Spring Cloud Sleuth 3.0.0. In this blog post I’ll describe the most notable released features (in order of their release dates).</p>
+
+<!--more-->
+
+<h2 id="removes-deprecated-modules">Removes Deprecated Modules</h2>
+
+<p>Removes ribbon, zuul, hystrix and Spring Cloud Aws support. Check this <a href="https://github.com/spring-cloud/spring-cloud-sleuth/pull/1533">PR for more information</a>.</p>
+
+<h2 id="removes-zipkin-dependencies-from-core">Removes Zipkin Dependencies from Core</h2>
+
+<p>Zipkin is no longer a part of core of Sleuth. You can check out more in <a href="https://github.com/spring-cloud/spring-cloud-sleuth/pull/1649">this PR</a>.</p>
+
+<h2 id="added-manual-reactor-instrumentation">Added MANUAL Reactor Instrumentation</h2>
+
+<p>Up till now we’ve been supporting <code>ON_EACH</code> and <code>ON_LAST</code> Reactor instrumentation modes. That means that we would wrap every single Reactor operator (<code>ON_EACH</code>) or the last operator (<code>ON_LAST</code>). Those wrappings would do their best to put trace related entries in such a way that thread local based instrumentations would work out of the box (e.g. the MDC context, <code>Tracer.currentSpan()</code> etc.). The problem was that on each wrapping downgraded performance drastically and worked most of the time. The on last operator wrapping downgraded performance a lot and worked sometimes. Both had their issues when <code>flatMap</code> operators were called and thread switching took place.</p>
+
+<p>With <a href="https://github.com/spring-cloud/spring-cloud-sleuth/commit/bd149ce4a7c2154fe8526394d14b6ab89addd62e">this commit</a> we’ve introduced the manual way of instrumenting Reactor. We came to the conclusion that the thread local based paradigm doesn’t work well with Reactor. We can’t guess for the user what they really want to achieve and which operators should be wrapped. That’s why with the <code>MANUAL</code> instrumentation mode you can use the <code>WebFluxSleuthOperators</code> or <code>MessagingSleuthOperators</code> to provide a lambda that should have the tracing context set in thread local.</p>
+
+<h2 id="manual-reactor-instrumentation-default-in-spring-cloud-gateway">MANUAL Reactor Instrumentation Default in Spring Cloud Gateway</h2>
+
+<p>With <a href="https://github.com/spring-cloud/spring-cloud-sleuth/issues/1710">this issue</a> we’re setting the manual instrumentation as the default one for Spring Cloud Gateway. The performance gets drastically improved and the tracing context still gets automatically propagated. If you need to do some customized logging etc. just use the <code>WebFluxSleuthOperators</code>.</p>
+
+<h2 id="remove-the-legacy-mdc-entries">Remove The Legacy MDC Entries</h2>
+
+<p><a href="https://github.com/spring-cloud/spring-cloud-sleuth/issues/1221">This issue</a> introduces a change in the MDC keys (no more <code>X-B3-...</code> entries in MDC).</p>
+
+<p>Before</p>
+
+<pre><code>2019-06-27 19:36:11,774 INFO {X-B3-SpanId=e30b6a75bcff782b, X-B3-TraceId=e30b6a75bcff782b, X-Span-Export=false, spanExportable=false, spanId=e30b6a75bcff782b, traceId=e30b6a75bcff782b} some log!
+</code></pre>
+
+<p>After</p>
+
+<pre><code>2019-06-27 19:36:11,774 INFO {spanId=e30b6a75bcff782b, traceId=e30b6a75bcff782b} some log!
+</code></pre>
+
+<h2 id="code-refactoring">Code Refactoring</h2>
+
+<h3 id="removing-zipkin-starter">Removing Zipkin Starter</h3>
+
+<p>The <code>spring-cloud-starter-zipkin</code> dependency is removed. You need to add <code>spring-cloud-starter-sleuth</code> and the <code>spring-cloud-sleuth-zipkin</code> dependency.</p>
+
+<h3 id="new-tracer-abstraction">New Tracer Abstraction</h3>
+
+<p>OpenZipkin Brave was there in Sleuth’s code as the main abstraction since Sleuth 2.0.0. We’ve decided that with Sleuth 3.0.0 we can create our own abstraction (as we do in each Spring Cloud project) so that OpenZipkin Brave becomes one of the supported tracer implementations.</p>
+
+<p>With <a href="https://github.com/spring-cloud/spring-cloud-sleuth/pull/1757">this PR</a> we’ve introduced a new abstraction that wraps Brave. We also added support for another tracer - <a href="https://github.com/spring-cloud/spring-cloud-sleuth/issues/1497">OpenTelemetry</a>.</p>
+
+<h3 id="aligning-with-spring-boot">Aligning with Spring Boot</h3>
+
+<p>With <a href="https://github.com/spring-cloud/spring-cloud-sleuth/pull/1762">this PR</a> and <a href="https://github.com/spring-cloud/spring-cloud-sleuth/pull/1784">that PR</a> we’ve refactored Spring Cloud Sleuth to reflect Spring Boot’s module setup. We’ve split the project into API, instrumentations, auto-configurations etc. Also the documentation layout was updated to look in the same way the Spring Boot one does.</p>
+
+<h2 id="opentelemetry-support">OpenTelemetry support</h2>
+
+<p>Initially, with <a href="https://github.com/spring-cloud/spring-cloud-sleuth/commit/6e306e594d20361483fd19739e0f5f8e82354bf5">this commit</a>, we’ve added a <code>spring-cloud-sleuth-otel</code> module inside Spring Cloud Sleuth that introduced <a href="https://opentelemetry.io">OpenTelemetry</a> support.</p>
+
+<p>With <a href="https://github.com/spring-cloud/spring-cloud-sleuth/pull/1802">this PR</a> we’ve decided to move Spring Cloud Sleuth and OpenTelemetry integration to an <a href="https://github.com/spring-cloud-incubator/spring-cloud-sleuth-otel/">incubator project</a>. Once OpenTelemetry &amp; OpenTelemetry Instrumentation projects become stable we will consider next steps.</p>
+
+<h1 id="links">Links</h1>
+
+<ul>
+  <li><a href="https://docs.spring.io/spring-cloud-sleuth/docs/3.0.0/reference/html/">Spring Cloud Sleuth 3.0.0 docs</a></li>
+  <li><a href="https://github.com/spring-cloud-incubator/spring-cloud-sleuth-otel/">Spring Cloud Sleuth OpenTelemetry project</a></li>
+  <li><a href="https://spring-cloud-incubator.github.io/spring-cloud-sleuth-otel/docs/current/reference/html/index.html">Spring Cloud Sleuth OpenTelemetry docs</a></li>
+  <li><a href="https://github.com/spring-cloud/spring-cloud-release/wiki/Spring-Cloud-2020.0-Release-Notes#spring-cloud-sleuth">Spring Cloud Sleuth 3.0.0 release notes</a></li>
+  <li><a href="https://github.com/spring-cloud/spring-cloud-sleuth/wiki/Spring-Cloud-Sleuth-3.0-Migration-Guide">Spring Cloud Sleuth 3.0.0 migration guide</a></li>
+</ul>
+
+<h2 id="stay-in-touch">Stay in touch!</h2>
+
+<p>In case of any questions don’t hesitate to ping us</p>
+
+<ul>
+  <li>On <a href="https://github.com/spring-cloud/spring-cloud-sleuth/">Github</a></li>
+  <li>On <a href="https://gitter.im/spring-cloud/spring-cloud-sleuth">Gitter</a></li>
+  <li>On <a href="https://stackoverflow.com/questions/tagged/spring-cloud-sleuth">Stackoverflow</a></li>
+</ul>
+</div>
+  
+  
+
+
+        </article>
+      
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+          
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
 <span class="glyphicon glyphicon-calendar"></span> <time datetime="2020-12-23T14:58:00+01:00"  data-updated="true" itemprop="datePublished dateCreated">ordinal</time>
         
            | <a href="/articles/2020/12/23/spring-cloud-contract-3-0-0-released/#disqus_thread" itemprop="discussionUrl"
@@ -1080,46 +1194,6 @@ baseClassMappings {
   <li><a href="https://gitter.im/Codearte/accurest">Spring Cloud Contract Verifier Gitter</a></li>
   <li><a href="https://github.com/Codearte/accurest-maven-plugin">Spring Cloud Contract Verifier Maven Plugin</a></li>
 </ul>
-</div>
-  
-  
-
-
-        </article>
-      
-      
-        <article class="post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-          
-  <header class="page-header">
-    
-      <p class="meta text-muted text-uppercase">
-        
-
-
-
-
-
-
-
-
-
-
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2016-05-31T11:58:52+02:00"  data-updated="true" itemprop="datePublished dateCreated">ordinal</time>
-        
-           | <a href="/articles/2016/05/31/zero-downtime-deployment-with-a-database/#disqus_thread" itemprop="discussionUrl"
-             data-disqus-identifier="https://toomuchcoding.com/articles/2016/05/31/zero-downtime-deployment-with-a-database/">Comments</a>
-        
-      </p>
-    
-    
-      <h2 class="entry-title" itemprop="name headline"><a href="/articles/2016/05/31/zero-downtime-deployment-with-a-database/" itemprop="url">Zero Downtime Deployment with a Database</a></h2>
-    
-  </header>
-
-
-  <div class="entry-content clearfix" itemprop="articleBody description"><p>I’ve just published an article at the Spring blog about <a href="https://spring.io/blog/2016/05/31/zero-downtime-deployment-with-a-database">Zero Downtime Deployment with a Database</a>. So if you’re planning on doing
-zero downtime or blue/green deployment you’d better check out that article :) The code is available here on
-<a href="https://github.com/spring-cloud-samples/zero-downtime-deployment">Github</a>.</p>
 </div>
   
   
