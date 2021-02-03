@@ -14,7 +14,7 @@
   countryCode: pl
   talks: TBD - date is TBD too
   resources:
-    event: ?
+    event: '?'
 
 - date: 2021.03.23
   eventName: Tanzu Tuesdays
