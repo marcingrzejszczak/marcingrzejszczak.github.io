@@ -19,7 +19,7 @@ _Presentation and live coding_
 
 ### Abstract
 
-Imagine that you're receiving a support ticket that your application is not working fine. You read the attached stacktrace and now it's time to solve the mystery - what did the user do that lead to throwing of this exception? Is it possible to find all the logs from all the applications that correspond to this user's business operation?
+Imagine that you're receiving a support ticket that your application is not working fine. You read the attached stacktrace and now it's time to solve the mystery - what did the user do that led to throwing of this exception? Is it possible to find all the logs from all the applications that correspond to this user's business operation?
 
 What if the user is complaining that the system is slow? How can you decide which concrete operation is the culprit? Is there any way to visualize the latency?
 
