@@ -156,9 +156,9 @@ _Prezentacja i kodowanie na żywo_
 
 Wyobraźmy sobie sytuację, w której otrzymujemy zgłoszenie błędu naszej aplikacji. Czytamy jego opis i przygotowujemy się do rozwiązania zagadki - jakie kroki wykonał użytkownik, że rzeczony błąd miał miejsce? Czy jest możliwe, żeby znaleźć wszystkie logi ze wszystkich aplikacji, które dotyczą operacji biznesowej, którą wykonał nasz klient?
 
-Co jeśli użytkownik narzeka, że nasz system działa wolno? Jak możemy zdecydować, która konkretna jego funkcja jest tego przyczyną? Czy istnieje możliwość zwizualizowania takich opóźnień?
+Co jeśli użytkownik narzeka, że nasz system działa wolno? Jak możemy zdecydować, która konkretna funkcja jest tego przyczyną? Czy istnieje możliwość zwizualizowania takich opóźnień?
 
-Odpowiedzmy na te pytania poprzez omówienie zagadnień z dziedziny obserwowalności aplikacji za pomocą śledzenia rozproszonego, metryk i korelowania logów na przykładzie narzędzi Spring Cloud Sleuth, Tanzu Observability, OpenZipkin, OpenTelemetry i innych!
+Odpowiemy na te pytania poprzez omówienie zagadnień z dziedziny obserwowalności aplikacji za pomocą śledzenia rozproszonego, metryk i korelowania logów na przykładzie narzędzi Spring Cloud Sleuth, Tanzu Observability, OpenZipkin, OpenTelemetry i innych!
 
 Prezentacja będzie składać się z części teoretycznej i kodowania na żywo.
 

@@ -4,6 +4,7 @@
   country: Poland
   countryCode: pl
   talks: Tracing Issues in Your Application
+  status: Accepted
   resources:
     event: https://www.meetup.com/Warszawa-JUG/
 
@@ -13,6 +14,7 @@
   country: Poland
   countryCode: pl
   talks: TBD - date is TBD too
+  status: CFP filled out
   resources:
     event: '?'
 
@@ -22,5 +24,16 @@
   country: Poland
   countryCode: pl
   talks: Tracing Issues in Your Application
+  status: Accepted
   resources:
     event: https://tanzu.vmware.com/developer/tv/tanzu-tuesdays/
+
+- date: 2021.05.24
+  eventName: 4developers.pl
+  city: Online
+  country: Poland
+  countryCode: pl
+  talks: Tracing Issues in Your Application
+  status: CFP filled out
+  resources:
+    event: https://4developers.org.pl/
