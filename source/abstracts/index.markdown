@@ -144,8 +144,23 @@ _Presentation and demo_
 
 Zuul? Gateway? Should we get rid of Ribbon? What is going on with Hystrix? If you have ever faced those questions, come and listen to this talk. In December 2018, Netflix decided to move a number of their popular OSS projects, like Hystrix and Ribbon into maintenance mode and to make newer, backward incompatible versions of some others, like Zuul and Archaius. The Spring Cloud team moved some of the corresponding Spring-Cloud-Netflix projects into maintenance mode as well and proposed a newer, more modern Spring Cloud stack that could be used instead. During this talk, we would like to show how to move over to these newer solutions. We will discuss possible approaches, show a code demo and speak about potential issues and solutions.
 
-
 # Polskie
+
+## Śledzenie Problemów w Twojej Aplikacji
+
+### Typ
+
+_Prezentacja i kodowanie na żywo_
+
+### Abstrakt
+
+Wyobraźmy sobie sytuację, w której otrzymujemy zgłoszenie błędu naszej aplikacji. Czytamy jego opis i przygotowujemy się do rozwiązania zagadki - jakie kroki wykonał użytkownik, że rzeczony błąd miał miejsce? Czy jest możliwe, żeby znaleźć wszystkie logi ze wszystkich aplikacji, które dotyczą operacji biznesowej, którą wykonał nasz klient?
+
+Co jeśli użytkownik narzeka, że nasz system działa wolno? Jak możemy zdecydować, która konkretna jego funkcja jest tego przyczyną? Czy istnieje możliwość zwizualizowania takich opóźnień?
+
+Odpowiedzmy na te pytania poprzez omówienie zagadnień z dziedziny obserwowalności aplikacji za pomocą śledzenia rozproszonego, metryk i korelowania logów na przykładzie narzędzi Spring Cloud Sleuth, Tanzu Observability, OpenZipkin, OpenTelemetry i innych!
+
+Prezentacja będzie składać się z części teoretycznej i kodowania na żywo.
 
 ## Ciągłe wdrażanie Twoich aplikacji
 
