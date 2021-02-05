@@ -27,6 +27,8 @@ Let's answer these questions by taking a deep dive into application observabilit
 
 The presentation will consist of some theory but there'll also be live coding and demos.
 
+___
+
 ## Tracing Applications with Zipkin
 
 ### Type
@@ -48,6 +50,8 @@ The presentation will consist of some theory but there'll also be live coding an
 - [Example](https://www.youtube.com/watch?v=tzAyFyB56lQ&feature=youtu.be)
 - [Example](https://content.pivotal.io/springone-platform-2017/distributed-tracing-latency-analysis-for-your-microservices-grzejszczak-krishna)
 
+___
+
 ## Consumer Driven Contracts like TDD to the API
 
 ### Type
@@ -66,6 +70,8 @@ The presentation will consist of some theory but there'll also be live coding an
 - [Example](https://www.youtube.com/watch?v=UwwaWodTj1k&list=PLxZQe6I1pYpfbUI587PZ7CY0l3oKPg9hH&index=28)
 - [Example](https://www.youtube.com/watch?time_continue=538&v=sAAklvxmPmk)
 
+___
+
 ## Why Contract Tests Matter?
 
 ### Type
@@ -83,6 +89,8 @@ In this presentation you'll see a system composing of two apps written from scra
 - [Example](https://www.youtube.com/watch?v=YoqSblR1nmI)
 - [Example](https://www.youtube.com/watch?v=IiK9A9nQ6NU&list=PLH21tc7N2sw0WUoamLp4UqTlKq-_xZgMB&index=23)
 
+___
+
 ## Contract Tests in the Enterprise
 
 ### Type
@@ -98,6 +106,8 @@ In this presentation you'll see how to migrate a legacy application to work with
 ### Video Samples
 
 - [Example](https://content.pivotal.io/springone-platform-2017/consumer-driven-contracts-and-your-microservice-architecture-marcin-grzejszczak-adib-saikali)
+
+___
 
 ## Testing Your Message-Driven Application
 
@@ -117,6 +127,8 @@ There will be a lot of Spring Cloud stack and we will see how we can benefit fro
 
 - [Example](https://www.youtube.com/watch?v=hRgD4bpS7hY&list=PLAdzTan_eSPQsR_aqYBQxpYTEQZnjhTN6&t=0s&index=64)
 
+___
+
 ## Continuous Deployment of Your Application
 
 ### Type
@@ -133,6 +145,8 @@ In this presentation we’ll go through the contents of the Cloud Pipelines proj
 
 - [Example](https://content.pivotal.io/springone-platform-2017/continuous-deployment-to-the-cloud-marcin-grzejszczak-cora-iberkleid)
 - [Example](https://www.youtube.com/watch?v=glhXS34umbw&list=PLH21tc7N2sw0WUoamLp4UqTlKq-_xZgMB&index=41)
+
+___
 
 ## How to live in a post-Spring-Cloud-Netflix world
 
