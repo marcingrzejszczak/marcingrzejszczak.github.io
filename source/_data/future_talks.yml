@@ -8,13 +8,13 @@
   resources:
     event: https://www.meetup.com/Warszawa-JUG/
 
-- date: 2021.02.25
+- date: 2021.03.11
   eventName: QA Winter Fest
   city: Online
   country: Poland
   countryCode: pl
-  talks: TBD - date is TBD too
-  status: CFP filled out
+  talks: TBD
+  status: Accepted
   resources:
     event: '?'
 
