@@ -13,10 +13,10 @@
   city: Online
   country: Poland
   countryCode: pl
-  talks: TBD
+  talks: Tracing Issues in Your Application
   status: Accepted
   resources:
-    event: '?'
+    event: https://www.facebook.com/events/2961397814183310?active_tab=about
 
 - date: 2021.03.23
   eventName: Tanzu Tuesdays
