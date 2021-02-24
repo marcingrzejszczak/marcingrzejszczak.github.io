@@ -1,3 +1,14 @@
+- date: 2021.02.23
+  eventName: Warsaw JUG
+  city: Online
+  country: Poland
+  countryCode: pl
+  talks: Tracing Issues in Your Application
+  resources:
+    event: https://www.meetup.com/Warszawa-JUG/
+    media:
+      - video: https://www.youtube.com/watch?v=CL5vyQXRXxM
+
 - date: 2020.10.21
   eventName: SmartTesting Conf
   city: Online
