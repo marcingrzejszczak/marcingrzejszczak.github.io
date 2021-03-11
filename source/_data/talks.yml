@@ -1,3 +1,12 @@
+- date: 2021.03.11
+  eventName: QA Winter Fest
+  city: Online
+  country: Poland
+  countryCode: pl
+  talks: Tracing Issues in Your Application
+  resources:
+    event: https://www.facebook.com/events/2961397814183310?active_tab=about
+
 - date: 2021.02.23
   eventName: Warsaw JUG
   city: Online
