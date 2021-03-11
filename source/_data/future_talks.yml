@@ -18,6 +18,16 @@
   resources:
     event: https://tanzu.vmware.com/developer/tv/tanzu-tuesdays/
 
+- date: 2021.05.14
+  eventName: CLICK
+  city: Online
+  country: Poland
+  countryCode: pl
+  talks: Śledzenie Problemów w Twojej Aplikacji
+  status: CFP filled out
+  resources:
+    event: https://click.org.pl/
+
 - date: 2021.05.24
   eventName: 4developers.pl
   city: Online
