@@ -1,14 +1,4 @@
-- date: 2021.03.23
-  eventName: Tanzu Tuesdays
-  city: Online
-  country: Poland
-  countryCode: pl
-  talks: Tracing Issues in Your Application
-  status: Accepted
-  resources:
-    event: https://tanzu.vmware.com/developer/tv/tanzu-tuesdays/
-
-- date: 2021.05.14
+- date: 2021.04.15
   eventName: CLICK
   city: Online
   country: Poland
@@ -17,6 +7,16 @@
   status: Accepted
   resources:
     event: https://click.org.pl/
+
+- date: 2021.04.20
+  eventName: Tanzu Tuesdays
+  city: Online
+  country: Poland
+  countryCode: pl
+  talks: Tracing Issues in Your Application
+  status: Accepted
+  resources:
+    event: https://tanzu.vmware.com/developer/tv/tanzu-tuesdays/
 
 - date: 2021.05.24
   eventName: 4developers.pl
