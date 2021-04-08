@@ -56,7 +56,9 @@ footer: true
       <td>
         <ul>
           <li><a href="{{talk.resources.event}}">Event</a></li>
+          {% if talk.resources.notes != null %}
           <li>{{ talk.resources.notes }}</li>
+          {% endif %}
         </ul>
       </td>
     </tr>
