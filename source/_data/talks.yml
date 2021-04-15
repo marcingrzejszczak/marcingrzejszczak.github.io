@@ -1,3 +1,15 @@
+- date: 2021.04.15
+  eventName: CLICK
+  city: Online
+  country: Poland
+  countryCode: pl
+  talks: Śledzenie Problemów w Twojej Aplikacji
+  status: Accepted
+  resources:
+    event: https://click.org.pl/
+    media:
+      - slides: https://docs.google.com/presentation/d/1GM9JSbLPIRA34D_teCADESr2WmAlAlG75dBc-wrkRpE/edit?usp=sharing
+
 - date: 2021.03.11
   eventName: QA Winter Fest
   city: Online
