@@ -1,10 +1,18 @@
+- date: 2021.05.20
+  eventName: Technology Radar - Developer's World
+  city: Online
+  country: Poland
+  countryCode: pl
+  talks: Czy warto pisać testy?
+  resources:
+    event: https://dworld.pl/technology-radar/
+    
 - date: 2021.04.20
   eventName: Tanzu Tuesdays
   city: Online
   country: Poland
   countryCode: pl
   talks: Tracing Issues in Your Application
-  status: Accepted
   resources:
     event: https://tanzu.vmware.com/developer/tv/tanzu-tuesdays/
     
@@ -14,7 +22,6 @@
   country: Poland
   countryCode: pl
   talks: Śledzenie Problemów w Twojej Aplikacji
-  status: Accepted
   resources:
     event: https://click.org.pl/
     media:
