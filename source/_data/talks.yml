@@ -1,3 +1,12 @@
+- date: 2021.05.25
+  eventName: 4developers.pl
+  city: Online
+  country: Poland
+  countryCode: pl
+  talks: Tracing Issues in Your Application
+  resources:
+    event: https://4developers.org.pl/
+
 - date: 2021.05.20
   eventName: Technology Radar - Developer's World
   city: Online
