@@ -1,13 +1,11 @@
-- date: 2021.05.27
-  eventName: PJUG
+- date: 2021.06.23
+  eventName: Booternetes II - The YAML Strikes Back
   city: Online
   country: Poland
   countryCode: pl
-  talks: Śledzenie Problemów w Twojej Aplikacji
-  status: Confirmed
+  talks: Booternetes II - The YAML Strikes Back keynote
   resources:
-    event: https://www.java.pl/
-
+    event: https://tanzu.vmware.com/developer/tv/springone-tour/0017/
 
 - date: 2021.06.25
   eventName: jLove conference for Java Developers
@@ -19,3 +17,12 @@
   resources:
     event: https://4developers.org.pl/
     notes: 30 minute talk
+
+- date: 2021.06.30
+  eventName: Talk4devs
+  city: Online
+  country: Poland
+  countryCode: pl
+  talks: Tracing Issues in Your Application
+  resources:
+    event: https://4developers.org.pl/
