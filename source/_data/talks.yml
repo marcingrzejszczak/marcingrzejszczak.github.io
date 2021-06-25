@@ -1,3 +1,12 @@
+- date: 2021.06.25
+  eventName: jLove conference for Java Developers
+  city: Online
+  country: Poland
+  countryCode: pl
+  talks: New trends in software development with Spring Boot and Spring Cloud
+  resources:
+    event: https://jlove.konfy.care/schedule.html
+
 - date: 2021.06.23
   eventName: Booternetes II - The YAML Strikes Back
   city: Online
