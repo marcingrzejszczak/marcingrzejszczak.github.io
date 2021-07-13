@@ -1,3 +1,10 @@
+- date: 2021.06.30
+  eventName: Talk4devs
+  city: Online
+  country: Poland
+  countryCode: pl
+  talks: Tracing Issues in Your Application
+
 - date: 2021.06.25
   eventName: jLove conference for Java Developers
   city: Online
