@@ -1,3 +1,21 @@
+- date: 2021.09.02
+  eventName: Tanzu Tuesdays
+  city: Online
+  country: Poland
+  countryCode: pl
+  talks: Tracing Issues in Your Application
+  resources:
+    event: https://springone.io/2021/sessions/tracing-issues-in-your-application
+
+- date: 2021.09.14
+  eventName: Tanzu Tuesdays
+  city: Online
+  country: Poland
+  countryCode: pl
+  talks: TBD
+  resources:
+    event: https://tanzu.vmware.com/developer/tv/tanzu-tuesdays/
+
 - date: 2021.09.23
   eventName: Javeloper 2021
   city: Online
