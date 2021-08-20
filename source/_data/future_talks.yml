@@ -24,3 +24,19 @@
   talks: Tracing Issues in Your Application
   resources:
     event: https://javeloper.pl/
+
+- date: 2021.10.15
+  eventName: O’Reilly Live Lessons
+  city: Online
+  country: Poland
+  countryCode: pl
+  talks: Microservices with Spring Cloud
+  resources:
+    event: https://www.oreilly.com/attend/microservices-with-spring-cloud/0636920353218/0636920062203/
+
+- date: 2021.12.10
+  eventName: O’Reilly Live Lessons
+  city: Online
+  country: Poland
+  countryCode: pl
+  talks: Microservices with Spring Cloud
