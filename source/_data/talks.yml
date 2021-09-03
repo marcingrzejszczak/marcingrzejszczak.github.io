@@ -1,3 +1,14 @@
+- date: 2021.09.02
+  eventName: SpringOne
+  city: Online
+  country: Poland
+  countryCode: pl
+  talks: Tracing Issues in Your Application
+  resources:
+    event: https://springone.io/2021/sessions/tracing-issues-in-your-application
+    media:
+      - video: https://www.youtube.com/watch?v=QMCYmaPa_14
+
 - date: 2021.07.15
   eventName: CoffeJUG
   city: Online
@@ -13,6 +24,9 @@
   country: Poland
   countryCode: pl
   talks: Tracing Issues in Your Application
+  resources:
+    media:
+      - video: https://www.youtube.com/watch?v=2pOd3JTa9_8      
 
 - date: 2021.06.25
   eventName: jLove conference for Java Developers
@@ -77,6 +91,7 @@
   resources:
     event: https://click.org.pl/
     media:
+      - video: https://www.youtube.com/watch?v=67Q-iXEeKvk
       - slides: https://docs.google.com/presentation/d/1GM9JSbLPIRA34D_teCADESr2WmAlAlG75dBc-wrkRpE/edit?usp=sharing
 
 - date: 2021.03.11
