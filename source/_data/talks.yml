@@ -1,3 +1,12 @@
+- date: 2021.09.14
+  eventName: Tanzu Tuesdays
+  city: Online
+  country: Poland
+  countryCode: pl
+  talks: New trends in software development with Spring Boot and Spring Cloud
+  resources:
+    event: https://tanzu.vmware.com/developer/tv/tanzu-tuesdays/
+    
 - date: 2021.09.02
   eventName: SpringOne
   city: Online
