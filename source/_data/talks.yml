@@ -1,3 +1,12 @@
+- date: 2021.09.23
+  eventName: Javeloper 2021
+  city: Online
+  country: Poland
+  countryCode: pl
+  talks: Śledzenie Problemów w Twojej Aplikacji
+  resources:
+    event: https://javeloper.pl/
+    
 - date: 2021.09.14
   eventName: Tanzu Tuesdays
   city: Online
