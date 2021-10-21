@@ -1,3 +1,21 @@
+- date: 2021.10.20
+  eventName: OpenSlava 2021
+  city: Online
+  country: Poland
+  countryCode: pl
+  talks: Tracing Issues in Your Application
+  resources:
+    event: https://openslava.sk/2021/#/
+        
+- date: 2021.10.15
+  eventName: O’Reilly Live Lessons
+  city: Online
+  country: Poland
+  countryCode: pl
+  talks: Microservices with Spring Cloud
+  resources:
+    event: https://www.oreilly.com/attend/microservices-with-spring-cloud/0636920353218/0636920062203/
+
 - date: 2021.09.23
   eventName: Javeloper 2021
   city: Online
