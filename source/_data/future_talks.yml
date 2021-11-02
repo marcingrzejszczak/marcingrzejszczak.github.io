@@ -4,3 +4,10 @@
   country: Poland
   countryCode: pl
   talks: Microservices with Spring Cloud
+
+- date: 2022.04.04
+  eventName: Devflix
+  city: Online
+  country: Poland
+  countryCode: pl
+  talks: TBD
