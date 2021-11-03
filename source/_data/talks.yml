@@ -6,6 +6,8 @@
   talks: Tracing Issues in Your Application
   resources:
     event: https://openslava.sk/2021/#/
+    media:
+      - video: https://www.youtube.com/watch?v=gD7ECHJIDFs
         
 - date: 2021.10.15
   eventName: O’Reilly Live Lessons
