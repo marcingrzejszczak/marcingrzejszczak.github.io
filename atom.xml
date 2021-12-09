@@ -4,7 +4,7 @@
   <title><![CDATA[TOO MUCH CODING]]></title>
   <link href="https://toomuchcoding.com/atom.xml" rel="self"/>
   <link href="https://toomuchcoding.com/"/>
-  <updated>2021-11-03T10:24:18+01:00</updated>
+  <updated>2021-12-09T09:45:56+01:00</updated>
   <id>https://toomuchcoding.com/</id>
   <author>
     <name><![CDATA[Marcin Grzejszczak]]></name>
@@ -12,6 +12,15 @@
   </author>
   <generator uri="https://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Spring Cloud Sleuth 3.1.0 released]]></title>
+    <link href="https://toomuchcoding.com/articles/2021/12/02/spring-cloud-sleuth-3-1-0-released/"/>
+    <updated>2021-12-02T09:30:00+01:00</updated>
+    <id>https://toomuchcoding.com/articles/2021/12/02/spring-cloud-sleuth-3-1-0-released</id>
+    <content type="html"><![CDATA[<p>I’m super happy to announce the general availability of Spring Cloud Sleuth 3.1.0 within the 2021.0.0 (Jubilee) release train. We’ve added TONS of new features so please check out <a href="https://spring.io/blog/2021/12/07/spring-cloud-sleuth-3-1-0-is-out">this blog post at the Spring.io blog</a> where we explain the details of this release. We would be more than happy to see your new tracing graphs! Visit our <a href="https://gitter.im/spring-cloud/spring-cloud-sleuth">Gitter channel</a> and paste your screenshots there!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Spring Cloud Sleuth 3.0.0 released]]></title>
@@ -1996,29 +2005,6 @@ SpanInjector&lt;HttpServletResponse&gt; customHttpServletResponseSpanInjector() 
 
 <p>I’ve created a new page on the website <a href="/oss/">OSS</a>. You can check out which OSS projects I’ve created or have contributed sth there.
 If you don’t care - just ignore it ;)</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Goodbye Blogspot welcome Octopress!]]></title>
-    <link href="https://toomuchcoding.com/articles/2016/03/03/goodbye-blogspot-welcome-octopress/"/>
-    <updated>2016-03-03T22:53:26+01:00</updated>
-    <id>https://toomuchcoding.com/articles/2016/03/03/goodbye-blogspot-welcome-octopress</id>
-    <content type="html"><![CDATA[<p>I’m more than happy to announce that I’ve finally migrated from Blogspot to a decent
-blogging technology - Octopress! Thanks to <a href="https://tomaszdziurko.pl/">Tomek Dziurko</a> who
-was the one that suggested to choose that technology.</p>
-
-<p>Also as you can see I’ve finally bought a domain for the <em>Too Much Coding blog</em> which is
-<a href="https://toomuchcoding.com">https://toomuchcoding.com</a>. I don’t even know why I’m
-writing it since you can see the address in your browser ;) You can also send me an email
-at <em>blog (at) toomuchcoding.com</em>.</p>
-
-<p>Even though initially I had some doubts about choosing Octopress I have to admit that
-it seems like an awesome technology and you should definitely give it a try!</p>
-
-<p>P.S.
-We’re looking for sponsors for the upcoming <a href="https://warsaw.gr8days.pl">Warsaw GR8 Day Conference</a> (19.03.2016).
-Over 60 people have already registered! Contact us to be a part of this gr8 event!</p>
 ]]></content>
   </entry>
   

@@ -128,6 +128,111 @@
 
 
 
+<span class="glyphicon glyphicon-calendar"></span> <time datetime="2016-06-24T18:43:07+02:00"  data-updated="true" itemprop="datePublished dateCreated">ordinal</time>
+        
+           | <a href="/articles/2016/06/24/accurest-becomes-part-of-the-spring-cloud-contract/#disqus_thread" itemprop="discussionUrl"
+             data-disqus-identifier="https://toomuchcoding.com/articles/2016/06/24/accurest-becomes-part-of-the-spring-cloud-contract/">Comments</a>
+        
+      </p>
+    
+    
+      <h2 class="entry-title" itemprop="name headline"><a href="/articles/2016/06/24/accurest-becomes-part-of-the-spring-cloud-contract/" itemprop="url">Accurest becomes part of the Spring Cloud Contract</a></h2>
+    
+  </header>
+
+
+  <div class="entry-content clearfix" itemprop="articleBody description"><p>I’m extremely happy to announce that we have successfully rebranded the <a href="https://codearte.github.io/accurest">Accurest project</a>. It’s officially become part of the <a href="https://github.com/spring-cloud/spring-cloud-contract">Spring Cloud Contract</a> initiative. Ladies and Gentlemen please welcome the new projects:</p>
+
+<ul>
+  <li><a href="https://codearte.github.io/accurest/">Spring Cloud Contract Verifier</a></li>
+  <li><a href="https://codearte.github.io/accurest/#spring-cloud-contract-stub-runner">Spring Cloud Contract Stub Runner</a></li>
+</ul>
+
+<!-- more -->
+
+<h2 id="a-little-bit-of-history">A little bit of history</h2>
+
+<p>Accurest was created because of lack of an easy-to-use tool for doing <a href="https://martinfowler.com/articles/consumerDrivenContracts.html">Consumer Driven Contracts</a>. From our production experience the biggest problem was lack of verification that the defined contract actually does what it says it does. We wanted to ensure that from the contract automatically tests are generated so that we can have a proof that the stubs are reliable. Since there was no such tool the first commit of Accurest took place on 12/2014. The very idea and its implementation was initially set by <a href="https://www.kubrynski.com/">Jakub Kubrynski</a> and me. The last available version of Accurest was 1.1.0 released on 06/2016 (the docs for the old version are <a href="https://codearte.github.io/accurest/deprecated/">available here</a>). During these 19 months a lot of feedback has been gathered. The tool has received a lot of very good reception and that made us want to work even harder. Many times we have decided to decrease the time required for sleeping so as to fix a bug or develop a new feature in Accurest.</p>
+
+<h2 id="notable-features">Notable features</h2>
+
+<p>Speaking of features, especially quite a few of them definitely makes Accurest stand out on the “market” of Consumer Driven Contract (CDC) tooling. Out of many the most interesting are:</p>
+
+<ul>
+  <li>Possibility to do CDC with messaging</li>
+  <li>Clear and easy to use, statically typed DSL</li>
+  <li>Possibility to copy paste your current JSON file to the contract and only edit its elements</li>
+  <li>Automatic generation of tests from the defined Contract</li>
+  <li>Stub Runner functionality - the stubs are automatically downloaded at runtime from Nexus / Artifactory</li>
+  <li>Spring Cloud integration - no discovery service is needed for integration tests</li>
+</ul>
+
+<p>For more information check out my posts about <a href="https://toomuchcoding.com/blog/2016/04/06/accurest-stubrunner-released/">Stub Runner</a>, <a href="https://toomuchcoding.com/blog/2016/04/30/accurest-and-stub-runner-1-dot-1-0-dot-m3/">Accurest Messaging</a> or <a href="https://codearte.github.io/accurest/">just read the docs</a>.</p>
+
+<h2 id="spring-cloud-contract">Spring Cloud Contract</h2>
+
+<p>In Pivotal we came to the conclusion that Accurest could become an interesting addition to our Spring Cloud tooling. Due to the increased interest of the community in the Consumer Driven Contracts approach we’ve decided to start the <a href="https://github.com/spring-cloud/spring-cloud-contract">Spring Cloud Contract</a> initiative.</p>
+
+<p>Accurest became <em>Spring Cloud Contract Verifier</em> (note: the name might change in the future) but for the time being will remain in the <a href="https://github.com/Codearte">Codearte repository</a>. It’s becoming the part of Spring Cloud tooling as a mature tool with a growing community around it. Some arguments for that are that it has:</p>
+
+<ul>
+  <li><a href="https://codearte.github.io/accurest/">a nice AsciiDoc documentation that was completely rewritten following users’ feedback</a></li>
+  <li><a href="https://gitter.im/Codearte/accurest">active Gitter channel where we try to immediately answer any support questions</a></li>
+  <li><a href="https://github.com/Codearte/accurest/stargazers">Over 80 stars on Github and counting ;)</a></li>
+</ul>
+
+<p>Since we believe very much in the Consumer Driven Contract approach we also want to do the library in a Client Driven way. That means that we (server side) are very open to your feedback (consumer side) and want you be the main driver of changes in the library.</p>
+
+<h2 id="credits">Credits</h2>
+
+<p>The Accurest project would never come to life without the hard work of the <a href="https://codearte.io">Codearte</a> developers (the order is random):</p>
+
+<ul>
+  <li><a href="https://twitter.com/olga_maciaszek">Olga Maciaszek-Sharma</a></li>
+  <li><a href="https://www.kubrynski.com">Jakub Kubrynski</a></li>
+  <li><a href="https://solidsoft.wordpress.com/">Marcin Zajaczkowski</a></li>
+  <li><a href="https://github.com/mariuszs">Mariusz Smykula</a></li>
+</ul>
+
+<p>and obviously everybody who has <a href="https://github.com/Codearte/accurest/graphs/contributors">ever commited something to the project</a>.</p>
+
+<h2 id="links">Links</h2>
+
+<p>If you want to read more about <em>Spring Cloud Contract Verifier</em> just check out the following links.</p>
+
+<ul>
+  <li><a href="https://github.com/Codearte/accurest">Spring Cloud Contract Verifier Github Repository</a></li>
+  <li><a href="https://codearte.github.io/accurest">Spring Cloud Contract Verifier Documentation</a></li>
+  <li><a href="https://codearte.github.io/accurest/deprecated">Accurest Legacy Documentation</a></li>
+  <li><a href="https://codearte.github.io/accurest/#spring-cloud-contract-stub-runner">Spring Cloud Contract Stub Runner Documentation</a></li>
+  <li><a href="https://codearte.github.io/accurest/#stub-runner-for-messaging">Spring Cloud Contract Stub Runner Messaging Documentation</a></li>
+  <li><a href="https://gitter.im/Codearte/accurest">Spring Cloud Contract Verifier Gitter</a></li>
+  <li><a href="https://github.com/Codearte/accurest-maven-plugin">Spring Cloud Contract Verifier Maven Plugin</a></li>
+</ul>
+</div>
+  
+  
+
+
+        </article>
+      
+      
+        <article class="post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+          
+  <header class="page-header">
+    
+      <p class="meta text-muted text-uppercase">
+        
+
+
+
+
+
+
+
+
+
+
 <span class="glyphicon glyphicon-calendar"></span> <time datetime="2016-05-31T11:58:52+02:00"  data-updated="true" itemprop="datePublished dateCreated">ordinal</time>
         
            | <a href="/articles/2016/05/31/zero-downtime-deployment-with-a-database/#disqus_thread" itemprop="discussionUrl"
@@ -1550,58 +1655,6 @@ SpanInjector&lt;HttpServletResponse&gt; customHttpServletResponseSpanInjector() 
 
 <p>I’ve created a new page on the website <a href="/oss/">OSS</a>. You can check out which OSS projects I’ve created or have contributed sth there.
 If you don’t care - just ignore it ;)</p>
-</div>
-  
-  
-
-
-        </article>
-      
-      
-        <article class="post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-          
-  <header class="page-header">
-    
-      <p class="meta text-muted text-uppercase">
-        
-
-
-
-
-
-
-
-
-
-
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2016-03-03T22:53:26+01:00"  data-updated="true" itemprop="datePublished dateCreated">ordinal</time>
-        
-           | <a href="/articles/2016/03/03/goodbye-blogspot-welcome-octopress/#disqus_thread" itemprop="discussionUrl"
-             data-disqus-identifier="https://toomuchcoding.com/articles/2016/03/03/goodbye-blogspot-welcome-octopress/">Comments</a>
-        
-      </p>
-    
-    
-      <h2 class="entry-title" itemprop="name headline"><a href="/articles/2016/03/03/goodbye-blogspot-welcome-octopress/" itemprop="url">Goodbye Blogspot welcome Octopress!</a></h2>
-    
-  </header>
-
-
-  <div class="entry-content clearfix" itemprop="articleBody description"><p>I’m more than happy to announce that I’ve finally migrated from Blogspot to a decent
-blogging technology - Octopress! Thanks to <a href="https://tomaszdziurko.pl/">Tomek Dziurko</a> who
-was the one that suggested to choose that technology.</p>
-
-<p>Also as you can see I’ve finally bought a domain for the <em>Too Much Coding blog</em> which is
-<a href="https://toomuchcoding.com">https://toomuchcoding.com</a>. I don’t even know why I’m
-writing it since you can see the address in your browser ;) You can also send me an email
-at <em>blog (at) toomuchcoding.com</em>.</p>
-
-<p>Even though initially I had some doubts about choosing Octopress I have to admit that
-it seems like an awesome technology and you should definitely give it a try!</p>
-
-<p>P.S.
-We’re looking for sponsors for the upcoming <a href="https://warsaw.gr8days.pl">Warsaw GR8 Day Conference</a> (19.03.2016).
-Over 60 people have already registered! Contact us to be a part of this gr8 event!</p>
 </div>
   
   
