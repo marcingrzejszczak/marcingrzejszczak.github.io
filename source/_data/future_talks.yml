@@ -1,10 +1,24 @@
-- date: 2021.12.10
-  eventName: O’Reilly Live Lessons
+- date: 2022.02.28
+  eventName: Java Microservices with Spring in 3 Weeks
   city: Online
   country: Poland
   countryCode: pl
   talks: Microservices with Spring Cloud
 
+- date: 2022.03.07
+  eventName: Java Microservices with Spring in 3 Weeks
+  city: Online
+  country: Poland
+  countryCode: pl
+  talks: Microservices with Spring Cloud
+
+- date: 2022.03.14
+  eventName: Java Microservices with Spring in 3 Weeks
+  city: Online
+  country: Poland
+  countryCode: pl
+  talks: Microservices with Spring Cloud
+  
 - date: 2022.04.04
   eventName: Devflix
   city: Online

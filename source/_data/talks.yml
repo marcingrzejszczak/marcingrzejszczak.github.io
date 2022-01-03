@@ -1,3 +1,10 @@
+- date: 2021.12.10
+  eventName: O’Reilly Live Lessons
+  city: Online
+  country: Poland
+  countryCode: pl
+  talks: Microservices with Spring Cloud
+  
 - date: 2021.10.20
   eventName: OpenSlava 2021
   city: Online
