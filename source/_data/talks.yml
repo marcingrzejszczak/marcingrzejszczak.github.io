@@ -1,3 +1,26 @@
+- date: 2022.02.15
+  eventName: SmartTesting
+  city: Online
+  country: Poland
+  countryCode: pl
+  talks: Testowanie oparte na Własnościach (Property-based Testing)
+  resources:
+    event: https://smarttesting.pl/live.html
+
+- date: 2022.02.28
+  eventName: Java Microservices with Spring in 3 Weeks
+  city: Online
+  country: Poland
+  countryCode: pl
+  talks: Microservices with Spring Cloud
+
+- date: 2022.03.07
+  eventName: Java Microservices with Spring in 3 Weeks
+  city: Online
+  country: Poland
+  countryCode: pl
+  talks: Microservices with Spring Cloud
+
 - date: 2021.12.10
   eventName: O’Reilly Live Lessons
   city: Online
