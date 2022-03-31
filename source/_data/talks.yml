@@ -1,3 +1,10 @@
+- date: 2022.03.31
+  eventName: Spring & the Pivotal OSS Community
+  city: Online
+  country: Poland
+  countryCode: pl
+  talks: Let’s talk Micrometer, Sleuth, and Tanzu Observability
+
 - date: 2022.03.14
   eventName: Java Microservices with Spring in 3 Weeks
   city: Online
