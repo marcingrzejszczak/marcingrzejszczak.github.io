@@ -18,3 +18,11 @@
   country: Poland
   countryCode: pl
   talks: Microservices with Spring Cloud
+  
+- date: 2022.10.19
+  eventName: Testing Talks Conference
+  city: Melbourne
+  country: Australia
+  countryCode: au
+  talks: Contract Tests in the Enterprise
+  notes: CFP Submitted (https://www.testingtalks.com.au/)
