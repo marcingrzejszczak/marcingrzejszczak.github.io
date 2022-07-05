@@ -1,3 +1,10 @@
+- date: 2022.06.22
+  eventName: Devoxx Poland
+  city: Cracow
+  country: Poland
+  countryCode: pl
+  talks: Tracing Issues in Your Application
+  
 - date: 2022.03.31
   eventName: Spring & the Pivotal OSS Community
   city: Online
