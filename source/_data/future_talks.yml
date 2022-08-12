@@ -1,24 +1,31 @@
-- date: 2022.07.05
+- date: 2022.09.28
+  eventName: Ya!vaConf
+  city: Warsaw
+  country: Poland
+  countryCode: pl
+  talks: Tracing Issues in Your Application
+
+- date: 2022.10.03
   eventName: Java Microservices with Spring in 3 Weeks
   city: Online
   country: Poland
   countryCode: pl
   talks: Microservices with Spring Cloud
 
-- date: 2022.07.12
+- date: 2022.10.10
   eventName: Java Microservices with Spring in 3 Weeks
   city: Online
   country: Poland
   countryCode: pl
   talks: Microservices with Spring Cloud
-  
-- date: 2022.07.19
+
+- date: 2022.10.17
   eventName: Java Microservices with Spring in 3 Weeks
   city: Online
   country: Poland
   countryCode: pl
   talks: Microservices with Spring Cloud
-  
+
 - date: 2022.10.20
   eventName: Testing Talks Conference
   city: Melbourne
