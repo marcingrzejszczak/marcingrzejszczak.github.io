@@ -26,16 +26,6 @@
   countryCode: pl
   talks: Microservices with Spring Cloud
 
-- date: 2022.10.20
-  eventName: Testing Talks Conference
-  city: Melbourne
-  country: Australia
-  countryCode: au
-  talks: Contract Tests in the Enterprise
-  status: Submitted
-  resources:
-    event: https://www.testingtalks.com.au/
-
 - date: 2023.02.06
   eventName: JFokus
   city: Stockholm
