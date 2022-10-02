@@ -1,3 +1,10 @@
+- date: 2022.09.28
+  eventName: Ya!vaConf
+  city: Warsaw
+  country: Poland
+  countryCode: pl
+  talks: Tracing Issues in Your Application
+  
 - date: 2022.07.19
   eventName: Java Microservices with Spring in 3 Weeks
   city: Online
