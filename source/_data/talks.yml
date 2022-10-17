@@ -1,3 +1,10 @@
+- date: 2022.10.17
+  eventName: Java Microservices with Spring in 3 Weeks
+  city: Online
+  country: Poland
+  countryCode: pl
+  talks: Microservices with Spring Cloud
+  
 - date: 2022.10.10
   eventName: Java Microservices with Spring in 3 Weeks
   city: Online
