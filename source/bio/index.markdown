@@ -19,7 +19,8 @@ Working of Spring Observability, [Spring Cloud Sleuth](https://cloud.spring.io/s
 Profiles:
 
 - [Github profile](https://github.com/marcingrzejszczak)
-- [Twitter profile](https://twitter.com/MGrzejszczak)
+- [Mastodon profile](https://mastodon.social/@marcin_grzejszczak)
+- [Twitter profile - I'd like to move my account to Mastodon so it's much better to follow me there](https://twitter.com/MGrzejszczak)
 - [Goodreads account](https://www.goodreads.com/author/show/7284553.Marcin_Grzejszczak)
 
 ### Short About me
@@ -37,5 +38,6 @@ Lead projektów [Spring Cloud Sleuth](https://cloud.spring.io/spring-cloud-sleut
 Profile:
 
 - [Github](https://github.com/marcingrzejszczak)
-- [Twitter](https://twitter.com/MGrzejszczak)
+- [Mastodon](https://mastodon.social/@marcin_grzejszczak)
+- [Twitter - chciałbym przejść z kontem na profil Mastodona więc lepiej mnie śledzić właśnie tam](https://twitter.com/MGrzejszczak)
 - [Goodreads](https://www.goodreads.com/author/show/7284553.Marcin_Grzejszczak)
