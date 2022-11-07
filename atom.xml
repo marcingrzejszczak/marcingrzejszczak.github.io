@@ -4,7 +4,7 @@
   <title><![CDATA[TOO MUCH CODING]]></title>
   <link href="https://toomuchcoding.com/atom.xml" rel="self"/>
   <link href="https://toomuchcoding.com/"/>
-  <updated>2022-11-04T22:01:47+01:00</updated>
+  <updated>2022-11-07T21:28:38+01:00</updated>
   <id>https://toomuchcoding.com/</id>
   <author>
     <name><![CDATA[Marcin Grzejszczak]]></name>
@@ -12,6 +12,17 @@
   </author>
   <generator uri="https://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Migrating To Mastodon]]></title>
+    <link href="https://toomuchcoding.com/articles/2022/07/11/migrating-to-mastodon/"/>
+    <updated>2022-07-11T22:30:00+02:00</updated>
+    <id>https://toomuchcoding.com/articles/2022/07/11/migrating-to-mastodon</id>
+    <content type="html"><![CDATA[<p>I’m moving away from <a href="https://twitter.com/mgrzejszczak">Twitter</a> to <a href="https://fosstodon.org/@toomuchcoding">Mastodon</a>. I’m not deleting my account at Twitter, but I’m not planning to be too active there.</p>
+
+<p>If you want to learn about what Mastodon is and how it differs from Twitter you can read <a href="https://2ality.com/2022/10/mastodon-getting-started.html">this excellent article</a>.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Spring Cloud Sleuth 3.1.0 released]]></title>
@@ -1954,57 +1965,6 @@ SpanInjector&lt;HttpServletResponse&gt; customHttpServletResponseSpanInjector() 
 <p>In this very short post you could see two quite big features available in the RC1 release. You can check <a href="https://cloud.spring.io/spring-cloud-sleuth/spring-cloud-sleuth.html">Spring Cloud Sleuth documentation</a> for more information about the integrations and configurations of Sleuth. Actually you can check all the things that have changed in the RC1 release by checking the <a href="https://github.com/spring-cloud/spring-cloud-sleuth/issues?q=is%3Aissue+is%3Aclosed+milestone%3A1.0.0.RC1">closed issues</a> and <a href="https://github.com/spring-cloud/spring-cloud-sleuth/pulls?q=is%3Apr+milestone%3A1.0.0.RC1+is%3Aclosed">merged PRs</a>.</p>
 
 <p>In case of any questions do not hesitate to ping us on the <a href="https://gitter.im/spring-cloud/spring-cloud-sleuth">Gitter channel</a> or <a href="https://github.com/spring-cloud/spring-cloud-sleuth/issues">file an issue on Github</a>.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[JSON Assert 0.2.1 released]]></title>
-    <link href="https://toomuchcoding.com/articles/2016/03/11/json-assert-0-dot-2-1-released/"/>
-    <updated>2016-03-11T23:33:30+01:00</updated>
-    <id>https://toomuchcoding.com/articles/2016/03/11/json-assert-0-dot-2-1-released</id>
-    <content type="html"><![CDATA[<p>I’m pleased to announce that JSON Assert version 0.2.1 got released! The following features have been added</p>
-
-<ul>
-  <li><a href="https://github.com/marcingrzejszczak/jsonassert/issues/2">AssertJ support</a></li>
-  <li><a href="https://github.com/marcingrzejszczak/jsonassert/issues/3">Bumped up JSON Path to 2.2.0</a></li>
-  <li><a href="https://github.com/marcingrzejszczak/jsonassert/issues/4">Fixed a bug related to chars escaping</a></li>
-  <li>I’ve changed README.md to README.ascidoc</li>
-</ul>
-
-<!-- more -->
-
-<h1 id="breaking-changes">Breaking changes</h1>
-
-<p>I’ve changed the groupId and packages of the library so you have to do the migration of both.</p>
-
-<h2 id="groupid">GroupId</h2>
-
-<p>Was:</p>
-
-<pre><code>com.blogspot.toomuchcoding
-</code></pre>
-
-<p>Is:</p>
-
-<pre><code>com.toomuchcoding.jsonassert
-</code></pre>
-
-<h2 id="package">Package</h2>
-
-<p>Was:</p>
-
-<pre><code>com.blogspot.toomuchcoding.jsonassert
-</code></pre>
-
-<p>Is:</p>
-
-<pre><code>com.toomuchcoding.jsonassert
-</code></pre>
-
-<h1 id="btw">BTW</h1>
-
-<p>I’ve created a new page on the website <a href="/oss/">OSS</a>. You can check out which OSS projects I’ve created or have contributed sth there.
-If you don’t care - just ignore it ;)</p>
 ]]></content>
   </entry>
   
