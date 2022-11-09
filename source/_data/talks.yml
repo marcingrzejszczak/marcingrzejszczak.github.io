@@ -1,23 +1,23 @@
 - date: 2022.10.17
-  eventName: Java Microservices with Spring in 3 Weeks
+  eventName: O'Reilly Live Events
   city: Online
   country: Poland
   countryCode: pl
-  talks: Microservices with Spring Cloud
+  talks: Java Microservices with Spring in 3 Weeks
   
 - date: 2022.10.10
-  eventName: Java Microservices with Spring in 3 Weeks
+  eventName: O'Reilly Live Events
   city: Online
   country: Poland
   countryCode: pl
-  talks: Microservices with Spring Cloud
+  talks: Java Microservices with Spring in 3 Weeks
 
 - date: 2022.10.03
-  eventName: Java Microservices with Spring in 3 Weeks
+  eventName: O'Reilly Live Events
   city: Online
   country: Poland
   countryCode: pl
-  talks: Microservices with Spring Cloud
+  talks: Java Microservices with Spring in 3 Weeks
 
 - date: 2022.09.28
   eventName: Ya!vaConf
@@ -27,25 +27,25 @@
   talks: Tracing Issues in Your Application
   
 - date: 2022.07.19
-  eventName: Java Microservices with Spring in 3 Weeks
+  eventName: O'Reilly Live Events
   city: Online
   country: Poland
   countryCode: pl
-  talks: Microservices with Spring Cloud
+  talks: Java Microservices with Spring in 3 Weeks
 
 - date: 2022.07.12
-  eventName: Java Microservices with Spring in 3 Weeks
+  eventName: O'Reilly Live Events
   city: Online
   country: Poland
   countryCode: pl
-  talks: Microservices with Spring Cloud
+  talks: Java Microservices with Spring in 3 Weeks
 
 - date: 2022.07.05
-  eventName: Java Microservices with Spring in 3 Weeks
+  eventName: O'Reilly Live Events
   city: Online
   country: Poland
   countryCode: pl
-  talks: Microservices with Spring Cloud
+  talks: Java Microservices with Spring in 3 Weeks
 
 - date: 2022.06.22
   eventName: Devoxx Poland
@@ -62,25 +62,25 @@
   talks: Let’s talk Micrometer, Sleuth, and Tanzu Observability
 
 - date: 2022.03.14
-  eventName: Java Microservices with Spring in 3 Weeks
+  eventName: O'Reilly Live Events
   city: Online
   country: Poland
   countryCode: pl
-  talks: Microservices with Spring Cloud
+  talks: Java Microservices with Spring in 3 Weeks
 
 - date: 2022.03.07
-  eventName: Java Microservices with Spring in 3 Weeks
+  eventName: O'Reilly Live Events
   city: Online
   country: Poland
   countryCode: pl
-  talks: Microservices with Spring Cloud
+  talks: Java Microservices with Spring in 3 Weeks
   
 - date: 2022.02.28
-  eventName: Java Microservices with Spring in 3 Weeks
+  eventName: O'Reilly Live Events
   city: Online
   country: Poland
   countryCode: pl
-  talks: Microservices with Spring Cloud
+  talks: Java Microservices with Spring in 3 Weeks
 
 - date: 2022.02.15
   eventName: SmartTesting
@@ -96,7 +96,7 @@
   city: Online
   country: Poland
   countryCode: pl
-  talks: Microservices with Spring Cloud
+  talks: Java Microservices with Spring in 3 Weeks
   
 - date: 2021.10.20
   eventName: OpenSlava 2021
