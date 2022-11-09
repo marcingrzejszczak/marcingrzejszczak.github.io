@@ -1,9 +1,0 @@
-- date: 2023.02.06
-  eventName: JFokus
-  city: Stockholm
-  country: Sweden
-  countryCode: se
-  talks: Tracing Issues in Your Application
-  status: Submitted
-  resources:
-    event: https://www.jfokus.se/
