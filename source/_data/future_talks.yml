@@ -41,6 +41,13 @@
   country: Poland
   countryCode: pl
   talks: Java Microservices with Spring in 3 Weeks
+  
+- date: 2023.05.19
+  eventName: I Love Dev
+  city: Warsaw
+  country: Poland
+  countryCode: pl
+  talks: TBD
 
 - date: 2023.05.24
   eventName: O'Reilly Live Events
