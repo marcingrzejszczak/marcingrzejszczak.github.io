@@ -42,12 +42,13 @@
   countryCode: pl
   talks: Java Microservices with Spring in 3 Weeks
   
-- date: 2023.05.19
-  eventName: I Love Dev
-  city: Warsaw
-  country: Poland
-  countryCode: pl
+- date: 2023.05.18
+  eventName: Spring.IO Barcelona
+  city: Barcelona
+  country: Spain
+  countryCode: es
   talks: TBD
+  status: TBD
 
 - date: 2023.05.24
   eventName: O'Reilly Live Events
