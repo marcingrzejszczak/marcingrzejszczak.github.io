@@ -56,3 +56,11 @@
   country: Poland
   countryCode: pl
   talks: Java Microservices with Spring in 3 Weeks
+
+- date: 2023.05.31
+  eventName: Devoxx PL
+  city: Cracow
+  country: Poland
+  countryCode: pl
+  talks: TBD
+  status: TBD
