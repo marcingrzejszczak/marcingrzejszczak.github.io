@@ -55,3 +55,11 @@
   countryCode: pl
   talks: TBD
   status: TBD
+
+- date: 2023.10.12
+  eventName: Melbourne Convention Exhibition Center
+  city: Melbourne
+  country: Australia
+  countryCode: au
+  talks: Contract Tests in the Enterprise
+  status: Submitted
