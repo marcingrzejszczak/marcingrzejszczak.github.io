@@ -67,7 +67,15 @@
   country: Poland
   countryCode: pl
   talks: Java Microservices with Spring in 3 Weeks
-
+- date: 2023.01.25
+  eventName: SpringOne
+  city: Online
+  country: Poland
+  countryCode: pl
+  talks: Observability of Your Application
+  resources:
+    event: https://springone.io/sessions/observability-of-your-application
+    
 - date: 2022.03.07
   eventName: O'Reilly Live Events
   city: Online
