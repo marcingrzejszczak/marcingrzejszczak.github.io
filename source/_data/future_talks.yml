@@ -18,7 +18,7 @@
   country: Spain
   countryCode: es
   talks: TBD
-  status: TBD
+  status: Submitted
 
 - date: 2023.05.24
   eventName: O'Reilly Live Events
@@ -33,12 +33,14 @@
   country: Poland
   countryCode: pl
   talks: TBD
-  status: TBD
-
-- date: 2023.10.12
-  eventName: Melbourne Convention Exhibition Center
-  city: Melbourne
-  country: Australia
-  countryCode: au
-  talks: Contract Tests in the Enterprise
   status: Submitted
+
+
+- date: 2023.09.05
+  eventName: JavaZone
+  city: Oslo
+  country: Norway
+  countryCode: "no"
+  talks: TBD
+  status: Submitted
+
