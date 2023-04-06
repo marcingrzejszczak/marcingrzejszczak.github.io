@@ -17,7 +17,7 @@
   city: Barcelona
   country: Spain
   countryCode: es
-  talks: TBD
+  talks: Observability of Your Application
 
 - date: 2023.05.24
   eventName: O'Reilly Live Events
@@ -31,7 +31,7 @@
   city: Cracow
   country: Poland
   countryCode: pl
-  talks: TBD
+  talks: Observability of Your Application
 
 - date: 2023.06.06
   eventName: JNation
