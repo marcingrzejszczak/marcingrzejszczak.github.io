@@ -1,24 +1,3 @@
-- date: 2023.05.10
-  eventName: O'Reilly Live Events
-  city: Online
-  country: Poland
-  countryCode: pl
-  talks: Java Microservices with Spring in 3 Weeks
-  
-- date: 2023.05.17
-  eventName: O'Reilly Live Events
-  city: Online
-  country: Poland
-  countryCode: pl
-  talks: Java Microservices with Spring in 3 Weeks
-  
-- date: 2023.05.18
-  eventName: Spring.IO Barcelona
-  city: Barcelona
-  country: Spain
-  countryCode: es
-  talks: Observability of Your Application
-
 - date: 2023.05.24
   eventName: O'Reilly Live Events
   city: Online
