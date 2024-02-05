@@ -138,13 +138,62 @@
 
 <h1 id="english">English</h1>
 
-<h2 id="tracing-issues-in-your-application">Tracing Issues in Your Application</h2>
+<h2 id="is-your-jvm-app-flying-blind-unmask-hidden-issues-with-observability-superpowers">Is your JVM app flying blind? Unmask hidden issues with Observability superpowers!</h2>
 
 <h3 id="type">Type</h3>
 
-<p><em>Presentation and live coding</em></p>
+<p><em>Presentation and live coding</em> - basic level</p>
 
 <h3 id="abstract">Abstract</h3>
+
+<p>Struggling to debug latency, pinpoint bugs, or understand app behavior? This talk equips you with the ultimate Observability toolkit for your JVM-based application!</p>
+
+<p>Discover proven techniques to transform your application from opaque to transparent:</p>
+
+<ul>
+  <li>Add superpowers instantly: Learn how to seamlessly inject observability into existing applications.</li>
+  <li>Debug like a pro: Leverage metrics, distributed tracing, logs, and exemplars to pinpoint latency bottlenecks and hunt down elusive bugs.</li>
+  <li>See the unseen: Gain deep insights into application health, performance, and user experience, empowering data-driven decisions.</li>
+</ul>
+
+<p>Ready to unleash the full potential of your JVM app using the industry’s golden standard? Join this session and become an Observability Jedi!
+___</p>
+
+<h2 id="micrometer-mastery-unleash-advanced-observability-in-your-jvm-apps">Micrometer Mastery: Unleash Advanced Observability in your JVM Apps</h2>
+
+<h3 id="type-1">Type</h3>
+
+<p><em>Presentation and live coding</em> - advanced level</p>
+
+<h3 id="abstract-1">Abstract</h3>
+
+<p>Is your application a black box? Is your current observability instrumentation not good enough? Do you want to add more to your metrics and distributed tracing? Join us and unlock the full potential of Micrometer and its cutting-edge observability features!</p>
+
+<p>Dive into:</p>
+
+<ul>
+  <li>Micrometer Observation API: Instrument once and have multiple benefits out of it.</li>
+  <li>Observation Conventions: Instrumentation with standardized naming and tagging.</li>
+  <li>Automated Documentation: Effortlessly generate rich observability descriptions from your code.</li>
+</ul>
+
+<p>We’ll showcase:</p>
+
+<p>-Practical code examples for instrumenting real-world applications.
+-Advanced techniques to extract deeper insights and troubleshoot issues faster.
+-Real-world use cases demonstrating the power of Micrometer’s observability toolkit.</p>
+
+<p>Ready to elevate your observability game using the industry’s golden standard? This talk is your one-stop shop for Micrometer mastery!</p>
+
+<hr />
+
+<h2 id="tracing-issues-in-your-application">Tracing Issues in Your Application</h2>
+
+<h3 id="type-2">Type</h3>
+
+<p><em>Presentation and live coding</em></p>
+
+<h3 id="abstract-2">Abstract</h3>
 
 <p>Imagine that you’re receiving a support ticket that your application is not working fine. You read the attached stacktrace and now it’s time to solve the mystery - what did the user do that led to throwing of this exception? Is it possible to find all the logs from all the applications that correspond to this user’s business operation?</p>
 
@@ -158,11 +207,11 @@
 
 <h2 id="tracing-applications-with-zipkin">Tracing Applications with Zipkin</h2>
 
-<h3 id="type-1">Type</h3>
+<h3 id="type-3">Type</h3>
 
 <p><em>Presentation and live coding</em></p>
 
-<h3 id="abstract-1">Abstract</h3>
+<h3 id="abstract-3">Abstract</h3>
 
 <p>The hype related to microservices continues. It’s already common knowledge that creating distributed systems is not easy. It’s high time to show how that complexity can be contained.</p>
 
@@ -183,11 +232,11 @@
 
 <h2 id="consumer-driven-contracts-like-tdd-to-the-api">Consumer Driven Contracts like TDD to the API</h2>
 
-<h3 id="type-2">Type</h3>
+<h3 id="type-4">Type</h3>
 
 <p><em>Presentation and live coding</em></p>
 
-<h3 id="abstract-2">Abstract</h3>
+<h3 id="abstract-4">Abstract</h3>
 
 <p>Consumer driven contracts (CDC) are like TDD applied to the API. It’s especially important in the world of microservices. Since it’s driven by consumers, it’s much more user friendly. Of course microservices are really cool, but most people do not take into consideration plenty of potential obstacles that should be tackled. Then instead of frequent, fully automated deploys via a delivery pipeline, you might end up in an asylum due to frequent mental breakdowns caused by production disasters.</p>
 
@@ -205,11 +254,11 @@ The presentation will consist of some theory but there’ll also be live coding 
 
 <h2 id="why-contract-tests-matter">Why Contract Tests Matter?</h2>
 
-<h3 id="type-3">Type</h3>
+<h3 id="type-5">Type</h3>
 
 <p><em>Live coding</em></p>
 
-<h3 id="abstract-3">Abstract</h3>
+<h3 id="abstract-5">Abstract</h3>
 
 <p>You are writing integration tests, aren’t you? Have you ever needed to stub the HTTP or a messaging call? Have your tests passed? That’s awesome, but it doesn’t mean that your application is working fine or that your system will not break on end to end tests.</p>
 
@@ -226,11 +275,11 @@ The presentation will consist of some theory but there’ll also be live coding 
 
 <h2 id="contract-tests-in-the-enterprise">Contract Tests in the Enterprise</h2>
 
-<h3 id="type-4">Type</h3>
+<h3 id="type-6">Type</h3>
 
 <p><em>Presentation</em></p>
 
-<h3 id="abstract-4">Abstract</h3>
+<h3 id="abstract-6">Abstract</h3>
 
 <p>Is your legacy application talking to a service that is never up and running on your shared testing environment? Does your company waste a lot of time and money on regression testing only to see that, yet again, someone has created a typo in the API? Enough is enough. Time to fix this problem using contract tests!</p>
 
@@ -246,11 +295,11 @@ The presentation will consist of some theory but there’ll also be live coding 
 
 <h2 id="testing-your-message-driven-application">Testing Your Message-Driven Application</h2>
 
-<h3 id="type-5">Type</h3>
+<h3 id="type-7">Type</h3>
 
 <p><em>Presentation and demo</em></p>
 
-<h3 id="abstract-5">Abstract</h3>
+<h3 id="abstract-7">Abstract</h3>
 
 <p>So you end up with messaging and event-driven architecture. You also have heard about event sourcing and applied this principle in a few places in your code. Everything seems to be working perfectly, you are about to perform the first release and you’ve decided to change the structure of one event. The event you have changed was both used for state reconstruction (event sourcing) and integration (event-driven architecture). Due to that change, out of a sudden, your acceptance environment stopped working… “How come?! I have only changed an implementation detail in my cool event-sourced domain!” said the senior developer.</p>
 
@@ -268,11 +317,11 @@ The presentation will consist of some theory but there’ll also be live coding 
 
 <h2 id="continuous-deployment-of-your-application">Continuous Deployment of Your Application</h2>
 
-<h3 id="type-6">Type</h3>
+<h3 id="type-8">Type</h3>
 
 <p><em>Presentation and demo</em></p>
 
-<h3 id="abstract-6">Abstract</h3>
+<h3 id="abstract-8">Abstract</h3>
 
 <p>“I have stopped counting how many times I’ve done this from scratch” - was one of the responses to the tweet about starting the project called Cloud Pipelines. Every company sets up a pipeline to take code from your source control, through unit testing and integration testing, to production from scratch. Every company creates some sort of automation to deploy its applications to servers. Enough is enough - time to automate that and focus on delivering business value.</p>
 
@@ -289,11 +338,11 @@ The presentation will consist of some theory but there’ll also be live coding 
 
 <h2 id="how-to-live-in-a-post-spring-cloud-netflix-world">How to live in a post-Spring-Cloud-Netflix world</h2>
 
-<h3 id="type-7">Type</h3>
+<h3 id="type-9">Type</h3>
 
 <p><em>Presentation and demo</em></p>
 
-<h3 id="abstract-7">Abstract</h3>
+<h3 id="abstract-9">Abstract</h3>
 
 <p>Zuul? Gateway? Should we get rid of Ribbon? What is going on with Hystrix? If you have ever faced those questions, come and listen to this talk. In December 2018, Netflix decided to move a number of their popular OSS projects, like Hystrix and Ribbon into maintenance mode and to make newer, backward incompatible versions of some others, like Zuul and Archaius. The Spring Cloud team moved some of the corresponding Spring-Cloud-Netflix projects into maintenance mode as well and proposed a newer, more modern Spring Cloud stack that could be used instead. During this talk, we would like to show how to move over to these newer solutions. We will discuss possible approaches, show a code demo and speak about potential issues and solutions.</p>
 
