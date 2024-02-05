@@ -11,6 +11,51 @@ Here you can find a list of abstracts to talks that I have given
 
 # English
 
+## Is your JVM app flying blind? Unmask hidden issues with Observability superpowers!
+
+### Type
+
+_Presentation and live coding_ - basic level
+
+### Abstract
+
+Struggling to debug latency, pinpoint bugs, or understand app behavior? This talk equips you with the ultimate Observability toolkit for your JVM-based application!
+
+Discover proven techniques to transform your application from opaque to transparent:
+
+- Add superpowers instantly: Learn how to seamlessly inject observability into existing applications.
+- Debug like a pro: Leverage metrics, distributed tracing, logs, and exemplars to pinpoint latency bottlenecks and hunt down elusive bugs.
+- See the unseen: Gain deep insights into application health, performance, and user experience, empowering data-driven decisions.
+
+Ready to unleash the full potential of your JVM app using the industry’s golden standard? Join this session and become an Observability Jedi!
+___
+
+## Micrometer Mastery: Unleash Advanced Observability in your JVM Apps 
+
+### Type
+
+_Presentation and live coding_ - advanced level
+
+### Abstract
+
+Is your application a black box? Is your current observability instrumentation not good enough? Do you want to add more to your metrics and distributed tracing? Join us and unlock the full potential of Micrometer and its cutting-edge observability features!
+
+Dive into:
+
+- Micrometer Observation API: Instrument once and have multiple benefits out of it.
+- Observation Conventions: Instrumentation with standardized naming and tagging.
+- Automated Documentation: Effortlessly generate rich observability descriptions from your code.
+
+We'll showcase:
+
+-Practical code examples for instrumenting real-world applications.
+-Advanced techniques to extract deeper insights and troubleshoot issues faster.
+-Real-world use cases demonstrating the power of Micrometer's observability toolkit.
+
+Ready to elevate your observability game using the industry’s golden standard? This talk is your one-stop shop for Micrometer mastery!
+
+___
+
 ## Tracing Issues in Your Application
 
 ### Type
