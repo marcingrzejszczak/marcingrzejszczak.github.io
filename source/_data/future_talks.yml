@@ -27,6 +27,14 @@
   status: CFP Submitted
   talks: Observing Issues in Your Application
 
+- date: 2024.06.04
+  eventName: JNation
+  city: Coimbra
+  country: Portugal
+  countryCode: pt
+  status: CFP Submitted
+  talks: Is your JVM app flying blind? Unmask hidden issues with Observability superpowers!
+
 - date: 2024.06.19
   eventName: Devoxx Poland
   city: Cracow
