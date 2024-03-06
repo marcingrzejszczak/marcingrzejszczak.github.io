@@ -27,12 +27,20 @@
   status: CFP Submitted
   talks: Observing Issues in Your Application
 
+- date: 2024.05.30
+  eventName: Spring IO
+  city: Barcelona
+  country: Spain
+  countryCode: es
+  status: CFP Submitted
+  talks: Is your JVM app flying blind? Unmask hidden issues with Observability superpowers!
+
 - date: 2024.06.04
   eventName: JNation
   city: Coimbra
   country: Portugal
   countryCode: pt
-  status: CFP Submitted
+  status: Accepted
   talks: Is your JVM app flying blind? Unmask hidden issues with Observability superpowers!
 
 - date: 2024.06.19
