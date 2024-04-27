@@ -1,20 +1,14 @@
-- date: 2024.04.17
-  eventName: O'Reilly Live Events
-  city: Online
-  country: Poland
-  countryCode: pl
-  talks: Java Microservices with Spring in 3 Weeks
-
-- date: 2024.04.24
-  eventName: O'Reilly Live Events
-  city: Online
-  country: Poland
-  countryCode: pl
-  talks: Java Microservices with Spring in 3 Weeks
-
 - date: 2024.05.14
   eventName: Geecon
   city: Cracow
+  country: Poland
+  countryCode: pl
+  status: Accepted
+  talks: Observability of Your Application
+
+- date: 2024.05.22
+  eventName: JUG Lodz
+  city: Lodz
   country: Poland
   countryCode: pl
   status: Accepted
