@@ -28,6 +28,7 @@ Discover proven techniques to transform your application from opaque to transpar
 - See the unseen: Gain deep insights into application health, performance, and user experience, empowering data-driven decisions.
 
 Ready to unleash the full potential of your JVM app using the industry’s golden standard? Join this session and become an Observability Jedi!
+
 ___
 
 ## Micrometer Mastery: Unleash Advanced Observability in your JVM Apps 
@@ -49,8 +50,7 @@ Dive into:
 We'll showcase:
 
 -Practical code examples for instrumenting real-world applications.
--Advanced techniques to extract deeper insights and troubleshoot issues faster.
--Real-world use cases demonstrating the power of Micrometer's observability toolkit.
+-Advanced techniques Portugal.
 
 Ready to elevate your observability game using the industry’s golden standard? This talk is your one-stop shop for Micrometer mastery!
 
