@@ -1,105 +1,105 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="https://toomuchcoding.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://toomuchcoding.com/" rel="alternate" type="text/html" /><updated>2024-04-27T10:02:40+02:00</updated><id>https://toomuchcoding.com/feed.xml</id><title type="html">TOO MUCH CODING</title><subtitle>A blog for coding addicts about Java, Groovy, Buzzword, Spring, Microservices, Buzzword</subtitle><author><name>Marcin Grzejszczak</name></author><entry><title type="html">Migrating To Mastodon</title><link href="https://toomuchcoding.com/articles/2022/07/11/migrating-to-mastodon/" rel="alternate" type="text/html" title="Migrating To Mastodon" /><published>2022-07-11T22:30:00+02:00</published><updated>2022-07-11T22:30:00+02:00</updated><id>https://toomuchcoding.com/articles/2022/07/11/migrating-to-mastodon</id><content type="html" xml:base="https://toomuchcoding.com/articles/2022/07/11/migrating-to-mastodon/"><![CDATA[<p>I’m moving away from <a href="https://twitter.com/mgrzejszczak">Twitter</a> to <a href="https://fosstodon.org/@toomuchcoding">Mastodon</a>. I’m not deleting my account at Twitter, but I’m not planning to be too active there.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="https://toomuchcoding.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://toomuchcoding.com/" rel="alternate" type="text/html" /><updated>2024-05-06T14:25:36+02:00</updated><id>https://toomuchcoding.com/feed.xml</id><title type="html">TOO MUCH CODING</title><subtitle>A blog for coding addicts about Java, Groovy, Buzzword, Spring, Microservices, Buzzword</subtitle><author><name>Marcin Grzejszczak</name></author><entry><title type="html">Migrating To Mastodon</title><link href="https://toomuchcoding.com/articles/2022/07/11/migrating-to-mastodon/" rel="alternate" type="text/html" title="Migrating To Mastodon" /><published>2022-07-11T22:30:00+02:00</published><updated>2022-07-11T22:30:00+02:00</updated><id>https://toomuchcoding.com/articles/2022/07/11/migrating-to-mastodon</id><content type="html" xml:base="https://toomuchcoding.com/articles/2022/07/11/migrating-to-mastodon/">&lt;p&gt;I’m moving away from &lt;a href=&quot;https://twitter.com/mgrzejszczak&quot;&gt;Twitter&lt;/a&gt; to &lt;a href=&quot;https://fosstodon.org/@toomuchcoding&quot;&gt;Mastodon&lt;/a&gt;. I’m not deleting my account at Twitter, but I’m not planning to be too active there.&lt;/p&gt;
 
-<p>If you want to learn about what Mastodon is and how it differs from Twitter you can read <a href="https://2ality.com/2022/10/mastodon-getting-started.html">this excellent article</a>.</p>]]></content><author><name>Marcin Grzejszczak</name></author><category term="articles" /><category term="Twitter" /><category term="Mastodon" /><summary type="html"><![CDATA[I’m moving away from Twitter to Mastodon. I’m not deleting my account at Twitter, but I’m not planning to be too active there. If you want to learn about what Mastodon is and how it differs from Twitter you can read this excellent article.]]></summary></entry><entry><title type="html">Spring Cloud Sleuth 3.1.0 released</title><link href="https://toomuchcoding.com/articles/2021/12/02/spring-cloud-sleuth-3-1-0-released/" rel="alternate" type="text/html" title="Spring Cloud Sleuth 3.1.0 released" /><published>2021-12-02T09:30:00+01:00</published><updated>2021-12-02T09:30:00+01:00</updated><id>https://toomuchcoding.com/articles/2021/12/02/spring-cloud-sleuth-3-1-0-released</id><content type="html" xml:base="https://toomuchcoding.com/articles/2021/12/02/spring-cloud-sleuth-3-1-0-released/"><![CDATA[<p>I’m super happy to announce the general availability of Spring Cloud Sleuth 3.1.0 within the 2021.0.0 (Jubilee) release train. We’ve added TONS of new features so please check out <a href="https://spring.io/blog/2021/12/07/spring-cloud-sleuth-3-1-0-is-out">this blog post at the Spring.io blog</a> where we explain the details of this release. We would be more than happy to see your new tracing graphs! Visit our <a href="https://gitter.im/spring-cloud/spring-cloud-sleuth">Gitter channel</a> and paste your screenshots there!</p>]]></content><author><name>Marcin Grzejszczak</name></author><category term="articles" /><category term="observability" /><category term="tracing" /><category term="Spring Cloud Sleuth" /><category term="OpenZipkin" /><category term="Brave" /><category term="OpenTelemetry" /><category term="Tanzu Observability by Wavefront" /><summary type="html"><![CDATA[I’m super happy to announce the general availability of Spring Cloud Sleuth 3.1.0 within the 2021.0.0 (Jubilee) release train. We’ve added TONS of new features so please check out this blog post at the Spring.io blog where we explain the details of this release. We would be more than happy to see your new tracing graphs! Visit our Gitter channel and paste your screenshots there!]]></summary></entry><entry><title type="html">Spring Cloud Sleuth 3.0.0 released</title><link href="https://toomuchcoding.com/articles/2021/01/04/spring-cloud-sleuth-3-0-0-released/" rel="alternate" type="text/html" title="Spring Cloud Sleuth 3.0.0 released" /><published>2021-01-04T16:11:00+01:00</published><updated>2021-01-04T16:11:00+01:00</updated><id>https://toomuchcoding.com/articles/2021/01/04/spring-cloud-sleuth-3-0-0-released</id><content type="html" xml:base="https://toomuchcoding.com/articles/2021/01/04/spring-cloud-sleuth-3-0-0-released/"><![CDATA[<p>With the release of the Spring Cloud 2020.0.0 (aka Ilford) release train we’re more than happy to announce the general availability of Spring Cloud Sleuth 3.0.0. In this blog post I’ll describe the most notable released features (in order of their release dates).</p>
+&lt;p&gt;If you want to learn about what Mastodon is and how it differs from Twitter you can read &lt;a href=&quot;https://2ality.com/2022/10/mastodon-getting-started.html&quot;&gt;this excellent article&lt;/a&gt;.&lt;/p&gt;</content><author><name>Marcin Grzejszczak</name></author><category term="articles" /><category term="Twitter" /><category term="Mastodon" /><summary type="html">I’m moving away from Twitter to Mastodon. I’m not deleting my account at Twitter, but I’m not planning to be too active there. If you want to learn about what Mastodon is and how it differs from Twitter you can read this excellent article.</summary></entry><entry><title type="html">Spring Cloud Sleuth 3.1.0 released</title><link href="https://toomuchcoding.com/articles/2021/12/02/spring-cloud-sleuth-3-1-0-released/" rel="alternate" type="text/html" title="Spring Cloud Sleuth 3.1.0 released" /><published>2021-12-02T09:30:00+01:00</published><updated>2021-12-02T09:30:00+01:00</updated><id>https://toomuchcoding.com/articles/2021/12/02/spring-cloud-sleuth-3-1-0-released</id><content type="html" xml:base="https://toomuchcoding.com/articles/2021/12/02/spring-cloud-sleuth-3-1-0-released/">&lt;p&gt;I’m super happy to announce the general availability of Spring Cloud Sleuth 3.1.0 within the 2021.0.0 (Jubilee) release train. We’ve added TONS of new features so please check out &lt;a href=&quot;https://spring.io/blog/2021/12/07/spring-cloud-sleuth-3-1-0-is-out&quot;&gt;this blog post at the Spring.io blog&lt;/a&gt; where we explain the details of this release. We would be more than happy to see your new tracing graphs! Visit our &lt;a href=&quot;https://gitter.im/spring-cloud/spring-cloud-sleuth&quot;&gt;Gitter channel&lt;/a&gt; and paste your screenshots there!&lt;/p&gt;</content><author><name>Marcin Grzejszczak</name></author><category term="articles" /><category term="observability" /><category term="tracing" /><category term="Spring Cloud Sleuth" /><category term="OpenZipkin" /><category term="Brave" /><category term="OpenTelemetry" /><category term="Tanzu Observability by Wavefront" /><summary type="html">I’m super happy to announce the general availability of Spring Cloud Sleuth 3.1.0 within the 2021.0.0 (Jubilee) release train. We’ve added TONS of new features so please check out this blog post at the Spring.io blog where we explain the details of this release. We would be more than happy to see your new tracing graphs! Visit our Gitter channel and paste your screenshots there!</summary></entry><entry><title type="html">Spring Cloud Sleuth 3.0.0 released</title><link href="https://toomuchcoding.com/articles/2021/01/04/spring-cloud-sleuth-3-0-0-released/" rel="alternate" type="text/html" title="Spring Cloud Sleuth 3.0.0 released" /><published>2021-01-04T16:11:00+01:00</published><updated>2021-01-04T16:11:00+01:00</updated><id>https://toomuchcoding.com/articles/2021/01/04/spring-cloud-sleuth-3-0-0-released</id><content type="html" xml:base="https://toomuchcoding.com/articles/2021/01/04/spring-cloud-sleuth-3-0-0-released/">&lt;p&gt;With the release of the Spring Cloud 2020.0.0 (aka Ilford) release train we’re more than happy to announce the general availability of Spring Cloud Sleuth 3.0.0. In this blog post I’ll describe the most notable released features (in order of their release dates).&lt;/p&gt;
 
-<!--more-->
+&lt;!--more--&gt;
 
-<h2 id="removes-deprecated-modules">Removes Deprecated Modules</h2>
+&lt;h2 id=&quot;removes-deprecated-modules&quot;&gt;Removes Deprecated Modules&lt;/h2&gt;
 
-<p>Removes ribbon, zuul, hystrix and Spring Cloud Aws support. Check this <a href="https://github.com/spring-cloud/spring-cloud-sleuth/pull/1533">PR for more information</a>.</p>
+&lt;p&gt;Removes ribbon, zuul, hystrix and Spring Cloud Aws support. Check this &lt;a href=&quot;https://github.com/spring-cloud/spring-cloud-sleuth/pull/1533&quot;&gt;PR for more information&lt;/a&gt;.&lt;/p&gt;
 
-<h2 id="removes-zipkin-dependencies-from-core">Removes Zipkin Dependencies from Core</h2>
+&lt;h2 id=&quot;removes-zipkin-dependencies-from-core&quot;&gt;Removes Zipkin Dependencies from Core&lt;/h2&gt;
 
-<p>Zipkin is no longer a part of core of Sleuth. You can check out more in <a href="https://github.com/spring-cloud/spring-cloud-sleuth/pull/1649">this PR</a>.</p>
+&lt;p&gt;Zipkin is no longer a part of core of Sleuth. You can check out more in &lt;a href=&quot;https://github.com/spring-cloud/spring-cloud-sleuth/pull/1649&quot;&gt;this PR&lt;/a&gt;.&lt;/p&gt;
 
-<h2 id="added-manual-reactor-instrumentation">Added MANUAL Reactor Instrumentation</h2>
+&lt;h2 id=&quot;added-manual-reactor-instrumentation&quot;&gt;Added MANUAL Reactor Instrumentation&lt;/h2&gt;
 
-<p>Up till now we’ve been supporting <code>ON_EACH</code> and <code>ON_LAST</code> Reactor instrumentation modes. That means that we would wrap every single Reactor operator (<code>ON_EACH</code>) or the last operator (<code>ON_LAST</code>). Those wrappings would do their best to put trace related entries in such a way that thread local based instrumentations would work out of the box (e.g. the MDC context, <code>Tracer.currentSpan()</code> etc.). The problem was that on each wrapping downgraded performance drastically and worked most of the time. The on last operator wrapping downgraded performance a lot and worked sometimes. Both had their issues when <code>flatMap</code> operators were called and thread switching took place.</p>
+&lt;p&gt;Up till now we’ve been supporting &lt;code&gt;ON_EACH&lt;/code&gt; and &lt;code&gt;ON_LAST&lt;/code&gt; Reactor instrumentation modes. That means that we would wrap every single Reactor operator (&lt;code&gt;ON_EACH&lt;/code&gt;) or the last operator (&lt;code&gt;ON_LAST&lt;/code&gt;). Those wrappings would do their best to put trace related entries in such a way that thread local based instrumentations would work out of the box (e.g. the MDC context, &lt;code&gt;Tracer.currentSpan()&lt;/code&gt; etc.). The problem was that on each wrapping downgraded performance drastically and worked most of the time. The on last operator wrapping downgraded performance a lot and worked sometimes. Both had their issues when &lt;code&gt;flatMap&lt;/code&gt; operators were called and thread switching took place.&lt;/p&gt;
 
-<p>With <a href="https://github.com/spring-cloud/spring-cloud-sleuth/commit/bd149ce4a7c2154fe8526394d14b6ab89addd62e">this commit</a> we’ve introduced the manual way of instrumenting Reactor. We came to the conclusion that the thread local based paradigm doesn’t work well with Reactor. We can’t guess for the user what they really want to achieve and which operators should be wrapped. That’s why with the <code>MANUAL</code> instrumentation mode you can use the <code>WebFluxSleuthOperators</code> or <code>MessagingSleuthOperators</code> to provide a lambda that should have the tracing context set in thread local.</p>
+&lt;p&gt;With &lt;a href=&quot;https://github.com/spring-cloud/spring-cloud-sleuth/commit/bd149ce4a7c2154fe8526394d14b6ab89addd62e&quot;&gt;this commit&lt;/a&gt; we’ve introduced the manual way of instrumenting Reactor. We came to the conclusion that the thread local based paradigm doesn’t work well with Reactor. We can’t guess for the user what they really want to achieve and which operators should be wrapped. That’s why with the &lt;code&gt;MANUAL&lt;/code&gt; instrumentation mode you can use the &lt;code&gt;WebFluxSleuthOperators&lt;/code&gt; or &lt;code&gt;MessagingSleuthOperators&lt;/code&gt; to provide a lambda that should have the tracing context set in thread local.&lt;/p&gt;
 
-<h2 id="manual-reactor-instrumentation-default-in-spring-cloud-gateway">MANUAL Reactor Instrumentation Default in Spring Cloud Gateway</h2>
+&lt;h2 id=&quot;manual-reactor-instrumentation-default-in-spring-cloud-gateway&quot;&gt;MANUAL Reactor Instrumentation Default in Spring Cloud Gateway&lt;/h2&gt;
 
-<p>With <a href="https://github.com/spring-cloud/spring-cloud-sleuth/issues/1710">this issue</a> we’re setting the manual instrumentation as the default one for Spring Cloud Gateway. The performance gets drastically improved and the tracing context still gets automatically propagated. If you need to do some customized logging etc. just use the <code>WebFluxSleuthOperators</code>.</p>
+&lt;p&gt;With &lt;a href=&quot;https://github.com/spring-cloud/spring-cloud-sleuth/issues/1710&quot;&gt;this issue&lt;/a&gt; we’re setting the manual instrumentation as the default one for Spring Cloud Gateway. The performance gets drastically improved and the tracing context still gets automatically propagated. If you need to do some customized logging etc. just use the &lt;code&gt;WebFluxSleuthOperators&lt;/code&gt;.&lt;/p&gt;
 
-<h2 id="remove-the-legacy-mdc-entries">Remove The Legacy MDC Entries</h2>
+&lt;h2 id=&quot;remove-the-legacy-mdc-entries&quot;&gt;Remove The Legacy MDC Entries&lt;/h2&gt;
 
-<p><a href="https://github.com/spring-cloud/spring-cloud-sleuth/issues/1221">This issue</a> introduces a change in the MDC keys (no more <code>X-B3-...</code> entries in MDC).</p>
+&lt;p&gt;&lt;a href=&quot;https://github.com/spring-cloud/spring-cloud-sleuth/issues/1221&quot;&gt;This issue&lt;/a&gt; introduces a change in the MDC keys (no more &lt;code&gt;X-B3-...&lt;/code&gt; entries in MDC).&lt;/p&gt;
 
-<p>Before</p>
+&lt;p&gt;Before&lt;/p&gt;
 
-<pre><code>2019-06-27 19:36:11,774 INFO {X-B3-SpanId=e30b6a75bcff782b, X-B3-TraceId=e30b6a75bcff782b, X-Span-Export=false, spanExportable=false, spanId=e30b6a75bcff782b, traceId=e30b6a75bcff782b} some log!
-</code></pre>
+&lt;pre&gt;&lt;code&gt;2019-06-27 19:36:11,774 INFO {X-B3-SpanId=e30b6a75bcff782b, X-B3-TraceId=e30b6a75bcff782b, X-Span-Export=false, spanExportable=false, spanId=e30b6a75bcff782b, traceId=e30b6a75bcff782b} some log!
+&lt;/code&gt;&lt;/pre&gt;
 
-<p>After</p>
+&lt;p&gt;After&lt;/p&gt;
 
-<pre><code>2019-06-27 19:36:11,774 INFO {spanId=e30b6a75bcff782b, traceId=e30b6a75bcff782b} some log!
-</code></pre>
+&lt;pre&gt;&lt;code&gt;2019-06-27 19:36:11,774 INFO {spanId=e30b6a75bcff782b, traceId=e30b6a75bcff782b} some log!
+&lt;/code&gt;&lt;/pre&gt;
 
-<h2 id="code-refactoring">Code Refactoring</h2>
+&lt;h2 id=&quot;code-refactoring&quot;&gt;Code Refactoring&lt;/h2&gt;
 
-<h3 id="removing-zipkin-starter">Removing Zipkin Starter</h3>
+&lt;h3 id=&quot;removing-zipkin-starter&quot;&gt;Removing Zipkin Starter&lt;/h3&gt;
 
-<p>The <code>spring-cloud-starter-zipkin</code> dependency is removed. You need to add <code>spring-cloud-starter-sleuth</code> and the <code>spring-cloud-sleuth-zipkin</code> dependency.</p>
+&lt;p&gt;The &lt;code&gt;spring-cloud-starter-zipkin&lt;/code&gt; dependency is removed. You need to add &lt;code&gt;spring-cloud-starter-sleuth&lt;/code&gt; and the &lt;code&gt;spring-cloud-sleuth-zipkin&lt;/code&gt; dependency.&lt;/p&gt;
 
-<h3 id="new-tracer-abstraction">New Tracer Abstraction</h3>
+&lt;h3 id=&quot;new-tracer-abstraction&quot;&gt;New Tracer Abstraction&lt;/h3&gt;
 
-<p>OpenZipkin Brave was there in Sleuth’s code as the main abstraction since Sleuth 2.0.0. We’ve decided that with Sleuth 3.0.0 we can create our own abstraction (as we do in each Spring Cloud project) so that OpenZipkin Brave becomes one of the supported tracer implementations.</p>
+&lt;p&gt;OpenZipkin Brave was there in Sleuth’s code as the main abstraction since Sleuth 2.0.0. We’ve decided that with Sleuth 3.0.0 we can create our own abstraction (as we do in each Spring Cloud project) so that OpenZipkin Brave becomes one of the supported tracer implementations.&lt;/p&gt;
 
-<p>With <a href="https://github.com/spring-cloud/spring-cloud-sleuth/pull/1757">this PR</a> we’ve introduced a new abstraction that wraps Brave. We also added support for another tracer - <a href="https://github.com/spring-cloud/spring-cloud-sleuth/issues/1497">OpenTelemetry</a>.</p>
+&lt;p&gt;With &lt;a href=&quot;https://github.com/spring-cloud/spring-cloud-sleuth/pull/1757&quot;&gt;this PR&lt;/a&gt; we’ve introduced a new abstraction that wraps Brave. We also added support for another tracer - &lt;a href=&quot;https://github.com/spring-cloud/spring-cloud-sleuth/issues/1497&quot;&gt;OpenTelemetry&lt;/a&gt;.&lt;/p&gt;
 
-<h3 id="aligning-with-spring-boot">Aligning with Spring Boot</h3>
+&lt;h3 id=&quot;aligning-with-spring-boot&quot;&gt;Aligning with Spring Boot&lt;/h3&gt;
 
-<p>With <a href="https://github.com/spring-cloud/spring-cloud-sleuth/pull/1762">this PR</a> and <a href="https://github.com/spring-cloud/spring-cloud-sleuth/pull/1784">that PR</a> we’ve refactored Spring Cloud Sleuth to reflect Spring Boot’s module setup. We’ve split the project into API, instrumentations, auto-configurations etc. Also the documentation layout was updated to look in the same way the Spring Boot one does.</p>
+&lt;p&gt;With &lt;a href=&quot;https://github.com/spring-cloud/spring-cloud-sleuth/pull/1762&quot;&gt;this PR&lt;/a&gt; and &lt;a href=&quot;https://github.com/spring-cloud/spring-cloud-sleuth/pull/1784&quot;&gt;that PR&lt;/a&gt; we’ve refactored Spring Cloud Sleuth to reflect Spring Boot’s module setup. We’ve split the project into API, instrumentations, auto-configurations etc. Also the documentation layout was updated to look in the same way the Spring Boot one does.&lt;/p&gt;
 
-<h2 id="opentelemetry-support">OpenTelemetry support</h2>
+&lt;h2 id=&quot;opentelemetry-support&quot;&gt;OpenTelemetry support&lt;/h2&gt;
 
-<p>Initially, with <a href="https://github.com/spring-cloud/spring-cloud-sleuth/commit/6e306e594d20361483fd19739e0f5f8e82354bf5">this commit</a>, we’ve added a <code>spring-cloud-sleuth-otel</code> module inside Spring Cloud Sleuth that introduced <a href="https://opentelemetry.io">OpenTelemetry</a> support.</p>
+&lt;p&gt;Initially, with &lt;a href=&quot;https://github.com/spring-cloud/spring-cloud-sleuth/commit/6e306e594d20361483fd19739e0f5f8e82354bf5&quot;&gt;this commit&lt;/a&gt;, we’ve added a &lt;code&gt;spring-cloud-sleuth-otel&lt;/code&gt; module inside Spring Cloud Sleuth that introduced &lt;a href=&quot;https://opentelemetry.io&quot;&gt;OpenTelemetry&lt;/a&gt; support.&lt;/p&gt;
 
-<p>With <a href="https://github.com/spring-cloud/spring-cloud-sleuth/pull/1802">this PR</a> we’ve decided to move Spring Cloud Sleuth and OpenTelemetry integration to an <a href="https://github.com/spring-cloud-incubator/spring-cloud-sleuth-otel/">incubator project</a>. Once OpenTelemetry &amp; OpenTelemetry Instrumentation projects become stable we will consider next steps.</p>
+&lt;p&gt;With &lt;a href=&quot;https://github.com/spring-cloud/spring-cloud-sleuth/pull/1802&quot;&gt;this PR&lt;/a&gt; we’ve decided to move Spring Cloud Sleuth and OpenTelemetry integration to an &lt;a href=&quot;https://github.com/spring-cloud-incubator/spring-cloud-sleuth-otel/&quot;&gt;incubator project&lt;/a&gt;. Once OpenTelemetry &amp;amp; OpenTelemetry Instrumentation projects become stable we will consider next steps.&lt;/p&gt;
 
-<h1 id="links">Links</h1>
+&lt;h1 id=&quot;links&quot;&gt;Links&lt;/h1&gt;
 
-<ul>
-  <li><a href="https://docs.spring.io/spring-cloud-sleuth/docs/3.0.0/reference/html/">Spring Cloud Sleuth 3.0.0 docs</a></li>
-  <li><a href="https://github.com/spring-cloud-incubator/spring-cloud-sleuth-otel/">Spring Cloud Sleuth OpenTelemetry project</a></li>
-  <li><a href="https://spring-cloud-incubator.github.io/spring-cloud-sleuth-otel/docs/current/reference/html/index.html">Spring Cloud Sleuth OpenTelemetry docs</a></li>
-  <li><a href="https://github.com/spring-cloud/spring-cloud-release/wiki/Spring-Cloud-2020.0-Release-Notes#spring-cloud-sleuth">Spring Cloud Sleuth 3.0.0 release notes</a></li>
-  <li><a href="https://github.com/spring-cloud/spring-cloud-sleuth/wiki/Spring-Cloud-Sleuth-3.0-Migration-Guide">Spring Cloud Sleuth 3.0.0 migration guide</a></li>
-</ul>
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://docs.spring.io/spring-cloud-sleuth/docs/3.0.0/reference/html/&quot;&gt;Spring Cloud Sleuth 3.0.0 docs&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/spring-cloud-incubator/spring-cloud-sleuth-otel/&quot;&gt;Spring Cloud Sleuth OpenTelemetry project&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://spring-cloud-incubator.github.io/spring-cloud-sleuth-otel/docs/current/reference/html/index.html&quot;&gt;Spring Cloud Sleuth OpenTelemetry docs&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/spring-cloud/spring-cloud-release/wiki/Spring-Cloud-2020.0-Release-Notes#spring-cloud-sleuth&quot;&gt;Spring Cloud Sleuth 3.0.0 release notes&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/spring-cloud/spring-cloud-sleuth/wiki/Spring-Cloud-Sleuth-3.0-Migration-Guide&quot;&gt;Spring Cloud Sleuth 3.0.0 migration guide&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
-<h2 id="stay-in-touch">Stay in touch!</h2>
+&lt;h2 id=&quot;stay-in-touch&quot;&gt;Stay in touch!&lt;/h2&gt;
 
-<p>In case of any questions don’t hesitate to ping us</p>
+&lt;p&gt;In case of any questions don’t hesitate to ping us&lt;/p&gt;
 
-<ul>
-  <li>On <a href="https://github.com/spring-cloud/spring-cloud-sleuth/">Github</a></li>
-  <li>On <a href="https://gitter.im/spring-cloud/spring-cloud-sleuth">Gitter</a></li>
-  <li>On <a href="https://stackoverflow.com/questions/tagged/spring-cloud-sleuth">Stackoverflow</a></li>
-</ul>]]></content><author><name>Marcin Grzejszczak</name></author><category term="articles" /><category term="observability" /><category term="tracing" /><category term="Spring Cloud Sleuth" /><category term="OpenZipkin" /><category term="Brave" /><category term="OpenTelemetry" /><summary type="html"><![CDATA[With the release of the Spring Cloud 2020.0.0 (aka Ilford) release train we’re more than happy to announce the general availability of Spring Cloud Sleuth 3.0.0. In this blog post I’ll describe the most notable released features (in order of their release dates).]]></summary></entry><entry><title type="html">Spring Cloud Contract 3.0.0 released</title><link href="https://toomuchcoding.com/articles/2020/12/23/spring-cloud-contract-3-0-0-released/" rel="alternate" type="text/html" title="Spring Cloud Contract 3.0.0 released" /><published>2020-12-23T14:58:00+01:00</published><updated>2020-12-23T14:58:00+01:00</updated><id>https://toomuchcoding.com/articles/2020/12/23/spring-cloud-contract-3-0-0-released</id><content type="html" xml:base="https://toomuchcoding.com/articles/2020/12/23/spring-cloud-contract-3-0-0-released/"><![CDATA[<p>With the release of the Spring Cloud 2020.0.0 (aka Ilford) release train we’re more than happy to announce the general availability of Spring Cloud Contract 3.0.0. In this blog post I’ll describe the most notable released features (in order of their release dates).</p>
+&lt;ul&gt;
+  &lt;li&gt;On &lt;a href=&quot;https://github.com/spring-cloud/spring-cloud-sleuth/&quot;&gt;Github&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;On &lt;a href=&quot;https://gitter.im/spring-cloud/spring-cloud-sleuth&quot;&gt;Gitter&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;On &lt;a href=&quot;https://stackoverflow.com/questions/tagged/spring-cloud-sleuth&quot;&gt;Stackoverflow&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Marcin Grzejszczak</name></author><category term="articles" /><category term="observability" /><category term="tracing" /><category term="Spring Cloud Sleuth" /><category term="OpenZipkin" /><category term="Brave" /><category term="OpenTelemetry" /><summary type="html">With the release of the Spring Cloud 2020.0.0 (aka Ilford) release train we’re more than happy to announce the general availability of Spring Cloud Sleuth 3.0.0. In this blog post I’ll describe the most notable released features (in order of their release dates).</summary></entry><entry><title type="html">Spring Cloud Contract 3.0.0 released</title><link href="https://toomuchcoding.com/articles/2020/12/23/spring-cloud-contract-3-0-0-released/" rel="alternate" type="text/html" title="Spring Cloud Contract 3.0.0 released" /><published>2020-12-23T14:58:00+01:00</published><updated>2020-12-23T14:58:00+01:00</updated><id>https://toomuchcoding.com/articles/2020/12/23/spring-cloud-contract-3-0-0-released</id><content type="html" xml:base="https://toomuchcoding.com/articles/2020/12/23/spring-cloud-contract-3-0-0-released/">&lt;p&gt;With the release of the Spring Cloud 2020.0.0 (aka Ilford) release train we’re more than happy to announce the general availability of Spring Cloud Contract 3.0.0. In this blog post I’ll describe the most notable released features (in order of their release dates).&lt;/p&gt;
 
-<!--more-->
+&lt;!--more--&gt;
 
-<h2 id="incremental-test-generation-for-maven">Incremental Test Generation for Maven</h2>
+&lt;h2 id=&quot;incremental-test-generation-for-maven&quot;&gt;Incremental Test Generation for Maven&lt;/h2&gt;
 
-<p>With the <a href="https://github.com/spring-cloud/spring-cloud-contract/pull/1361">Incremental Test Generation for Maven</a> we’re generating tests, stubs and stubs jar only if the contracts have changed. The feature is opt-out (enabled by default).</p>
+&lt;p&gt;With the &lt;a href=&quot;https://github.com/spring-cloud/spring-cloud-contract/pull/1361&quot;&gt;Incremental Test Generation for Maven&lt;/a&gt; we’re generating tests, stubs and stubs jar only if the contracts have changed. The feature is opt-out (enabled by default).&lt;/p&gt;
 
-<h2 id="resolves-credentials-from-settingsxml">Resolves Credentials from settings.xml</h2>
+&lt;h2 id=&quot;resolves-credentials-from-settingsxml&quot;&gt;Resolves Credentials from settings.xml&lt;/h2&gt;
 
-<p>With the <a href="https://github.com/spring-cloud/spring-cloud-contract/pull/1362">
-support to resolve credentials from settings.xml</a> when using Aether based solution to fetch the contracts / stubs, we will reuse your <code>settings.xml</code> credentials for the given server id (via the <code>stubrunner.server-id </code> property).</p>
+&lt;p&gt;With the &lt;a href=&quot;https://github.com/spring-cloud/spring-cloud-contract/pull/1362&quot;&gt;
+support to resolve credentials from settings.xml&lt;/a&gt; when using Aether based solution to fetch the contracts / stubs, we will reuse your &lt;code&gt;settings.xml&lt;/code&gt; credentials for the given server id (via the &lt;code&gt;stubrunner.server-id &lt;/code&gt; property).&lt;/p&gt;
 
-<h2 id="rewrite-groovy-to-java">Rewrite Groovy to Java</h2>
+&lt;h2 id=&quot;rewrite-groovy-to-java&quot;&gt;Rewrite Groovy to Java&lt;/h2&gt;
 
-<p>It was fantastic to see so many people take part in rewriting the Spring Cloud Contract’s codebase from Groovy to Java. You can check <a href="https://github.com/spring-cloud/spring-cloud-contract/issues/1470">this issue</a> for more information.</p>
+&lt;p&gt;It was fantastic to see so many people take part in rewriting the Spring Cloud Contract’s codebase from Groovy to Java. You can check &lt;a href=&quot;https://github.com/spring-cloud/spring-cloud-contract/issues/1470&quot;&gt;this issue&lt;/a&gt; for more information.&lt;/p&gt;
 
-<h2 id="allow-to-extend-contract--stubs">Allow to Extend Contract &amp; Stubs</h2>
+&lt;h2 id=&quot;allow-to-extend-contract--stubs&quot;&gt;Allow to Extend Contract &amp;amp; Stubs&lt;/h2&gt;
 
-<p>With <a href="https://github.com/spring-cloud/spring-cloud-contract/issues/1465">this issue</a> and this <a href="https://github.com/spring-cloud/spring-cloud-contract/pull/1466">pull request</a> we’ve added an option to provide <code>metadata</code> to your contracts. Since we didn’t want to map all WireMock properties to the core of our Contract definition, we’ve allowed passing of metadata under the <code>wiremock</code> key. The passed value can be an actual WireMock definition. We will map that part to the generated stub.</p>
+&lt;p&gt;With &lt;a href=&quot;https://github.com/spring-cloud/spring-cloud-contract/issues/1465&quot;&gt;this issue&lt;/a&gt; and this &lt;a href=&quot;https://github.com/spring-cloud/spring-cloud-contract/pull/1466&quot;&gt;pull request&lt;/a&gt; we’ve added an option to provide &lt;code&gt;metadata&lt;/code&gt; to your contracts. Since we didn’t want to map all WireMock properties to the core of our Contract definition, we’ve allowed passing of metadata under the &lt;code&gt;wiremock&lt;/code&gt; key. The passed value can be an actual WireMock definition. We will map that part to the generated stub.&lt;/p&gt;
 
-<p>Example of adding delays:</p>
+&lt;p&gt;Example of adding delays:&lt;/p&gt;
 
-<pre><code class="language-groovy">Contract.make {
+&lt;pre&gt;&lt;code class=&quot;language-groovy&quot;&gt;Contract.make {
 		request {
 			method GET()
 			url '/drunks'
@@ -110,76 +110,76 @@ support to resolve credentials from settings.xml</a> when using Aether based sol
 				count: 100
 			])
 			headers {
-				contentType("application/json")
+				contentType(&quot;application/json&quot;)
 			}
 		}
 		metadata([wiremock: '''\
 	{
-		"response" : {
-			"delayDistribution": {
-                    "type": "lognormal",
-                    "median": 80,
-                    "sigma": 0.4
+		&quot;response&quot; : {
+			&quot;delayDistribution&quot;: {
+                    &quot;type&quot;: &quot;lognormal&quot;,
+                    &quot;median&quot;: 80,
+                    &quot;sigma&quot;: 0.4
             }
 		}
 	}
 '''
 		])
-</code></pre>
+&lt;/code&gt;&lt;/pre&gt;
 
-<p>That also means that you can provide your own metadata. You can read more about this in the documentation</p>
+&lt;p&gt;That also means that you can provide your own metadata. You can read more about this in the documentation&lt;/p&gt;
 
-<ul>
-  <li><a href="https://docs.spring.io/spring-cloud-contract/docs/3.0.0/reference/html/project-features.html#contract-dsl-metadata">existing metadata entries</a></li>
-  <li><a href="https://docs.spring.io/spring-cloud-contract/docs/3.0.0/reference/htmlsingle/#customization-wiremock-from-metadata">customization of WireMock via metadata</a></li>
-  <li><a href="https://docs.spring.io/spring-cloud-contract/docs/3.0.0/reference/htmlsingle/#customization-wiremock-from-metadata-custom-processor">customization of WireMock via metadata &amp; custom post processor</a></li>
-</ul>
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://docs.spring.io/spring-cloud-contract/docs/3.0.0/reference/html/project-features.html#contract-dsl-metadata&quot;&gt;existing metadata entries&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://docs.spring.io/spring-cloud-contract/docs/3.0.0/reference/htmlsingle/#customization-wiremock-from-metadata&quot;&gt;customization of WireMock via metadata&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://docs.spring.io/spring-cloud-contract/docs/3.0.0/reference/htmlsingle/#customization-wiremock-from-metadata-custom-processor&quot;&gt;customization of WireMock via metadata &amp;amp; custom post processor&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
-<h2 id="new-custom-mode-of-test-generation">New [Custom] Mode of Test Generation</h2>
+&lt;h2 id=&quot;new-custom-mode-of-test-generation&quot;&gt;New [Custom] Mode of Test Generation&lt;/h2&gt;
 
-<p>With <a href="https://github.com/spring-cloud/spring-cloud-contract/pull/1511">this pr</a> we’ve introduced a new <code>custom</code> mode of test generation. You’re able to pass your own implementation of an HTTP client (you can reuse our <code>OkHttpHttpVerifier</code>), thanks to which you can e.g. use HTTP/2. This was a prerequisite for the GRPC task. Thanks to the Spring Cloud Contract Workshops and the following refactoring of Spring Cloud Contract it was quite easy to add this feature, so thanks everyone involved then!</p>
+&lt;p&gt;With &lt;a href=&quot;https://github.com/spring-cloud/spring-cloud-contract/pull/1511&quot;&gt;this pr&lt;/a&gt; we’ve introduced a new &lt;code&gt;custom&lt;/code&gt; mode of test generation. You’re able to pass your own implementation of an HTTP client (you can reuse our &lt;code&gt;OkHttpHttpVerifier&lt;/code&gt;), thanks to which you can e.g. use HTTP/2. This was a prerequisite for the GRPC task. Thanks to the Spring Cloud Contract Workshops and the following refactoring of Spring Cloud Contract it was quite easy to add this feature, so thanks everyone involved then!&lt;/p&gt;
 
-<p>You can read more about this in <a href="https://docs.spring.io/spring-cloud-contract/docs/3.0.0/reference/html/project-features.html#features-custom-mode">the documentation</a>.</p>
+&lt;p&gt;You can read more about this in &lt;a href=&quot;https://docs.spring.io/spring-cloud-contract/docs/3.0.0/reference/html/project-features.html#features-custom-mode&quot;&gt;the documentation&lt;/a&gt;.&lt;/p&gt;
 
-<h2 id="experimental-grpc-support">Experimental GRPC Support</h2>
+&lt;h2 id=&quot;experimental-grpc-support&quot;&gt;Experimental GRPC Support&lt;/h2&gt;
 
-<p>With the custom mode in place we could add the experimental GRPC support. Why experimental? Due to GRPC’s tweaking of the HTTP/2 Header frames, it’s impossible to assert the <code>grpc-status</code> header. You can read more about the feature, the issue and workarounds in <a href="https://docs.spring.io/spring-cloud-contract/docs/3.0.0/reference/html/project-features.html#features-grpc">the documentation</a>.</p>
+&lt;p&gt;With the custom mode in place we could add the experimental GRPC support. Why experimental? Due to GRPC’s tweaking of the HTTP/2 Header frames, it’s impossible to assert the &lt;code&gt;grpc-status&lt;/code&gt; header. You can read more about the feature, the issue and workarounds in &lt;a href=&quot;https://docs.spring.io/spring-cloud-contract/docs/3.0.0/reference/html/project-features.html#features-grpc&quot;&gt;the documentation&lt;/a&gt;.&lt;/p&gt;
 
-<p>Here you can find an example of <a href="https://github.com/spring-cloud-samples/spring-cloud-contract-samples/tree/master/producer_grpc">GRPC producer</a> and of a <a href="https://github.com/spring-cloud-samples/spring-cloud-contract-samples/tree/master/consumer_grpc">GRPC consumer</a>.</p>
+&lt;p&gt;Here you can find an example of &lt;a href=&quot;https://github.com/spring-cloud-samples/spring-cloud-contract-samples/tree/master/producer_grpc&quot;&gt;GRPC producer&lt;/a&gt; and of a &lt;a href=&quot;https://github.com/spring-cloud-samples/spring-cloud-contract-samples/tree/master/consumer_grpc&quot;&gt;GRPC consumer&lt;/a&gt;.&lt;/p&gt;
 
-<h2 id="graphql-support">GraphQL Support</h2>
+&lt;h2 id=&quot;graphql-support&quot;&gt;GraphQL Support&lt;/h2&gt;
 
-<p>With <a href="https://github.com/spring-cloud/spring-cloud-contract/pull/1506">this PR</a> we’ve added GraphQL support. Since GraphQL is essentially POST to and endpoint with specific body, you can create such a contract and set the proper metadata. You can read more about this in <a href="https://docs.spring.io/spring-cloud-contract/docs/3.0.0/reference/html/project-features.html#features-graphql">the documentation</a>.</p>
+&lt;p&gt;With &lt;a href=&quot;https://github.com/spring-cloud/spring-cloud-contract/pull/1506&quot;&gt;this PR&lt;/a&gt; we’ve added GraphQL support. Since GraphQL is essentially POST to and endpoint with specific body, you can create such a contract and set the proper metadata. You can read more about this in &lt;a href=&quot;https://docs.spring.io/spring-cloud-contract/docs/3.0.0/reference/html/project-features.html#features-graphql&quot;&gt;the documentation&lt;/a&gt;.&lt;/p&gt;
 
-<p>Here you can find an example of <a href="https://github.com/spring-cloud-samples/spring-cloud-contract-samples/tree/master/producer_graphql">GraphQL producer</a> and of a <a href="https://github.com/spring-cloud-samples/spring-cloud-contract-samples/blob/master/consumer/src/test/java/com/example/BeerControllerGraphQLTest.java">GraphQL consumer</a>.</p>
+&lt;p&gt;Here you can find an example of &lt;a href=&quot;https://github.com/spring-cloud-samples/spring-cloud-contract-samples/tree/master/producer_graphql&quot;&gt;GraphQL producer&lt;/a&gt; and of a &lt;a href=&quot;https://github.com/spring-cloud-samples/spring-cloud-contract-samples/blob/master/consumer/src/test/java/com/example/BeerControllerGraphQLTest.java&quot;&gt;GraphQL consumer&lt;/a&gt;.&lt;/p&gt;
 
-<h2 id="stub-runner-boot-thin-jar">Stub Runner Boot Thin JAR</h2>
+&lt;h2 id=&quot;stub-runner-boot-thin-jar&quot;&gt;Stub Runner Boot Thin JAR&lt;/h2&gt;
 
-<p>With <a href="https://github.com/spring-cloud/spring-cloud-contract/issues/1385">this issue</a> we’ve migrated the Stub Runner Boot application to be a thin jar based application. Not only have we managed to lower the size of the produced artifact, but also we’re able via properties turn on profiles (e.g. <code>kafka</code> or <code>rabbit</code> profiles) that would fetch additional dependencies at runtime.</p>
+&lt;p&gt;With &lt;a href=&quot;https://github.com/spring-cloud/spring-cloud-contract/issues/1385&quot;&gt;this issue&lt;/a&gt; we’ve migrated the Stub Runner Boot application to be a thin jar based application. Not only have we managed to lower the size of the produced artifact, but also we’re able via properties turn on profiles (e.g. &lt;code&gt;kafka&lt;/code&gt; or &lt;code&gt;rabbit&lt;/code&gt; profiles) that would fetch additional dependencies at runtime.&lt;/p&gt;
 
-<h2 id="messaging-polyglot-support">Messaging Polyglot Support</h2>
+&lt;h2 id=&quot;messaging-polyglot-support&quot;&gt;Messaging Polyglot Support&lt;/h2&gt;
 
-<h3 id="pre-built-kafka-and-amqp-support">Pre-built kafka and amqp support</h3>
+&lt;h3 id=&quot;pre-built-kafka-and-amqp-support&quot;&gt;Pre-built kafka and amqp support&lt;/h3&gt;
 
-<p>With the thin jar rewrite and <a href="https://github.com/spring-cloud/spring-cloud-contract/pull/1472">this PR</a> and <a href="https://github.com/spring-cloud/spring-cloud-contract/issues/1468">this issue</a> we’re adding support for Kafka and AMQP based solutions with the Docker images.</p>
+&lt;p&gt;With the thin jar rewrite and &lt;a href=&quot;https://github.com/spring-cloud/spring-cloud-contract/pull/1472&quot;&gt;this PR&lt;/a&gt; and &lt;a href=&quot;https://github.com/spring-cloud/spring-cloud-contract/issues/1468&quot;&gt;this issue&lt;/a&gt; we’re adding support for Kafka and AMQP based solutions with the Docker images.&lt;/p&gt;
 
-<p>You’ll have to have the following prerequisites met:</p>
+&lt;p&gt;You’ll have to have the following prerequisites met:&lt;/p&gt;
 
-<ul>
-  <li>Middleware (e.g. RabbitMQ or Kafka) must be running before generating tests</li>
-  <li>Your contract needs to call a method <code>triggerMessage(...)</code> with a String parameter that is equal to the contract’s label.</li>
-  <li>Your application needs to have a HTTP endpoint via which we can trigger a message</li>
-  <li>That endpoint should not be available on production (could be enabled via an environment variable)</li>
-</ul>
+&lt;ul&gt;
+  &lt;li&gt;Middleware (e.g. RabbitMQ or Kafka) must be running before generating tests&lt;/li&gt;
+  &lt;li&gt;Your contract needs to call a method &lt;code&gt;triggerMessage(...)&lt;/code&gt; with a String parameter that is equal to the contract’s label.&lt;/li&gt;
+  &lt;li&gt;Your application needs to have a HTTP endpoint via which we can trigger a message&lt;/li&gt;
+  &lt;li&gt;That endpoint should not be available on production (could be enabled via an environment variable)&lt;/li&gt;
+&lt;/ul&gt;
 
-<p>Your contract can leverage the <code>kafka</code> and <code>amqp</code> metadata sections like below:</p>
+&lt;p&gt;Your contract can leverage the &lt;code&gt;kafka&lt;/code&gt; and &lt;code&gt;amqp&lt;/code&gt; metadata sections like below:&lt;/p&gt;
 
-<pre><code class="language-yaml">description: 'Send a pong message in response to a ping message'
+&lt;pre&gt;&lt;code class=&quot;language-yaml&quot;&gt;description: 'Send a pong message in response to a ping message'
 label: 'ping_pong'
 input:
     # You have to provide the `triggerMessage` method with the `label`
     # as a String parameter of the method
-    triggeredBy: 'triggerMessage("ping_pong")'
+    triggeredBy: 'triggerMessage(&quot;ping_pong&quot;)'
 outputMessage:
     sentTo: 'output'
     body:
@@ -188,28 +188,28 @@ metadata:
     amqp:
         outputMessage:
             connectToBroker:
-                declareQueueWithName: "queue"
+                declareQueueWithName: &quot;queue&quot;
             messageProperties:
 				receivedRoutingKey: '#'
-</code></pre>
+&lt;/code&gt;&lt;/pre&gt;
 
-<h3 id="standalone-mode">Standalone mode</h3>
+&lt;h3 id=&quot;standalone-mode&quot;&gt;Standalone mode&lt;/h3&gt;
 
-<p>There is legitimate reason to run your contract tests against existing middleware. Some
+&lt;p&gt;There is legitimate reason to run your contract tests against existing middleware. Some
 testing frameworks might give you false positive results - the test within your build
-passes whereas on production the communication fails.</p>
+passes whereas on production the communication fails.&lt;/p&gt;
 
-<p>In Spring Cloud Contract docker images we give an option to connect to existing middleware.
+&lt;p&gt;In Spring Cloud Contract docker images we give an option to connect to existing middleware.
 As presented in previous subsections we do support Kafka and RabbitMQ out of the box. However,
-via <a href="https://camel.apache.org/components/latest/index.html">Apache Camel Components</a> we can support
-other middleware too. Let’s take a look at the following examples of usage.</p>
+via &lt;a href=&quot;https://camel.apache.org/components/latest/index.html&quot;&gt;Apache Camel Components&lt;/a&gt; we can support
+other middleware too. Let’s take a look at the following examples of usage.&lt;/p&gt;
 
-<p>Example of a contract connecting to a real RabbitMQ instance:</p>
+&lt;p&gt;Example of a contract connecting to a real RabbitMQ instance:&lt;/p&gt;
 
-<pre><code class="language-yaml">description: 'Send a pong message in response to a ping message'
+&lt;pre&gt;&lt;code class=&quot;language-yaml&quot;&gt;description: 'Send a pong message in response to a ping message'
 label: 'standalone_ping_pong'
 input:
-  triggeredBy: 'triggerMessage("ping_pong")'
+  triggeredBy: 'triggerMessage(&quot;ping_pong&quot;)'
 outputMessage:
   sentTo: 'rabbitmq:output'
   body:
@@ -217,104 +217,104 @@ outputMessage:
 metadata:
   standalone:
     setup:
-      options: rabbitmq:output?queue=output&amp;routingKey=#
+      options: rabbitmq:output?queue=output&amp;amp;routingKey=#
     outputMessage:
-	  additionalOptions: routingKey=#&amp;queue=output
-</code></pre>
+	  additionalOptions: routingKey=#&amp;amp;queue=output
+&lt;/code&gt;&lt;/pre&gt;
 
-<p>You can read more about setting this up in <a href="https://github.com/spring-cloud/spring-cloud-contract/pull/1472">this PR</a> under the <code>Documentation of the feature with standalone mode (aka with running middleware)</code> section.</p>
+&lt;p&gt;You can read more about setting this up in &lt;a href=&quot;https://github.com/spring-cloud/spring-cloud-contract/pull/1472&quot;&gt;this PR&lt;/a&gt; under the &lt;code&gt;Documentation of the feature with standalone mode (aka with running middleware)&lt;/code&gt; section.&lt;/p&gt;
 
-<h2 id="messaging-with-existing-middleware">Messaging with Existing Middleware</h2>
+&lt;h2 id=&quot;messaging-with-existing-middleware&quot;&gt;Messaging with Existing Middleware&lt;/h2&gt;
 
-<p>Since it’s extremely easy to start a docker image with a broker via <a href="https://testcontainers.org">Testcontainers</a>, we’re suggesting to slowly migrate your messaging tests to such an approach. From the perspective of Spring Cloud Contract it’s also better since we won’t need to replicate in our code the special cases of how frameworks behave when calling a real broker. Here you can find an example of how you can connect to a JMS broker on <a href="https://github.com/spring-cloud-samples/spring-cloud-contract-samples/tree/master/producer_jms_middleware">the producer side</a> and <a href="https://github.com/spring-cloud-samples/spring-cloud-contract-samples/tree/master/producer_jms_middleware">here how you can consume it</a>.</p>
+&lt;p&gt;Since it’s extremely easy to start a docker image with a broker via &lt;a href=&quot;https://testcontainers.org&quot;&gt;Testcontainers&lt;/a&gt;, we’re suggesting to slowly migrate your messaging tests to such an approach. From the perspective of Spring Cloud Contract it’s also better since we won’t need to replicate in our code the special cases of how frameworks behave when calling a real broker. Here you can find an example of how you can connect to a JMS broker on &lt;a href=&quot;https://github.com/spring-cloud-samples/spring-cloud-contract-samples/tree/master/producer_jms_middleware&quot;&gt;the producer side&lt;/a&gt; and &lt;a href=&quot;https://github.com/spring-cloud-samples/spring-cloud-contract-samples/tree/master/producer_jms_middleware&quot;&gt;here how you can consume it&lt;/a&gt;.&lt;/p&gt;
 
-<h2 id="gradle-plugin-rewrite">Gradle Plugin rewrite</h2>
+&lt;h2 id=&quot;gradle-plugin-rewrite&quot;&gt;Gradle Plugin rewrite&lt;/h2&gt;
 
-<p>This one is fully done by the one and only <a href="https://github.com/shanman190">shanman190</a>. The whole work on the Gradle plugin was done by him so you should buy him a beer once you get to see him :) Anyways, there are various changes to the Gradle plugin that you can check out.</p>
+&lt;p&gt;This one is fully done by the one and only &lt;a href=&quot;https://github.com/shanman190&quot;&gt;shanman190&lt;/a&gt;. The whole work on the Gradle plugin was done by him so you should buy him a beer once you get to see him :) Anyways, there are various changes to the Gradle plugin that you can check out.&lt;/p&gt;
 
-<ul>
-  <li><a href="https://github.com/spring-cloud/spring-cloud-contract/pull/1464">Disable the stubs jar publication by default</a></li>
-  <li><a href="https://github.com/spring-cloud/spring-cloud-contract/pull/1558">Attempt to keep Kotlin off the classpath</a></li>
-</ul>
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/spring-cloud/spring-cloud-contract/pull/1464&quot;&gt;Disable the stubs jar publication by default&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/spring-cloud/spring-cloud-contract/pull/1558&quot;&gt;Attempt to keep Kotlin off the classpath&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
-<h2 id="stay-in-touch">Stay in touch!</h2>
+&lt;h2 id=&quot;stay-in-touch&quot;&gt;Stay in touch!&lt;/h2&gt;
 
-<p>In case of any questions don’t hesitate to ping us</p>
+&lt;p&gt;In case of any questions don’t hesitate to ping us&lt;/p&gt;
 
-<ul>
-  <li>On <a href="https://github.com/spring-cloud/spring-cloud-contract/">Github</a></li>
-  <li>On <a href="https://gitter.im/spring-cloud/spring-cloud-contract">Gitter</a></li>
-  <li>On <a href="https://stackoverflow.com/questions/tagged/spring-cloud-contract">Stackoverflow</a></li>
-</ul>]]></content><author><name>Marcin Grzejszczak</name></author><category term="articles" /><category term="testing" /><category term="testowanie" /><category term="Spring Cloud Contract" /><summary type="html"><![CDATA[With the release of the Spring Cloud 2020.0.0 (aka Ilford) release train we’re more than happy to announce the general availability of Spring Cloud Contract 3.0.0. In this blog post I’ll describe the most notable released features (in order of their release dates).]]></summary></entry><entry><title type="html">SmartTesting.pl</title><link href="https://toomuchcoding.com/articles/2020/08/13/smarttesting-dot-pl/" rel="alternate" type="text/html" title="SmartTesting.pl" /><published>2020-08-13T15:36:35+02:00</published><updated>2020-08-13T15:36:35+02:00</updated><id>https://toomuchcoding.com/articles/2020/08/13/smarttesting-dot-pl</id><content type="html" xml:base="https://toomuchcoding.com/articles/2020/08/13/smarttesting-dot-pl/"><![CDATA[<p>Wraz z Olgą Maciaszek-Sharmą i Maćkiem Aniserowiczem jesteśmy bardzo szczęsliwi mogąc ogłosić, że ruszyliśmy ze szkoleniem na temat testowania o nazwie SmartTesting! Więcej szczegółów dostępnych na stronie <a href="https://smarttesting.pl">smarttesting.pl</a>.</p>]]></content><author><name>Marcin Grzejszczak</name></author><category term="articles" /><category term="testing" /><category term="testowanie" /><summary type="html"><![CDATA[Wraz z Olgą Maciaszek-Sharmą i Maćkiem Aniserowiczem jesteśmy bardzo szczęsliwi mogąc ogłosić, że ruszyliśmy ze szkoleniem na temat testowania o nazwie SmartTesting! Więcej szczegółów dostępnych na stronie smarttesting.pl.]]></summary></entry><entry><title type="html">Spring Cloud Contract in the polyglot world</title><link href="https://toomuchcoding.com/articles/2018/02/13/spring-cloud-contract-in-the-polyglot-world/" rel="alternate" type="text/html" title="Spring Cloud Contract in the polyglot world" /><published>2018-02-13T21:39:51+01:00</published><updated>2018-02-13T21:39:51+01:00</updated><id>https://toomuchcoding.com/articles/2018/02/13/spring-cloud-contract-in-the-polyglot-world</id><content type="html" xml:base="https://toomuchcoding.com/articles/2018/02/13/spring-cloud-contract-in-the-polyglot-world/"><![CDATA[<p>I have just published a new article about Spring Cloud Contract in a polyglot world at the Spring Blog. <a href="https://spring.io/blog/2018/02/13/spring-cloud-contract-in-a-polyglot-world">You can check it out here!</a>.</p>]]></content><author><name>Marcin Grzejszczak</name></author><category term="articles" /><category term="spring-cloud" /><category term="spring-cloud-contract" /><category term="consumer-driven-contracts" /><category term="cdc" /><summary type="html"><![CDATA[I have just published a new article about Spring Cloud Contract in a polyglot world at the Spring Blog. You can check it out here!.]]></summary></entry><entry><title type="html">Continuous Delivery of a Startup</title><link href="https://toomuchcoding.com/articles/2017/12/03/continuous-delivery-of-a-startup/" rel="alternate" type="text/html" title="Continuous Delivery of a Startup" /><published>2017-12-03T13:11:22+01:00</published><updated>2017-12-03T13:11:22+01:00</updated><id>https://toomuchcoding.com/articles/2017/12/03/continuous-delivery-of-a-startup</id><content type="html" xml:base="https://toomuchcoding.com/articles/2017/12/03/continuous-delivery-of-a-startup/"><![CDATA[<p>Hi!</p>
+&lt;ul&gt;
+  &lt;li&gt;On &lt;a href=&quot;https://github.com/spring-cloud/spring-cloud-contract/&quot;&gt;Github&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;On &lt;a href=&quot;https://gitter.im/spring-cloud/spring-cloud-contract&quot;&gt;Gitter&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;On &lt;a href=&quot;https://stackoverflow.com/questions/tagged/spring-cloud-contract&quot;&gt;Stackoverflow&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Marcin Grzejszczak</name></author><category term="articles" /><category term="testing" /><category term="testowanie" /><category term="Spring Cloud Contract" /><summary type="html">With the release of the Spring Cloud 2020.0.0 (aka Ilford) release train we’re more than happy to announce the general availability of Spring Cloud Contract 3.0.0. In this blog post I’ll describe the most notable released features (in order of their release dates).</summary></entry><entry><title type="html">SmartTesting.pl</title><link href="https://toomuchcoding.com/articles/2020/08/13/smarttesting-dot-pl/" rel="alternate" type="text/html" title="SmartTesting.pl" /><published>2020-08-13T15:36:35+02:00</published><updated>2020-08-13T15:36:35+02:00</updated><id>https://toomuchcoding.com/articles/2020/08/13/smarttesting-dot-pl</id><content type="html" xml:base="https://toomuchcoding.com/articles/2020/08/13/smarttesting-dot-pl/">&lt;p&gt;Wraz z Olgą Maciaszek-Sharmą i Maćkiem Aniserowiczem jesteśmy bardzo szczęsliwi mogąc ogłosić, że ruszyliśmy ze szkoleniem na temat testowania o nazwie SmartTesting! Więcej szczegółów dostępnych na stronie &lt;a href=&quot;https://smarttesting.pl&quot;&gt;smarttesting.pl&lt;/a&gt;.&lt;/p&gt;</content><author><name>Marcin Grzejszczak</name></author><category term="articles" /><category term="testing" /><category term="testowanie" /><summary type="html">Wraz z Olgą Maciaszek-Sharmą i Maćkiem Aniserowiczem jesteśmy bardzo szczęsliwi mogąc ogłosić, że ruszyliśmy ze szkoleniem na temat testowania o nazwie SmartTesting! Więcej szczegółów dostępnych na stronie smarttesting.pl.</summary></entry><entry><title type="html">Spring Cloud Contract in the polyglot world</title><link href="https://toomuchcoding.com/articles/2018/02/13/spring-cloud-contract-in-the-polyglot-world/" rel="alternate" type="text/html" title="Spring Cloud Contract in the polyglot world" /><published>2018-02-13T21:39:51+01:00</published><updated>2018-02-13T21:39:51+01:00</updated><id>https://toomuchcoding.com/articles/2018/02/13/spring-cloud-contract-in-the-polyglot-world</id><content type="html" xml:base="https://toomuchcoding.com/articles/2018/02/13/spring-cloud-contract-in-the-polyglot-world/">&lt;p&gt;I have just published a new article about Spring Cloud Contract in a polyglot world at the Spring Blog. &lt;a href=&quot;https://spring.io/blog/2018/02/13/spring-cloud-contract-in-a-polyglot-world&quot;&gt;You can check it out here!&lt;/a&gt;.&lt;/p&gt;</content><author><name>Marcin Grzejszczak</name></author><category term="articles" /><category term="spring-cloud" /><category term="spring-cloud-contract" /><category term="consumer-driven-contracts" /><category term="cdc" /><summary type="html">I have just published a new article about Spring Cloud Contract in a polyglot world at the Spring Blog. You can check it out here!.</summary></entry><entry><title type="html">Continuous Delivery of a Startup</title><link href="https://toomuchcoding.com/articles/2017/12/03/continuous-delivery-of-a-startup/" rel="alternate" type="text/html" title="Continuous Delivery of a Startup" /><published>2017-12-03T13:11:22+01:00</published><updated>2017-12-03T13:11:22+01:00</updated><id>https://toomuchcoding.com/articles/2017/12/03/continuous-delivery-of-a-startup</id><content type="html" xml:base="https://toomuchcoding.com/articles/2017/12/03/continuous-delivery-of-a-startup/">&lt;p&gt;Hi!&lt;/p&gt;
 
-<p>After a very long pause, finally I’ve managed to write a new blog post. It’s an interview with <a href="https://twitter.com/jkubrynski">Jakub Kubryński</a> about Continuous Delivery of a Startup. It’s published as part of the <a href="https://www.javaadvent.com/2017/12/cd-of-a-startup.html">Java Advent Calendar</a>.</p>
+&lt;p&gt;After a very long pause, finally I’ve managed to write a new blog post. It’s an interview with &lt;a href=&quot;https://twitter.com/jkubrynski&quot;&gt;Jakub Kubryński&lt;/a&gt; about Continuous Delivery of a Startup. It’s published as part of the &lt;a href=&quot;https://www.javaadvent.com/2017/12/cd-of-a-startup.html&quot;&gt;Java Advent Calendar&lt;/a&gt;.&lt;/p&gt;
 
-<p>Check it out <a href="https://www.javaadvent.com/2017/12/cd-of-a-startup.html">here!</a>.</p>]]></content><author><name>Marcin Grzejszczak</name></author><category term="articles" /><category term="spring-cloud" /><category term="deployment" /><category term="spring-cloud-contract" /><category term="consumer-driven-contracts" /><category term="cdc" /><category term="jenkins" /><category term="concourse" /><summary type="html"><![CDATA[Hi! After a very long pause, finally I’ve managed to write a new blog post. It’s an interview with Jakub Kubryński about Continuous Delivery of a Startup. It’s published as part of the Java Advent Calendar. Check it out here!.]]></summary></entry><entry><title type="html">New Project - Spring Cloud Pipelines</title><link href="https://toomuchcoding.com/articles/2016/10/18/new-project-spring-cloud-pipelines/" rel="alternate" type="text/html" title="New Project - Spring Cloud Pipelines" /><published>2016-10-18T19:29:24+02:00</published><updated>2016-10-18T19:29:24+02:00</updated><id>https://toomuchcoding.com/articles/2016/10/18/new-project-spring-cloud-pipelines</id><content type="html" xml:base="https://toomuchcoding.com/articles/2016/10/18/new-project-spring-cloud-pipelines/"><![CDATA[<p>I’ve just published an article at the Spring blog about the creation of a new project called <a href="https://spring.io/blog/2016/10/18/spring-cloud-pipelines">Spring Cloud Pipelines</a>.</p>
+&lt;p&gt;Check it out &lt;a href=&quot;https://www.javaadvent.com/2017/12/cd-of-a-startup.html&quot;&gt;here!&lt;/a&gt;.&lt;/p&gt;</content><author><name>Marcin Grzejszczak</name></author><category term="articles" /><category term="spring-cloud" /><category term="deployment" /><category term="spring-cloud-contract" /><category term="consumer-driven-contracts" /><category term="cdc" /><category term="jenkins" /><category term="concourse" /><summary type="html">Hi! After a very long pause, finally I’ve managed to write a new blog post. It’s an interview with Jakub Kubryński about Continuous Delivery of a Startup. It’s published as part of the Java Advent Calendar. Check it out here!.</summary></entry><entry><title type="html">New Project - Spring Cloud Pipelines</title><link href="https://toomuchcoding.com/articles/2016/10/18/new-project-spring-cloud-pipelines/" rel="alternate" type="text/html" title="New Project - Spring Cloud Pipelines" /><published>2016-10-18T19:29:24+02:00</published><updated>2016-10-18T19:29:24+02:00</updated><id>https://toomuchcoding.com/articles/2016/10/18/new-project-spring-cloud-pipelines</id><content type="html" xml:base="https://toomuchcoding.com/articles/2016/10/18/new-project-spring-cloud-pipelines/">&lt;p&gt;I’ve just published an article at the Spring blog about the creation of a new project called &lt;a href=&quot;https://spring.io/blog/2016/10/18/spring-cloud-pipelines&quot;&gt;Spring Cloud Pipelines&lt;/a&gt;.&lt;/p&gt;
 
-<h1 id="why">Why?</h1>
+&lt;h1 id=&quot;why&quot;&gt;Why?&lt;/h1&gt;
 
-<p>Why a new project? Cause we’ve been all doing repetitive work. <a href="https://toomuchcoding.com/blog/2015/09/26/microservice-deployment/">Check out this post</a> where I write about creation of
+&lt;p&gt;Why a new project? Cause we’ve been all doing repetitive work. &lt;a href=&quot;https://toomuchcoding.com/blog/2015/09/26/microservice-deployment/&quot;&gt;Check out this post&lt;/a&gt; where I write about creation of
 a deployment pipeline. Every company does it and wastes money and resource on it. In Pivotal
-our goal is to give developers tools they need to deliver features as fast as possible.</p>
+our goal is to give developers tools they need to deliver features as fast as possible.&lt;/p&gt;
 
-<p><a href="https://cloud.spring.io/spring-cloud-pipelines/spring-cloud-pipelines.html">Spring Cloud Pipelines</a> gives you an opinionated deployment pipeline. You can use it straight away, you can modify it. Do whatever you please :)</p>
+&lt;p&gt;&lt;a href=&quot;https://cloud.spring.io/spring-cloud-pipelines/spring-cloud-pipelines.html&quot;&gt;Spring Cloud Pipelines&lt;/a&gt; gives you an opinionated deployment pipeline. You can use it straight away, you can modify it. Do whatever you please :)&lt;/p&gt;
 
-<h1 id="demo">Demo</h1>
+&lt;h1 id=&quot;demo&quot;&gt;Demo&lt;/h1&gt;
 
-<p>The repo is setup with a demo for Concourse CI and Jenkins. Read the docs how to set it up for each of those tools. The deployment is done via Cloud Foundry. For the sake of demo we’re using PCF Dev.</p>
+&lt;p&gt;The repo is setup with a demo for Concourse CI and Jenkins. Read the docs how to set it up for each of those tools. The deployment is done via Cloud Foundry. For the sake of demo we’re using PCF Dev.&lt;/p&gt;
 
-<h1 id="links">Links</h1>
+&lt;h1 id=&quot;links&quot;&gt;Links&lt;/h1&gt;
 
-<ul>
-  <li><a href="https://cloud.spring.io/spring-cloud-pipelines/">Project page</a></li>
-  <li><a href="https://cloud.spring.io/spring-cloud-pipelines/spring-cloud-pipelines.html">Project documentation</a></li>
-  <li><a href="https://cloud.spring.io/spring-cloud-pipelines/spring-cloud-pipelines.html#concourse">Concourse opinionated pipeline setup</a></li>
-  <li><a href="https://concourse.ci">Concourse Website</a></li>
-  <li><a href="https://cloud.spring.io/spring-cloud-pipelines/spring-cloud-pipelines.html#jenkins">Jenkins opinionated pipeline setup</a></li>
-  <li><a href="https://github.com/jenkinsci/job-dsl-plugin/wiki">Jenkins Job Dsl Plugin</a></li>
-  <li><a href="https://gitter.im/spring-cloud/spring-cloud-pipelines">Spring Cloud Pipelines Gitter</a></li>
-  <li><a href="https://github.com/spring-cloud/spring-cloud-pipelines">Spring Cloud Pipelines GitHub page</a></li>
-</ul>]]></content><author><name>Marcin Grzejszczak</name></author><category term="articles" /><category term="spring-cloud" /><category term="deployment" /><category term="spring-cloud-contract" /><category term="consumer-driven-contracts" /><category term="cdc" /><category term="jenkins" /><category term="concourse" /><summary type="html"><![CDATA[I’ve just published an article at the Spring blog about the creation of a new project called Spring Cloud Pipelines. Why? Why a new project? Cause we’ve been all doing repetitive work. Check out this post where I write about creation of a deployment pipeline. Every company does it and wastes money and resource on it. In Pivotal our goal is to give developers tools they need to deliver features as fast as possible. Spring Cloud Pipelines gives you an opinionated deployment pipeline. You can use it straight away, you can modify it. Do whatever you please :) Demo The repo is setup with a demo for Concourse CI and Jenkins. Read the docs how to set it up for each of those tools. The deployment is done via Cloud Foundry. For the sake of demo we’re using PCF Dev. Links Project page Project documentation Concourse opinionated pipeline setup Concourse Website Jenkins opinionated pipeline setup Jenkins Job Dsl Plugin Spring Cloud Pipelines Gitter Spring Cloud Pipelines GitHub page]]></summary></entry><entry><title type="html">Spring Cloud Contract Podcast</title><link href="https://toomuchcoding.com/articles/2016/10/07/spring-cloud-contract-podcast/" rel="alternate" type="text/html" title="Spring Cloud Contract Podcast" /><published>2016-10-07T23:14:36+02:00</published><updated>2016-10-07T23:14:36+02:00</updated><id>https://toomuchcoding.com/articles/2016/10/07/spring-cloud-contract-podcast</id><content type="html" xml:base="https://toomuchcoding.com/articles/2016/10/07/spring-cloud-contract-podcast/"><![CDATA[<p>A podcast with Michael Cote and me about Spring Cloud Contract was just published. <a href="https://soundcloud.com/pivotalconversations/037-microservices-governance-with-spring-cloud-contract-guest-marcin-grzejszczak">You can check it out here!</a>.</p>]]></content><author><name>Marcin Grzejszczak</name></author><category term="articles" /><category term="spring-cloud" /><category term="deployment" /><category term="accurest" /><category term="spring-cloud-contract" /><category term="consumer-driven-contracts" /><category term="cdc" /><summary type="html"><![CDATA[A podcast with Michael Cote and me about Spring Cloud Contract was just published. You can check it out here!.]]></summary></entry><entry><title type="html">Spring Cloud Contract 1.0.0.RELEASE available!</title><link href="https://toomuchcoding.com/articles/2016/09/24/spring-cloud-contract-1-dot-0-0-dot-release-available/" rel="alternate" type="text/html" title="Spring Cloud Contract 1.0.0.RELEASE available!" /><published>2016-09-24T20:39:25+02:00</published><updated>2016-09-24T20:39:25+02:00</updated><id>https://toomuchcoding.com/articles/2016/09/24/spring-cloud-contract-1-dot-0-0-dot-release-available</id><content type="html" xml:base="https://toomuchcoding.com/articles/2016/09/24/spring-cloud-contract-1-dot-0-0-dot-release-available/"><![CDATA[<p>I’ve just published an article at the Spring blog about <a href="https://spring.io/blog/2016/09/23/spring-cloud-contract-1-0-0-release-is-available">Spring Cloud Contract 1.0.0.RELEASE is available</a>.</p>
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://cloud.spring.io/spring-cloud-pipelines/&quot;&gt;Project page&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://cloud.spring.io/spring-cloud-pipelines/spring-cloud-pipelines.html&quot;&gt;Project documentation&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://cloud.spring.io/spring-cloud-pipelines/spring-cloud-pipelines.html#concourse&quot;&gt;Concourse opinionated pipeline setup&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://concourse.ci&quot;&gt;Concourse Website&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://cloud.spring.io/spring-cloud-pipelines/spring-cloud-pipelines.html#jenkins&quot;&gt;Jenkins opinionated pipeline setup&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/jenkinsci/job-dsl-plugin/wiki&quot;&gt;Jenkins Job Dsl Plugin&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://gitter.im/spring-cloud/spring-cloud-pipelines&quot;&gt;Spring Cloud Pipelines Gitter&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/spring-cloud/spring-cloud-pipelines&quot;&gt;Spring Cloud Pipelines GitHub page&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Marcin Grzejszczak</name></author><category term="articles" /><category term="spring-cloud" /><category term="deployment" /><category term="spring-cloud-contract" /><category term="consumer-driven-contracts" /><category term="cdc" /><category term="jenkins" /><category term="concourse" /><summary type="html">I’ve just published an article at the Spring blog about the creation of a new project called Spring Cloud Pipelines. Why? Why a new project? Cause we’ve been all doing repetitive work. Check out this post where I write about creation of a deployment pipeline. Every company does it and wastes money and resource on it. In Pivotal our goal is to give developers tools they need to deliver features as fast as possible. Spring Cloud Pipelines gives you an opinionated deployment pipeline. You can use it straight away, you can modify it. Do whatever you please :) Demo The repo is setup with a demo for Concourse CI and Jenkins. Read the docs how to set it up for each of those tools. The deployment is done via Cloud Foundry. For the sake of demo we’re using PCF Dev. Links Project page Project documentation Concourse opinionated pipeline setup Concourse Website Jenkins opinionated pipeline setup Jenkins Job Dsl Plugin Spring Cloud Pipelines Gitter Spring Cloud Pipelines GitHub page</summary></entry><entry><title type="html">Spring Cloud Contract Podcast</title><link href="https://toomuchcoding.com/articles/2016/10/07/spring-cloud-contract-podcast/" rel="alternate" type="text/html" title="Spring Cloud Contract Podcast" /><published>2016-10-07T23:14:36+02:00</published><updated>2016-10-07T23:14:36+02:00</updated><id>https://toomuchcoding.com/articles/2016/10/07/spring-cloud-contract-podcast</id><content type="html" xml:base="https://toomuchcoding.com/articles/2016/10/07/spring-cloud-contract-podcast/">&lt;p&gt;A podcast with Michael Cote and me about Spring Cloud Contract was just published. &lt;a href=&quot;https://soundcloud.com/pivotalconversations/037-microservices-governance-with-spring-cloud-contract-guest-marcin-grzejszczak&quot;&gt;You can check it out here!&lt;/a&gt;.&lt;/p&gt;</content><author><name>Marcin Grzejszczak</name></author><category term="articles" /><category term="spring-cloud" /><category term="deployment" /><category term="accurest" /><category term="spring-cloud-contract" /><category term="consumer-driven-contracts" /><category term="cdc" /><summary type="html">A podcast with Michael Cote and me about Spring Cloud Contract was just published. You can check it out here!.</summary></entry><entry><title type="html">Spring Cloud Contract 1.0.0.RELEASE available!</title><link href="https://toomuchcoding.com/articles/2016/09/24/spring-cloud-contract-1-dot-0-0-dot-release-available/" rel="alternate" type="text/html" title="Spring Cloud Contract 1.0.0.RELEASE available!" /><published>2016-09-24T20:39:25+02:00</published><updated>2016-09-24T20:39:25+02:00</updated><id>https://toomuchcoding.com/articles/2016/09/24/spring-cloud-contract-1-dot-0-0-dot-release-available</id><content type="html" xml:base="https://toomuchcoding.com/articles/2016/09/24/spring-cloud-contract-1-dot-0-0-dot-release-available/">&lt;p&gt;I’ve just published an article at the Spring blog about &lt;a href=&quot;https://spring.io/blog/2016/09/23/spring-cloud-contract-1-0-0-release-is-available&quot;&gt;Spring Cloud Contract 1.0.0.RELEASE is available&lt;/a&gt;.&lt;/p&gt;
 
-<p>I’m really happy that the project is GA. Even though as the Accurest project we had already done a GA release, it really feels that a lot of effort was put in order to release the GA version under the Pivotal’s Spring Cloud branding. Let’s look at some numbers:</p>
+&lt;p&gt;I’m really happy that the project is GA. Even though as the Accurest project we had already done a GA release, it really feels that a lot of effort was put in order to release the GA version under the Pivotal’s Spring Cloud branding. Let’s look at some numbers:&lt;/p&gt;
 
-<ul>
-  <li>first commit almost 2 years ago: <a href="https://github.com/spring-cloud/spring-cloud-contract/commit/dfaddaa98d645b818ba3947c9267ef7ac8ed9ba4">2014-12-06 18:20:29 by Jakub Kubrynski</a> - thanks to <a href="https://codearte.eu">Codearte</a> the authors of <a href="https://devskiller.com">DevSkiller</a> for their support!!!</li>
-  <li><a href="https://github.com/spring-cloud/spring-cloud-contract/commits/master">1.152 commits</a></li>
-  <li><a href="https://github.com/spring-cloud/spring-cloud-contract/graphs/contributors">20 contributors</a></li>
-</ul>
+&lt;ul&gt;
+  &lt;li&gt;first commit almost 2 years ago: &lt;a href=&quot;https://github.com/spring-cloud/spring-cloud-contract/commit/dfaddaa98d645b818ba3947c9267ef7ac8ed9ba4&quot;&gt;2014-12-06 18:20:29 by Jakub Kubrynski&lt;/a&gt; - thanks to &lt;a href=&quot;https://codearte.eu&quot;&gt;Codearte&lt;/a&gt; the authors of &lt;a href=&quot;https://devskiller.com&quot;&gt;DevSkiller&lt;/a&gt; for their support!!!&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/spring-cloud/spring-cloud-contract/commits/master&quot;&gt;1.152 commits&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/spring-cloud/spring-cloud-contract/graphs/contributors&quot;&gt;20 contributors&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
-<p>That’s quite a lot of work! But there we are, with a library that has already been battle-proven on production by many companies, even before being GA as Spring Cloud Contract.</p>
+&lt;p&gt;That’s quite a lot of work! But there we are, with a library that has already been battle-proven on production by many companies, even before being GA as Spring Cloud Contract.&lt;/p&gt;
 
-<!-- more -->
+&lt;!-- more --&gt;
 
-<h2 id="whats-new-in-comparison-to-accurest">What’s new in comparison to Accurest?</h2>
+&lt;h2 id=&quot;whats-new-in-comparison-to-accurest&quot;&gt;What’s new in comparison to Accurest?&lt;/h2&gt;
 
-<p>Like I mentioned, Accurest was already GA. So what are the main difference apart from rebranding and bug fixes?</p>
+&lt;p&gt;Like I mentioned, Accurest was already GA. So what are the main difference apart from rebranding and bug fixes?&lt;/p&gt;
 
-<ul>
-  <li>we’ve moved from Grapes to Aether to download stubs</li>
-  <li><a href="https://cloud.spring.io/spring-cloud-contract/spring-cloud-contract.html#_what_is_this_value_consumer_producer">we generate fake data when you provide either consumer or producer in the DSL</a></li>
-  <li><a href="https://cloud.spring.io/spring-cloud-contract/spring-cloud-contract.html#_common_repo_with_contracts">Consumer Contract approach is there</a></li>
-  <li>Spring Cloud Contract is available on <a href="https://start.spring.io">start.spring.io</a></li>
-  <li><a href="https://cloud.spring.io/spring-cloud-contract/spring-cloud-contract.html#_different_base_classes_for_contracts_2">you can have more than one base class for your tests</a></li>
-  <li><a href="https://cloud.spring.io/spring-cloud-contract/spring-cloud-contract.html#_additional_configuration">Spring Cloud Stub Runner Boot can register stubs in Eureka / Consul / Zookeeper using Spring Cloud</a></li>
-  <li>the whole build was moved from Gradle to the standard Spring Cloud Maven setup</li>
-</ul>
+&lt;ul&gt;
+  &lt;li&gt;we’ve moved from Grapes to Aether to download stubs&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://cloud.spring.io/spring-cloud-contract/spring-cloud-contract.html#_what_is_this_value_consumer_producer&quot;&gt;we generate fake data when you provide either consumer or producer in the DSL&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://cloud.spring.io/spring-cloud-contract/spring-cloud-contract.html#_common_repo_with_contracts&quot;&gt;Consumer Contract approach is there&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Cloud Contract is available on &lt;a href=&quot;https://start.spring.io&quot;&gt;start.spring.io&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://cloud.spring.io/spring-cloud-contract/spring-cloud-contract.html#_different_base_classes_for_contracts_2&quot;&gt;you can have more than one base class for your tests&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://cloud.spring.io/spring-cloud-contract/spring-cloud-contract.html#_additional_configuration&quot;&gt;Spring Cloud Stub Runner Boot can register stubs in Eureka / Consul / Zookeeper using Spring Cloud&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;the whole build was moved from Gradle to the standard Spring Cloud Maven setup&lt;/li&gt;
+&lt;/ul&gt;
 
-<p>These are the Spring Cloud Contract Verifier changes. Apart from that Spring Cloud Contract consists of <a href="https://cloud.spring.io/spring-cloud-contract/spring-cloud-contract.html#_spring_cloud_contract_wiremock">Spring Cloud Contract WireMock support</a> and <a href="https://cloud.spring.io/spring-cloud-contract/spring-cloud-contract.html#_generating_stubs_using_restdocs">Spring Cloud Contract RestDocs</a>. Thanks to the first one the integration with <a href="https://wiremock.org">WireMock</a> is much more efficient and thanks to the latter you don’t have to use the Groovy DSL - you can define your stubs by yourself by attaching them to an existing RestDocs test.</p>
+&lt;p&gt;These are the Spring Cloud Contract Verifier changes. Apart from that Spring Cloud Contract consists of &lt;a href=&quot;https://cloud.spring.io/spring-cloud-contract/spring-cloud-contract.html#_spring_cloud_contract_wiremock&quot;&gt;Spring Cloud Contract WireMock support&lt;/a&gt; and &lt;a href=&quot;https://cloud.spring.io/spring-cloud-contract/spring-cloud-contract.html#_generating_stubs_using_restdocs&quot;&gt;Spring Cloud Contract RestDocs&lt;/a&gt;. Thanks to the first one the integration with &lt;a href=&quot;https://wiremock.org&quot;&gt;WireMock&lt;/a&gt; is much more efficient and thanks to the latter you don’t have to use the Groovy DSL - you can define your stubs by yourself by attaching them to an existing RestDocs test.&lt;/p&gt;
 
-<p>As far as Spring Cloud Contract Verifier is concerned the biggest two changes are the <a href="https://cloud.spring.io/spring-cloud-contract/spring-cloud-contract.html#_common_repo_with_contracts">Consumer Contract support</a> and that <a href="https://cloud.spring.io/spring-cloud-contract/spring-cloud-contract.html#_different_base_classes_for_contracts_2">you can have more than one base class for your tests</a>. Let’s take a closer look what’s there in the docs about them…</p>
+&lt;p&gt;As far as Spring Cloud Contract Verifier is concerned the biggest two changes are the &lt;a href=&quot;https://cloud.spring.io/spring-cloud-contract/spring-cloud-contract.html#_common_repo_with_contracts&quot;&gt;Consumer Contract support&lt;/a&gt; and that &lt;a href=&quot;https://cloud.spring.io/spring-cloud-contract/spring-cloud-contract.html#_different_base_classes_for_contracts_2&quot;&gt;you can have more than one base class for your tests&lt;/a&gt;. Let’s take a closer look what’s there in the docs about them…&lt;/p&gt;
 
-<h3 id="consumer-contract-support">Consumer Contract support</h3>
+&lt;h3 id=&quot;consumer-contract-support&quot;&gt;Consumer Contract support&lt;/h3&gt;
 
-<p>Another way of storing contracts other than having them with the producer is keeping them in a common place. It can be related to security issues where the consumers can’t clone the producer’s code. Also if you keep contracts in a single place then you, as a producer, will know how many consumers you have and which consumer will you break with your local changes.</p>
+&lt;p&gt;Another way of storing contracts other than having them with the producer is keeping them in a common place. It can be related to security issues where the consumers can’t clone the producer’s code. Also if you keep contracts in a single place then you, as a producer, will know how many consumers you have and which consumer will you break with your local changes.&lt;/p&gt;
 
-<h4 id="repo-structure">Repo structure</h4>
+&lt;h4 id=&quot;repo-structure&quot;&gt;Repo structure&lt;/h4&gt;
 
-<p>Let’s assume that we have a producer with coordinates com.example:server and 3 consumers: client1, client2, client3. Then in the repository with common contracts you would have the following setup (which you can checkout here:</p>
+&lt;p&gt;Let’s assume that we have a producer with coordinates com.example:server and 3 consumers: client1, client2, client3. Then in the repository with common contracts you would have the following setup (which you can checkout here:&lt;/p&gt;
 
-<pre><code>├── com
+&lt;pre&gt;&lt;code&gt;├── com
 │   └── example
 │       └── server
 │           ├── client1
@@ -330,318 +330,318 @@ our goal is to give developers tools they need to deliver features as fast as po
 └── src
     └── assembly
         └── contracts.xml
-</code></pre>
-<p>As you can see the under the slash-delimited groupid / artifact id folder (<code>com/example/server</code>) you have expectations of the 3 consumers (<code>client1</code>, <code>client2</code> and <code>client3</code>). Expectations are the standard Groovy DSL contract files as described throughout this documentation. This repository has to produce a JAR file that maps one to one to the contents of the repo.</p>
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;As you can see the under the slash-delimited groupid / artifact id folder (&lt;code&gt;com/example/server&lt;/code&gt;) you have expectations of the 3 consumers (&lt;code&gt;client1&lt;/code&gt;, &lt;code&gt;client2&lt;/code&gt; and &lt;code&gt;client3&lt;/code&gt;). Expectations are the standard Groovy DSL contract files as described throughout this documentation. This repository has to produce a JAR file that maps one to one to the contents of the repo.&lt;/p&gt;
 
-<p>Example of a <code>pom.xml</code> inside the <code>server</code> folder.</p>
+&lt;p&gt;Example of a &lt;code&gt;pom.xml&lt;/code&gt; inside the &lt;code&gt;server&lt;/code&gt; folder.&lt;/p&gt;
 
-<pre><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;project xmlns="https://maven.apache.org/POM/4.0.0" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="https://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd"&gt;
-	&lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&amp;gt;
+&amp;lt;project xmlns=&quot;https://maven.apache.org/POM/4.0.0&quot; xmlns:xsi=&quot;https://www.w3.org/2001/XMLSchema-instance&quot;
+	xsi:schemaLocation=&quot;https://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&amp;gt;
+	&amp;lt;modelVersion&amp;gt;4.0.0&amp;lt;/modelVersion&amp;gt;
 
-	&lt;groupId&gt;com.example&lt;/groupId&gt;
-	&lt;artifactId&gt;server&lt;/artifactId&gt;
-	&lt;version&gt;0.0.1-SNAPSHOT&lt;/version&gt;
+	&amp;lt;groupId&amp;gt;com.example&amp;lt;/groupId&amp;gt;
+	&amp;lt;artifactId&amp;gt;server&amp;lt;/artifactId&amp;gt;
+	&amp;lt;version&amp;gt;0.0.1-SNAPSHOT&amp;lt;/version&amp;gt;
 
-	&lt;name&gt;Server Stubs&lt;/name&gt;
-	&lt;description&gt;POM used to install locally stubs for consumer side&lt;/description&gt;
+	&amp;lt;name&amp;gt;Server Stubs&amp;lt;/name&amp;gt;
+	&amp;lt;description&amp;gt;POM used to install locally stubs for consumer side&amp;lt;/description&amp;gt;
 
-	&lt;parent&gt;
-		&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
-		&lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt;
-		&lt;version&gt;1.4.0.BUILD-SNAPSHOT&lt;/version&gt;
-		&lt;relativePath /&gt;
-	&lt;/parent&gt;
+	&amp;lt;parent&amp;gt;
+		&amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt;
+		&amp;lt;artifactId&amp;gt;spring-boot-starter-parent&amp;lt;/artifactId&amp;gt;
+		&amp;lt;version&amp;gt;1.4.0.BUILD-SNAPSHOT&amp;lt;/version&amp;gt;
+		&amp;lt;relativePath /&amp;gt;
+	&amp;lt;/parent&amp;gt;
 
-	&lt;properties&gt;
-		&lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;
-		&lt;java.version&gt;1.8&lt;/java.version&gt;
-		&lt;spring-cloud-contract.version&gt;1.0.1.BUILD-SNAPSHOT&lt;/spring-cloud-contract.version&gt;
-		&lt;spring-cloud-dependencies.version&gt;Camden.BUILD-SNAPSHOT&lt;/spring-cloud-dependencies.version&gt;
-	&lt;/properties&gt;
+	&amp;lt;properties&amp;gt;
+		&amp;lt;project.build.sourceEncoding&amp;gt;UTF-8&amp;lt;/project.build.sourceEncoding&amp;gt;
+		&amp;lt;java.version&amp;gt;1.8&amp;lt;/java.version&amp;gt;
+		&amp;lt;spring-cloud-contract.version&amp;gt;1.0.1.BUILD-SNAPSHOT&amp;lt;/spring-cloud-contract.version&amp;gt;
+		&amp;lt;spring-cloud-dependencies.version&amp;gt;Camden.BUILD-SNAPSHOT&amp;lt;/spring-cloud-dependencies.version&amp;gt;
+	&amp;lt;/properties&amp;gt;
 
-	&lt;dependencyManagement&gt;
-		&lt;dependencies&gt;
-			&lt;dependency&gt;
-				&lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
-				&lt;artifactId&gt;spring-cloud-dependencies&lt;/artifactId&gt;
-				&lt;version&gt;${spring-cloud-dependencies.version}&lt;/version&gt;
-				&lt;type&gt;pom&lt;/type&gt;
-				&lt;scope&gt;import&lt;/scope&gt;
-			&lt;/dependency&gt;
-		&lt;/dependencies&gt;
-	&lt;/dependencyManagement&gt;
+	&amp;lt;dependencyManagement&amp;gt;
+		&amp;lt;dependencies&amp;gt;
+			&amp;lt;dependency&amp;gt;
+				&amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt;
+				&amp;lt;artifactId&amp;gt;spring-cloud-dependencies&amp;lt;/artifactId&amp;gt;
+				&amp;lt;version&amp;gt;${spring-cloud-dependencies.version}&amp;lt;/version&amp;gt;
+				&amp;lt;type&amp;gt;pom&amp;lt;/type&amp;gt;
+				&amp;lt;scope&amp;gt;import&amp;lt;/scope&amp;gt;
+			&amp;lt;/dependency&amp;gt;
+		&amp;lt;/dependencies&amp;gt;
+	&amp;lt;/dependencyManagement&amp;gt;
 
-	&lt;build&gt;
-		&lt;plugins&gt;
-			&lt;plugin&gt;
-				&lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
-				&lt;artifactId&gt;spring-cloud-contract-maven-plugin&lt;/artifactId&gt;
-				&lt;version&gt;${spring-cloud-contract.version}&lt;/version&gt;
-				&lt;extensions&gt;true&lt;/extensions&gt;
-				&lt;configuration&gt;
-					&lt;!-- By default it would search under src/test/resources/ --&gt;
-					&lt;contractsDirectory&gt;${project.basedir}&lt;/contractsDirectory&gt;
-				&lt;/configuration&gt;
-			&lt;/plugin&gt;
-		&lt;/plugins&gt;
-	&lt;/build&gt;
+	&amp;lt;build&amp;gt;
+		&amp;lt;plugins&amp;gt;
+			&amp;lt;plugin&amp;gt;
+				&amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt;
+				&amp;lt;artifactId&amp;gt;spring-cloud-contract-maven-plugin&amp;lt;/artifactId&amp;gt;
+				&amp;lt;version&amp;gt;${spring-cloud-contract.version}&amp;lt;/version&amp;gt;
+				&amp;lt;extensions&amp;gt;true&amp;lt;/extensions&amp;gt;
+				&amp;lt;configuration&amp;gt;
+					&amp;lt;!-- By default it would search under src/test/resources/ --&amp;gt;
+					&amp;lt;contractsDirectory&amp;gt;${project.basedir}&amp;lt;/contractsDirectory&amp;gt;
+				&amp;lt;/configuration&amp;gt;
+			&amp;lt;/plugin&amp;gt;
+		&amp;lt;/plugins&amp;gt;
+	&amp;lt;/build&amp;gt;
 
-	&lt;repositories&gt;
-		&lt;repository&gt;
-			&lt;id&gt;spring-snapshots&lt;/id&gt;
-			&lt;name&gt;Spring Snapshots&lt;/name&gt;
-			&lt;url&gt;https://repo.spring.io/snapshot&lt;/url&gt;
-			&lt;snapshots&gt;
-				&lt;enabled&gt;true&lt;/enabled&gt;
-			&lt;/snapshots&gt;
-		&lt;/repository&gt;
-		&lt;repository&gt;
-			&lt;id&gt;spring-milestones&lt;/id&gt;
-			&lt;name&gt;Spring Milestones&lt;/name&gt;
-			&lt;url&gt;https://repo.spring.io/milestone&lt;/url&gt;
-			&lt;snapshots&gt;
-				&lt;enabled&gt;false&lt;/enabled&gt;
-			&lt;/snapshots&gt;
-		&lt;/repository&gt;
-		&lt;repository&gt;
-			&lt;id&gt;spring-releases&lt;/id&gt;
-			&lt;name&gt;Spring Releases&lt;/name&gt;
-			&lt;url&gt;https://repo.spring.io/release&lt;/url&gt;
-			&lt;snapshots&gt;
-				&lt;enabled&gt;false&lt;/enabled&gt;
-			&lt;/snapshots&gt;
-		&lt;/repository&gt;
-	&lt;/repositories&gt;
-	&lt;pluginRepositories&gt;
-		&lt;pluginRepository&gt;
-			&lt;id&gt;spring-snapshots&lt;/id&gt;
-			&lt;name&gt;Spring Snapshots&lt;/name&gt;
-			&lt;url&gt;https://repo.spring.io/snapshot&lt;/url&gt;
-			&lt;snapshots&gt;
-				&lt;enabled&gt;true&lt;/enabled&gt;
-			&lt;/snapshots&gt;
-		&lt;/pluginRepository&gt;
-		&lt;pluginRepository&gt;
-			&lt;id&gt;spring-milestones&lt;/id&gt;
-			&lt;name&gt;Spring Milestones&lt;/name&gt;
-			&lt;url&gt;https://repo.spring.io/milestone&lt;/url&gt;
-			&lt;snapshots&gt;
-				&lt;enabled&gt;false&lt;/enabled&gt;
-			&lt;/snapshots&gt;
-		&lt;/pluginRepository&gt;
-		&lt;pluginRepository&gt;
-			&lt;id&gt;spring-releases&lt;/id&gt;
-			&lt;name&gt;Spring Releases&lt;/name&gt;
-			&lt;url&gt;https://repo.spring.io/release&lt;/url&gt;
-			&lt;snapshots&gt;
-				&lt;enabled&gt;false&lt;/enabled&gt;
-			&lt;/snapshots&gt;
-		&lt;/pluginRepository&gt;
-	&lt;/pluginRepositories&gt;
+	&amp;lt;repositories&amp;gt;
+		&amp;lt;repository&amp;gt;
+			&amp;lt;id&amp;gt;spring-snapshots&amp;lt;/id&amp;gt;
+			&amp;lt;name&amp;gt;Spring Snapshots&amp;lt;/name&amp;gt;
+			&amp;lt;url&amp;gt;https://repo.spring.io/snapshot&amp;lt;/url&amp;gt;
+			&amp;lt;snapshots&amp;gt;
+				&amp;lt;enabled&amp;gt;true&amp;lt;/enabled&amp;gt;
+			&amp;lt;/snapshots&amp;gt;
+		&amp;lt;/repository&amp;gt;
+		&amp;lt;repository&amp;gt;
+			&amp;lt;id&amp;gt;spring-milestones&amp;lt;/id&amp;gt;
+			&amp;lt;name&amp;gt;Spring Milestones&amp;lt;/name&amp;gt;
+			&amp;lt;url&amp;gt;https://repo.spring.io/milestone&amp;lt;/url&amp;gt;
+			&amp;lt;snapshots&amp;gt;
+				&amp;lt;enabled&amp;gt;false&amp;lt;/enabled&amp;gt;
+			&amp;lt;/snapshots&amp;gt;
+		&amp;lt;/repository&amp;gt;
+		&amp;lt;repository&amp;gt;
+			&amp;lt;id&amp;gt;spring-releases&amp;lt;/id&amp;gt;
+			&amp;lt;name&amp;gt;Spring Releases&amp;lt;/name&amp;gt;
+			&amp;lt;url&amp;gt;https://repo.spring.io/release&amp;lt;/url&amp;gt;
+			&amp;lt;snapshots&amp;gt;
+				&amp;lt;enabled&amp;gt;false&amp;lt;/enabled&amp;gt;
+			&amp;lt;/snapshots&amp;gt;
+		&amp;lt;/repository&amp;gt;
+	&amp;lt;/repositories&amp;gt;
+	&amp;lt;pluginRepositories&amp;gt;
+		&amp;lt;pluginRepository&amp;gt;
+			&amp;lt;id&amp;gt;spring-snapshots&amp;lt;/id&amp;gt;
+			&amp;lt;name&amp;gt;Spring Snapshots&amp;lt;/name&amp;gt;
+			&amp;lt;url&amp;gt;https://repo.spring.io/snapshot&amp;lt;/url&amp;gt;
+			&amp;lt;snapshots&amp;gt;
+				&amp;lt;enabled&amp;gt;true&amp;lt;/enabled&amp;gt;
+			&amp;lt;/snapshots&amp;gt;
+		&amp;lt;/pluginRepository&amp;gt;
+		&amp;lt;pluginRepository&amp;gt;
+			&amp;lt;id&amp;gt;spring-milestones&amp;lt;/id&amp;gt;
+			&amp;lt;name&amp;gt;Spring Milestones&amp;lt;/name&amp;gt;
+			&amp;lt;url&amp;gt;https://repo.spring.io/milestone&amp;lt;/url&amp;gt;
+			&amp;lt;snapshots&amp;gt;
+				&amp;lt;enabled&amp;gt;false&amp;lt;/enabled&amp;gt;
+			&amp;lt;/snapshots&amp;gt;
+		&amp;lt;/pluginRepository&amp;gt;
+		&amp;lt;pluginRepository&amp;gt;
+			&amp;lt;id&amp;gt;spring-releases&amp;lt;/id&amp;gt;
+			&amp;lt;name&amp;gt;Spring Releases&amp;lt;/name&amp;gt;
+			&amp;lt;url&amp;gt;https://repo.spring.io/release&amp;lt;/url&amp;gt;
+			&amp;lt;snapshots&amp;gt;
+				&amp;lt;enabled&amp;gt;false&amp;lt;/enabled&amp;gt;
+			&amp;lt;/snapshots&amp;gt;
+		&amp;lt;/pluginRepository&amp;gt;
+	&amp;lt;/pluginRepositories&amp;gt;
 
-&lt;/project&gt;
-</code></pre>
+&amp;lt;/project&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
 
-<p>As you can see there are no dependencies other than the Spring Cloud Contract Verifier Maven plugin. Those poms are necessary for the consumer side to run <code>mvn clean install -DskipTests</code> to locally install stubs of the producer project.</p>
+&lt;p&gt;As you can see there are no dependencies other than the Spring Cloud Contract Verifier Maven plugin. Those poms are necessary for the consumer side to run &lt;code&gt;mvn clean install -DskipTests&lt;/code&gt; to locally install stubs of the producer project.&lt;/p&gt;
 
-<p>The <code>pom.xml</code> in the root folder can look like this:</p>
+&lt;p&gt;The &lt;code&gt;pom.xml&lt;/code&gt; in the root folder can look like this:&lt;/p&gt;
 
-<pre><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;project xmlns="https://maven.apache.org/POM/4.0.0" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
-		 xsi:schemaLocation="https://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd"&gt;
-	&lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&amp;gt;
+&amp;lt;project xmlns=&quot;https://maven.apache.org/POM/4.0.0&quot; xmlns:xsi=&quot;https://www.w3.org/2001/XMLSchema-instance&quot;
+		 xsi:schemaLocation=&quot;https://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&amp;gt;
+	&amp;lt;modelVersion&amp;gt;4.0.0&amp;lt;/modelVersion&amp;gt;
 
-	&lt;groupId&gt;com.example.standalone&lt;/groupId&gt;
-	&lt;artifactId&gt;contracts&lt;/artifactId&gt;
-	&lt;version&gt;0.0.1-SNAPSHOT&lt;/version&gt;
+	&amp;lt;groupId&amp;gt;com.example.standalone&amp;lt;/groupId&amp;gt;
+	&amp;lt;artifactId&amp;gt;contracts&amp;lt;/artifactId&amp;gt;
+	&amp;lt;version&amp;gt;0.0.1-SNAPSHOT&amp;lt;/version&amp;gt;
 
-	&lt;name&gt;Contracts&lt;/name&gt;
-	&lt;description&gt;Contains all the Spring Cloud Contracts, well, contracts. JAR used by the producers to generate tests and stubs&lt;/description&gt;
+	&amp;lt;name&amp;gt;Contracts&amp;lt;/name&amp;gt;
+	&amp;lt;description&amp;gt;Contains all the Spring Cloud Contracts, well, contracts. JAR used by the producers to generate tests and stubs&amp;lt;/description&amp;gt;
 
-	&lt;properties&gt;
-		&lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;
-	&lt;/properties&gt;
+	&amp;lt;properties&amp;gt;
+		&amp;lt;project.build.sourceEncoding&amp;gt;UTF-8&amp;lt;/project.build.sourceEncoding&amp;gt;
+	&amp;lt;/properties&amp;gt;
 
-	&lt;build&gt;
-		&lt;plugins&gt;
-			&lt;plugin&gt;
-				&lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
-				&lt;artifactId&gt;maven-assembly-plugin&lt;/artifactId&gt;
-				&lt;executions&gt;
-					&lt;execution&gt;
-						&lt;id&gt;contracts&lt;/id&gt;
-						&lt;phase&gt;prepare-package&lt;/phase&gt;
-						&lt;goals&gt;
-							&lt;goal&gt;single&lt;/goal&gt;
-						&lt;/goals&gt;
-						&lt;configuration&gt;
-							&lt;attach&gt;true&lt;/attach&gt;
-							&lt;descriptor&gt;${basedir}/src/assembly/contracts.xml&lt;/descriptor&gt;
-							&lt;!-- If you want an explicit classifier remove the following line --&gt;
-							&lt;appendAssemblyId&gt;false&lt;/appendAssemblyId&gt;
-						&lt;/configuration&gt;
-					&lt;/execution&gt;
-				&lt;/executions&gt;
-			&lt;/plugin&gt;
-		&lt;/plugins&gt;
-	&lt;/build&gt;
+	&amp;lt;build&amp;gt;
+		&amp;lt;plugins&amp;gt;
+			&amp;lt;plugin&amp;gt;
+				&amp;lt;groupId&amp;gt;org.apache.maven.plugins&amp;lt;/groupId&amp;gt;
+				&amp;lt;artifactId&amp;gt;maven-assembly-plugin&amp;lt;/artifactId&amp;gt;
+				&amp;lt;executions&amp;gt;
+					&amp;lt;execution&amp;gt;
+						&amp;lt;id&amp;gt;contracts&amp;lt;/id&amp;gt;
+						&amp;lt;phase&amp;gt;prepare-package&amp;lt;/phase&amp;gt;
+						&amp;lt;goals&amp;gt;
+							&amp;lt;goal&amp;gt;single&amp;lt;/goal&amp;gt;
+						&amp;lt;/goals&amp;gt;
+						&amp;lt;configuration&amp;gt;
+							&amp;lt;attach&amp;gt;true&amp;lt;/attach&amp;gt;
+							&amp;lt;descriptor&amp;gt;${basedir}/src/assembly/contracts.xml&amp;lt;/descriptor&amp;gt;
+							&amp;lt;!-- If you want an explicit classifier remove the following line --&amp;gt;
+							&amp;lt;appendAssemblyId&amp;gt;false&amp;lt;/appendAssemblyId&amp;gt;
+						&amp;lt;/configuration&amp;gt;
+					&amp;lt;/execution&amp;gt;
+				&amp;lt;/executions&amp;gt;
+			&amp;lt;/plugin&amp;gt;
+		&amp;lt;/plugins&amp;gt;
+	&amp;lt;/build&amp;gt;
 
-&lt;/project&gt;
-</code></pre>
+&amp;lt;/project&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
 
-<p>It’s using the assembly plugin in order to build the JAR with all the contracts. Example of such setup is here:</p>
+&lt;p&gt;It’s using the assembly plugin in order to build the JAR with all the contracts. Example of such setup is here:&lt;/p&gt;
 
-<pre><code>&lt;assembly xmlns="https://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.3"
-		  xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
-		  xsi:schemaLocation="https://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.3 https://maven.apache.org/xsd/assembly-1.1.3.xsd"&gt;
-	&lt;id&gt;project&lt;/id&gt;
-	&lt;formats&gt;
-		&lt;format&gt;jar&lt;/format&gt;
-	&lt;/formats&gt;
-	&lt;includeBaseDirectory&gt;false&lt;/includeBaseDirectory&gt;
-	&lt;fileSets&gt;
-		&lt;fileSet&gt;
-			&lt;directory&gt;${project.basedir}&lt;/directory&gt;
-			&lt;outputDirectory&gt;/&lt;/outputDirectory&gt;
-			&lt;useDefaultExcludes&gt;true&lt;/useDefaultExcludes&gt;
-			&lt;excludes&gt;
-				&lt;exclude&gt;**/${project.build.directory}/**&lt;/exclude&gt;
-				&lt;exclude&gt;mvnw&lt;/exclude&gt;
-				&lt;exclude&gt;mvnw.cmd&lt;/exclude&gt;
-				&lt;exclude&gt;.mvn/**&lt;/exclude&gt;
-				&lt;exclude&gt;src/**&lt;/exclude&gt;
-			&lt;/excludes&gt;
-		&lt;/fileSet&gt;
-	&lt;/fileSets&gt;
-&lt;/assembly&gt;
-</code></pre>
+&lt;pre&gt;&lt;code&gt;&amp;lt;assembly xmlns=&quot;https://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.3&quot;
+		  xmlns:xsi=&quot;https://www.w3.org/2001/XMLSchema-instance&quot;
+		  xsi:schemaLocation=&quot;https://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.3 https://maven.apache.org/xsd/assembly-1.1.3.xsd&quot;&amp;gt;
+	&amp;lt;id&amp;gt;project&amp;lt;/id&amp;gt;
+	&amp;lt;formats&amp;gt;
+		&amp;lt;format&amp;gt;jar&amp;lt;/format&amp;gt;
+	&amp;lt;/formats&amp;gt;
+	&amp;lt;includeBaseDirectory&amp;gt;false&amp;lt;/includeBaseDirectory&amp;gt;
+	&amp;lt;fileSets&amp;gt;
+		&amp;lt;fileSet&amp;gt;
+			&amp;lt;directory&amp;gt;${project.basedir}&amp;lt;/directory&amp;gt;
+			&amp;lt;outputDirectory&amp;gt;/&amp;lt;/outputDirectory&amp;gt;
+			&amp;lt;useDefaultExcludes&amp;gt;true&amp;lt;/useDefaultExcludes&amp;gt;
+			&amp;lt;excludes&amp;gt;
+				&amp;lt;exclude&amp;gt;**/${project.build.directory}/**&amp;lt;/exclude&amp;gt;
+				&amp;lt;exclude&amp;gt;mvnw&amp;lt;/exclude&amp;gt;
+				&amp;lt;exclude&amp;gt;mvnw.cmd&amp;lt;/exclude&amp;gt;
+				&amp;lt;exclude&amp;gt;.mvn/**&amp;lt;/exclude&amp;gt;
+				&amp;lt;exclude&amp;gt;src/**&amp;lt;/exclude&amp;gt;
+			&amp;lt;/excludes&amp;gt;
+		&amp;lt;/fileSet&amp;gt;
+	&amp;lt;/fileSets&amp;gt;
+&amp;lt;/assembly&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
 
-<h4 id="workflow">Workflow</h4>
+&lt;h4 id=&quot;workflow&quot;&gt;Workflow&lt;/h4&gt;
 
-<p>The workflow would look similar to the one presented in the <a href="https://cloud.spring.io/spring-cloud-contract/spring-cloud-contract.html#_step_by_step_guide_to_cdc">Step by step guide to CDC</a>. The only difference is that the producer doesn’t own the contracts anymore. So the consumer and the producer have to work on common contracts in a common repository.</p>
+&lt;p&gt;The workflow would look similar to the one presented in the &lt;a href=&quot;https://cloud.spring.io/spring-cloud-contract/spring-cloud-contract.html#_step_by_step_guide_to_cdc&quot;&gt;Step by step guide to CDC&lt;/a&gt;. The only difference is that the producer doesn’t own the contracts anymore. So the consumer and the producer have to work on common contracts in a common repository.&lt;/p&gt;
 
-<h4 id="consumer">Consumer</h4>
+&lt;h4 id=&quot;consumer&quot;&gt;Consumer&lt;/h4&gt;
 
-<p>When the consumer wants to work on the contracts offline, instead of cloning the producer code, the consumer team clones the common repository, goes to the required producer’s folder (e.g. <code>com/example/server</code>) and runs <code>mvn clean install -DskipTests</code> to install locally the stubs converted from the contracts.</p>
+&lt;p&gt;When the consumer wants to work on the contracts offline, instead of cloning the producer code, the consumer team clones the common repository, goes to the required producer’s folder (e.g. &lt;code&gt;com/example/server&lt;/code&gt;) and runs &lt;code&gt;mvn clean install -DskipTests&lt;/code&gt; to install locally the stubs converted from the contracts.&lt;/p&gt;
 
-<p><strong>REMEMBER! You need to have Maven installed locally</strong></p>
+&lt;p&gt;&lt;strong&gt;REMEMBER! You need to have Maven installed locally&lt;/strong&gt;&lt;/p&gt;
 
-<h4 id="producer">Producer</h4>
+&lt;h4 id=&quot;producer&quot;&gt;Producer&lt;/h4&gt;
 
-<p>As a producer it’s enough to alter the Spring Cloud Contract Verifier to provide the URL and the dependency of the JAR containing the contracts:</p>
+&lt;p&gt;As a producer it’s enough to alter the Spring Cloud Contract Verifier to provide the URL and the dependency of the JAR containing the contracts:&lt;/p&gt;
 
-<pre><code>&lt;plugin&gt;
-	&lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
-	&lt;artifactId&gt;spring-cloud-contract-maven-plugin&lt;/artifactId&gt;
-	&lt;configuration&gt;
-		&lt;contractsRepositoryUrl&gt;https://link/to/your/nexus/or/artifactory/or/sth&lt;/contractsRepositoryUrl&gt;
-		&lt;contractDependency&gt;
-			&lt;groupId&gt;com.example.standalone&lt;/groupId&gt;
-			&lt;artifactId&gt;contracts&lt;/artifactId&gt;
-		&lt;/contractDependency&gt;
-	&lt;/configuration&gt;
-&lt;/plugin&gt;
-</code></pre>
+&lt;pre&gt;&lt;code&gt;&amp;lt;plugin&amp;gt;
+	&amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt;
+	&amp;lt;artifactId&amp;gt;spring-cloud-contract-maven-plugin&amp;lt;/artifactId&amp;gt;
+	&amp;lt;configuration&amp;gt;
+		&amp;lt;contractsRepositoryUrl&amp;gt;https://link/to/your/nexus/or/artifactory/or/sth&amp;lt;/contractsRepositoryUrl&amp;gt;
+		&amp;lt;contractDependency&amp;gt;
+			&amp;lt;groupId&amp;gt;com.example.standalone&amp;lt;/groupId&amp;gt;
+			&amp;lt;artifactId&amp;gt;contracts&amp;lt;/artifactId&amp;gt;
+		&amp;lt;/contractDependency&amp;gt;
+	&amp;lt;/configuration&amp;gt;
+&amp;lt;/plugin&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
 
-<p>With this setup the JAR with groupid <code>com.example.standalone</code> and artifactid contracts will be downloaded from <code>https://link/to/your/nexus/or/artifactory/or/sth</code>. It will be then unpacked in a local temporary folder and contracts present under the <code>com/example/server</code> will be picked as the ones used to generate the tests and the stubs. Due to this convention the producer team will know which consumer teams will be broken when some incompatible changes are done.</p>
+&lt;p&gt;With this setup the JAR with groupid &lt;code&gt;com.example.standalone&lt;/code&gt; and artifactid contracts will be downloaded from &lt;code&gt;https://link/to/your/nexus/or/artifactory/or/sth&lt;/code&gt;. It will be then unpacked in a local temporary folder and contracts present under the &lt;code&gt;com/example/server&lt;/code&gt; will be picked as the ones used to generate the tests and the stubs. Due to this convention the producer team will know which consumer teams will be broken when some incompatible changes are done.&lt;/p&gt;
 
-<p>The rest of the flow looks the same.</p>
+&lt;p&gt;The rest of the flow looks the same.&lt;/p&gt;
 
-<h3 id="more-than-one-base-class">More than one base class</h3>
+&lt;h3 id=&quot;more-than-one-base-class&quot;&gt;More than one base class&lt;/h3&gt;
 
-<p>That was quite a problem when providing one single base class for all the tests. After some time the mock configurations were enormous! That’s why we’ve added a possibility to map a contract to its test base class.</p>
+&lt;p&gt;That was quite a problem when providing one single base class for all the tests. After some time the mock configurations were enormous! That’s why we’ve added a possibility to map a contract to its test base class.&lt;/p&gt;
 
-<h4 id="gradle">Gradle</h4>
+&lt;h4 id=&quot;gradle&quot;&gt;Gradle&lt;/h4&gt;
 
-<p>If your base classes differ between contracts you can tell the Spring Cloud Contract plugin which class should get extended by the autogenerated tests. You have two options:</p>
+&lt;p&gt;If your base classes differ between contracts you can tell the Spring Cloud Contract plugin which class should get extended by the autogenerated tests. You have two options:&lt;/p&gt;
 
-<ul>
-  <li>follow a convention by providing the <code>packageWithBaseClasses</code></li>
-  <li>provide explicit mapping via <code>baseClassMappings</code></li>
-</ul>
+&lt;ul&gt;
+  &lt;li&gt;follow a convention by providing the &lt;code&gt;packageWithBaseClasses&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;provide explicit mapping via &lt;code&gt;baseClassMappings&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
-<h5 id="convention">Convention</h5>
+&lt;h5 id=&quot;convention&quot;&gt;Convention&lt;/h5&gt;
 
-<p>The convention is such that if you have a contract under e.g. <code>src/test/resources/contract/foo/bar/baz/</code> and provide the value of the <code>packageWithBaseClasses</code> property to <code>com.example.base</code> then we will assume that there is a <code>BarBazBase</code> class under <code>com.example.base</code> package. In other words we take last two parts of package if they exist and form a class with a <code>Base</code> suffix. Takes precedence over <code>baseClassForTests</code>. Example of usage in the contracts closure:</p>
+&lt;p&gt;The convention is such that if you have a contract under e.g. &lt;code&gt;src/test/resources/contract/foo/bar/baz/&lt;/code&gt; and provide the value of the &lt;code&gt;packageWithBaseClasses&lt;/code&gt; property to &lt;code&gt;com.example.base&lt;/code&gt; then we will assume that there is a &lt;code&gt;BarBazBase&lt;/code&gt; class under &lt;code&gt;com.example.base&lt;/code&gt; package. In other words we take last two parts of package if they exist and form a class with a &lt;code&gt;Base&lt;/code&gt; suffix. Takes precedence over &lt;code&gt;baseClassForTests&lt;/code&gt;. Example of usage in the contracts closure:&lt;/p&gt;
 
-<pre><code>packageWithBaseClasses = 'com.example.base'
-</code></pre>
+&lt;pre&gt;&lt;code&gt;packageWithBaseClasses = 'com.example.base'
+&lt;/code&gt;&lt;/pre&gt;
 
-<h5 id="mapping">Mapping</h5>
+&lt;h5 id=&quot;mapping&quot;&gt;Mapping&lt;/h5&gt;
 
-<p>You can manually map a regular expression of the contract’s <em>package</em> (package, not folder) to fully qualified name of the base class for the matched contract. Let’s take a look at the following example:</p>
+&lt;p&gt;You can manually map a regular expression of the contract’s &lt;em&gt;package&lt;/em&gt; (package, not folder) to fully qualified name of the base class for the matched contract. Let’s take a look at the following example:&lt;/p&gt;
 
-<pre><code>baseClassForTests = "com.example.FooBase"
+&lt;pre&gt;&lt;code&gt;baseClassForTests = &quot;com.example.FooBase&quot;
 baseClassMappings {
 	baseClassMapping('.*com.*', 'com.example.ComBase')
 	baseClassMapping('.*bar.*':'com.example.BarBase')
 }
-</code></pre>
+&lt;/code&gt;&lt;/pre&gt;
 
-<p>Let’s assume that you have contracts under</p>
+&lt;p&gt;Let’s assume that you have contracts under&lt;/p&gt;
 
-<ul>
-  <li><code>src/test/resources/contract/com/</code></li>
-  <li><code>src/test/resources/contract/foo/</code></li>
-</ul>
+&lt;ul&gt;
+  &lt;li&gt;&lt;code&gt;src/test/resources/contract/com/&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;src/test/resources/contract/foo/&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
-<p>By providing the <code>baseClassForTests</code> we have a fallback in case mapping didn’t succeed (you could also provide the <code>packageWithBaseClasses</code> as fallback). That way the tests generated from <code>src/test/resources/contract/com/</code> contracts will be extending the <code>com.example.ComBase</code> whereas the rest of tests will extend <code>com.example.FooBase</code> cause they don’t match the base class mapping for <code>bar</code> folder.</p>
+&lt;p&gt;By providing the &lt;code&gt;baseClassForTests&lt;/code&gt; we have a fallback in case mapping didn’t succeed (you could also provide the &lt;code&gt;packageWithBaseClasses&lt;/code&gt; as fallback). That way the tests generated from &lt;code&gt;src/test/resources/contract/com/&lt;/code&gt; contracts will be extending the &lt;code&gt;com.example.ComBase&lt;/code&gt; whereas the rest of tests will extend &lt;code&gt;com.example.FooBase&lt;/code&gt; cause they don’t match the base class mapping for &lt;code&gt;bar&lt;/code&gt; folder.&lt;/p&gt;
 
-<h4 id="maven">Maven</h4>
+&lt;h4 id=&quot;maven&quot;&gt;Maven&lt;/h4&gt;
 
-<p>Let’s now look how it looks like for Maven.</p>
+&lt;p&gt;Let’s now look how it looks like for Maven.&lt;/p&gt;
 
-<h5 id="convention-1">Convention</h5>
+&lt;h5 id=&quot;convention-1&quot;&gt;Convention&lt;/h5&gt;
 
-<p>To accomplish the same result as the one presented for Gradle you’d have to set your configuration like this:</p>
+&lt;p&gt;To accomplish the same result as the one presented for Gradle you’d have to set your configuration like this:&lt;/p&gt;
 
-<pre><code>&lt;plugin&gt;
-	&lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
-	&lt;artifactId&gt;spring-cloud-contract-maven-plugin&lt;/artifactId&gt;
-	&lt;configuration&gt;
-		&lt;packageWithBaseClasses&gt;com.example.base&lt;/packageWithBaseClasses&gt;
-	&lt;/configuration&gt;
-&lt;/plugin&gt;
-</code></pre>
+&lt;pre&gt;&lt;code&gt;&amp;lt;plugin&amp;gt;
+	&amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt;
+	&amp;lt;artifactId&amp;gt;spring-cloud-contract-maven-plugin&amp;lt;/artifactId&amp;gt;
+	&amp;lt;configuration&amp;gt;
+		&amp;lt;packageWithBaseClasses&amp;gt;com.example.base&amp;lt;/packageWithBaseClasses&amp;gt;
+	&amp;lt;/configuration&amp;gt;
+&amp;lt;/plugin&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
 
-<h5 id="mapping-1">Mapping</h5>
+&lt;h5 id=&quot;mapping-1&quot;&gt;Mapping&lt;/h5&gt;
 
-<p>You can manually map a regular expression of the contract’s package to fully qualified name of the base class for the matched contract. You have to provide a list <code>baseClassMappings</code> of <code>baseClassMapping</code> that takes a <code>contractPackageRegex</code> to <code>baseClassFQN</code> mapping. Let’s take a look at the following example:</p>
+&lt;p&gt;You can manually map a regular expression of the contract’s package to fully qualified name of the base class for the matched contract. You have to provide a list &lt;code&gt;baseClassMappings&lt;/code&gt; of &lt;code&gt;baseClassMapping&lt;/code&gt; that takes a &lt;code&gt;contractPackageRegex&lt;/code&gt; to &lt;code&gt;baseClassFQN&lt;/code&gt; mapping. Let’s take a look at the following example:&lt;/p&gt;
 
-<pre><code>&lt;plugin&gt;
-	&lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
-	&lt;artifactId&gt;spring-cloud-contract-maven-plugin&lt;/artifactId&gt;
-	&lt;configuration&gt;
-		&lt;baseClassForTests&gt;com.example.FooBase&lt;/baseClassForTests&gt;
-		&lt;baseClassMappings&gt;
-			&lt;baseClassMapping&gt;
-				&lt;contractPackageRegex&gt;.*com.*&lt;/contractPackageRegex&gt;
-				&lt;baseClassFQN&gt;com.example.ComBase&lt;/baseClassFQN&gt;
-			&lt;/baseClassMapping&gt;
-  			&lt;baseClassMapping&gt;
-  				&lt;contractPackageRegex&gt;.*bar.*&lt;/contractPackageRegex&gt;
-  				&lt;baseClassFQN&gt;com.example.BarBase&lt;/baseClassFQN&gt;
-  			&lt;/baseClassMapping&gt;
-		&lt;/baseClassMappings&gt;
-	&lt;/configuration&gt;
-&lt;/plugin&gt;
-</code></pre>
+&lt;pre&gt;&lt;code&gt;&amp;lt;plugin&amp;gt;
+	&amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt;
+	&amp;lt;artifactId&amp;gt;spring-cloud-contract-maven-plugin&amp;lt;/artifactId&amp;gt;
+	&amp;lt;configuration&amp;gt;
+		&amp;lt;baseClassForTests&amp;gt;com.example.FooBase&amp;lt;/baseClassForTests&amp;gt;
+		&amp;lt;baseClassMappings&amp;gt;
+			&amp;lt;baseClassMapping&amp;gt;
+				&amp;lt;contractPackageRegex&amp;gt;.*com.*&amp;lt;/contractPackageRegex&amp;gt;
+				&amp;lt;baseClassFQN&amp;gt;com.example.ComBase&amp;lt;/baseClassFQN&amp;gt;
+			&amp;lt;/baseClassMapping&amp;gt;
+  			&amp;lt;baseClassMapping&amp;gt;
+  				&amp;lt;contractPackageRegex&amp;gt;.*bar.*&amp;lt;/contractPackageRegex&amp;gt;
+  				&amp;lt;baseClassFQN&amp;gt;com.example.BarBase&amp;lt;/baseClassFQN&amp;gt;
+  			&amp;lt;/baseClassMapping&amp;gt;
+		&amp;lt;/baseClassMappings&amp;gt;
+	&amp;lt;/configuration&amp;gt;
+&amp;lt;/plugin&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
 
-<h2 id="summary">Summary</h2>
+&lt;h2 id=&quot;summary&quot;&gt;Summary&lt;/h2&gt;
 
-<p>In this blog post we’ve checked what are the new and shiny features in the GA of Spring Cloud Contract. We’ve also checked some history around Accurest to Spring Cloud Contract migration.</p>
+&lt;p&gt;In this blog post we’ve checked what are the new and shiny features in the GA of Spring Cloud Contract. We’ve also checked some history around Accurest to Spring Cloud Contract migration.&lt;/p&gt;
 
-<h2 id="links">Links</h2>
+&lt;h2 id=&quot;links&quot;&gt;Links&lt;/h2&gt;
 
-<p>Here you can find interesting links related to Spring Cloud Contract Verifier:</p>
+&lt;p&gt;Here you can find interesting links related to Spring Cloud Contract Verifier:&lt;/p&gt;
 
-<ul>
-  <li><a href="https://github.com/spring-cloud/spring-cloud-contract/">Spring Cloud Contract Github Repository</a></li>
-  <li><a href="https://cloud.spring.io/spring-cloud-contract/">Spring Cloud Contract Main project page</a></li>
-  <li><a href="https://cloud.spring.io/spring-cloud-contract/spring-cloud-contract.html">Spring Cloud Contract Documentation</a></li>
-  <li><a href="https://cloud.spring.io/spring-cloud-contract/spring-cloud-contract.html#_spring_cloud_contract_stub_runner">Spring Cloud Contract Stub Runner Documentation</a></li>
-  <li><a href="https://gitter.im/spring-cloud/spring-cloud-contract">Spring Cloud Contract Gitter</a></li>
-  <li><a href="https://cloud.spring.io/spring-cloud-contract/spring-cloud-contract-maven-plugin/">Spring Cloud Contract Maven Plugin Documentation</a></li>
-</ul>]]></content><author><name>Marcin Grzejszczak</name></author><category term="articles" /><category term="spring-cloud" /><category term="deployment" /><category term="accurest" /><category term="spring-cloud-contract" /><category term="consumer-driven-contracts" /><category term="cdc" /><summary type="html"><![CDATA[I’ve just published an article at the Spring blog about Spring Cloud Contract 1.0.0.RELEASE is available. I’m really happy that the project is GA. Even though as the Accurest project we had already done a GA release, it really feels that a lot of effort was put in order to release the GA version under the Pivotal’s Spring Cloud branding. Let’s look at some numbers: first commit almost 2 years ago: 2014-12-06 18:20:29 by Jakub Kubrynski - thanks to Codearte the authors of DevSkiller for their support!!! 1.152 commits 20 contributors That’s quite a lot of work! But there we are, with a library that has already been battle-proven on production by many companies, even before being GA as Spring Cloud Contract. What’s new in comparison to Accurest? Like I mentioned, Accurest was already GA. So what are the main difference apart from rebranding and bug fixes? we’ve moved from Grapes to Aether to download stubs we generate fake data when you provide either consumer or producer in the DSL Consumer Contract approach is there Spring Cloud Contract is available on start.spring.io you can have more than one base class for your tests Spring Cloud Stub Runner Boot can register stubs in Eureka / Consul / Zookeeper using Spring Cloud the whole build was moved from Gradle to the standard Spring Cloud Maven setup These are the Spring Cloud Contract Verifier changes. Apart from that Spring Cloud Contract consists of Spring Cloud Contract WireMock support and Spring Cloud Contract RestDocs. Thanks to the first one the integration with WireMock is much more efficient and thanks to the latter you don’t have to use the Groovy DSL - you can define your stubs by yourself by attaching them to an existing RestDocs test. As far as Spring Cloud Contract Verifier is concerned the biggest two changes are the Consumer Contract support and that you can have more than one base class for your tests. Let’s take a closer look what’s there in the docs about them… Consumer Contract support Another way of storing contracts other than having them with the producer is keeping them in a common place. It can be related to security issues where the consumers can’t clone the producer’s code. Also if you keep contracts in a single place then you, as a producer, will know how many consumers you have and which consumer will you break with your local changes. Repo structure Let’s assume that we have a producer with coordinates com.example:server and 3 consumers: client1, client2, client3. Then in the repository with common contracts you would have the following setup (which you can checkout here: ├── com │ └── example │ └── server │ ├── client1 │ │ └── expectation.groovy │ ├── client2 │ │ └── expectation.groovy │ ├── client3 │ │ └── expectation.groovy │ └── pom.xml ├── mvnw ├── mvnw.cmd ├── pom.xml └── src └── assembly └── contracts.xml As you can see the under the slash-delimited groupid / artifact id folder (com/example/server) you have expectations of the 3 consumers (client1, client2 and client3). Expectations are the standard Groovy DSL contract files as described throughout this documentation. This repository has to produce a JAR file that maps one to one to the contents of the repo. Example of a pom.xml inside the server folder. &lt;?xml version="1.0" encoding="UTF-8"?&gt; &lt;project xmlns="https://maven.apache.org/POM/4.0.0" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd"&gt; &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt; &lt;groupId&gt;com.example&lt;/groupId&gt; &lt;artifactId&gt;server&lt;/artifactId&gt; &lt;version&gt;0.0.1-SNAPSHOT&lt;/version&gt; &lt;name&gt;Server Stubs&lt;/name&gt; &lt;description&gt;POM used to install locally stubs for consumer side&lt;/description&gt; &lt;parent&gt; &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt; &lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt; &lt;version&gt;1.4.0.BUILD-SNAPSHOT&lt;/version&gt; &lt;relativePath /&gt; &lt;/parent&gt; &lt;properties&gt; &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt; &lt;java.version&gt;1.8&lt;/java.version&gt; &lt;spring-cloud-contract.version&gt;1.0.1.BUILD-SNAPSHOT&lt;/spring-cloud-contract.version&gt; &lt;spring-cloud-dependencies.version&gt;Camden.BUILD-SNAPSHOT&lt;/spring-cloud-dependencies.version&gt; &lt;/properties&gt; &lt;dependencyManagement&gt; &lt;dependencies&gt; &lt;dependency&gt; &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt; &lt;artifactId&gt;spring-cloud-dependencies&lt;/artifactId&gt; &lt;version&gt;${spring-cloud-dependencies.version}&lt;/version&gt; &lt;type&gt;pom&lt;/type&gt; &lt;scope&gt;import&lt;/scope&gt; &lt;/dependency&gt; &lt;/dependencies&gt; &lt;/dependencyManagement&gt; &lt;build&gt; &lt;plugins&gt; &lt;plugin&gt; &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt; &lt;artifactId&gt;spring-cloud-contract-maven-plugin&lt;/artifactId&gt; &lt;version&gt;${spring-cloud-contract.version}&lt;/version&gt; &lt;extensions&gt;true&lt;/extensions&gt; &lt;configuration&gt; &lt;!-- By default it would search under src/test/resources/ --&gt; &lt;contractsDirectory&gt;${project.basedir}&lt;/contractsDirectory&gt; &lt;/configuration&gt; &lt;/plugin&gt; &lt;/plugins&gt; &lt;/build&gt; &lt;repositories&gt; &lt;repository&gt; &lt;id&gt;spring-snapshots&lt;/id&gt; &lt;name&gt;Spring Snapshots&lt;/name&gt; &lt;url&gt;https://repo.spring.io/snapshot&lt;/url&gt; &lt;snapshots&gt; &lt;enabled&gt;true&lt;/enabled&gt; &lt;/snapshots&gt; &lt;/repository&gt; &lt;repository&gt; &lt;id&gt;spring-milestones&lt;/id&gt; &lt;name&gt;Spring Milestones&lt;/name&gt; &lt;url&gt;https://repo.spring.io/milestone&lt;/url&gt; &lt;snapshots&gt; &lt;enabled&gt;false&lt;/enabled&gt; &lt;/snapshots&gt; &lt;/repository&gt; &lt;repository&gt; &lt;id&gt;spring-releases&lt;/id&gt; &lt;name&gt;Spring Releases&lt;/name&gt; &lt;url&gt;https://repo.spring.io/release&lt;/url&gt; &lt;snapshots&gt; &lt;enabled&gt;false&lt;/enabled&gt; &lt;/snapshots&gt; &lt;/repository&gt; &lt;/repositories&gt; &lt;pluginRepositories&gt; &lt;pluginRepository&gt; &lt;id&gt;spring-snapshots&lt;/id&gt; &lt;name&gt;Spring Snapshots&lt;/name&gt; &lt;url&gt;https://repo.spring.io/snapshot&lt;/url&gt; &lt;snapshots&gt; &lt;enabled&gt;true&lt;/enabled&gt; &lt;/snapshots&gt; &lt;/pluginRepository&gt; &lt;pluginRepository&gt; &lt;id&gt;spring-milestones&lt;/id&gt; &lt;name&gt;Spring Milestones&lt;/name&gt; &lt;url&gt;https://repo.spring.io/milestone&lt;/url&gt; &lt;snapshots&gt; &lt;enabled&gt;false&lt;/enabled&gt; &lt;/snapshots&gt; &lt;/pluginRepository&gt; &lt;pluginRepository&gt; &lt;id&gt;spring-releases&lt;/id&gt; &lt;name&gt;Spring Releases&lt;/name&gt; &lt;url&gt;https://repo.spring.io/release&lt;/url&gt; &lt;snapshots&gt; &lt;enabled&gt;false&lt;/enabled&gt; &lt;/snapshots&gt; &lt;/pluginRepository&gt; &lt;/pluginRepositories&gt; &lt;/project&gt; As you can see there are no dependencies other than the Spring Cloud Contract Verifier Maven plugin. Those poms are necessary for the consumer side to run mvn clean install -DskipTests to locally install stubs of the producer project. The pom.xml in the root folder can look like this: &lt;?xml version="1.0" encoding="UTF-8"?&gt; &lt;project xmlns="https://maven.apache.org/POM/4.0.0" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd"&gt; &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt; &lt;groupId&gt;com.example.standalone&lt;/groupId&gt; &lt;artifactId&gt;contracts&lt;/artifactId&gt; &lt;version&gt;0.0.1-SNAPSHOT&lt;/version&gt; &lt;name&gt;Contracts&lt;/name&gt; &lt;description&gt;Contains all the Spring Cloud Contracts, well, contracts. JAR used by the producers to generate tests and stubs&lt;/description&gt; &lt;properties&gt; &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt; &lt;/properties&gt; &lt;build&gt; &lt;plugins&gt; &lt;plugin&gt; &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt; &lt;artifactId&gt;maven-assembly-plugin&lt;/artifactId&gt; &lt;executions&gt; &lt;execution&gt; &lt;id&gt;contracts&lt;/id&gt; &lt;phase&gt;prepare-package&lt;/phase&gt; &lt;goals&gt; &lt;goal&gt;single&lt;/goal&gt; &lt;/goals&gt; &lt;configuration&gt; &lt;attach&gt;true&lt;/attach&gt; &lt;descriptor&gt;${basedir}/src/assembly/contracts.xml&lt;/descriptor&gt; &lt;!-- If you want an explicit classifier remove the following line --&gt; &lt;appendAssemblyId&gt;false&lt;/appendAssemblyId&gt; &lt;/configuration&gt; &lt;/execution&gt; &lt;/executions&gt; &lt;/plugin&gt; &lt;/plugins&gt; &lt;/build&gt; &lt;/project&gt; It’s using the assembly plugin in order to build the JAR with all the contracts. Example of such setup is here: &lt;assembly xmlns="https://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.3" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.3 https://maven.apache.org/xsd/assembly-1.1.3.xsd"&gt; &lt;id&gt;project&lt;/id&gt; &lt;formats&gt; &lt;format&gt;jar&lt;/format&gt; &lt;/formats&gt; &lt;includeBaseDirectory&gt;false&lt;/includeBaseDirectory&gt; &lt;fileSets&gt; &lt;fileSet&gt; &lt;directory&gt;${project.basedir}&lt;/directory&gt; &lt;outputDirectory&gt;/&lt;/outputDirectory&gt; &lt;useDefaultExcludes&gt;true&lt;/useDefaultExcludes&gt; &lt;excludes&gt; &lt;exclude&gt;**/${project.build.directory}/**&lt;/exclude&gt; &lt;exclude&gt;mvnw&lt;/exclude&gt; &lt;exclude&gt;mvnw.cmd&lt;/exclude&gt; &lt;exclude&gt;.mvn/**&lt;/exclude&gt; &lt;exclude&gt;src/**&lt;/exclude&gt; &lt;/excludes&gt; &lt;/fileSet&gt; &lt;/fileSets&gt; &lt;/assembly&gt; Workflow The workflow would look similar to the one presented in the Step by step guide to CDC. The only difference is that the producer doesn’t own the contracts anymore. So the consumer and the producer have to work on common contracts in a common repository. Consumer When the consumer wants to work on the contracts offline, instead of cloning the producer code, the consumer team clones the common repository, goes to the required producer’s folder (e.g. com/example/server) and runs mvn clean install -DskipTests to install locally the stubs converted from the contracts. REMEMBER! You need to have Maven installed locally Producer As a producer it’s enough to alter the Spring Cloud Contract Verifier to provide the URL and the dependency of the JAR containing the contracts: &lt;plugin&gt; &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt; &lt;artifactId&gt;spring-cloud-contract-maven-plugin&lt;/artifactId&gt; &lt;configuration&gt; &lt;contractsRepositoryUrl&gt;https://link/to/your/nexus/or/artifactory/or/sth&lt;/contractsRepositoryUrl&gt; &lt;contractDependency&gt; &lt;groupId&gt;com.example.standalone&lt;/groupId&gt; &lt;artifactId&gt;contracts&lt;/artifactId&gt; &lt;/contractDependency&gt; &lt;/configuration&gt; &lt;/plugin&gt; With this setup the JAR with groupid com.example.standalone and artifactid contracts will be downloaded from https://link/to/your/nexus/or/artifactory/or/sth. It will be then unpacked in a local temporary folder and contracts present under the com/example/server will be picked as the ones used to generate the tests and the stubs. Due to this convention the producer team will know which consumer teams will be broken when some incompatible changes are done. The rest of the flow looks the same. More than one base class That was quite a problem when providing one single base class for all the tests. After some time the mock configurations were enormous! That’s why we’ve added a possibility to map a contract to its test base class. Gradle If your base classes differ between contracts you can tell the Spring Cloud Contract plugin which class should get extended by the autogenerated tests. You have two options: follow a convention by providing the packageWithBaseClasses provide explicit mapping via baseClassMappings Convention The convention is such that if you have a contract under e.g. src/test/resources/contract/foo/bar/baz/ and provide the value of the packageWithBaseClasses property to com.example.base then we will assume that there is a BarBazBase class under com.example.base package. In other words we take last two parts of package if they exist and form a class with a Base suffix. Takes precedence over baseClassForTests. Example of usage in the contracts closure: packageWithBaseClasses = 'com.example.base' Mapping You can manually map a regular expression of the contract’s package (package, not folder) to fully qualified name of the base class for the matched contract. Let’s take a look at the following example: baseClassForTests = "com.example.FooBase" baseClassMappings { baseClassMapping('.*com.*', 'com.example.ComBase') baseClassMapping('.*bar.*':'com.example.BarBase') } Let’s assume that you have contracts under src/test/resources/contract/com/ src/test/resources/contract/foo/ By providing the baseClassForTests we have a fallback in case mapping didn’t succeed (you could also provide the packageWithBaseClasses as fallback). That way the tests generated from src/test/resources/contract/com/ contracts will be extending the com.example.ComBase whereas the rest of tests will extend com.example.FooBase cause they don’t match the base class mapping for bar folder. Maven Let’s now look how it looks like for Maven. Convention To accomplish the same result as the one presented for Gradle you’d have to set your configuration like this: &lt;plugin&gt; &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt; &lt;artifactId&gt;spring-cloud-contract-maven-plugin&lt;/artifactId&gt; &lt;configuration&gt; &lt;packageWithBaseClasses&gt;com.example.base&lt;/packageWithBaseClasses&gt; &lt;/configuration&gt; &lt;/plugin&gt; Mapping You can manually map a regular expression of the contract’s package to fully qualified name of the base class for the matched contract. You have to provide a list baseClassMappings of baseClassMapping that takes a contractPackageRegex to baseClassFQN mapping. Let’s take a look at the following example: &lt;plugin&gt; &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt; &lt;artifactId&gt;spring-cloud-contract-maven-plugin&lt;/artifactId&gt; &lt;configuration&gt; &lt;baseClassForTests&gt;com.example.FooBase&lt;/baseClassForTests&gt; &lt;baseClassMappings&gt; &lt;baseClassMapping&gt; &lt;contractPackageRegex&gt;.*com.*&lt;/contractPackageRegex&gt; &lt;baseClassFQN&gt;com.example.ComBase&lt;/baseClassFQN&gt; &lt;/baseClassMapping&gt; &lt;baseClassMapping&gt; &lt;contractPackageRegex&gt;.*bar.*&lt;/contractPackageRegex&gt; &lt;baseClassFQN&gt;com.example.BarBase&lt;/baseClassFQN&gt; &lt;/baseClassMapping&gt; &lt;/baseClassMappings&gt; &lt;/configuration&gt; &lt;/plugin&gt; Summary In this blog post we’ve checked what are the new and shiny features in the GA of Spring Cloud Contract. We’ve also checked some history around Accurest to Spring Cloud Contract migration. Links Here you can find interesting links related to Spring Cloud Contract Verifier: Spring Cloud Contract Github Repository Spring Cloud Contract Main project page Spring Cloud Contract Documentation Spring Cloud Contract Stub Runner Documentation Spring Cloud Contract Gitter Spring Cloud Contract Maven Plugin Documentation]]></summary></entry></feed>
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/spring-cloud/spring-cloud-contract/&quot;&gt;Spring Cloud Contract Github Repository&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://cloud.spring.io/spring-cloud-contract/&quot;&gt;Spring Cloud Contract Main project page&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://cloud.spring.io/spring-cloud-contract/spring-cloud-contract.html&quot;&gt;Spring Cloud Contract Documentation&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://cloud.spring.io/spring-cloud-contract/spring-cloud-contract.html#_spring_cloud_contract_stub_runner&quot;&gt;Spring Cloud Contract Stub Runner Documentation&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://gitter.im/spring-cloud/spring-cloud-contract&quot;&gt;Spring Cloud Contract Gitter&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://cloud.spring.io/spring-cloud-contract/spring-cloud-contract-maven-plugin/&quot;&gt;Spring Cloud Contract Maven Plugin Documentation&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Marcin Grzejszczak</name></author><category term="articles" /><category term="spring-cloud" /><category term="deployment" /><category term="accurest" /><category term="spring-cloud-contract" /><category term="consumer-driven-contracts" /><category term="cdc" /><summary type="html">I’ve just published an article at the Spring blog about Spring Cloud Contract 1.0.0.RELEASE is available. I’m really happy that the project is GA. Even though as the Accurest project we had already done a GA release, it really feels that a lot of effort was put in order to release the GA version under the Pivotal’s Spring Cloud branding. Let’s look at some numbers: first commit almost 2 years ago: 2014-12-06 18:20:29 by Jakub Kubrynski - thanks to Codearte the authors of DevSkiller for their support!!! 1.152 commits 20 contributors That’s quite a lot of work! But there we are, with a library that has already been battle-proven on production by many companies, even before being GA as Spring Cloud Contract. What’s new in comparison to Accurest? Like I mentioned, Accurest was already GA. So what are the main difference apart from rebranding and bug fixes? we’ve moved from Grapes to Aether to download stubs we generate fake data when you provide either consumer or producer in the DSL Consumer Contract approach is there Spring Cloud Contract is available on start.spring.io you can have more than one base class for your tests Spring Cloud Stub Runner Boot can register stubs in Eureka / Consul / Zookeeper using Spring Cloud the whole build was moved from Gradle to the standard Spring Cloud Maven setup These are the Spring Cloud Contract Verifier changes. Apart from that Spring Cloud Contract consists of Spring Cloud Contract WireMock support and Spring Cloud Contract RestDocs. Thanks to the first one the integration with WireMock is much more efficient and thanks to the latter you don’t have to use the Groovy DSL - you can define your stubs by yourself by attaching them to an existing RestDocs test. As far as Spring Cloud Contract Verifier is concerned the biggest two changes are the Consumer Contract support and that you can have more than one base class for your tests. Let’s take a closer look what’s there in the docs about them… Consumer Contract support Another way of storing contracts other than having them with the producer is keeping them in a common place. It can be related to security issues where the consumers can’t clone the producer’s code. Also if you keep contracts in a single place then you, as a producer, will know how many consumers you have and which consumer will you break with your local changes. Repo structure Let’s assume that we have a producer with coordinates com.example:server and 3 consumers: client1, client2, client3. Then in the repository with common contracts you would have the following setup (which you can checkout here: ├── com │ └── example │ └── server │ ├── client1 │ │ └── expectation.groovy │ ├── client2 │ │ └── expectation.groovy │ ├── client3 │ │ └── expectation.groovy │ └── pom.xml ├── mvnw ├── mvnw.cmd ├── pom.xml └── src └── assembly └── contracts.xml As you can see the under the slash-delimited groupid / artifact id folder (com/example/server) you have expectations of the 3 consumers (client1, client2 and client3). Expectations are the standard Groovy DSL contract files as described throughout this documentation. This repository has to produce a JAR file that maps one to one to the contents of the repo. Example of a pom.xml inside the server folder. &amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&amp;gt; &amp;lt;project xmlns=&quot;https://maven.apache.org/POM/4.0.0&quot; xmlns:xsi=&quot;https://www.w3.org/2001/XMLSchema-instance&quot; xsi:schemaLocation=&quot;https://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&amp;gt; &amp;lt;modelVersion&amp;gt;4.0.0&amp;lt;/modelVersion&amp;gt; &amp;lt;groupId&amp;gt;com.example&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;server&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;0.0.1-SNAPSHOT&amp;lt;/version&amp;gt; &amp;lt;name&amp;gt;Server Stubs&amp;lt;/name&amp;gt; &amp;lt;description&amp;gt;POM used to install locally stubs for consumer side&amp;lt;/description&amp;gt; &amp;lt;parent&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-boot-starter-parent&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;1.4.0.BUILD-SNAPSHOT&amp;lt;/version&amp;gt; &amp;lt;relativePath /&amp;gt; &amp;lt;/parent&amp;gt; &amp;lt;properties&amp;gt; &amp;lt;project.build.sourceEncoding&amp;gt;UTF-8&amp;lt;/project.build.sourceEncoding&amp;gt; &amp;lt;java.version&amp;gt;1.8&amp;lt;/java.version&amp;gt; &amp;lt;spring-cloud-contract.version&amp;gt;1.0.1.BUILD-SNAPSHOT&amp;lt;/spring-cloud-contract.version&amp;gt; &amp;lt;spring-cloud-dependencies.version&amp;gt;Camden.BUILD-SNAPSHOT&amp;lt;/spring-cloud-dependencies.version&amp;gt; &amp;lt;/properties&amp;gt; &amp;lt;dependencyManagement&amp;gt; &amp;lt;dependencies&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-cloud-dependencies&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;${spring-cloud-dependencies.version}&amp;lt;/version&amp;gt; &amp;lt;type&amp;gt;pom&amp;lt;/type&amp;gt; &amp;lt;scope&amp;gt;import&amp;lt;/scope&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;/dependencies&amp;gt; &amp;lt;/dependencyManagement&amp;gt; &amp;lt;build&amp;gt; &amp;lt;plugins&amp;gt; &amp;lt;plugin&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-cloud-contract-maven-plugin&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;${spring-cloud-contract.version}&amp;lt;/version&amp;gt; &amp;lt;extensions&amp;gt;true&amp;lt;/extensions&amp;gt; &amp;lt;configuration&amp;gt; &amp;lt;!-- By default it would search under src/test/resources/ --&amp;gt; &amp;lt;contractsDirectory&amp;gt;${project.basedir}&amp;lt;/contractsDirectory&amp;gt; &amp;lt;/configuration&amp;gt; &amp;lt;/plugin&amp;gt; &amp;lt;/plugins&amp;gt; &amp;lt;/build&amp;gt; &amp;lt;repositories&amp;gt; &amp;lt;repository&amp;gt; &amp;lt;id&amp;gt;spring-snapshots&amp;lt;/id&amp;gt; &amp;lt;name&amp;gt;Spring Snapshots&amp;lt;/name&amp;gt; &amp;lt;url&amp;gt;https://repo.spring.io/snapshot&amp;lt;/url&amp;gt; &amp;lt;snapshots&amp;gt; &amp;lt;enabled&amp;gt;true&amp;lt;/enabled&amp;gt; &amp;lt;/snapshots&amp;gt; &amp;lt;/repository&amp;gt; &amp;lt;repository&amp;gt; &amp;lt;id&amp;gt;spring-milestones&amp;lt;/id&amp;gt; &amp;lt;name&amp;gt;Spring Milestones&amp;lt;/name&amp;gt; &amp;lt;url&amp;gt;https://repo.spring.io/milestone&amp;lt;/url&amp;gt; &amp;lt;snapshots&amp;gt; &amp;lt;enabled&amp;gt;false&amp;lt;/enabled&amp;gt; &amp;lt;/snapshots&amp;gt; &amp;lt;/repository&amp;gt; &amp;lt;repository&amp;gt; &amp;lt;id&amp;gt;spring-releases&amp;lt;/id&amp;gt; &amp;lt;name&amp;gt;Spring Releases&amp;lt;/name&amp;gt; &amp;lt;url&amp;gt;https://repo.spring.io/release&amp;lt;/url&amp;gt; &amp;lt;snapshots&amp;gt; &amp;lt;enabled&amp;gt;false&amp;lt;/enabled&amp;gt; &amp;lt;/snapshots&amp;gt; &amp;lt;/repository&amp;gt; &amp;lt;/repositories&amp;gt; &amp;lt;pluginRepositories&amp;gt; &amp;lt;pluginRepository&amp;gt; &amp;lt;id&amp;gt;spring-snapshots&amp;lt;/id&amp;gt; &amp;lt;name&amp;gt;Spring Snapshots&amp;lt;/name&amp;gt; &amp;lt;url&amp;gt;https://repo.spring.io/snapshot&amp;lt;/url&amp;gt; &amp;lt;snapshots&amp;gt; &amp;lt;enabled&amp;gt;true&amp;lt;/enabled&amp;gt; &amp;lt;/snapshots&amp;gt; &amp;lt;/pluginRepository&amp;gt; &amp;lt;pluginRepository&amp;gt; &amp;lt;id&amp;gt;spring-milestones&amp;lt;/id&amp;gt; &amp;lt;name&amp;gt;Spring Milestones&amp;lt;/name&amp;gt; &amp;lt;url&amp;gt;https://repo.spring.io/milestone&amp;lt;/url&amp;gt; &amp;lt;snapshots&amp;gt; &amp;lt;enabled&amp;gt;false&amp;lt;/enabled&amp;gt; &amp;lt;/snapshots&amp;gt; &amp;lt;/pluginRepository&amp;gt; &amp;lt;pluginRepository&amp;gt; &amp;lt;id&amp;gt;spring-releases&amp;lt;/id&amp;gt; &amp;lt;name&amp;gt;Spring Releases&amp;lt;/name&amp;gt; &amp;lt;url&amp;gt;https://repo.spring.io/release&amp;lt;/url&amp;gt; &amp;lt;snapshots&amp;gt; &amp;lt;enabled&amp;gt;false&amp;lt;/enabled&amp;gt; &amp;lt;/snapshots&amp;gt; &amp;lt;/pluginRepository&amp;gt; &amp;lt;/pluginRepositories&amp;gt; &amp;lt;/project&amp;gt; As you can see there are no dependencies other than the Spring Cloud Contract Verifier Maven plugin. Those poms are necessary for the consumer side to run mvn clean install -DskipTests to locally install stubs of the producer project. The pom.xml in the root folder can look like this: &amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&amp;gt; &amp;lt;project xmlns=&quot;https://maven.apache.org/POM/4.0.0&quot; xmlns:xsi=&quot;https://www.w3.org/2001/XMLSchema-instance&quot; xsi:schemaLocation=&quot;https://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&amp;gt; &amp;lt;modelVersion&amp;gt;4.0.0&amp;lt;/modelVersion&amp;gt; &amp;lt;groupId&amp;gt;com.example.standalone&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;contracts&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;0.0.1-SNAPSHOT&amp;lt;/version&amp;gt; &amp;lt;name&amp;gt;Contracts&amp;lt;/name&amp;gt; &amp;lt;description&amp;gt;Contains all the Spring Cloud Contracts, well, contracts. JAR used by the producers to generate tests and stubs&amp;lt;/description&amp;gt; &amp;lt;properties&amp;gt; &amp;lt;project.build.sourceEncoding&amp;gt;UTF-8&amp;lt;/project.build.sourceEncoding&amp;gt; &amp;lt;/properties&amp;gt; &amp;lt;build&amp;gt; &amp;lt;plugins&amp;gt; &amp;lt;plugin&amp;gt; &amp;lt;groupId&amp;gt;org.apache.maven.plugins&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;maven-assembly-plugin&amp;lt;/artifactId&amp;gt; &amp;lt;executions&amp;gt; &amp;lt;execution&amp;gt; &amp;lt;id&amp;gt;contracts&amp;lt;/id&amp;gt; &amp;lt;phase&amp;gt;prepare-package&amp;lt;/phase&amp;gt; &amp;lt;goals&amp;gt; &amp;lt;goal&amp;gt;single&amp;lt;/goal&amp;gt; &amp;lt;/goals&amp;gt; &amp;lt;configuration&amp;gt; &amp;lt;attach&amp;gt;true&amp;lt;/attach&amp;gt; &amp;lt;descriptor&amp;gt;${basedir}/src/assembly/contracts.xml&amp;lt;/descriptor&amp;gt; &amp;lt;!-- If you want an explicit classifier remove the following line --&amp;gt; &amp;lt;appendAssemblyId&amp;gt;false&amp;lt;/appendAssemblyId&amp;gt; &amp;lt;/configuration&amp;gt; &amp;lt;/execution&amp;gt; &amp;lt;/executions&amp;gt; &amp;lt;/plugin&amp;gt; &amp;lt;/plugins&amp;gt; &amp;lt;/build&amp;gt; &amp;lt;/project&amp;gt; It’s using the assembly plugin in order to build the JAR with all the contracts. Example of such setup is here: &amp;lt;assembly xmlns=&quot;https://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.3&quot; xmlns:xsi=&quot;https://www.w3.org/2001/XMLSchema-instance&quot; xsi:schemaLocation=&quot;https://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.3 https://maven.apache.org/xsd/assembly-1.1.3.xsd&quot;&amp;gt; &amp;lt;id&amp;gt;project&amp;lt;/id&amp;gt; &amp;lt;formats&amp;gt; &amp;lt;format&amp;gt;jar&amp;lt;/format&amp;gt; &amp;lt;/formats&amp;gt; &amp;lt;includeBaseDirectory&amp;gt;false&amp;lt;/includeBaseDirectory&amp;gt; &amp;lt;fileSets&amp;gt; &amp;lt;fileSet&amp;gt; &amp;lt;directory&amp;gt;${project.basedir}&amp;lt;/directory&amp;gt; &amp;lt;outputDirectory&amp;gt;/&amp;lt;/outputDirectory&amp;gt; &amp;lt;useDefaultExcludes&amp;gt;true&amp;lt;/useDefaultExcludes&amp;gt; &amp;lt;excludes&amp;gt; &amp;lt;exclude&amp;gt;**/${project.build.directory}/**&amp;lt;/exclude&amp;gt; &amp;lt;exclude&amp;gt;mvnw&amp;lt;/exclude&amp;gt; &amp;lt;exclude&amp;gt;mvnw.cmd&amp;lt;/exclude&amp;gt; &amp;lt;exclude&amp;gt;.mvn/**&amp;lt;/exclude&amp;gt; &amp;lt;exclude&amp;gt;src/**&amp;lt;/exclude&amp;gt; &amp;lt;/excludes&amp;gt; &amp;lt;/fileSet&amp;gt; &amp;lt;/fileSets&amp;gt; &amp;lt;/assembly&amp;gt; Workflow The workflow would look similar to the one presented in the Step by step guide to CDC. The only difference is that the producer doesn’t own the contracts anymore. So the consumer and the producer have to work on common contracts in a common repository. Consumer When the consumer wants to work on the contracts offline, instead of cloning the producer code, the consumer team clones the common repository, goes to the required producer’s folder (e.g. com/example/server) and runs mvn clean install -DskipTests to install locally the stubs converted from the contracts. REMEMBER! You need to have Maven installed locally Producer As a producer it’s enough to alter the Spring Cloud Contract Verifier to provide the URL and the dependency of the JAR containing the contracts: &amp;lt;plugin&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-cloud-contract-maven-plugin&amp;lt;/artifactId&amp;gt; &amp;lt;configuration&amp;gt; &amp;lt;contractsRepositoryUrl&amp;gt;https://link/to/your/nexus/or/artifactory/or/sth&amp;lt;/contractsRepositoryUrl&amp;gt; &amp;lt;contractDependency&amp;gt; &amp;lt;groupId&amp;gt;com.example.standalone&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;contracts&amp;lt;/artifactId&amp;gt; &amp;lt;/contractDependency&amp;gt; &amp;lt;/configuration&amp;gt; &amp;lt;/plugin&amp;gt; With this setup the JAR with groupid com.example.standalone and artifactid contracts will be downloaded from https://link/to/your/nexus/or/artifactory/or/sth. It will be then unpacked in a local temporary folder and contracts present under the com/example/server will be picked as the ones used to generate the tests and the stubs. Due to this convention the producer team will know which consumer teams will be broken when some incompatible changes are done. The rest of the flow looks the same. More than one base class That was quite a problem when providing one single base class for all the tests. After some time the mock configurations were enormous! That’s why we’ve added a possibility to map a contract to its test base class. Gradle If your base classes differ between contracts you can tell the Spring Cloud Contract plugin which class should get extended by the autogenerated tests. You have two options: follow a convention by providing the packageWithBaseClasses provide explicit mapping via baseClassMappings Convention The convention is such that if you have a contract under e.g. src/test/resources/contract/foo/bar/baz/ and provide the value of the packageWithBaseClasses property to com.example.base then we will assume that there is a BarBazBase class under com.example.base package. In other words we take last two parts of package if they exist and form a class with a Base suffix. Takes precedence over baseClassForTests. Example of usage in the contracts closure: packageWithBaseClasses = 'com.example.base' Mapping You can manually map a regular expression of the contract’s package (package, not folder) to fully qualified name of the base class for the matched contract. Let’s take a look at the following example: baseClassForTests = &quot;com.example.FooBase&quot; baseClassMappings { baseClassMapping('.*com.*', 'com.example.ComBase') baseClassMapping('.*bar.*':'com.example.BarBase') } Let’s assume that you have contracts under src/test/resources/contract/com/ src/test/resources/contract/foo/ By providing the baseClassForTests we have a fallback in case mapping didn’t succeed (you could also provide the packageWithBaseClasses as fallback). That way the tests generated from src/test/resources/contract/com/ contracts will be extending the com.example.ComBase whereas the rest of tests will extend com.example.FooBase cause they don’t match the base class mapping for bar folder. Maven Let’s now look how it looks like for Maven. Convention To accomplish the same result as the one presented for Gradle you’d have to set your configuration like this: &amp;lt;plugin&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-cloud-contract-maven-plugin&amp;lt;/artifactId&amp;gt; &amp;lt;configuration&amp;gt; &amp;lt;packageWithBaseClasses&amp;gt;com.example.base&amp;lt;/packageWithBaseClasses&amp;gt; &amp;lt;/configuration&amp;gt; &amp;lt;/plugin&amp;gt; Mapping You can manually map a regular expression of the contract’s package to fully qualified name of the base class for the matched contract. You have to provide a list baseClassMappings of baseClassMapping that takes a contractPackageRegex to baseClassFQN mapping. Let’s take a look at the following example: &amp;lt;plugin&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-cloud-contract-maven-plugin&amp;lt;/artifactId&amp;gt; &amp;lt;configuration&amp;gt; &amp;lt;baseClassForTests&amp;gt;com.example.FooBase&amp;lt;/baseClassForTests&amp;gt; &amp;lt;baseClassMappings&amp;gt; &amp;lt;baseClassMapping&amp;gt; &amp;lt;contractPackageRegex&amp;gt;.*com.*&amp;lt;/contractPackageRegex&amp;gt; &amp;lt;baseClassFQN&amp;gt;com.example.ComBase&amp;lt;/baseClassFQN&amp;gt; &amp;lt;/baseClassMapping&amp;gt; &amp;lt;baseClassMapping&amp;gt; &amp;lt;contractPackageRegex&amp;gt;.*bar.*&amp;lt;/contractPackageRegex&amp;gt; &amp;lt;baseClassFQN&amp;gt;com.example.BarBase&amp;lt;/baseClassFQN&amp;gt; &amp;lt;/baseClassMapping&amp;gt; &amp;lt;/baseClassMappings&amp;gt; &amp;lt;/configuration&amp;gt; &amp;lt;/plugin&amp;gt; Summary In this blog post we’ve checked what are the new and shiny features in the GA of Spring Cloud Contract. We’ve also checked some history around Accurest to Spring Cloud Contract migration. Links Here you can find interesting links related to Spring Cloud Contract Verifier: Spring Cloud Contract Github Repository Spring Cloud Contract Main project page Spring Cloud Contract Documentation Spring Cloud Contract Stub Runner Documentation Spring Cloud Contract Gitter Spring Cloud Contract Maven Plugin Documentation</summary></entry></feed>
