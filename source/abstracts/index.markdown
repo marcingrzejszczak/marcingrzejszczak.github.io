@@ -27,7 +27,7 @@ Discover proven techniques to transform your application from opaque to transpar
 - Debug like a pro: Leverage metrics, distributed tracing, logs, and exemplars to pinpoint latency bottlenecks and hunt down elusive bugs.
 - See the unseen: Gain deep insights into application health, performance, and user experience, empowering data-driven decisions.
 
-Ready to unleash the full potential of your JVM app using the industry’s golden standard? Join this session and become an Observability Jedi!
+Ready to reach the full potential of your JVM app using the industry’s golden standard? Join this session and become an Observability Jedi!
 
 ___
 
@@ -50,7 +50,7 @@ Dive into:
 We'll showcase:
 
 -Practical code examples for instrumenting real-world applications.
--Advanced techniques Portugal.
+-Advanced techniques.
 
 Ready to elevate your observability game using the industry’s golden standard? This talk is your one-stop shop for Micrometer mastery!
 
