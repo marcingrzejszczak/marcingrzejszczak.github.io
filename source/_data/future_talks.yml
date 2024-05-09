@@ -4,7 +4,7 @@
   country: Poland
   countryCode: pl
   status: Accepted
-  talks: Observability of Your Application
+  talks: Is your JVM app flying blind? Unmask hidden issues with Observability superpowers!
 
 - date: 2024.05.22
   eventName: JUG Lodz
