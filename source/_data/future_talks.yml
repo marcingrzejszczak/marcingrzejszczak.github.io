@@ -1,19 +1,3 @@
-- date: 2024.05.14
-  eventName: Geecon
-  city: Cracow
-  country: Poland
-  countryCode: pl
-  status: Accepted
-  talks: Is your JVM app flying blind? Unmask hidden issues with Observability superpowers!
-
-- date: 2024.05.22
-  eventName: JUG Lodz
-  city: Lodz
-  country: Poland
-  countryCode: pl
-  status: Accepted
-  talks: Is your JVM app flying blind? Unmask hidden issues with Observability superpowers!
-
 - date: 2024.06.04
   eventName: JNation
   city: Coimbra
