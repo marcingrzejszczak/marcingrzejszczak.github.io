@@ -13,3 +13,17 @@
   countryCode: pl
   status: Accepted
   talks: Is your JVM app flying blind? Unmask hidden issues with Observability superpowers!
+
+- date: 2024.08.02
+  eventName: O'Reilly Live Events
+  city: Online
+  country: Poland
+  countryCode: pl
+  talks: Java Microservices with Spring in 2 Weeks
+  
+- date: 2024.08.09
+  eventName: O'Reilly Live Events
+  city: Online
+  country: Poland
+  countryCode: pl
+  talks: Java Microservices with Spring in 2 Week
