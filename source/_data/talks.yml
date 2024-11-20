@@ -1,3 +1,17 @@
+- date: 2024.11.20
+  eventName: O'Reilly Live Events
+  city: Online
+  country: Poland
+  countryCode: pl
+  talks: Java Microservices with Spring in 2 Week
+
+- date: 2024.11.13
+  eventName: O'Reilly Live Events
+  city: Online
+  country: Poland
+  countryCode: pl
+  talks: Java Microservices with Spring in 2 Weeks
+
 - date: 2024.08.09
   eventName: O'Reilly Live Events
   city: Online
