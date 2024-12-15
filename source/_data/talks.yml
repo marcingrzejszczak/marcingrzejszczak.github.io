@@ -1,3 +1,10 @@
+- date: 2024.12.10
+  eventName: Yavaconf!
+  city: Online
+  country: Poland
+  countryCode: pl
+  talks: Is your JVM app flying blind? Unmask hidden issues with Observability superpowers!
+
 - date: 2024.11.20
   eventName: O'Reilly Live Events
   city: Online
