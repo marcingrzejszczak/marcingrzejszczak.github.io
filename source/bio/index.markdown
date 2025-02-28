@@ -29,7 +29,7 @@ Java Champion, founder of [iurista.org](https://iurista.org), co-author of [Smar
 
 Maintainer of cloud, observability and testing related open source projects (Spring Cloud, Micrometer).
 
-Within the last decade, he’s given more than 100 presentations and workshops (whole list available at the [toomuchcoding.com blog](https://toomuchcoding.com)).
+Within the last decade, he’s given more than 150 presentations and workshops (whole list available at the [toomuchcoding.com blog](https://toomuchcoding.com)).
 
 ## O mnie
 
@@ -52,4 +52,4 @@ Java Champion, założyciel [iurista.org](https://iurista.org), współautor [Sm
 
 Opiekun projektów open source związanych z chmurą, obserwowalnością i testowaniem (Spring Cloud, Micrometer).
 
-W ciągu ostatniej dekady wygłosił ponad 100 prezentacji i warsztatów (cała lista dostępna na [blogu toomuchcoding.com](https://toomuchcoding.com)).
+W ciągu ostatniej dekady wygłosił ponad 150 prezentacji i warsztatów (cała lista dostępna na [blogu toomuchcoding.com](https://toomuchcoding.com)).
