@@ -25,7 +25,11 @@ Profiles:
 
 ### Short About me
 
-Marcin Grzejszczak is the member of the Spring Engineering Team, working on Spring Observability, Spring Cloud Sleuth, Spring Cloud Contract. He’s the co-founder of the Warsaw Groovy User Group, Warsaw Cloud Native Meetup and the DiverseIT initiative. Author of Mockito Instant and Mockito Cookbook books and various online microservices and testing related courses. Within the last decade, he’s given more than 100 presentations and workshops and you can find them at his blog toomuchcoding.com and if you want to drop him a line, you can find Marcin on Twitter ([@mgrzejszczak](https://twitter.com/MGrzejszczak)).
+Java Champion, founder of [iurista.org](https://iurista.org), co-author of [SmartTesting](smarttesting.pl), author of video courses and trainings. Testing books author.
+
+Maintainer of cloud, observability and testing related open source projects (Spring Cloud, Micrometer).
+
+Within the last decade, he’s given more than 100 presentations and workshops (whole list available at the [toomuchcoding.com blog](https://toomuchcoding.com)).
 
 ## O mnie
 
@@ -41,3 +45,11 @@ Profile:
 - [Mastodon](https://fosstodon.org/@toomuchcoding)
 - [Twitter - chciałbym przejść z kontem na profil Mastodona więc lepiej mnie śledzić właśnie tam](https://twitter.com/MGrzejszczak)
 - [Goodreads](https://www.goodreads.com/author/show/7284553.Marcin_Grzejszczak)
+
+### O mnie krótko
+
+Java Champion, założyciel [iurista.org](https://iurista.org), współautor [SmartTesting](smarttesting.pl), autor kursów wideo i szkoleń. Autor książek o testowaniu.
+
+Opiekun projektów open source związanych z chmurą, obserwowalnością i testowaniem (Spring Cloud, Micrometer).
+
+W ciągu ostatniej dekady wygłosił ponad 100 prezentacji i warsztatów (cała lista dostępna na [blogu toomuchcoding.com](https://toomuchcoding.com)).
