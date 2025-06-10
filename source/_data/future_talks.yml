@@ -1,11 +1,3 @@
-- date: 2024.05.27
-  eventName: Infoshare
-  city: Gdańsk
-  country: Poland
-  countryCode: pl
-  status: Submitted
-  talks: "Case Study: How AI Accelerated Application Modernization"
-
 - date: 2025.06.11
   eventName: Devoxx Poland
   city: Kraków
