@@ -1,0 +1,78 @@
+{{ define "main" }}
+{{- $p := . -}}
+{{- $event   := $p.Params.event -}}
+{{- $city    := or $p.Params.address.city    $p.Params.city -}}
+{{- $country := or $p.Params.address.country $p.Params.country -}}
+{{- $loc     := cond (and $city $country) (printf "%s, %s" $city $country) (or $city $country) -}}
+
+{{/* Try to find a featured/cover image like the stock layout does */}}
+{{- $img := $p.Resources.GetMatch "featured*" -}}
+{{- if not $img }}{{ $img = $p.Resources.GetMatch "cover*" }}{{ end }}
+{{- if not $img }}{{ with ($p.Resources.ByType "image") }}{{ $img = index . 0 }}{{ end }}{{ end }}
+
+<article class="max-w-3xl mx-auto">
+
+    {{/* Featured image (matches how the theme hero behaves on singles) */}}
+    {{ with $img }}
+    {{ $hero := .Fit "1200x700" }}
+    <figure class="mb-6 rounded-2xl overflow-hidden border border-gray-200 dark:border-gray-800">
+        <img src="{{ $hero.RelPermalink }}" alt="{{ $p.Title }}" class="w-full object-cover">
+    </figure>
+    {{ end }}
+
+    <header class="mb-4">
+        <h1 class="text-3xl font-extrabold tracking-tight mb-2">{{ $p.Title }}</h1>
+
+        {{/* Subtle meta line just like the stock layout’s subtitle/meta */}}
+        <p class="text-sm text-gray-600 dark:text-gray-300">
+            {{ with $event }}<em>{{ . }}</em>{{ end }}
+            {{ if or $loc $p.Date }}{{ if $event }} · {{ end }}{{ end }}
+            {{ with $loc }}{{ . }}{{ end }}
+            {{ if and $loc $p.Date }} · {{ end }}
+            {{ with $p.Date }}{{ .Format "2006-01-02" }}{{ end }}
+        </p>
+    </header>
+
+    {{/* Link chips (pulled from front matter) */}}
+    {{ $hasLinks := or $p.Params.url_slides (or $p.Params.url_video $p.Params.links) }}
+    {{ if $hasLinks }}
+    <div class="flex flex-wrap gap-2 mb-8">
+        {{ with $p.Params.links }}
+        {{ range . }}
+        <a href="{{ .url }}" target="_blank" rel="noopener"
+           class="px-3 py-1 rounded-full border border-gray-300 dark:border-gray-700 hover:underline text-sm">
+            {{ .name | default "Event" }}
+        </a>
+        {{ end }}
+        {{ end }}
+        {{ with $p.Params.url_slides }}
+        <a href="{{ . }}" target="_blank" rel="noopener"
+           class="px-3 py-1 rounded-full border border-gray-300 dark:border-gray-700 hover:underline text-sm">Slides</a>
+        {{ end }}
+        {{ with $p.Params.url_video }}
+        <a href="{{ . }}" target="_blank" rel="noopener"
+           class="px-3 py-1 rounded-full border border-gray-300 dark:border-gray-700 hover:underline text-sm">Video</a>
+        {{ end }}
+    </div>
+    {{ end }}
+
+    {{/* Body content (if any) rendered with the theme’s prose styling */}}
+    <div class="prose dark:prose-invert max-w-none">
+        {{ .Content }}
+    </div>
+</article>
+
+{{/* JSON-LD for SEO (Event) */}}
+{{- $place := cond (and $city $country) (printf "%s, %s" $city $country) (or $city $country) -}}
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Event",
+        "name": {{ $p.Title | jsonify }},
+    {{ with $event }}"superEvent":{"@type":"Event","name":{{ . | jsonify }}},{{ end }}
+    "startDate": {{ $p.Date.Format "2006-01-02" | jsonify }},
+    {{ with $place }}"location":{"@type":"Place","name":{{ . | jsonify }}},{{ end }}
+    "url": {{ $p.Permalink | jsonify }}
+    }
+</script>
+{{ end }}

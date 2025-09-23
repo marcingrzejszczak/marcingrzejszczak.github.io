@@ -1,0 +1,70 @@
+
+{{ $events := where site.RegularPages "Section" "talks" }}
+
+{{/* Collect country + code + city data */}}
+{{ $countries := slice }}
+{{ $cities := slice }}
+{{ range $events }}
+  {{ $c := or .Params.address.country .Params.country }}
+  {{ $cc := upper (or .Params.address.country_code .Params.countryCode "") }}
+  {{ $city := or .Params.address.city .Params.city }}
+  {{ if $c }}    {{ $countries = $countries | append (dict "name" $c "code" $cc) }} {{ end }}
+  {{ if $city }} {{ $cities = $cities | append (lower $city) }} {{ end }}
+{{ end }}
+
+{{/* Unique sets */}}
+{{ $uniqCountries := slice }}
+{{ range $countries }}
+  {{ if not (where $uniqCountries "name" .name) }}
+    {{ $uniqCountries = $uniqCountries | append . }}
+  {{ end }}
+{{ end }}
+{{ $uniqCities := ($cities | uniq) }}
+
+{{/* Country code -> flag emoji map (extend as needed) */}}
+{{ $flags := dict
+  "PL" "🇵🇱" "PT" "🇵🇹" "ES" "🇪🇸" "US" "🇺🇸" "GB" "🇬🇧" "DE" "🇩🇪" "FR" "🇫🇷" "NL" "🇳🇱"
+  "LT" "🇱🇹" "LV" "🇱🇻" "CZ" "🇨🇿" "CA" "🇨🇦" "MU" "🇲🇺" "BY" "🇧🇾" "GR" "🇬🇷" "AT" "🇦🇹"
+  "BE" "🇧🇪" "IT" "🇮🇹" "SE" "🇸🇪" "NO" "🇳🇴" "DK" "🇩🇰" "IE" "🇮🇪" "CH" "🇨🇭"
+}}
+
+<style>
+.talks-metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2rem;margin:2rem 0;}
+.talks-metric{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:1.25rem;border-radius:1rem;border:1px solid var(--hb-border,#e5e7eb);background:var(--hb-card,#fff)}
+.talks-metric .num{font-size:2rem;line-height:1.1;font-weight:800}
+.talks-metric .label{opacity:.7;margin-top:.25rem;font-size:.9rem}
+.flags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:1rem}
+.flag-chip{display:inline-flex;align-items:center;gap:.35rem;border:1px solid var(--hb-border,#e5e7eb);padding:.2rem .5rem;border-radius:9999px;font-size:.9rem}
+@media (prefers-color-scheme: dark){
+  .talks-metric{border-color: #667995;background: #ffffff
+  }
+  .flag-chip{border-color: #5f708b
+  }
+}
+</style>
+
+<div class="talks-metrics">
+  <div class="talks-metric">
+    <div class="num">{{ len $events }}</div>
+    <div class="label">Talks</div>
+  </div>
+  <div class="talks-metric">
+    <div class="num">{{ len $uniqCountries }}</div>
+    <div class="label">Countries</div>
+  </div>
+  <div class="talks-metric">
+    <div class="num">{{ len $uniqCities }}</div>
+    <div class="label">Cities</div>
+  </div>
+</div>
+
+<div class="flags" aria-label="Countries">
+  {{ $seen := slice }}
+  {{ range $uniqCountries }}
+    {{ $code := .code }}
+    {{ if and $code (not (in $seen $code)) }}
+      {{ $seen = $seen | append $code }}
+      <span class="flag-chip" title="{{ .name }}">{{ or (index $flags $code) (upper $code) }}</span>
+    {{ end }}
+  {{ end }}
+</div>

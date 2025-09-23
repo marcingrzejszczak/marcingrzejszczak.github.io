@@ -1,0 +1,1 @@
+(function(){const x=document.querySelector('#tms-testimonials');if(!x)return;const p=document.querySelector('#tms-prev');const n=document.querySelector('#tms-next');function s(d){x.scrollBy({left:Math.floor(x.clientWidth*0.9)*d,behavior:'smooth'});}p&&p.addEventListener('click',()=>s(-1));n&&n.addEventListener('click',()=>s(1));})();
