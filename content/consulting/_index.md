@@ -17,6 +17,26 @@ sections:
     content:
       title: How I can help
       text: |
+        <style>
+          .consulting-metrics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2rem;margin:2rem 0;}
+          .consulting-metric{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:1.25rem;border-radius:1rem;border:1px solid var(--hb-border,#e5e7eb);background:var(--hb-card,#fff)}
+          .consulting-metric .num{font-size:2rem;line-height:1.1;font-weight:800}
+          .consulting-metric .label{opacity:.7;margin-top:.25rem;font-size:.9rem}
+          @media (prefers-color-scheme: dark){
+            .consulting-metric{border-color: #667995;background: #689dca;
+            }
+          }
+        </style>
+        <div class="consulting-metrics">
+          <div class="consulting-metric">
+              <div class="num">30+</div>
+              <div class="label">Free Consultations</div>
+          </div>
+          <div class="consulting-metric">
+              <div class="num">8</div>
+              <div class="label">Mentees</div>
+          </div>
+        </div>
         I work with teams on delivery speed and reliability: CI/CD, microservices, internal developer platforms,
         testing strategy, and observability. Pick a service below to learn more and purchase or get in touch.
     design:
@@ -38,7 +58,7 @@ sections:
   - block: markdown
     content:
       title: What clients say
-      text: |
+      text: |        
         <div class="not-prose max-w-none">
           <style>.tms-wrap{position:relative}.tms-track{display:flex;gap:1.5rem;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:.5rem;scroll-behavior:smooth}.tms-slide{flex:0 0 99%;scroll-snap-align:center}.tms-card{max-width:48rem;margin:0 auto}.tms-arrows{display:flex;justify-content:center;gap:.75rem;margin-top:.5rem}</style>
           <div class="tms-wrap">
