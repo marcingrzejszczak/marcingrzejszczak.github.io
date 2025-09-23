@@ -35,16 +35,12 @@ permalinks:
   authors: '/author/:slug/'
 disableAliases: true
 outputFormats:
-  Atom:
-    mediaType: application/rss+xml
-    baseName: atom
-    isPlainText: false
-    rel: alternate
-    isHTML: false
-    permalinkable: true
+  RSS:
+    mediaType: "application/rss"
+    baseName: "atom"
 outputs:
-  home: [HTML, RSS, Atom, headers, redirects, backlinks]
-  section: [HTML, Atom, RSS]
+  home: [HTML, RSS, headers, redirects, backlinks]
+  section: [HTML,  RSS]
 imaging:
   resampleFilter: lanczos
   quality: 90
