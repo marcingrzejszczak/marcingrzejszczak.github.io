@@ -25,5 +25,8 @@
   "bugs": {
     "url": "https://github.com/HugoBlox/theme-academic-cv/issues"
   },
-  "homepage": "https://github.com/HugoBlox/theme-academic-cv#readme"
+  "homepage": "https://github.com/HugoBlox/theme-academic-cv#readme",
+  "devDependencies": {
+    "pagefind": "^1.4.0"
+  }
 }
