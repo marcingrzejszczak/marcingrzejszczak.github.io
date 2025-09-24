@@ -1,0 +1,26 @@
+{{ if eq .Type "post" }}
+{{/* layouts/_partials/page_footer.html */}}
+{{ partial "components/next-in-series" . }}
+{{ partial "page_related" . }}
+
+<footer class="mt-8">
+    <section id="comments">
+        <script src="https://giscus.app/client.js"
+                data-repo="marcingrzejszczak/marcingrzejszczak.github.io"
+                data-repo-id="MDEwOlJlcG9zaXRvcnk1MjkwMDE5OQ=="
+                data-category="General"
+                data-category-id="DIC_kwDOAycxZ84Cv3Bc"
+                data-mapping="pathname"
+                data-strict="0"
+                data-reactions-enabled="1"
+                data-emit-metadata="0"
+                data-input-position="top"
+                data-theme="preferred_color_scheme"
+                data-lang="en"
+                crossorigin="anonymous"
+                async>
+        </script>
+        <noscript>Enable JavaScript to view the comments powered by Giscus.</noscript>
+    </section>
+</footer>
+{{ end }}
