@@ -10,7 +10,7 @@ image:
 
 **What you get**
 - 4 × 60‑minute 1:1 sessions (remote)
-- Async Q&A between sessions (email/Slack)
+- Async Q&A between sessions (email)
 - Focus: CI/CD, Microservices, IDP, Testing, Observability or whatever else you need!
 
 **Buy now**  
