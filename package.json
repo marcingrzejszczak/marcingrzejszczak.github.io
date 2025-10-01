@@ -9,9 +9,7 @@
     "build": "hugo --minify"
   },
   "dependencies": {
-    "@tailwindcss/cli": "^4.1.12",
-    "@tailwindcss/typography": "^0.5.10",
-    "tailwindcss": "^4.1.12"
+    "@tailwindcss/typography": "^0.5.10"
   },
   "main": "index.js",
   "repository": {
@@ -27,6 +25,8 @@
   },
   "homepage": "https://github.com/HugoBlox/theme-academic-cv#readme",
   "devDependencies": {
-    "pagefind": "^1.4.0"
+    "@tailwindcss/cli": "^4.1.13",
+    "pagefind": "^1.4.0",
+    "tailwindcss": "^4.1.13"
   }
 }
