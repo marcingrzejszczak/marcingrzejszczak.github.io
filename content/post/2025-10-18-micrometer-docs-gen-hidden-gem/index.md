@@ -13,7 +13,7 @@ tags:
 content_meta:
   trending: false
 ---
-TLDR; Micrometer comes with a project called [Micrometer Docs Generator](https://github.com/micrometer-metrics/micrometer-docs-generator) that is capable of generating documentation from your sources. 
+TLDR; Micrometer comes with a project called [Micrometer Docs Generator](https://github.com/micrometer-metrics/micrometer-docs-generator) that is capable of generating documentation from your production sources. 
 
 <!-- more -->
 
@@ -291,7 +291,9 @@ Great, but why would that matter? With such an approach customization is simplif
 
 #### Micrometer Docs Generator - A Hidden Gem
 
+When I was working at the Micrometer team and observability was one of the main themes for Spring Framework and Spring Boot I was wondering how we could improve the developer experience. Together with the team we came to the conclusion that one important feature would be to allow doing an automated way of generating documentation. To tackle that problem the [Micrometer Docs Generator](https://docs.micrometer.io/micrometer-docs-generator/reference/) project was founded.
 
+The project is a CLI that scans a provided input sources directory to search for 
 
 #### Other Options
 
