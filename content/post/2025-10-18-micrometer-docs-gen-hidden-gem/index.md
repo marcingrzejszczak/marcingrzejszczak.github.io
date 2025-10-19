@@ -201,6 +201,9 @@ Can we have a separate blueprint for observation with its key-values? Yes, we ca
 ```java
 enum TaxObservationDocumentation implements ObservationDocumentation {
 
+    /**
+     * This javadoc will end up in the docs!
+     */
     CALCULATE {
         @Override
         public Class<? extends ObservationConvention<? extends Observation.Context>> getDefaultConvention() {
@@ -220,6 +223,9 @@ enum TaxObservationDocumentation implements ObservationDocumentation {
 
     enum TaxLowCardinalityKeyNames implements KeyName {
 
+        /**
+         * This javadoc will end up in the docs!
+         */
         TAX_TYPE {
             @Override
             public String asString() {
@@ -231,6 +237,9 @@ enum TaxObservationDocumentation implements ObservationDocumentation {
 
     enum TaxHighCardinalityKeyNames implements KeyName {
 
+        /**
+         * This javadoc will end up in the docs!
+         */
         USER_ID {
             @Override
             public String asString() {
@@ -293,7 +302,19 @@ Great, but why would that matter? With such an approach customization is simplif
 
 When I was working at the Micrometer team and observability was one of the main themes for Spring Framework and Spring Boot I was wondering how we could improve the developer experience. Together with the team we came to the conclusion that one important feature would be to allow doing an automated way of generating documentation. To tackle that problem the [Micrometer Docs Generator](https://docs.micrometer.io/micrometer-docs-generator/reference/) project was founded.
 
-The project is a CLI that scans a provided input sources directory to search for 
+The project is a CLI that scans a provided input sources directory to search for `ObservationDocumentation` enum implementations and `ObservationConventions`. By default, it will generate documentation for observations, spans and meters. The project uses [Handlebars templates](https://github.com/micrometer-metrics/micrometer-docs-generator/tree/v1.0.4/micrometer-docs-generator/src/main/resources/templates) and can be completely customized (check the [Picocli options](https://github.com/micrometer-metrics/micrometer-docs-generator/blob/v1.0.4/micrometer-docs-generator/src/main/java/io/micrometer/docs/DocsGeneratorCommand.java)). The project documentation is available [here](https://docs.micrometer.io/micrometer-docs-generator/reference/).
+
+Throughout the Spring portfolio we would be "eating our own dog food". Many projects were leveraging Micrometer Docs Generator to produce their own observability documentation. You can check out an example of documentation generated for [Spring Cloud Task](https://docs.spring.io/spring-cloud-task/reference/observability.html) and the [sources](https://github.com/spring-cloud/spring-cloud-task/blob/v3.3.0/spring-cloud-task-core/src/main/java/org/springframework/cloud/task/listener/TaskExecutionObservation.java). 
+
+Below you can find screenshots from code and part of the generated documentation.
+
+![Spring Cloud Task Observation](task-observation.png "Spring Cloud Task Observation")
+
+![Spring Cloud Task Convention](task-convention.png "Spring Cloud Task Convention")
+
+![Spring Cloud Task Generated Documentation](task-observation.png "Spring Cloud Task Generated Documentation")
+
+![Spring Cloud Task Docs Generation Setup](task-plugin-setup.png "Spring Cloud Task Docs Generation Setup")
 
 #### Other Options
 
