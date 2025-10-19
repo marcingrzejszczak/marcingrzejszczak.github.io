@@ -1,6 +1,6 @@
 ---
-title: "Micrometer Docs Generator -  a Hidden Gem"
-summary: "In this blog post we'll look into Micrometer's hidden gem - Micrometer Docs Generator"
+title: "Micrometer Docs Generator -  A Hidden Gem"
+summary: "In this blog post we'll look into my experience of writing docs. We'll start of by manual docs writing, through automated ones including Micrometer's hidden gem - Micrometer Docs Generator"
 date: 2025-10-18
 
 authors:
@@ -84,7 +84,7 @@ include::{sourcedir}/org/asciidoctor/Asciidoctor.java[]
 
 Ok, is this the final solution to the problem? Not really, we as developers must write the docs ourselves. What if we could shift things around and tell our code to write the docs instead?
 
-#### Let The Code Write The Docs!
+#### Let The Tests Write The Docs!
 
 A big eye-opener for me was the fabulous [Spring RestDocs](https://docs.spring.io/spring-restdocs/docs/current/reference/htmlsingle/) project. With RestDocs you write your tests and from the tests the documentation would be generated! Let's look at the following, simplified, example:
 
@@ -102,8 +102,8 @@ public class ProducerControllerTests {
 		PersonToCheck personToCheck = new PersonToCheck(34);
 
 		this.mockMvc.perform(MockMvcRequestBuilders.post("/check")
-						.contentType(MediaType.APPLICATION_JSON)
-						.content(toJson(personToCheck)))
+				.contentType(MediaType.APPLICATION_JSON)
+				.content(toJson(personToCheck)))
 				.andExpect(jsonPath("$.status").value("OK"))
 				.andDo(MockMvcRestDocumentation.document("shouldGrantABeerIfOldEnough"));
 	}
@@ -113,6 +113,14 @@ public class ProducerControllerTests {
 
 This test will verify if our Spring REST API works as intended and at the same time produce snippets that document the API. Instead of us writing the documentation we write the tests that are the source of truth and after executing them we get documentation as the output. That's brilliant!
 
-So we've managed to go from manually writing the docs with the code snippets (Markdown), to writing our docs manually and having parts of our code included in the docs (Asciidoctor) to producing the documentation from the tests. Should I finish the article? Have we done everything we could? What if we could create the documentation from production sources and not from test execution?  
+So we've managed to go from manually writing the docs with the code snippets (Markdown), to writing our docs manually and having parts of our code included in the docs (Asciidoctor) to producing the documentation from the tests (RestDocs + Asciidoctor). So... are we done? Should I finish this article? 
 
-#### 
+What if we could create the documentation from production sources and not from test execution?  
+
+#### Generate Docs From Sources
+
+Generation of docs from test execution is a fantastic way of describing usage examples. In other words we're describing "how things work". You can compare it to a contract in [Contract Tests](https://toomuchcoding.com/tags/spring-cloud-contract/). A contract describes a concrete usage example, not all possible fields that a message can have. The latter is a schema - it describes "what this is". You have a full definition of all possible fields on the way in and out, for HTTP all possible statuses, methods etc. One way of describing a schema for HTTP messages would be the [OpenAPI Spec](https://swagger.io/specification/).
+
+Let's focus on the OpenAPI scenario with [Spring MVC](https://docs.spring.io/spring-framework/reference/web/webmvc.html. In our production code we are describing how our API should look like by annotating controller classes. We describe all HTTP methods, the statuses, request / response bodies. Then using tools like [SpringDoc](https://springdoc.org/) you can convert the Spring MVC annotated to an OpenAPI spec. Below you have an example of the [Swagger UI](https://swagger.io) that allows us to visualize the Open API spec as interactive forms. 
+
+![Example of OpenAPI spec generated from Spring MVC](pets.png)
