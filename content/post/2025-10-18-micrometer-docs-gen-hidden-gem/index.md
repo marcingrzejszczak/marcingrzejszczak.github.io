@@ -304,7 +304,7 @@ When I was working at the Micrometer team and observability was one of the main 
 
 The project is a CLI that scans a provided input sources directory to search for `ObservationDocumentation` enum implementations and `ObservationConventions`. By default, it will generate documentation for observations, spans and meters. The project uses [Handlebars templates](https://github.com/micrometer-metrics/micrometer-docs-generator/tree/v1.0.4/micrometer-docs-generator/src/main/resources/templates) and can be completely customized (check the [Picocli options](https://github.com/micrometer-metrics/micrometer-docs-generator/blob/v1.0.4/micrometer-docs-generator/src/main/java/io/micrometer/docs/DocsGeneratorCommand.java)). The project documentation is available [here](https://docs.micrometer.io/micrometer-docs-generator/reference/).
 
-Throughout the Spring portfolio we would be "eating our own dog food". Many projects were leveraging Micrometer Docs Generator to produce their own observability documentation. You can check out an example of documentation generated for [Spring Cloud Task](https://docs.spring.io/spring-cloud-task/reference/observability.html) and the [sources](https://github.com/spring-cloud/spring-cloud-task/blob/v3.3.0/spring-cloud-task-core/src/main/java/org/springframework/cloud/task/listener/TaskExecutionObservation.java). 
+Throughout the Spring portfolio we would be "eating our own dog food". How could we tell the community that a given solution solves a given problem if we don't use it ourselves? That's why many Spring projects were leveraging Micrometer Docs Generator to produce their own observability documentation. You can check out an example of documentation generated for [Spring Cloud Task](https://docs.spring.io/spring-cloud-task/reference/observability.html) and the [sources](https://github.com/spring-cloud/spring-cloud-task/blob/v3.3.0/spring-cloud-task-core/src/main/java/org/springframework/cloud/task/listener/TaskExecutionObservation.java). 
 
 Below you can find screenshots from code and part of the generated documentation.
 
@@ -318,4 +318,18 @@ Below you can find screenshots from code and part of the generated documentation
 
 #### Other Options
 
+I have been working as a [consultant](https://toomuchcoding.com/consulting/) for some time now, and for one of my clients I have implemented similar solutions to the one that Micrometer Docs Generator provides. Let me tell you about two such examples.
+
+In one project I've created an in-memory eventing system (a simple [Observer](https://en.wikipedia.org/wiki/Observer_pattern) pattern implementation). It's easy to get lost with what types of events does our system send, where are those sent, and who is listening for them. That's why I've implemented a source parser that would create a table with that information. Including the link to Github with the line number where the event was sent!
+
+Another example where I used source analysis was part of an Internal Developer Platform. We had a list of environment variables that a CLI could reference within a class. Then we would parse the class and produce a table with used environment variables. Additionally, we would check if our API that would use the environment variable was called with a constant string or references the single source of truth — the class with all the environment variables. If it did not - we would break the build.
+
+As you can see, there are different ways to leverage source parsing. You can produce documentation from your production sources but also use it as another layer for testing.
+
 #### Summary
+
+In this article I presented my experience with documentation creation. Starting from painful Confluence days, through Markdown, Asciidoctor, generation of docs from tests (Spring RESTDocs) and then parsing production code to create docs. 
+
+As an example of the latter, I've shown you Micrometer Docs Generator - a hidden gem within the Micrometer portfolio. Even though I'm no longer part of the Spring / Micrometer team, I still try to actively support their community. In case of any questions, do not hesitate to contact the team through their [issue tracker](https://github.com/micrometer-metrics/micrometer-docs-generator/issues).
+
+If you like this article and would like to learn more about my work or would like me to share my experience within your company, check out my [consulting](https://toomuchcoding.com/consulting/) page and [contact](https://toomuchcoding.com/contact/) me!
