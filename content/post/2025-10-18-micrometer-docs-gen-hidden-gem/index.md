@@ -127,7 +127,7 @@ Let's focus on the OpenAPI scenario with [Spring MVC](https://docs.spring.io/spr
 
 In other words a REST controller is a blueprint of what the API looks like - it's the source of truth from which the documentation is being built. Can we do something similar with other pieces of out production code - for example for observability?
 
-#### Micrometer Docs Generator - A Hidden Gem
+#### Observability Blueprints
 
 Let's go back to our Micrometer Observation example. Regardless of whether we're creating a library where [customization of observations](https://docs.micrometer.io/micrometer/reference/observation/components.html#micrometer-observation-convention-example) would make sense or whether we're instrumenting our production code - it would be great to automatically generate documentation of observations directly from the code. With the previously shown approach scanning sources would be a tedious task, because we would have to find all possible method calls of Micrometer API and parse those. What if we operated with conventions instead? Let's look at the following example of calculating tax (snippets taken from [Micrometer documentation](https://docs.micrometer.io/micrometer/reference/observation/components.html#micrometer-observation-convention-example)):
 
@@ -286,6 +286,12 @@ class TaxCalculator {
 ```
 
 Notice how the instrumentation logic gets simplified! No naming, no tagging is present anymore. We simply create an observation using the `ObservationDocumentation` and wrap actual business logic. 
+
+Great, but why would that matter? With such an approach customization is simplified because you can provide your own `ObservationConvention` and no instrumentation code needs to change. From the point of view of documentation generation perspective it's far easier to parse it. Speaking of the latter let's now look into [Micrometer Docs Generator](https://docs.micrometer.io/micrometer-docs-generator/reference/) project.
+
+#### Micrometer Docs Generator - A Hidden Gem
+
+
 
 #### Other Options
 
