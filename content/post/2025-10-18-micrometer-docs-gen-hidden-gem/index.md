@@ -115,12 +115,178 @@ This test will verify if our Spring REST API works as intended and at the same t
 
 So we've managed to go from manually writing the docs with the code snippets (Markdown), to writing our docs manually and having parts of our code included in the docs (Asciidoctor) to producing the documentation from the tests (RestDocs + Asciidoctor). So... are we done? Should I finish this article? 
 
-What if we could create the documentation from production sources and not from test execution?  
+What if we could create the documentation(AI was used to polish the article - all of its content was written by me) from production sources and not from test execution?  
 
 #### Generate Docs From Sources
 
 Generation of docs from test execution is a fantastic way of describing usage examples. In other words we're describing "how things work". You can compare it to a contract in [Contract Tests](https://toomuchcoding.com/tags/spring-cloud-contract/). A contract describes a concrete usage example, not all possible fields that a message can have. The latter is a schema - it describes "what this is". You have a full definition of all possible fields on the way in and out, for HTTP all possible statuses, methods etc. One way of describing a schema for HTTP messages would be the [OpenAPI Spec](https://swagger.io/specification/).
 
-Let's focus on the OpenAPI scenario with [Spring MVC](https://docs.spring.io/spring-framework/reference/web/webmvc.html. In our production code we are describing how our API should look like by annotating controller classes. We describe all HTTP methods, the statuses, request / response bodies. Then using tools like [SpringDoc](https://springdoc.org/) you can convert the Spring MVC annotated to an OpenAPI spec. Below you have an example of the [Swagger UI](https://swagger.io) that allows us to visualize the Open API spec as interactive forms. 
+Let's focus on the OpenAPI scenario with [Spring MVC](https://docs.spring.io/spring-framework/reference/web/webmvc.html). In our production code we are describing how our API should look like by annotating controller classes. We describe all HTTP methods, the statuses, request / response bodies. Then using tools like [SpringDoc](https://springdoc.org/) you can convert the Spring MVC annotated to an OpenAPI spec. Below you have an example of the [Swagger UI](https://swagger.io) that allows us to visualize the Open API spec as interactive forms. 
 
 ![Example of OpenAPI spec generated from Spring MVC](pets.png)
+
+In other words a REST controller is a blueprint of what the API looks like - it's the source of truth from which the documentation is being built. Can we do something similar with other pieces of out production code - for example for observability?
+
+#### Micrometer Docs Generator - A Hidden Gem
+
+Let's go back to our Micrometer Observation example. Regardless of whether we're creating a library where [customization of observations](https://docs.micrometer.io/micrometer/reference/observation/components.html#micrometer-observation-convention-example) would make sense or whether we're instrumenting our production code - it would be great to automatically generate documentation of observations directly from the code. With the previously shown approach scanning sources would be a tedious task, because we would have to find all possible method calls of Micrometer API and parse those. What if we operated with conventions instead? Let's look at the following example of calculating tax (snippets taken from [Micrometer documentation](https://docs.micrometer.io/micrometer/reference/observation/components.html#micrometer-observation-convention-example)):
+
+In order to calculate the tax we need some additional information like `userId` and `taxType` - to store it we can use a dedicated `Observation.Context` implementation.
+```java
+class TaxContext extends Observation.Context {
+
+    private final String taxType;
+
+    private final String userId;
+
+    TaxContext(String taxType, String userId) {
+        this.taxType = taxType;
+        this.userId = userId;
+    }
+
+    // getters
+
+}
+```
+
+In order to separate instrumentation from the observability "blueprint" - the schema of observations we can use an `ObservationConvention` mechanism. Below you can see an example where first we defined an `ObservationConvention` extension `TaxObservationConvention` for our dedicated `TaxContext`. Then we implement it to provide defaults through a `DefaultTaxObservationConvention`.   
+
+```java
+// Interface for an ObservationConvention related to calculating Tax
+interface TaxObservationConvention extends ObservationConvention<TaxContext> {
+
+    @Override
+    default boolean supportsContext(Observation.Context context) {
+        return context instanceof TaxContext;
+    }
+
+}
+
+/**
+ * Default convention of tags and names related to calculating tax.
+ */
+class DefaultTaxObservationConvention implements TaxObservationConvention {
+
+    @Override
+    public KeyValues getLowCardinalityKeyValues(TaxContext context) {
+        return KeyValues.of(TAX_TYPE.withValue(context.getTaxType()));
+    }
+
+    @Override
+    public KeyValues getHighCardinalityKeyValues(TaxContext context) {
+        return KeyValues.of(USER_ID.withValue(context.getUserId()));
+    }
+
+    @Override
+    public String getName() {
+        return "default.tax.name";
+    }
+
+    @Override 
+    public String getContextualName(TaxContext context) {
+        return "Tax [" + context.getTaxType() + "]";
+    }
+
+}
+```
+
+Before we explain what the `TAX_TYPE` and `USER_ID` enum entries are let's look at the blueprint. We are defining (like in a schema):
+
+- All possible high (e.g. for spans) and low cardinality (e.g. for spans and meters) key-values
+- Default observation name (e.g. for meters)
+- Default observation contextual name (e.g. for spans)
+
+Can we have a separate blueprint for observation with its key-values? Yes, we can! Let's look at the example below:
+
+```java
+enum TaxObservationDocumentation implements ObservationDocumentation {
+
+    CALCULATE {
+        @Override
+        public Class<? extends ObservationConvention<? extends Observation.Context>> getDefaultConvention() {
+            return DefaultTaxObservationConvention.class;
+        }
+
+        @Override
+        public KeyName[] getLowCardinalityKeyNames() {
+            return TaxLowCardinalityKeyNames.values();
+        }
+
+        @Override
+        public KeyName[] getHighCardinalityKeyNames() {
+            return TaxHighCardinalityKeyNames.values();
+        }
+    };
+
+    enum TaxLowCardinalityKeyNames implements KeyName {
+
+        TAX_TYPE {
+            @Override
+            public String asString() {
+                return "tax.type";
+            }
+        }
+
+    }
+
+    enum TaxHighCardinalityKeyNames implements KeyName {
+
+        USER_ID {
+            @Override
+            public String asString() {
+                return "tax.user.id";
+            }
+        }
+
+    }
+
+}
+```
+
+In this schema we describe that we will have 1 custom observation `CALCULATE`
+
+- Its default naming and tagging description is available in `DefaultTaxObservationConvention` class. Over there we show what the values for given key-values will be.
+- All possible low cardinality key-values are defined in `TaxLowCardinalityKeyNames` enum
+- All possible high cardinality key-values are defined in `TaxHighCardinalityKeyNames` enum
+
+Now let's take a look at how the instrumentation code will change:
+
+```java
+class TaxCalculator {
+
+    private final ObservationRegistry observationRegistry;
+
+    // If the user wants to override the default they can override this. Otherwise,
+    // it will be {@code null}.
+    @Nullable
+    private final TaxObservationConvention observationConvention;
+
+    TaxCalculator(ObservationRegistry observationRegistry,
+            @Nullable TaxObservationConvention observationConvention) {
+        this.observationRegistry = observationRegistry;
+        this.observationConvention = observationConvention;
+    }
+
+    void calculateTax(String taxType, String userId) {
+        // Create a new context
+        TaxContext taxContext = new TaxContext(taxType, userId);
+        // Create a new observation
+        TaxObservationDocumentation.CALCULATE
+            .observation(this.observationConvention, new DefaultTaxObservationConvention(), () -> taxContext,
+                    this.observationRegistry)
+            // Run the actual logic you want to observe
+            .observe(this::calculateInterest);
+    }
+
+    private void calculateInterest() {
+        // do some work
+    }
+
+}
+```
+
+Notice how the instrumentation logic gets simplified! No naming, no tagging is present anymore. We simply create an observation using the `ObservationDocumentation` and wrap actual business logic. 
+
+#### Other Options
+
+#### Summary
