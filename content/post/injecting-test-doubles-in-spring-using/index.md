@@ -142,7 +142,7 @@ Mockito.spy(...)
 and only then would it have to be wired somewhere else... It's getting very complicatied doesn't it?
 ## The solution
 You can see that the problem is not that trivial to be solved. An easy way to fix it however is to use native Spring mechanisms - BeanPostProcessors. You can check my article about how to create a
-[Spring BeanPostProcessor for a specified type](https://toomuchcoding.blogspot.com/2012/10/spring-beanpostprocessor-for-specified.html)
+[Spring BeanPostProcessor for a specified type](https://toomuchcoding.com/2012/10/spring-beanpostprocessor-for-specified.html)
 - we'll be using it in this example.
 Let's start with checking the test class:
 **PlayerServiceImplTest.java**
@@ -232,7 +232,7 @@ interface. The logic behind this class is to register the Class for which one wa
 ) or after initialization of the bean (
 [postProcessAfterInitialization](https://static.springsource.org/spring/docs/3.2.x/javadoc-api/org/springframework/beans/factory/config/BeanPostProcessor.html#postProcessAfterInitialization(java.lang.Object, java.lang.String))
 ). The AbstractBeanPostProcessor is well explained in my post
-[Spring BeanPostProcessor for a specified type](https://toomuchcoding.blogspot.com/2012/10/spring-beanpostprocessor-for-specified.html)
+[Spring BeanPostProcessor for a specified type](https://toomuchcoding.com/2012/10/spring-beanpostprocessor-for-specified.html)
 but there is one slight change - in my old post we were allowed by the abstraction to perform some actions on the bean without the possibility of returning a wrapper or a proxy on the bean.
 As you can see in the case of
 PlayerWebServicePostProcessor

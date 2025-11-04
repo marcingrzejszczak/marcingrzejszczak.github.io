@@ -19,7 +19,7 @@ content_meta:
 ---
 Hi!
 As I've shown it in my previous post
-[JBoss Drools are a very useful rules engine](https://toomuchcoding.blogspot.com/2013/01/drools-integration-with-spring-vs.html)
+[JBoss Drools are a very useful rules engine](https://toomuchcoding.com/2013/01/drools-integration-with-spring-vs.html)
 . The only problem is that creating the rules in the Rule language might be pretty complicated for a non-technical person. That's why one can provide an easy way for creating business rules - decision tables created in a spreadsheet!
 In the following example I will show you a really complicated business rule example converted to a decision table in a spreadsheet. As a backend we will have Drools, Camel and Spring.
 []()
@@ -45,11 +45,11 @@ Once the user has been approved he might get a discount:
 **product_table.xls (lists worksheet)**
 [![](https://4.bp.blogspot.com/-_MkDqjqjuDU/UQ69mEuCy5I/AAAAAAAAAy8/u09czbpift0/s320/user_table_lists.png)](https://4.bp.blogspot.com/-_MkDqjqjuDU/UQ69mEuCy5I/AAAAAAAAAy8/u09czbpift0/s1600/user_table_lists.png)
 As you can see in the images the business problem is quite complex. Each row represents a rule, and each column represents a condition.
-[Do you remember the rules syntax from my recent post?](https://toomuchcoding.blogspot.com/2013/01/drools-integration-with-spring-vs.html)
+[Do you remember the rules syntax from my recent post?](https://toomuchcoding.com/2013/01/drools-integration-with-spring-vs.html)
 So you would understand the hidden part of the spreadsheet that is right above the first visible row:
 [![](https://2.bp.blogspot.com/--f9FvvQaAhM/UQ6-gcczcQI/AAAAAAAAAzM/GxGmoV6s3OE/s320/product_table_header.png)](https://2.bp.blogspot.com/--f9FvvQaAhM/UQ6-gcczcQI/AAAAAAAAAzM/GxGmoV6s3OE/s1600/product_table_header.png)
 The rows from 2 to 6 represent some fixed configuration values such as rule set, imports (
-[ you've already seen that in my recent post](https://toomuchcoding.blogspot.com/2013/01/drools-integration-with-spring-vs.html)
+[ you've already seen that in my recent post](https://toomuchcoding.com/2013/01/drools-integration-with-spring-vs.html)
 ) and functions. Next in row number 7 you can find the name of the RuleTable. Then in row number 8 you have in our scenario either a CONDITION or an ACTION - so in other words either the LHS or rhe RHS respectively. Row number 9 is both representation of types presented in the condition and the binding to a variable. In row number 10 we have the exact LHS condition. Row number 11 shows the label of columns. From row number 12 we have the rules one by one. You can find the spreadsheets in the sources.
 Now let's take a look at the code. Let's start with taking a look at the schemas defining the Product and the User.
 **Person.xsd**
@@ -170,7 +170,7 @@ Now off to the drools-context.xml file where we've defined all the necessary bea
 </beans>
 ```
 As you can see in comparison to
-[the application context from the recent post ](https://toomuchcoding.blogspot.com/2013/01/drools-integration-with-spring-vs.html)
+[the application context from the recent post ](https://toomuchcoding.com/2013/01/drools-integration-with-spring-vs.html)
 there are some differences. First instead of passing the DRL file as the resource inside the knowledge base we are providing the Decision table (
 DTABLE
 ). I've decided to pass in two seperate files but you can provide one file with several worksheets and access those worksheets (through the
@@ -410,7 +410,7 @@ you have successfully bought the product]pl.grzejszczak.marcin.drools.decisionta
 you are granted a discount  quantity=8]
 ```
 In this post I've presented how you can push some of your developing work to your BA by giving him a tool which he can be able to work woth - the Decision Tables in a spreadsheet. What is more now you will now how to integrate Drools with Camel. Hopefully you will see how you can simplify (thus minimize the cost of implementing and supporting) the implementation of business rules bearing in mind how prone to changes they are. I hope that this example will even better illustrate how difficult it would be to implement all the business rules in Java than in the
-[previous post about Drools.](https://toomuchcoding.blogspot.com/2013/01/drools-integration-with-spring-vs.html)
+[previous post about Drools.](https://toomuchcoding.com/2013/01/drools-integration-with-spring-vs.html)
 If you have any experience with Drools in terms of decision tables, integration with Spring and Camel please feel free to leave a comment - let's have a discussion on that :)
 All the code is available at Too Much Coding repository at
 [Bitbucket ](https://bitbucket.org/gregorin1987/too-much-coding/src/eeda79f74a4af30091490ab3507879254540e118/Drools/Decision%20table?at=default)

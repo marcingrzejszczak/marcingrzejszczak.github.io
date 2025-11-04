@@ -22,7 +22,7 @@ The idea of the previous example was to simplify the work that we had to do in a
 [Apache Camel](https://camel.apache.org/)
 .
 The following example bases on the one that we've seen in this post
-[Spring JMS, message automatic conversion, JMS template](https://toomuchcoding.blogspot.com/2012/11/spring-jms-message-automatic-conversion.html)
+[Spring JMS, message automatic conversion, JMS template](https://toomuchcoding.com/2012/11/spring-jms-message-automatic-conversion.html)
 but with slight modifications:
 **CamelRouter.java**
 ```java

@@ -110,7 +110,7 @@ value where the plugin can find the proper schema files.
 Speaking of which let's check the
 **Player.xsd**
 schema file (simillar to the one that was present in the
-[Spring JMS automatic message conversion article of mine](https://toomuchcoding.blogspot.com/2012/11/spring-jms-message-automatic-conversion.html)
+[Spring JMS automatic message conversion article of mine](https://toomuchcoding.com/2012/11/spring-jms-message-automatic-conversion.html)
 ):
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>

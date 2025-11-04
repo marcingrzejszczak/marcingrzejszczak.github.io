@@ -18,7 +18,7 @@ content_meta:
   trending: false
 ---
 This blog post will not be about microservices, Spring or any technology that I've already talked about in
-[Too much coding blog](https://toomuchcoding.blogspot.com/)
+[Too much coding blog](https://toomuchcoding.com/)
 . This time it will be my opinion on two subjects
 - the more and more frequent "it's not my problem" approach in the IT industry running in a corporation.
 - the "business value" frenzy of the management

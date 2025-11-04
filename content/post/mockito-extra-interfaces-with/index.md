@@ -22,7 +22,7 @@ In the code I have quite recently came across a really bad piece of code that ba
 Let's take a look at the project structure:
 [![](https://3.bp.blogspot.com/-RpIw1Ccnof8/UbhBR8EHqbI/AAAAAAAABZU/cPRqLAPNCHU/s320/Mockito+Extra+Interfaces.jpg)](https://3.bp.blogspot.com/-RpIw1Ccnof8/UbhBR8EHqbI/AAAAAAAABZU/cPRqLAPNCHU/s1600/Mockito+Extra+Interfaces.jpg)
 As presented in the post regarding
-[Mocktio RETURNS_DEEP_STUBS Answer for JAXB](https://toomuchcoding.blogspot.com/2013/06/mockito-returndeepstubs-for-jaxb.html)
+[Mocktio RETURNS_DEEP_STUBS Answer for JAXB](https://toomuchcoding.com/2013/06/mockito-returndeepstubs-for-jaxb.html)
 yet again we have the JAXB generated classes by the JAXB compiler in the
 **com.blogspot.toomuchcoding.model**
 package. Let's ommit the discussion over the

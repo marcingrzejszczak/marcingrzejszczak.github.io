@@ -18,9 +18,9 @@ content_meta:
   trending: false
 ---
 Even though I was supposed to write a series of blog posts about
-[micro-infra-spring](https://toomuchcoding.blogspot.com/search/label/micro-infra-spring)
+[micro-infra-spring](https://toomuchcoding.com/search/label/micro-infra-spring)
 here at
-[Too Much Coding blog](https://toomuchcoding.blogspot.com/)
+[Too Much Coding blog](https://toomuchcoding.com/)
 , today I'll write about how we've managed to decrease our biggest project's build time from 90 to 8 minutes!
 []()
 At one of the companies that I've been working we've faced a big problem related to pull request build times. We have one monolithic application that we are in progress of slicing into microservices but still until this process is finished we have to build that big app for each PR. We needed to change things to have really fast feedback from our build so that pull request builds don't get queued up endlessly in our CI. You can only imagine the frustration of developers who can't have their branches merged to master because of the waiting time.

@@ -18,7 +18,7 @@ content_meta:
   trending: false
 ---
 Hi!  Merry Christmas everyone :)  Quite recently I've seen
-[a nice presentation about Google Guava](https://toomuchcoding.blogspot.com/2012/12/google-guava.html)
+[a nice presentation about Google Guava](https://toomuchcoding.com/2012/12/google-guava.html)
 and we came to the conclusion in our project that it could be really interesting to use the
 [its Cache functionallity](https://code.google.com/p/guava-libraries/wiki/CachesExplained)
 .  Let us take a look at the regexp Pattern class and its

@@ -22,7 +22,7 @@ In our project we came across a really big problem related to mapping. Having tw
 Afterwards it turned out that the functions required to perform a mapping are becoming enormous. An example of such a mapping is:
 > From the input message take a list of Cars iterate over it and find a Car whose field "prodcutionDate" is the lowest and the attribute "make" is equal to "Honda" and as the output return the "saleDate"
 So in order to map it we decided to move to JBoss Drools. The
-[decision tables](https://toomuchcoding.blogspot.com/2013/02/drools-decision-tables-with-camel-and.html)
+[decision tables](https://toomuchcoding.com/2013/02/drools-decision-tables-with-camel-and.html)
 were out of question since the logic was to complex and customized to be placed in the spreadsheet so we coded everything in the DRL files. Soon the rules got really big and some of our developers were forced to spend plenty of time on constant recreation of rules stated by the BA.
 Out of frustration and after having seen all the amazing things at the
 [33rd degree conference](https://2013.33degree.org/)
@@ -265,7 +265,7 @@ Cons:
 - No XML schema may lead to improper output / input XML path setting
 ## Summary
 The problem with mapping that we encountered in our project turned out to be a very interesting issue to deal with. The example shown in this post is only a proposition of solving the issue and hopefully could be a starting point to a further discussion on the topic. If you have any ideas or opinions on this topic please leave a comment under
-[this article](https://toomuchcoding.blogspot.com/2013/03/execution-of-groovy-scripts-from-java.html)
+[this article](https://toomuchcoding.com/2013/03/execution-of-groovy-scripts-from-java.html)
 .
 The sources can be found on the
 [Too Much Coding BitBucket repository](https://bitbucket.org/gregorin1987/too-much-coding/src/69f4b59e4452e630670c71150d125e7ea86170aa/Groovy/Mappings?at=default)

@@ -33,7 +33,7 @@ Answer
 (the same
 Answer
 that I spoke of
-[here](https://toomuchcoding.blogspot.com/2012/10/simulation-of-time-consuming-actions-in.html)
+[here](https://toomuchcoding.com/2012/10/simulation-of-time-consuming-actions-in.html)
 ). Due to which we could access the
 InvocationOnMock
 and the arguments passed to the method as such.

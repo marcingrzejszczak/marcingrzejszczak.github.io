@@ -18,14 +18,14 @@ content_meta:
   trending: false
 ---
 Hi! Some time ago I have written an article about Mockito and using
-[RETURNS_DEEP_STUBS when working with JAXB](https://toomuchcoding.blogspot.com/2013/06/mockito-returndeepstubs-for-jaxb.html)
+[RETURNS_DEEP_STUBS when working with JAXB](https://toomuchcoding.com/2013/06/mockito-returndeepstubs-for-jaxb.html)
 . Quite recently we have faced a similliar issue with deeply nesetd JAXB and the awesome testing framework written in Groovy called
 [Spock](https://code.google.com/p/spock/)
 . Natively Spock does not support creating deep stubs or spies so we needed to create a workaround for it and this article will show you how to do it.
 []()
 ## Project structure
 We will be working on the same data structure as in the
-[RETURNS_DEEP_STUBS when working with JAXB](https://toomuchcoding.blogspot.com/2013/06/mockito-returndeepstubs-for-jaxb.html)
+[RETURNS_DEEP_STUBS when working with JAXB](https://toomuchcoding.com/2013/06/mockito-returndeepstubs-for-jaxb.html)
 article so the project structure will be quite simillar:
 [![](https://4.bp.blogspot.com/-3AoyOo8WYuY/UgC3QJ5TuNI/AAAAAAAABkw/YJzt5EXB10s/s320/Spock+Deep+Stubs+project+structure.jpg)](https://4.bp.blogspot.com/-3AoyOo8WYuY/UgC3QJ5TuNI/AAAAAAAABkw/YJzt5EXB10s/s1600/Spock+Deep+Stubs+project+structure.jpg)
 As you can see the main difference is such that the tests are present in the
