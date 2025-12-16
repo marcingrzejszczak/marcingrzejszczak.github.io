@@ -77,3 +77,5 @@ Desktop.ini
 npm-debug.log*
 public
 source
+
+_vendor

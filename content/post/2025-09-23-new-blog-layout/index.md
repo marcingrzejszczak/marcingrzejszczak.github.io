@@ -14,9 +14,8 @@ content_meta:
 ---
 Wow, it's been a while since I last wrote anything here! A lot has changed since my last post so let me give you some updates... 
 
-{{% callout note %}}
-This post is NOT written by AI!
-{{% /callout %}}
+> [!NOTE]
+> This post is NOT written by AI!
 
 <!-- more -->
 

@@ -9,24 +9,9 @@
     "build": "hugo --minify"
   },
   "dependencies": {
-    "@tailwindcss/typography": "^0.5.10"
-  },
-  "main": "index.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/HugoBlox/theme-academic-cv.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com/HugoBlox/theme-academic-cv/issues"
-  },
-  "homepage": "https://github.com/HugoBlox/theme-academic-cv#readme",
-  "devDependencies": {
-    "@tailwindcss/cli": "^4.1.13",
-    "pagefind": "^1.4.0",
-    "tailwindcss": "^4.1.13"
+    "@tailwindcss/cli": "^4.1.12",
+    "@tailwindcss/typography": "^0.5.10",
+    "preact": "^10.27.2",
+    "tailwindcss": "^4.1.12"
   }
 }

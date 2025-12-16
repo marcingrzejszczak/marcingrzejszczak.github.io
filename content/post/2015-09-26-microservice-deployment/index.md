@@ -11,9 +11,8 @@ content_meta:
   trending: false
 ---
 
-{{% callout note %}}
-This blog was written in 2015, the approach is still valid today. In the meantime its implementation was done through the [Spring Cloud Pipelines](https://github.com/spring-attic/spring-cloud-pipelines) project. At one of my contracts I've managed to implement it through Java CLI, Bash and abstractions over Jenkins, Github Actions, ArgoCD, Helm etc.
-{{% /callout %}}
+> [!NOTE]
+> This blog was written in 2015, the approach is still valid today. In the meantime its implementation was done through the [Spring Cloud Pipelines](https://github.com/spring-attic/spring-cloud-pipelines) project. At one of my contracts I've managed to implement it through Java CLI, Bash and abstractions over Jenkins, Github Actions, ArgoCD, Helm etc.
 
 It’s been a while since my last post. In the meantime, of course, nothing has changed in terms of the microservice hype. I’ve been attending many microservices talks, and what I often miss are **concrete details**—especially around deployment. In this post I’ll depict how, in a big multinational company, you might approach microservice deployment. I’ll walk you through a **basic deployment pipeline** that fits an enterprise setting.
 

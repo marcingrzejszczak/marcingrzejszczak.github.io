@@ -9,9 +9,8 @@ tags:
 content_meta:
   trending: false
 ---
-{{% callout note %}}
-This blog was written in 2015 and was one of my most successful posts. It's not even about the number of readers, but it's more about how successful we were about cutting down the build time. By doing this we've been able to massively save money, improve delivery time and increase code quality. 
-{{% /callout %}}
+> [!NOTE]
+> This blog was written in 2015 and was one of my most successful posts. It's not even about the number of readers, but it's more about how successful we were about cutting down the build time. By doing this we've been able to massively save money, improve delivery time and increase code quality.
 
 Even though I was supposed to write a series of blog posts about [micro-infra-spring](/tags/micro-infra-spring/) here at the [Too Much Coding blog](https://toomuchcoding.com/), today I’ll write about how we managed to decrease our biggest project’s build time **from 90 to 8 minutes**!
 

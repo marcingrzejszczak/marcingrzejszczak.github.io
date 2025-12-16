@@ -1,10 +1,7 @@
 ---
-title: Blog
-view: article-grid
-cascade:
-  commentable: true
+title: Subscribe
+type: page
 ---
-
 <!-- MailerLite Universal -->
 <script>
     (function(w,d,e,u,f,l,n){
@@ -16,8 +13,6 @@ cascade:
 </script>
 <!-- End MailerLite Universal -->
 
-> [!NOTE]
-> All articles have been written by me - not AI. AI **might have** only been used to polish an already written article.
-
+If you’d like new posts by email (about once every 1–2 months), subscribe below (unsubscribe anytime):
 
 <div class="ml-embedded" data-form="cHjM80"></div>

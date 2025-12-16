@@ -13,9 +13,8 @@ tags:
 content_meta:
   trending: false
 ---
-{{% callout note %}}
-Before you read on, I'd be grateful if you could spend a moment filling out a short survey for my upcoming Java Microservices with Spring course: https://maven.com/forms/bbafe1.
-{{% /callout %}}
+> [!NOTE]
+> Before you read on, I'd be grateful if you could spend a moment filling out a short survey for my upcoming Java Microservices with Spring course: https://maven.com/forms/bbafe1.
 
 In this article, I want to talk about a problem every mature codebase eventually faces:  
 **how do we instrument existing business logic without rewriting it?**

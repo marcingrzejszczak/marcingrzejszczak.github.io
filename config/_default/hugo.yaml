@@ -30,9 +30,7 @@ pagination:
 enableEmoji: true
 enableRobotsTXT: true
 footnotereturnlinkcontents: <sup>^</sup>
-ignoreFiles: [\.ipynb$, .ipynb_checkpoints$, \.Rmd$, \.Rmarkdown$, _cache$]
-permalinks:
-  authors: '/author/:slug/'
+ignoreFiles: [".ipynb_checkpoints$", "\\.Rmd$", "\\.Rmarkdown$", "_cache$"]
 disableAliases: true
 outputFormats:
   RSS:
@@ -40,7 +38,7 @@ outputFormats:
     baseName: "atom"
 outputs:
   home: [HTML, RSS, headers, redirects, backlinks]
-  section: [HTML,  RSS]
+  section: [HTML, RSS]
 imaging:
   resampleFilter: lanczos
   quality: 90

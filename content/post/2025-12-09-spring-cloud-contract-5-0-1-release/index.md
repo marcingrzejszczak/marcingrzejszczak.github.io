@@ -12,9 +12,8 @@ tags:
 content_meta:
   trending: false
 ---
-{{% callout note %}}
-I'm very grateful to my employer [HeroDevs](https://www.herodevs.com/) that I'm allowed to work on OSS in any spare time that I have. At [HeroDevs](https://www.herodevs.com/) we ♥ Open Source! 
-{{% /callout %}}
+> [!NOTE] 
+> I'm very grateful to my employer [HeroDevs](https://www.herodevs.com/) that I'm allowed to work on OSS in any spare time that I have. At [HeroDevs](https://www.herodevs.com/) we ♥ Open Source!
 
 TLDR; Spring Cloud Contract 5.0.1 is released with some critical bug fixes. Please upgrade!
 

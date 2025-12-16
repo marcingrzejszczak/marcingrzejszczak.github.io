@@ -1,0 +1,47 @@
+schema: hugoblox/author/v1
+
+slug: me
+is_owner: true
+
+name:
+  display: Marcin Grzejszczak
+  given: Marcin
+  family: Grzejszczak
+  alternate: ''
+  pronunciation: ''
+  pronouns: he/him
+
+status:
+  icon: "🚀"
+  text: Java Champion
+
+role: OSS / Author / Mentor / Consultant
+
+bio: |
+  Java Champion, founder of [iurista.org](https://iurista.org), co-author of **SmartTesting**,
+  author of **video courses and trainings**, **testing books**, consultant and mentor.
+
+  Maintainer of cloud, observability, and testing-related open source projects
+  (ex-member of **Spring Cloud**, ex-member of **Micrometer**).
+
+  Within the last decade, he’s given more than **150 presentations and workshops**.
+
+links:
+  - icon: at-symbol
+    url: mailto:contact@toomuchcoding.com
+    label: E-mail Me
+  - icon: brands/x
+    url: https://twitter.com/mgrzejszczak
+  - icon: brands/github
+    url: https://github.com/marcingrzejszczak
+  - icon: brands/linkedin
+    url: https://www.linkedin.com/in/👾-marcin-grzejszczak-15565119/
+  - icon: brands/bluesky
+    url: https://bsky.app/profile/toomuchcoding.com
+  - icon: brands/mastodon
+    url: https://fosstodon.org/@toomuchcoding
+
+interests:
+  - Observability
+  - Microservices
+  - Testing
