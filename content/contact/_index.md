@@ -26,6 +26,8 @@ If you’d like new posts by email (about once every 1–2 months), subscribe be
 
 <div class="ml-embedded" data-form="cHjM80"></div>
 
+---
+
 ## 📅 Book a Free Consultation
 
 <div class="calendly-inline-widget" data-url="https://calendly.com/marcin-grzejszczak/free-consultation" style="min-width:320px;height:700px;"></div>
