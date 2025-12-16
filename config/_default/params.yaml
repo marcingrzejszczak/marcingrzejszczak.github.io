@@ -116,9 +116,9 @@ hugoblox:
   # ────────────────────────────────────────────────────────────────────────────
   copyright:
     # Copyright notice - supports {year}, {name}, {license} placeholders
-    notice: "© {year} {name}. This work is licensed under {license}"
+    notice: "© {year} {name}. All rights reserved"
     license:
-      type: cc                          # cc | all_rights | custom
+      type: all_rights                          # cc | all_rights | custom
       allow_derivatives: false
       share_alike: true
       allow_commercial: false
@@ -289,3 +289,7 @@ hugoblox:
     # Affiliate referral code for rewards program
     # Join affiliate program: https://hugoblox.com/affiliates
     affiliate_code: ""
+
+content_license:
+  name: "All Rights Reserved"
+  url: ""
