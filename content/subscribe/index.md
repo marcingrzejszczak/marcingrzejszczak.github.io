@@ -13,6 +13,6 @@ type: page
 </script>
 <!-- End MailerLite Universal -->
 
-If you’d like new posts by email (about once every 1–2 months), subscribe below (unsubscribe anytime):
+If you’d like new posts by email, subscribe below (unsubscribe anytime):
 
 <div class="ml-embedded" data-form="cHjM80"></div>

@@ -1,7 +1,7 @@
 ---
 title: SmartTesting
 authors:
-- admin
+- me
 date: '2021-10-21T00:00:00Z'
 publishDate: '2021-10-21T00:00:00Z'
 publication_types:

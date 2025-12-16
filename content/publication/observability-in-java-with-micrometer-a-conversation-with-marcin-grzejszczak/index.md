@@ -1,7 +1,7 @@
 ---
 title: Observability in Java with Micrometer - a Conversation with Marcin Grzejszczak
 authors:
-- admin
+- me
 date: '2025-09-01T00:00:00Z'
 publishDate: '2025-09-01T00:00:00Z'
 publication_types:

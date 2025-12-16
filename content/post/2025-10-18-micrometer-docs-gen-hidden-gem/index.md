@@ -4,7 +4,7 @@ summary: "In this blog post we'll look into my experience of writing docs. We'll
 date: 2025-10-18
 
 authors:
-  - admin
+  - me
 
 tags:
   - Micrometer

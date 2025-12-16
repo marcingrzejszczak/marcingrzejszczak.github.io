@@ -4,7 +4,7 @@ summary: "In this blog post we'll look into why and how Micrometer Observation w
 date: 2025-12-07
 
 authors:
-  - admin
+  - me
 
 tags:
   - Micrometer

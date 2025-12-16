@@ -1,7 +1,7 @@
 ---
 title: Zero Downtime Deployment with a Database
 authors:
-- admin
+- me
 date: '2016-01-01T00:00:00Z'
 publishDate: '2025-09-20T00:00:00Z'
 publication_types:

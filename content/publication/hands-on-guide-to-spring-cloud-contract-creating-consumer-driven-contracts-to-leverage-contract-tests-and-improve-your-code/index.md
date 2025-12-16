@@ -2,7 +2,7 @@
 title: 'Hands-On Guide to Spring Cloud Contract: Creating Consumer-Driven Contracts
   to Leverage Contract Tests and Improve Your Code'
 authors:
-- admin
+- me
 date: '2021-03-01T00:00:00Z'
 publishDate: '2021-03-01T00:00:00Z'
 publication_types:

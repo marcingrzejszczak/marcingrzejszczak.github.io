@@ -4,7 +4,7 @@ summary: "Spring Cloud Contract 5 will no longer support the `stubrunner` prefix
 date: 2025-10-01
 
 authors:
-  - admin
+  - me
 
 tags:
   - Spring Cloud Contract

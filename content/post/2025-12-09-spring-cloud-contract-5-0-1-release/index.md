@@ -4,7 +4,7 @@ summary: "Spring Cloud Contract 5.0.1 is released with some critical bug fixes. 
 date: 2025-12-09
 
 authors:
-  - admin
+  - me
 
 tags:
   - Spring Cloud Contract

@@ -1,7 +1,7 @@
 ---
 title: Mikroserwisy ze Spring Cloud - koniec z teorią, kodujemy
 authors:
-- admin
+- me
 date: '2020-01-25T00:00:00Z'
 publishDate: '2020-01-25T00:00:00Z'
 publication_types:

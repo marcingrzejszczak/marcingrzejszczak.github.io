@@ -1,7 +1,7 @@
 ---
 title: Applied Continuous Delivery
 authors:
-- admin
+- me
 date: '2017-10-01T00:00:00Z'
 publishDate: '2017-10-01T00:00:00Z'
 publication_types:

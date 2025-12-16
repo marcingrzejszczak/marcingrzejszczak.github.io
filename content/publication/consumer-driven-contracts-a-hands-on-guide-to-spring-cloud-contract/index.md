@@ -1,7 +1,7 @@
 ---
 title: Consumer Driven Contracts a Hands On Guide to Spring Cloud Contract
 authors:
-- admin
+- me
 date: '2018-02-26T00:00:00Z'
 publishDate: '2018-02-26T00:00:00Z'
 publication_types:

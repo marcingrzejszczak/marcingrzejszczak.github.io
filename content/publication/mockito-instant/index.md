@@ -1,7 +1,7 @@
 ---
 title: Mockito Instant
 authors:
-- admin
+- me
 date: '2013-08-26T00:00:00Z'
 publishDate: '2013-08-26T00:00:00Z'
 publication_types:

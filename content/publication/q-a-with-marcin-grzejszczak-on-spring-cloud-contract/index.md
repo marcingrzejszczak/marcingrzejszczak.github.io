@@ -1,7 +1,7 @@
 ---
 title: Q&A with Marcin Grzejszczak on Spring Cloud Contract
 authors:
-- admin
+- me
 date: '2017-04-22T00:00:00Z'
 publishDate: '2017-04-22T00:00:00Z'
 publication_types:

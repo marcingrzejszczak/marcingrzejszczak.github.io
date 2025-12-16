@@ -3,7 +3,7 @@ title: "Business Value Gone Wild"
 summary: "An opinionated look at the 'it's not my problem' mindset and the management frenzy around 'business value'—and how it clashes with engineering quality."
 date: 2015-10-16
 authors:
-  - admin
+  - me
 tags:
   - Blog
 content_meta:

@@ -4,7 +4,7 @@ summary: "After a decade of working in the Spring / Micrometer teams it was time
 date: 2025-09-23
 
 authors:
-  - admin
+  - me
 
 tags:
   - Blog

@@ -3,7 +3,7 @@ title: "Microservice Deployment"
 summary: "It’s been a while since my last post. In the meantime, nothing has changed in terms of the microservice hype. Here’s a concrete look at deployment in a big, multinational company and a basic pipeline you can start with."
 date: 2015-09-26
 authors:
-  - admin
+  - me
 tags:
   - Microservices
   - Deployment Pipelines

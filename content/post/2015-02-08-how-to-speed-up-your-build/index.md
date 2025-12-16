@@ -3,7 +3,7 @@ title: "How To Speed Up Your Build (from 90 to 8 minutes)"
 summary: "How we cut a large monolith’s Gradle build from ~90 minutes to ~8 minutes using profiling, smarter task configuration, parallelism, project restructuring, and a beefier build machine."
 date: 2015-02-08
 authors:
-  - admin
+  - me
 tags:
   - Gradle
 content_meta:

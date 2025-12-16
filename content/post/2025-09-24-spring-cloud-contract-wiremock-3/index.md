@@ -4,7 +4,7 @@ summary: "Spring Cloud Contract 5 (finally) supports WireMock 3 "
 date: 2025-09-24
 
 authors:
-  - admin
+  - me
 
 tags:
   - Spring Cloud Contract

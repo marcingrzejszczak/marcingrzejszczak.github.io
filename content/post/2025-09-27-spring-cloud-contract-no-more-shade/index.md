@@ -4,7 +4,7 @@ summary: "Spring Cloud Contract 5 drops the module that shaded quite a few libra
 date: 2025-09-27
 
 authors:
-  - admin
+  - me
 
 tags:
   - Spring Cloud Contract

@@ -4,7 +4,7 @@ summary: "Spring Cloud Contract 5 drops support for @AutoConfigureWireMock in fa
 date: 2025-09-25
 
 authors:
-  - admin
+  - me
 
 tags:
   - Spring Cloud Contract

@@ -4,7 +4,7 @@ summary: "I need your help! I'm considering running a course about microservices
 date: 2025-12-04
 
 authors:
-  - admin
+  - me
 
 tags:
   - Microservices

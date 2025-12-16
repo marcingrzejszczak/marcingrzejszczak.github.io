@@ -30,6 +30,15 @@ This site uses minimal analytics and respects your privacy.
 - Analytics data is processed by Google and may be stored outside your country.
 - We do not sell or share analytics data.
 
+### Newsletter (Email Subscription)
+
+- If you subscribe to the newsletter, we collect your email address solely to send you new blog posts and related updates.
+- Email delivery and subscriber management are handled by [MailerLite](https://www.mailerlite.com/), which acts as a data processor on our behalf.
+- Your email address is not sold, shared, or used for advertising.
+- You can unsubscribe at any time using the link included in every email.
+
+MailerLite may process and store data outside your country, including outside the EU, in accordance with applicable data protection laws and standard contractual safeguards.
+
 ### Contact
 
 If you have questions about this policy, contact me at:
@@ -38,4 +47,4 @@ If you have questions about this policy, contact me at:
 
 ---
 
-_Last updated: September 25, 2025_
+_Last updated: December 16, 2025_

@@ -1,7 +1,7 @@
 ---
 title: Mockito Cookbook
 authors:
-- admin
+- me
 date: '2014-06-24T00:00:00Z'
 publishDate: '2014-06-24T00:00:00Z'
 publication_types:

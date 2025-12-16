@@ -4,7 +4,7 @@ summary: "Spring Cloud Contract 5 will no longer support the fallback src/test/r
 date: 2025-09-30
 
 authors:
-  - admin
+  - me
 
 tags:
   - Spring Cloud Contract

@@ -1,7 +1,7 @@
 ---
 title: Spring Cloud Contract in a Polyglot World
 authors:
-- admin
+- me
 date: '2018-02-13T00:00:00Z'
 publishDate: '2018-02-13T00:00:00Z'
 publication_types:

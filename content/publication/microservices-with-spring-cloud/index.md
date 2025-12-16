@@ -1,7 +1,7 @@
 ---
 title: Microservices with Spring Cloud
 authors:
-- admin
+- me
 date: '2021-03-12T00:00:00Z'
 publishDate: '2021-03-12T00:00:00Z'
 publication_types:

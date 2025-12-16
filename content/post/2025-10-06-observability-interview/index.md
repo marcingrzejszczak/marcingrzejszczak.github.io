@@ -4,7 +4,7 @@ summary: "I had great pleasure of being a guest at the InfoQ podcast!"
 date: 2025-10-06
 
 authors:
-  - admin
+  - me
 
 tags:
   - Micrometer
