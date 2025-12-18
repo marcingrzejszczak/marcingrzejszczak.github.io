@@ -13,6 +13,10 @@ tags:
 content_meta:
   trending: false
 ---
+
+> [!NOTE]
+> Thank you for filling out the survey but the course is up and running! You can check it out [here](https://maven.com/toomuchcoding/java-microservices-with-spring).
+
 TLDR; I'm considering running a course about microservices in Java. Can you please fill out a [survey](https://maven.com/forms/bbafe1)? 
 
 <!-- more -->
