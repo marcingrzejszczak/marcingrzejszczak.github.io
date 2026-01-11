@@ -56,3 +56,12 @@ AI is here to stay, and it changed everything in the IT industry. Especially wit
 Even though being a construction site worker was a great experience I think I'll postpone the decision to shift my career in that direction indefinitely. I'll just continue learning more about MCP servers, agentic workflows etc. to become an even more productive engineer...
 
 What is your opinion on the topic? Please share a comment below and let's talk about this. I felt much better with my anxiety after a couple of conversations on LinkedIn with AI subject-matter experts and with my friends and colleagues. You're not alone with your fears!
+
+Oh and btw, since this post is getting traction so it's time for some marketing...
+
+My new Java Microservices with Spring  workshops are available for enrollment on [Maven](https://maven.com/toomuchcoding/java-microservices-with-spring). 
+
+The course is battle-proven, I've been doing it for years through the O'Reilly platform, and I've taught hundreds of students. So if you want to learn how to work with microservices, Spring Cloud, Micrometer and more, this is the course for you!
+
+With the promo code **TOOMUCHCODING** you can get **$200** discount on the course! **The offer is valid until January 11th**, so hurry up!
+ 
