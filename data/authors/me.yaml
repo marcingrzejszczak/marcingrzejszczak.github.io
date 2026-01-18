@@ -18,11 +18,11 @@ status:
 role: OSS / Author / Mentor / Consultant
 
 bio: |
-  Java Champion, founder of [iurista.org](https://iurista.org), co-author of **SmartTesting**,
-  author of **video courses and trainings**, **testing books**, consultant and mentor.
+  Java Champion, founder of [startups](/projects/), co-author of [**SmartTesting**](https://smarttesting.pl/),
+  author of [**video courses and trainings**](/publication/), [**testing books**](/publication/), [consultant and mentor](/consulting/).
 
   Maintainer of cloud, observability, and testing-related open source projects
-  (ex-member of **Spring Cloud**, ex-member of **Micrometer**).
+  (ex-member of **Spring Cloud** & **Micrometer** teams).
 
   Within the last decade, he’s given more than **150 presentations and workshops**.
 
@@ -35,7 +35,7 @@ links:
   - icon: brands/github
     url: https://github.com/marcingrzejszczak
   - icon: brands/linkedin
-    url: https://www.linkedin.com/in/👾-marcin-grzejszczak-15565119/
+    url: https://www.linkedin.com/in/marcin-grzejszczak-15565119/
   - icon: brands/bluesky
     url: https://bsky.app/profile/toomuchcoding.com
   - icon: brands/mastodon

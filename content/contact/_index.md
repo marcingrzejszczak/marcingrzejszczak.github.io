@@ -46,5 +46,5 @@ If you’d like new posts by email, subscribe below (unsubscribe anytime):
 ## 🌍 Find me online
 - [Twitter / X](https://twitter.com/mgrzejszczak)
 - [GitHub](https://github.com/marcingrzejszczak)
-- [LinkedIn](https://www.linkedin.com/in/👾-marcin-grzejszczak-15565119/)
+- [LinkedIn](https://www.linkedin.com/in/marcin-grzejszczak-15565119/)
 - [Bluesky](https://bsky.app/profile/toomuchcoding.com)
