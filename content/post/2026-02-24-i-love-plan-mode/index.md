@@ -80,3 +80,6 @@ Check the agent response below:
 If I see "you're right" one more time... 
 
 Enjoy the rest of your dAI!
+
+> [!NOTE]
+> Remember to check out the workshop page [Generate, Break, Fix: Distributed Systems in the AI Era](https://maven.com/toomuchcoding/generate-break-fix-distributed-systems-in-the-ai-era) and fill out the survey!
