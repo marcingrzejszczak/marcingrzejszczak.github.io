@@ -9,7 +9,7 @@ image:
 ---
 
 **What you get**
-- 4 × 60‑minute 1:1 sessions (remote)
+- 8 × 60‑minute 1:1 sessions (remote)
 - Async Q&A between sessions (email/chat)
 - Focus: CI/CD, Microservices, IDP, Testing, Observability or whatever else you need!
 
