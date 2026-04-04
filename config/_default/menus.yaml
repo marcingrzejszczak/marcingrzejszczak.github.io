@@ -26,5 +26,5 @@ main:
     url: /contact/
     weight: 70
   - name: Newsletter
-    url: /subscribe/
+    url: /newsletter/
     weight: 80
