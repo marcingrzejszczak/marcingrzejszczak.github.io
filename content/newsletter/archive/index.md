@@ -5,6 +5,7 @@ lastmod: 2026-03-28
 draft: false
 description: "Issues 1-15 were sent via MailerLite before the newsletter moved to the blog."
 tags: ["newsletter"]
+reading_time: false
 weight: 9999
 ---
 

@@ -4,7 +4,7 @@ date: 2026-04-04
 lastmod: 2026-04-04
 draft: false
 description: "Claude Code leaked in NPM, Spring Cloud 2025.0.2 released, Database Observability goes GA, and more from the JVM ecosystem."
-tags: ["ai", "security", "jvm", "spring", "observability"]
+tags: ["newsletter"]
 ---
 
 Hi!
