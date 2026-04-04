@@ -17,7 +17,9 @@ I do hope that you'll enjoy the reading!
 
 ---
 
-*Shameless self-promotion:* Master distributed systems resilience in the age of AI agents. Over 40 students have already joined! Check out my "Generate, Break, Fix: Distributed Systems in the AI Era" workshop on Maven. Use promo code TOOMUCHCODING for $100 off (the $200 is gone 🤷‍♀️): https://maven.com/toomuchcoding/generate-break-fix-distributed-systems-in-the-ai-era
+## Shameless self-promotion
+
+Master distributed systems resilience in the age of AI agents. Over 40 students have already joined! Check out my "Generate, Break, Fix: Distributed Systems in the AI Era" workshop on Maven. Use promo code TOOMUCHCODING for $100 off (the $200 is gone 🤷‍♀️): https://maven.com/toomuchcoding/generate-break-fix-distributed-systems-in-the-ai-era
 
 ---
 
