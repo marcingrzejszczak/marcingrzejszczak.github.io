@@ -35,7 +35,7 @@ This is why starting from today I'm going to publish the newsletter on [LinkedIn
 
 ## Corporate workshops
 
-I've successfully confirmed a group of around 40 students for a course similar to the one on Maven. If your company would like to run a "Generate, Break, Fix" workshop for your team - I'm open to the conversation. Just reach out via [contact](/contact) or [LinkedIn](https://www.linkedin.com/in/marcingrzejszczak/).
+I've successfully confirmed a group of around 40 students for a course similar to the one on Maven. If your company would like to run a "Generate, Break, Fix" workshop for your team - I'm open to the conversation. Just reach out via [contact](/contact) or [LinkedIn](https://www.linkedin.com/in/marcin-grzejszczak-15565119/).
 
 ## GOTO interview
 
