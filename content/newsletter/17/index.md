@@ -16,9 +16,14 @@ Grab a hot beverage.
 Let's go. I do hope that you'll enjoy the reading!
 
 ---
+# *Shameless self-promotion:* 
 
----
-*Shameless self-promotion:* Master the chaos of distributed systems in an AI-driven world. Check out my "Generate, Break, Fix: Distributed Systems in the AI Era" workshop on Maven. Use promo code TOOMUCHCODING for $100 off: https://maven.com/toomuchcoding/generate-break-fix-distributed-systems-in-the-ai-era
+Master the chaos of distributed systems in an AI-driven world. Check out my "Generate, Break, Fix: Distributed Systems in the AI Era" workshop on Maven. 
+
+Use promo code **TOOMUCHCODING** for **$100** off: 
+
+https://maven.com/toomuchcoding/generate-break-fix-distributed-systems-in-the-ai-era
+
 ---
 
 # This Week's Highlight
