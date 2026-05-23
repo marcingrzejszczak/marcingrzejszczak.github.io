@@ -21,7 +21,7 @@ Let's go. I do hope that you'll enjoy the reading!
 
 The flip side of all this AI enthusiasm: entry-level and junior developers are watching the job market shrink. Corporate AI investment is actively reducing hiring volume for the roles that used to be your training ground. It's not hysteria - it's a real labor market shift happening in real time. Whether you're a junior yourself or you care about the next generation of developers, this is the kind of trend that matters.
 
-https://www.foxbusiness.com/economy/workers-face-growing-automation-anxiety-as-tech-layoffs-surge-ai-adoption-accelerates
+https://www.foxbusiness.com/economy/workers-face-growing-automation-anxiety-tech-layoffs-surge-ai-adoption-accelerates
 
 **Marcin's comment:** The same companies automating away junior roles will be shocked when there's nobody experienced left to hire in five years. It's almost like you need a pyramid to build a pyramid.
 
