@@ -17,9 +17,9 @@ Let's go. I do hope that you'll enjoy the reading!
 
 ## This Week's Highlight
 
-### Lukas Lejnik Tweet
+### Łukasz Olejnik Tweet
 
-Lukas Lejnik shared some sharp thoughts on X this week. His perspective on the current state of tech and AI developments is worth your attention if you're thinking critically about where this industry is heading.
+Łukasz Olejnik shared some sharp thoughts on X this week. His perspective on the current state of tech and AI developments is worth your attention if you're thinking critically about where this industry is heading.
 
 https://x.com/lukolejnik/status/2069166739934367890?s=46
 
