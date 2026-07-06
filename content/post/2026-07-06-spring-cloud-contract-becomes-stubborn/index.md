@@ -3,9 +3,6 @@ title: "Spring Cloud Contract Is Coming Home: Introducing Stubborn Contract"
 summary: "Spring Cloud Contract is transitioning out of the Spring Cloud portfolio. I'm taking it forward as Stubborn Contract."
 date: 2026-07-06
 
-aliases:
-  - /post/2026-07-03-spring-cloud-contract-becomes-stubborn/
-
 authors:
   - me
 
