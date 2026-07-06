@@ -1,7 +1,7 @@
 ---
 title: "Spring Cloud Contract Is Coming Home: Introducing Stubborn Contract"
 summary: "Spring Cloud Contract is transitioning out of the Spring Cloud portfolio. I'm taking it forward as Stubborn Contract."
-date: 2026-07-03
+date: 2026-07-06
 
 authors:
   - me
@@ -20,7 +20,7 @@ TLDR; Spring Cloud Contract is transitioning out of the Spring Cloud portfolio. 
 
 I created Spring Cloud Contract back in 2016 (and it's predecessor [Accurest](https://github.com/Codearte/accurest) 2 years earlier - 2014). Consumer-driven contract testing wasn't a mainstream idea in the Spring world at the time, and I spent years convincing teams that "if your contract tests pass, you can deploy with confidence" was worth building a whole tool around. It became one of the projects I'm proudest of, and I've been leading it ever since.
 
-Today the Spring team and I are announcing that Spring Cloud Contract is moving to a new home. You can read [the official announcement on the Spring blog](https://spring.io/blog) for their side of the story, and here's mine.
+Today the Spring team and I are announcing that Spring Cloud Contract is moving to a new home. You can read [the official announcement on the Spring blog](https://spring.io/blog/2026/07/06/spring-cloud-contract-transition-to-stubbornsh) for their side of the story, and here's mine.
 
 #### What's happening
 
