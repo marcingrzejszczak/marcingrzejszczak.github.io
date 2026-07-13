@@ -108,7 +108,7 @@ https://github.blog/changelog/2026-07-08-setup-java-v5-5-0-signature-verificatio
 
 I wrote a piece exploring what's actually going on with Spring Cloud Contract and why the move to [Stubborn.sh](https://stubborn.sh) makes sense if you're willing to dig into it. The behavior patterns reveal a lot about why the Spring team made this call and what the testing landscape looks like now.
 
-https://toomuchcoding.com/post/2026-07-06-spring-cloud-contract-becomes-stubborn/
+https://spring.io/blog/2026/07/06/spring-cloud-contract-transition-to-stubbornsh
 
 https://toomuchcoding.com/post/2026-07-06-spring-cloud-contract-becomes-stubborn/
 
